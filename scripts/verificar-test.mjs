@@ -1,6 +1,8 @@
 // Verifica el motor de test: manifiesto del banco, muestreo sin repetición,
 // reproducibilidad con una fuente aleatoria inyectada, barajado de opciones,
-// corrección de un intento y desglose por convocatoria.
+// corrección de un intento, desglose por convocatoria, tamaño de sesión según el
+// ánimo, rachas de aciertos, reto diario determinista y el almacenamiento
+// versionado con exportación e importación validadas.
 // Sin dependencias, sin red y sin navegador: importa la lógica pura del motor.
 //
 // Uso: node scripts/verificar-test.mjs
@@ -28,6 +30,22 @@ function comprobar(descripcion, condicion, detalle = '') {
 }
 
 const iguales = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+/**
+ * Agrupa las aserciones de un bloque nuevo.
+ *
+ * Si el motor todavía no expone una función, la sección se reporta como un
+ * fallo concreto en lugar de tumbar el verificador entero: así la primera
+ * ejecución en rojo dice qué falta exactamente.
+ */
+function seccion(nombre, cuerpo) {
+  console.log(`\n${nombre}`);
+  try {
+    cuerpo();
+  } catch (error) {
+    comprobar(nombre, false, error.message);
+  }
+}
 const unicos = (valores) => new Set(valores).size === valores.length;
 const cerca = (a, b, tolerancia = 1e-9) => Math.abs(a - b) <= tolerancia;
 
@@ -279,6 +297,288 @@ comprobar(
   JSON.stringify(tiempos.map(([s]) => core.formatearTiempo(s))),
 );
 comprobar('formatearTiempo no devuelve tiempos negativos', core.formatearTiempo(-5) === '00:00');
+
+/* --- 7. Tamaño de sesión según el ánimo ------------------------------------ */
+
+seccion('Tamaño de sesión', () => {
+  comprobar('la sesión corta pide 10 preguntas', core.preguntasDeSesion('corta', 200) === 10);
+  comprobar('la sesión media pide 30 preguntas', core.preguntasDeSesion('media', 200) === 30);
+  comprobar(
+    'la sesión completa pide todo el banco',
+    core.preguntasDeSesion('completa', 200) === 200,
+  );
+  comprobar(
+    'el examen respeta la cantidad pedida',
+    core.preguntasDeSesion('examen', 200, { cantidadExamen: 100 }) === 100,
+  );
+  comprobar('con 4 preguntas en el banco la sesión corta pide 4', core.preguntasDeSesion('corta', 4) === 4);
+  comprobar('con 12 preguntas en el banco la sesión media pide 12', core.preguntasDeSesion('media', 12) === 12);
+  comprobar(
+    'con 5 preguntas en el banco el examen pide 5',
+    core.preguntasDeSesion('examen', 5, { cantidadExamen: 100 }) === 5,
+  );
+  comprobar('sin preguntas en el banco la sesión pide 0', core.preguntasDeSesion('completa', 0) === 0);
+  comprobar(
+    'el tamaño por defecto es la sesión corta',
+    core.TAMANO_POR_DEFECTO === 'corta' && core.preguntasDeSesion(undefined, 200) === 10,
+  );
+
+  let excede = false;
+  let noEntero = false;
+  for (const tamano of ['corta', 'media', 'completa', 'examen']) {
+    for (let total = 0; total <= 60; total += 1) {
+      for (const cantidadExamen of [1, 7, 30, 100, 120]) {
+        const pedidas = core.preguntasDeSesion(tamano, total, { cantidadExamen });
+        if (!Number.isInteger(pedidas)) noEntero = true;
+        if (pedidas > total) excede = true;
+      }
+    }
+  }
+  comprobar('ningún tamaño pide más preguntas que el banco', !excede);
+  comprobar('el tamaño de sesión siempre es un entero', !noEntero);
+});
+
+/* --- 8. Rachas de aciertos -------------------------------------------------- */
+
+seccion('Rachas de aciertos', () => {
+  /** Intento sintético: true acierta, false falla, null queda en blanco. */
+  const intentoCon = (patron) =>
+    patron.map((valor, i) => ({
+      pregunta: { id: `sintetica-${i}`, correcta: 0 },
+      respuesta: valor === null ? null : valor ? 0 : 1,
+    }));
+
+  const cuatro = core.calcularRacha(intentoCon([true, true, true, true]));
+  comprobar('la racha sube con cada acierto', cuatro.actual === 4 && cuatro.maxima === 4, JSON.stringify(cuatro));
+  comprobar('un fallo reinicia la racha actual', core.calcularRacha(intentoCon([true, true, false, true])).actual === 1);
+  comprobar(
+    'la racha máxima conserva el mejor tramo',
+    core.calcularRacha(intentoCon([true, true, false, true])).maxima === 2,
+  );
+  comprobar('una pregunta en blanco también corta la racha', core.calcularRacha(intentoCon([true, true, null])).actual === 0);
+  comprobar('un intento vacío no tiene racha', iguales(core.calcularRacha([]), { actual: 0, maxima: 0 }));
+  comprobar('un intento sin argumentos no rompe la racha', iguales(core.calcularRacha(), { actual: 0, maxima: 0 }));
+
+  comprobar('la racha de 5 aciertos se reconoce en el hito 5', core.hitoDeRacha(5) === 5);
+  comprobar('la racha de 10 aciertos se reconoce en el hito 10', core.hitoDeRacha(10) === 10);
+  comprobar(
+    'fuera de 5 y 10 no hay reconocimiento',
+    [0, 1, 4, 6, 7, 9, 11, 50].every((valor) => core.hitoDeRacha(valor) === null),
+  );
+  comprobar(
+    'la tasa de acierto se calcula sobre las respondidas',
+    core.tasaDeAcierto(2, 3) === 66.7 && core.tasaDeAcierto(0, 0) === 0,
+    `${core.tasaDeAcierto(2, 3)} / ${core.tasaDeAcierto(0, 0)}`,
+  );
+});
+
+/* --- 9. Reto diario determinista -------------------------------------------- */
+
+seccion('Reto diario', () => {
+  const FECHA = '2026-07-10';
+  const semilla = core.semillaDiaria(FECHA);
+
+  comprobar(
+    'la semilla del día es estable para la misma fecha',
+    Number.isInteger(semilla) && semilla > 0 && semilla === core.semillaDiaria(FECHA),
+    `${semilla}`,
+  );
+  comprobar(
+    'la semilla del día cambia con la fecha',
+    new Set(['2026-07-10', '2026-07-11', '2026-01-01', '2027-07-10', '2026-12-31'].map(core.semillaDiaria)).size === 5,
+  );
+  comprobar(
+    'la semilla del día ignora la hora del objeto Date',
+    core.semillaDiaria(new Date(2026, 6, 10, 0, 0, 1)) === core.semillaDiaria(new Date(2026, 6, 10, 23, 59, 59)),
+  );
+  comprobar('una cadena de fecha y su Date dan la misma semilla', core.semillaDiaria(new Date(2026, 6, 10)) === semilla);
+  comprobar(
+    'claveFecha compone YYYY-MM-DD con ceros a la izquierda',
+    core.claveFecha(new Date(2026, 0, 5)) === '2026-01-05',
+    core.claveFecha(new Date(2026, 0, 5)),
+  );
+
+  const reto = core.seleccionDiaria(pool, FECHA);
+  const idsReto = reto.map((p) => p.id);
+  comprobar('el reto del día tiene 10 preguntas', reto.length === 10, `${reto.length}`);
+  comprobar('el reto del día no repite preguntas', unicos(idsReto));
+  comprobar(
+    'el reto del día es reproducible',
+    iguales(idsReto, core.seleccionDiaria(pool, FECHA).map((p) => p.id)),
+  );
+  comprobar(
+    'el reto del día cambia de una fecha a otra',
+    !iguales(idsReto, core.seleccionDiaria(pool, '2026-07-11').map((p) => p.id)),
+  );
+  comprobar(
+    'el reto del día nunca pide más preguntas que el banco',
+    core.seleccionDiaria(pool.slice(0, 4), FECHA).length === 4,
+  );
+});
+
+/* --- 10. Persistencia versionada -------------------------------------------- */
+
+seccion('Persistencia del progreso', () => {
+  const vacio = core.crearAlmacenVacio();
+  comprobar('el almacén vacío es válido', core.validarAlmacen(vacio) !== null);
+  comprobar(
+    'el almacén declara una versión numérica',
+    vacio.version === core.VERSION_ALMACEN && Number.isInteger(core.VERSION_ALMACEN),
+  );
+  comprobar('el almacén vacío no tiene registros', Object.keys(vacio.registros).length === 0);
+
+  let almacen = core.registrarIntento(vacio, {
+    modo: 'corta',
+    aciertos: 8,
+    total: 10,
+    porcentaje: 80,
+    fecha: '2026-07-10',
+    rachaMaxima: 6,
+  });
+  comprobar(
+    'registrarIntento guarda el resultado del modo',
+    almacen.registros.corta?.porcentaje === 80 && almacen.registros.corta?.total === 10,
+    JSON.stringify(almacen.registros),
+  );
+  comprobar('registrarIntento guarda el último intento', almacen.ultimoIntento?.porcentaje === 80);
+  comprobar('registrarIntento conserva el récord de racha', almacen.rachaMaxima === 6);
+  comprobar('registrarIntento no modifica el almacén recibido', Object.keys(vacio.registros).length === 0);
+
+  const peor = core.registrarIntento(almacen, {
+    modo: 'corta',
+    aciertos: 5,
+    total: 10,
+    porcentaje: 50,
+    fecha: '2026-07-11',
+    rachaMaxima: 2,
+  });
+  comprobar('un resultado peor no rebaja el récord del modo', peor.registros.corta.porcentaje === 80);
+  comprobar('el último intento sí se actualiza con un resultado peor', peor.ultimoIntento.porcentaje === 50);
+  comprobar('el récord de racha nunca baja', peor.rachaMaxima === 6);
+
+  const conReto = core.registrarIntento(almacen, {
+    modo: 'reto',
+    aciertos: 9,
+    total: 10,
+    porcentaje: 90,
+    fecha: '2026-07-10',
+    rachaMaxima: 9,
+  });
+  comprobar(
+    'el reto del día se anota aparte',
+    conReto.reto?.fecha === '2026-07-10' && conReto.reto?.aciertos === 9 && conReto.registros.corta.porcentaje === 80,
+    JSON.stringify(conReto.reto),
+  );
+  comprobar(
+    'mejorDeModo devuelve el récord guardado',
+    core.mejorDeModo(almacen, 'corta')?.porcentaje === 80 && core.mejorDeModo(almacen, 'media') === null,
+  );
+
+  const texto = core.exportarAlmacen(almacen);
+  comprobar('exportarAlmacen produce JSON válido', (() => {
+    try {
+      JSON.parse(texto);
+      return true;
+    } catch {
+      return false;
+    }
+  })());
+
+  const idaYVuelta = core.importarAlmacen(texto);
+  comprobar('un progreso exportado se vuelve a importar', idaYVuelta.ok === true);
+  comprobar(
+    'la importación conserva los récords y la racha',
+    idaYVuelta.ok && idaYVuelta.almacen.registros.corta.porcentaje === 80 && idaYVuelta.almacen.rachaMaxima === 6,
+  );
+  comprobar(
+    'el almacén importado vuelve a validarse',
+    idaYVuelta.ok && core.validarAlmacen(idaYVuelta.almacen) !== null,
+  );
+
+  const hostiles = [
+    '',
+    '   ',
+    'null',
+    '[]',
+    '"hola"',
+    '42',
+    '{',
+    '{"carrito":[]}',
+    '{"version":2,"registros":{},"rachaMaxima":0}',
+    '{"version":"1","registros":{},"rachaMaxima":0}',
+    '{"version":1}',
+    '{"version":1,"registros":null}',
+    '{"version":1,"registros":[],"rachaMaxima":0}',
+    '{"version":1,"registros":{"corta":{"mejorPorcentaje":"alto"}},"rachaMaxima":0}',
+    '{"version":1,"registros":{"corta":{"aciertos":5,"total":0,"porcentaje":50,"fecha":"2026-07-10"}},"rachaMaxima":0}',
+    '{"version":1,"registros":{"corta":{"aciertos":11,"total":10,"porcentaje":110,"fecha":"2026-07-10"}},"rachaMaxima":0}',
+    '{"version":1,"registros":{"corta":{"aciertos":5,"total":10,"porcentaje":50,"fecha":"ayer"}},"rachaMaxima":0}',
+    '{"version":1,"registros":{"inventado":{"aciertos":5,"total":10,"porcentaje":50,"fecha":"2026-07-10"}},"rachaMaxima":0}',
+    '{"version":1,"registros":{},"rachaMaxima":-3}',
+    '{"version":1,"registros":{},"rachaMaxima":"3"}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"ultimoIntento":{"modo":"inventado"}}',
+  ];
+
+  let lanzo = false;
+  let aceptados = 0;
+  for (const entrada of hostiles) {
+    try {
+      const resultadoImportacion = core.importarAlmacen(entrada);
+      if (resultadoImportacion?.ok) aceptados += 1;
+    } catch {
+      lanzo = true;
+    }
+  }
+  comprobar('la importación nunca lanza una excepción', !lanzo);
+  comprobar('un contenido ajeno o corrupto se rechaza entero', aceptados === 0, `${aceptados} aceptado(s)`);
+  comprobar('validarAlmacen rechaza null y listas', core.validarAlmacen(null) === null && core.validarAlmacen([]) === null);
+  comprobar(
+    'un payload sin campos obligatorios se rechaza',
+    core.importarAlmacen('{"version":1,"registros":{"corta":{"aciertos":5,"total":10,"porcentaje":50}}}').ok === false,
+  );
+});
+
+/* --- 11. Comparación, duración y parada ------------------------------------- */
+
+seccion('Comparación y parada', () => {
+  const primera = core.compararConRecord(70, null);
+  comprobar('sin récord previo la comparación es la primera', primera.estado === 'primera' && primera.diferencia === 0);
+
+  const mejor = core.compararConRecord(80, { porcentaje: 70, aciertos: 7, total: 10, fecha: '2026-07-09' });
+  comprobar(
+    'superar el récord se marca como mejora con su diferencia',
+    mejor.estado === 'mejor' && mejor.diferencia === 10 && mejor.mejor === 70,
+    JSON.stringify(mejor),
+  );
+
+  const igual = core.compararConRecord(70, { porcentaje: 70, aciertos: 7, total: 10, fecha: '2026-07-09' });
+  comprobar('igualar el récord se marca como empate', igual.estado === 'igual' && igual.diferencia === 0);
+
+  const peor = core.compararConRecord(50, { porcentaje: 80, aciertos: 8, total: 10, fecha: '2026-07-09' });
+  comprobar('quedarse por debajo se marca como peor', peor.estado === 'peor' && peor.diferencia === -30);
+
+  comprobar('una sesión de 40 preguntas no sugiere parar', core.sugerirParada(40) === false);
+  comprobar('una sesión de 41 preguntas sí sugiere parar', core.sugerirParada(41) === true);
+  comprobar('el umbral de sesión larga es 40', core.UMBRAL_SESION_LARGA === 40);
+
+  const duraciones = [
+    [0, '0 s'],
+    [45, '45 s'],
+    [59, '59 s'],
+    [60, '1 min'],
+    [125, '2 min 05 s'],
+  ];
+  comprobar(
+    'formatearDuracion compone una duración legible',
+    duraciones.every(([segundos, esperado]) => core.formatearDuracion(segundos) === esperado),
+    JSON.stringify(duraciones.map(([segundos]) => core.formatearDuracion(segundos))),
+  );
+
+  comprobar(
+    'la duración del examen sigue siendo 60 s por pregunta',
+    core.duracionExamen(10) === 600 && core.SEGUNDOS_POR_PREGUNTA === 60,
+  );
+});
 
 /* --- Informe --------------------------------------------------------------- */
 

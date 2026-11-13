@@ -7,13 +7,24 @@
 // oficial BOE-A-2026-15055. Cada tema empieza por "Tema N." y sus continuaciones van
 // indentadas; las cabeceras de bloque son "A) Ciencias Jurídicas", etc.
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
+import { constants } from 'node:fs';
 import { dirname } from 'node:path';
 
 const FUENTE = 'data/fuentes/programa-2026-boe.txt';
 const SALIDA = 'data/programa/programa.json';
 
 const TOTAL_TEMAS_ESPERADOS = 45;
+
+/** ¿Existe el fichero de contenido del tema? */
+const existe = async (ruta) => {
+  try {
+    await access(ruta, constants.R_OK);
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 const NOMBRES_BLOQUE = {
   A: 'Ciencias Jurídicas',
@@ -112,6 +123,11 @@ for (const bloque of bloques) {
 }
 
 const todos = bloques.flatMap((b) => b.temas);
+
+// El estado de publicación no se declara a mano: se comprueba en disco, para que
+// programa.json no mienta cuando alguien añade o retira un tema.
+for (const tema of todos) tema.publicado = await existe(tema.ruta);
+
 if (todos.length !== TOTAL_TEMAS_ESPERADOS) {
   console.error(`ERROR: se esperaban ${TOTAL_TEMAS_ESPERADOS} temas y hay ${todos.length}.`);
   const numeros = todos.map((t) => t.numero);
@@ -142,7 +158,10 @@ const salida = {
 await mkdir(dirname(SALIDA), { recursive: true });
 await writeFile(SALIDA, `${JSON.stringify(salida, null, 2)}\n`, 'utf8');
 
-console.log(`OK · ${todos.length} temas en ${bloques.length} bloques → ${SALIDA}`);
+const publicados = todos.filter((t) => t.publicado).length;
+console.log(
+  `OK · ${todos.length} temas en ${bloques.length} bloques · ${publicados} publicados → ${SALIDA}`,
+);
 for (const b of bloques) {
   console.log(`  ${b.id}) ${b.nombre}: ${b.temas.length} temas (${b.temas[0].numero}-${b.temas.at(-1).numero})`);
 }

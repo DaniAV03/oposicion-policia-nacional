@@ -594,6 +594,35 @@ dl.glosario dd {
   color: var(--texto-suave);
 }
 
+/* Autoevaluación plegable: se lee la pregunta y se abre la solución */
+details {
+  margin: 1.1em 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+details[open] {
+  background: var(--superficie-alt);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+summary::marker {
+  color: var(--acento);
+}
+
+details > p {
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+}
+
 /* Estado vacío / tema no publicado */
 .pendiente {
   margin: 2.5rem 0;

@@ -43,10 +43,46 @@ Regenerar el índice de temas a partir del texto oficial:
 node scripts/build-programa.mjs
 ```
 
-## Licencias
+Comprobar que el programa está completo y que todo recurso referenciado existe:
+
+```bash
+node scripts/verificar.mjs
+```
+
+## Seguridad
+
+El sitio no tiene servidor, así que la superficie que se puede endurecer es el documento.
+Lo que está aplicado:
+
+- **CSP estricta** en cada página mediante `<meta http-equiv="Content-Security-Policy">`:
+  `default-src 'self'`, `script-src 'self'`, `style-src 'self'`, `font-src 'self'`,
+  `img-src 'self' data:`, `connect-src 'self'`, `object-src 'none'`, `base-uri 'none'` y
+  `form-action 'none'`. Sin `'unsafe-inline'` ni `'unsafe-eval'`.
+- **Cero código y cero estilos incrustados**: los puntos de entrada son
+  `assets/js/portada.js` y `assets/js/tema-inicio.js`, y todo el estilo vive en
+  `assets/css/style.css`. Sin esa limpieza la CSP no sería real.
+- **Cero peticiones a terceros**: tipografía, estilos, scripts y SVG se sirven desde este
+  mismo origen. Sin analítica, sin CDN, sin cookies.
+- `<meta name="referrer" content="no-referrer">` y `rel="noopener noreferrer"` en todo
+  enlace saliente, incluido el contenido de los temas, que se normaliza al pintarse.
+- `.nojekyll` en la raíz y `.well-known/security.txt` conforme al RFC 9116.
+
+Un alojamiento estático no permite fijar cabeceras de respuesta: `frame-ancestors`,
+`X-Frame-Options`, `X-Content-Type-Options` y HSTS **no están aplicadas**, y no se pueden
+imponer desde GitHub Pages. `SECURITY.md` explica qué cubre realmente la CSP en `<meta>` y
+qué queda fuera, sin adornos.
+
+## Licencias y aviso legal
 
 - **Código**: MIT. Ver `LICENSE`.
 - **Contenido del temario y ejercicios**: CC BY-SA 4.0. Ver `ATRIBUCIONES.md`.
+- **Aviso legal completo**: `legal.html`, enlazado desde el pie de todas las páginas:
+  titularidad, licencias, atribución de las fuentes oficiales, tipografía y ausencia de
+  cookies y de datos personales.
+
+Este proyecto **no es oficial**: no pertenece ni está respaldado por el Ministerio del
+Interior ni por la Dirección General de la Policía, y no sustituye a las bases publicadas en
+el BOE. El aviso se muestra también en la portada.
 
 Las preguntas de exámenes oficiales proceden de documentos del sector público y se
 reutilizan con atribución conforme a la Ley 37/2007 y al RD 1495/2011. No se incluye

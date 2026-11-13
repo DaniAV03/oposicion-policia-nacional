@@ -32,6 +32,33 @@ export async function temaPublicado(tema) {
 
 /* --- Portada --------------------------------------------------------------- */
 
+/* Iconos de los tres bloques del programa. Son SVG dibujados a mano, de 24×24,
+   sin relleno y con currentColor: heredan el color del tema y se imprimen bien.
+   El marco que los envuelve lleva aria-hidden="true", así que la decoración no
+   se anuncia y la información del bloque sigue estando sólo en el texto. */
+const ICONOS_BLOQUE = {
+  A: `<svg class="bloque__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 4.6v15" />
+        <path d="M6.4 6.6h11.2" />
+        <path d="M6.4 6.6 3.4 13.2h6Z" />
+        <path d="M17.6 6.6 14.6 13.2h6Z" />
+        <path d="M8.6 20.4h6.8" />
+      </svg>`,
+  B: `<svg class="bloque__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="6" r="2.7" />
+        <circle cx="5.5" cy="17.4" r="2.7" />
+        <circle cx="18.5" cy="17.4" r="2.7" />
+        <path d="M10.4 8.4 7.1 14.9" />
+        <path d="M13.6 8.4l3.3 6.5" />
+        <path d="M8.2 17.4h7.6" />
+      </svg>`,
+  C: `<svg class="bloque__icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M9.6 3.6h4.8" />
+        <path d="M10.6 3.6v5.1l-4.5 8.4a2.1 2.1 0 0 0 1.9 3.1h8a2.1 2.1 0 0 0 1.9-3.1l-4.5-8.4V3.6" />
+        <path d="M8.5 14.6h7" />
+      </svg>`,
+};
+
 export async function pintarPortada(contenedor) {
   const programa = await cargarPrograma();
   const temas = temasDe(programa);
@@ -50,7 +77,7 @@ export async function pintarPortada(contenedor) {
 
   const fuente = document.getElementById('fuente');
   if (fuente) {
-    fuente.innerHTML = `Programa: <a href="${programa.fuenteUrl}" rel="noopener">${programa.fuente}</a>`;
+    fuente.innerHTML = `Programa: <a href="${programa.fuenteUrl}" rel="noopener noreferrer">${programa.fuente}</a>`;
   }
 
   const fragmento = document.createDocumentFragment();
@@ -66,6 +93,7 @@ export async function pintarPortada(contenedor) {
 
     seccion.innerHTML = `
       <div class="bloque__cabecera">
+        <span class="bloque__icono-marco" aria-hidden="true">${ICONOS_BLOQUE[bloque.id] ?? ''}</span>
         <span class="bloque__etiqueta">Bloque ${bloque.id}</span>
         <h2>${bloque.nombre}</h2>
         <span class="bloque__cuenta">
@@ -112,6 +140,7 @@ export async function pintarPortada(contenedor) {
   }
 
   contenedor.replaceChildren(fragmento);
+  normalizarEnlaces(document);
 }
 
 /* --- Vista de tema --------------------------------------------------------- */
@@ -167,7 +196,7 @@ export async function pintarTema() {
         redacta desde la normativa vigente, sin copiar temarios comerciales, así que se publica
         tema a tema.</p>
         <p>Mientras tanto puedes consultar la legislación que lo sustenta en el
-        <a href="https://www.boe.es/biblioteca_juridica/" rel="noopener">BOE</a>.</p>
+        <a href="https://www.boe.es/biblioteca_juridica/" rel="noopener noreferrer">BOE</a>.</p>
       </div>`;
     lateral.hidden = true;
   } else {
@@ -176,6 +205,7 @@ export async function pintarTema() {
     construirIndiceLateral(articulo.querySelector('#contenido'), lateral);
   }
 
+  normalizarEnlaces(articulo);
   pintarPaginacion(temas, tema);
 }
 
@@ -223,6 +253,21 @@ function pintarPaginacion(temas, tema) {
 }
 
 /* --- Utilidades ------------------------------------------------------------ */
+
+/* Todo enlace saliente lleva rel="noopener noreferrer": noopener corta el
+   acceso a window.opener y noreferrer evita enviar la URL de origen. Los
+   enlaces del temario viven en data/temas/*.html, así que la garantía se
+   aplica al pintar y no depende de que cada fichero de contenido la repita. */
+export function normalizarEnlaces(raiz = document) {
+  for (const enlace of raiz.querySelectorAll('a[href]')) {
+    const destino = enlace.getAttribute('href') ?? '';
+    if (!/^https?:/i.test(destino)) continue;
+    const valores = new Set((enlace.getAttribute('rel') ?? '').split(/\s+/).filter(Boolean));
+    valores.add('noopener');
+    valores.add('noreferrer');
+    enlace.setAttribute('rel', [...valores].join(' '));
+  }
+}
 
 export function escapar(texto) {
   return String(texto)

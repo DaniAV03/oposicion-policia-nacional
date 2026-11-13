@@ -2,12 +2,18 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Temario de Policía Nacional · Escala Básica</title>
     <meta
       name="description"
       content="Los 45 temas del programa oficial de la Escala Básica de Policía Nacional, desarrollados desde la normativa vigente, con test de exámenes anteriores."
     />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="assets/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
@@ -20,31 +26,79 @@
         </a>
         <nav class="nav" aria-label="Principal">
           <a href="index.html" aria-current="page">Temario</a>
+          <a href="legal.html">Aviso legal</a>
         </nav>
       </div>
     </header>
 
     <main>
       <section class="heroe">
-        <div class="envoltorio">
-          <h1>Temario oficial de la Escala Básica</h1>
-          <p class="heroe__entradilla">
-            Los 45 temas del programa, desarrollados desde la normativa vigente y no desde
-            apuntes copiados. Cada tema explica la materia, señala las trampas típicas del
-            examen y termina con autoevaluación.
-          </p>
-          <ul class="datos" id="resumen">
-            <li>Cargando programa…</li>
-          </ul>
-          <p id="fuente" class="heroe__entradilla" style="margin-top: 1.25rem; font-size: 0.88rem"></p>
+        <div class="envoltorio heroe__interior">
+          <div class="heroe__texto">
+            <h1>Temario oficial de la Escala Básica</h1>
+            <p class="heroe__entradilla">
+              Los 45 temas del programa, desarrollados desde la normativa vigente y no desde
+              apuntes copiados. Cada tema explica la materia, señala las trampas típicas del
+              examen y termina con autoevaluación.
+            </p>
+            <ul class="datos" id="resumen">
+              <li>Cargando programa…</li>
+            </ul>
+            <p id="fuente" class="heroe__fuente"></p>
+          </div>
+
+          <!--
+            Adorno geométrico de la portada. Es decoración pura: no transmite
+            información, va marcado con aria-hidden y su color se resuelve en la
+            hoja de estilos con las variables del tema (claro y oscuro).
+          -->
+          <svg class="heroe__grafico" viewBox="0 0 520 360" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="grafico-trama" width="26" height="26" patternUnits="userSpaceOnUse">
+                <circle class="grafico__punto" cx="1.5" cy="1.5" r="1.5" />
+              </pattern>
+            </defs>
+            <rect class="grafico__trama" x="0" y="0" width="520" height="360" fill="url(#grafico-trama)" />
+            <g class="grafico__trazo">
+              <circle cx="300" cy="180" r="136" />
+              <circle cx="300" cy="180" r="92" />
+              <circle cx="300" cy="180" r="48" />
+              <path d="M300 44 418 248 182 248 Z" />
+              <path d="M300 316 182 112 418 112 Z" />
+              <path d="M148 180H452" />
+            </g>
+            <g class="grafico__focos">
+              <circle cx="300" cy="180" r="5" />
+              <circle cx="300" cy="44" r="3.5" />
+              <circle cx="300" cy="316" r="3.5" />
+              <circle cx="418" cy="248" r="3.5" />
+              <circle cx="182" cy="248" r="3.5" />
+              <circle cx="182" cy="112" r="3.5" />
+              <circle cx="418" cy="112" r="3.5" />
+            </g>
+          </svg>
         </div>
       </section>
+
+      <div class="envoltorio">
+        <p class="aviso-oficial">
+          <strong>Sitio no oficial.</strong> Este proyecto no pertenece ni está respaldado por
+          el Ministerio del Interior ni por la Dirección General de la Policía, y no sustituye
+          a las bases oficiales publicadas en el BOE.
+          <a href="legal.html">Aviso legal, licencias y atribuciones</a>.
+        </p>
+      </div>
 
       <div class="envoltorio" id="bloques"></div>
     </main>
 
     <footer class="pie">
       <div class="envoltorio">
+        <p class="pie__aviso">
+          <strong>Sin vinculación oficial.</strong> Sitio no oficial, sin relación con el
+          Ministerio del Interior ni con la Dirección General de la Policía. La convocatoria
+          vigente es la publicada en el BOE.
+        </p>
         <p>
           Programa oficial reutilizado con atribución conforme a la Ley 37/2007 y al
           RD 1495/2011. El texto de estudio y los diagramas son de elaboración propia
@@ -53,12 +107,12 @@
         <p>
           Tipografía <strong>Lexend</strong>, autoalojada, bajo SIL Open Font License 1.1.
         </p>
+        <p class="pie__enlaces">
+          <a href="legal.html">Aviso legal, licencias y atribuciones</a>
+        </p>
       </div>
     </footer>
 
-    <script type="module">
-      import { pintarPortada, mostrarError } from './assets/js/app.js';
-      pintarPortada(document.getElementById('bloques')).catch(mostrarError);
-    </script>
+    <script type="module" src="assets/js/portada.js"></script>
   </body>
 </html>

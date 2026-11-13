@@ -251,6 +251,85 @@ code {
   font-size: 1.06rem;
 }
 
+/* Rejilla de la portada: texto a la izquierda, adorno geométrico a la derecha. */
+.heroe__interior {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .heroe__interior {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+.heroe__fuente {
+  margin-top: 1.25rem;
+  font-size: 0.88rem;
+}
+
+/* Adorno de la portada. Es decoración: no aporta información, va con
+   aria-hidden="true" y su contraste nunca arrastra el del texto. Se pinta con
+   clases, no con atributos fill="var(--x)", porque los atributos de
+   presentación no resuelven variables CSS de forma fiable. */
+.heroe__grafico {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .heroe__grafico {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    justify-self: end;
+  }
+}
+
+.grafico__punto {
+  fill: var(--borde);
+}
+
+.grafico__trazo {
+  fill: none;
+  stroke: var(--acento);
+  stroke-width: 1.1;
+  opacity: 0.32;
+}
+
+.grafico__focos {
+  fill: var(--acento);
+  opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .grafico__trazo {
+    opacity: 0.3;
+  }
+
+  .grafico__focos {
+    opacity: 0.45;
+  }
+}
+
+/* Aviso de no vinculación: portada, páginas de tema y aviso legal. Es texto
+   informativo, no decoración: va visible y en el flujo del documento. */
+.aviso-oficial {
+  max-width: var(--medida-texto);
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) 0 0;
+  padding: 0.85rem 1.15rem;
+  background: var(--aviso-fondo);
+  border: 1px solid var(--aviso-borde);
+  border-radius: var(--radio);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+.aviso-oficial strong {
+  font-weight: 700;
+}
+
 .datos {
   display: flex;
   flex-wrap: wrap;
@@ -284,9 +363,32 @@ code {
 .bloque__cabecera {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.5rem 1rem;
   margin-bottom: 1.25rem;
+}
+
+/* Icono del bloque: decoración, nunca fuente de información. El marco lleva
+   aria-hidden, así que un lector de pantalla no lo anuncia. */
+.bloque__icono-marco {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 9px;
+  background: var(--acento-suave);
+  border: 1px solid var(--borde);
+  color: var(--acento);
+}
+
+.bloque__icono {
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .bloque__etiqueta {
@@ -656,6 +758,38 @@ details > p {
   color: var(--texto-suave);
 }
 
+/* --- Página de aviso legal ------------------------------------------------ */
+
+.documento {
+  max-width: var(--medida-texto);
+  padding-block: clamp(2rem, 4vw, 3rem) 4rem;
+}
+
+.documento__meta {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 1.75rem;
+}
+
+.documento :is(ul, ol) {
+  margin: 0 0 1em;
+  padding-left: 1.25rem;
+}
+
+.documento li {
+  margin-bottom: 0.4rem;
+}
+
+.documento__url,
+.documento__ref {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--superficie-alt);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
 /* --- Pie ------------------------------------------------------------------ */
 
 .pie {
@@ -671,12 +805,41 @@ details > p {
   margin: 0 0 0.6rem;
 }
 
+.pie__aviso {
+  color: var(--texto);
+}
+
+.pie p.pie__enlaces {
+  margin-top: 1rem;
+}
+
+/* --- Movimiento reducido -------------------------------------------------- */
+
+/* El adorno de la portada es estático: no hay animación que desactivar. Sí se
+   neutralizan las transiciones de las tarjetas y el desplazamiento suave. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  a.tema:hover {
+    transform: none;
+  }
+}
+
 /* --- Impresión: temario para estudiar en papel ---------------------------- */
 
 @media print {
   .cabecera,
   .lateral,
-  .paginacion {
+  .paginacion,
+  .heroe__grafico,
+  .heroe__fuente {
     display: none;
   }
 

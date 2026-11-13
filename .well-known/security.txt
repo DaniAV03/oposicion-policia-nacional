@@ -1,0 +1,12 @@
+# Fichero de seguridad del sitio (RFC 9116).
+# Sitio: https://daniav03.github.io/oposicion-policia-nacional/
+#
+# Es un sitio estático: no hay código de servidor, ni cookies, ni datos
+# personales almacenados. Los problemas esperables son de contenido,
+# de dependencias del navegador o de la configuración de despliegue.
+
+Contact: https://github.com/DaniAV03/oposicion-policia-nacional/issues
+Expires: 2027-06-30T23:59:59.000Z
+Preferred-Languages: es, en
+Canonical: https://daniav03.github.io/oposicion-policia-nacional/.well-known/security.txt
+Policy: https://github.com/DaniAV03/oposicion-policia-nacional/blob/main/SECURITY.md

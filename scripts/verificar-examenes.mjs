@@ -36,7 +36,10 @@ const clavePregunta = (pregunta) => {
   return [normalizar(pregunta.enunciado), ...textos].join('\u0000');
 };
 
-const archivos = (await readdir(directorio)).filter((f) => f.endsWith('.json')).sort();
+// `index.json` es el manifiesto que consume el motor de test, no un banco de preguntas.
+const archivos = (await readdir(directorio))
+  .filter((f) => f.endsWith('.json') && f !== 'index.json')
+  .sort();
 if (archivos.length === 0) fallo(`No hay ningún fichero .json en ${directorio}`);
 
 for (const archivo of archivos) {

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test de convocatorias anteriores · Policía Nacional</title>
+    <meta
+      name="description"
+      content="Test aleatorizado con las preguntas de los cuestionarios oficiales de convocatorias anteriores a Policía Nacional, Escala Básica: práctica con corrección inmediata y modo examen."
+    />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="envoltorio cabecera__interior">
+        <a class="marca" href="index.html">
+          <span class="marca__sigla" aria-hidden="true">PN</span>
+          <span>Policía Nacional · Escala Básica</span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <a href="index.html">Temario</a>
+          <a href="test.html" aria-current="page">Test</a>
+          <a href="legal.html">Aviso legal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="envoltorio test">
+      <div class="test__entrada">
+        <h1>Test de convocatorias anteriores</h1>
+        <p class="test__entradilla">
+          Preguntas de los cuestionarios oficiales ya publicados, en orden aleatorio y sin
+          repetir dentro de la sesión. Puedes practicar con corrección inmediata o simular un
+          examen con tiempo y corrección al final.
+        </p>
+      </div>
+
+      <p class="aviso-oficial">
+        <strong>Sitio no oficial.</strong> Este proyecto no pertenece ni está respaldado por el
+        Ministerio del Interior ni por la Dirección General de la Policía. La puntuación que
+        muestra esta página es un recuento de práctica, no una calificación: la fórmula oficial
+        de penalización debe confirmarse en las bases publicadas en el BOE y aquí se aplica con
+        penalización 0.
+      </p>
+
+      <p class="test__estado" id="estado" role="status">Cargando el banco de preguntas…</p>
+      <p class="visualmente-oculto" id="anuncio" role="status" aria-live="polite"></p>
+
+      <section class="panel" id="panel-inicio" aria-labelledby="titulo-inicio" hidden>
+        <h2 id="titulo-inicio">Configurar la sesión</h2>
+
+        <div class="controles">
+          <div class="campo">
+            <label for="filtro-convocatoria">Convocatoria</label>
+            <select id="filtro-convocatoria"></select>
+          </div>
+
+          <div class="campo">
+            <label for="preguntas-sesion">Número de preguntas</label>
+            <input
+              id="preguntas-sesion"
+              name="preguntas"
+              type="number"
+              min="1"
+              step="1"
+              value="30"
+              inputmode="numeric"
+            />
+            <p class="campo__ayuda" id="ayuda-preguntas">
+              Se aplica a la sesión rápida y al modo examen. El máximo lo marca el banco
+              disponible.
+            </p>
+          </div>
+        </div>
+
+        <fieldset class="modos">
+          <legend>Modo</legend>
+
+          <label class="modo">
+            <input type="radio" name="modo" value="practica" checked />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Práctica</span>
+              <span class="modo__texto">
+                Todas las preguntas del filtro, en orden aleatorio. Cada respuesta se corrige
+                al instante y se muestra la opción correcta.
+              </span>
+            </span>
+          </label>
+
+          <label class="modo">
+            <input type="radio" name="modo" value="rapida" />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Sesión rápida</span>
+              <span class="modo__texto">
+                Un número limitado de preguntas al azar, sin repetir, con corrección inmediata.
+              </span>
+            </span>
+          </label>
+
+          <label class="modo">
+            <input type="radio" name="modo" value="examen" />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Examen</span>
+              <span class="modo__texto">
+                Las preguntas elegidas, sin corregir hasta el final, con un temporizador
+                orientativo de 60 segundos por pregunta. El tiempo real lo fijan las bases
+                oficiales.
+              </span>
+            </span>
+          </label>
+        </fieldset>
+
+        <p class="botonera">
+          <button class="boton" type="button" id="empezar">Empezar</button>
+        </p>
+
+        <div class="fuentes-banco" id="fuentes-banco" hidden>
+          <h3>Procedencia de las preguntas</h3>
+          <p>
+            Cuestionarios oficiales reutilizados con atribución conforme a la Ley 37/2007 y al
+            RD 1495/2011. No se incluye material de academias ni de editoriales.
+          </p>
+          <ul id="lista-fuentes"></ul>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-sesion" aria-labelledby="enunciado" hidden>
+        <div class="sesion__barra">
+          <p class="sesion__progreso" id="progreso"></p>
+          <p class="sesion__marcador" id="marcador"></p>
+          <p class="sesion__reloj" id="reloj" role="timer" hidden></p>
+        </div>
+
+        <p class="pregunta__origen" id="origen"></p>
+        <h2 class="pregunta__enunciado" id="enunciado" tabindex="-1"></h2>
+        <div class="opciones" id="opciones"></div>
+        <div class="retroalimentacion" id="retroalimentacion" hidden></div>
+        <div class="botonera" id="acciones-sesion"></div>
+
+        <p class="sesion__atajos">
+          Teclado: <kbd>1</kbd>, <kbd>2</kbd> y <kbd>3</kbd> responden; <kbd>Intro</kbd> avanza.
+        </p>
+      </section>
+
+      <section class="panel" id="panel-resultado" aria-labelledby="titulo-resultado" hidden>
+        <h2 id="titulo-resultado" tabindex="-1">Resultado</h2>
+        <div id="resultado-cifras"></div>
+        <p class="test__nota" id="nota-puntuacion"></p>
+        <div id="desglose"></div>
+        <div id="fallos"></div>
+        <div class="botonera" id="acciones-resultado"></div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="envoltorio">
+        <p class="pie__aviso">
+          <strong>Sin vinculación oficial.</strong> Sitio no oficial, sin relación con el
+          Ministerio del Interior ni con la Dirección General de la Policía. La convocatoria
+          vigente es la publicada en el BOE.
+        </p>
+        <p>
+          Preguntas procedentes de los cuestionarios oficiales de convocatorias anteriores,
+          reutilizadas con atribución (Ley 37/2007, RD 1495/2011). El motor de test y su
+          interfaz son de elaboración propia y se publican bajo CC BY-SA 4.0.
+        </p>
+        <p>
+          Tipografía <strong>Lexend</strong>, autoalojada, bajo SIL Open Font License 1.1.
+        </p>
+        <p class="pie__enlaces">
+          <a href="legal.html">Aviso legal, licencias y atribuciones</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/js/test.js"></script>
+  </body>
+</html>

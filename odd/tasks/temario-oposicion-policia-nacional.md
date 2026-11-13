@@ -113,7 +113,29 @@ versionado. Sin PHP (GitHub Pages no ejecuta código de servidor).
 
 > la fuente con la que hagas el temario que sea lexend
 
-### L6 — fuente autoritativa del programa
+### L7 — normas derogadas que otros temarios siguen citando
+
+Al redactar los temas 8 y 9 se detectó que la estructura orgánica de la Dirección General de la
+Policía ya no está en el RD 734/2020: ese real decreto quedó derogado y la estructura vigente
+está en el **RD 207/2024, de 27 de febrero**. Además, el capítulo IV del título II de la
+LO 2/1986 (artículos 16 a 26) está derogado por la **LO 9/2015**. Ambos cambios se explican en
+el texto y se convierten en trampas de examen, en lugar de reproducir la norma muerta.
+
+Quedan marcados como no verificados, y por tanto sin afirmar en el temario: la composición de
+la Junta de Gobierno y del Consejo Asesor de la Dirección General, el régimen disciplinario
+vigente de las policías locales, y las denominaciones históricas «Gobernador Civil» y
+«Director de la Seguridad del Estado» que siguen literalmente en la LO 2/1986.
+
+Los recuentos de preguntas por tema (13 en el tema 8, 5 en el tema 9) proceden del análisis de
+un portal del sector, no del BOE: se usan solo para priorizar el orden de redacción, nunca como
+afirmación del temario.
+
+### L8 — alcance de la verificación
+
+Los verificadores del repositorio comprueban estructura, recursos, banco y motor. **No
+comprueban verdad jurídica.** Un número de artículo equivocado o una cifra institucional
+caducada pasan todas las puertas. Por eso cada tema declara sus preceptos y existe una tarea
+de auditoría legal abierta por lote.
 
 El índice de una academia usado en el primer intento tenía la columna de numeración
 corrupta: los temas 27-37 aparecían desplazados. Localizada la fuente oficial citada en

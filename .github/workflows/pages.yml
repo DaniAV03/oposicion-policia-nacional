@@ -19,19 +19,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Descargar el repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Regenerar el índice de temas desde la fuente oficial
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: '24'
       - run: node scripts/build-programa.mjs
+      - run: node scripts/verificar.mjs
 
       - name: Preparar el sitio estático
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Empaquetar el sitio
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: .
 
@@ -44,4 +45,4 @@ jobs:
     steps:
       - name: Publicar
         id: despliegue
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

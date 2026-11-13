@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Temario de Policía Nacional · Escala Básica</title>
+    <meta
+      name="description"
+      content="Los 45 temas del programa oficial de la Escala Básica de Policía Nacional, desarrollados desde la normativa vigente, con test de exámenes anteriores."
+    />
+    <link rel="preload" href="assets/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="envoltorio cabecera__interior">
+        <a class="marca" href="index.html">
+          <span class="marca__sigla" aria-hidden="true">PN</span>
+          <span>Policía Nacional · Escala Básica</span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <a href="index.html" aria-current="page">Temario</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="heroe">
+        <div class="envoltorio">
+          <h1>Temario oficial de la Escala Básica</h1>
+          <p class="heroe__entradilla">
+            Los 45 temas del programa, desarrollados desde la normativa vigente y no desde
+            apuntes copiados. Cada tema explica la materia, señala las trampas típicas del
+            examen y termina con autoevaluación.
+          </p>
+          <ul class="datos" id="resumen">
+            <li>Cargando programa…</li>
+          </ul>
+          <p id="fuente" class="heroe__entradilla" style="margin-top: 1.25rem; font-size: 0.88rem"></p>
+        </div>
+      </section>
+
+      <div class="envoltorio" id="bloques"></div>
+    </main>
+
+    <footer class="pie">
+      <div class="envoltorio">
+        <p>
+          Programa oficial reutilizado con atribución conforme a la Ley 37/2007 y al
+          RD 1495/2011. El texto de estudio y los diagramas son de elaboración propia
+          y se publican bajo CC BY-SA 4.0.
+        </p>
+        <p>
+          Tipografía <strong>Lexend</strong>, autoalojada, bajo SIL Open Font License 1.1.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { pintarPortada, mostrarError } from './assets/js/app.js';
+      pintarPortada(document.getElementById('bloques')).catch(mostrarError);
+    </script>
+  </body>
+</html>

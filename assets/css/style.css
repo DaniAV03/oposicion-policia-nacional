@@ -1,0 +1,681 @@
+/* ============================================================================
+   Hoja de estilos principal
+   Tipografía: Lexend (autoalojada, SIL OFL 1.1). Sin cursivas: Lexend no las
+   incluye, así que el énfasis se hace con peso, color y filetes.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../fonts/lexend-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../fonts/lexend-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* --- Tokens --------------------------------------------------------------- */
+
+:root {
+  --fuente: 'Lexend', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fondo: #fbfaf6;
+  --superficie: #ffffff;
+  --superficie-alt: #f2f0e9;
+  --texto: #1b1b18;
+  --texto-suave: #5c5c55;
+  --borde: #e0ded4;
+  --acento: #16507e;
+  --acento-suave: #e8f0f7;
+  --aviso-fondo: #fdf3e3;
+  --aviso-borde: #d99b2b;
+  --clave-fondo: #eaf4ee;
+  --clave-borde: #2f7d4f;
+  --error: #a3341f;
+
+  --radio: 10px;
+  --sombra: 0 1px 2px rgb(0 0 0 / 6%), 0 6px 18px rgb(0 0 0 / 5%);
+
+  --medida-texto: 68ch;
+  --espacio: clamp(1rem, 2.5vw, 2rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #14161a;
+    --superficie: #1c1f25;
+    --superficie-alt: #23272e;
+    --texto: #e8e8e4;
+    --texto-suave: #a3a39c;
+    --borde: #33383f;
+    --acento: #7fb2dd;
+    --acento-suave: #1d2a35;
+    --aviso-fondo: #2c2418;
+    --aviso-borde: #b08334;
+    --clave-fondo: #1b2a20;
+    --clave-borde: #63b184;
+    --error: #e08270;
+    --sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
+  }
+}
+
+/* --- Base ----------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: clamp(1rem, 0.55vw + 0.95rem, 1.09rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--texto);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.011em;
+  text-wrap: balance;
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 2.6vw + 1rem, 2.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 1.4vw + 1rem, 1.65rem);
+  margin-top: 2.2em;
+}
+
+h3 {
+  font-size: 1.12rem;
+  margin-top: 1.8em;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--acento);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+code {
+  font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--superficie-alt);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Oculto a la vista, disponible para lectores de pantalla. */
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* --- Estructura ----------------------------------------------------------- */
+
+.envoltorio {
+  width: min(100% - 2 * var(--espacio), 1180px);
+  margin-inline: auto;
+}
+
+.cabecera {
+  border-bottom: 1px solid var(--borde);
+  background: var(--superficie);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cabecera__interior {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.85rem;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.marca__sigla {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .marca__sigla {
+    color: #10202c;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.94rem;
+}
+
+.nav a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--acento);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* --- Portada -------------------------------------------------------------- */
+
+.heroe {
+  padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--borde);
+}
+
+.heroe__entradilla {
+  max-width: var(--medida-texto);
+  color: var(--texto-suave);
+  font-size: 1.06rem;
+}
+
+.datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+}
+
+.datos li {
+  background: var(--superficie-alt);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  color: var(--texto-suave);
+}
+
+.datos strong {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+/* --- Bloques y lista de temas -------------------------------------------- */
+
+.bloque {
+  padding-block: clamp(1.8rem, 3vw, 2.6rem);
+  border-bottom: 1px solid var(--borde);
+}
+
+.bloque__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.bloque__etiqueta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.bloque h2 {
+  margin: 0;
+}
+
+.bloque__cuenta {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.temas {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .temas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tema {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.95rem 1.1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+a.tema:hover {
+  border-color: var(--acento);
+  transform: translateY(-1px);
+  box-shadow: var(--sombra);
+}
+
+.tema__numero {
+  display: grid;
+  place-items: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 8px;
+  background: var(--acento-suave);
+  color: var(--acento);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.tema__cuerpo {
+  min-width: 0;
+}
+
+.tema__titulo {
+  display: block;
+  font-weight: 600;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+.tema__epigrafe {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tema--pendiente {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.tema__estado {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+/* --- Vista de tema -------------------------------------------------------- */
+
+.lectura {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-block: clamp(1.5rem, 3vw, 2.5rem) 4rem;
+}
+
+@media (min-width: 1000px) {
+  .lectura {
+    grid-template-columns: minmax(0, 1fr) 258px;
+    align-items: start;
+  }
+}
+
+.articulo {
+  max-width: var(--medida-texto);
+}
+
+.migaja {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 0.75rem;
+}
+
+.migaja a {
+  color: inherit;
+}
+
+.articulo__epigrafe {
+  margin: 1.25rem 0 2rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--superficie-alt);
+  border-left: 3px solid var(--acento);
+  border-radius: 0 var(--radio) var(--radio) 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.articulo__epigrafe strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+/* Índice lateral del tema */
+.lateral {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 1000px) {
+  .lateral {
+    position: sticky;
+    top: 5rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--borde);
+  }
+}
+
+.lateral__titulo {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-bottom: 0.75rem;
+}
+
+.lateral ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.lateral a {
+  display: block;
+  padding: 0.32rem 0.5rem;
+  border-radius: 6px;
+  color: var(--texto-suave);
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.lateral a:hover {
+  background: var(--superficie-alt);
+  color: var(--acento);
+}
+
+/* --- Piezas de contenido del temario ------------------------------------- */
+
+.aviso,
+.clave {
+  margin: 1.6em 0;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radio);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.aviso {
+  background: var(--aviso-fondo);
+  border: 1px solid var(--aviso-borde);
+}
+
+.clave {
+  background: var(--clave-fondo);
+  border: 1px solid var(--clave-borde);
+}
+
+.aviso__titulo,
+.clave__titulo {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.aviso__titulo {
+  color: var(--aviso-borde);
+}
+
+.clave__titulo {
+  color: var(--clave-borde);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 0.84rem;
+  color: var(--texto-suave);
+  padding-bottom: 0.5rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  background: var(--superficie-alt);
+}
+
+tbody tr:hover {
+  background: var(--acento-suave);
+}
+
+figure {
+  margin: 2em 0;
+}
+
+figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+dl.glosario {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.5em 0;
+}
+
+dl.glosario dt {
+  font-weight: 600;
+}
+
+dl.glosario dd {
+  margin: 0.15rem 0 0;
+  color: var(--texto-suave);
+}
+
+/* Estado vacío / tema no publicado */
+.pendiente {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+
+.pendiente p:last-child {
+  margin-bottom: 0;
+}
+
+/* Navegación entre temas */
+.paginacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.92rem;
+}
+
+.paginacion a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.paginacion__vacio {
+  color: var(--texto-suave);
+}
+
+/* --- Pie ------------------------------------------------------------------ */
+
+.pie {
+  border-top: 1px solid var(--borde);
+  padding-block: 2rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}
+
+.pie p {
+  max-width: 80ch;
+  margin: 0 0 0.6rem;
+}
+
+/* --- Impresión: temario para estudiar en papel ---------------------------- */
+
+@media print {
+  .cabecera,
+  .lateral,
+  .paginacion {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .articulo {
+    max-width: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  figure,
+  table,
+  .aviso,
+  .clave {
+    break-inside: avoid;
+  }
+}

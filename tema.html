@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tema · Policía Nacional Escala Básica</title>
+    <link rel="preload" href="assets/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <div class="envoltorio cabecera__interior">
+        <a class="marca" href="index.html">
+          <span class="marca__sigla" aria-hidden="true">PN</span>
+          <span>Policía Nacional · Escala Básica</span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <a href="index.html">Temario</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="envoltorio lectura">
+      <article class="articulo" id="articulo">
+        <p class="migaja" id="migaja"></p>
+        <h1 id="titulo-tema">Cargando…</h1>
+        <div class="articulo__epigrafe" id="epigrafe-tema"></div>
+        <div id="contenido"></div>
+      </article>
+
+      <aside class="lateral" id="lateral" aria-label="Contenido del tema" hidden>
+        <p class="lateral__titulo">En este tema</p>
+        <div id="lateral-lista"></div>
+      </aside>
+    </main>
+
+    <div class="envoltorio">
+      <nav class="paginacion" id="paginacion" aria-label="Navegación entre temas"></nav>
+    </div>
+
+    <footer class="pie">
+      <div class="envoltorio">
+        <p>
+          Texto de elaboración propia a partir de la normativa publicada en el BOE, bajo
+          CC BY-SA 4.0. Programa oficial reutilizado con atribución (Ley 37/2007,
+          RD 1495/2011).
+        </p>
+      </div>
+    </footer>
+
+    <script type="module">
+      import { pintarTema, mostrarError } from './assets/js/app.js';
+      pintarTema().catch(mostrarError);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+# Dependencias y artefactos locales
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Salidas de trabajo que no son fuente
+tmp/
+*.log
+
+# Exámenes originales descargados (documentos de terceros: no se versionan,
+# se reconstruyen con scripts/extraer-examenes.mjs desde su URL oficial)
+data/fuentes/pdf/

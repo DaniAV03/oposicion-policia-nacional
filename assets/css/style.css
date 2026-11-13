@@ -44,6 +44,7 @@
   --clave-fondo: #eaf4ee;
   --clave-borde: #2f7d4f;
   --error: #a3341f;
+  --error-fondo: #fbeeea;
 
   /* Acentos secundarios. El ámbar identifica el bloque de Ciencias Sociales y el
      verde el de Materias Técnico-Científicas; el azul sigue siendo el principal.
@@ -76,6 +77,7 @@
     --clave-fondo: #1b2a20;
     --clave-borde: #63b184;
     --error: #e08270;
+    --error-fondo: #33231f;
     --ambar: #f0be63;
     --ambar-oscuro: #d59b3c;
     --verde: #6fc7bd;
@@ -1010,6 +1012,14 @@ details > p {
   color: var(--error);
 }
 
+.test__nota-inicio {
+  max-width: 62ch;
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--texto-suave);
+}
+
 .test__nota {
   margin: 1.25rem 0 0;
   padding: 0.9rem 1.1rem;
@@ -1136,6 +1146,14 @@ input[type='number']:disabled {
   font-weight: 600;
 }
 
+/* Recuento real de cada tamaño, acotado al banco del filtro. Se compone en
+   cifras tabulares para que no baile al cambiar de convocatoria. */
+.modo__cuenta {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-suave);
+}
+
 .modo__texto {
   font-size: 0.9rem;
   line-height: 1.55;
@@ -1207,6 +1225,115 @@ input[type='number']:disabled {
   margin-bottom: 0.35rem;
 }
 
+/* --- Reto del día -------------------------------------------------------- */
+
+.reto,
+.progreso {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+}
+
+.reto h3,
+.progreso h3 {
+  margin-top: 0;
+}
+
+.reto p,
+.progreso p {
+  max-width: 62ch;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.reto__estado,
+.progreso__nota {
+  color: var(--texto-suave);
+}
+
+.reto__estado {
+  font-variant-numeric: tabular-nums;
+}
+
+.progreso__aviso {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--aviso-borde);
+  border-radius: var(--radio);
+  background: var(--aviso-fondo);
+  color: var(--texto);
+}
+
+.progreso__confirmacion {
+  margin-top: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--error);
+  border-radius: var(--radio);
+  background: var(--superficie-alt);
+}
+
+.progreso__confirmacion p {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.progreso__confirmacion p:last-child {
+  margin-bottom: 0;
+}
+
+/* Marcas guardadas: rejilla de fichas, sin jerarquía de podio ni medallas. */
+.historial {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.historial__fila {
+  padding: 0.7rem 0.85rem;
+  background: var(--superficie-alt);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.historial dt {
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.historial dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.92rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Selector de fichero: el control nativo se oculta sin sacarlo del orden de
+   tabulación, y el foco se dibuja sobre la etiqueta que hace de botón. */
+.entrada-fichero {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.boton--fichero {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.entrada-fichero:focus-visible + .boton {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
 /* --- Pregunta en curso --------------------------------------------------- */
 
 .sesion__barra {
@@ -1244,6 +1371,56 @@ input[type='number']:disabled {
   color: var(--error);
 }
 
+/* Racha y ritmo: información de fondo, sin color de alarma ni parpadeo. */
+.sesion__racha {
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.sesion__barra .sesion__ritmo {
+  margin-left: auto;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Avance de la sesión: barra nativa, sin cifras que compitan con el enunciado. */
+.sesion__medidor {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 0 0 1.1rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--superficie-alt);
+  accent-color: var(--acento);
+}
+
+.sesion__medidor::-webkit-progress-bar {
+  background: var(--superficie-alt);
+  border-radius: 999px;
+}
+
+.sesion__medidor::-webkit-progress-value {
+  background: var(--acento);
+  border-radius: 999px;
+}
+
+.sesion__medidor::-moz-progress-bar {
+  background: var(--acento);
+  border-radius: 999px;
+}
+
+.sesion__hito {
+  margin: 0 0 1.1rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.88rem;
+  color: var(--clave-borde);
+  background: var(--clave-fondo);
+  border-radius: var(--radio);
+  animation: aparecer 180ms ease-out;
+}
+
 .pregunta__origen {
   margin: 0 0 0.5rem;
   font-size: 0.78rem;
@@ -1272,7 +1449,7 @@ input[type='number']:disabled {
 
 .opcion {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 0.75rem;
   align-items: start;
   width: 100%;
@@ -1323,12 +1500,69 @@ input[type='number']:disabled {
 }
 
 .opcion--fallada {
+  background: var(--error-fondo);
   border-color: var(--error);
 }
 
 .opcion--fallada .opcion__numero {
   color: #fff;
   background: var(--error);
+}
+
+/* Marca textual además del color: el estado se distingue sin depender del tono
+   y sobrevive a una impresión en blanco y negro. */
+.opcion__marca {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.opcion--correcta .opcion__marca {
+  color: var(--clave-borde);
+}
+
+.opcion--fallada .opcion__marca {
+  color: var(--error);
+}
+
+/* La opción marcada por quien responde lleva un filete interior: el color por sí
+   solo no basta en modo oscuro. */
+.opcion--correcta.opcion--elegida {
+  box-shadow: inset 0 0 0 2px var(--clave-borde);
+}
+
+.opcion--fallada.opcion--elegida {
+  box-shadow: inset 0 0 0 2px var(--error);
+}
+
+/* La corrección aparece en el mismo fotograma; esta animación sólo asienta el
+   cambio y es tan corta que no retrasa la lectura. */
+.opcion--correcta,
+.opcion--fallada {
+  animation: revelar 140ms ease-out;
+}
+
+@keyframes revelar {
+  from {
+    opacity: 0.75;
+    transform: scale(0.995);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1432,6 +1666,28 @@ kbd {
   font-variant-numeric: tabular-nums;
 }
 
+/* Comparación con la marca anterior y permiso explícito para parar. Ninguno de
+   los dos usa color de alarma: no son un examen sorpresa ni una reprimenda. */
+.resultado__comparacion {
+  margin: 1.25rem 0 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  background: var(--superficie-alt);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.resultado__parada {
+  margin: 1rem 0 0;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  background: var(--aviso-fondo);
+  border-left: 3px solid var(--aviso-borde);
+  border-radius: 0 var(--radio) var(--radio) 0;
+}
+
 .desglose {
   margin-top: 1.75rem;
 }
@@ -1497,12 +1753,25 @@ kbd {
   .opcion:hover:enabled {
     transform: none;
   }
+
+  /* El reconocimiento de la racha y la revelación de la respuesta se quedan en
+     su estado final: sin movimiento, no desaparece información. */
+  .opcion--correcta,
+  .opcion--fallada,
+  .sesion__hito {
+    animation: none;
+  }
 }
 
 @media print {
   .botonera,
   .sesion__atajos,
-  .sesion__reloj {
+  .sesion__reloj,
+  .sesion__ritmo,
+  .sesion__medidor,
+  .sesion__hito,
+  .reto,
+  .progreso {
     display: none;
   }
 
@@ -1563,7 +1832,8 @@ kbd {
   .heroe__grafico,
   .heroe__fuente,
   .bloque__ilustracion,
-  .test__ilustracion {
+  .test__ilustracion,
+  .entrada-fichero {
     display: none;
   }
 

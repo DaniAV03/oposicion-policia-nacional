@@ -130,7 +130,47 @@ Los recuentos de preguntas por tema (13 en el tema 8, 5 en el tema 9) proceden d
 un portal del sector, no del BOE: se usan solo para priorizar el orden de redacción, nunca como
 afirmación del temario.
 
-### L8 — alcance de la verificación
+### L9 — interactividad del test
+
+Feedback del dueño: «la interactividad es pocha tienes que hacerlos para que no se saturen ni se
+aburran haciendolos». Se rehace la sesión sin patrones oscuros: tamaños de sesión (10, 30,
+banco completo, examen cronometrado), línea de progreso discreta, racha con reconocimiento
+solo en 5 y 10, reto diario determinista por fecha, pantalla final con comparación contra el
+mejor resultado del mismo modo, sugerencia explícita de parar pasadas 40 preguntas, y
+persistencia en `localStorage` con exportar/importar validado y reinicio en dos pasos.
+
+### L10 — estado al cierre de sesión
+
+**Publicado y verificado en producción**: 9 de 45 temas (1, 2, 3, 4, 5, 8, 9, 14, 16), banco de
+200 preguntas, motor de test con modos y persistencia, CSP estricta, aviso legal, canal de
+seguridad y build con tres verificadores como puerta.
+
+**Orden de trabajo pendiente**, por valor:
+
+1. Redactar los 36 temas restantes por lotes de dos, priorizando peso: 21 (procesal penal),
+   18 (patrimonio), 26 (protección de datos), 17 (penal especial), 20 (delitos informáticos),
+   10-12 (extranjería), 13 (seguridad privada), 15 (infraestructuras críticas), 6, 7, 22-25.
+   Los temas de los bloques B y C no tienen ley detrás: ahí el estándar de fuentes cambia y hay
+   que decirlo en el propio tema.
+2. Auditoría legal de lo publicado, empezando por las cajas «Qué no se ha afirmado» de los temas
+   14 y 16, la composición de la Junta de Gobierno y el Consejo Asesor del tema 8, y las cifras
+   institucionales del tema 4.
+3. Ampliar el banco: 2023 está bloqueado por un aviso de ©JURISPOL y 2024 es un escaneo sin
+   `pdftoppm`; 2025 y 2026 no tienen cuestionario publicado. Sin OCR instalado no hay avance
+   aquí, y instalar software requiere permiso del dueño.
+4. Verificar de forma independiente las 200 claves transcritas a ojo.
+5. Psicotécnicos por algoritmo, y pulido visual una vez el dueño confirme la dirección.
+
+**Cómo reanudar**: leer este documento hasta aquí, ejecutar los tres verificadores
+(`scripts/verificar.mjs`, `scripts/verificar-examenes.mjs`, `scripts/verificar-test.mjs`) para
+confirmar que el árbol está sano, y seguir por el punto 1. La lista visible de tareas refleja el
+mismo estado.
+
+### L11 — alcance de la verificación, otra vez
+
+La interactividad nueva está probada con 96 aserciones en `verificar-test.mjs` más una prueba de
+humo del DOM con un stub, ambas deterministas. Aun así **no hay navegador**: el contraste, el
+foco y las animaciones se validaron de forma estática. La pasada visual sigue siendo del dueño.
 
 Los verificadores del repositorio comprueban estructura, recursos, banco y motor. **No
 comprueban verdad jurídica.** Un número de artículo equivocado o una cifra institucional

@@ -1,46 +1,84 @@
 // Interfaz del motor de test.
 //
-// Es el único fichero del motor que toca el DOM: la lógica pura (muestreo,
-// barajado de opciones, corrección y desglose) vive en test-core.js, que no
-// depende del navegador y se puede importar desde Node.
+// Es el único fichero del motor que toca el DOM: la lógica pura (tamaños de
+// sesión, muestreo, barajado de opciones, corrección, rachas, reto diario,
+// comparación con marcas anteriores y almacenamiento versionado) vive en
+// test-core.js, que no depende del navegador y se puede importar desde Node.
 //
 // Sin JavaScript incrustado y sin atributos de estilo: la CSP del sitio es
 // script-src 'self' y style-src 'self', así que todos los manejadores se
 // enlazan desde aquí y las marcas de estado se resuelven con clases CSS.
+//
+// Criterio de diseño: la sesión tiene que poder terminarse en cualquier momento
+// sin que la página insista. No hay cuenta atrás en práctica, no hay rachas que
+// se puedan perder por salir, no hay avisos de «no pierdas tu progreso» y el
+// resultado propone parar cuando la sesión ha sido larga.
 
 import { normalizarEnlaces } from './app.js';
 import {
+  CLAVE_ALMACENAMIENTO,
   PENALIZACION_POR_DEFECTO,
-  PREGUNTAS_SESION_RAPIDA,
   SEGUNDOS_POR_PREGUNTA,
+  calcularRacha,
+  claveFecha,
+  compararConRecord,
   construirPool,
   contarPorConvocatoria,
   corregir,
+  crearAlmacenVacio,
   crearGeneradorAleatorio,
   crearIntento,
   duracionExamen,
+  exportarAlmacen,
+  formatearDuracion,
   formatearTiempo,
+  hitoDeRacha,
+  importarAlmacen,
+  mejorDeModo,
   muestrear,
+  preguntasDeSesion,
+  registrarIntento,
   registrarRespuesta,
   resumirPorConvocatoria,
+  seleccionDiaria,
+  sugerirParada,
+  tasaDeAcierto,
+  validarAlmacen,
 } from './test-core.js';
 
 const RUTA_INDICE = 'data/examenes/index.json';
 const LETRAS = ['a', 'b', 'c'];
 const AVISO_RELOJ_SEGUNDOS = 60;
+const MODOS_CON_MARCA = ['corta', 'media', 'completa', 'examen'];
+
+const NOMBRE_MODO = {
+  corta: 'Sesión corta',
+  media: 'Sesión media',
+  completa: 'Banco completo',
+  examen: 'Examen con tiempo',
+  reto: 'Reto del día',
+};
 
 const estado = {
   bancos: [],
   intento: [],
   indice: 0,
-  modo: 'practica',
+  modo: 'corta',
   motivo: 'fin',
   finalizada: false,
+  registrar: true,
   restante: 0,
   inicioMs: 0,
   limiteMs: 0,
   intervalo: null,
+  ritmoIntervalo: null,
+  ultimoRitmo: '',
   minutoAvisado: false,
+  inicioSesionMs: 0,
+  hitoActual: null,
+  almacen: crearAlmacenVacio(),
+  confirmarBorrado: false,
+  recordPrevio: null,
 };
 
 /* --- Utilidades de DOM ----------------------------------------------------- */
@@ -83,6 +121,47 @@ function mostrarPanel(cual) {
     $(`panel-${nombre}`).hidden = nombre !== cual;
   }
   globalThis.scrollTo(0, 0);
+}
+
+/* --- Progreso local -------------------------------------------------------- */
+
+/**
+ * Lectura defensiva de `localStorage`.
+ *
+ * El navegador puede denegar el acceso (ventana privada, política del usuario) o
+ * devolver un JSON de otra aplicación o de una versión anterior. En cualquiera
+ * de esos casos se empieza de cero en silencio: la página nunca se rompe por un
+ * dato guardado.
+ */
+function leerAlmacen() {
+  try {
+    const bruto = globalThis.localStorage?.getItem(CLAVE_ALMACENAMIENTO);
+    if (!bruto) return crearAlmacenVacio();
+    let datos = null;
+    try {
+      datos = JSON.parse(bruto);
+    } catch {
+      return crearAlmacenVacio();
+    }
+    return validarAlmacen(datos) ?? crearAlmacenVacio();
+  } catch {
+    return crearAlmacenVacio();
+  }
+}
+
+/** Guarda el progreso. Devuelve false si el navegador no lo permite. */
+function guardarAlmacen() {
+  try {
+    globalThis.localStorage?.setItem(CLAVE_ALMACENAMIENTO, exportarAlmacen(estado.almacen));
+    $('aviso-almacen').hidden = true;
+    return true;
+  } catch {
+    const aviso = $('aviso-almacen');
+    aviso.textContent =
+      'Este navegador no permite guardar el progreso (por ejemplo, en una ventana privada). La sesión funciona igual; si quieres conservar las marcas, exporta el progreso a un fichero antes de cerrar.';
+    aviso.hidden = false;
+    return false;
+  }
 }
 
 /* --- Carga del banco ------------------------------------------------------- */
@@ -134,6 +213,8 @@ async function iniciar() {
     }
 
     estado.bancos = bancos;
+    estado.almacen = leerAlmacen();
+
     const pool = construirPool(bancos);
     if (pool.length === 0) {
       mostrarEstado('Los bancos cargados no contienen ninguna pregunta válida.', 'error');
@@ -163,7 +244,9 @@ async function iniciar() {
 /* --- Configuración de la sesión -------------------------------------------- */
 
 function pintarInicio() {
+  const convocatoriaPrevia = $('filtro-convocatoria').value;
   const total = construirPool(estado.bancos).length;
+
   const opciones = [
     crear('option', {
       texto: `Todas las convocatorias (${total} preguntas)`,
@@ -180,6 +263,9 @@ function pintarInicio() {
     );
   }
   $('filtro-convocatoria').replaceChildren(...opciones);
+  if (convocatoriaPrevia && $('filtro-convocatoria').querySelector(`option[value="${convocatoriaPrevia}"]`)) {
+    $('filtro-convocatoria').value = convocatoriaPrevia;
+  }
 
   const fuentes = estado.bancos.map((banco) => {
     const item = crear('li', {
@@ -199,10 +285,14 @@ function pintarInicio() {
   $('fuentes-banco').hidden = false;
   normalizarEnlaces($('fuentes-banco'));
 
+  alternarConfirmacionBorrado(false, { enfocar: false });
+  pintarHistorial();
+  pintarReto();
   actualizarControles();
 }
 
-const modoSeleccionado = () => document.querySelector('input[name="modo"]:checked')?.value ?? 'practica';
+const tamanoSeleccionado = () =>
+  document.querySelector('input[name="tamano"]:checked')?.value ?? 'corta';
 
 const valorConvocatoria = () => {
   const valor = $('filtro-convocatoria').value;
@@ -211,32 +301,39 @@ const valorConvocatoria = () => {
 
 const poolDelFiltro = () => construirPool(estado.bancos, { convocatoria: valorConvocatoria() });
 
-function limitarPreguntas(valor, total) {
-  const numero = Math.trunc(Number(valor));
-  const tope = Math.max(1, total);
-  if (!Number.isFinite(numero) || numero < 1) return Math.min(PREGUNTAS_SESION_RAPIDA, tope);
-  return Math.min(numero, tope);
-}
-
 function actualizarControles() {
-  const modo = modoSeleccionado();
+  const tamano = tamanoSeleccionado();
   const total = poolDelFiltro().length;
   const campo = $('preguntas-sesion');
   const ayuda = $('ayuda-preguntas');
 
   campo.max = String(Math.max(1, total));
-  campo.disabled = modo === 'practica';
+  campo.disabled = tamano !== 'examen';
 
-  if (modo === 'practica') {
-    ayuda.textContent = `En modo práctica se usan las ${total} preguntas del filtro, en orden aleatorio.`;
+  const pedidasExamen = preguntasDeSesion('examen', total, { cantidadExamen: campo.value });
+  for (const modo of MODOS_CON_MARCA) {
+    const pedidas =
+      modo === 'examen'
+        ? pedidasExamen
+        : preguntasDeSesion(modo, total, { cantidadExamen: campo.value });
+    $(`cuenta-${modo}`).textContent = `${pedidas} ${pedidas === 1 ? 'pregunta' : 'preguntas'}`;
+  }
+
+  if (tamano === 'examen') {
+    ayuda.textContent = `${pedidasExamen} preguntas con un temporizador orientativo de ${formatearTiempo(
+      duracionExamen(pedidasExamen),
+    )} (${SEGUNDOS_POR_PREGUNTA} s por pregunta). El tiempo real lo fijan las bases oficiales.`;
     return;
   }
 
-  const pedidas = limitarPreguntas(campo.value, total);
-  ayuda.textContent =
-    modo === 'examen'
-      ? `${pedidas} preguntas con temporizador orientativo de ${formatearTiempo(duracionExamen(pedidas))} (${SEGUNDOS_POR_PREGUNTA} s por pregunta). El tiempo real lo fijan las bases oficiales.`
-      : `${pedidas} preguntas elegidas al azar entre las ${total} del filtro, sin repetir.`;
+  if (tamano === 'corta') {
+    ayuda.textContent =
+      'Diez preguntas al azar entre las del filtro, sin repetir. Se termina en un par de minutos.';
+  } else if (tamano === 'media') {
+    ayuda.textContent = `Treinta preguntas al azar (o las que haya) entre las ${total} del filtro, sin repetir.`;
+  } else {
+    ayuda.textContent = `Las ${total} preguntas del filtro, sin repetir. Puedes dejarlo cuando quieras: la sesión no se guarda a medias ni te reclama nada.`;
+  }
 }
 
 function semillaAleatoria() {
@@ -251,31 +348,61 @@ function empezarSesion() {
     return;
   }
 
-  const modo = modoSeleccionado();
-  const pedidas = modo === 'practica' ? pool.length : limitarPreguntas($('preguntas-sesion').value, pool.length);
-  const aleatorio = crearGeneradorAleatorio(semillaAleatoria());
+  const modo = tamanoSeleccionado();
+  const pedidas = preguntasDeSesion(modo, pool.length, { cantidadExamen: $('preguntas-sesion').value });
+  if (pedidas === 0) {
+    mostrarEstado('No hay preguntas que pedir con este filtro.', 'aviso');
+    return;
+  }
 
+  const aleatorio = crearGeneradorAleatorio(semillaAleatoria());
   mostrarEstado('');
   iniciarSesion(crearIntento(muestrear(pool, pedidas, aleatorio), aleatorio), modo);
 }
 
-function iniciarSesion(intento, modo) {
+function empezarReto() {
+  const pool = construirPool(estado.bancos);
+  if (pool.length === 0) {
+    mostrarEstado('El banco no tiene preguntas cargadas para el reto del día.', 'aviso');
+    return;
+  }
+
+  const preguntas = seleccionDiaria(pool, claveFecha(new Date()));
+  const aleatorio = crearGeneradorAleatorio(semillaAleatoria());
+  mostrarEstado('');
+  iniciarSesion(crearIntento(preguntas, aleatorio), 'reto');
+}
+
+function iniciarSesion(intento, modo, { registrar = true } = {}) {
   detenerReloj();
+  detenerRitmo();
   estado.intento = intento;
   estado.indice = 0;
   estado.modo = modo;
   estado.motivo = 'fin';
   estado.finalizada = false;
+  estado.registrar = registrar;
   estado.minutoAvisado = false;
+  estado.hitoActual = null;
+  estado.recordPrevio = registrar ? mejorDeModo(estado.almacen, modo) : null;
+  estado.inicioSesionMs = Date.now();
+  estado.ultimoRitmo = '';
 
   limpiarResultado();
   mostrarPanel('sesion');
+  $('racha-hito').hidden = true;
+  $('racha-hito').textContent = '';
 
-  $('reloj').hidden = modo !== 'examen';
-  if (modo === 'examen') {
+  const examen = modo === 'examen';
+  $('reloj').hidden = !examen;
+  $('ritmo').hidden = examen;
+
+  if (examen) {
     estado.limiteMs = duracionExamen(intento.length) * 1000;
     estado.inicioMs = Date.now();
     iniciarReloj();
+  } else {
+    iniciarRitmo();
   }
 
   pintarPregunta('enunciado');
@@ -301,7 +428,13 @@ function pintarPregunta(foco = 'enunciado') {
   const revelar = estaRespondida() && estado.modo !== 'examen';
 
   $('progreso').textContent = `Pregunta ${estado.indice + 1} de ${estado.intento.length}`;
+  const medidor = $('medidor');
+  medidor.max = Math.max(1, estado.intento.length);
+  medidor.value = estado.indice + (revelar ? 1 : 0);
+
   pintarMarcador();
+  pintarRacha();
+
   $('origen').textContent = `Convocatoria ${pregunta.convocatoria} · promoción ${pregunta.promocion}`;
   $('enunciado').textContent = pregunta.enunciado;
 
@@ -320,14 +453,21 @@ function botonOpcion(entrada, texto, indice, revelar) {
   const pregunta = entrada.pregunta;
   const clases = ['opcion'];
   let nota = '';
+  let marca = '';
 
   if (revelar) {
     if (indice === pregunta.correcta) {
       clases.push('opcion--correcta');
-      nota = ' (respuesta correcta)';
-    }
-    if (entrada.respuesta === indice && indice !== pregunta.correcta) {
-      clases.push('opcion--fallada');
+      marca = '✓';
+      if (entrada.respuesta === indice) {
+        clases.push('opcion--elegida');
+        nota = ' (tu respuesta, correcta)';
+      } else {
+        nota = ' (respuesta correcta)';
+      }
+    } else if (entrada.respuesta === indice) {
+      clases.push('opcion--fallada', 'opcion--elegida');
+      marca = '✗';
       nota = ' (tu respuesta, incorrecta)';
     }
   }
@@ -341,19 +481,84 @@ function botonOpcion(entrada, texto, indice, revelar) {
     crear('span', { clase: 'opcion__texto', texto }),
   ]);
 
+  if (marca) {
+    nodo.append(crear('span', { clase: 'opcion__marca', texto: marca, atributos: { 'aria-hidden': 'true' } }));
+  }
   if (nota) nodo.append(crear('span', { clase: 'visualmente-oculto', texto: nota }));
+
   nodo.disabled = revelar;
   nodo.addEventListener('click', () => responder(indice));
   return nodo;
 }
 
+/**
+ * Marcador de la sesión: en práctica, una línea tranquila con el acierto hasta
+ * ahora; en examen, nada que despiste antes de la corrección final.
+ */
 function pintarMarcador() {
   if (estado.modo === 'examen') {
     $('marcador').textContent = 'Corrección al final';
     return;
   }
+
   const resultado = corregir(estado.intento);
-  $('marcador').textContent = `Aciertos ${resultado.aciertos} · Fallos ${resultado.fallos}`;
+  const respondidas = resultado.aciertos + resultado.fallos;
+
+  if (respondidas === 0) {
+    $('marcador').textContent = 'Sin respuestas todavía';
+    return;
+  }
+  $('marcador').textContent = `${resultado.aciertos} de ${respondidas} correctas · ${tasaDeAcierto(
+    resultado.aciertos,
+    respondidas,
+  )} % de acierto`;
+}
+
+/** Contador de racha: aparece a partir de dos aciertos seguidos y nada más. */
+function pintarRacha() {
+  const nodo = $('racha');
+  if (estado.modo === 'examen') {
+    nodo.hidden = true;
+    nodo.textContent = '';
+    return;
+  }
+
+  const { actual } = calcularRacha(estado.intento.slice(0, estado.indice + 1));
+  nodo.hidden = actual < 2;
+  nodo.textContent = actual >= 2 ? `Racha: ${actual} aciertos seguidos` : '';
+}
+
+/**
+ * Reconocimiento de la racha, sólo en 5 y en 10.
+ *
+ * Vive en su propia región `role="status"` para que quien use lector de pantalla
+ * lo oiga una sola vez. No hay sonido, ni animación larga, ni nada más alto:
+ * pasada la racha, el aviso desaparece sin dejar rastro.
+ */
+function reconocerRacha(actual) {
+  const nodo = $('racha-hito');
+
+  if (estado.modo === 'examen') {
+    nodo.hidden = true;
+    return;
+  }
+
+  const hito = hitoDeRacha(actual);
+  if (hito !== null && hito !== estado.hitoActual) {
+    estado.hitoActual = hito;
+    nodo.textContent =
+      hito === 5
+        ? 'Cinco aciertos seguidos.'
+        : 'Diez aciertos seguidos. Buen momento para parar, si quieres.';
+    nodo.hidden = false;
+    return;
+  }
+
+  if (actual === 0) {
+    estado.hitoActual = null;
+    nodo.hidden = true;
+    nodo.textContent = '';
+  }
 }
 
 function pintarRetroalimentacion(entrada, revelar) {
@@ -421,6 +626,11 @@ function responder(opcion) {
       ? 'Respuesta correcta.'
       : `Respuesta incorrecta. La opción correcta es la ${letra(entrada.pregunta.correcta)}.`,
   );
+
+  // La corrección se pinta en el mismo fotograma y el foco pasa a «Siguiente»:
+  // quien responde con el teclado puede encadenar sin buscar el ratón.
+  const { actual } = calcularRacha(estado.intento.slice(0, estado.indice + 1));
+  reconocerRacha(actual);
   pintarPregunta('siguiente');
 }
 
@@ -435,17 +645,40 @@ function avanzar() {
 
 function salirSesion() {
   detenerReloj();
+  detenerRitmo();
   estado.intento = [];
   estado.indice = 0;
   estado.finalizada = false;
   mostrarEstado('');
+  pintarInicio();
   mostrarPanel('inicio');
-  actualizarControles();
-  anunciar('Sesión cancelada.');
+  anunciar('Sesión cancelada. No se ha guardado ningún resultado.');
   $('empezar')?.focus();
 }
 
-/* --- Reloj del modo examen -------------------------------------------------- */
+/* --- Ritmo y reloj --------------------------------------------------------- */
+
+/** Práctica: sólo cuánto lleva la sesión. Sin cuenta atrás y sin color de alarma. */
+function iniciarRitmo() {
+  detenerRitmo();
+  pintarRitmo();
+  estado.ritmoIntervalo = globalThis.setInterval(pintarRitmo, 1000);
+}
+
+function pintarRitmo() {
+  const transcurrido = Math.max(0, Math.round((Date.now() - estado.inicioSesionMs) / 1000));
+  const texto = `En curso: ${formatearDuracion(transcurrido)}`;
+  if (texto === estado.ultimoRitmo) return;
+  estado.ultimoRitmo = texto;
+  $('ritmo').textContent = texto;
+}
+
+function detenerRitmo() {
+  if (estado.ritmoIntervalo !== null) {
+    globalThis.clearInterval(estado.ritmoIntervalo);
+    estado.ritmoIntervalo = null;
+  }
+}
 
 function iniciarReloj() {
   detenerReloj();
@@ -498,6 +731,9 @@ const pendientes = () =>
 
 function limpiarResultado() {
   $('resultado-cifras').replaceChildren();
+  $('comparacion').textContent = '';
+  $('parada').hidden = true;
+  $('parada').textContent = '';
   $('nota-puntuacion').textContent = '';
   $('desglose').replaceChildren();
   $('fallos').replaceChildren();
@@ -509,29 +745,54 @@ function finalizar(motivo) {
   estado.finalizada = true;
   estado.motivo = motivo;
   detenerReloj();
+  detenerRitmo();
 
   const resultado = corregir(estado.intento, { penalizacion: PENALIZACION_POR_DEFECTO });
+  const racha = calcularRacha(estado.intento).maxima;
+  const duracion = Math.max(0, Math.round((Date.now() - estado.inicioSesionMs) / 1000));
+  const comparacion = estado.registrar
+    ? compararConRecord(resultado.porcentajeAcierto, estado.recordPrevio)
+    : { estado: 'repaso', diferencia: 0, mejor: null };
 
-  pintarResultado(resultado, motivo);
+  if (estado.registrar) {
+    estado.almacen = registrarIntento(estado.almacen, {
+      modo: estado.modo,
+      aciertos: resultado.aciertos,
+      total: resultado.total,
+      porcentaje: resultado.porcentajeAcierto,
+      fecha: claveFecha(new Date()),
+      rachaMaxima: racha,
+    });
+    guardarAlmacen();
+  }
+
+  pintarResultado(resultado, motivo, { comparacion, duracion, racha });
   mostrarPanel('resultado');
   anunciar(`Sesión terminada: ${resultado.aciertos} aciertos de ${resultado.total}.`);
   $('titulo-resultado').focus();
 }
 
-function pintarResultado(resultado, motivo) {
-  $('resultado-cifras').replaceChildren(crearCifras(resultado));
+function pintarResultado(resultado, motivo, { comparacion, duracion, racha }) {
+  $('resultado-cifras').replaceChildren(crearCifras(resultado, { duracion, racha }));
+  $('comparacion').textContent = textoComparacion(comparacion, resultado);
+  $('parada').hidden = !sugerirParada(resultado.total);
+  $('parada').textContent = $('parada').hidden
+    ? ''
+    : `${resultado.total} preguntas seguidas es una sesión larga. Es un buen momento para parar: el repaso rinde más después de un descanso y lo que has hecho ya queda guardado.`;
   $('nota-puntuacion').textContent = notaPuntuacion(resultado, motivo);
   $('desglose').replaceChildren(crearDesglose());
   $('fallos').replaceChildren(crearRepaso());
   $('acciones-resultado').replaceChildren(...crearAccionesResultado());
 }
 
-function crearCifras(resultado) {
+function crearCifras(resultado, { duracion, racha }) {
   const filas = [
     ['Aciertos', `${resultado.aciertos} de ${resultado.total}`],
     ['Fallos', String(resultado.fallos)],
     ['En blanco', String(resultado.blancos)],
-    ['Aciertos sobre el total', `${resultado.porcentajeAcierto} %`],
+    ['Acierto sobre el total', `${resultado.porcentajeAcierto} %`],
+    ['Racha máxima', racha > 0 ? `${racha} seguidas` : 'Ninguna'],
+    ['Duración', formatearDuracion(duracion)],
   ];
 
   return crear(
@@ -544,6 +805,29 @@ function crearCifras(resultado) {
       ]),
     ),
   );
+}
+
+const nombreModo = (modo) => NOMBRE_MODO[modo] ?? 'este modo';
+
+function textoComparacion(comparacion, resultado) {
+  const modo = nombreModo(estado.modo);
+
+  switch (comparacion.estado) {
+    case 'repaso':
+      return 'Sesión de repaso de las preguntas falladas: sirve para practicar, no cuenta como marca.';
+    case 'primera':
+      return `Primera marca de «${modo}»: queda anotada como referencia para la próxima vez.`;
+    case 'mejor':
+      return `Mejor que tu marca anterior en «${modo}»: ${resultado.porcentajeAcierto} % frente a ${
+        comparacion.mejor
+      } % (${comparacion.diferencia > 0 ? '+' : ''}${comparacion.diferencia} puntos).`;
+    case 'igual':
+      return `Igualas tu mejor marca en «${modo}» (${comparacion.mejor} %).`;
+    default:
+      return `Tu mejor marca en «${modo}» sigue siendo ${comparacion.mejor} %; esta vez ha sido el ${
+        resultado.porcentajeAcierto
+      } %. No hay nada que recuperar.`;
+  }
 }
 
 function notaPuntuacion(resultado, motivo) {
@@ -613,7 +897,7 @@ function crearRepaso() {
   contenedor.append(
     crear('p', {
       clase: 'repaso__nota',
-      texto: 'Se pueden repetir en una sesión de práctica con las mismas opciones y el mismo orden.',
+      texto: 'Se pueden repetir en una sesión de repaso, con las mismas opciones y el mismo orden.',
     }),
   );
 
@@ -659,20 +943,11 @@ function crearAccionesResultado() {
 
   if (revisables.length > 0) {
     acciones.push(
-      boton(`Repetir estas preguntas (${revisables.length})`, 'boton', repetirPendientes),
+      boton(`Repetir las ${revisables.length} falladas`, 'boton', repetirPendientes),
     );
   }
 
-  acciones.push(
-    boton('Nueva sesión', 'boton boton--secundario', () => {
-      detenerReloj();
-      mostrarPanel('inicio');
-      actualizarControles();
-      anunciar('Configura una nueva sesión.');
-      $('empezar')?.focus();
-    }),
-  );
-
+  acciones.push(boton('Terminar y volver al inicio', 'boton boton--secundario', volverAlInicio));
   return acciones;
 }
 
@@ -681,8 +956,149 @@ function repetirPendientes() {
   if (revisables.length === 0) return;
   iniciarSesion(
     revisables.map((entrada) => ({ ...entrada, respuesta: null })),
-    'practica',
+    'reto',
+    { registrar: false },
   );
+}
+
+function volverAlInicio() {
+  detenerReloj();
+  detenerRitmo();
+  pintarInicio();
+  mostrarPanel('inicio');
+  actualizarControles();
+  anunciar('Sesión guardada. Puedes parar aquí.');
+  $('empezar')?.focus();
+}
+
+/* --- Historial, reto del día y copias -------------------------------------- */
+
+function pintarHistorial() {
+  const filas = MODOS_CON_MARCA.map((modo) => {
+    const registro = mejorDeModo(estado.almacen, modo);
+    return [
+      NOMBRE_MODO[modo],
+      registro
+        ? `${registro.aciertos} de ${registro.total} · ${registro.porcentaje} % · ${registro.fecha}`
+        : 'Sin marca todavía',
+    ];
+  });
+
+  filas.push([
+    'Récord de racha',
+    estado.almacen.rachaMaxima > 0 ? `${estado.almacen.rachaMaxima} aciertos seguidos` : 'Sin datos',
+  ]);
+
+  const ultimo = estado.almacen.ultimoIntento;
+  filas.push([
+    'Último intento',
+    ultimo
+      ? `${nombreModo(ultimo.modo)} · ${ultimo.aciertos} de ${ultimo.total} · ${ultimo.porcentaje} %`
+      : 'Sin datos',
+  ]);
+
+  $('historial').replaceChildren(
+    crear(
+      'dl',
+      { clase: 'historial' },
+      filas.map(([titulo, valor]) =>
+        crear('div', { clase: 'historial__fila' }, [
+          crear('dt', { texto: titulo }),
+          crear('dd', { texto: valor }),
+        ]),
+      ),
+    ),
+  );
+}
+
+function pintarReto() {
+  const reto = estado.almacen.reto;
+  const hoy = claveFecha(new Date());
+  const nodo = $('reto-estado');
+  const botonReto = $('empezar-reto');
+
+  if (reto && reto.fecha === hoy) {
+    nodo.textContent = `Ya has hecho el reto de hoy: ${reto.aciertos} de ${reto.total} (${
+      tasaDeAcierto(reto.aciertos, reto.total)
+    } % de acierto). Mañana habrá otro distinto.`;
+    botonReto.textContent = 'Repetir el reto de hoy';
+    return;
+  }
+
+  nodo.textContent = 'Diez preguntas, sin reloj y sin comparar con nadie.';
+  botonReto.textContent = 'Hacer el reto de hoy';
+}
+
+function alternarConfirmacionBorrado(mostrar, { enfocar = true } = {}) {
+  estado.confirmarBorrado = mostrar;
+  $('confirmar-borrado').hidden = !mostrar;
+  $('borrar').setAttribute('aria-expanded', String(mostrar));
+  if (!enfocar) return;
+  if (mostrar) $('borrar-confirmar').focus();
+  else $('borrar').focus();
+}
+
+function borrarProgreso() {
+  estado.almacen = crearAlmacenVacio();
+  try {
+    globalThis.localStorage?.removeItem(CLAVE_ALMACENAMIENTO);
+  } catch {
+    // Si el navegador no deja escribir, tampoco deja borrar: no hay nada guardado.
+  }
+  pintarHistorial();
+  pintarReto();
+  alternarConfirmacionBorrado(false, { enfocar: false });
+  mostrarEstado('Progreso borrado de este navegador.', 'listo');
+  anunciar('Progreso borrado.');
+  $('borrar').focus();
+}
+
+function exportarProgreso() {
+  const texto = exportarAlmacen(estado.almacen);
+  const blob = new Blob([texto], { type: 'application/json' });
+  const url = globalThis.URL.createObjectURL(blob);
+  const enlace = crear('a', {
+    atributos: { href: url, download: `progreso-test-${claveFecha(new Date())}.json` },
+  });
+
+  document.body.append(enlace);
+  enlace.click();
+  enlace.remove();
+  globalThis.setTimeout(() => globalThis.URL.revokeObjectURL(url), 1000);
+  anunciar('Progreso exportado a un fichero JSON.');
+}
+
+async function importarProgreso(archivo) {
+  if (!archivo) return;
+
+  let texto = '';
+  try {
+    texto = await archivo.text();
+  } catch {
+    texto = '';
+  }
+
+  const resultado = importarAlmacen(texto);
+  if (!resultado.ok) {
+    mostrarEstado(
+      'El fichero elegido no es un progreso válido de esta web. No se ha cambiado nada.',
+      'aviso',
+    );
+    anunciar('Importación rechazada: el fichero no contiene un progreso válido.');
+    return;
+  }
+
+  estado.almacen = resultado.almacen;
+  pintarHistorial();
+  pintarReto();
+  const guardado = guardarAlmacen();
+  mostrarEstado(
+    guardado
+      ? 'Progreso importado.'
+      : 'Progreso importado en esta pestaña, pero el navegador no permite guardarlo.',
+    guardado ? 'listo' : 'aviso',
+  );
+  anunciar('Progreso importado.');
 }
 
 /* --- Teclado y arranque ----------------------------------------------------- */
@@ -711,9 +1127,20 @@ document.addEventListener('keydown', (evento) => {
 
 $('filtro-convocatoria').addEventListener('change', actualizarControles);
 $('preguntas-sesion').addEventListener('input', actualizarControles);
-for (const radio of document.querySelectorAll('input[name="modo"]')) {
+for (const radio of document.querySelectorAll('input[name="tamano"]')) {
   radio.addEventListener('change', actualizarControles);
 }
 $('empezar').addEventListener('click', empezarSesion);
+$('empezar-reto').addEventListener('click', empezarReto);
+
+$('exportar').addEventListener('click', exportarProgreso);
+$('borrar').addEventListener('click', () => alternarConfirmacionBorrado(!estado.confirmarBorrado));
+$('borrar-confirmar').addEventListener('click', borrarProgreso);
+$('borrar-cancelar').addEventListener('click', () => alternarConfirmacionBorrado(false));
+$('importar').addEventListener('change', async (evento) => {
+  const campo = evento.currentTarget;
+  await importarProgreso(campo.files?.[0] ?? null);
+  campo.value = '';
+});
 
 iniciar();

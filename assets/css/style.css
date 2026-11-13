@@ -45,6 +45,15 @@
   --clave-borde: #2f7d4f;
   --error: #a3341f;
 
+  /* Acentos secundarios. El ámbar identifica el bloque de Ciencias Sociales y el
+     verde el de Materias Técnico-Científicas; el azul sigue siendo el principal.
+     La variante oscura es la que se usa sobre fondos claros; en modo oscuro los
+     bloques toman el tono base, que es el luminoso, igual que --acento. */
+  --ambar: #e0a63c;
+  --ambar-oscuro: #8a5c12;
+  --verde: #2f7d76;
+  --verde-oscuro: #1f5b56;
+
   --radio: 10px;
   --sombra: 0 1px 2px rgb(0 0 0 / 6%), 0 6px 18px rgb(0 0 0 / 5%);
 
@@ -67,6 +76,10 @@
     --clave-fondo: #1b2a20;
     --clave-borde: #63b184;
     --error: #e08270;
+    --ambar: #f0be63;
+    --ambar-oscuro: #d59b3c;
+    --verde: #6fc7bd;
+    --verde-oscuro: #4ea79d;
     --sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
   }
 }
@@ -269,47 +282,21 @@ code {
   font-size: 0.88rem;
 }
 
-/* Adorno de la portada. Es decoración: no aporta información, va con
-   aria-hidden="true" y su contraste nunca arrastra el del texto. Se pinta con
-   clases, no con atributos fill="var(--x)", porque los atributos de
-   presentación no resuelven variables CSS de forma fiable. */
+/* Ilustración de portada: SVG vectorial plano, dibujado a mano en el repositorio
+   (assets/img/portada.svg). Es decoración pura —alt="" y aria-hidden="true" en el
+   marcado— y no se anima, así que no hay movimiento que neutralizar. */
 .heroe__grafico {
-  display: none;
+  display: block;
+  width: min(62vw, 208px);
+  height: auto;
+  justify-self: center;
 }
 
 @media (min-width: 900px) {
   .heroe__grafico {
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
+    width: clamp(200px, 30vw, 320px);
+    max-width: 100%;
     justify-self: end;
-  }
-}
-
-.grafico__punto {
-  fill: var(--borde);
-}
-
-.grafico__trazo {
-  fill: none;
-  stroke: var(--acento);
-  stroke-width: 1.1;
-  opacity: 0.32;
-}
-
-.grafico__focos {
-  fill: var(--acento);
-  opacity: 0.5;
-}
-
-@media (prefers-color-scheme: dark) {
-  .grafico__trazo {
-    opacity: 0.3;
-  }
-
-  .grafico__focos {
-    opacity: 0.45;
   }
 }
 
@@ -353,19 +340,71 @@ code {
   font-weight: 600;
 }
 
-/* --- Bloques y lista de temas -------------------------------------------- */
+/* --- Bloques ------------------------------------------------------------- */
 
+/* Cada bloque lleva una banda tintada detrás de su encabezado, con un tinte
+   propio. La estructura y el relleno vertical son idénticos en los tres, así
+   que las tres secciones se leen como tres partes iguales del mismo programa. */
 .bloque {
+  --bloque-fondo: var(--acento-suave);
+  --bloque-borde: var(--borde);
+  --bloque-acento: var(--acento);
   padding-block: clamp(1.8rem, 3vw, 2.6rem);
   border-bottom: 1px solid var(--borde);
 }
 
+/* Tintes por bloque en modo claro. */
+.bloque[data-bloque='A'] {
+  --bloque-fondo: #e8f0f7;
+  --bloque-borde: #cfe0ee;
+  --bloque-acento: #16507e;
+}
+
+.bloque[data-bloque='B'] {
+  --bloque-fondo: #f9f0db;
+  --bloque-borde: #e8d3a6;
+  --bloque-acento: var(--ambar-oscuro);
+}
+
+.bloque[data-bloque='C'] {
+  --bloque-fondo: #e4f1ec;
+  --bloque-borde: #c3ded6;
+  --bloque-acento: var(--verde-oscuro);
+}
+
+/* Los mismos tintes, oscurecidos para el modo oscuro: el tinte se mantiene
+   reconocible y el acento sube de luminosidad para conservar el contraste. */
+@media (prefers-color-scheme: dark) {
+  .bloque[data-bloque='A'] {
+    --bloque-fondo: #1b2a38;
+    --bloque-borde: #2d4a63;
+    --bloque-acento: #7fb2dd;
+  }
+
+  .bloque[data-bloque='B'] {
+    --bloque-fondo: #2c2617;
+    --bloque-borde: #5b4820;
+    --bloque-acento: var(--ambar);
+  }
+
+  .bloque[data-bloque='C'] {
+    --bloque-fondo: #162924;
+    --bloque-borde: #2b5a52;
+    --bloque-acento: var(--verde);
+  }
+}
+
 .bloque__cabecera {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 0.5rem 1rem;
+  gap: 0.85rem 1.1rem;
   margin-bottom: 1.25rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--bloque-fondo);
+  border: 1px solid var(--bloque-borde);
+  border-left: 4px solid var(--bloque-acento);
+  border-radius: var(--radio);
 }
 
 /* Icono del bloque: decoración, nunca fuente de información. El marco lleva
@@ -376,9 +415,9 @@ code {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 9px;
-  background: var(--acento-suave);
-  border: 1px solid var(--borde);
-  color: var(--acento);
+  background: var(--superficie);
+  border: 1px solid var(--bloque-borde);
+  color: var(--bloque-acento);
 }
 
 .bloque__icono {
@@ -391,12 +430,50 @@ code {
   stroke-linejoin: round;
 }
 
+/* Ilustración del bloque: SVG plano autorado en assets/img. Decoración pura. */
+.bloque__ilustracion {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+@media (min-width: 700px) {
+  .bloque__ilustracion {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+/* En pantallas estrechas la banda mantiene las tres piezas pero con menos aire,
+   para que el título del bloque no se parta en columnas de una palabra. */
+@media (max-width: 519px) {
+  .bloque__cabecera {
+    gap: 0.6rem 0.75rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .bloque__icono-marco {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .bloque__ilustracion {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.bloque__titulo-grupo {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
 .bloque__etiqueta {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--acento);
+  color: var(--bloque-acento);
 }
 
 .bloque h2 {
@@ -408,28 +485,78 @@ code {
   color: var(--texto-suave);
 }
 
+/* --- Lista de temas ------------------------------------------------------ */
+
+/* Rejilla de seis pistas iguales. Cada tarjeta ocupa 3 pistas cuando hay dos
+   columnas y 2 cuando hay tres, así que la fila siempre se rellena al 100 %.
+   Las reglas nth-child/nth-last-child resuelven el resto de la división —los
+   bloques tienen 26, 11 y 8 temas, resto 2 con tres columnas— repartiendo la
+   última fila entre dos mitades iguales o dándosela entera a una tarjeta. */
 .temas {
   display: grid;
-  gap: 0.6rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
+/* El li es el elemento de rejilla: al ser una rejilla de una sola celda, la
+   tarjeta se estira a la altura completa de la fila. */
+.temas > li {
+  display: grid;
+}
+
 @media (min-width: 760px) {
   .temas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .temas > li {
+    grid-column: span 3;
+  }
+
+  /* Número impar de temas: la última tarjeta ocupa la fila entera. */
+  .temas > li:last-child:nth-child(2n + 1) {
+    grid-column: span 6;
   }
 }
 
+@media (min-width: 1140px) {
+  .temas > li {
+    grid-column: span 2;
+  }
+
+  /* Resto 2: las dos últimas tarjetas se reparten la fila a mitades iguales. */
+  .temas > li:nth-last-child(2):nth-child(3n + 1),
+  .temas > li:last-child:nth-child(3n + 2) {
+    grid-column: span 3;
+  }
+
+  /* Resto 1: la última tarjeta ocupa la fila entera. */
+  .temas > li:last-child:nth-child(3n + 1) {
+    grid-column: span 6;
+  }
+
+  /* Resto 0 con un número impar de temas (9, 15, 21…): deshace el span 6 de la
+     regla de dos columnas para que las tres últimas sigan formando una fila. */
+  .temas > li:last-child:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* Ritmo interno fijo. El título reserva dos líneas y el epígrafe otras dos
+   aunque su texto sea más corto, y la ficha de estado se pinta siempre: una
+   tarjeta publicada y una pendiente miden exactamente lo mismo. */
 .tema {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.9rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.35rem 0.9rem;
   align-items: start;
   padding: 0.95rem 1.1rem;
   background: var(--superficie);
   border: 1px solid var(--borde);
+  border-top: 3px solid var(--bloque-acento);
   border-radius: var(--radio);
   color: inherit;
   text-decoration: none;
@@ -438,6 +565,7 @@ code {
 
 a.tema:hover {
   border-color: var(--acento);
+  border-top-color: var(--bloque-acento);
   transform: translateY(-1px);
   box-shadow: var(--sombra);
 }
@@ -448,49 +576,79 @@ a.tema:hover {
   min-width: 2.1rem;
   height: 2.1rem;
   border-radius: 8px;
-  background: var(--acento-suave);
-  color: var(--acento);
+  background: var(--bloque-fondo);
+  color: var(--bloque-acento);
   font-size: 0.85rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
 
 .tema__cuerpo {
+  display: grid;
+  gap: 0.35rem;
   min-width: 0;
 }
 
 .tema__titulo {
-  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(2 * 1.35em);
   font-weight: 600;
   line-height: 1.35;
-  text-wrap: pretty;
 }
 
 .tema__epigrafe {
-  display: block;
-  margin-top: 0.35rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(2 * 1.5em);
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--texto-suave);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .tema--pendiente {
-  opacity: 0.72;
+  opacity: 0.82;
   cursor: default;
 }
 
+/* Ficha de estado: se pinta siempre, publicada o pendiente, y con altura fija. */
 .tema__estado {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 1.55rem;
+  padding: 0 0.65rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--superficie-alt);
   color: var(--texto-suave);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tema__estado::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tema__estado[data-estado='publicado'] {
+  border-color: var(--clave-borde);
+  background: var(--clave-fondo);
+  color: var(--clave-borde);
 }
 
 /* --- Vista de tema -------------------------------------------------------- */
@@ -795,6 +953,31 @@ details > p {
 .test {
   max-width: var(--medida-texto);
   padding-block: clamp(1.8rem, 3.5vw, 3rem) 4rem;
+}
+
+/* Entrada de la página de test: texto a la izquierda y la ilustración decorativa
+   (assets/img/test.svg) a la derecha, con la misma estructura que la portada. */
+.test__entrada {
+  display: grid;
+  gap: 0.75rem 1.75rem;
+  align-items: center;
+}
+
+.test__ilustracion {
+  width: min(42vw, 128px);
+  height: auto;
+  justify-self: start;
+}
+
+@media (min-width: 720px) {
+  .test__entrada {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .test__ilustracion {
+    width: 168px;
+    justify-self: end;
+  }
 }
 
 .test__entradilla {
@@ -1378,7 +1561,9 @@ kbd {
   .lateral,
   .paginacion,
   .heroe__grafico,
-  .heroe__fuente {
+  .heroe__fuente,
+  .bloque__ilustracion,
+  .test__ilustracion {
     display: none;
   }
 

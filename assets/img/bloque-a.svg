@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+  <title>Balanza de la justicia y libro de la ley</title>
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="#e8f0f7" />
+  <g fill="none" stroke="#16324c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 44v74" />
+    <path d="M54 58h92" />
+    <path d="M54 58 36 88M54 58l18 30" />
+    <path d="M146 58l-18 30M146 58l18 30" />
+    <path d="M80 118h40" />
+    <path d="M88 126h24" />
+  </g>
+  <circle cx="100" cy="36" r="9" fill="#e0a63c" stroke="#16324c" stroke-width="6" />
+  <path d="M36 88a18 18 0 0 0 36 0Z" fill="#e0a63c" stroke="#16324c" stroke-width="6" stroke-linejoin="round" />
+  <path d="M128 88a18 18 0 0 0 36 0Z" fill="#e0a63c" stroke="#16324c" stroke-width="6" stroke-linejoin="round" />
+  <g stroke="#16324c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 148c-12-10-32-11-46-7v33c14-4 34-3 46 6Z" fill="#16507e" />
+    <path d="M100 148c12-10 32-11 46-7v33c-14-4-34-3-46 6Z" fill="#16507e" />
+  </g>
+  <g fill="#e8f0f7">
+    <path d="M100 154c-10-8-26-9-38-6v20c12-3 28-2 38 5Z" />
+    <path d="M100 154c10-8 26-9 38-6v20c-12-3-28-2-38 5Z" />
+  </g>
+  <path d="M100 148v32" fill="none" stroke="#16324c" stroke-width="6" stroke-linecap="round" />
+</svg>

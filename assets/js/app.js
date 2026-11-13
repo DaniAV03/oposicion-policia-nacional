@@ -86,6 +86,8 @@ export async function pintarPortada(contenedor) {
     const seccion = document.createElement('section');
     seccion.className = 'bloque';
     seccion.id = `bloque-${bloque.id}`;
+    // El tinte de la banda del encabezado se resuelve en CSS con este atributo.
+    seccion.dataset.bloque = bloque.id;
 
     const publicadosBloque = bloque.temas.filter(
       (t) => publicados[temas.indexOf(t)],
@@ -94,11 +96,23 @@ export async function pintarPortada(contenedor) {
     seccion.innerHTML = `
       <div class="bloque__cabecera">
         <span class="bloque__icono-marco" aria-hidden="true">${ICONOS_BLOQUE[bloque.id] ?? ''}</span>
-        <span class="bloque__etiqueta">Bloque ${bloque.id}</span>
-        <h2>${bloque.nombre}</h2>
-        <span class="bloque__cuenta">
-          ${bloque.temas.length} temas · ${publicadosBloque} publicados
-        </span>
+        <div class="bloque__titulo-grupo">
+          <span class="bloque__etiqueta">Bloque ${bloque.id}</span>
+          <h2>${bloque.nombre}</h2>
+          <span class="bloque__cuenta">
+            ${bloque.temas.length} temas · ${publicadosBloque} publicados
+          </span>
+        </div>
+        <img
+          class="bloque__ilustracion"
+          src="assets/img/bloque-${bloque.id.toLowerCase()}.svg"
+          width="200"
+          height="200"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
       </div>`;
 
     const lista = document.createElement('ul');
@@ -124,11 +138,9 @@ export async function pintarPortada(contenedor) {
             <span class="visualmente-oculto">Tema ${tema.numero}: </span>${escapar(tema.titulo)}
           </span>
           <span class="tema__epigrafe">${escapar(tema.epigrafe)}</span>
-          ${
-            publicado
-              ? ''
-              : '<span class="tema__estado">En preparación</span>'
-          }
+          <span class="tema__estado" data-estado="${publicado ? 'publicado' : 'pendiente'}">
+            ${publicado ? 'Publicado' : 'En preparación'}
+          </span>
         </span>`;
 
       item.appendChild(enlace);

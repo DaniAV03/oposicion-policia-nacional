@@ -49,35 +49,19 @@
           </div>
 
           <!--
-            Adorno geométrico de la portada. Es decoración pura: no transmite
-            información, va marcado con aria-hidden y su color se resuelve en la
-            hoja de estilos con las variables del tema (claro y oscuro).
+            Ilustración de la portada: SVG vectorial plano dibujado a mano y
+            guardado en el repositorio (assets/img/portada.svg). Es decoración,
+            así que no transmite información: alt="" y aria-hidden="true".
           -->
-          <svg class="heroe__grafico" viewBox="0 0 520 360" aria-hidden="true" focusable="false">
-            <defs>
-              <pattern id="grafico-trama" width="26" height="26" patternUnits="userSpaceOnUse">
-                <circle class="grafico__punto" cx="1.5" cy="1.5" r="1.5" />
-              </pattern>
-            </defs>
-            <rect class="grafico__trama" x="0" y="0" width="520" height="360" fill="url(#grafico-trama)" />
-            <g class="grafico__trazo">
-              <circle cx="300" cy="180" r="136" />
-              <circle cx="300" cy="180" r="92" />
-              <circle cx="300" cy="180" r="48" />
-              <path d="M300 44 418 248 182 248 Z" />
-              <path d="M300 316 182 112 418 112 Z" />
-              <path d="M148 180H452" />
-            </g>
-            <g class="grafico__focos">
-              <circle cx="300" cy="180" r="5" />
-              <circle cx="300" cy="44" r="3.5" />
-              <circle cx="300" cy="316" r="3.5" />
-              <circle cx="418" cy="248" r="3.5" />
-              <circle cx="182" cy="248" r="3.5" />
-              <circle cx="182" cy="112" r="3.5" />
-              <circle cx="418" cy="112" r="3.5" />
-            </g>
-          </svg>
+          <img
+            class="heroe__grafico"
+            src="assets/img/portada.svg"
+            width="200"
+            height="200"
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+          />
         </div>
       </section>
 

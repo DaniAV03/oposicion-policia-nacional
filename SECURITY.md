@@ -10,7 +10,7 @@ Abre una incidencia en
 sensible (por ejemplo, una inyección de contenido en una página publicada), describe el
 impacto sin publicar una prueba de concepto explotable contra el sitio en producción.
 
-El canal también está declarado en `.well-known/security.txt`, conforme al RFC 9116, con
+El canal también está declarado en `security.txt`, conforme al RFC 9116, con
 fecha de caducidad y lenguas preferentes.
 
 ## Qué es este sitio
@@ -77,7 +77,7 @@ gestiona GitHub, no este proyecto.
 
 - `.nojekyll` en la raíz: impide que el procesado de Jekyll oculte directorios que empiezan
   por guion bajo o punto, y evita que el contenido se transforme antes de publicarse.
-- `.well-known/security.txt`: contacto, caducidad y lenguas para el reporte de
+- `security.txt`: contacto, caducidad y lenguas para el reporte de
   vulnerabilidades.
 
 ## Lo que un alojamiento estático no puede imponer
@@ -138,3 +138,14 @@ cuenta o el repositorio.
 
 Este documento se publica bajo CC BY-SA 4.0, igual que el resto del contenido. El código
 del sitio, bajo MIT.
+
+## Ubicación real del canal de reporte
+
+GitHub Pages no publica directorios ocultos: al empaquetar el artefacto descarta
+`.well-known/`. Comprobado en producción: `/.well-known/security.txt` devolvía 404 y
+`/security.txt` devuelve 200. Por eso el fichero se sirve desde la raíz y su campo
+`Canonical` apunta ahí.
+
+`.nojekyll` se conserva en el repositorio pero no tiene efecto en este modo de
+despliegue: GitHub Actions publica el artefacto empaquetado sin pasar por Jekyll, y el
+fichero tampoco llega al sitio servido.

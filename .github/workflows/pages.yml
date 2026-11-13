@@ -27,6 +27,8 @@ jobs:
           node-version: '24'
       - run: node scripts/build-programa.mjs
       - run: node scripts/verificar.mjs
+      - run: node scripts/verificar-examenes.mjs
+      - run: node scripts/verificar-test.mjs
 
       - name: Preparar el sitio estático
         uses: actions/configure-pages@v6

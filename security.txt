@@ -8,5 +8,8 @@
 Contact: https://github.com/DaniAV03/oposicion-policia-nacional/issues
 Expires: 2027-06-30T23:59:59.000Z
 Preferred-Languages: es, en
-Canonical: https://daniav03.github.io/oposicion-policia-nacional/.well-known/security.txt
+Canonical: https://daniav03.github.io/oposicion-policia-nacional/security.txt
 Policy: https://github.com/DaniAV03/oposicion-policia-nacional/blob/main/SECURITY.md
+
+# Nota: GitHub Pages no publica directorios que empiezan por punto, así que este
+# fichero se sirve en la raíz y no en /.well-known/. Verificado en producción.

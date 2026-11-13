@@ -65,7 +65,7 @@ Lo que está aplicado:
   mismo origen. Sin analítica, sin CDN, sin cookies.
 - `<meta name="referrer" content="no-referrer">` y `rel="noopener noreferrer"` en todo
   enlace saliente, incluido el contenido de los temas, que se normaliza al pintarse.
-- `.nojekyll` en la raíz y `.well-known/security.txt` conforme al RFC 9116.
+- `.nojekyll` en la raíz y `security.txt` conforme al RFC 9116.
 
 Un alojamiento estático no permite fijar cabeceras de respuesta: `frame-ancestors`,
 `X-Frame-Options`, `X-Content-Type-Options` y HSTS **no están aplicadas**, y no se pueden

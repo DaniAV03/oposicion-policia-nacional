@@ -232,7 +232,7 @@
           "titulo": "Derechos Humanos",
           "epigrafe": "Derechos Humanos. Declaración Universal de Derechos Humanos. Convenio Europeo para la Protección de los Derechos Humanos y Libertades Fundamentales. Convenio contra la Tortura. Protocolo facultativo de la Convención contra la tortura. Mecanismo Nacional de Prevención de la Tortura del Defensor del Pueblo.",
           "ruta": "data/temas/27.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 28,
@@ -240,7 +240,7 @@
           "titulo": "Globalización y antiglobalización",
           "epigrafe": "Globalización y antiglobalización. Conceptos y características. Consecuencia de la globalización. Reacciones a la globalización. El Movimiento Antiglobalización: Organizaciones, objetivos e historia. El Foro Social Mundial.",
           "ruta": "data/temas/28.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 29,
@@ -248,7 +248,7 @@
           "titulo": "Actitudes y valores sociales",
           "epigrafe": "Actitudes y valores sociales. Formación de las actitudes: concepto, componentes y funciones. Estereotipos, prejuicios y discriminación. Actitudes de la personalidad autoritaria: xenofobia y dogmatismo. Los grupos sociales.",
           "ruta": "data/temas/29.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 30,
@@ -256,7 +256,7 @@
           "titulo": "Principios éticos de la sociedad actual",
           "epigrafe": "Principios éticos de la sociedad actual. Transmisión de valores en la sociedad actual: proceso de socialización. Libertad responsabilidad. Igualdad- solidaridad. Tolerancia. Contravalores, reacciones sociales a los valores mayoritarios: Racismo, fanatismo, fundamentalismo, sectarismo, hooliganismo. Especial consideración de los delitos de odio.",
           "ruta": "data/temas/30.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 31,

@@ -348,3 +348,42 @@ Con este lote el bloque A queda a falta de los temas 6 y 7.
 - **Bloque A cerrado (temas 1-26).** Lo que queda son los bloques B (27-37, Ciencias Sociales) y C (38-45,
   Materias Técnico-Científicas), donde no hay una ley detrás de cada epígrafe y el estándar de S4 hay que
   adaptarlo con una decisión explícita del dueño antes de seguir.
+
+### L19 — decisión de fuentes para los bloques B y C
+
+Decisión del dueño (16/11/2026), elegida entre tres opciones:
+
+> Solo fuentes primarias públicas, con cajas de límites
+
+Se convierte en **D7**: en los temas 27-45, donde no hay una ley detrás de cada epígrafe, toda afirmación
+debe salir de una fuente primaria pública (BOE cuando exista, INE, ministerios y organismos públicos, ONU
+y sus organismos, OMS, OIT, RAE/ASALE para la lengua, Defensor del Pueblo, INCIBE). Lo que no tenga fuente
+pública verificable se declara en la caja «Qué no se ha afirmado»; nunca se rellena con material de
+academia ni con recuerdos del redactor. Los conceptos doctrinales (por ejemplo, los modelos explicativos de
+la delincuencia) se presentan como tales, con la etiqueta de doctrina, no como hechos verificados.
+
+Orden de trabajo para los 19 restantes: 27-30, 31-33, 34-35, 36-37 (bloque B) y 38-45 (bloque C).
+
+### L20 — bloque B (I): temas 27 a 30, 30 de 45 publicados
+
+Primer lote redactado bajo **D7** (solo fuentes primarias públicas), y se nota: en estos temas la caja de
+límites es más grande porque el material verificable es menor.
+
+- `27.html` (109 477 B, 19 apartados, 19 tablas, 3 SVG): DUDH, Pactos, Convenio Europeo y sus protocolos,
+  Convención contra la Tortura, OPCAT y el MNP del Defensor del Pueblo. Corregidos dos identificadores
+  falsos de los que se barajaron y dos ELI mal derivados (los de los protocolos van por fecha del tratado,
+  no de publicación).
+- `28.html` (96 904 B, 23 apartados, 13 tablas, 3 SVG): el tema más conceptual del programa. Todas las
+  cifras llevan organismo, año y enlace; UNCTAD, FMI y OCDE bloquearon el acceso automatizado (403) y por
+  eso no hay ninguna cifra suya. Aviso: los dominios históricos del Foro Social Mundial ya no sirven
+  contenido del Foro.
+- `29.html` (109 813 B, 21 apartados, 20 tablas, 3 SVG): actitudes y valores. Psicología social marcada
+  como doctrina, con las réplicas críticas de los experimentos clásicos junto al resultado original, y el
+  dato del 14,1 % explicado con su advertencia (nacionalidad no es inmigración).
+- `30.html` (112 497 B, 26 apartados, 18 tablas, 3 SVG): valores y delitos de odio. Separación explícita
+  entre doctrina y ley; advierte de que **no existe una definición legal de «delito de odio»** en el CP y
+  de que todas las cifras oficiales son hechos conocidos policialmente, no condenas. Corregido el
+  identificador de la Ley 19/2007 (`BOE-A-2007-13408`, no `-13409`).
+- `programa.json` regenerado: 30 publicados, 15 pendientes (31-45), tres verificadores en verde.
+- Scratch pendiente de borrar por el padre: `%TEMP%\t27`, `%TEMP%\t28`, `%TEMP%\t29`, `%TEMP%\t30-ZwhK`,
+  `%TEMP%\scratch30.txt`, `C:\tmp\t27` y `C:\tmp\t30-ZwhK`.

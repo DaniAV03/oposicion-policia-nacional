@@ -26,7 +26,7 @@
           "titulo": "La Constitución Española : estructura y caracteres de la Constitución Española de 1978",
           "epigrafe": "La Constitución Española (I): estructura y caracteres de la Constitución Española de 1978. Los valores de la Constitución. Los principios del régimen constitucional: Estado democrático, Estado de derecho, Estado social, Monarquía parlamentaria y Estado autonomista. Los derechos y deberes fundamentales establecidos en la Constitución: especial referencia a los derechos fundamentales y libertades públicas, así como, a las garantías de los mismos y a la suspensión de los derechos y libertades. El Defensor del Pueblo.",
           "ruta": "data/temas/02.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 3,
@@ -34,7 +34,7 @@
           "titulo": "La Constitución Española : De la Corona",
           "epigrafe": "La Constitución Española (II): De la Corona. De las Cortes Generales. Del Gobierno y la Administración. De las relaciones entre el Gobierno y las Cortes Generales. Del Poder Judicial. De la organización territorial del Estado. Del Tribunal Constitucional. De la reforma constitucional.",
           "ruta": "data/temas/03.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 4,
@@ -42,7 +42,7 @@
           "titulo": "La Unión Europea: referencia histórica",
           "epigrafe": "La Unión Europea: referencia histórica. El Derecho derivado. Instituciones más importantes de la Unión Europea. La cooperación policial internacional. Especial referencia al Tribunal Europeo de Derechos Humanos y el Tribunal de Justicia de la Unión Europea.",
           "ruta": "data/temas/04.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 5,
@@ -50,7 +50,7 @@
           "titulo": "La organización y funcionamiento de la Administración General del Estado: Principios de organización, funci…",
           "epigrafe": "La organización y funcionamiento de la Administración General del Estado: Principios de organización, funcionamiento y relaciones con los ciudadanos; órganos superiores y órganos directivos en la organización central. El Gobierno: composición, organización y funciones; el Gobierno en funciones.",
           "ruta": "data/temas/05.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 6,
@@ -74,7 +74,7 @@
           "titulo": "La Dirección General de la Policía",
           "epigrafe": "La Dirección General de la Policía. Estructura orgánica y funciones de los servicios centrales y territoriales de la Policía Nacional. La Policía Nacional: funciones, escalas y categorías; sistemas de acceso; régimen disciplinario y situaciones administrativas.",
           "ruta": "data/temas/08.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 9,
@@ -82,7 +82,7 @@
           "titulo": "La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad: disposiciones generales; princip…",
           "epigrafe": "La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad: disposiciones generales; principios básicos de actuación; disposiciones estatutarias comunes. De las Fuerzas y Cuerpos de Seguridad del Estado: los derechos de representación colectiva; el Consejo de Policía; organización de las unidades de Policía Judicial; de las Policías de las Comunidades Autónomas; de la colaboración y coordinación entre el Estado y las Comunidades Autónomas; de las Policías Locales.",
           "ruta": "data/temas/09.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 10,
@@ -122,7 +122,7 @@
           "titulo": "La Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana",
           "epigrafe": "La Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana. Disposiciones generales. Documentación e identificación personal. Actuaciones para el mantenimiento y restablecimiento de la seguridad ciudadana. Potestades especiales de policía administrativa de seguridad. Régimen sancionador.",
           "ruta": "data/temas/14.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 15,
@@ -138,7 +138,7 @@
           "titulo": "Derecho Penal Parte General: concepto",
           "epigrafe": "Derecho Penal Parte General: concepto. Principios informadores del Derecho Penal. La infracción penal. Concepto material de delito. Grados de ejecución del delito. Personas físicas y jurídicas criminalmente responsables. Las consecuencias jurídicas de la infracción penal. Vigencia temporal y espacial de la Ley Penal. La edad penal y sus efectos. Circunstancias modificativas de la responsabilidad criminal.",
           "ruta": "data/temas/16.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 17,
@@ -154,7 +154,7 @@
           "titulo": "Delitos contra el patrimonio y contra el orden socioeconómico",
           "epigrafe": "Delitos contra el patrimonio y contra el orden socioeconómico. El hurto. El robo. La extorsión. Robo y hurto de uso de vehículos a motor. Usurpación. De las defraudaciones: estafas; apropiación indebida; defraudaciones de fluido eléctrico y análogo.",
           "ruta": "data/temas/18.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 19,
@@ -178,7 +178,7 @@
           "titulo": "Noción de Derecho Procesal Penal",
           "epigrafe": "Noción de Derecho Procesal Penal. Concepto de jurisdicción y de competencia. Los órganos de la jurisdicción penal. Concepto de denuncia y la obligación de denunciar. La detención: concepto y duración. La obligación de detener. Los derechos del detenido. El procedimiento de habeas corpus. Procedimiento integral de la detención policial. El Ministerio Fiscal: funciones. La Policía Judicial.",
           "ruta": "data/temas/21.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 22,

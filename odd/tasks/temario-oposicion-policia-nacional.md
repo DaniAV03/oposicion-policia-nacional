@@ -70,6 +70,19 @@ versionado. Sin PHP (GitHub Pages no ejecuta código de servidor).
 - T9 · S1 · inline · Workflow de GitHub Actions y despliegue en Pages.
 - T10 · S6 · verify · Verificación funcional y de legibilidad.
 - T11 · S6,S8 · inline · Hoja de estilos: Lexend autoalojada, escala tipográfica y contraste AA.
+- T12 · S2,S4,S5,S6 · worker · Autorar el Tema 21 (Derecho Procesal Penal) al estándar de referencia.
+- T13 · S2,S4,S5,S6 · worker · Autorar el Tema 18 (Delitos contra el patrimonio) al estándar de referencia.
+- T14 · S2,S4,S5,S6 · worker · Autorar el Tema 26 (protección de datos).
+- T15 · S2,S4,S5,S6 · worker · Autorar el Tema 17 (penal especial).
+- T16 · S2,S4,S5,S6 · worker · Autorar el Tema 20 (delitos informáticos).
+- T17 · S2,S4,S5,S6 · worker · Autorar el Tema 10 (extranjería).
+- T18 · S2,S4,S5,S6 · worker · Autorar los Temas 11 y 12.
+- T19 · S2,S4,S5,S6 · worker · Autorar los Temas 13 y 15.
+- T20 · S2,S4,S5,S6 · worker · Autorar los Temas 6 y 7.
+- T21 · S2,S4,S5,S6 · worker · Autorar los Temas 19, 22 y 23.
+- T22 · S2,S4,S5,S6 · worker · Autorar los Temas 24 y 25.
+- T23 · S2,S4,S5,S6 · worker · Autorar los Temas 27-37 (bloque B, sin ley detrás).
+- T24 · S2,S4,S5,S6 · worker · Autorar los Temas 38-45 (bloque C).
 
 ## Log
 
@@ -182,3 +195,34 @@ corrupta: los temas 27-37 aparecían desplazados. Localizada la fuente oficial c
 las bases: BOE-A-2026-15055, de 10 de julio de 2026, Anexo I, con PDF descargable
 (`https://www.boe.es/boe/dias/2026/07/10/pdfs/BOE-A-2026-15055.pdf`). Extracción limpia:
 45 temas, numeración 1-45 sin huecos, tres bloques correctos.
+
+### L12 — reanudación del 2026-11-16
+
+> continua por la app poli donde lo dejaste
+
+Árbol sano al reanudar: `scripts/verificar.mjs` (9 publicados, 36 pendientes, sin errores
+estructurales), `scripts/verificar-examenes.mjs` (200 preguntas válidas) y
+`scripts/verificar-test.mjs` (96 comprobaciones) en verde.
+
+Se retoma el punto 1 de L10 con el lote de dos temas de mayor peso: T21 y T18. El flag
+`publicado` de `data/programa/programa.json` es el que decide qué tema se sirve, y es un fichero
+compartido: los redactores entregan solo su `data/temas/NN.html` y el padre activa los flags y
+pasa los tres verificadores al cerrar el lote.
+
+**Cierre del lote (11 de 45 publicados)**:
+
+- `data/temas/21.html` (153 131 B, 20 apartados, 3 SVG, 13 cajas clave). Escrito desde el BOE
+  consolidado: CE, LECrim, LOPJ, LO 6/1984, LO 50/1981, LO 2/1986, RD 769/1987, LO 4/2015 y
+  LO 4/1981. Incluye el traslado de la LO 1/2025 (Tribunal de Instancia) frente a la
+  terminología antigua que las leyes conservan. La fecha de consulta declarada es 16/11/2026: si
+  el tema se revisa más tarde hay que reconfirmar la última actualización de LECrim y LOPJ.
+- `data/temas/18.html` (122 582 B, 22 apartados, 3 SVG, 15 cajas clave, 15 tablas). Escrito
+  desde el CP consolidado (arts. 234-256, 268 y 269) con las reformas de la LO 9/2022,
+  LO 14/2022 y LO 1/2026. Deja fuera a propósito los capítulos VII-XIV del título XIII.
+- `data/programa/programa.json` regenerado con `scripts/build-programa.mjs`: el flag
+  `publicado` se deriva de la existencia del fichero, así que no hay que editarlo a mano.
+- Tres verificadores en verde con 11 publicados y 34 pendientes. Se sustituyeron los dos `<em>`
+  del tema 18 por `<strong>`: Lexend no tiene cursiva y el navegador la fingiría (S8). Los temas
+  01 y 04 publicados sí usan `<em>`; queda como detalle de estilo a corregir en la auditoría.
+- Pendiente del dueño: pasada visual (SVG a 360 px, contraste) y revisión jurídica de los
+  artículos citados en ambos temas, en la línea de la tarea de auditoría legal de L11.

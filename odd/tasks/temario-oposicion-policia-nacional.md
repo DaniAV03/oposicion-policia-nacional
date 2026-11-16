@@ -282,3 +282,26 @@ antes del arreglo (temas 13 y 26) y en verde después; el resto de los 43 epígr
   `%TEMP%\gpwMcxNs\gaFkcbaZ\t20` y `/tmp/t10`.
 - Siguiente lote del orden de L10: 11 y 12 (ambos de extranjería y asilo), o 13 y 15 si se prefiere
   cerrar el bloque A por peso.
+
+### L16 — lote 11, 12, 13 y 15: 19 de 45 publicados, y la devolución del tema 10
+
+- `data/temas/11.html` (119 871 B, 24 apartados, 23 tablas, 2 SVG): LO 4/2000 (arts. 50-66) y el título XIV
+  del RD 1155/2024. Catálogo letra por letra y los cuatro relojes del procedimiento.
+- `data/temas/12.html` (108 453 B, 24 apartados, 14 tablas, 3 SVG): Ley 12/2009, RD 203/1995, RD 865/2001,
+  RD 1325/2003 y el RD 220/2022 del sistema de acogida. Avisa de que no hay reglamento vigente que
+  desarrolle la Ley 12/2009 y de las remisiones muertas del propio texto (Ley 5/1984, Reglamento 343/2003).
+- `data/temas/13.html` (110 590 B, 26 apartados, 21 tablas, 2 SVG): Ley 5/2014, RD 2364/1994 solo en lo que
+  la ley permite, Orden INT/859/2023 y Orden INT/315/2011. Marca que el art. 49.4 remite a la LO 15/1999,
+  derogada por la LO 3/2018.
+- `data/temas/15.html` (119 840 B, 25 apartados, 20 tablas, 3 SVG): Ley 8/2011 con la reforma de la LO 9/2022,
+  RD 704/2011, RDL 12/2018, RD 43/2021, RD 311/2022. Hallazgo: el nombre legal es Catálogo Nacional de
+  Infraestructuras **Estratégicas**, el Catálogo es secreto, la Ley 8/2011 no lleva régimen sancionador
+  (está en el RDL 12/2018) y no consta transposición española de la NIS 2 ni de la Directiva 2022/2557.
+- **Corrección al tema 10 ya publicado**: afirmaba una prohibición de entrada de «máximo 3 años» por
+  devolución. El inciso del art. 58.7 de la LO 4/2000 está **declarado inconstitucional y nulo por la
+  STC 17/2013** (comprobado en la nota del texto consolidado). Corregido en los cinco lugares donde
+  aparecía (dos párrafos, una tabla, el SVG de la prohibición de entrada y el resumen).
+- `programa.json` regenerado: 19 publicados, 26 pendientes, tres verificadores en verde.
+- Scratch pendiente de borrar por el padre: `%TEMP%\t11`, `%TEMP%\t12`, `%TEMP%\t13`, `%TEMP%\t15` y
+  `C:\tmp\t15` (vacío).
+- Siguiente lote en el orden de L10: 19 y 22 (o 6 y 7 para cerrar los primeros del bloque A).

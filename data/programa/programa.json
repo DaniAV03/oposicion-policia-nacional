@@ -98,7 +98,7 @@
           "titulo": "De las infracciones en materia de extranjería y su régimen sancionador",
           "epigrafe": "De las infracciones en materia de extranjería y su régimen sancionador. Tipos de infracciones: infracciones leves, infracciones graves e infracciones muy graves. Sanciones. Prescripción de las infracciones y de las sanciones. Efectos de la expulsión y devolución. Efectos de la denegación de entrada.",
           "ruta": "data/temas/11.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 12,
@@ -106,7 +106,7 @@
           "titulo": "La protección internacional",
           "epigrafe": "La protección internacional. Reglas procedimentales para el reconocimiento de la protección internacional. De los menores y otras personas vulnerables. Centros de acogida a refugiados. Apátridas y desplazados.",
           "ruta": "data/temas/12.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 13,
@@ -114,7 +114,7 @@
           "titulo": "Disposiciones generales en materia de seguridad privada en España",
           "epigrafe": "Disposiciones generales en materia de seguridad privada en España. Coordinación. Empresas de seguridad privada y despachos de detectives privados. Personal de seguridad privada. Servicios y medidas de seguridad.",
           "ruta": "data/temas/13.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 14,
@@ -130,7 +130,7 @@
           "titulo": "Medidas para la Protección de Infraestructuras Críticas",
           "epigrafe": "Medidas para la Protección de Infraestructuras Críticas. El Catálogo Nacional de Infraestructuras Críticas. El Sistema de Protección de Infraestructuras Críticas. Ciberseguridad.",
           "ruta": "data/temas/15.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 16,

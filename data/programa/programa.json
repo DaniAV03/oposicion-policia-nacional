@@ -104,7 +104,7 @@
           "numero": 12,
           "bloque": "A",
           "titulo": "La protección internacional",
-          "epigrafe": "La protección internacional. Reglas procedimentales para el reconocimiento de la protección internacional. De los menores y otras personas vulnerables. Centros de acogida a refugiados. Apátridas y desplazados. Viernes 10 de julio de 2026",
+          "epigrafe": "La protección internacional. Reglas procedimentales para el reconocimiento de la protección internacional. De los menores y otras personas vulnerables. Centros de acogida a refugiados. Apátridas y desplazados.",
           "ruta": "data/temas/12.html",
           "publicado": false
         },
@@ -208,7 +208,7 @@
           "numero": 25,
           "bloque": "A",
           "titulo": "Marco normativo básico en prevención de riesgos laborales",
-          "epigrafe": "Marco normativo básico en prevención de riesgos laborales. La Ley 31/1995, de Prevención de Riesgos Laborales. RD 39/1997, Reglamento de los servicios de prevención. El RD 2/2006, sobre Prevención de Riesgos Laborales en los funcionarios del Cuerpo Nacional de Policía. El RD 67/2010 sobre adaptación de la Prevención de Riesgos Laborales en la Administración General del Estado. Derechos y deberes básicos en materia de Prevención de Riesgos laborales. Viernes 10 de julio de 2026",
+          "epigrafe": "Marco normativo básico en prevención de riesgos laborales. La Ley 31/1995, de Prevención de Riesgos Laborales. RD 39/1997, Reglamento de los servicios de prevención. El RD 2/2006, sobre Prevención de Riesgos Laborales en los funcionarios del Cuerpo Nacional de Policía. El RD 67/2010 sobre adaptación de la Prevención de Riesgos Laborales en la Administración General del Estado. Derechos y deberes básicos en materia de Prevención de Riesgos laborales.",
           "ruta": "data/temas/25.html",
           "publicado": false
         },
@@ -310,7 +310,7 @@
           "numero": 37,
           "bloque": "B",
           "titulo": "Ortografía de la lengua española",
-          "epigrafe": "Ortografía de la lengua española. Reglas ortográficas. Uso de las letras o grafemas. Uso de la tilde, de los signos ortográficos y de las letras mayúsculas y minúsculas. Representación gráfica de las unidades léxicas. Ortografía de las expresiones procedentes de otras lenguas, de nombres propios y expresiones numéricas. Viernes 10 de julio de 2026",
+          "epigrafe": "Ortografía de la lengua española. Reglas ortográficas. Uso de las letras o grafemas. Uso de la tilde, de los signos ortográficos y de las letras mayúsculas y minúsculas. Representación gráfica de las unidades léxicas. Ortografía de las expresiones procedentes de otras lenguas, de nombres propios y expresiones numéricas.",
           "ruta": "data/temas/37.html",
           "publicado": false
         }

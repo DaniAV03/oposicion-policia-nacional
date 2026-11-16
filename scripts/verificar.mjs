@@ -43,6 +43,11 @@ const pie = /cve:|Verificable en|https?:\/\//i;
 const conPie = temas.filter((t) => pie.test(t.epigrafe) || pie.test(t.titulo));
 if (conPie.length) fallo(`Epígrafes con el pie de página del PDF: ${conPie.map((t) => t.numero).join(', ')}`);
 
+// Y la fecha de la cabecera («Viernes 10 de julio de 2026») se pega igual al final del epígrafe.
+const fechaPdf = /(lunes|martes|miércoles|jueves|viernes|sábado|domingo)\s+\d{1,2} de \w+ de \d{4}/i;
+const conFecha = temas.filter((t) => fechaPdf.test(t.epigrafe) || fechaPdf.test(t.titulo));
+if (conFecha.length) fallo(`Epígrafes con la fecha de cabecera del PDF: ${conFecha.map((t) => t.numero).join(', ')}`);
+
 for (const campo of ['fuente', 'fuenteUrl', 'licencia']) {
   if (!programa[campo]) fallo(`El programa no declara «${campo}»`);
 }

@@ -37,7 +37,8 @@ const RUIDO = /^(cve:|Verificable en|ANEXO|B\.O\.E\.|Núm\.|Página|https?:\/\/)
 
 // El mismo pie se intercala a mitad de epígrafe, pegado al texto: «… España.  cve:
 // BOE-A-2026-15055». Se recorta en cualquier posición de la línea, no solo al principio.
-const PIE = /cve:\s*BOE-A-\d{4}-\d+|Verificable en\s+https?:\/\/\S+/gi;
+// La cabecera de página («Viernes 10 de julio de 2026») se pega igual al final del epígrafe.
+const PIE = /cve:\s*BOE-A-\d{4}-\d+|Verificable en\s+https?:\/\/\S+|(?:Lunes|Martes|Miércoles|Jueves|Viernes|Sábado|Domingo)\s+\d{1,2} de \w+ de \d{4}/gi;
 
 const sinPie = (linea) => linea.replace(PIE, ' ');
 

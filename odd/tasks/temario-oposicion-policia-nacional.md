@@ -449,3 +449,50 @@ límites es más grande porque el material verificable es menor.
   (5) la pasada visual del dueño, que ningún agente puede hacer sin navegador.
 - Scratch pendiente de borrar por el padre: `%TEMP%\t41` (bajo `gpwMcxNs\ga874tDN`), `t42`, `t43`, `t44`,
   `t45`, `C:\tmp\t43`, `C:\tmp\t44` y `C:\tmp\t45`.
+
+### L24 — encargo nuevo: psicotécnicos (preparación, sin implementar)
+
+Petición del dueño (16/11/2026), literal:
+
+> vale ya esta subido ahora hay que hacer psicotenicos temario de como pasarlos y los examenes
+> psicotecnicos pero no hagas nada aun , solo quiero que dejes todo preparado para acontinuar mañana
+
+Se añaden dos requisitos y **no se implementa nada todavía**: queda todo listo para empezar mañana.
+
+- **S9.** "psicotenicos temario de como pasarlos": una guía de estudio, no un banco. Un apartado por tipo
+  de prueba con qué mide, método paso a paso, un ejemplo resuelto a mano, las trampas típicas y el tiempo
+  recomendado por ítem. Debe poder estudiarse sola, sin las pruebas delante.
+- **S10.** "los examenes psicotecnicos": pruebas generadas por algoritmo, con la misma lógica que ya
+  decidió D3 (nada copiado de academias, aleatorización infinita), conectadas al motor de sesiones que
+  ya existe (modos, progreso en `localStorage`, racha, reto diario).
+
+#### Plan de trabajo para mañana (orden de ejecución)
+
+- **T25 · S9** · inline · `data/psicotecnicos/guia.html` (fragmento de cuerpo, mismo estándar de marcado
+  que los temas): series numéricas y de letras, matrices y analogías gráficas, razonamiento verbal,
+  ortografía, cálculo y problemas, con ejemplo resuelto y trampas en cada bloque.
+- **T26 · S10,S3** · worker · `assets/js/psicotecnicos-core.js`: generador por tipos con dificultad
+  parametrizada y **semilla determinista** (misma semilla, mismos ítems), solución única verificable y
+  distractores plausibles, sin material de terceros.
+- **T27 · S10,S3** · inline · Integración con el motor existente: entrenamiento por tipo, examen
+  cronometrado con mezcla equilibrada, sin repetir ítem dentro de la sesión, progreso en `localStorage`.
+- **T28 · S5,S6** · inline · `psicotecnicos.html`: misma CSP estricta, misma hoja de estilos, guía arriba
+  y lanzador de pruebas debajo; entrada nueva en la portada.
+- **T29 · S1** · inline · `scripts/verificar-psicotecnicos.mjs` con aserciones deterministas (semilla
+  fija → mismos ítems; solución única; dificultad monótona; ningún ítem repetido en la sesión) y puerta
+  en el build, junto a los tres verificadores actuales.
+- **T30 · S6** · verify · Verificación funcional: cronómetro, corrección, progreso y exportar/importar.
+
+#### Decisiones que hay que cerrar antes de escribir código (D8-D11)
+
+- **D8.** ¿La guía de psicotécnicos va dentro de la sección de temario como un 46.º documento, o es una
+  sección aparte con su propia entrada en la portada?
+- **D9.** ¿El progreso de psicotécnicos cuenta en el mismo marcador que el temario, o lleva su propio
+  contador y su propio mejor resultado?
+- **D10.** ¿El examen psicotécnico replica la estructura oficial (número de ítems, orden y tiempo) o se
+  ofrece libertad de configuración? Si se replica, hace falta la fuente oficial del cuestionario.
+- **D11.** ¿Cronómetro por prueba o por bloque completo? El motor actual ya cronometra a 60 s por
+  pregunta: hay que decidir si esto se mantiene aquí o se cambia.
+
+**Estado del temario al cerrar**: 45 de 45 publicados, tres verificadores en verde. Nada de este encargo
+está implementado: no se ha creado ningún fichero de psicotécnicos.

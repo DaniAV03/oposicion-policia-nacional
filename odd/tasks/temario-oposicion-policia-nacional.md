@@ -331,3 +331,20 @@ Con este lote el bloque A queda a falta de los temas 6 y 7.
 - Scratch pendiente de borrar por el padre: `%TEMP%\t19`, `%TEMP%\t22`, `%TEMP%\t2302rP`, `%TEMP%\t24`,
   `%TEMP%\gpwMcxNs\garkA86L`, `%TEMP%\t25` y `C:\tmp\t22`.
 - Siguiente: temas 6 y 7, con los que se cierra el bloque A.
+
+### L18 — temas 6 y 7: el bloque A está completo (26 de 45)
+
+- `06.html` (111 273 B, 23 apartados, 13 tablas, 3 SVG): TREBEP arts. 8-12 y 55-68, LO 9/2015 y la
+  particularidad policial. Trampas: el art. 8.2 tiene **cuatro** clases y «funcionario en prácticas» no es
+  una de ellas; la renuncia no inhabilita pero la separación sí; el art. 33 de la Ley 30/1984 está derogado
+  y se sigue citando; la segunda actividad policial no es jubilación.
+- `07.html` (99 871 B, 23 apartados, 12 tablas, 3 SVG): estructura del Ministerio del Interior. Confirma y
+  amplía L7: **RD 207/2024** vigente y RD 734/2020 derogado; el **RD 328/2026** añadió la SG de Protección
+  Civil y Emergencias y suprimió el art. 13; no existe «Gabinete de Coordinación y Estudios» (es Dirección
+  General) ni «DG de Relaciones Internacionales, Migraciones y Extranjería» (es DG de Relaciones
+  Internacionales y Extranjería); donde los manuales ponen una DG hay una SG de Instituciones Penitenciarias
+  más una DG de Ejecución Penal y Reinserción Social.
+- `programa.json` regenerado: 26 publicados, 19 pendientes (27-45), tres verificadores en verde.
+- **Bloque A cerrado (temas 1-26).** Lo que queda son los bloques B (27-37, Ciencias Sociales) y C (38-45,
+  Materias Técnico-Científicas), donde no hay una ley detrás de cada epígrafe y el estándar de S4 hay que
+  adaptarlo con una decisión explícita del dueño antes de seguir.

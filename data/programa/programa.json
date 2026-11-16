@@ -58,7 +58,7 @@
           "titulo": "Los funcionarios públicos: concepto y clases",
           "epigrafe": "Los funcionarios públicos: concepto y clases. Adquisición y pérdida de la condición de funcionario.",
           "ruta": "data/temas/06.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 7,
@@ -66,7 +66,7 @@
           "titulo": "El Ministerio del Interior: estructura orgánica básica",
           "epigrafe": "El Ministerio del Interior: estructura orgánica básica. La Secretaría de Estado de Seguridad: estructura y funciones.",
           "ruta": "data/temas/07.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 8,

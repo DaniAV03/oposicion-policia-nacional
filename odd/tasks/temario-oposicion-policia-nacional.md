@@ -226,3 +226,18 @@ pasa los tres verificadores al cerrar el lote.
   01 y 04 publicados sí usan `<em>`; queda como detalle de estilo a corregir en la auditoría.
 - Pendiente del dueño: pasada visual (SVG a 360 px, contraste) y revisión jurídica de los
   artículos citados en ambos temas, en la línea de la tarea de auditoría legal de L11.
+
+### L13 — la revisión nativa se apaga en este clon, y un defecto en dos epígrafes
+
+El dueño desactivó la revisión nativa en este clon (`gentle-ai review mode disable --scope clone`).
+Motivo: el candidato del lote 18+21 ocupa 4 619 líneas de diff y el proveedor lo detuvo en el
+preflight con `lens_context_budget_exceeded`, sin crear autoridad de revisión. La entrega vuelve a
+la política ordinaria del repositorio: los tres verificadores y el commit como unidad de trabajo.
+
+Al preparar el lote siguiente se descubrió que los epígrafes 13 y 26 arrastraban el pie de página
+del PDF oficial dentro del texto («… en España. cve: BOE-A-2026-15055 Coordinación. Empresas …
+Verificable en https://www.boe.es»). El pie se intercala en la misma línea que el texto y el
+extractor solo filtraba las líneas que empezaban por él. Corregido en `scripts/build-programa.mjs`
+con un recorte en cualquier posición, más una comprobación nueva en `scripts/verificar.mjs` que
+falla si algún epígrafe o título contiene `cve:`, «Verificable en» o una URL. Observado en rojo
+antes del arreglo (temas 13 y 26) y en verde después; el resto de los 43 epígrafes quedó idéntico.

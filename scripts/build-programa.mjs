@@ -35,6 +35,12 @@ const NOMBRES_BLOQUE = {
 // Ruido de paginación del PDF oficial.
 const RUIDO = /^(cve:|Verificable en|ANEXO|B\.O\.E\.|Núm\.|Página|https?:\/\/)/i;
 
+// El mismo pie se intercala a mitad de epígrafe, pegado al texto: «… España.  cve:
+// BOE-A-2026-15055». Se recorta en cualquier posición de la línea, no solo al principio.
+const PIE = /cve:\s*BOE-A-\d{4}-\d+|Verificable en\s+https?:\/\/\S+/gi;
+
+const sinPie = (linea) => linea.replace(PIE, ' ');
+
 /** Une las líneas de un epígrafe en un solo párrafo. */
 function unir(lineas) {
   return lineas
@@ -69,7 +75,7 @@ function abrirBloque(id, nombreLeido) {
 }
 
 for (const cruda of lineas) {
-  const linea = cruda.trimEnd();
+  const linea = sinPie(cruda.trimEnd());
   if (!linea.trim() || RUIDO.test(linea.trim())) continue;
 
   // Cabecera de bloque: "A) Ciencias Jurídicas". Puede partirse en dos líneas.

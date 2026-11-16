@@ -112,7 +112,7 @@
           "numero": 13,
           "bloque": "A",
           "titulo": "Disposiciones generales en materia de seguridad privada en España",
-          "epigrafe": "Disposiciones generales en materia de seguridad privada en España. cve: BOE-A-2026-15055 Coordinación. Empresas de seguridad privada y despachos de detectives privados. Verificable en https://www.boe.es Personal de seguridad privada. Servicios y medidas de seguridad.",
+          "epigrafe": "Disposiciones generales en materia de seguridad privada en España. Coordinación. Empresas de seguridad privada y despachos de detectives privados. Personal de seguridad privada. Servicios y medidas de seguridad.",
           "ruta": "data/temas/13.html",
           "publicado": false
         },
@@ -215,8 +215,8 @@
         {
           "numero": 26,
           "bloque": "A",
-          "titulo": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, cve: BOE-A-2026-15055 de 5 de diciembr…",
-          "epigrafe": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, cve: BOE-A-2026-15055 de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos Verificable en https://www.boe.es digitales. Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales.",
+          "titulo": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Da…",
+          "epigrafe": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales. Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales.",
           "ruta": "data/temas/26.html",
           "publicado": false
         }

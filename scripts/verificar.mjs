@@ -38,6 +38,11 @@ if (new Set(numeros).size !== numeros.length) fallo('Hay números de tema repeti
 const vacios = temas.filter((t) => !t.epigrafe || t.epigrafe.length < 20);
 if (vacios.length) fallo(`Epígrafes vacíos o truncados: ${vacios.map((t) => t.numero).join(', ')}`);
 
+// El pie de página del PDF oficial se intercala a mitad de epígrafe al extraer el texto.
+const pie = /cve:|Verificable en|https?:\/\//i;
+const conPie = temas.filter((t) => pie.test(t.epigrafe) || pie.test(t.titulo));
+if (conPie.length) fallo(`Epígrafes con el pie de página del PDF: ${conPie.map((t) => t.numero).join(', ')}`);
+
 for (const campo of ['fuente', 'fuenteUrl', 'licencia']) {
   if (!programa[campo]) fallo(`El programa no declara «${campo}»`);
 }

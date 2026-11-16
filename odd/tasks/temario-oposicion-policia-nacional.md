@@ -387,3 +387,23 @@ límites es más grande porque el material verificable es menor.
 - `programa.json` regenerado: 30 publicados, 15 pendientes (31-45), tres verificadores en verde.
 - Scratch pendiente de borrar por el padre: `%TEMP%\t27`, `%TEMP%\t28`, `%TEMP%\t29`, `%TEMP%\t30-ZwhK`,
   `%TEMP%\scratch30.txt`, `C:\tmp\t27` y `C:\tmp\t30-ZwhK`.
+
+### L21 — bloque B (II): temas 31 a 35, 35 de 45 publicados
+
+- `31.html` (109 546 B, 25 apartados, 19 tablas): inmigración con datos del INE, Eurostat y ACNUR. Trampa
+  central bien separada: nacionalidad extranjera, persona nacida en el extranjero e inmigración no son lo
+  mismo.
+- `32.html` (109 970 B, 18 apartados, 11 tablas): geografía humana y demografía con **fórmula y ejemplo
+  resuelto** para cada indicador, más siete ejercicios. Datos del INE y de la AEMA.
+- `33.html` (109 490 B, 27 apartados, 14 tablas): seguridad, inseguridad y teorías criminológicas etiquetadas
+  como doctrina con autor, año y límite. Datos del Ministerio del Interior (2025 y primer semestre de 2026) y
+  del CIS. Aviso registrado: el balance anual y la serie anual de 2025 difieren en 1.831 hechos y no se
+  explica la causa en las fuentes.
+- `34.html` (102 094 B, 26 apartados, 18 tablas): drogodependencias con EDADES 2024 y ESTUDES 2025. Las dos
+  definiciones de droga (sanitaria y jurídica por listas) van separadas desde el principio.
+- `35.html` (109 964 B, 27 apartados, 22 tablas): desarrollo sostenible, con la definición literal de
+  A/42/427 y los instrumentos de gestión ambiental en tabla norma/qué exige/qué tramita.
+- `programa.json` regenerado: 35 publicados, 10 pendientes (36-45), tres verificadores en verde.
+- Scratch pendiente de borrar por el padre: `%TEMP%\t31`, `t32`, `t33`, `t34.cEuw`, `t35`, `C:\tmp\t31` y
+  `C:\tmp\t33`.
+- Quedan el 36 y el 37 (lengua española) y los ocho del bloque C (38-45).

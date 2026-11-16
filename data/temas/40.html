@@ -1,0 +1,1849 @@
+<div class="clave">
+  <span class="clave__titulo">Objetivos del tema</span>
+  <p>Al terminar este tema tienes que ser capaz de:</p>
+  <ol>
+    <li>Ordenar la cadena dato → información → conocimiento → inteligencia y explicar qué añade cada eslabón con un ejemplo propio.</li>
+    <li>Enumerar las cuatro disciplinas de obtención que publica el CNI (HUMINT, OSINT, SIGINT, GEOINT) y situar las demás tipologías como doctrina ampliada.</li>
+    <li>Describir el ciclo de inteligencia con sus cuatro fases, sus subfases y el producto de cada una.</li>
+    <li>Decir quién hace cada fase y en cuál es más frágil el proceso, sin inventar organigramas internos.</li>
+    <li>Definir OSINT y separarlo con claridad de la intrusión informática: por qué <strong>OSINT no es hacking</strong>.</li>
+    <li>Distinguir surface web, deep web y dark web, con su forma de acceso y sin repetir los mitos habituales.</li>
+    <li>Diferenciar <strong>dark net</strong> de <strong>dark web</strong>: no son sinónimos.</li>
+    <li>Localizar el límite legal de una investigación en fuentes abiertas en la Constitución, el Código Penal, la LO 7/2021 y la Ley 11/2002.</li>
+  </ol>
+</div>
+
+<h2>1. Qué se pregunta de este tema</h2>
+<p>
+  El tema 40 es el epígrafe más conceptual del bloque C (Materias Técnico-Científicas) y uno de
+  los pocos que no tiene una ley detrás de cada frase. Eso cambia por completo la forma de
+  preguntarlo: aquí no te van a pedir el número de un artículo, sino <strong>conceptos, orden de
+  fases, fronteras entre términos y quién hace qué</strong>. Las preguntas típicas son de
+  clasificación y de definición:
+</p>
+<ul>
+  <li>«¿Cuál de estas fases <strong>no</strong> pertenece al ciclo de inteligencia?»</li>
+  <li>«La diferencia entre deep web y dark web es…»</li>
+  <li>«El OSINT se caracteriza por…»</li>
+  <li>«¿De quién depende orgánicamente el Centro Nacional de Inteligencia?»</li>
+</ul>
+<p>
+  Hay una segunda fuente de preguntas, esta ya jurídica: la Ley 11/2002, de 6 de mayo, reguladora
+  del Centro Nacional de Inteligencia. Es una ley corta, de doce artículos, y aporta datos duros
+  y muy preguntables: la adscripción al Ministerio de Defensa, el mandato de cinco años del
+  director, el carácter secreto de la Directiva de Inteligencia o el doble control parlamentario y
+  judicial. Esa parte sí se estudia como se estudia el bloque A: literalmente.
+</p>
+<table>
+  <caption>Los diez datos que más se preguntan y dónde están en el tema</caption>
+  <thead>
+    <tr><th>Dato</th><th>Respuesta corta</th><th>Apartado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Cadena del conocimiento</td><td>Dato → información → conocimiento → inteligencia</td><td>2</td></tr>
+    <tr><td>Qué añade la inteligencia</td><td>Análisis orientado a una decisión, con destinatario y anticipación</td><td>3</td></tr>
+    <tr><td>Disciplinas que publica el CNI</td><td>HUMINT, OSINT, SIGINT y GEOINT (cuatro)</td><td>4</td></tr>
+    <tr><td>Fases del ciclo</td><td>Dirección, Obtención, Elaboración y Difusión (cuatro)</td><td>5</td></tr>
+    <tr><td>Documento que abre el ciclo</td><td>Directiva de Inteligencia, anual y de carácter secreto</td><td>6</td></tr>
+    <tr><td>Fase más frágil</td><td>La dirección (un objetivo mal fijado arruina todo lo demás) y la difusión</td><td>8</td></tr>
+    <tr><td>OSINT</td><td>Información de fuentes abiertas, sin acceso ilícito ni engaño</td><td>9</td></tr>
+    <tr><td>Tres capas de la web</td><td>Surface (indexada), deep (no indexada) y dark (redes superpuestas)</td><td>13</td></tr>
+    <tr><td>Dark net / dark web</td><td>La red frente al contenido: no son sinónimos</td><td>14</td></tr>
+    <tr><td>Adscripción del CNI</td><td>Ministerio de Defensa (art. 7.1 de la Ley 11/2002)</td><td>7</td></tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de método · el estándar de fuentes de este tema</span>
+  <p>
+    Este epígrafe no tiene una ley detrás de cada afirmación, así que el criterio es el del bloque:
+    <strong>solo fuentes primarias públicas</strong> —el BOE, las publicaciones abiertas del CNI y
+    del CCN, el Departamento de Seguridad Nacional y los documentos técnicos de organismos de
+    normalización—. Los conceptos que son <strong>doctrina</strong> (la cadena del conocimiento, la
+    ampliación del catálogo de disciplinas, la distinción entre capas de la web) van señalados como
+    tales, porque no son normas ni datos oficiales. Nada de academias, manuales comerciales ni
+    blogs. Todo lo que no ha podido verificarse está en el apartado 22, «Qué no se ha afirmado».
+  </p>
+</div>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de límites · lo que este tema no puede contar</span>
+  <p>
+    El artículo 5.1 de la Ley 11/2002 declara <strong>información clasificada, con el grado de
+    secreto</strong>, las actividades del CNI, su organización, sus medios y procedimientos, su
+    personal, sus instalaciones, sus fuentes y los datos que permitan conocer todo lo anterior. Por
+    tanto, en este tema no hay ni puede haber descripciones de procedimientos reales, de técnicas
+    concretas, de capacidades o de casos. Lo que se estudia es la <strong>doctrina pública</strong>:
+    qué es inteligencia, qué tipologías se citan en las fuentes abiertas, cómo se ordena el ciclo y
+    qué dice la ley. Cualquier apunte de academia que prometa «lo que hace el CNI por dentro» está
+    inventando o incumpliendo la ley.
+  </p>
+</div>
+
+<h2>2. La cadena: dato, información, conocimiento e inteligencia</h2>
+<p>
+  Cuatro escalones, cada uno con más elaboración que el anterior. La escalera es
+  <strong>doctrina</strong> —no hay ninguna norma que la defina—, pero es la que usan los manuales
+  de inteligencia y la que traducen los enunciados del examen. Se memoriza de un tirón y sirve
+  para casi cualquier pregunta conceptual del tema.
+</p>
+
+<h3>2.1. Los cuatro escalones</h3>
+<dl class="glosario">
+  <dt>Dato</dt>
+  <dd>
+    Un hecho aislado, sin contexto ni interpretación. Es la materia prima bruta: un número de
+    matrícula anotado en un informe, una fecha, un nombre suelto. Por sí solo no significa nada y
+    no permite decidir nada. En términos informáticos, un dato es un valor; en términos de
+    inteligencia, es un registro sin significado asignado.
+  </dd>
+  <dt>Información</dt>
+  <dd>
+    Datos organizados, clasificados y puestos en contexto, de modo que ya responden a una pregunta
+    del tipo quién, qué, cuándo o dónde. La información es <strong>descriptiva</strong>: cuenta lo
+    que ha pasado. Sigue sin explicar por qué ni qué va a pasar.
+  </dd>
+  <dt>Conocimiento</dt>
+  <dd>
+    Información integrada con información previa, con experiencia y con el marco de la materia, de
+    manera que permite <strong>comprender</strong> un fenómeno y relacionarlo con otros. Es el paso
+    del «qué» al «por qué» y al «cómo encaja».
+  </dd>
+  <dt>Inteligencia</dt>
+  <dd>
+    Conocimiento elaborado para un destinatario concreto, orientado a una decisión, con un grado de
+    incertidumbre declarado y, muy a menudo, con valor <strong>anticipatorio</strong>. No es
+    erudición: es conocimiento <strong>accionable</strong> y oportuno, entregado a quien tiene que
+    decidir y a tiempo de decidir. La inteligencia añade, además, una exigencia que el conocimiento
+    no tiene: la valoración de la fiabilidad de la fuente y de la credibilidad del dato.
+  </dd>
+</dl>
+
+<figure>
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="fig-cadena">
+    <title id="fig-cadena">La cadena de elaboración: del dato aislado a la inteligencia útil para decidir</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <rect x="40" y="70" width="160" height="96" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="120" y="98" font-size="13" font-weight="700" fill="var(--texto)" text-anchor="middle">DATO</text>
+      <text x="120" y="120" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">hecho aislado,</text>
+      <text x="120" y="136" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">sin contexto</text>
+      <text x="120" y="156" font-size="10" fill="var(--texto-suave)" text-anchor="middle">no permite decidir</text>
+
+      <rect x="220" y="70" width="160" height="96" rx="8" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="300" y="98" font-size="13" font-weight="700" fill="var(--texto)" text-anchor="middle">INFORMACIÓN</text>
+      <text x="300" y="120" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">datos organizados</text>
+      <text x="300" y="136" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">y con contexto</text>
+      <text x="300" y="156" font-size="10" fill="var(--texto-suave)" text-anchor="middle">describe: qué pasó</text>
+
+      <rect x="400" y="70" width="160" height="96" rx="8" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="480" y="98" font-size="13" font-weight="700" fill="var(--texto)" text-anchor="middle">CONOCIMIENTO</text>
+      <text x="480" y="120" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">integrado con lo</text>
+      <text x="480" y="136" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">que ya se sabía</text>
+      <text x="480" y="156" font-size="10" fill="var(--texto-suave)" text-anchor="middle">comprende: por qué</text>
+
+      <rect x="580" y="70" width="140" height="96" rx="8" fill="var(--acento)" />
+      <text x="650" y="98" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">INTELIGENCIA</text>
+      <text x="650" y="120" font-size="10.5" fill="#ffffff" text-anchor="middle">para decidir,</text>
+      <text x="650" y="136" font-size="10.5" fill="#ffffff" text-anchor="middle">a tiempo</text>
+      <text x="650" y="156" font-size="10" fill="#ffffff" text-anchor="middle">anticipa</text>
+
+      <path d="M200 118 L218 118" stroke="var(--texto-suave)" stroke-width="2" />
+      <path d="M380 118 L398 118" stroke="var(--texto-suave)" stroke-width="2" />
+      <path d="M560 118 L578 118" stroke="var(--texto-suave)" stroke-width="2" />
+
+      <rect x="40" y="196" width="680" height="48" rx="8" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="380" y="216" font-size="11.5" font-weight="700" fill="var(--texto)" text-anchor="middle">Cada escalón exige una operación distinta sobre el escalón anterior</text>
+      <text x="380" y="234" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">contextualizar · relacionar · analizar y orientar a una decisión con un destinatario concreto</text>
+
+      <rect x="40" y="258" width="330" height="52" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="54" y="278" font-size="11" font-weight="700" fill="var(--texto)">Lo que se pregunta</text>
+      <text x="54" y="296" font-size="10.5" fill="var(--texto-suave)">«¿Qué diferencia el dato de la información?»</text>
+
+      <rect x="390" y="258" width="330" height="52" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="404" y="278" font-size="11" font-weight="700" fill="var(--texto)">Lo que casi nunca se pregunta</text>
+      <text x="404" y="296" font-size="10.5" fill="var(--texto-suave)">el nombre de cada subfase de la elaboración</text>
+    </g>
+  </svg>
+  <figcaption>
+    La cadena es doctrina, no norma: describe cómo se convierte un registro suelto en un producto
+    que sirve para decidir. La clave del examen está en el último escalón, que añade destinatario,
+    oportunidad y valoración de la fiabilidad.
+  </figcaption>
+</figure>
+
+<h3>2.2. El mismo hecho en los cuatro escalones</h3>
+<p>
+  Un ejemplo vale más que cuatro definiciones. Imagina que en una investigación por robos en
+  camiones aparece un vehículo repetido en tres denuncias de la misma comarca.
+</p>
+<table>
+  <caption>Un solo hecho, cuatro niveles de elaboración</caption>
+  <thead>
+    <tr><th>Escalón</th><th>Cómo se ve el mismo hecho</th><th>Qué permite hacer</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Dato</strong></td>
+      <td>Matrícula 1234-ABC anotada en una denuncia, sin nada más.</td>
+      <td>Nada. No se puede contrastar con nada.</td>
+    </tr>
+    <tr>
+      <td><strong>Información</strong></td>
+      <td>La misma matrícula aparece en tres denuncias de robo de mercancía en un mes y en la misma comarca.</td>
+      <td>Describir una serie: hay un vehículo repetido.</td>
+    </tr>
+    <tr>
+      <td><strong>Conocimiento</strong></td>
+      <td>El vehículo pertenece a una empresa de alquiler; los tres robos se producen en el mismo horario de descarga y en polígonos con la misma pauta de acceso.</td>
+      <td>Comprender el patrón: horario, lugares y método encajan.</td>
+    </tr>
+    <tr>
+      <td><strong>Inteligencia</strong></td>
+      <td>Nota para el mando: con fiabilidad alta en las tres fuentes, es probable que un mismo grupo esté usando ese vehículo para vigilar descargas; se propone reforzar la vigilancia en la franja horaria detectada y comprobar el contrato de alquiler.</td>
+      <td>Decidir y anticiparse: asignar un servicio donde antes no estaba.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Información» e «inteligencia» se usan en la calle como sinónimos, y el examen lo aprovecha.
+    La frontera no está en la cantidad de datos ni en lo secreto de la fuente: está en que el
+    producto final esté <strong>elaborado para una decisión concreta</strong> y entregado a tiempo.
+    Un informe de veinte páginas que llega dos semanas tarde no es inteligencia: es información
+    bien encuadernada.
+  </p>
+</div>
+
+<h3>2.3. El cuarto escalón tiene una exigencia extra: la fiabilidad</h3>
+<p>
+  En la inteligencia cada afirmación viaja con su nivel de confianza. La razón es práctica: el
+  destinatario tiene que saber cuánto se juega si decide con ese dato. La doctrina de análisis
+  suele separar dos preguntas que el examen mezcla a propósito:
+</p>
+<ul>
+  <li><strong>Fiabilidad de la fuente</strong>: quién lo dice y qué historial tiene (¿es una fuente
+    directa, una fuente que repite lo que oyó, un documento oficial?).</li>
+    <li><strong>Credibilidad de la información</strong>: si ese dato concreto es verosímil, si
+    encaja con lo que ya se sabe y si se ha podido corroborar por otra vía independiente.</li>
+</ul>
+<p>
+  Una fuente excelente puede transmitir un dato falso, y una fuente dudosa puede acertar. Se
+  valoran por separado, y de ahí nacen las advertencias de incertidumbre que acompañan a los
+  productos de inteligencia. Esto también es doctrina, no un precepto: en la ley española no hay
+  una escala de fiabilidad publicada.
+</p>
+
+<h2>3. Qué es inteligencia (y qué no lo es)</h2>
+
+<h3>3.1. La definición que da la ley española, sin decirlo</h3>
+<p>
+  La Ley 11/2002 no define «inteligencia» en un artículo de definiciones, pero su artículo 1 dice
+  exactamente qué produce el Centro Nacional de Inteligencia y para qué:
+</p>
+<blockquote>
+  <p>
+    «El Centro Nacional de Inteligencia es el Organismo público responsable de facilitar al
+    Presidente del Gobierno y al Gobierno de la Nación las informaciones, análisis, estudios o
+    propuestas que permitan prevenir y evitar cualquier peligro, amenaza o agresión contra la
+    independencia o integridad territorial de España, los intereses nacionales y la estabilidad del
+    Estado de derecho y sus instituciones.»
+  </p>
+</blockquote>
+<p>
+  Léelo despacio, porque contiene cuatro elementos que valen para cualquier definición de
+  inteligencia y que el examen usa como distractores:
+</p>
+<ol>
+  <li><strong>Hay un destinatario</strong>: el Presidente del Gobierno y el Gobierno. La
+    inteligencia se produce para alguien, no para el archivo.</li>
+  <li><strong>El producto es plural</strong>: informaciones, análisis, estudios <strong>o
+    propuestas</strong>. No es solo información: también es valoración y recomendación.</li>
+  <li><strong>La finalidad es preventiva</strong>: «prevenir y evitar» peligros y amenazas. Es
+    vocación de anticipación, no de reacción.</li>
+  <li><strong>El bien protegido es amplio</strong>: independencia e integridad territorial,
+    intereses nacionales y estabilidad del Estado de derecho y sus instituciones.</li>
+</ol>
+<p>
+  La misma idea, dicha por el propio Centro en su página pública, sirve como definición operativa
+  del producto: «El resultado final del trabajo del CNI es la Inteligencia que entrega a las
+  autoridades para facilitar la toma de decisiones y que se elabora siguiendo un proceso con fases
+  bien definidas, denominado ciclo de Inteligencia». Tres palabras de esa frase son las que hay
+  que retener: <strong>entrega</strong>, <strong>decisiones</strong> y <strong>proceso</strong>.
+</p>
+
+<h3>3.2. Las notas que la distinguen de otros productos</h3>
+<table>
+  <caption>Qué es y qué no es inteligencia</caption>
+  <thead>
+    <tr><th>Nota</th><th>Sí es inteligencia</th><th>No es inteligencia</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Oportunidad</td>
+      <td>Llega antes de que haya que decidir.</td>
+      <td>Un informe perfecto que llega cuando la decisión ya se tomó.</td>
+    </tr>
+    <tr>
+      <td>Orientación</td>
+      <td>Responde a un objetivo fijado por quien tiene la responsabilidad de decidir.</td>
+      <td>Acumulación de datos «por si acaso».</td>
+    </tr>
+    <tr>
+      <td>Elaboración</td>
+      <td>Ha pasado por valoración, contraste e interpretación.</td>
+      <td>El recorte de prensa sin analizar, el pantallazo sin contexto.</td>
+    </tr>
+    <tr>
+      <td>Incertidumbre declarada</td>
+      <td>Dice cuánto se sabe y cuánto se supone.</td>
+      <td>Afirmaciones tajantes sin origen ni contraste.</td>
+    </tr>
+    <tr>
+      <td>Legalidad</td>
+      <td>Se obtiene con arreglo al ordenamiento y con los controles previstos.</td>
+      <td>El dato robado, la interceptación sin autorización, la cuenta falsa.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>3.3. Inteligencia y contrainteligencia</h3>
+<p>
+  El artículo 9.2.f) de la Ley 11/2002 atribuye al Secretario de Estado Director del CNI las
+  funciones de <strong>Autoridad Nacional de Inteligencia y Contrainteligencia</strong>. La
+  contrainteligencia es la parte defensiva del oficio: identificar y neutralizar la actividad de
+  servicios extranjeros, grupos o personas que intentan obtener información o influir de forma
+  encubierta. La Estrategia de Seguridad Nacional 2021 la trata junto a dos amenazas que hoy van
+  juntas:
+</p>
+<blockquote>
+  <p>
+    «Para proteger los intereses de España se debe prevenir, detectar y neutralizar las agresiones
+    encubiertas procedentes del exterior, cuyo objetivo es obtener información sensible de forma
+    ilegal para atacar la imagen internacional de España o realizar acciones de injerencia.»
+  </p>
+  <p>
+    «Esto incluye reforzar e integrar las capacidades de los Servicios de Inteligencia para hacer
+    frente a las operaciones en el ciberespacio y al espionaje, amenazas que cada vez cobran mayor
+    relevancia por su capacidad de desestabilizar las instituciones del Estado y por su impacto
+    sobre la vida y libertad de los ciudadanos.»
+  </p>
+</blockquote>
+<p>
+  El epígrafe del que proceden esas frases se titula, literalmente,
+  «Contrainteligencia, lucha contra las campañas de desinformación y acción frente a las
+  injerencias del exterior». Tres frentes que el examen puede presentar como tres cosas distintas
+  y que la Estrategia agrupa: <strong>espionaje, ciberoperaciones y desinformación</strong>.
+</p>
+<h2>4. Tipologías de inteligencia</h2>
+<p>
+  Las tipologías son <strong>doctrina</strong>. No hay una ley que diga cuántas disciplinas existen
+  ni cómo se llaman, y por eso cambian según el país, la época y el organismo. Lo primero que hay
+  que fijar es qué publica la fuente española, porque es lo que un enunciado puede citar sin
+  discutir, y después ampliar con lo que añade la doctrina internacional, etiquetado como tal.
+</p>
+
+<h3>4.1. Las cuatro que publica el CNI</h3>
+<p>
+  La página pública del CNI sobre el ciclo de inteligencia enumera, dentro de la fase de
+  obtención, cuatro clases de información según su procedencia. Son las cuatro que hay que saber
+  literalmente:
+</p>
+<table>
+  <caption>Las cuatro disciplinas que publica el CNI, con su descripción literal</caption>
+  <thead>
+    <tr><th>Sigla</th><th>Nombre</th><th>Descripción publicada por el CNI</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>HUMINT</strong></td>
+      <td>Inteligencia de fuentes humanas</td>
+      <td>«Información procedente de fuentes humanas»</td>
+    </tr>
+    <tr>
+      <td><strong>OSINT</strong></td>
+      <td>Inteligencia de fuentes abiertas</td>
+      <td>«Información procedente de fuentes abiertas»</td>
+    </tr>
+    <tr>
+      <td><strong>SIGINT</strong></td>
+      <td>Inteligencia de señales</td>
+      <td>«Información procedente de fuentes técnicas»</td>
+    </tr>
+    <tr>
+      <td><strong>GEOINT</strong></td>
+      <td>Inteligencia geoespacial</td>
+      <td>«Información procedente de la explotación y análisis de imágenes e información geográfica»</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    El CNI publica <strong>cuatro</strong> disciplinas, y en su página el SIGINT aparece descrito
+    como «fuentes técnicas»: no hay una categoría separada llamada IMINT. Si un enunciado
+    pregunta cuántas disciplinas publica el CNI, la respuesta es cuatro. Si pregunta en qué
+    disciplina encaja el análisis de imágenes de satélite, en la fuente española encaja en
+    <strong>GEOINT</strong>, que expresamente menciona las imágenes; en la doctrina de otros países
+    habría una disciplina propia, la IMINT, y esa diferencia es exactamente lo que se pregunta.
+  </p>
+</div>
+
+<h3>4.2. La ampliación doctrinal del catálogo</h3>
+<p>
+  La doctrina internacional de inteligencia amplía la lista con siglas que el examen puede usar
+  como distractores o como respuesta correcta si el enunciado se refiere a «doctrina». Todas van
+  aquí etiquetadas: <strong>ninguna de estas categorías está definida en una norma española</strong>
+  y su contenido varía de un país a otro.
+</p>
+<table>
+  <caption>Disciplinas adicionales que cita la doctrina, sin respaldo normativo español</caption>
+  <thead>
+    <tr><th>Sigla</th><th>Qué designa</th><th>Ejemplo de qué se obtendría</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>IMINT</strong></td>
+      <td>Inteligencia de imágenes</td>
+      <td>Análisis de una imagen para identificar instalaciones o cambios en el terreno.</td>
+    </tr>
+    <tr>
+      <td><strong>MASINT</strong></td>
+      <td>Inteligencia de medidas y señales no comunicadas</td>
+      <td>Huellas físicas o radiaciones que no son un mensaje: emisiones, firmas térmicas, trazas químicas.</td>
+    </tr>
+    <tr>
+      <td><strong>TECHINT</strong></td>
+      <td>Inteligencia técnica sobre material</td>
+      <td>Análisis de un equipo capturado para saber qué es y qué puede hacer.</td>
+    </tr>
+    <tr>
+      <td><strong>FININT</strong></td>
+      <td>Inteligencia financiera</td>
+      <td>Movimientos de fondos y estructuras societarias que financian una actividad.</td>
+    </tr>
+    <tr>
+      <td><strong>CRIMINT</strong></td>
+      <td>Inteligencia criminal</td>
+      <td>Información sobre grupos delictivos organizada para la investigación y la prevención.</td>
+    </tr>
+    <tr>
+      <td><strong>CONTRA</strong></td>
+      <td>Contrainteligencia</td>
+      <td>Detección de la actividad de otros servicios o de infiltraciones propias.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Si el enunciado no dice «según la doctrina» ni cita organismo, la respuesta segura es la lista de
+  cuatro del CNI. Si dice «doctrina» o «clasificación clásica», la respuesta puede incluir
+  cualquiera de las anteriores. Y si el enunciado mezcla ambas cosas para que dudes, la pregunta
+  suele ser una sola: <strong>distinguir fuente de información de técnica de obtención</strong>.
+</p>
+
+<h3>4.3. La confusión más rentable: tipología por fuente y tipología por uso</h3>
+<p>
+  Hay dos maneras de clasificar inteligencia que se mezclan en los enunciados y que conviene
+  separar desde el principio:
+</p>
+<ul>
+  <li><strong>Por la fuente o disciplina de obtención</strong>: HUMINT, OSINT, SIGINT, GEOINT. La
+    pregunta es <strong>de dónde</strong> sale el dato.</li>
+  <li><strong>Por el ámbito o finalidad del producto</strong>: inteligencia estratégica (política y
+    de largo plazo), operativa (apoya una operación concreta) y táctica (apoya una acción
+    inmediata); o por materia: militar, económica, financiera, criminal, sanitaria. La pregunta es
+    <strong>para qué</strong> sirve el producto.</li>
+</ul>
+<p>
+  Un informe sobre una red de blanqueo puede ser OSINT por la fuente (todo sale de registros
+  públicos) y estratégico por el ámbito (va al mando, no a la calle). No hay contradicción: son
+  ejes distintos.
+</p>
+<div class="clave">
+  <span class="clave__titulo">Regla de tres para clasificar</span>
+  <p>
+    Ante cualquier producto de inteligencia, pregúntate tres cosas en este orden:
+    <strong>¿de dónde sale?</strong> (disciplina), <strong>¿para quién es?</strong> (estratégico,
+    operativo, táctico) y <strong>¿de qué trata?</strong> (materia). Con esas tres respuestas
+    resuelves cualquier pregunta de clasificación del tema, incluida la que mezcla siglas.
+  </p>
+</div>
+
+<h2>5. El ciclo de inteligencia</h2>
+<p>
+  El ciclo es la columna vertebral del tema y la parte que menos se puede improvisar. Su versión
+  pública española está en la web del CNI, que lo describe como «un proceso con fases bien
+  definidas» y enumera cuatro: <strong>Dirección, Obtención, Elaboración y Difusión</strong>.
+  Cuatro, ni tres ni cinco. Y dentro de cada una, subfases que también se preguntan.
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 470" role="img" aria-labelledby="fig-ciclo">
+    <title id="fig-ciclo">El ciclo de inteligencia en cuatro fases con sus subfases, según la descripción pública del CNI</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <circle cx="380" cy="215" r="118" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="380" y="203" font-size="12" font-weight="700" fill="var(--texto)" text-anchor="middle">CICLO DE</text>
+      <text x="380" y="221" font-size="12" font-weight="700" fill="var(--texto)" text-anchor="middle">INTELIGENCIA</text>
+      <text x="380" y="243" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">cuatro fases</text>
+      <text x="380" y="259" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">que se repiten</text>
+
+      <rect x="290" y="24" width="180" height="60" rx="8" fill="var(--acento)" />
+      <text x="380" y="48" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. DIRECCIÓN</text>
+      <text x="380" y="66" font-size="10" fill="#ffffff" text-anchor="middle">Directiva de Inteligencia</text>
+      <text x="380" y="79" font-size="10" fill="#ffffff" text-anchor="middle">y planificación</text>
+
+      <rect x="548" y="185" width="190" height="60" rx="8" fill="var(--clave-borde)" />
+      <text x="643" y="209" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">2. OBTENCIÓN</text>
+      <text x="643" y="227" font-size="10" fill="#ffffff" text-anchor="middle">HUMINT · OSINT</text>
+      <text x="643" y="240" font-size="10" fill="#ffffff" text-anchor="middle">SIGINT · GEOINT</text>
+
+      <rect x="290" y="346" width="180" height="60" rx="8" fill="var(--aviso-borde)" />
+      <text x="380" y="370" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">3. ELABORACIÓN</text>
+      <text x="380" y="388" font-size="10" fill="#ffffff" text-anchor="middle">valoración, examen,</text>
+      <text x="380" y="401" font-size="10" fill="#ffffff" text-anchor="middle">integración, redacción</text>
+
+      <rect x="22" y="185" width="190" height="60" rx="8" fill="var(--verde)" />
+      <text x="117" y="209" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">4. DIFUSIÓN</text>
+      <text x="117" y="227" font-size="10" fill="#ffffff" text-anchor="middle">a las autoridades</text>
+      <text x="117" y="240" font-size="10" fill="#ffffff" text-anchor="middle">que deciden</text>
+
+      <path d="M470 70 C 520 90, 545 140, 548 185" fill="none" stroke="var(--texto-suave)" stroke-width="2" />
+      <path d="M600 245 C 580 300, 520 340, 470 350" fill="none" stroke="var(--texto-suave)" stroke-width="2" />
+      <path d="M290 376 C 240 360, 205 310, 207 245" fill="none" stroke="var(--texto-suave)" stroke-width="2" />
+      <path d="M212 195 C 230 150, 250 105, 290 90" fill="none" stroke="var(--texto-suave)" stroke-width="2" />
+
+      <rect x="40" y="432" width="680" height="30" rx="6" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="380" y="452" font-size="10.5" fill="var(--texto)" text-anchor="middle">El ciclo no es una línea recta: la difusión genera nuevas necesidades y vuelve a la dirección.</text>
+    </g>
+  </svg>
+  <figcaption>
+    Las cuatro fases en el orden en que las publica el CNI. La flecha final no cierra el dibujo por
+    estética: en la práctica, lo que se difunde abre preguntas nuevas y reabre la dirección.
+  </figcaption>
+</figure>
+
+<h3>5.1. Las cuatro fases y sus subfases</h3>
+<table>
+  <caption>Fases y subfases del ciclo, con la descripción que publica el CNI</caption>
+  <thead>
+    <tr><th>Fase</th><th>Subfases</th><th>Qué ocurre</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><strong>1. Dirección</strong></td>
+      <td>Directiva de Inteligencia</td>
+      <td>El Gobierno aprueba anualmente los objetivos o necesidades de inteligencia. El documento tiene carácter secreto.</td>
+    </tr>
+    <tr>
+      <td>Planificación</td>
+      <td>El Centro planifica y organiza los recursos disponibles para obtener la información y elaborar el producto que satisfaga esas necesidades.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Obtención</strong></td>
+      <td>Por disciplinas</td>
+      <td>Búsqueda y captación de la información con las cuatro clases de fuentes: humanas, abiertas, técnicas y geoespaciales.</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><strong>3. Elaboración</strong></td>
+      <td>Valoración</td>
+      <td>«Se analiza la calidad y origen de la información».</td>
+    </tr>
+    <tr>
+      <td>Examen</td>
+      <td>«Se estudia toda la información disponible».</td>
+    </tr>
+    <tr>
+      <td>Integración</td>
+      <td>«Se integra toda la información procedente de distintas fuentes».</td>
+    </tr>
+    <tr>
+      <td>Redacción</td>
+      <td>«Se redacta el producto final: la Inteligencia».</td>
+    </tr>
+    <tr>
+      <td>Interpretación</td>
+      <td>«Se interpreta la información según distintos contextos».</td>
+    </tr>
+    <tr>
+      <td><strong>4. Difusión</strong></td>
+      <td>Entrega</td>
+      <td>La inteligencia se distribuye a sus destinatarios: las autoridades responsables de adoptar decisiones.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Dos detalles que se preguntan y que casi nadie recuerda: el ciclo se abre con un documento
+    <strong>anual y secreto</strong> (la Directiva de Inteligencia), y la difusión se define por su
+    destinatario, que son <strong>las autoridades responsables de adoptar decisiones</strong>, no
+    los medios de comunicación ni el público. Si un enunciado dice que el ciclo termina con la
+    «publicación» del informe, está mal: termina con la <strong>difusión</strong> a quien decide.
+  </p>
+</div>
+
+<h3>5.2. El ciclo en la ley: el artículo 4 de la Ley 11/2002</h3>
+<p>
+  La Ley 11/2002 no usa la palabra «ciclo», pero su artículo 4.a) enumera la misma secuencia como
+  función del Centro. Es la forma más elegante de justificar el ciclo con una norma, y sirve para
+  una pregunta con trampa:
+</p>
+<blockquote>
+  <p>
+    «a) Obtener, evaluar e interpretar información y difundir la inteligencia necesaria para
+    proteger y promover los intereses políticos, económicos, industriales, comerciales y
+    estratégicos de España, pudiendo actuar dentro o fuera del territorio nacional.»
+  </p>
+</blockquote>
+<p>
+  Obtener (obtención), evaluar e interpretar (elaboración) y difundir (difusión). La dirección
+  aparece en otro artículo, el 3: «El Gobierno determinará y aprobará anualmente los objetivos del
+  Centro Nacional de Inteligencia mediante la Directiva de Inteligencia, que tendrá carácter
+  secreto». Con esos dos preceptos se sostiene todo el ciclo sin salir del BOE.
+</p>
+<p>
+  El resto de funciones del artículo 4 completa el cuadro y conviene tenerlo localizado:
+</p>
+<ul>
+  <li><strong>4.b)</strong> prevenir, detectar y posibilitar la neutralización de actividades de
+    servicios extranjeros, grupos o personas que pongan en riesgo el ordenamiento constitucional,
+    los derechos y libertades, la soberanía, la integridad y seguridad del Estado, la estabilidad
+    de las instituciones, los intereses económicos nacionales y el bienestar de la población.</li>
+  <li><strong>4.c)</strong> promover relaciones de cooperación con servicios de inteligencia de
+    otros países y de organismos internacionales.</li>
+  <li><strong>4.d)</strong> obtener, evaluar e interpretar el <strong>tráfico de señales de carácter
+    estratégico</strong>.</li>
+  <li><strong>4.e)</strong> coordinar a los organismos de la Administración que usen medios o
+    procedimientos de cifra, garantizar la seguridad de las tecnologías de la información en ese
+    ámbito, informar sobre la adquisición coordinada de material criptológico y formar al personal
+    especialista.</li>
+  <li><strong>4.f)</strong> velar por el cumplimiento de la normativa sobre protección de la
+    información clasificada.</li>
+  <li><strong>4.g)</strong> garantizar la seguridad y protección de sus propias instalaciones,
+    información y medios materiales y personales.</li>
+</ul>
+<h2>6. Quién hace cada fase y qué producto entrega</h2>
+<p>
+  Aquí está la tabla que hay que llevarse memorizada: fase, responsable, producto y punto débil.
+  Dos advertencias antes de leerla. La primera: los <strong>nombres internos de los órganos que
+  ejecutan cada fase son información clasificada</strong> (art. 5.1 de la Ley 11/2002), así que en
+  la columna «quién» solo se puede escribir lo que es público: el nivel institucional que decide,
+  el Centro como responsable del proceso y el destinatario final. La segunda: los «productos» se
+  describen por su función, no por su formato interno, que tampoco es público.
+</p>
+<table>
+  <caption>Fase, responsable, producto y fragilidad: la tabla que hay que memorizar</caption>
+  <thead>
+    <tr><th>Fase</th><th>Quién (nivel público)</th><th>Producto que entrega</th><th>Dónde es más frágil</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Dirección</strong></td>
+      <td>El Gobierno aprueba los objetivos anuales; la Comisión Delegada del Gobierno para Asuntos de Inteligencia vela por la coordinación de todos los servicios (arts. 3 y 6 de la Ley 11/2002).</td>
+      <td>Directiva de Inteligencia (secreta) y plan de obtención.</td>
+      <td>Si el objetivo se fija mal, todo lo demás se hace bien y sirve para nada. Es el punto de fallo más caro y el menos visible.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Obtención</strong></td>
+      <td>El Centro, con sus cuatro clases de fuentes; también los servicios de información de los Cuerpos y Fuerzas de Seguridad en su ámbito, coordinados por la Comisión Delegada (art. 6.4.c).</td>
+      <td>Información en bruto, con su origen y su fecha.</td>
+      <td>La cobertura: si la fuente no llega, no hay nada que analizar. Y el riesgo de intoxicación, es decir, de que alguien coloque información falsa a propósito.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Elaboración</strong></td>
+      <td>El Centro, en las cinco subfases: valoración, examen, integración, redacción e interpretación.</td>
+      <td>El producto de inteligencia: informaciones, análisis, estudios o propuestas (art. 1).</td>
+      <td>Los sesgos del analista y la prisa. Un dato cierto mal interpretado produce un informe seguro y equivocado.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Difusión</strong></td>
+      <td>El Centro entrega; el destinatario es la autoridad responsable de decidir (Presidente del Gobierno y Gobierno, art. 1).</td>
+      <td>La inteligencia ya difundida, en el formato y con las advertencias que exija el destinatario.</td>
+      <td>La oportunidad y el exceso de compartimentación: si llega tarde o a quien no puede usarla, el trabajo se pierde.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.1. La dirección empieza en el BOE, no en el analista</h3>
+<p>
+  En la cultura popular el ciclo arranca cuando un espía encuentra algo. En la doctrina y en la ley
+  española arranca antes: arranca cuando alguien con responsabilidad política decide <strong>qué
+  hay que saber</strong>. El artículo 3 de la Ley 11/2002 lo dice en una sola frase y con dos
+  adjetivos que se preguntan: la Directiva de Inteligencia es <strong>anual</strong> y
+  <strong>secreta</strong>.
+</p>
+<p>
+  La página pública del CNI añade el detalle de quién la aprueba: «se inicia con la aprobación
+  anual de la Directiva de Inteligencia por parte de la Comisión Delegada del Gobierno para
+  Asuntos de Inteligencia y del presidente del Gobierno». La ley, en cambio, atribuye la
+  determinación y aprobación al <strong>Gobierno</strong>, y encarga a la Comisión Delegada
+  <strong>proponer</strong> al Presidente los objetivos anuales y hacer su seguimiento (art. 6.4.a y
+  b). Las dos descripciones encajan: el órgano colegiado propone y coordina, el Gobierno aprueba.
+  Si el enunciado pregunta «¿quién aprueba?», la respuesta anclada en la ley es el Gobierno.
+</p>
+
+<h3>6.2. La obtención no es una sola cosa</h3>
+<p>
+  Dentro de la obtención conviven disciplinas con lógicas muy distintas, y eso explica por qué el
+  ciclo se atasca de formas diferentes en cada una:
+</p>
+<ul>
+  <li><strong>HUMINT</strong>: depende de personas. Su límite es el acceso y el riesgo de la fuente;
+    su fortaleza, que puede explicar intenciones.</li>
+  <li><strong>OSINT</strong>: depende de la disponibilidad pública y de la pericia para buscar y
+    verificar. Su límite es la saturación y la desinformación; su fortaleza, el coste bajísimo.</li>
+  <li><strong>SIGINT</strong>: depende de medios técnicos y de autorización jurídica. Su límite es
+    la ley y la criptografía; su fortaleza, la objetividad del dato.</li>
+  <li><strong>GEOINT</strong>: depende de imágenes y de información geográfica. Su límite es la
+    resolución y la fecha de la imagen; su fortaleza, que se puede medir y volver a medir.</li>
+</ul>
+<p>
+  El error de examen más frecuente en este punto es creer que las disciplinas se excluyen. En un
+  producto real se <strong>integran</strong>: una imagen fechada, un registro público y una fuente
+  humana pueden sostener la misma conclusión, y la corroboración por vías independientes es
+  precisamente lo que sube la confianza del producto.
+</p>
+
+<h3>6.3. La elaboración, subfase por subfase</h3>
+<p>
+  El CNI describe cinco pasos dentro de la elaboración. Memorízalos en ese orden y con esas
+  palabras, porque un enunciado puede pedir «¿cuál es la primera?» o colar una fase inventada en
+  medio:
+</p>
+<ol>
+  <li><strong>Valoración</strong>: se analiza la calidad y el origen de la información. Es el
+    control de fiabilidad de la fuente y de credibilidad del dato.</li>
+  <li><strong>Examen</strong>: se estudia toda la información disponible, también la que parece
+    irrelevante o contradictoria.</li>
+  <li><strong>Integración</strong>: se integra lo que procede de fuentes distintas, que es donde se
+    detectan las coincidencias y las incompatibilidades.</li>
+  <li><strong>Redacción</strong>: se redacta el producto final, la inteligencia.</li>
+  <li><strong>Interpretación</strong>: se interpreta la información según distintos contextos, es
+    decir, se explica qué significa y qué podría pasar.</li>
+</ol>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Interpretación» va <strong>después</strong> de «redacción» en la descripción del CNI, aunque
+    suene al revés. Si el enunciado te ofrece un orden en el que primero se interpreta y luego se
+    redacta, está alterando la secuencia publicada. La secuencia correcta es:
+    <strong>valoración → examen → integración → redacción → interpretación</strong>.
+  </p>
+</div>
+
+<h2>7. El marco institucional español</h2>
+<p>
+  Para situar el tema en España hacen falta cuatro piezas y una ley de secreto. Todas son
+  públicas; lo que no es público es cómo funciona cada una por dentro.
+</p>
+
+<h3>7.1. El Centro Nacional de Inteligencia</h3>
+<table>
+  <caption>Datos del CNI tomados literalmente de la Ley 11/2002</caption>
+  <thead>
+    <tr><th>Pregunta</th><th>Respuesta</th><th>Precepto</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>¿Qué es?</td><td>Organismo público con personalidad jurídica propia y plena capacidad de obrar.</td><td>Art. 1 y art. 7.2</td></tr>
+    <tr><td>¿De quién depende?</td><td>Se adscribe orgánicamente al <strong>Ministerio de Defensa</strong>.</td><td>Art. 7.1</td></tr>
+    <tr><td>¿A quién sirve?</td><td>Al Presidente del Gobierno y al Gobierno de la Nación.</td><td>Art. 1</td></tr>
+    <tr><td>¿Cómo se estructura?</td><td>Una Dirección, con rango de Secretario de Estado; una Secretaría General, con rango de Subsecretario; y las unidades que se determinen reglamentariamente.</td><td>Art. 7.3 y 10.1</td></tr>
+    <tr><td>¿Cuánto dura el mandato del director?</td><td><strong>Cinco años</strong>, sin perjuicio de la facultad del Consejo de Ministros de sustituirlo en cualquier momento.</td><td>Art. 9.1</td></tr>
+    <tr><td>¿Es agente de la autoridad?</td><td>Con carácter general <strong>no</strong>; solo quienes desempeñen cometidos de protección de personal e instalaciones.</td><td>Art. 5.4</td></tr>
+    <tr><td>¿Qué controles tiene?</td><td>Control parlamentario a través de la Comisión que controla los créditos de gastos reservados, y control judicial <strong>previo</strong>.</td><td>Arts. 11 y 12</td></tr>
+    <tr><td>¿Qué sustituyó?</td><td>Al Centro Superior de Información de la Defensa (CESID), que queda suprimido.</td><td>Disp. adicional 2.ª</td></tr>
+  </tbody>
+</table>
+<p>
+  Dos matices que el examen explota. Primero: el control judicial del CNI es
+  <strong>previo</strong>, no a posteriori; el artículo 12 remite a la ley orgánica que lo regula y
+  la propia ley lo anuncia en el artículo 2.1 como «control judicial previo». Segundo: el CNI no es
+  un cuerpo policial. No investiga delitos para llevarlos a juicio ni tiene competencias
+  ejecutivas: produce inteligencia para quien decide. La ley lo dice al describir su función
+  (facilitar informaciones, análisis, estudios o propuestas), no al describir una policía.
+</p>
+
+<h3>7.2. El Centro Criptológico Nacional</h3>
+<p>
+  El CCN no es un organismo independiente: es una pieza del CNI. El Real Decreto 421/2004, de 12 de
+  marzo, lo regula y establece que su Director es el propio Secretario de Estado Director del CNI,
+  que actúa como «autoridad de certificación de la seguridad de las tecnologías de la información y
+  autoridad de certificación criptológica». El mismo real decreto fija su ámbito (sistemas que
+  requieren protección y sistemas que tratan información clasificada) y sus funciones, entre ellas
+  la que explica de dónde salen las guías técnicas que cita medio mundo:
+</p>
+<blockquote>
+  <p>
+    «a) Elaborar y difundir normas, instrucciones, guías y recomendaciones para garantizar la
+    seguridad de los sistemas de las tecnologías de la información y las comunicaciones de la
+    Administración.»
+  </p>
+</blockquote>
+<p>
+  De esa función nacen las series de guías CCN-STIC y la actividad del CCN-CERT en gestión de
+  incidentes. Y de ahí viene también una consecuencia práctica para este tema: las guías son
+  públicas y citables, pero <strong>este tema no cita ninguna en concreto</strong> porque el acceso
+  automatizado a su catálogo devolvió error en la fecha de consulta (apartado 22).
+</p>
+
+<h3>7.3. La Oficina Nacional de Seguridad y la información clasificada</h3>
+<p>
+  La Estrategia de Seguridad Nacional 2021 sitúa a la ONS junto al CNI y al CCN en la protección del
+  patrimonio científico y tecnológico y en la protección de la información clasificada. El régimen
+  de esa información está en la Ley 9/1968, de 5 de abril, sobre secretos oficiales, cuyo artículo
+  primero empieza reconociendo el principio general y su excepción:
+</p>
+<blockquote>
+  <p>
+    «Uno. Los Órganos del Estado estarán sometidos en su actividad al principio de publicidad, de
+    acuerdo con las normas que rijan su actuación, salvo los casos en que por la naturaleza de la
+    materia sea ésta declarada expresamente “clasificada”, cuyo secreto o limitado conocimiento
+    queda amparado por la presente Ley.»
+  </p>
+</blockquote>
+<p>
+  Y el artículo tercero fija las dos categorías: «Las <strong>materias clasificadas</strong> serán
+  calificadas en las categorías de <strong>secreto</strong> y <strong>reservado</strong> en atención
+  al grado de protección que requieran». Son dos, no tres: si un enunciado ofrece «confidencial»
+  como categoría legal española de materia clasificada, está mezclando escalas de otros sistemas.
+</p>
+
+<h3>7.4. La Estrategia de Seguridad Nacional</h3>
+<p>
+  La Estrategia vigente se aprobó por el Real Decreto 1150/2021, de 28 de diciembre, y es el marco
+  de referencia de la política de Seguridad Nacional. El Departamento de Seguridad Nacional la
+  resume como una política de Estado que «parte de una concepción amplia de la seguridad». Para
+  este tema interesan tres cosas de ella:
+</p>
+<ul>
+  <li>Integra la <strong>inteligencia</strong> como instrumento al servicio de la decisión política, no
+    como fin en sí misma.</li>
+  <li>Agrupa contrainteligencia, lucha contra la desinformación y respuesta a injerencias
+    exteriores.</li>
+  <li>Señala la protección de la información clasificada como «recurso esencial para la Seguridad
+    Nacional».</li>
+</ul>
+<h2>8. Dónde se rompe el ciclo</h2>
+<p>
+  Un ciclo descrito en cuatro pasos parece limpio; en la práctica falla en sitios muy concretos y
+  repetidos. Este apartado es <strong>doctrina de análisis</strong>, no norma: sirve para entender y
+  para responder preguntas del tipo «¿cuál es el error más frecuente?», que cada vez aparecen más.
+</p>
+<table>
+  <caption>Fallos típicos del ciclo, con su ejemplo y su antídoto</caption>
+  <thead>
+    <tr><th>Fallo</th><th>En qué fase ocurre</th><th>Ejemplo</th><th>Antídoto</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Objetivo mal definido</td>
+      <td>Dirección</td>
+      <td>Se pide «información sobre la zona» sin decir para qué decisión ni en qué plazo.</td>
+      <td>Convertir la necesidad en preguntas contestables, con destinatario y fecha.</td>
+    </tr>
+    <tr>
+      <td>Espejismo de la cobertura</td>
+      <td>Obtención</td>
+      <td>Se confunde «no tenemos informaciones» con «no ocurre nada».</td>
+      <td>Declarar los huecos: lo que no se sabe es parte del producto.</td>
+    </tr>
+    <tr>
+      <td>Intoxicación</td>
+      <td>Obtención y elaboración</td>
+      <td>Una fuente repite durante meses lo que publicó un medio que a su vez se basó en un rumor.</td>
+      <td>Corroboración por vía independiente; no contar como fuentes distintas lo que es una sola.</td>
+    </tr>
+    <tr>
+      <td>Sesgo de confirmación</td>
+      <td>Elaboración</td>
+      <td>Se conserva el dato que encaja con la hipótesis inicial y se descarta el que la contradice.</td>
+      <td>Buscar activamente lo que refutaría la hipótesis, no lo que la confirma.</td>
+    </tr>
+    <tr>
+      <td>Anclaje</td>
+      <td>Elaboración</td>
+      <td>La primera cifra que llegó condiciona todas las estimaciones posteriores.</td>
+      <td>Reconstruir la estimación desde cero y comparar.</td>
+    </tr>
+    <tr>
+      <td>Exceso de confianza en la fuente</td>
+      <td>Valoración</td>
+      <td>Una fuente fiable durante años empieza a equivocarse y nadie lo revisa.</td>
+      <td>Valorar la fuente y el dato por separado, siempre.</td>
+    </tr>
+    <tr>
+      <td>Informe sin recomendación</td>
+      <td>Redacción y difusión</td>
+      <td>Veinte páginas de contexto y ninguna frase que diga qué se propone hacer.</td>
+      <td>Cerrar con consecuencias y opciones, no con un resumen del mundo.</td>
+    </tr>
+    <tr>
+      <td>Difusión tardía o mal dirigida</td>
+      <td>Difusión</td>
+      <td>El producto llega después de la decisión, o a quien no tiene competencia para actuar.</td>
+      <td>Fijar el calendario de la decisión antes de empezar a producir.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="clave">
+  <span class="clave__titulo">La regla que resume el apartado</span>
+  <p>
+    El ciclo no falla por falta de datos, casi nunca. Falla por <strong>empezar mal</strong> (un
+    objetivo que no se puede contestar), por <strong>contar dos veces la misma fuente</strong> o por
+    <strong>llegar tarde</strong>. Si tienes que elegir un único punto débil para una pregunta de
+    examen, elige la dirección: es el más caro y el menos vigilado.
+  </p>
+</div>
+
+<h2>9. Inteligencia de fuentes abiertas (OSINT)</h2>
+
+<h3>9.1. Definición</h3>
+<p>
+  <strong>OSINT</strong> (del inglés <span lang="en">Open Source Intelligence</span>) es la
+  inteligencia que se obtiene de <strong>fuentes abiertas</strong>: información que está a
+  disposición del público en general y a la que se accede por medios legítimos, sin engañar a
+  nadie, sin vulnerar medidas de seguridad y sin pagar por información reservada. La descripción
+  del CNI es de una línea: «Información procedente de fuentes abiertas».
+</p>
+<p>
+  La clave está en qué significa «abierta», porque de ahí cuelga todo el tema. Abierta no
+  significa «gratis» ni «en internet»: significa <strong>accesible sin medios ilícitos</strong>. Un
+  registro público en papel es una fuente abierta. Un periódico de pago es una fuente abierta. Un
+  perfil público es una fuente abierta. Una cuenta privada a la que accedes con una identidad falsa
+  <strong>no</strong> lo es, y un servidor al que entras sin permiso tampoco.
+</p>
+<table>
+  <caption>Frontera práctica: qué es OSINT y qué no</caption>
+  <thead>
+    <tr><th>Actividad</th><th>¿Es OSINT?</th><th>Por qué</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Leer el BOE y extraer un dato registral</td><td>Sí</td><td>Acceso público, sin identidad falsa.</td></tr>
+    <tr><td>Consultar un perfil abierto en una red social</td><td>Sí</td><td>Es contenido publicado por su autor para cualquiera.</td></tr>
+    <tr><td>Buscar una imagen y comprobar si aparece en otros sitios</td><td>Sí</td><td>Contraste de contenido, sin acceso a sistemas ajenos.</td></tr>
+    <tr><td>Comprobar la hora y el lugar de una foto con sus metadatos</td><td>Sí, si el archivo es público</td><td>Análisis del propio archivo, no intrusión.</td></tr>
+    <tr><td>Pedirle a alguien que te añada a su grupo privado</td><td>No</td><td>Hay engaño: se ha accedido a un ámbito privado con una identidad falsa.</td></tr>
+    <tr><td>Probar contraseñas de una cuenta</td><td>No</td><td>Es acceso ilícito a un sistema, con independencia del fin.</td></tr>
+    <tr><td>Descargar una base de datos filtrada que circula en un foro</td><td>No</td><td>Aunque sea fácil, su origen es ilícito y el tratamiento agrava la ilicitud.</td></tr>
+    <tr><td>Instalar un programa para interceptar el tráfico de una red</td><td>No</td><td>Interceptación de comunicaciones: requiere habilitación legal específica.</td></tr>
+  </tbody>
+</table>
+
+<h3>9.2. OSINT no es hacking</h3>
+<p>
+  Esta es la afirmación que hay que tener clarísima, porque es la trampa central del tema y porque
+  el error tiene consecuencias penales, no solo académicas:
+</p>
+<ul>
+  <li><strong>El hacking busca entrar.</strong> OSINT se queda fuera: trabaja con lo que ya está
+    fuera.</li>
+  <li><strong>El hacking explota una medida de seguridad.</strong> OSINT no vulnera ninguna: si para
+    ver el contenido hay que saltarse un control de acceso, ya no es fuente abierta.</li>
+  <li><strong>El hacking es delito.</strong> El acceso ilícito está en el artículo 197 bis del Código
+    Penal y las herramientas para cometerlo, en el 197 ter. La consulta de fuentes abiertas, en
+    cambio, no es delito por sí misma; lo que puede ser ilícito es el <strong>tratamiento</strong>
+    de los datos personales que se obtienen.</li>
+  <li><strong>El hacking es clandestino.</strong> Un producto OSINT debe poder explicar de dónde
+    sale cada dato y cómo se obtuvo, porque su valor probatorio depende de eso.</li>
+</ul>
+<p>
+  El Código Penal es preciso en ese punto. El artículo 197 bis.1 castiga al que, «vulnerando las
+  medidas de seguridad establecidas para impedirlo, y sin estar debidamente autorizado, acceda o
+  facilite a otro el acceso al conjunto o una parte de un sistema de información o se mantenga en
+  él en contra de la voluntad de quien tenga el legítimo derecho a excluirlo». No hay excepción por
+  buena intención ni por finalidad de investigación: la autorización tiene que existir.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «OSINT es obtener información de internet sin permiso». Falso, y falso por dos lados: internet
+    no es la única fuente abierta (también lo son los registros y las publicaciones en papel) y el
+    permiso que importa no es el del titular de la web, sino el que exige la ley para tratar datos
+    personales y, cuando proceda, el juez. La definición correcta es la de acceso legítimo a
+    contenido disponible para cualquiera.
+  </p>
+</div>
+
+<h3>9.3. Para qué sirve de verdad</h3>
+<p>
+  En el trabajo policial el OSINT no sustituye a la investigación: la orienta y la abarata. Sirve
+  para preparar una intervención con información del entorno, para verificar la actividad pública
+  de una empresa o de una persona, para localizar testigos o imágenes publicadas por terceros, para
+  detectar la venta de material ilícito en sitios abiertos y para comprobar la coherencia de un
+  relato. Y sirve, sobre todo, para <strong>descartar</strong>: buena parte del valor de una fuente
+  abierta es evitar diligencias inútiles.
+</p>
+
+<h2>10. El método OSINT</h2>
+<p>
+  El método es la aplicación del ciclo a las fuentes abiertas, con dos exigencias propias: la
+  <strong>trazabilidad</strong> de cada dato y la <strong>verificación</strong> antes de usarlo. Los
+  pasos que siguen son doctrina de análisis; el orden es el del ciclo y se reconoce sin esfuerzo.
+</p>
+<ol>
+  <li>
+    <strong>Encargo y delimitación.</strong> Qué pregunta hay que contestar, para qué decisión, con
+    qué plazo y con qué límites legales. Aquí se decide también qué <strong>no</strong> se va a
+    buscar: datos especialmente protegidos, víctimas, menores.
+  </li>
+  <li>
+    <strong>Planificación de fuentes.</strong> Qué registros, qué buscadores, qué mapas, qué
+    hemerotecas y qué archivos pueden contestar la pregunta. Se anota la fecha de cada consulta
+    desde el primer minuto, porque el contenido abierto cambia y lo que hoy se ve mañana no existe.
+  </li>
+  <li>
+    <strong>Recolección.</strong> Se recoge el contenido y, tan importante como el contenido, su
+    contexto: dirección, fecha y hora de consulta, autor o titular y prueba de que estaba así
+    (captura, archivo, testigo de la descarga).
+  </li>
+  <li>
+    <strong>Verificación.</strong> Es la fase que separa OSINT de cotilleo. Mínimo tres controles:
+    quién lo publica (autoría real), cuándo (fecha del hecho frente a fecha de publicación) y si
+    otra fuente independiente lo confirma.
+  </li>
+  <li>
+    <strong>Análisis.</strong> Se relaciona lo obtenido con lo que ya se sabe, se separa el hecho de
+    la opinión y se declara la incertidumbre. Aquí se detectan las contradicciones.
+  </li>
+  <li>
+    <strong>Producto.</strong> Se redacta para quien decide, con cada afirmación atribuida a su
+    fuente y con los huecos declarados. Un producto sin fuentes no es inteligencia: es opinión.
+  </li>
+  <li>
+    <strong>Archivo y revisión.</strong> Se conserva lo consultado y se revisa si el contenido ha
+    cambiado cuando el asunto se reabre.</li>
+</ol>
+
+<h3>10.1. Los cuatro controles de verificación</h3>
+<table>
+  <caption>Cómo se verifica una fuente abierta, control por control</caption>
+  <thead>
+    <tr><th>Control</th><th>Pregunta</th><th>Señal de alarma</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Autoría</strong></td>
+      <td>¿Quién lo publica y con qué interés?</td>
+      <td>Cuenta creada hace poco, sin historial, que solo publica ese tema.</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha</strong></td>
+      <td>¿Cuándo ocurrió, cuándo se publicó y cuándo lo consulto?</td>
+      <td>Una noticia vieja reeditada como si fuera de hoy.</td>
+    </tr>
+    <tr>
+      <td><strong>Contexto</strong></td>
+      <td>¿La imagen o el texto está completo y en su sitio original?</td>
+      <td>Recorte sin enlace, imagen sin pie, cita sin párrafo anterior.</td>
+    </tr>
+    <tr>
+      <td><strong>Corroboración</strong></td>
+      <td>¿Lo confirma alguien que no copia de la misma fuente?</td>
+      <td>Diez medios que citan al mismo medio, que a su vez cita un anónimo.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  El último control es el que más se falla. En fuentes abiertas la apariencia de consenso es
+  engañosa: un medio publica un dato, otros lo replican citándolo y en dos horas parece un hecho
+  confirmado por diez fuentes cuando solo hay una. La pregunta correcta nunca es «¿cuántos lo
+  dicen?», sino <strong>«¿cuántas fuentes independientes lo sostienen?»</strong>.
+</p>
+
+<h3>10.2. Metodología y prueba: por qué la trazabilidad importa</h3>
+<p>
+  Un dato de fuente abierta que se incorpore a un expediente tiene que poder explicarse: de dónde
+  se obtuvo, cuándo, cómo y con qué método se comprobó. Esa trazabilidad no es un adorno
+  académico; es lo que permite que el dato sea discutible y, por tanto, utilizable. Por eso el
+  procedimiento correcto guarda la <strong>captura con fecha y hora</strong>, la
+  <strong>dirección</strong> y, cuando sea posible, un <strong>archivo</strong> del contenido original,
+  porque lo que hoy está publicado mañana puede desaparecer. Los detalles técnicos de la prueba
+  electrónica corresponden al proceso penal; aquí basta con retener la idea: en fuentes abiertas,
+  lo que no se documenta no existe.
+</p>
+
+<h2>11. Herramientas: categorías, no catálogos</h2>
+<p>
+  Este tema no debe convertirse en una lista de aplicaciones. Las herramientas cambian cada mes,
+  desaparecen y a veces son ellas mismas un riesgo; lo que se pregunta es la
+  <strong>categoría</strong> de herramienta y para qué sirve. Estas seis cubren casi todo el trabajo
+  real:
+</p>
+<dl class="glosario">
+  <dt>Buscadores generales y operadores de búsqueda</dt>
+  <dd>Permiten restringir por sitio, por tipo de archivo, por frase exacta o por fecha. Es la herramienta más subestimada: la mitad de un producto OSINT se hace con un buscador bien usado.</dd>
+  <dt>Archivos y cachés</dt>
+  <dd>Guardan versiones antiguas de páginas y documentos. Sirven para ver qué se decía antes y para recuperar contenido retirado. Nunca son prueba de lo que hay ahora.</dd>
+  <dt>Buscadores de imágenes y de contenido duplicado</dt>
+  <dd>Localizan la misma imagen en distintos sitios y fechas: la forma más rápida de detectar una foto reutilizada con otro pie.</dd>
+  <dt>Cartografía e imágenes satelitales públicas</dt>
+  <dd>Permiten comparar un lugar en dos fechas o comprobar una distancia. Es la base del trabajo GEOINT y de la verificación de vídeos.</dd>
+  <dt>Registros y boletines oficiales</dt>
+  <dd>BOE, boletines provinciales, registros mercantiles y catastrales, licitaciones y actas públicas. Es la fuente abierta de mayor calidad y la más ignorada.</dd>
+  <dt>Bases de datos técnicos de internet</dt>
+  <dd>Información de dominio, de direcciones y de certificados, que documenta quién está detrás de un sitio. Consulta legítima: son datos publicados para que la red funcione.</dd>
+</dl>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Confundir «herramienta de OSINT» con «herramienta de intrusión». Hay programas que se anuncian
+    como OSINT y lo que hacen es probar credenciales o explotar configuraciones. Usar uno de esos
+    no es OSINT: es el artículo 197 bis. Si una herramienta promete «acceder a cuentas privadas» o
+    «ver conversaciones sin ser miembro», está describiendo un delito.
+  </p>
+</div>
+<h2>12. Los límites legales: dónde acaba el OSINT</h2>
+<p>
+  Este es el apartado que más se pregunta en forma de caso práctico, y el único del tema con
+  preceptos concretos. La regla general es sencilla: <strong>obtener</strong> información publicada
+  es libre; <strong>tratar</strong> datos personales tiene reglas; y <strong>acceder</strong> a lo
+  que está protegido exige habilitación legal, normalmente judicial.
+</p>
+
+<h3>12.1. La Constitución: tres derechos y una reserva</h3>
+<p>
+  El artículo 18 de la Constitución, literalmente:
+</p>
+<blockquote>
+  <p>
+    «1. Se garantiza el derecho al honor, a la intimidad personal y familiar y a la propia imagen.»
+  </p>
+  <p>«2. El domicilio es inviolable. Ninguna entrada o registro podrá hacerse en él sin consentimiento
+    del titular o resolución judicial, salvo en caso de flagrante delito.»</p>
+  <p>«3. Se garantiza el secreto de las comunicaciones y, en especial, de las postales, telegráficas y
+    telefónicas, salvo resolución judicial.»</p>
+  <p>«4. La ley limitará el uso de la informática para garantizar el honor y la intimidad personal y
+    familiar de los ciudadanos y el pleno ejercicio de sus derechos.»</p>
+</blockquote>
+<p>
+  El apartado 3 contiene la palabra que resuelve la mitad de los casos prácticos:
+  <strong>resolución judicial</strong>. Interceptar comunicaciones no es una técnica de
+  investigación que se decide en la unidad; es una medida que autoriza el juez. Y el apartado 4 es
+  la puerta por la que entra toda la legislación de protección de datos.
+</p>
+
+<h3>12.2. El Código Penal: las cuatro fronteras</h3>
+<table>
+  <caption>Delitos que marcan el límite de una investigación en fuentes abiertas</caption>
+  <thead>
+    <tr><th>Artículo</th><th>Conducta típica</th><th>Consecuencia para el tema</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>197.1</strong></td>
+      <td>Apoderarse de papeles, cartas, mensajes de correo o documentos, interceptar telecomunicaciones o usar artificios de escucha, grabación o reproducción, para descubrir secretos o vulnerar la intimidad.</td>
+      <td>Prohibido interceptar y prohibido grabar comunicaciones ajenas. Una grabación hecha así no es OSINT.</td>
+    </tr>
+    <tr>
+      <td><strong>197.2</strong></td>
+      <td>Apoderarse, usar o modificar, sin autorización, datos reservados de carácter personal o familiar registrados en ficheros, soportes informáticos o archivos; y <strong>acceder</strong> a ellos por cualquier medio.</td>
+      <td>Aquí está la frontera del tratamiento: el mero acceso no autorizado a datos reservados ya es típico.</td>
+    </tr>
+    <tr>
+      <td><strong>197 bis</strong></td>
+      <td>Acceder o facilitar el acceso a un sistema de información vulnerando sus medidas de seguridad, o mantenerse en él contra la voluntad de quien puede excluirlo; y interceptar transmisiones no públicas de datos informáticos.</td>
+      <td>Es el precepto que separa OSINT de hacking. Sin autorización, no hay finalidad que lo justifique.</td>
+    </tr>
+    <tr>
+      <td><strong>197 ter</strong></td>
+      <td>Producir, adquirir para uso, importar o facilitar programas concebidos para cometer esos delitos, contraseñas o códigos de acceso.</td>
+      <td>El arsenal también es delito: no solo el acceso.</td>
+    </tr>
+    <tr>
+      <td><strong>264 y 264 bis</strong></td>
+      <td>Borrar, dañar, alterar o hacer inaccesibles datos ajenos de manera grave; obstaculizar o interrumpir el funcionamiento de un sistema informático ajeno.</td>
+      <td>Una «prueba de seguridad» sin encargo daña sistemas y es delito de daños.</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Hay un matiz del artículo 197 que se pregunta poco y vale mucho: el apartado 3 castiga
+  <strong>difundir, revelar o ceder a terceros</strong> los datos descubiertos, y castiga también a
+  quien, «con conocimiento de su origen ilícito y sin haber tomado parte en su descubrimiento»,
+  realiza esa difusión. Es decir: reenviar lo que otro obtuvo ilegalmente también es delito. Es la
+  razón por la que la base de datos filtrada del apartado 9.1 no es una fuente, ni siquiera cuando
+  ya está circulando.
+</p>
+
+<h3>12.3. La protección de datos en la investigación policial</h3>
+<p>
+  Cuando el que trata los datos es una autoridad competente para prevenir, detectar, investigar o
+  enjuiciar delitos, no se aplica el RGPD sino la <strong>Ley Orgánica 7/2021, de 26 de mayo</strong>,
+  que traspone al derecho español la Directiva (UE) 2016/680. Su artículo 1 define el objeto y su
+  artículo 4 identifica a las autoridades competentes, entre ellas, expresamente, «las Fuerzas y
+  Cuerpos de Seguridad».
+</p>
+<blockquote>
+  <p>
+    «Esta Ley Orgánica tiene por objeto establecer las normas relativas a la protección de las
+    personas físicas en lo que respecta al tratamiento de los datos de carácter personal por parte
+    de las autoridades competentes, con fines de prevención, detección, investigación y
+    enjuiciamiento de infracciones penales o de ejecución de sanciones penales, incluidas la
+    protección y prevención frente a las amenazas contra la seguridad pública.»
+  </p>
+</blockquote>
+<p>
+  Para el resto de tratamientos —el ámbito ordinario de la Administración y de los particulares—
+  el marco es el Reglamento (UE) 2016/679 y la <strong>Ley Orgánica 3/2018, de 5 de diciembre</strong>,
+  de Protección de Datos Personales y garantía de los derechos digitales. La consecuencia práctica
+  para el tema es que <strong>el mismo dato puede estar en una fuente abierta y seguir siendo un
+  dato personal</strong>: que sea público no lo convierte en libre. Publicar el teléfono en una web
+  no autoriza a usarlo para cualquier fin.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Si está en internet, es de dominio público». Falso en derecho español. El hecho de que un dato
+    sea accesible no equivale a consentimiento para tratarlo ni convierte la fuente en «accesible al
+    público» a efectos de protección de datos. El acceso legítimo resuelve el <strong>cómo se
+    obtiene</strong>; no resuelve el <strong>para qué se usa</strong>.
+  </p>
+</div>
+
+<h3>12.4. Las medidas que necesitan juez</h3>
+<p>
+  Cuando la investigación excede de lo publicado (interceptar comunicaciones, acceder a un sistema
+  cerrado, entrar en un domicilio) ya no se está en fuentes abiertas: se está en el terreno de las
+  diligencias que la ley condiciona a autorización judicial. La Ley de Enjuiciamiento Criminal
+  regula la interceptación de las comunicaciones telefónicas y telemáticas en los artículos 588 bis
+  a 588 octies, y la Ley 25/2007, de 18 de octubre, regula la conservación de datos relativos a las
+  comunicaciones electrónicas y a las redes públicas de comunicaciones. Ninguna de las dos es
+  OSINT: son el régimen de lo que <strong>no</strong> se hace con fuentes abiertas.
+</p>
+<table>
+  <caption>Qué se puede hacer y qué no, en una línea por caso</caption>
+  <thead>
+    <tr><th>Situación</th><th>Régimen</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Consultar un perfil público y guardar la captura</td><td>Admitido como fuente abierta; se documenta la consulta.</td></tr>
+    <tr><td>Tratar esos datos para una investigación penal</td><td>LO 7/2021; finalidad determinada y registro de la actividad.</td></tr>
+    <tr><td>Crear un perfil falso para entrar en un grupo privado</td><td>No es fuente abierta; puede ser acceso ilícito y afecta al derecho a la intimidad.</td></tr>
+    <tr><td>Interceptar conversaciones o acceder a un dispositivo ajeno</td><td>Requiere habilitación legal y, en su caso, autorización judicial previa.</td></tr>
+    <tr><td>Difundir datos personales obtenidos en la consulta</td><td>Necesita base jurídica; el art. 197.3 CP castiga la revelación de datos reservados.</td></tr>
+  </tbody>
+</table>
+
+<h2>13. Surface web, deep web y dark web</h2>
+<p>
+  Tres nombres que se usan como si fueran tres internets distintas, y no lo son. Son tres formas de
+  describir el mismo conjunto de contenidos según <strong>cómo se llega a ellos</strong>. La
+  distinción es <strong>doctrina técnica</strong>: no hay una norma española que la defina, y por eso
+  el examen la pregunta como concepto y no como artículo. El único elemento normalizado es el
+  dominio <strong>.onion</strong>, que sí está registrado formalmente (apartado 14).
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 430" role="img" aria-labelledby="fig-capas">
+    <title id="fig-capas">Las tres capas de la web según la forma de acceso, con lo que hay realmente en cada una</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <rect x="40" y="30" width="680" height="96" rx="8" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="58" y="56" font-size="13" font-weight="700" fill="var(--texto)">SURFACE WEB · web superficial</text>
+      <text x="58" y="78" font-size="10.5" fill="var(--texto-suave)">Indexada por los buscadores generales; se llega con un navegador normal y un enlace.</text>
+      <text x="58" y="96" font-size="10.5" fill="var(--texto-suave)">Periódicos, tiendas, webs institucionales, redes sociales abiertas, este mismo temario.</text>
+      <text x="58" y="114" font-size="10.5" font-weight="700" fill="var(--texto)">Acceso: navegador + dirección. Sin software añadido.</text>
+
+      <rect x="40" y="146" width="680" height="112" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="58" y="172" font-size="13" font-weight="700" fill="var(--texto)">DEEP WEB · web profunda</text>
+      <text x="58" y="194" font-size="10.5" fill="var(--texto-suave)">No indexada: el buscador no la ve porque está detrás de un formulario, de un pago o de una cuenta.</text>
+      <text x="58" y="212" font-size="10.5" fill="var(--texto-suave)">Correo, banca, intranets, expedientes, bases de datos académicas, contenido de suscripción.</text>
+      <text x="58" y="230" font-size="10.5" fill="var(--texto-suave)">Es la mayor parte de la web y es, casi toda, perfectamente legal y aburrida.</text>
+      <text x="58" y="248" font-size="10.5" font-weight="700" fill="var(--texto)">Acceso: navegador normal, con credenciales o pago legítimo.</text>
+
+      <rect x="40" y="278" width="680" height="112" rx="8" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="58" y="304" font-size="13" font-weight="700" fill="var(--texto)">DARK WEB · web oscura</text>
+      <text x="58" y="326" font-size="10.5" fill="var(--texto-suave)">Contenido alojado en redes superpuestas que no forman parte del internet abierto.</text>
+      <text x="58" y="344" font-size="10.5" fill="var(--texto-suave)">Requiere software específico; no se resuelve por el sistema de nombres de dominio.</text>
+      <text x="58" y="362" font-size="10.5" fill="var(--texto-suave)">No es sinónimo de delito: hay medios de comunicación y foros legítimos, junto a mercados ilícitos.</text>
+      <text x="58" y="380" font-size="10.5" font-weight="700" fill="var(--texto)">Acceso: software de la red superpuesta, no el navegador de serie.</text>
+
+      <text x="380" y="412" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">Las tres capas son el mismo internet clasificado por la forma de llegar al contenido, no tres redes separadas.</text>
+    </g>
+  </svg>
+  <figcaption>
+    La clasificación útil es la del acceso: lo que un buscador indexa, lo que no indexa pero está en
+    la web abierta, y lo que vive en una red superpuesta que necesita software propio.
+  </figcaption>
+</figure>
+
+<h3>13.1. Tabla comparativa</h3>
+<table>
+  <caption>Diferencias entre surface, deep y dark web</caption>
+  <thead>
+    <tr><th>Criterio</th><th>Surface</th><th>Deep</th><th>Dark</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>¿La indexa un buscador general?</td><td>Sí</td><td>No</td><td>No</td></tr>
+    <tr><td>¿Qué navegador hace falta?</td><td>Cualquiera</td><td>Cualquiera</td><td>Software específico de la red superpuesta</td></tr>
+    <tr><td>¿Cómo se entra?</td><td>Enlace o búsqueda</td><td>Credenciales, pago o formulario</td><td>Dirección de la red superpuesta, obtenida por un canal aparte</td></tr>
+    <tr><td>¿Usa el sistema de nombres de dominio?</td><td>Sí</td><td>Sí</td><td>No en el caso de .onion; el nombre no está en el DNS</td></tr>
+    <tr><td>Contenido típico</td><td>Webs públicas</td><td>Correo, banca, intranets, bases de datos, suscripciones</td><td>Servicios de la red superpuesta, legales e ilegales</td></tr>
+    <tr><td>¿Es ilegal por sí misma?</td><td>No</td><td>No</td><td>No; lo ilícito es el contenido o la conducta, no la capa</td></tr>
+    <tr><td>Volumen</td><td>La parte pequeña e indexada</td><td>La parte mayor</td><td>La parte más pequeña y la más inestable</td></tr>
+  </tbody>
+</table>
+
+<h3>13.2. Lo que hay realmente en cada capa</h3>
+<p>
+  La pregunta «¿qué hay en la deep web?» tiene una respuesta decepcionante: casi todo lo que hay es
+  administración. Un expediente electrónico, el histórico de tu banco, la plataforma con la que se
+  estudia este temario cuando se entra con usuario y contraseña, el correo, la intranet de una
+  empresa: todo eso es deep web por definición, porque ningún buscador general lo indexa, y nada de
+  eso es oscuro ni clandestino. La web profunda es, en volumen, la web de las cuentas y los
+  formularios.
+</p>
+<p>
+  En la dark web la proporción se invierte en la conversación pública y no en los datos: conviven
+  foros técnicos, medios de comunicación que publican allí para evitar censura, proyectos de
+  denuncia y archivo, junto a mercados de sustancias ilícitas, datos robados y servicios criminales.
+  Por eso la capa no sirve para calificar a nadie: lo que se persigue es el hecho, no el protocolo.
+  Conviene retener además el término con el que la práctica designa a la web abierta para
+  distinguirla de las redes superpuestas: <strong>clearnet</strong>. No es un cuarto nivel ni una
+  red distinta, sino otro nombre para lo que aquí se llama surface y deep web juntas, es decir,
+  todo lo que se alcanza desde el internet abierto con un navegador normal.
+</p>
+
+<h2>14. Dark net y dark web no son sinónimos</h2>
+<p>
+  Es la distinción que más se falla y la que más se pregunta, porque suena redundante y no lo es:
+</p>
+<ul>
+  <li><strong>Dark net</strong> es la <strong>red</strong>: la infraestructura superpuesta, el
+    conjunto de nodos y protocolos que permite conexiones dentro de una red que no es la abierta.
+    Es el «sitio» por donde se va.</li>
+  <li><strong>Dark web</strong> es el <strong>contenido</strong>: los servicios y páginas que se
+    publican dentro de esa red y a los que se llega a través de ella. Es lo que se visita.</li>
+</ul>
+<p>
+  Dicho de otro modo: la dark net es la carretera y la dark web son los locales de la carretera.
+  Puede existir una red superpuesta sin web (solo correo o solo mensajería) y puede haber contenido
+  oscuro fuera de esas redes (un foro privado en la web abierta), lo que demuestra que son dos
+  conceptos distintos y ninguno de los dos es un sinónimo de delito.
+</p>
+
+<h3>14.1. El único dato normalizado: el dominio .onion</h3>
+<p>
+  Frente a la niebla terminológica, hay un elemento técnico que está formalmente documentado y que
+  conviene citar con precisión, porque desmonta varios mitos de golpe. El documento es el
+  <strong>RFC 7686</strong>, de octubre de 2015, del grupo de trabajo de ingeniería de internet
+  (IETF), titulado «The “.onion” Special-Use Domain Name». Registra .onion como nombre de dominio de
+  uso especial y describe su funcionamiento así:
+</p>
+<ul>
+  <li>Los nombres .onion <strong>no usan la infraestructura DNS</strong>: se resuelven dentro de la
+    red, no por el sistema de nombres de dominio.</li>
+  <li>Los nombres <strong>son autocertificados</strong>: se derivan del componente criptográfico de la
+    propia dirección, de modo que el nombre identifica el servicio.</li>
+  <li>Esos nombres <strong>no se pueden registrar, asignar, transferir ni revocar</strong>, porque la
+    red está diseñada para no depender de una autoridad central de publicación.</li>
+  <li>Se usan para ofrecer acceso cifrado de extremo a extremo y anónimo a servicios alojados en la
+    red.</li>
+</ul>
+<p>
+  Dos consecuencias directas para el examen: una dirección .onion <strong>no es un dominio de
+  internet normal</strong> y no se abre con el navegador de serie; y el nombre
+  <strong>no se «compra»</strong> como se compra un dominio, porque no hay registro que lo asigne.
+  Si un enunciado dice que las direcciones .onion se contratan en un registrador, es falso.
+</p>
+
+<h3>14.2. Cómo se accede, en términos generales</h3>
+<p>
+  El acceso a una red superpuesta requiere instalar y configurar su software cliente, que enruta el
+  tráfico de forma distinta a la conexión directa. Este tema no describe la configuración ni
+  recomienda herramientas: no es necesario para responder y además sería una mala práctica de
+  seguridad para el opositor, que no debe instalar clientes de redes anónimas en su equipo sin
+  motivo profesional y sin medidas de protección. Lo que sí hay que saber es el principio: la
+  dirección del servicio se obtiene <strong>por un canal distinto</strong> al de la propia red, y esa
+  es la razón por la que no existe un «buscador» fiable y completo de la dark web, sino directorios
+  mantenidos por terceros con calidad y vigencia desiguales.
+</p>
+<h2>15. Mitos que hay que corregir</h2>
+<p>
+  En este tema los mitos hacen más daño que el desconocimiento, porque están repetidos hasta en
+  material de estudio. Cada uno lleva su corrección y, cuando existe, la fuente que la sostiene.
+</p>
+<table>
+  <caption>Seis mitos, seis correcciones</caption>
+  <thead>
+    <tr><th>Mito</th><th>Corrección</th><th>Base</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>«La deep web es el 90 % de internet»</td>
+      <td>No hay ninguna medición oficial de ese porcentaje y no se sostiene: depende de qué se cuente (páginas, datos, peticiones) y cambia con el método. Es una cifra de folleto.</td>
+      <td>Ninguna fuente pública consultada la respalda.</td>
+    </tr>
+    <tr>
+      <td>«La deep web es ilegal»</td>
+      <td>La deep web es lo que no se indexa: correo, banca, expedientes, intranets. Es la parte más grande y más corriente de la red.</td>
+      <td>Definición por forma de acceso (apartado 13).</td>
+    </tr>
+    <tr>
+      <td>«La dark web es toda delictiva»</td>
+      <td>Hay contenido ilícito y también foros técnicos, medios y proyectos de archivo. Lo que se persigue es el hecho delictivo, no la red.</td>
+      <td>El Código Penal tipifica conductas, no protocolos.</td>
+    </tr>
+    <tr>
+      <td>«En la dark web nadie puede ser identificado»</td>
+      <td>La red está diseñada para dificultar la atribución, no para impedirla. Los errores de sus usuarios (un correo reutilizado, un pago, un acceso desde la conexión de casa) son la vía habitual de identificación en las investigaciones reales.</td>
+      <td>Doctrina; este tema no cita ningún caso concreto.</td>
+    </tr>
+    <tr>
+      <td>«Una dirección .onion se compra en un registrador»</td>
+      <td>Los nombres .onion no se registran, asignan, transfieren ni revocan; se derivan de claves criptográficas y no están en el DNS.</td>
+      <td>RFC 7686, octubre de 2015.</td>
+    </tr>
+    <tr>
+      <td>«OSINT es espiar redes sociales»</td>
+      <td>OSINT es trabajar con fuentes abiertas con método y trazabilidad, y las redes son solo una parte. Espiar cuentas privadas no es OSINT: es acceso ilícito.</td>
+      <td>CP arts. 197 y 197 bis (apartado 12).</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    La confusión que más se explota es la de los <strong>términos en inglés traducidos a medias</strong>.
+    «Deep web» no es «dark web», y «dark net» no es «dark web». Si el enunciado usa «red oscura»
+    para referirse a un mercado ilícito, está mezclando la infraestructura con el contenido: eso es
+    precisamente lo que hay que detectar.
+  </p>
+</div>
+
+<h2>16. Qué implica todo esto para la investigación policial</h2>
+<p>
+  El valor práctico del tema es este apartado. La inteligencia y el OSINT no sustituyen a la
+  investigación judicial: la <strong>preparan, la orientan y la documentan</strong>. Tampoco la dark
+  web es un territorio sin ley: es una red con contenido, y el contenido se investiga con las
+  mismas garantías que cualquier otro.
+</p>
+
+<h3>16.1. Cuatro usos legítimos y su condición</h3>
+<table>
+  <caption>Uso policial de fuentes abiertas, con la condición que lo hace admisible</caption>
+  <thead>
+    <tr><th>Uso</th><th>Para qué sirve</th><th>Condición</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Preparación de un servicio</td>
+      <td>Conocer el entorno, los accesos y la actividad pública del lugar antes de intervenir.</td>
+      <td>Datos estrictamente necesarios para la intervención y sin difusión posterior.</td>
+    </tr>
+    <tr>
+      <td>Verificación de una identidad o de una actividad</td>
+      <td>Comprobar si lo que alguien declara coincide con lo publicado en registros y webs.</td>
+      <td>Fuente identificable y trazable; finalidad concreta de la investigación.</td>
+    </tr>
+    <tr>
+      <td>Detección de oferta ilícita en sitios abiertos</td>
+      <td>Localizar venta de material o servicios ilícitos en la web visible.</td>
+      <td>No interactuar con los vendedores fuera del marco legal; documentar, no comprar.</td>
+    </tr>
+    <tr>
+      <td>Apoyo al análisis de una organización</td>
+      <td>Reconstruir estructura, relaciones y actividad económica con datos públicos.</td>
+      <td>Separar hecho de hipótesis y declarar la incertidumbre en el producto.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>16.2. La frontera que no se cruza</h3>
+<p>
+  La tentación profesional es la misma que la del curioso: crear un perfil falso, pedir acceso a un
+  grupo, presionar a un testigo, comprar una base de datos filtrada «para ver qué hay». Cada una de
+  esas acciones saca la investigación de las fuentes abiertas y la mete en otro régimen jurídico,
+  con consecuencias que van mucho más allá de la nulidad de una prueba: pueden ser delito. La regla
+  de bolsillo es la del apartado 9.1 y no falla: <strong>si para verlo tengo que engañar, saltar o
+  romper, ya no es fuente abierta</strong>.
+</p>
+
+<h3>16.3. Del dato al informe: cómo se escribe lo que se entrega</h3>
+<p>
+  Un producto de fuentes abiertas útil tiene cuatro partes y ninguna es prescindible:
+</p>
+<ol>
+  <li><strong>Pregunta y alcance</strong>: qué se buscaba, con qué límites y hasta qué fecha.</li>
+  <li><strong>Hechos con su fuente</strong>: cada afirmación con su origen, su fecha y su nivel de
+    confianza. Sin esta parte, lo demás sobra.</li>
+  <li><strong>Análisis</strong>: qué significan los hechos, qué encaja y qué no, y qué explicaciones
+    alternativas hay.</li>
+  <li><strong>Huecos y recomendación</strong>: qué no se ha podido comprobar y qué se propone. Un
+    informe que no dice lo que no sabe es un informe que miente por omisión.</li>
+</ol>
+<p>
+  Esa estructura no es burocracia: es la que permite que el producto se discuta, se corrija y se
+  defienda. Y es la que hace que un trabajo de fuentes abiertas sea <strong>inteligencia</strong> y no
+  un dosier de recortes.
+</p>
+
+<h3>16.4. La comparación que resume el tema</h3>
+<table>
+  <caption>Qué aporta cada pieza, en una tabla de cierre</caption>
+  <thead>
+    <tr><th>Pieza</th><th>Qué aporta</th><th>Qué no aporta</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dato</td><td>La materia prima.</td><td>Significado.</td></tr>
+    <tr><td>Información</td><td>Contexto y descripción.</td><td>Comprensión ni predicción.</td></tr>
+    <tr><td>Inteligencia</td><td>Análisis orientado a decidir, con incertidumbre declarada.</td><td>Prueba judicial por sí misma.</td></tr>
+    <tr><td>OSINT</td><td>Información pública con método y trazabilidad.</td><td>Acceso a lo privado ni a lo protegido.</td></tr>
+    <tr><td>Deep web</td><td>Contenido no indexado, mayoritariamente legítimo.</td><td>Nada clandestino por definición.</td></tr>
+    <tr><td>Dark web</td><td>Contenido en redes superpuestas.</td><td>Impunidad ni anonimato garantizado.</td></tr>
+  </tbody>
+</table>
+<h2>17. Trampas del examen</h2>
+<p>
+  Ocho trampas, con el enunciado que las activa y la respuesta que hay que dar. Están ordenadas de
+  más a menos frecuente.
+</p>
+<ol>
+  <li>
+    <strong>Confundir información con inteligencia.</strong> Enunciado típico: «La información
+    elaborada y difundida a un destinatario se denomina…». La respuesta correcta es
+    <strong>inteligencia</strong>, no «información elaborada». La clave es el destinatario y la
+    orientación a la decisión.
+  </li>
+  <li>
+    <strong>Cambiar el número de fases del ciclo.</strong> La descripción pública española tiene
+    <strong>cuatro</strong>: dirección, obtención, elaboración y difusión. Si el enunciado ofrece
+    cinco, está añadiendo «planificación» como fase autónoma: en la fuente citada, la planificación
+    es una <strong>subfase de la dirección</strong>.
+  </li>
+  <li>
+    <strong>Invertir la elaboración.</strong> El orden publicado es valoración, examen, integración,
+    redacción e <strong>interpretación</strong> al final. Cualquier opción que ponga la interpretación
+    antes de la redacción altera la fuente.
+  </li>
+  <li>
+    <strong>Hacer de OSINT una técnica intrusiva.</strong> «OSINT es la obtención de información
+    mediante técnicas de hacking ético» es falso: sin autorización no hay OSINT, hay acceso ilícito
+    (art. 197 bis CP).
+  </li>
+  <li>
+    <strong>Igualar deep web y dark web.</strong> La deep web es lo no indexado; la dark web es
+    contenido en redes superpuestas. Una cuenta de correo es deep web y no es dark web.
+  </li>
+  <li>
+    <strong>Igualar dark net y dark web.</strong> La red frente al contenido. Si el enunciado dice
+    que son sinónimos, es falso por definición.
+  </li>
+  <li>
+    <strong>Confundir la adscripción del CNI.</strong> Depende del <strong>Ministerio de
+    Defensa</strong> (art. 7.1 de la Ley 11/2002), no de Interior. Y su personal no tiene, con
+    carácter general, la consideración de agente de la autoridad (art. 5.4).
+  </li>
+  <li>
+    <strong>Dar tres categorías de materia clasificada.</strong> La Ley 9/1968 establece dos:
+    <strong>secreto</strong> y <strong>reservado</strong>. «Confidencial» pertenece a otras escalas.
+  </li>
+</ol>
+<div class="aviso">
+  <span class="aviso__titulo">La trampa compuesta</span>
+  <p>
+    Las preguntas difíciles suman dos errores. Ejemplo: «El CNI, dependiente de Interior, obtiene
+    inteligencia mediante OSINT y hacking de fuentes cerradas». Ahí hay tres falsedades en una
+    frase: la adscripción, la confusión de OSINT con intrusión y la atribución de técnicas
+    ilícitas a un organismo que actúa, por el artículo 2.1 de su ley, «en el marco de las
+    habilitaciones expresamente establecidas». Cuando una opción es larga y acumula términos
+    técnicos, sospecha.
+  </p>
+</div>
+
+<h2>18. Mnemotecnia</h2>
+<dl class="glosario">
+  <dt>La cadena del conocimiento: «DICI»</dt>
+  <dd><strong>D</strong>ato, <strong>I</strong>nformación, <strong>C</strong>onocimiento, <strong>I</strong>nteligencia. Cuatro palabras y el orden en que se elaboran.</dd>
+  <dt>El ciclo: «DOED»</dt>
+  <dd><strong>D</strong>irección, <strong>O</strong>btención, <strong>E</strong>laboración, <strong>D</strong>ifusión. Se lee como «do-ed» y se recorre en el sentido de las agujas del reloj empezando arriba.</dd>
+  <dt>Las subfases de la elaboración: «VEIRI»</dt>
+  <dd><strong>V</strong>aloración, <strong>E</strong>xamen, <strong>I</strong>ntegración, <strong>R</strong>edacción, <strong>I</strong>nterpretación. Cinco pasos; la interpretación siempre la última.</dd>
+  <dt>Las disciplinas del CNI: «HOSeG»</dt>
+  <dd><strong>H</strong>UMINT, <strong>O</strong>SINT, <strong>S</strong>IGINT, <strong>G</strong>EOINT. Cuatro y su inicial forma una palabra pronunciable.</dd>
+  <dt>Las tres capas: «Sí, No, Fuera»</dt>
+  <dd><strong>S</strong>urface: sí la indexa el buscador. <strong>D</strong>eep: no la indexa, pero está en la web. <strong>D</strong>ark: fuera del internet abierto, en otra red.</dd>
+  <dt>El límite legal: «Engañar, saltar, romper»</dt>
+  <dd>Si para obtener el dato hay que <strong>engañar</strong> a alguien, <strong>saltar</strong> una medida de seguridad o <strong>romper</strong> algo, ya no es OSINT. Las tres palabras cubren el 197, el 197 bis y el 264.</dd>
+  <dt>El CNI en tres datos: «5-4-2»</dt>
+  <dd><strong>5</strong> años de mandato del director, <strong>4</strong> fases del ciclo, <strong>2</strong> controles (parlamentario y judicial previo).</dd>
+</dl>
+
+<h2>19. Autoevaluación</h2>
+<p>Responde antes de abrir las soluciones. Si fallas una, vuelve al apartado indicado.</p>
+
+<details>
+  <summary><strong>1.</strong> Un analista reúne tres noticias que dicen lo mismo y concluye que el dato está confirmado. ¿Qué ha fallado?</summary>
+  <p>
+    La corroboración por fuentes independientes. Si las tres noticias citan la misma fuente original,
+    solo hay una fuente, no tres. Apartado 10.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>2.</strong> ¿Cuántas fases tiene el ciclo de inteligencia según la descripción pública española y cuáles son?</summary>
+  <p>
+    Cuatro: dirección, obtención, elaboración y difusión. La planificación es una subfase de la
+    dirección. Apartado 5.
+  </p>
+</details>
+
+<details>
+  <summary><strong>3.</strong> ¿En qué orden se elaboran las cinco subfases del apartado de elaboración?</summary>
+  <p>
+    Valoración, examen, integración, redacción e interpretación. Apartado 6.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>4.</strong> Un compañero consulta un perfil público y después crea una cuenta falsa para entrar en un grupo privado del mismo usuario. ¿Las dos cosas son OSINT?</summary>
+  <p>
+    La primera sí; la segunda no. La cuenta falsa implica engaño y acceso a un ámbito privado, y
+    puede constituir acceso ilícito (art. 197 bis CP) además de afectar a la intimidad (art. 18 CE).
+    Apartados 9.1 y 12.
+  </p>
+</details>
+
+<details>
+  <summary><strong>5.</strong> ¿Es delito descargar una base de datos filtrada que ya circula públicamente?</summary>
+  <p>
+    El acceso no autorizado a datos reservados ya es típico (art. 197.2 CP), y el 197.3 castiga a
+    quien difunde con conocimiento del origen ilícito. Que circule no la convierte en fuente
+    abierta. Apartado 12.2.
+  </p>
+</details>
+
+<details>
+  <summary><strong>6.</strong> ¿Cuál es la diferencia entre deep web y dark web en una frase?</summary>
+  <p>
+    La deep web es contenido de la web abierta que no está indexado; la dark web es contenido
+    alojado en redes superpuestas que requiere software específico y no se resuelve por el DNS en el
+    caso de .onion. Apartado 13.
+  </p>
+</details>
+
+<details>
+  <summary><strong>7.</strong> ¿Dark net y dark web son lo mismo?</summary>
+  <p>
+    No. La dark net es la red superpuesta (la infraestructura) y la dark web es el contenido
+    publicado en ella. Apartado 14.
+  </p>
+</details>
+
+<details>
+  <summary><strong>8.</strong> ¿Se puede comprar un dominio .onion en un registrador?</summary>
+  <p>
+    No. Los nombres .onion no se registran, asignan, transfieren ni revocan; se derivan de claves
+    criptográficas y no usan el DNS. RFC 7686. Apartado 14.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>9.</strong> ¿De qué ministerio depende el CNI y cuánto dura el mandato de su director?</summary>
+  <p>
+    Del Ministerio de Defensa (art. 7.1 de la Ley 11/2002) y el mandato es de cinco años (art. 9.1),
+    sin perjuicio de que el Consejo de Ministros pueda sustituirlo en cualquier momento. Apartado 7.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>10.</strong> ¿Qué dos categorías de materias clasificadas establece la Ley 9/1968?</summary>
+  <p>
+    Secreto y reservado (art. 3). Apartado 7.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>11.</strong> ¿Qué norma se aplica a los datos personales que trata la Policía en una investigación penal?</summary>
+  <p>
+    La LO 7/2021, que traspone la Directiva (UE) 2016/680 y declara autoridades competentes a las
+    Fuerzas y Cuerpos de Seguridad. El RGPD y la LO 3/2018 rigen los demás tratamientos. Apartado 12.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>12.</strong> ¿Dónde es más frágil el ciclo y por qué se suele decir que es la dirección?</summary>
+  <p>
+    Porque un objetivo mal fijado hace inútil todo el trabajo posterior y, al ser la fase con menos
+    retroalimentación externa, el error tarda más en detectarse. Apartados 6 y 8.
+  </p>
+</details>
+<h2>20. Resumen para memorizar</h2>
+<div class="clave">
+  <span class="clave__titulo">Los datos que se preguntan</span>
+  <ul>
+    <li><strong>Cadena</strong>: dato (hecho aislado) → información (con contexto) → conocimiento (comprensión) → inteligencia (producto para decidir, a tiempo, con incertidumbre declarada).</li>
+    <li><strong>Ciclo</strong>: dirección, obtención, elaboración y difusión. Cuatro fases.</li>
+    <li><strong>Subfases</strong>: la dirección comprende la Directiva de Inteligencia y la planificación; la elaboración, valoración, examen, integración, redacción e interpretación.</li>
+    <li><strong>Directiva de Inteligencia</strong>: anual y de carácter secreto, aprobada por el Gobierno (art. 3 de la Ley 11/2002).</li>
+    <li><strong>Disciplinas que publica el CNI</strong>: HUMINT (fuentes humanas), OSINT (fuentes abiertas), SIGINT (fuentes técnicas) y GEOINT (imágenes e información geográfica).</li>
+    <li><strong>Fase más frágil</strong>: la dirección, porque un objetivo mal fijado invalida todo lo demás.</li>
+    <li><strong>OSINT</strong>: fuentes abiertas, con método y trazabilidad. No es hacking: si hay engaño, salto de seguridad o daño, es delito (CP arts. 197, 197 bis y 264).</li>
+    <li><strong>Tres capas</strong>: surface (indexada), deep (no indexada pero en la web abierta) y dark (en redes superpuestas).</li>
+    <li><strong>Dark net ≠ dark web</strong>: la red frente al contenido.</li>
+    <li><strong>.onion</strong>: nombre de dominio de uso especial, fuera del DNS, autocertificado y no registrable (RFC 7686).</li>
+    <li><strong>CNI</strong>: organismo público adscrito al Ministerio de Defensa; director con rango de Secretario de Estado y mandato de cinco años; control parlamentario y control judicial previo; su personal no es agente de la autoridad con carácter general.</li>
+    <li><strong>Materias clasificadas</strong>: dos categorías, secreto y reservado (Ley 9/1968).</li>
+    <li><strong>Datos personales en investigación penal</strong>: LO 7/2021. Resto de tratamientos: RGPD y LO 3/2018.</li>
+  </ul>
+</div>
+
+<h2>21. Qué no se ha afirmado en este tema, y por qué</h2>
+<div class="aviso">
+  <span class="aviso__titulo">Límites de este tema</span>
+  <p>
+    El estándar de este bloque es solo fuente primaria pública. Queda deliberadamente fuera lo
+    siguiente, y se dice para que nadie lo rellene con material de academia:
+  </p>
+  <ul>
+    <li>
+      <strong>Capacidades, medios, procedimientos, organización interna, fuentes y personal del CNI
+      y del CCN.</strong> No se describe ninguno porque el artículo 5.1 de la Ley 11/2002 los declara
+      información clasificada con grado de secreto, y porque la ley prohíbe el acceso a esa
+      información. Cualquier descripción que circule es especulación o delito.
+    </li>
+    <li>
+      <strong>Publicaciones del CNI y del CCN-CERT que no se han podido leer.</strong> El catálogo de
+      guías CCN-STIC y el portal del CCN-CERT devolvieron error de acceso automatizado en la fecha de
+      consulta, y el portal de INCIBE rechazó las peticiones con una página de bloqueo. Por eso este
+      tema <strong>no cita ninguna guía concreta ni atribuye afirmaciones a INCIBE</strong>, aunque la
+      función de elaborar y difundir guías sí se cita desde el Real Decreto 421/2004, que sí se ha
+      leído.
+    </li>
+    <li>
+      <strong>Doctrina de la OTAN, de la Unión Europea y de Naciones Unidas sobre el ciclo y las
+      tipologías.</strong> Los documentos doctrinales de esos organismos no se han podido consultar
+      en esta sesión (los portales devolvieron error o sirven el contenido por JavaScript). Por eso
+      las tipologías ampliadas (IMINT, MASINT, TECHINT, FININT, CRIMINT) van marcadas como
+      <strong>doctrina</strong> y no se atribuyen a ningún organismo concreto, y el ciclo se describe
+      por la fuente española, que sí es legible.
+    </li>
+    <li>
+      <strong>Cifras sobre tamaño de la deep web, número de servicios ocultos o volumen de los
+      mercados ilícitos.</strong> No hay ninguna cifra oficial y verificable; el «90 % de internet»
+      que circula en manuales no tiene respaldo. Este tema no da un solo número de ese tipo.
+    </li>
+    <li>
+      <strong>Casos reales, operaciones policiales y sentencias.</strong> No se menciona ninguno, ni
+      español ni extranjero, porque no se han consultado las resoluciones y porque el tema no los
+      necesita.
+    </li>
+    <li>
+      <strong>Nombres de aplicaciones y herramientas concretas.</strong> Se explican por categorías,
+      no por marcas: las herramientas cambian y algunas son ellas mismas un riesgo.
+    </li>
+    <li>
+      <strong>Ley Orgánica 2/2002, de control judicial previo del CNI.</strong> Se menciona su
+      existencia a través del artículo 12 de la Ley 11/2002, pero su texto no se ha consultado y por
+      eso no se cita ningún artículo suyo.
+    </li>
+    <li>
+      <strong>Régimen de la Ley 9/1968 en detalle.</strong> Se citan los artículos 1 a 4, que son los
+      que definen la clasificación y sus categorías. El artículo 4 sigue atribuyendo la calificación
+      al Consejo de Ministros y a la Junta de Jefes de Estado Mayor; este tema reproduce el texto y
+      no valora su adecuación al organigrama actual, que exigiría consultar la normativa de defensa
+      vigente.
+    </li>
+    <li>
+      <strong>Detalles técnicos de la prueba electrónica y de la cadena de custodia digital.</strong>
+      Se explica su exigencia (trazabilidad, captura fechada, archivo) como buena práctica, pero no
+      se desarrolla el régimen procesal, que pertenece a otros temas del programa.
+    </li>
+    <li>
+      <strong>La institución del agente encubierto y las técnicas especiales de investigación.</strong>
+      Se mencionan solo como frontera (lo que no es fuente abierta), sin desarrollar su régimen.
+    </li>
+  </ul>
+</div>
+
+<h2>22. Fuentes de este tema</h2>
+<p>
+  Todas las fuentes son públicas y se han consultado el <strong>16 de noviembre de 2026</strong>. Los
+  identificadores del BOE se han comprobado por el título del documento consolidado, no por el
+  código de respuesta HTTP: el portal devuelve 200 incluso a un identificador inexistente.
+</p>
+
+<h3>22.1. Normativa española</h3>
+<ul>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229" rel="noopener">Constitución Española</a>
+    (BOE-A-1978-31229): artículo 18, apartados 1 a 4.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2002-8628" rel="noopener">Ley 11/2002, de 6 de mayo, reguladora del Centro Nacional de Inteligencia</a>
+    (BOE-A-2002-8628): artículos 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 y 12, y disposición adicional
+    segunda. Última actualización publicada el 15/06/2021 (la Sentencia del TC 110/2021 anuló el
+    apartado 2 del artículo 6).
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2004-5051" rel="noopener">Real Decreto 421/2004, de 12 de marzo, por el que se regula el Centro Criptológico Nacional</a>
+    (BOE-A-2004-5051): artículos 1 y 2.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1968-444" rel="noopener">Ley 9/1968, de 5 de abril, sobre secretos oficiales</a>
+    (BOE-A-1968-444): artículos 1 a 4. Última actualización publicada el 11/10/1978, tras la
+    modificación de la Ley 48/1978.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444" rel="noopener">Ley Orgánica 10/1995, de 23 de noviembre, del Código Penal</a>
+    (BOE-A-1995-25444): artículos 197, 197 bis, 197 ter, 197 quater, 264, 264 bis y 264 ter.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2021-8806" rel="noopener">Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales</a>
+    (BOE-A-2021-8806): artículos 1, 2 y 4.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673" rel="noopener">Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales</a>
+    (BOE-A-2018-16673): citada como marco general de los tratamientos no incluidos en la LO 7/2021.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1882-6036" rel="noopener">Real Decreto de 14 de septiembre de 1882 por el que se aprueba la Ley de Enjuiciamiento Criminal</a>
+    (BOE-A-1882-6036): artículos 588 bis a 588 octies, citados como régimen de las medidas que
+    requieren autorización judicial.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-18243" rel="noopener">Ley 25/2007, de 18 de octubre, de conservación de datos relativos a las comunicaciones electrónicas y a las redes públicas de comunicaciones</a>
+    (BOE-A-2007-18243): citada por su objeto.
+  </li>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2021-21884" rel="noopener">Real Decreto 1150/2021, de 28 de diciembre, por el que se aprueba la Estrategia de Seguridad Nacional 2021</a>
+    (BOE-A-2021-21884).
+  </li>
+</ul>
+
+<h3>22.2. Publicaciones de organismos públicos</h3>
+<ul>
+  <li>
+    <a href="https://www.cni.es/la-inteligencia" rel="noopener">Centro Nacional de Inteligencia, «La Inteligencia»</a>:
+    descripción pública del ciclo (dirección, obtención, elaboración y difusión), de sus subfases y
+    de las cuatro clases de fuentes (HUMINT, OSINT, SIGINT y GEOINT).
+  </li>
+  <li>
+    <a href="https://www.dsn.gob.es/es/publicaciones/estrategia-de-seguridad-nacional-2021" rel="noopener">Departamento de Seguridad Nacional, «Estrategia de Seguridad Nacional 2021»</a>
+    y su <a href="https://www.dsn.gob.es/sites/default/files/documents/ESN2021%20Accesible_1.pdf" rel="noopener">edición accesible en PDF</a>:
+    capítulo dedicado a la contrainteligencia, la desinformación y las injerencias exteriores, y
+    referencias al CNI, al CCN y a la ONS.
+  </li>
+  <li>
+    <a href="https://www.ccn.cni.es/es/menu-guias-ccn-stic-es" rel="noopener">Centro Criptológico Nacional, «Guías CCN-STIC»</a>:
+    página de presentación de las series. Se cita únicamente como localización del catálogo; su
+    contenido no se ha podido consultar (apartado 21).
+  </li>
+</ul>
+
+<h3>22.3. Documentos técnicos de normalización</h3>
+<ul>
+  <li>
+    <a href="https://www.rfc-editor.org/rfc/rfc7686.txt" rel="noopener">IETF, RFC 7686, «The “.onion” Special-Use Domain Name»</a>,
+    de octubre de 2015: registro del nombre de dominio de uso especial .onion, su resolución fuera
+    del DNS, su carácter autocertificado y la imposibilidad de registrarlo, asignarlo, transferirlo
+    o revocarlo.
+  </li>
+</ul>
+<p>
+  Texto de elaboración propia a partir de las fuentes citadas, publicado bajo CC BY-SA 4.0. Ninguna
+  parte procede de un temario comercial, de una academia ni de un blog. La parte doctrinal —la
+  cadena del conocimiento, la ampliación del catálogo de disciplinas, la descripción de las capas de
+  la web, los fallos típicos del ciclo y los controles de verificación— está señalada como tal a lo
+  largo del tema y no se presenta como hecho verificado ni como norma.
+</p>
+

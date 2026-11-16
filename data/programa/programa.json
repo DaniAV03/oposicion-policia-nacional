@@ -304,7 +304,7 @@
           "titulo": "Gramática de la lengua española",
           "epigrafe": "Gramática de la lengua española. Morfología. Sufijos, sustantivos y pronombres. Adjetivos: sus grados y tipos. Los adverbios y sus tipos. Verbos: modos y conjugación. Preposiciones y conjunciones. Sintaxis. La oración: partes y tipos. Análisis sintáctico.",
           "ruta": "data/temas/36.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 37,
@@ -312,7 +312,7 @@
           "titulo": "Ortografía de la lengua española",
           "epigrafe": "Ortografía de la lengua española. Reglas ortográficas. Uso de las letras o grafemas. Uso de la tilde, de los signos ortográficos y de las letras mayúsculas y minúsculas. Representación gráfica de las unidades léxicas. Ortografía de las expresiones procedentes de otras lenguas, de nombres propios y expresiones numéricas.",
           "ruta": "data/temas/37.html",
-          "publicado": false
+          "publicado": true
         }
       ]
     },
@@ -326,7 +326,7 @@
           "titulo": "Fundamentos de sistemas operativos: Funciones de un sistema operativo",
           "epigrafe": "Fundamentos de sistemas operativos: Funciones de un sistema operativo. Tipologías: MS/DOS; UNIX; Linux; Windows; MAC OS. Sistemas operativos móviles: iOS, Android. Sistemas de almacenamiento. Sistemas de archivos.",
           "ruta": "data/temas/38.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 39,
@@ -334,7 +334,7 @@
           "titulo": "Redes informáticas: Modelo OSI",
           "epigrafe": "Redes informáticas: Modelo OSI. Modelo TCP/IP. Dispositivos de red: Concentradores (hubs); conmutadores (switches); encaminadores (routers); cortafuegos (firewall); servidores DHCP; servidores DNS; servidores proxy. Direccionamiento IP: clase de redes; IPv4; IPv6.",
           "ruta": "data/temas/39.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 40,
@@ -342,7 +342,7 @@
           "titulo": "Inteligencia: dato, información e inteligencia",
           "epigrafe": "Inteligencia: dato, información e inteligencia. Tipologías de Inteligencia. Ciclo de la Inteligencia. Inteligencia de Fuentes Abiertas (OSINT). Surface Web. Deep Web. Dark Web. Dark Net.",
           "ruta": "data/temas/40.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 41,

@@ -1,0 +1,2026 @@
+<div class="clave">
+  <span class="clave__titulo">Objetivos del tema</span>
+  <p>Al terminar este tema tienes que ser capaz de:</p>
+  <ol>
+    <li>Enumerar las cinco funciones clásicas de un sistema operativo y decir a qué recurso atiende cada una.</li>
+    <li>Explicar la diferencia entre modo núcleo y modo usuario, y qué es una llamada al sistema.</li>
+    <li>Clasificar un sistema operativo por usuarios, por tareas, por tiempo de respuesta y por arquitectura del núcleo.</li>
+    <li>Situar MS/DOS, UNIX, Linux, Windows y macOS: año de arranque, linaje y qué aporta cada uno.</li>
+    <li>Comparar la familia de sistemas operativos en una sola tabla, sin confundir propietario con libre.</li>
+    <li>Distinguir iOS de Android en modelo de permisos, actualizaciones y tienda de aplicaciones.</li>
+    <li>Ordenar magnético, óptico, flash, SSD y NVMe por su forma de guardar el dato, y explicar qué añade NVMe.</li>
+    <li>Calcular la capacidad útil y la tolerancia a fallos de RAID 0, 1, 4, 5, 6 y 10.</li>
+    <li>Dar el límite real de tamaño de archivo y de volumen de FAT16, FAT32, exFAT, NTFS, ext4, HFS+ y APFS.</li>
+    <li>Elegir el sistema de archivos correcto para un disco extraíble y justificarlo con el límite que lo impone.</li>
+  </ol>
+</div>
+
+<h2>1. Qué se pregunta de este tema</h2>
+<p>
+  El tema 38 abre el bloque C, Materias Técnico-Científicas. Es el epígrafe más «de informática
+  general» del programa: no hay una ley detrás de cada afirmación, sino <strong>definiciones,
+  siglas, límites numéricos y clasificaciones</strong>. Las preguntas típicas no piden que
+  razones: piden que <strong>reconozcas el dato exacto</strong> entre tres opciones parecidas.
+</p>
+<p>
+  Hay cuatro familias de pregunta que se repiten:
+</p>
+<ul>
+  <li><strong>Función o capa.</strong> «¿Cuál de estas funciones <strong>no</strong> corresponde al
+    sistema operativo?» — el distractor suele ser la compilación o una aplicación ofimática.</li>
+  <li><strong>Siglas y linajes.</strong> Qué es POSIX, qué significa NTFS, quién certifica UNIX, de
+    qué deriva macOS, qué núcleo usa Android.</li>
+  <li><strong>Límites de sistema de archivos.</strong> El archivo máximo en FAT32 (4 GB menos 1
+    byte) es el dato más rentable del tema; el segundo, el formateo de 32 GB.</li>
+  <li><strong>RAID.</strong> Cuántos fallos tolera cada nivel y cuánta capacidad se pierde: es
+    aritmética, no memoria.</li>
+</ul>
+<table>
+  <caption>Los datos que más se preguntan y dónde están en el tema</caption>
+  <thead>
+    <tr><th>Dato</th><th>Respuesta corta</th><th>Apartado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Archivo máximo en FAT32</td><td>4 GB menos 1 byte</td><td>19</td></tr>
+    <tr><td>Volumen FAT32 que Windows formatea</td><td>32 GB (teórico del orden de 8 TB)</td><td>19</td></tr>
+    <tr><td>Archivo máximo en NTFS con clústeres de 4 KB</td><td>16 TB; con 64 KB, 256 TB</td><td>19</td></tr>
+    <tr><td>Sistema de archivos de macOS desde 10.13</td><td>APFS</td><td>10 y 19</td></tr>
+    <tr><td>Sistema de archivos de Android (datos)</td><td>ext4, sobre el núcleo Linux</td><td>14</td></tr>
+    <tr><td>Núcleo de Android</td><td>Linux, en la rama LTS con parches de Android</td><td>14</td></tr>
+    <tr><td>RAID que tolera dos fallos</td><td>RAID 6</td><td>17</td></tr>
+    <tr><td>Particiones en un disco GPT en Windows</td><td>128</td><td>18</td></tr>
+    <tr><td>Longitud máxima de ruta en Windows (MAX_PATH)</td><td>260 caracteres</td><td>9 y 19</td></tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de método · el estándar de fuentes de este tema</span>
+  <p>
+    Este epígrafe no tiene una ley detrás, así que el criterio de fuentes es el del bloque B:
+    <strong>solo documentación oficial del fabricante o del proyecto</strong>. Microsoft Learn y
+    el repositorio oficial de MS-DOS para la familia Windows; el soporte y la documentación para
+    desarrolladores de Apple; la documentación de Android y de AOSP; kernel.org y las man-pages de
+    Linux; la especificación POSIX de The Open Group; la especificación de NVMe; el formato de
+    datos de RAID de SNIA; y las especificaciones de la SD Association. <strong>Ninguna frase
+    procede de una academia, de un blog ni de Wikipedia.</strong>
+  </p>
+  <p>
+    Consecuencia práctica: los conceptos que son <strong>doctrina</strong> —la lista de cinco
+    funciones, la etiqueta «monolítico» o «microkernel», la jerarquía de almacenamiento— van
+    marcados como tales, y lo que no ha podido verificarse en una fuente oficial está en el
+    apartado 24, «Qué no se ha afirmado».
+  </p>
+</div>
+<h2>2. Qué es un sistema operativo y qué hace</h2>
+<p>
+  Un sistema operativo es el <strong>programa que se ejecuta con privilegios plenos</strong> y que
+  queda entre el hardware y las aplicaciones: convierte el hardware real —una CPU con varios
+  núcleos, bancos de memoria, discos, interfaces de red— en una máquina más simple y segura para
+  cada programa. Hace dos cosas a la vez, y conviene decirlas juntas porque el examen las separa:
+</p>
+<ul>
+  <li><strong>Abstrae.</strong> Ofrece conceptos manejables donde el hardware ofrece direcciones,
+    sectores e interrupciones: procesos, archivos, directorios, sockets, usuarios.</li>
+  <li><strong>Administra.</strong> Reparte los recursos escasos —tiempo de CPU, memoria, espacio de
+    disco, dispositivos— entre programas que compiten por ellos, y lo hace sin que un programa
+    pueda leer ni destruir los datos de otro.</li>
+</ul>
+<p>
+  Un sistema operativo <strong>vigila</strong>, no solo sirve: esa vigilancia se apoya en el modo
+  núcleo, que se explica en el apartado 3.
+</p>
+
+<h3>2.1. Las cinco funciones</h3>
+<p>
+  La enumeración de cinco funciones es una síntesis de manual —es <strong>doctrina</strong>, no un
+  artículo— y aun así es la que preguntan. Cada función atiende a un recurso distinto:
+</p>
+<dl class="glosario">
+  <dt>Gestión de procesos</dt>
+  <dd>
+    Crear, planificar, suspender, reanudar y terminar procesos e hilos. Incluye el reparto de la
+    CPU (planificación) y la comunicación entre procesos: en Linux es la llamada
+    <a href="https://man7.org/linux/man-pages/man2/intro.2.html" rel="noopener">interfaz de llamadas al sistema</a>
+    la que expone esas operaciones (<code>fork</code>, <code>execve</code>, <code>wait</code>,
+    <code>kill</code>).
+  </dd>
+  <dt>Gestión de memoria</dt>
+  <dd>
+    Asignar memoria a cada proceso, aislarlo del resto y decidir qué páginas se quedan en memoria
+    física y cuáles van al disco de intercambio. Es la función que hace posible que dos programas
+    crean tener la misma dirección de memoria y no choquen.
+  </dd>
+  <dt>Gestión de archivos</dt>
+  <dd>
+    Organizar la información en ficheros y directorios sobre un soporte persistente, con nombre,
+    permisos y metadatos. Necesita un <strong>sistema de archivos</strong> concreto (FAT32, NTFS,
+    ext4, APFS…), que se estudia en el apartado 19.
+  </dd>
+  <dt>Gestión de dispositivos</dt>
+  <dd>
+    Controlar el hardware de entrada y salida mediante controladores y un tratamiento uniforme de
+    las interrupciones. En Linux los dispositivos aparecen como archivos en
+    <code>/dev</code>, según describe
+    <a href="https://man7.org/linux/man-pages/man7/file-hierarchy.7.html" rel="noopener">file-hierarchy(7)</a>.
+  </dd>
+  <dt>Gestión de usuarios y seguridad</dt>
+  <dd>
+    Identificar a quién ejecuta cada programa, decidir qué puede hacer y registrar lo que hace. En
+    POSIX se concreta en una tabla de permisos de lectura, escritura y ejecución por propietario,
+    grupo y resto, que la
+    <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html" rel="noopener">especificación POSIX</a>
+    define en su capítulo de conceptos generales.
+  </dd>
+</dl>
+
+<figure>
+  <svg viewBox="0 0 760 440" role="img" aria-labelledby="fig-so-capas">
+    <title id="fig-so-capas">Capas de un sistema operativo: aplicaciones, bibliotecas, llamadas al sistema, núcleo con sus cinco funciones y hardware</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <rect x="180" y="14" width="400" height="40" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="380" y="40" font-size="13.5" font-weight="600" fill="var(--texto)" text-anchor="middle">Aplicaciones del usuario</text>
+
+      <rect x="180" y="62" width="400" height="34" rx="8" fill="var(--superficie)" stroke="var(--borde)" />
+      <text x="380" y="84" font-size="12" fill="var(--texto-suave)" text-anchor="middle">Bibliotecas · intérprete de órdenes · entorno de escritorio</text>
+
+      <path d="M180 104 H580" stroke="var(--acento)" stroke-width="2" stroke-dasharray="6 4" />
+      <text x="380" y="120" font-size="11.5" font-weight="700" fill="var(--acento)" text-anchor="middle">frontera de privilegio · llamadas al sistema</text>
+
+      <rect x="180" y="130" width="400" height="34" rx="8" fill="var(--acento)" />
+      <text x="380" y="152" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">NÚCLEO · modo privilegiado</text>
+
+      <rect x="180" y="172" width="192" height="52" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="276" y="193" font-size="12" font-weight="600" fill="var(--texto)" text-anchor="middle">Gestión de procesos</text>
+      <text x="276" y="210" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">CPU y planificación</text>
+
+      <rect x="388" y="172" width="192" height="52" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="484" y="193" font-size="12" font-weight="600" fill="var(--texto)" text-anchor="middle">Gestión de memoria</text>
+      <text x="484" y="210" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">páginas y aislamiento</text>
+
+      <rect x="180" y="232" width="192" height="52" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="276" y="253" font-size="12" font-weight="600" fill="var(--texto)" text-anchor="middle">Gestión de archivos</text>
+      <text x="276" y="270" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">sistema de archivos</text>
+
+      <rect x="388" y="232" width="192" height="52" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="484" y="253" font-size="12" font-weight="600" fill="var(--texto)" text-anchor="middle">Gestión de dispositivos</text>
+      <text x="484" y="270" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">controladores e interrupciones</text>
+
+      <rect x="180" y="292" width="400" height="46" rx="7" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="380" y="312" font-size="12" font-weight="600" fill="var(--texto)" text-anchor="middle">Usuarios y seguridad · permisos, identidad y auditoría</text>
+      <text x="380" y="329" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">decide quién puede hacer qué, antes de hacerlo</text>
+
+      <rect x="180" y="352" width="400" height="38" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="380" y="376" font-size="12.5" font-weight="600" fill="var(--texto)" text-anchor="middle">Hardware: CPU · memoria · discos · red</text>
+
+      <text x="600" y="152" font-size="10.5" fill="var(--texto-suave)">las aplicaciones</text>
+      <text x="600" y="167" font-size="10.5" fill="var(--texto-suave)">no entran aquí</text>
+      <path d="M64 200 V320" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <text x="56" y="196" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">modo</text>
+      <text x="56" y="210" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">usuario</text>
+      <text x="56" y="332" font-size="10.5" fill="var(--texto-suave)" text-anchor="middle">modo núcleo</text>
+      <path d="M58 246 H84" stroke="var(--texto-suave)" stroke-width="1.5" stroke-dasharray="3 3" />
+    </g>
+  </svg>
+  <figcaption>
+    La línea de puntos es la frontera que no se puede cruzar sin llamada al sistema. Todo lo que
+    está por debajo comparte un mismo espacio de privilegio; todo lo que está por encima vive en
+    el suyo y no ve los recursos directamente.
+  </figcaption>
+</figure>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    El sistema operativo <strong>no es el entorno de escritorio</strong> ni el paquete de
+    programas. Windows es un sistema operativo; el Explorador de archivos es una aplicación que
+    usa sus servicios. Del mismo modo, un intérprete de órdenes como <code>bash</code> es un
+    programa de usuario, aunque la especificación POSIX lo describa como parte del entorno
+    estándar: POSIX normaliza el <strong>entorno</strong>, no el núcleo.
+  </p>
+</div>
+
+<h2>3. Cómo funciona por dentro: modo núcleo, modo usuario y llamadas al sistema</h2>
+<p>
+  La CPU moderna tiene al menos dos niveles de privilegio. En el nivel alto —<strong>modo
+  núcleo</strong>, privilegiado— se puede tocar cualquier registro, cualquier página de memoria y
+  cualquier dispositivo. En el nivel bajo —<strong>modo usuario</strong>— el procesador impide esas
+  operaciones y provoca una excepción si se intentan. Windows lo documenta así en
+  <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode" rel="noopener">User Mode and Kernel Mode</a>:
+  las aplicaciones se ejecutan en modo usuario y solo el código del sistema operativo se ejecuta
+  en modo núcleo.
+</p>
+<p>
+  Un programa de usuario necesita leer un archivo: no puede dirigirse al disco. Hace una
+  <strong>llamada al sistema</strong> —una instrucción especial que cambia de modo y salta a una
+  rutina del núcleo—, el núcleo hace el trabajo en su nombre y devuelve el control. Las
+  <a href="https://man7.org/linux/man-pages/man2/intro.2.html" rel="noopener">man-pages de Linux</a>
+  describen ese conjunto como la interfaz entre los programas y el núcleo, y la
+  <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap01.html" rel="noopener">especificación POSIX.1-2017</a>
+  lo normaliza con una frase que vale la pena memorizar: define «una interfaz y un entorno de
+  sistema operativo estándar, incluido un intérprete de órdenes y programas de utilidad comunes».
+</p>
+<h3>3.1. Qué es POSIX y qué no es</h3>
+<ul>
+  <li><strong>Es una norma de interfaz</strong>, no un sistema operativo. POSIX.1-2017 (IEEE Std
+    1003.1) describe lo que un sistema debe ofrecer a los programas —llamadas, utilidades,
+    formato del intérprete de órdenes— para que el mismo código fuente compile y funcione en
+    cualquier implementación conforme.</li>
+  <li><strong>No dice cómo se implementa.</strong> La propia introducción de la norma aclara que
+    describe «las características externas y facilidades» que importan al desarrollador, no la
+    arquitectura interna.</li>
+  <li><strong>No es lo mismo que UNIX.</strong> UNIX es una marca registrada de The Open Group que
+    se concede a productos que superan sus pruebas de conformidad; POSIX es la norma técnica en la
+    que se apoyan. Un sistema puede ser conforme a POSIX sin llamarse UNIX y viceversa.</li>
+</ul>
+<p>
+  Esta distinción es la clave del apartado 7 y la razón por la que macOS, Linux y las variantes
+  BSD se parecen tanto en la línea de órdenes sin ser el mismo producto.
+</p>
+<h2>4. Tipologías: usuarios, tareas y tiempo de respuesta</h2>
+<p>
+  Clasificar sistemas operativos es un ejercicio de <strong>doctrina</strong>: no hay un registro
+  oficial que asigne etiquetas. Lo que sí hay son criterios estables que el examen usa como si
+  fueran definiciones, así que conviene saber qué mide cada uno y con qué ejemplo se ilustra.
+</p>
+<table>
+  <caption>Criterios de clasificación y su significado</caption>
+  <thead>
+    <tr><th>Criterio</th><th>Clases</th><th>Qué significa en la práctica</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Número de usuarios</td>
+      <td>Monousuario · multiusuario</td>
+      <td>Si varias personas pueden identificarse y trabajar a la vez en la misma máquina, cada
+        una con su sesión y sus permisos. MS/DOS es el ejemplo típico de monousuario; UNIX y sus
+        derivados nacieron multiusuario.</td>
+    </tr>
+    <tr>
+      <td>Número de tareas</td>
+      <td>Monotarea · multitarea</td>
+      <td>Si el sistema puede tener varios procesos en curso y alternar entre ellos. La
+        multitarea puede ser <strong>cooperativa</strong> (el proceso cede el control) o
+        <strong>apropiativa</strong> (el planificador lo retira por temporizador); los sistemas
+        actuales son apropiativos.</td>
+    </tr>
+    <tr>
+      <td>Tiempo de respuesta</td>
+      <td>Tiempo compartido · tiempo real · por lotes</td>
+      <td>En tiempo compartido el objetivo es el reparto equitativo; en tiempo real, que la
+        respuesta llegue <strong>antes de un plazo</strong>; por lotes, el rendimiento agregado sin
+        usuario delante.</td>
+    </tr>
+    <tr>
+      <td>Número de procesadores</td>
+      <td>Monoproceso · multiproceso (simétrico o asimétrico)</td>
+      <td>Si el núcleo puede ejecutar tareas en varios procesadores a la vez. En el multiproceso
+        simétrico, todos los procesadores son equivalentes ante el núcleo.</td>
+    </tr>
+    <tr>
+      <td>Uso</td>
+      <td>De escritorio · de servidor · empotrado · móvil</td>
+      <td>Condiciona el diseño: un móvil prioriza consumo y aislamiento; un servidor, rendimiento
+        y estabilidad.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.1. El caso del tiempo real</h3>
+<p>
+  El tiempo real se pregunta por su nombre, no por su implementación, y se falla por un motivo
+  concreto: confundir <strong>rapidez</strong> con <strong>cumplimiento de plazo</strong>. Un
+  sistema de tiempo real no es el más rápido; es el que garantiza un límite superior al tiempo de
+  respuesta. Se subdivide en <strong>estricto</strong> (perder el plazo es un fallo del sistema) y
+  <strong>flexible</strong> (perderlo degrada la calidad, pero el sistema sigue siendo correcto).
+</p>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Multitarea» y «multiusuario» no son sinónimos y el enunciado los intercambia. Un sistema
+    puede ser multitarea y monousuario a la vez —Windows de escritorio, en su uso doméstico— y
+    multiusuario sin ser de tiempo real. La pregunta que separa ambos conceptos es: ¿hay varias
+    <strong>personas</strong> identificadas, o varios <strong>procesos</strong> en curso?
+  </p>
+</div>
+
+<h2>5. Tipologías por arquitectura del núcleo, y libres frente a propietarios</h2>
+<p>
+  Aquí la clasificación deja de mirar el uso y mira el diseño: dónde vive cada servicio del
+  sistema, y cuánto código comparte el privilegio máximo.
+</p>
+<dl class="glosario">
+  <dt>Monolítico</dt>
+  <dd>
+    Todo el sistema —planificador, memoria, sistemas de archivos, controladores— se ejecuta en el
+    mismo espacio de privilegio y se comunica por llamadas a función directas. Ventaja: rápido.
+    Inconveniente: un fallo en un controlador puede tumbar el sistema entero. Es el modelo
+    tradicional de UNIX y de Linux, donde el núcleo es un único binario y los controladores pueden
+    cargarse como módulos.
+  </dd>
+  <dt>Microkernel</dt>
+  <dd>
+    El núcleo se queda con lo mínimo —planificación, paso de mensajes, gestión básica de memoria—
+    y el resto (controladores, sistemas de archivos) corre como procesos de usuario que se
+    comunican por mensajes. Ventaja: aislamiento. Inconveniente: el coste de cada mensaje.
+  </dd>
+  <dt>Híbrido</dt>
+  <dd>
+    Etiqueta intermedia: núcleo grande como el monolítico, pero con algunos servicios separados o
+    con estructura de microkernel. <strong>Cuidado:</strong> «híbrido» es una denominación
+    doctrinal; ni Microsoft ni Apple la usan en su documentación técnica, así que si el enunciado
+    la pide, se contesta por eliminación y no por cita.
+  </dd>
+  <dt>Núcleo frente a sistema operativo completo</dt>
+  <dd>
+    Distinción que el examen explota: Linux es un <strong>núcleo</strong>; un sistema GNU/Linux
+    completo es núcleo más herramientas, bibliotecas y gestor de paquetes. Android usa el núcleo
+    Linux y un entorno de ejecución propio encima, y por eso no se comporta como un escritorio
+    Linux.
+  </dd>
+</dl>
+
+<h3>5.1. Software libre y software propietario</h3>
+<p>
+  Es un criterio <strong>jurídico</strong>, no técnico, y por eso se puede afirmar sin ambigüedad:
+  lo que distingue a un sistema libre es su <strong>licencia</strong>, que permite usar, estudiar,
+  modificar y redistribuir el código. Linux se distribuye bajo la GPL del proyecto; el núcleo de
+  Windows y el de macOS son propietarios. Consecuencias que sí son observables:
+</p>
+<table>
+  <caption>Diferencias verificables entre modelo libre y modelo propietario</caption>
+  <thead>
+    <tr><th>Aspecto</th><th>Modelo libre (Linux)</th><th>Modelo propietario (Windows, macOS)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Código del núcleo</td>
+      <td>Público: el árbol de fuentes se publica y cualquiera puede leerlo y proponer cambios</td>
+      <td>Privado: se distribuye compilado, sin fuentes</td>
+    </tr>
+    <tr>
+      <td>Quién ensambla el sistema</td>
+      <td>Distribuciones: cada una empaqueta núcleo, herramientas y políticas propias</td>
+      <td>Un único fabricante, con un ciclo de versiones cerrado</td>
+    </tr>
+    <tr>
+      <td>Compatibilidad de controladores</td>
+      <td>Los controladores se integran en el árbol del núcleo o se compilan como módulos</td>
+      <td>Los controladores los certifica el fabricante del sistema y se firman</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td>AOSP es público y modificable —lo dice su propia documentación—, aunque el producto
+        comercial lleva servicios de Google aparte</td>
+      <td>iOS es cerrado de principio a fin</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>6. MS/DOS: el punto de partida del PC</h2>
+<p>
+  MS/DOS es el sistema operativo de línea de órdenes con el que arrancó el IBM PC, y su huella
+  sigue en Windows por tres vías que el examen pregunta de forma indirecta: las <strong>letras de
+  unidad</strong>, los <strong>nombres de archivo 8.3</strong> y el sistema de archivos
+  <strong>FAT</strong>.
+</p>
+<p>
+  La fuente primaria disponible es el repositorio oficial de Microsoft, que conserva el código
+  original. Su presentación lo dice con precisión:
+  <a href="https://github.com/microsoft/MS-DOS" rel="noopener">MS-DOS v1.25, v2.0 y v4.0</a>,
+  con los binarios de 1.25 y 2.0, y el código de la versión 4.00
+  <strong>desarrollado conjuntamente por IBM y Microsoft</strong>. Que sea código conjunto no es
+  un detalle menor: explica la existencia de PC DOS y de MS-DOS como productos hermanos.
+</p>
+<h3>6.1. Lo que MS/DOS dejó en Windows</h3>
+<ul>
+  <li><strong>FAT como sistema de archivos.</strong> FAT12 para volúmenes pequeños y FAT16 para el
+    resto, con tabla de asignación de archivos y cadenas de clústeres enlazados. Los límites están
+    documentados por Microsoft en
+    <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc776720(v=ws.10)" rel="noopener">How FAT Works</a>:
+    los volúmenes menores de 16 MB se formatean como FAT12, y FAT16 admite como máximo 65 524
+    clústeres por volumen, lo que con clústeres de 32 KB da un techo práctico de 2 GB.</li>
+  <li><strong>Nombres 8.3.</strong> Ocho caracteres de nombre, punto y tres de extensión. Windows
+    sigue generando un alias 8.3 en NTFS para compatibilidad, como explica
+    <a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview" rel="noopener">NTFS overview</a>,
+    aunque desde Windows Server 2008 R2 los nombres cortos están desactivados por omisión en los
+    volúmenes formateados por el propio sistema.</li>
+  <li><strong>Rutas con letra de unidad y barra invertida</strong>, que sobreviven en la sintaxis
+    de Windows y conviven con el límite de 260 caracteres de
+    <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation" rel="noopener">MAX_PATH</a>.</li>
+</ul>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    La frase «MS/DOS era monotarea y monousuario» es la respuesta esperada en el test, pero no está
+    publicada como tal en la documentación oficial consultada: el repositorio de Microsoft solo
+    acredita versiones y autoría conjunta con IBM. Este tema la usa como
+    <strong>caracterización doctrinal</strong> y lo advierte: no hay en él ninguna cifra de MS/DOS
+    presentada como dato oficial.
+  </p>
+</div>
+
+<h2>7. UNIX: la familia y la norma</h2>
+<p>
+  UNIX es a la vez un sistema histórico, una familia de sistemas y una <strong>marca
+  registrada</strong>. Las tres cosas se confunden en los enunciados, así que van separadas.
+</p>
+<ul>
+  <li><strong>Como sistema histórico</strong>, nace en los laboratorios de Bell (AT&amp;T) a
+    finales de los sesenta y se diseña desde el principio para <strong>varios usuarios y varias
+    tareas</strong>, con un sistema de archivos jerárquico, todo visto como archivo y programas
+    pequeños que se encadenan por la entrada y la salida estándar.</li>
+  <li><strong>Como familia</strong>, agrupa las implementaciones que descienden de aquel diseño o
+    lo siguen: los sistemas BSD, Solaris, AIX, HP-UX y, por su base BSD, macOS.</li>
+  <li><strong>Como marca</strong>, es de The Open Group, que publica el estándar
+    (<a href="https://www.opengroup.org/membership/forums/platform/unix" rel="noopener">The UNIX Standard</a>)
+    y mantiene el
+    <a href="https://www.opengroup.org/openbrand/register/" rel="noopener">registro de productos certificados</a>
+    que pueden usar el nombre. La certificación se llama hoy <strong>UNIX 03</strong> y se obtiene
+    superando las pruebas de conformidad sobre la base de POSIX.</li>
+</ul>
+<h3>7.1. Las señas de identidad que el examen pregunta</h3>
+<table>
+  <caption>Rasgos del diseño UNIX y su consecuencia</caption>
+  <thead>
+    <tr><th>Rasgo</th><th>Consecuencia práctica</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Todo es un archivo</td>
+      <td>Discos, terminales y dispositivos se tratan con las mismas llamadas que un fichero
+        ordinario, y aparecen en <code>/dev</code></td>
+    </tr>
+    <tr>
+      <td>Sistema de archivos único y jerárquico</td>
+      <td>Un solo árbol desde la raíz <code>/</code>: los discos se <strong>montan</strong> en un
+        directorio, no se añaden como letras de unidad</td>
+    </tr>
+    <tr>
+      <td>Programas pequeños encadenables</td>
+      <td>Cada utilidad hace una cosa y se combina con otras mediante tuberías</td>
+    </tr>
+    <tr>
+      <td>Multiusuario y permisos por propietario, grupo y resto</td>
+      <td>Cada proceso se ejecuta con la identidad de un usuario y solo accede a lo que sus
+        permisos permiten</td>
+    </tr>
+    <tr>
+      <td>Interfaz normalizada (POSIX)</td>
+      <td>El mismo código fuente puede compilarse en sistemas distintos, y la línea de órdenes se
+        parece en todos</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  La especificación POSIX y la marca UNIX son la razón por la que el tema puede hablar de «familia»
+  sin caer en imprecisiones: lo que comparten sus miembros no es el código, sino el
+  <strong>contrato de interfaz</strong>.
+</p>
+<h2>8. Linux: el núcleo y sus distribuciones</h2>
+<p>
+  Linux es, en rigor, un <strong>núcleo</strong>. Lo que el usuario instala es una
+  <strong>distribución</strong>: ese núcleo más herramientas, bibliotecas, gestor de paquetes y
+  decisiones de configuración. Esta distinción resuelve la mitad de las preguntas del tema, porque
+  permite decir con exactitud qué es común y qué no.
+</p>
+<ul>
+  <li><strong>Común a todas las distribuciones:</strong> el núcleo, la licencia y la interfaz
+    POSIX. El árbol de fuentes se publica en
+    <a href="https://www.kernel.org/" rel="noopener">kernel.org</a> bajo GPL versión 2, como
+    declara el propio fichero de licencia del proyecto
+    (<a href="https://raw.githubusercontent.com/torvalds/linux/master/COPYING" rel="noopener">COPYING</a>:
+    «GPL-2.0 WITH Linux-syscall-note»).</li>
+  <li><strong>Propio de cada distribución:</strong> el sistema de paquetes, las versiones, los
+    servicios que arrancan por omisión y el ciclo de soporte.</li>
+  <li><strong>Módulos:</strong> el núcleo puede cargar controladores en caliente, lo que mantiene
+    el modelo monolítico sin recompilar ni reiniciar.</li>
+</ul>
+
+<h3>8.1. El árbol de directorios, que sí está normalizado</h3>
+<p>
+  La jerarquía de Linux no es arbitraria: la describe la man-page
+  <a href="https://man7.org/linux/man-pages/man7/file-hierarchy.7.html" rel="noopener">file-hierarchy(7)</a>.
+  Los cinco directorios que el examen pregunta:
+</p>
+<table>
+  <caption>Directorios del árbol Linux y qué guarda cada uno</caption>
+  <thead>
+    <tr><th>Ruta</th><th>Contenido</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>/</code></td><td>Raíz del árbol único; todo cuelga de aquí</td></tr>
+    <tr><td><code>/etc</code></td><td>Configuración del sistema, propia de la máquina</td></tr>
+    <tr><td><code>/home</code></td><td>Directorios personales de los usuarios</td></tr>
+    <tr><td><code>/var</code></td><td>Datos variables: registros, colas, cachés, bases de datos</td></tr>
+    <tr><td><code>/dev</code></td><td>Archivos de dispositivo: cada dispositivo aparece como un fichero especial</td></tr>
+  </tbody>
+</table>
+<p>
+  Cada disco se <strong>monta</strong> sobre un directorio del árbol —así lo define
+  <a href="https://man7.org/linux/man-pages/man2/mount.2.html" rel="noopener">mount(2)</a>—, de modo
+  que no hay letras de unidad. Es la diferencia estructural más visible frente a Windows y la que
+  más se pregunta.
+</p>
+
+<h3>8.2. El sistema de archivos nativo: ext4</h3>
+<p>
+  La documentación del núcleo describe ext4 en
+  <a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html" rel="noopener">ext4 Data Structures and Algorithms</a>.
+  Los tres datos que hay que retener:
+</p>
+<ul>
+  <li>El espacio se divide en <strong>bloques de 1 KiB a 64 KiB</strong>, con 4 KiB como tamaño
+    habitual, agrupados en grupos de bloques.</li>
+  <li>Por omisión un sistema de archivos admite <strong>2<sup>32</sup> bloques</strong>; con la
+    opción <code>64bit</code> activada, <strong>2<sup>64</sup></strong>.</li>
+  <li>El tamaño máximo de archivo lo fija la tabla oficial del proyecto: con bloques de 4 KiB y
+    <strong>extents</strong>, <strong>16 TiB</strong>; con bloques de 64 KiB, 256 TiB. El volumen, con
+    bloques de 4 KiB y modo de 64 bits, llega teóricamente a <strong>64 ZiB</strong>.</li>
+</ul>
+<p>
+  Ese último número es un buen recordatorio de que «teórico» y «útil» no son lo mismo: ningún disco
+  de este planeta tiene 64 ZiB. El apartado 19 recoge los límites en una tabla única.
+</p>
+
+<h2>9. Windows: la familia NT</h2>
+<p>
+  La familia Windows actual se apoya en el núcleo <strong>NT</strong>, diseñado desde cero para ser
+  multiproceso, multiusuario con control de acceso y portable entre arquitecturas. Lo que el
+  examen pregunta de ella no es la historia de sus versiones, sino <strong>cuatro piezas</strong>:
+</p>
+<dl class="glosario">
+  <dt>Dos modos de ejecución</dt>
+  <dd>
+    Las aplicaciones corren en <strong>modo usuario</strong>; el núcleo y los controladores
+    firmados, en <strong>modo núcleo</strong>. Microsoft lo documenta en
+    <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode" rel="noopener">User Mode and Kernel Mode</a>.
+  </dd>
+  <dt>Servicios</dt>
+  <dd>
+    Programas que el sistema arranca sin sesión de usuario abierta y que ejecutan tareas de fondo,
+    según
+    <a href="https://learn.microsoft.com/en-us/windows/win32/services/services" rel="noopener">Services</a>.
+  </dd>
+  <dt>Sistemas de archivos</dt>
+  <dd>
+    <strong>NTFS</strong> como principal —con registro de transacciones, descriptores de seguridad,
+    cifrado, cuotas y volúmenes de hasta 8 PB en las versiones modernas— y <strong>ReFS</strong>
+    para escenarios de servidor y almacenamiento masivo
+    (<a href="https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview" rel="noopener">ReFS overview</a>).
+  </dd>
+  <dt>Particionado</dt>
+  <dd>
+    <strong>MBR</strong> admite cuatro entradas de partición, ampliables con particiones extendidas
+    y unidades lógicas; <strong>GPT</strong> no tiene ese problema, guarda copia de respaldo y suma
+    campos CRC32. La
+    <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq" rel="noopener">FAQ de GPT de Microsoft</a>
+    precisa que la implementación de Windows limita GPT a <strong>128 particiones</strong>.
+  </dd>
+</dl>
+
+<h3>9.1. Requisitos de la versión vigente, como dato del fabricante</h3>
+<table>
+  <caption>Requisitos mínimos de Windows 11 publicados por Microsoft</caption>
+  <thead>
+    <tr><th>Componente</th><th>Mínimo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Procesador</td><td>1 GHz o más, con dos o más núcleos, de 64 bits o sistema en chip</td></tr>
+    <tr><td>Memoria</td><td>4 GB o más</td></tr>
+    <tr><td>Almacenamiento</td><td>64 GB o más de espacio disponible</td></tr>
+    <tr><td>Gráficos</td><td>Compatible con DirectX 12 o posterior, con controlador WDDM 2.0</td></tr>
+    <tr><td>Firmware</td><td>UEFI, capaz de arranque seguro</td></tr>
+    <tr><td>Seguridad</td><td>TPM versión 2.0</td></tr>
+    <tr><td>Pantalla</td><td>Alta definición (720p), 9 pulgadas o más, 8 bits por canal de color</td></tr>
+  </tbody>
+</table>
+<p>
+  Fuente:
+  <a href="https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements" rel="noopener">Windows 11 requirements</a>.
+  El dato que más se pregunta es el <strong>TPM 2.0</strong>, y el que más se falla es el de los
+  64 GB: es <strong>almacenamiento disponible</strong>, no memoria RAM.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Windows no «es» el sistema de archivos. Windows es el sistema operativo; NTFS es el sistema de
+    archivos. Y NTFS <strong>no es el único</strong>: el mismo Windows formatea FAT32 y exFAT en
+    unidades extraíbles, y usa ReFS en escenarios de servidor.
+  </p>
+</div>
+
+<h2>10. macOS: el linaje BSD y APFS</h2>
+<p>
+  macOS combina un núcleo de tipo UNIX con capas propias de Apple y con un sistema de archivos
+  nuevo desde 2017. Lo que el examen pregunta se reduce a tres ideas y un nombre.
+</p>
+<ul>
+  <li><strong>Linaje UNIX y base BSD</strong>, con la línea de órdenes y las llamadas del sistema
+    que POSIX describe. Eso explica que un programa de terminal compile igual que en Linux.</li>
+  <li><strong>APFS como sistema de archivos por omisión desde macOS 10.13</strong>, según la propia
+    Apple: <a href="https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac" rel="noopener">File system formats available in Disk Utility on Mac</a>.
+    APFS aporta cifrado, <strong>snapshots</strong>, compartición de espacio y gestión de directorios más
+    rápida; está pensado para almacenamiento flash, aunque funciona sobre disco magnético.</li>
+  <li><strong>Contenedor con volúmenes.</strong> Un contenedor APFS reparte su espacio libre entre
+    sus volúmenes sin particiones rígidas; se pueden fijar reservas y cuotas por volumen.</li>
+  <li><strong>HFS+</strong> (Mac OS Extended) es el sistema anterior, aún legible y usado en discos
+    antiguos y en algunos extraíbles.</li>
+</ul>
+
+<h3>10.1. Cómo se organiza un contenedor APFS</h3>
+<p>
+  La <a href="https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf" rel="noopener">Apple File System Reference</a>
+  describe el diseño en dos capas: la del <strong>contenedor</strong>, que administra el espacio y
+  la protección ante fallos, y la del <strong>sistema de archivos</strong>, que guarda directorios,
+  metadatos y contenido. Los datos que se pueden citar de ahí:
+</p>
+<table>
+  <caption>Datos de APFS tomados de la referencia oficial de Apple (2020)</caption>
+  <thead>
+    <tr><th>Dato</th><th>Valor documentado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Volúmenes por contenedor</td><td>Hasta 100 (<code>NX_MAX_FILE_SYSTEMS</code>); el valor por contenedor se calcula dividiendo su tamaño entre 512 MiB</td></tr>
+    <tr><td>Metadatos</td><td>Estructuras con copia al escribir (<strong>copy-on-write</strong>) y <strong>checkpoints</strong> para recuperación tras un fallo</td></tr>
+    <tr><td>Instantáneas</td><td>Admitidas como objetos del contenedor y de cada volumen</td></tr>
+    <tr><td>Cifrado</td><td>Clave por volumen y clave de metadatos envuelta; el sistema de archivos está preparado para cifrado nativo</td></tr>
+    <tr><td>Identificadores</td><td>Identificadores de objeto y direcciones físicas de 64 bits</td></tr>
+  </tbody>
+</table>
+<p>
+  El tamaño máximo de archivo no aparece como cifra única en esta referencia, así que este tema no
+  lo inventa: la tabla del apartado 19 dice exactamente lo que está documentado y lo que no.
+</p>
+
+<h3>10.2. Seguridad de la plataforma, según Apple</h3>
+<p>
+  La <a href="https://support.apple.com/guide/security/welcome/web" rel="noopener">Apple Platform Security</a>
+  —disponible también como
+  <a href="https://help.apple.com/pdf/security/en_US/apple-platform-security-guide.pdf" rel="noopener">PDF oficial</a>—
+  documenta las piezas que el examen puede preguntar sin entrar en detalles: <strong>Protección de
+  datos</strong> con claves por clase y custodia en el <strong>Secure Enclave</strong>;
+  <strong>volumen de sistema firmado</strong>, que verifica la raíz del sistema mediante un árbol de
+  hashes; <strong>firma de código</strong> con permisos declarados (<strong>entitlements</strong>); y
+  <strong>aislamiento</strong> de aplicaciones en un espacio restringido. Sobre esa base, macOS
+  exige firma y verifica el software de terceros, incluido el notarizado, y la App Store aplica
+  además las
+  <a href="https://developer.apple.com/app-store/review/guidelines/" rel="noopener">App Review Guidelines</a>.
+</p>
+
+<h2>11. La familia de sistemas operativos, en una tabla</h2>
+<p>
+  Una sola tabla para comparar las cinco familias del epígrafe. La columna «qué aporta» es la que
+  conviene memorizar: en el test, cada opción suele describir un rasgo y hay que adjudicarlo.
+</p>
+<table>
+  <caption>Comparación de las cinco familias del epígrafe</caption>
+  <thead>
+    <tr>
+      <th>Familia</th>
+      <th>Origen y modelo</th>
+      <th>Núcleo y arquitectura</th>
+      <th>Sistema de archivos nativo</th>
+      <th>Qué aporta al temario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MS/DOS</strong></td>
+      <td>PC de IBM, línea de órdenes; desarrollo conjunto IBM y Microsoft (versión 4.00)</td>
+      <td>Monotarea, sin protección de memoria</td>
+      <td>FAT12 y FAT16, nombres 8.3</td>
+      <td>Las letras de unidad, el 8.3 y el sistema FAT: la herencia que llega hasta hoy</td>
+    </tr>
+    <tr>
+      <td><strong>UNIX</strong></td>
+      <td>Bell (AT&amp;T), finales de los sesenta; hoy familia y marca registrada de The Open Group</td>
+      <td>Monolítico; multiusuario y multitarea desde el diseño</td>
+      <td>Jerarquía única montada en <code>/</code></td>
+      <td>La norma POSIX, el «todo es un archivo» y la certificación UNIX 03</td>
+    </tr>
+    <tr>
+      <td><strong>Linux</strong></td>
+      <td>Núcleo libre bajo GPL v2; cada distribución lo empaqueta</td>
+      <td>Monolítico con módulos cargables</td>
+      <td>ext4 (y otros: XFS, Btrfs)</td>
+      <td>Que «Linux» es el núcleo y la distribución es el resto</td>
+    </tr>
+    <tr>
+      <td><strong>Windows</strong></td>
+      <td>Familia NT; propietario de Microsoft</td>
+      <td>Modo usuario y modo núcleo; multiproceso</td>
+      <td>NTFS (ReFS en servidor)</td>
+      <td>Los dos modos, los servicios, GPT y los límites de NTFS</td>
+    </tr>
+    <tr>
+      <td><strong>macOS</strong></td>
+      <td>Base UNIX/BSD con capas de Apple; propietario, solo en hardware Apple</td>
+      <td>Núcleo de tipo UNIX</td>
+      <td>APFS desde 10.13; HFS+ antes</td>
+      <td>Contenedor con volúmenes, instantáneas y verificación del volumen de sistema</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Windows es un sistema operativo libre» es falso; «Linux es un sistema operativo y no un
+    núcleo» es una simplificación que el temario corrige. Y «macOS es Linux» es el error más
+    frecuente: macOS tiene base UNIX, no base Linux. Comparten POSIX y la línea de órdenes, no el
+    linaje.
+  </p>
+</div>
+<h2>12. Sistemas operativos móviles: qué cambia respecto al escritorio</h2>
+<p>
+  Un sistema operativo móvil hace lo mismo que uno de escritorio, pero con tres restricciones que
+  cambian el diseño: <strong>energía</strong> (batería), <strong>superficie</strong> (pantalla
+  táctil, sin teclado ni línea de órdenes para el usuario) y <strong>confianza</strong> (el
+  dispositivo guarda datos personales y se pierde con facilidad). De ahí salen los cuatro rasgos
+  que el examen compara:
+</p>
+<ul>
+  <li><strong>Aislamiento entre aplicaciones</strong>: cada una corre en su espacio y solo accede a
+    lo que se le concede.</li>
+  <li><strong>Permisos por capacidad</strong>: no se pregunta «¿puede leer archivos?», sino «¿puede
+    usar la cámara?».</li>
+  <li><strong>Tienda con revisión</strong> y firma del software.</li>
+  <li><strong>Actualizaciones que no controla el usuario</strong>: las distribuye el fabricante o el
+    propietario de la plataforma.</li>
+</ul>
+
+<h2>13. iOS</h2>
+<p>
+  iOS es el sistema de Apple para iPhone, derivado del mismo núcleo de tipo UNIX que macOS. Se
+  apoya en el hardware de Apple, y eso le permite un modelo en el que la seguridad no es una capa
+  añadida sino una propiedad del arranque.
+</p>
+<h3>13.1. Arranque y protección de datos</h3>
+<p>
+  La guía de seguridad de la plataforma de Apple describe una cadena de confianza completa: el
+  arranque verifica cada componente antes de ejecutarlo, y las claves de cifrado de los datos se
+  custodian en el <strong>Secure Enclave</strong>, un coprocesador separado del principal. La
+  <strong>Protección de datos</strong> cifra cada archivo con una clave derivada de la clave del
+  dispositivo y de la clase de protección que se le asigne: hay archivos que solo se descifran con
+  el dispositivo desbloqueado y otros que se necesitan para tareas de arranque.
+</p>
+<h3>13.2. Aplicaciones, permisos y tienda</h3>
+<table>
+  <caption>Modelo de aplicaciones de iOS según la documentación de Apple</caption>
+  <thead>
+    <tr><th>Pieza</th><th>Qué hace</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Firma de código</td>
+      <td>El sistema solo ejecuta código firmado; cada aplicación declara sus permisos
+        (<strong>entitlements</strong>) y el sistema los comprueba al cargarla</td>
+    </tr>
+    <tr>
+      <td>Aislamiento</td>
+      <td>Cada aplicación se ejecuta en un espacio restringido que limita los datos y las
+        interfaces a los que puede llegar</td>
+    </tr>
+    <tr>
+      <td>Permisos de usuario</td>
+      <td>Cámara, micrófono, ubicación o contactos se conceden en el momento de uso, y el sistema
+        registra qué aplicación los ha usado</td>
+    </tr>
+    <tr>
+      <td>Distribución</td>
+      <td>La vía ordinaria es la App Store, sujeta a las
+        <a href="https://developer.apple.com/app-store/review/guidelines/" rel="noopener">App Review Guidelines</a>;
+        existen vías empresariales y de desarrollo, con requisitos propios</td>
+    </tr>
+    <tr>
+      <td>Actualizaciones</td>
+      <td>Apple las publica para cada versión compatible; la guía de seguridad de la plataforma se
+        publica por versiones</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>14. Android</h2>
+<p>
+  Android es el sistema móvil de código abierto de Google, aunque el producto que llega al usuario
+  suele incluir servicios y certificaciones adicionales del fabricante. Su arquitectura se entiende
+  en cuatro capas, y las cuatro se preguntan.
+</p>
+<h3>14.1. Arquitectura</h3>
+<ul>
+  <li><strong>Núcleo Linux.</strong> La documentación de AOSP lo dice sin rodeos: el núcleo de
+    Android se basa en un <strong>núcleo Linux LTS</strong> al que Google añade parches y forma los
+    <strong>Android Common Kernels</strong>
+    (<a href="https://source.android.com/docs/core/architecture/kernel" rel="noopener">Kernel overview</a>).</li>
+  <li><strong>Capa de abstracción del hardware (HAL).</strong> Interfaz estable entre el núcleo y
+    el software de Android, para que cada fabricante aporte sus controladores sin reescribir el
+    sistema.</li>
+  <li><strong>Bibliotecas nativas y entorno de ejecución.</strong> Android Runtime ejecuta las
+    aplicaciones. El sistema y los datos se guardan en sistemas de archivos del núcleo Linux —el más
+    extendido es ext4— y AOSP documenta además opciones como EROFS.</li>
+  <li><strong>Marco de aplicaciones y aplicaciones.</strong> Lo que el usuario ve.</li>
+</ul>
+<p>
+  El proyecto se publica en abierto: la
+  <a href="https://source.android.com/docs/core/architecture" rel="noopener">descripción de la arquitectura de AOSP</a>
+  recuerda que el código es público y modificable, que cualquiera puede descargarlo y adaptarlo, y
+  que existen dos niveles de compatibilidad —AOSP y Android— con sus requisitos y pruebas.
+</p>
+
+<h3>14.2. Permisos: la clasificación que se pregunta</h3>
+<p>
+  La <a href="https://developer.android.com/guide/topics/permissions/overview" rel="noopener">documentación de permisos de Android</a>
+  clasifica los permisos en tres tipos, y la distinción entre los dos primeros es la pregunta
+  típica:
+</p>
+<table>
+  <caption>Tipos de permiso en Android</caption>
+  <thead>
+    <tr><th>Tipo</th><th>Cuándo se concede</th><th>Ejemplo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>De instalación</td>
+      <td>Al instalar la aplicación; el usuario los ve antes de aceptar</td>
+      <td>Acceso a internet</td>
+    </tr>
+    <tr>
+      <td>En tiempo de ejecución</td>
+      <td>Cuando la aplicación los necesita, con un diálogo del sistema</td>
+      <td>Cámara, ubicación, micrófono</td>
+    </tr>
+    <tr>
+      <td>Especiales</td>
+      <td>Requieren un ajuste aparte porque son especialmente sensibles</td>
+      <td>Acceso a todas las aplicaciones instaladas, superposición de pantalla</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Además del permiso, Android apoya el aislamiento en el núcleo: cada aplicación recibe una
+  identidad de usuario propia, de modo que los archivos de una no son accesibles por otra aunque
+  comparta el almacenamiento físico.
+</p>
+
+<h3>14.3. Cifrado y actualizaciones</h3>
+<ul>
+  <li><strong>Cifrado a nivel de archivo (FBE)</strong> desde Android 7.0. La documentación de AOSP
+    explica que cada archivo se cifra con su propia clave y que se distinguen dos
+    almacenamientos: el <strong>cifrado con credenciales</strong>, disponible solo tras desbloquear,
+    y el <strong>cifrado por dispositivo</strong>, disponible también durante el
+    <strong>Direct Boot</strong>, lo que permite que el teléfono arranque hasta la pantalla de bloqueo y
+    pueda, por ejemplo, sonar una alarma
+    (<a href="https://source.android.com/docs/security/features/encryption/file-based" rel="noopener">File-based encryption</a>).</li>
+  <li><strong>Actualizaciones por el fabricante.</strong> El mecanismo forma parte del proyecto:
+    AOSP documenta las actualizaciones <strong>A/B</strong> («seamless»), pensadas para instalar la
+    nueva versión sin interrumpir el uso del dispositivo
+    (<a href="https://source.android.com/docs/core/ota" rel="noopener">OTA updates</a>).</li>
+  <li><strong>Boletines de seguridad.</strong> Google publica los
+    <a href="https://source.android.com/docs/security/bulletin" rel="noopener">Android Security and Update Bulletins</a>,
+    que identifican los fallos corregidos en cada nivel de parche.</li>
+  <li><strong>Requisitos de la tienda.</strong> Google Play exige que las aplicaciones declaren un
+    nivel de API objetivo reciente
+    (<a href="https://developer.android.com/google/play/requirements/target-sdk" rel="noopener">target API level</a>),
+    y las somete a revisión antes de publicarlas.</li>
+</ul>
+
+<h2>15. iOS y Android, en una tabla</h2>
+<table>
+  <caption>Comparación de los dos sistemas móviles del epígrafe</caption>
+  <thead>
+    <tr><th>Criterio</th><th>iOS</th><th>Android</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fabricante y licencia</td>
+      <td>Apple; propietario, solo en hardware Apple</td>
+      <td>Google; AOSP es público y modificable, con servicios de Google aparte</td>
+    </tr>
+    <tr>
+      <td>Núcleo</td>
+      <td>De tipo UNIX, el mismo linaje que macOS</td>
+      <td>Linux LTS con parches de Android (Android Common Kernel)</td>
+    </tr>
+    <tr>
+      <td>Ejecución de software</td>
+      <td>Solo código firmado, con permisos declarados y comprobados</td>
+      <td>Código firmado por el desarrollador; instalación desde la tienda o desde fuera de ella</td>
+    </tr>
+    <tr>
+      <td>Cifrado</td>
+      <td>Protección de datos con claves por clase custodidas en el Secure Enclave</td>
+      <td>Cifrado por archivo (FBE) con almacenamiento por credenciales y por dispositivo</td>
+    </tr>
+    <tr>
+      <td>Tienda</td>
+      <td>App Store, con revisión previa según las App Review Guidelines</td>
+      <td>Google Play, con revisión y requisito de nivel de API objetivo; se admiten otras vías</td>
+    </tr>
+    <tr>
+      <td>Actualizaciones</td>
+      <td>Las distribuye Apple a la vez para todos los modelos compatibles</td>
+      <td>Las distribuye cada fabricante y operador; el proyecto define el mecanismo A/B</td>
+    </tr>
+    <tr>
+      <td>Permisos</td>
+      <td>Concesión en el momento de uso, con registro de accesos</td>
+      <td>De instalación, en tiempo de ejecución y especiales</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Android es Linux» a secas es una respuesta incompleta: usa el núcleo Linux, pero ni el entorno
+    de ejecución ni el modelo de permisos son los de una distribución Linux. Y «Android es
+    totalmente abierto» también se falla: AOSP lo es; el producto con servicios de Google añade
+    componentes y requisitos que no lo son.
+  </p>
+</div>
+<h2>16. Sistemas de almacenamiento: magnético, óptico, flash, SSD y NVMe</h2>
+<p>
+  «Sistema de almacenamiento» agrupa dos cosas distintas que el examen separa mal a propósito: el
+  <strong>medio</strong> que conserva los bits (magnético, óptico, semiconductor) y la
+  <strong>interfaz o protocolo</strong> con el que el sistema operativo habla con él (ATA, SATA,
+  NVMe). Un mismo medio puede ir por interfaces distintas, y por eso conviene no mezclarlos en la
+  cabeza.
+</p>
+
+<h3>16.1. Almacenamiento magnético</h3>
+<p>
+  El disco duro guarda los bits como <strong>orientación magnética</strong> de diminutos dominios
+  sobre platos giratorios, y los lee y escribe con cabezales que se desplazan radialmente. De ahí
+  sus dos propiedades definitorias: es <strong>no volátil</strong> y su acceso es
+  <strong>secuencial por naturaleza</strong>, porque la cabeza tiene que colocarse y el plato tiene
+  que girar hasta el sector buscado. Todo lo demás —caché del disco, planificación de la cola de
+  peticiones en el sistema operativo— existe para disimular ese coste mecánico.
+</p>
+<p>
+  La interfaz histórica de esta familia la normaliza el comité técnico
+  <a href="https://www.t13.org/" rel="noopener">T13, AT Attachment</a>, responsable de los
+  estándares ATA que después evolucionaron a SATA. La cinta magnética pertenece a la misma familia
+  física, con acceso estrictamente secuencial.
+</p>
+
+<h3>16.2. Almacenamiento óptico</h3>
+<p>
+  El disco óptico guarda la información como <strong>marcas físicas</strong> —hoyos y llanos,
+  <strong>pits</strong> y <strong>lands</strong>— sobre una superficie que se lee con un <strong>láser</strong> de
+  menor longitud de onda cuanto mayor es la densidad. Su rasgo diferencial no es la velocidad, que
+  es baja, sino que el medio es <strong>barato, extraíble y de solo lectura en su variante
+  prensada</strong>. Las variantes grabables usan un material que cambia de estado o de
+  reflectividad al escribir, y las regrabables permiten revertirlo.
+</p>
+<p>
+  Este tema <strong>no afirma cifras de capacidad</strong> de CD, DVD ni Blu-ray: las normas de los
+  comités correspondientes no estaban disponibles en abierto al redactarlo, y el estándar de
+  fuentes prohíbe rellenar el hueco con un blog (apartado 24). La consecuencia práctica —que un
+  óptico es un medio de archivo y distribución, no de trabajo— no depende de esas cifras.
+</p>
+
+<h3>16.3. Memoria flash, SSD y NVMe</h3>
+<p>
+  La memoria flash guarda carga eléctrica en celdas de semiconductores y la conserva sin
+  alimentación. Se organiza en <strong>páginas</strong> que se leen y escriben, y en
+  <strong>bloques de borrado</strong> que hay que borrar enteros antes de reescribir; de esa
+  asimetría nacen dos mecanismos que conviene saber nombrar: el <strong>desgaste</strong> —cada
+  bloque admite un número limitado de borrados— y el <strong>reparto del desgaste</strong>
+  (<strong>wear leveling</strong>), que distribuye las escrituras para no agotar siempre las mismas celdas.
+  El controlador de la unidad se encarga de todo ello y de presentar al sistema un dispositivo de
+  bloques, no celdas.
+</p>
+<table>
+  <caption>Los tres soportes de estado sólido y su uso característico</caption>
+  <thead>
+    <tr><th>Soporte</th><th>Qué añade</th><th>Uso típico</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tarjeta SD y microSD</td>
+      <td>Medio extraíble con estándar propio de la
+        <a href="https://www.sdcard.org/downloads/pls/" rel="noopener">SD Association</a>, que
+        clasifica las tarjetas por capacidad (SD, SDHC, SDXC, SDUC) y por velocidad</td>
+      <td>Cámaras, teléfonos, equipos empotrados</td>
+    </tr>
+    <tr>
+      <td>Memoria USB</td>
+      <td>Flash más un controlador en un conector extraíble</td>
+      <td>Transporte de archivos entre equipos</td>
+    </tr>
+    <tr>
+      <td>Unidad SSD</td>
+      <td>Muchas celdas en paralelo, controlador con caché y reparto de desgaste; sustituye al
+        disco magnético como unidad del sistema</td>
+      <td>Sistema operativo y aplicaciones</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <strong>NVMe</strong> no es un medio: es una <strong>especificación de interfaz</strong> para
+  memoria no volátil, pensada desde el principio para flash y para muchos canales en paralelo. La
+  familia de especificaciones la publica NVM Express y, en su versión actual, consta de varios
+  documentos: la especificación base, los conjuntos de comandos (NVM, clave-valor, ZNS…), las
+  especificaciones de transporte (PCIe, RDMA y TCP), la de arranque y la de interfaz de gestión
+  (<a href="https://nvmexpress.org/specifications/" rel="noopener">NVM Express Specifications</a>).
+  Windows incorpora además un controlador estándar para NVMe.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «NVMe es un tipo de disco» y «SSD y NVMe son lo mismo» son las dos respuestas falsas más
+    frecuentes. SSD es el dispositivo; NVMe es el protocolo. Un SSD puede conectarse por SATA —con
+    el protocolo antiguo— o por NVMe sobre PCIe, y por eso hay SSD «SATA» y SSD «NVMe».
+  </p>
+</div>
+<h2>17. RAID: qué se gana y qué se paga</h2>
+<p>
+  RAID significa <strong>Redundant Array of Independent Disks</strong>: un conjunto de discos que el sistema
+  presenta como una sola unidad lógica. Busca <strong>redundancia</strong> (sobrevivir a fallos),
+  <strong>rendimiento</strong> (leer y escribir en paralelo) o ambas cosas, y su precio es siempre el
+  mismo: discos que no aportan capacidad útil. Los niveles se describen según la
+  <a href="https://man7.org/linux/man-pages/man4/md.4.html" rel="noopener">página md(4)</a> y la guía de
+  <a href="https://www.kernel.org/doc/html/latest/admin-guide/md.html" rel="noopener">Arrays RAID del núcleo</a>;
+  el formato común entre fabricantes lo normaliza SNIA en su
+  <a href="https://www.snia.org/tech_activities/standards/curr_standards/ddf" rel="noopener">Common RAID Disk Data Format (DDF)</a>.
+</p>
+
+<h3>17.1. Los niveles, uno a uno</h3>
+<dl class="glosario">
+  <dt>RAID 0 · franjas, sin redundancia</dt>
+  <dd>
+    Los datos se reparten en franjas entre todos los discos: se lee y se escribe en paralelo y se
+    aprovecha el 100 % de la capacidad, pero <strong>si falla un disco se pierde todo</strong>. No
+    es redundante: es velocidad.
+  </dd>
+  <dt>RAID 1 · espejo</dt>
+  <dd>
+    Cada bloque se escribe en dos discos. Se sobrevive al fallo de uno y se conserva la capacidad
+    de un solo disco, la mitad del conjunto. La lectura puede repartirse entre ambos; la escritura
+    cuesta el doble.
+  </dd>
+  <dt>RAID 4 · franjas con disco de paridad dedicado</dt>
+  <dd>
+    Como RAID 0, más un disco adicional que guarda la paridad —el resultado de una operación
+    exclusiva o XOR entre los bloques de la franja—. Sobrevive al fallo de un disco, y el disco
+    perdido se reconstruye con la paridad y los demás. Inconveniente: <strong>todas las escrituras
+    tocan el disco de paridad</strong>, que se convierte en cuello de botella.
+  </dd>
+  <dt>RAID 5 · paridad distribuida</dt>
+  <dd>
+    Idéntico a RAID 4, pero la paridad se reparte entre todos los discos, de modo que no hay un
+    disco privilegiado y las escrituras pueden paralelizarse. Sobrevive al fallo de uno. Es el nivel
+    con mejor equilibrio entre capacidad, velocidad y seguridad, y por eso es el más usado.
+  </dd>
+  <dt>RAID 6 · doble paridad</dt>
+  <dd>
+    Como RAID 5 con dos bloques de paridad: <strong>sobrevive al fallo de dos discos
+    simultáneos</strong> y necesita al menos cuatro. Cuesta dos discos de capacidad y penaliza la
+    escritura.
+  </dd>
+  <dt>RAID 10 · espejo en franjas (RAID 1+0)</dt>
+  <dd>
+    Combina RAID 1 y RAID 0: cada bloque se duplica y las copias se reparten entre discos. Se
+    pierde la mitad de la capacidad y se sobrevive a un fallo por cada espejo. La página md(4)
+    precisa que hay que indicar el número de réplicas y el reparto: <strong>near</strong>,
+    <strong>far</strong> u <strong>offset</strong>.
+  </dd>
+  <dt>LINEAR y MULTIPATH</dt>
+  <dd>
+    Dos configuraciones que no son niveles con redundancia: LINEAR concatena el espacio de los
+    discos uno tras otro, y MULTIPATH ofrece varias rutas al mismo dispositivo.
+  </dd>
+</dl>
+
+<figure>
+  <svg viewBox="0 0 760 420" role="img" aria-labelledby="fig-raid">
+    <title id="fig-raid">Reparto de datos y paridad en RAID 0, RAID 1, RAID 5 y RAID 6 sobre cuatro discos</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <text x="20" y="22" font-size="12.5" font-weight="700" fill="var(--texto)">RAID 0 · franjas, sin paridad</text>
+      <rect x="20" y="32" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="80" y="52" font-size="11" fill="var(--texto)" text-anchor="middle">disco 1 · A1</text>
+      <rect x="148" y="32" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="208" y="52" font-size="11" fill="var(--texto)" text-anchor="middle">disco 2 · A2</text>
+      <rect x="276" y="32" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="336" y="52" font-size="11" fill="var(--texto)" text-anchor="middle">disco 3 · A3</text>
+      <rect x="404" y="32" width="120" height="30" rx="5" fill="var(--error-fondo)" stroke="var(--error)" />
+      <text x="464" y="52" font-size="11" fill="var(--texto)" text-anchor="middle">disco 4 · A4</text>
+      <text x="560" y="52" font-size="11" fill="var(--texto-suave)">capacidad útil 100 % · tolera 0 fallos</text>
+      <text x="560" y="68" font-size="10.5" fill="var(--texto-suave)">si cae un disco, se pierde todo</text>
+
+      <text x="20" y="106" font-size="12.5" font-weight="700" fill="var(--texto)">RAID 1 · espejo</text>
+      <rect x="20" y="116" width="120" height="30" rx="5" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="80" y="136" font-size="11" fill="var(--texto)" text-anchor="middle">disco 1 · A</text>
+      <rect x="148" y="116" width="120" height="30" rx="5" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="208" y="136" font-size="11" fill="var(--texto)" text-anchor="middle">disco 2 · A</text>
+      <rect x="276" y="116" width="120" height="30" rx="5" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="336" y="136" font-size="11" fill="var(--texto)" text-anchor="middle">disco 3 · B</text>
+      <rect x="404" y="116" width="120" height="30" rx="5" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="464" y="136" font-size="11" fill="var(--texto)" text-anchor="middle">disco 4 · B</text>
+      <text x="560" y="136" font-size="11" fill="var(--texto-suave)">capacidad útil 50 % · tolera 1 por espejo</text>
+
+      <text x="20" y="192" font-size="12.5" font-weight="700" fill="var(--texto)">RAID 5 · paridad distribuida</text>
+      <rect x="20" y="202" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="80" y="222" font-size="11" fill="var(--texto)" text-anchor="middle">disco 1 · A1</text>
+      <rect x="148" y="202" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="208" y="222" font-size="11" fill="var(--texto)" text-anchor="middle">disco 2 · A2</text>
+      <rect x="276" y="202" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="336" y="222" font-size="11" fill="var(--texto)" text-anchor="middle">disco 3 · A3</text>
+      <rect x="404" y="202" width="120" height="30" rx="5" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="464" y="222" font-size="11" fill="var(--texto)" text-anchor="middle">disco 4 · PARIDAD</text>
+      <text x="560" y="222" font-size="11" fill="var(--texto-suave)">capacidad útil (N−1)/N · 1 fallo</text>
+
+      <text x="20" y="278" font-size="12.5" font-weight="700" fill="var(--texto)">RAID 6 · doble paridad</text>
+      <rect x="20" y="288" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="80" y="308" font-size="11" fill="var(--texto)" text-anchor="middle">disco 1 · A1</text>
+      <rect x="148" y="288" width="120" height="30" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="208" y="308" font-size="11" fill="var(--texto)" text-anchor="middle">disco 2 · A2</text>
+      <rect x="276" y="288" width="120" height="30" rx="5" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="336" y="308" font-size="11" fill="var(--texto)" text-anchor="middle">disco 3 · P</text>
+      <rect x="404" y="288" width="120" height="30" rx="5" fill="var(--aviso-fondo)" stroke="var(--aviso-borde)" />
+      <text x="464" y="308" font-size="11" fill="var(--texto)" text-anchor="middle">disco 4 · Q</text>
+      <text x="560" y="308" font-size="11" fill="var(--texto-suave)">capacidad útil (N−2)/N · 2 fallos</text>
+
+      <rect x="20" y="342" width="720" height="62" rx="8" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="34" y="364" font-size="11.5" fill="var(--texto)">P y Q son dos funciones de paridad distintas sobre la misma franja: por eso RAID 6 reconstruye</text>
+      <text x="34" y="382" font-size="11.5" fill="var(--texto)">con dos discos caídos y RAID 5 no. La capacidad útil es aritmética de la definición, no</text>
+      <text x="34" y="398" font-size="11.5" fill="var(--texto-suave)">una cifra de fabricante: N discos iguales, ninguno de reserva.</text>
+    </g>
+  </svg>
+  <figcaption>
+    La franja de color de aviso es paridad: ocupa espacio y no guarda datos. En RAID 5 se reparte
+    entre todos los discos; en RAID 4 estaría siempre en el último.
+  </figcaption>
+</figure>
+
+<h3>17.2. La tabla que hay que saber calcular</h3>
+<table>
+  <caption>Niveles RAID: mínimo de discos, capacidad útil y fallos tolerados</caption>
+  <thead>
+    <tr><th>Nivel</th><th>Discos mínimos</th><th>Capacidad útil</th><th>Fallos tolerados</th><th>Uso típico</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>RAID 0</td><td>2</td><td>Todos</td><td>Ninguno</td><td>Rendimiento sin seguridad (temporal, caché)</td></tr>
+    <tr><td>RAID 1</td><td>2</td><td>La mitad</td><td>Uno por espejo</td><td>Sistema y datos críticos de poco volumen</td></tr>
+    <tr><td>RAID 4</td><td>3</td><td>N − 1</td><td>Uno</td><td>Histórico; hoy apenas se usa</td></tr>
+    <tr><td>RAID 5</td><td>3</td><td>N − 1</td><td>Uno</td><td>Almacenamiento general con equilibrio</td></tr>
+    <tr><td>RAID 6</td><td>4</td><td>N − 2</td><td>Dos</td><td>Volúmenes grandes, donde reconstruir tarda</td></tr>
+    <tr><td>RAID 10</td><td>4</td><td>La mitad</td><td>Uno por espejo</td><td>Bases de datos y escritura intensiva</td></tr>
+  </tbody>
+</table>
+<p>
+  Ejemplo resuelto, que es como se pregunta: <strong>cuatro discos de 4 TB en RAID 5</strong> dan
+  (4 − 1) × 4 = <strong>12 TB útiles</strong> y toleran un fallo; los mismos cuatro discos en
+  <strong>RAID 6</strong> dan <strong>8 TB</strong> y toleran dos; en <strong>RAID 10</strong> dan
+  <strong>8 TB</strong> y toleran un fallo por cada pareja de espejo.
+</p>
+<h2>18. Jerarquía de almacenamiento, volúmenes y particiones</h2>
+<p>
+  Antes de los sistemas de archivos hay dos conceptos que ordenan todo lo demás: la
+  <strong>jerarquía del almacenamiento</strong> —qué memoria es rápida, cara y volátil— y la
+  diferencia entre <strong>disco, partición, volumen y sistema de archivos</strong>.
+</p>
+
+<h3>18.1. La jerarquía, de lo más rápido a lo más lento</h3>
+<p>
+  La jerarquía es una descripción funcional —<strong>doctrina</strong>, no una norma—: cada nivel
+  intercambia velocidad por capacidad y por precio, y el sistema operativo intenta que el dato que
+  se va a usar esté lo más arriba posible. Se ordena así, y el orden es lo que se pregunta:
+</p>
+<table>
+  <caption>Niveles de almacenamiento: volatilidad y función</caption>
+  <thead>
+    <tr><th>Nivel</th><th>¿Volátil?</th><th>Función</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Registros del procesador</td><td>Sí</td><td>Operandos de la instrucción en curso</td></tr>
+    <tr><td>Memorias caché (niveles L1, L2, L3)</td><td>Sí</td><td>Copiar los datos usados con más frecuencia para no ir a memoria</td></tr>
+    <tr><td>Memoria principal (RAM)</td><td>Sí</td><td>Programas y datos en ejecución</td></tr>
+    <tr><td>Almacenamiento de estado sólido (SSD, flash)</td><td>No</td><td>Sistema, aplicaciones y datos de acceso frecuente</td></tr>
+    <tr><td>Disco magnético (HDD)</td><td>No</td><td>Datos masivos y copias</td></tr>
+    <tr><td>Cinta magnética</td><td>No</td><td>Archivo a largo plazo y copia de seguridad</td></tr>
+  </tbody>
+</table>
+<p>
+  Dos consecuencias que el examen comprueba: la RAM <strong>no es almacenamiento</strong> en el
+  sentido del epígrafe, porque pierde el contenido al apagar; y la caché la gestiona el hardware y
+  el núcleo, no el programador.
+</p>
+
+<h3>18.2. Disco, partición, volumen y sistema de archivos</h3>
+<ul>
+  <li><strong>Disco</strong>: el dispositivo físico o su emulación lógica.</li>
+  <li><strong>Partición</strong>: una división del disco descrita en una tabla de particiones.</li>
+  <li><strong>Volumen</strong>: la unidad lógica que el sistema presenta y que puede abarcar una
+    partición, varias o parte de una. Windows distingue volúmenes simples, distribuidos,
+    seccionados, reflejados y RAID-5, según su
+    <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq" rel="noopener">FAQ de GPT</a>.</li>
+  <li><strong>Sistema de archivos</strong>: el formato concreto con el que el volumen guarda
+    archivos y metadatos. Es la capa del apartado 19.</li>
+</ul>
+
+<h3>18.3. MBR frente a GPT</h3>
+<table>
+  <caption>Las dos tablas de particiones y sus límites documentados</caption>
+  <thead>
+    <tr><th>Aspecto</th><th>MBR (Master Boot Record)</th><th>GPT (GUID Partition Table)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Entradas de partición</td>
+      <td><strong>Cuatro</strong>; para más hace falta una partición extendida con unidades lógicas</td>
+      <td>Sin ese límite estructural; la implementación de Windows admite <strong>128</strong></td>
+    </tr>
+    <tr>
+      <td>Identificación</td>
+      <td>Campo de dos bytes para el tipo de partición, con coordinación histórica de IBM</td>
+      <td>Un GUID por partición, más un tipo de contenido y un nombre Unicode de 36 caracteres</td>
+    </tr>
+    <tr>
+      <td>Integridad</td>
+      <td>Sin redundancia de la tabla</td>
+      <td>Tabla principal y de respaldo, con sumas CRC32</td>
+    </tr>
+    <tr>
+      <td>Arranque</td>
+      <td>El propio registro se lee en la fase de arranque</td>
+      <td>Introducido con UEFI; conserva un MBR protector por compatibilidad</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Sobre el famoso «límite de 2 TB del MBR» conviene ser exacto: Microsoft documenta 2 TB por disco
+  físico en Windows XP y en la versión original de Windows Server 2003, y 18 EB por partición desde
+  las versiones siguientes. La cifra de 2 TB asociada al MBR es <strong>aritmética</strong>
+  —direcciones de bloque de 32 bits por 512 bytes— y no aparece enunciada como límite del esquema
+  en la documentación consultada: este tema la explica como cálculo, no como cita.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Partición y volumen no son sinónimos, y sistema de archivos no es «el formato del disco»
+    sin más: es la estructura que decide nombres, permisos, tamaño máximo de archivo y
+    recuperación tras un corte de luz. Un disco puede tener cuatro particiones y solo una con
+    sistema de archivos utilizable.
+  </p>
+</div>
+<h2>19. Sistemas de archivos: límites reales y cuándo se usa cada uno</h2>
+<p>
+  Un sistema de archivos es la estructura que convierte un volumen en un espacio con nombres,
+  directorios, permisos y metadatos. Todo lo que promete se paga en <strong>límites</strong>: el
+  tamaño máximo de archivo, el del volumen, el número de archivos y la longitud de los nombres
+  dependen de la anchura de los campos que use su diseño. Este apartado va familia por familia, con
+  el límite documentado y la razón técnica que lo impone.
+</p>
+
+<h3>19.1. FAT: el más compatible y el más limitado</h3>
+<p>
+  La familia FAT guarda, junto a los datos, una <strong>tabla de asignación de archivos</strong> con
+  una entrada por clúster; la anchura de esa entrada (12, 16 o 32 bits) decide el número de
+  clústeres y, con ello, el tamaño máximo de volumen. Las cifras de Microsoft en
+  <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc776720(v=ws.10)" rel="noopener">How FAT Works</a>
+  son estas:
+</p>
+<ul>
+  <li>Los volúmenes menores de 16 MB se formatean como <strong>FAT12</strong>.</li>
+  <li><strong>FAT16</strong> admite como máximo <strong>65 524 clústeres</strong> por volumen;
+    Microsoft da como probados un volumen de <strong>4 GB</strong> y un archivo de
+    <strong>4 GB menos 1 byte</strong>, con unas 65 536 entradas de archivo y 512 en la carpeta
+    raíz. Como los sistemas de la época no admitían clústeres mayores de 32 KB, el techo práctico
+    es de 2 GB.</li>
+  <li><strong>FAT32</strong> usa entradas de 32 bits con 4 bits reservados, es decir 2<sup>28</sup>
+    clústeres teóricos, y exige un mínimo de 65 527. El archivo más grande posible es
+    <strong>4 GB menos 1 byte</strong>; el volumen que Windows formatea, <strong>32 GB</strong>,
+    aunque en teoría llegue «a unos 8 terabytes» y otros sistemas creen volúmenes mayores que
+    Windows sí puede leer y escribir. Admite 4 177 920 archivos por volumen y 65 534 entradas por
+    carpeta.</li>
+</ul>
+<p>
+  Apple dice lo mismo desde el otro lado del mostrador: en Disk Utility, «MS-DOS (FAT)» es para
+  volúmenes de <strong>32 GB o menos</strong> y ExFAT para los de más de 32 GB
+  (<a href="https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac" rel="noopener">File system formats available in Disk Utility on Mac</a>).
+</p>
+
+<h3>19.2. exFAT: FAT sin las limitaciones de FAT32</h3>
+<p>
+  exFAT es la solución al problema de FAT32 para medios extraíbles grandes. Su especificación es
+  pública y la publica Microsoft:
+  <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification" rel="noopener">exFAT File System Specification</a>.
+  Los datos que se pueden citar de ella:
+</p>
+<ul>
+  <li>El tamaño de un archivo se guarda en un campo de <strong>64 bits</strong>
+    (<code>DataLength</code>), de modo que el límite teórico por archivo es 2<sup>64</sup> − 1
+    bytes; en la práctica lo pone el volumen y el medio.</li>
+  <li>Una FAT puede describir hasta <strong>2<sup>32</sup> − 11 clústeres</strong>; la
+    especificación recomienda no pasar de 2<sup>24</sup> − 2.</li>
+  <li>Un directorio puede ocupar hasta <strong>256 MB</strong>, lo que con entradas de 32 bytes da
+    8 388 608 entradas y, con el conjunto mínimo de tres, hasta <strong>2 796 202 archivos</strong>
+    en una sola carpeta.</li>
+</ul>
+
+<h3>19.3. NTFS: el de Windows</h3>
+<p>
+  NTFS añade a FAT lo que un sistema multiusuario necesita: <strong>registro de transacciones</strong>
+  para recuperar la coherencia tras un fallo, <strong>descriptores de seguridad</strong> por archivo,
+  cifrado, cuotas de disco y metadatos ricos, además de reasignación de sectores defectuosos. Los
+  límites los fija el tamaño de clúster, como recoge
+  <a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview" rel="noopener">NTFS overview</a>:
+  NTFS admite hasta 2<sup>32</sup> − 1 clústeres por volumen, y la tabla oficial da un único valor
+  para volumen y archivo según el clúster.
+</p>
+<ul>
+  <li>Volúmenes de hasta <strong>8 PB</strong> en Windows 10 versión 1709 o posterior y Windows
+    Server 2019 o posterior; en versiones anteriores, hasta <strong>256 TB</strong>.</li>
+  <li>Con clústeres de <strong>4 KB</strong> (el valor por omisión), el máximo es
+    <strong>16 TB</strong>; con <strong>64 KB</strong>, <strong>256 TB</strong>; con
+    <strong>2 MB</strong>, <strong>8 PB</strong>.</li>
+  <li>Rutas de hasta <strong>260 caracteres</strong> por <code>MAX_PATH</code>, ampliables a unos
+    <strong>32 767</strong> con la sintaxis de rutas extendidas, y aliases 8.3 para
+    compatibilidad.</li>
+</ul>
+
+<h3>19.4. ext4: el de Linux</h3>
+<p>
+  La documentación del núcleo fija sus máximos en la tabla «File System Maximums» de
+  <a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html" rel="noopener">ext4 Data Structures and Algorithms</a>:
+</p>
+<ul>
+  <li>Bloques de <strong>1 KiB a 64 KiB</strong>; con el tamaño habitual de 4 KiB, un archivo puede
+    llegar a <strong>16 TiB</strong> usando <strong>extents</strong>.</li>
+  <li>Por omisión, <strong>2<sup>32</sup> bloques</strong>; con la opción <code>64bit</code>,
+    <strong>2<sup>64</sup></strong>. Eso da un volumen teórico de <strong>64 ZiB</strong> con
+    bloques de 4 KiB y de <strong>1 YiB</strong> con bloques de 64 KiB.</li>
+  <li>El propio proyecto advierte de que esos máximos son del formato, no de un equipo real.</li>
+</ul>
+
+<h3>19.5. HFS+ y APFS: los dos de Apple</h3>
+<ul>
+  <li><strong>HFS+</strong> (Mac OS Extended) está documentado en la nota técnica
+    <a href="https://developer.apple.com/library/archive/technotes/tn/tn1150.html" rel="noopener">TN1150: HFS Plus Volume Format</a>.
+    Admite archivos de hasta <strong>2<sup>63</sup> bytes</strong> y usa
+    <strong>números de bloque de asignación de 32 bits</strong>, es decir hasta
+    4 294 967 296 bloques; con bloques de 512 bytes, eso acota el volumen en 2 TiB (aritmética del
+    propio dato, no una cifra que Apple publique como «máximo»).</li>
+  <li><strong>APFS</strong> es el sistema por omisión desde macOS 10.13. Su
+    <a href="https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf" rel="noopener">referencia oficial</a>
+    describe una estructura de contenedor con hasta <strong>100 volúmenes</strong>, instantáneas,
+    copia al escribir y cifrado por volumen. <strong>No publica una cifra única de tamaño máximo de
+    archivo</strong>, así que este tema no la inventa.</li>
+</ul>
+
+<h3>19.6. La tabla comparativa, con los límites reales</h3>
+<p>
+  Una sola tabla para los seis sistemas del epígrafe. La columna «qué impone el límite» es la que
+  permite deducir una respuesta que no se recuerde de memoria.
+</p>
+<table>
+  <caption>Tamaño máximo de archivo y de volumen en los sistemas de archivos del epígrafe</caption>
+  <thead>
+    <tr>
+      <th>Sistema</th>
+      <th>Archivo máximo</th>
+      <th>Volumen máximo</th>
+      <th>Qué impone el límite</th>
+      <th>Dónde se usa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>FAT16</strong></td>
+      <td>4 GB − 1 byte (probado por Microsoft)</td>
+      <td>4 GB (probado); 2 GB en la práctica de su época</td>
+      <td>Entrada de 16 bits en la tabla: 65 524 clústeres</td>
+      <td>Medios pequeños, firmware antiguo</td>
+    </tr>
+    <tr>
+      <td><strong>FAT32</strong></td>
+      <td>4 GB − 1 byte</td>
+      <td>32 GB al formatear con Windows; del orden de 8 TB teóricos</td>
+      <td>Campo de tamaño de archivo de 32 bits; 2<sup>28</sup> clústeres</td>
+      <td>Memorias USB, tarjetas SD, arranque UEFI</td>
+    </tr>
+    <tr>
+      <td><strong>exFAT</strong></td>
+      <td>2<sup>64</sup> − 1 bytes (límite del campo <code>DataLength</code>)</td>
+      <td>Hasta 2<sup>32</sup> − 11 clústeres</td>
+      <td>Anchura de los campos de 64 y 32 bits</td>
+      <td>Tarjetas SDXC y unidades extraíbles grandes</td>
+    </tr>
+    <tr>
+      <td><strong>NTFS</strong></td>
+      <td>16 TB con clústeres de 4 KB; 256 TB con 64 KB; 8 PB con 2 MB</td>
+      <td>8 PB (Windows 10 1709+ y Server 2019+); 256 TB antes</td>
+      <td>2<sup>32</sup> − 1 clústeres por volumen y tamaño de clúster</td>
+      <td>Windows, discos internos y de servidor</td>
+    </tr>
+    <tr>
+      <td><strong>ext4</strong></td>
+      <td>16 TiB con bloques de 4 KiB</td>
+      <td>64 ZiB con bloques de 4 KiB y modo de 64 bits (teórico)</td>
+      <td>2<sup>32</sup> bloques por omisión, 2<sup>64</sup> con la opción <code>64bit</code></td>
+      <td>Linux y Android</td>
+    </tr>
+    <tr>
+      <td><strong>HFS+</strong></td>
+      <td>2<sup>63</sup> bytes</td>
+      <td>Acotado por los 2<sup>32</sup> bloques de asignación</td>
+      <td>Anchura de los números de bloque de asignación</td>
+      <td>macOS anterior a 10.13; discos antiguos</td>
+    </tr>
+    <tr>
+      <td><strong>APFS</strong></td>
+      <td>No publicada como cifra única en la referencia de Apple</td>
+      <td>Contenedor con hasta 100 volúmenes; espacio compartido</td>
+      <td>Direcciones de 64 bits y estructura de contenedor</td>
+      <td>macOS desde 10.13, iOS, iPadOS, watchOS y tvOS</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>19.7. Cómo se elige, en la práctica</h3>
+<table>
+  <caption>Regla de decisión para medios extraíbles y para cada plataforma</caption>
+  <thead>
+    <tr><th>Situación</th><th>Sistema</th><th>Motivo</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pendrive que debe leer cualquier equipo, con archivos de menos de 4 GB</td>
+      <td>FAT32</td>
+      <td>Compatibilidad máxima y volumen pequeño</td>
+    </tr>
+    <tr>
+      <td>Pendrive o tarjeta con archivos de más de 4 GB</td>
+      <td>exFAT</td>
+      <td>FAT32 no admite el archivo; exFAT sí y lo leen Windows y macOS</td>
+    </tr>
+    <tr>
+      <td>Disco de sistema en Windows</td>
+      <td>NTFS</td>
+      <td>Permisos, registro de transacciones, cifrado y cuotas</td>
+    </tr>
+    <tr>
+      <td>Disco de sistema en Linux</td>
+      <td>ext4 (o XFS, Btrfs)</td>
+      <td>Sistema nativo con registro y soporte del núcleo</td>
+    </tr>
+    <tr>
+      <td>Disco de sistema en macOS</td>
+      <td>APFS</td>
+      <td>Instantáneas, cifrado y espacio compartido entre volúmenes</td>
+    </tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    El par que más se falla: <strong>4 GB</strong> es el límite de <strong>archivo</strong> en
+    FAT32, y <strong>32 GB</strong> el de <strong>volumen</strong> que Windows formatea. Un pendrive
+    de 64 GB formateado en FAT32 por una herramienta de terceros existe, pero el mismo Windows no
+    lo habría formateado. Y «NTFS 16 TB» es solo con clústeres de 4 KB: el número cambia con el
+    clúster, que es justo lo que el enunciado suele omitir.
+  </p>
+</div>
+<h2>20. Trampas del examen</h2>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 1 · 4 GB es el archivo, 32 GB es el volumen</span>
+  <p>
+    En FAT32: <strong>4 GB menos 1 byte</strong> por archivo y <strong>32 GB</strong> por volumen
+    formateado con Windows. Las opciones suelen intercambiar ambos números, o colar 4 TB en lugar de
+    4 GB.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 2 · NTFS depende del clúster</span>
+  <p>
+    No hay un único «máximo de NTFS». Con clústeres de 4 KB son 16 TB; con 64 KB, 256 TB; con 2 MB,
+    8 PB. Si el enunciado no dice el clúster, el dato correcto es el de 4 KB, que es el valor por
+    omisión.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 3 · teórico no es utilizable</span>
+  <p>
+    ext4 «llega» a 64 ZiB de volumen y FAT32 «a unos 8 TB», pero ningún equipo de escritorio formatea
+    esos volúmenes, y en el mismo ext4 el archivo con bloques de 4 KiB se queda en 16 TiB. Los
+    máximos del formato y los límites de la implementación son cosas distintas, y el enunciado los
+    mezcla a propósito.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 4 · NVMe no es un medio</span>
+  <p>
+    NVMe es un protocolo pensado para memoria no volátil sobre PCIe, RDMA o TCP. SSD es el
+    dispositivo. Un SSD SATA no usa NVMe, y un SSD NVMe no deja de ser flash.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 5 · RAID 5 y RAID 6 no toleran lo mismo</span>
+  <p>
+    RAID 5 tolera <strong>un</strong> fallo; RAID 6, <strong>dos</strong>. RAID 10 tolera un fallo
+    por espejo, no dos cualesquiera. Y RAID 0 no es redundante: no tolera ninguno.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 6 · Linux es el núcleo; Android no es una distribución</span>
+  <p>
+    «Linux» no es el sistema completo, y Android no es «Linux con otro escritorio»: usa el núcleo
+    Linux en su rama LTS con parches propios, y encima un entorno de ejecución y un modelo de
+    permisos que no tienen nada que ver con los de un escritorio.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 7 · POSIX no es UNIX</span>
+  <p>
+    POSIX es una norma de interfaz; UNIX es una marca registrada que se certifica con el nombre
+    UNIX 03. Se puede ser conforme a POSIX sin la marca, y la marca no implica que el núcleo sea
+    idéntico.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 8 · Volumen, partición y sistema de archivos</span>
+  <p>
+    Un disco GPT puede tener hasta 128 particiones en Windows; un volumen puede abarcar varias
+    particiones; y el sistema de archivos es el formato de un volumen. Confundir los tres es el
+    error de las preguntas «¿cuántas particiones admite…?».
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 9 · RAM no es almacenamiento</span>
+  <p>
+    La jerarquía del apartado 18 incluye registros, caché y RAM, pero solo desde el SSD hacia abajo
+    el contenido sobrevive al apagado. «Almacenamiento» en el epígrafe significa persistente.
+  </p>
+</div>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa 10 · Los 64 GB de Windows 11 son disco, no memoria</span>
+  <p>
+    Requisitos: 4 GB de <strong>memoria</strong>, 64 GB de <strong>almacenamiento</strong>, TPM 2.0
+    y firmware UEFI capaz de arranque seguro. El enunciado cambia 64 GB de RAM por 64 GB de disco
+    cuando quiere pillar.
+  </p>
+</div>
+
+<h2>21. Reglas mnemotécnicas</h2>
+<div class="clave">
+  <span class="clave__titulo">Las cinco funciones: «PROME-AR-DIS-US»</span>
+  <p>
+    <strong>PRO</strong>cesos · <strong>ME</strong>moria · <strong>AR</strong>chivos ·
+    <strong>DIS</strong>positivos · <strong>US</strong>uarios y seguridad. Cinco recursos, cinco
+    funciones: CPU, RAM, disco, periféricos e identidad.
+  </p>
+</div>
+<div class="clave">
+  <span class="clave__titulo">FAT32: «cuatro y treinta y dos»</span>
+  <p>
+    <strong>4</strong> GB de archivo, <strong>32</strong> GB de volumen. Si el enunciado junta los
+    dos números en la misma frase, ya sabes cuál es cuál por la posición: el archivo siempre es el
+    pequeño.
+  </p>
+</div>
+<div class="clave">
+  <span class="clave__titulo">RAID: «0 nada, 1 mitad, 5 uno menos, 6 dos menos, 10 la mitad»</span>
+  <ul>
+    <li><strong>0</strong>: cero redundancia, todo el espacio.</li>
+    <li><strong>1</strong>: la mitad del espacio, un espejo.</li>
+    <li><strong>5</strong>: se pierde <strong>un</strong> disco de capacidad y se tolera
+      <strong>un</strong> fallo.</li>
+    <li><strong>6</strong>: se pierden <strong>dos</strong> discos y se toleran <strong>dos</strong>
+      fallos.</li>
+    <li><strong>10</strong>: la mitad del espacio, como un 1; velocidad, como un 0.</li>
+  </ul>
+</div>
+<div class="clave">
+  <span class="clave__titulo">Mac: «APFS desde 10.13»</span>
+  <p>
+    Diez-trece: el sistema de archivos nuevo entra con macOS High Sierra. Antes, HFS+ (Mac OS
+    Extended). Y iOS lo comparte, porque el diseño es el mismo.
+  </p>
+</div>
+<div class="clave">
+  <span class="clave__titulo">Móviles: «iOS firma y revisa, Android declara y pregunta»</span>
+  <p>
+    iOS exige firma y revisión previa en la App Store. Android clasifica los permisos en
+    <strong>instalación</strong>, <strong>ejecución</strong> y <strong>especiales</strong>, y
+    pregunta cuando la aplicación los necesita.
+  </p>
+</div>
+<h2>22. Autoevaluación</h2>
+<p>Responde antes de abrir la solución. Si fallas, vuelve al apartado indicado.</p>
+
+<details>
+  <summary><strong>1.</strong> ¿Cuál de estas funciones <strong>no</strong> corresponde al sistema operativo: planificar procesos, gestionar la memoria, compilar código fuente o controlar dispositivos?</summary>
+  <p>
+    Compilar código fuente. Es una tarea de una aplicación (el compilador), no del sistema
+    operativo. Apartado 2.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>2.</strong> ¿Qué ocurre cuando un programa de usuario quiere leer un archivo?</summary>
+  <p>
+    No accede al disco: hace una llamada al sistema, que cambia de modo usuario a modo núcleo, el
+    núcleo ejecuta la operación y devuelve el resultado. Apartado 3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>3.</strong> Un sistema operativo atiende a varios usuarios y ejecuta varios procesos a la vez, pero no garantiza plazos. ¿Cómo se clasifica?</summary>
+  <p>
+    Multiusuario y multitarea, de tiempo compartido. No es de tiempo real: el tiempo real garantiza
+    un plazo máximo de respuesta, no solo rapidez. Apartado 4.
+  </p>
+</details>
+
+<details>
+  <summary><strong>4.</strong> ¿Qué diferencia un núcleo monolítico de un microkernel?</summary>
+  <p>
+    En el monolítico todos los servicios comparten el espacio privilegiado del núcleo; en el
+    microkernel solo queda lo mínimo y el resto corre como procesos de usuario que se comunican por
+    mensajes. Apartado 5.
+  </p>
+</details>
+
+<details>
+  <summary><strong>5.</strong> ¿Qué dos sistemas de archivos usaba MS/DOS y qué longitud tenían sus nombres?</summary>
+  <p>
+    FAT12 y FAT16, con nombres 8.3: ocho caracteres de nombre, punto y tres de extensión.
+    Apartados 6 y 19.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>6.</strong> ¿POSIX es un sistema operativo?</summary>
+  <p>
+    No. Es una norma de interfaz y entorno: define llamadas, utilidades e intérprete de órdenes, no
+    una implementación. UNIX, en cambio, es una marca registrada de The Open Group que se certifica
+    (UNIX 03). Apartados 3.1 y 7.
+  </p>
+</details>
+
+<details>
+  <summary><strong>7.</strong> ¿Linux es un sistema operativo o un núcleo? ¿Y qué es una distribución?</summary>
+  <p>
+    Linux es el núcleo, publicado bajo GPL v2 en kernel.org. La distribución es ese núcleo más
+    herramientas, bibliotecas, gestor de paquetes y configuración. Apartado 8.
+  </p>
+</details>
+
+<details>
+  <summary><strong>8.</strong> ¿Cuántas particiones admite como máximo un disco GPT en Windows y cuántas un MBR?</summary>
+  <p>
+    128 en GPT según la implementación de Windows; 4 entradas en MBR, ampliables con partición
+    extendida y unidades lógicas. Apartado 18.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>9.</strong> ¿Cuál es el tamaño máximo de un archivo en FAT32 y el de un volumen que Windows formatee en FAT32?</summary>
+  <p>
+    4 GB menos 1 byte por archivo; 32 GB por volumen formateado con Windows, aunque el formato
+    admita teóricamente volúmenes de unos 8 TB creados por otros sistemas. Apartado 19.1.
+  </p>
+</details>
+
+<details>
+  <summary><strong>10.</strong> Un pendrive debe llevar un archivo de 6 GB y abrirse en Windows y en macOS. ¿Qué sistema de archivos eliges y por qué?</summary>
+  <p>
+    exFAT: FAT32 no admite un archivo de más de 4 GB, y exFAT lo leen ambas plataformas sin
+    formatear. Apple recomienda exFAT precisamente para volúmenes de más de 32 GB. Apartados 19.2 y
+    19.7.
+  </p>
+</details>
+
+<details>
+  <summary><strong>11.</strong> Cuatro discos de 2 TB en RAID 5: capacidad útil y fallos tolerados. Y en RAID 6.</summary>
+  <p>
+    RAID 5: (4 − 1) × 2 = 6 TB útiles, tolera 1 fallo. RAID 6: (4 − 2) × 2 = 4 TB útiles, tolera 2
+    fallos. Apartado 17.2.
+  </p>
+</details>
+
+<details>
+  <summary><strong>12.</strong> ¿NVMe es un tipo de disco o un protocolo? ¿Sobre qué transportes funciona?</summary>
+  <p>
+    Es una especificación de interfaz para memoria no volátil. La familia actual incluye transportes
+    PCIe, RDMA y TCP, además de la especificación base y los conjuntos de comandos. Apartado 16.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>13.</strong> ¿Qué sistema de archivos usa macOS desde la versión 10.13 y qué gana con él?</summary>
+  <p>
+    APFS: cifrado, instantáneas, espacio compartido entre volúmenes de un mismo contenedor y mejor
+    tratamiento del almacenamiento flash. Hasta entonces, HFS+. Apartados 10 y 19.5.
+  </p>
+</details>
+
+<details>
+  <summary><strong>14.</strong> ¿En qué se diferencian los permisos de iOS y los de Android?</summary>
+  <p>
+    iOS solo ejecuta código firmado con permisos declarados y comprobados, y concede el acceso en el
+    momento de uso. Android clasifica los permisos en de instalación, en tiempo de ejecución y
+    especiales, y aísla cada aplicación con una identidad de usuario propia. Apartados 13 y 14.
+  </p>
+</details>
+
+<details>
+  <summary><strong>15.</strong> Nombra los requisitos de seguridad de hardware de Windows 11.</summary>
+  <p>
+    Firmware UEFI capaz de arranque seguro y TPM versión 2.0, además de 4 GB de memoria, 64 GB de
+    almacenamiento y procesador de 64 bits con dos o más núcleos a 1 GHz. Apartado 9.1.
+  </p>
+</details>
+
+<h2>23. Resumen para memorizar</h2>
+<div class="clave">
+  <span class="clave__titulo">Los datos que se preguntan</span>
+  <ul>
+    <li><strong>Funciones del sistema operativo</strong>: procesos, memoria, archivos, dispositivos, usuarios y seguridad.</li>
+    <li><strong>Dos modos</strong>: usuario y núcleo; el paso entre ambos es la llamada al sistema. <strong>POSIX</strong> normaliza la interfaz; <strong>UNIX</strong> es la marca certificada (UNIX 03).</li>
+    <li><strong>Tipologías</strong>: por usuarios (mono/multi), por tareas (mono/multitarea, cooperativa o apropiativa), por tiempo de respuesta (compartido, real, lotes), por núcleo (monolítico, microkernel, híbrido).</li>
+    <li><strong>MS/DOS</strong>: FAT12 y FAT16, nombres 8.3, letras de unidad; versión 4.00 desarrollada conjuntamente por IBM y Microsoft.</li>
+    <li><strong>Linux</strong>: núcleo bajo GPL v2; distribución = núcleo + herramientas; árbol único con <code>/etc</code>, <code>/home</code>, <code>/var</code>, <code>/dev</code>; ext4 nativo.</li>
+    <li><strong>Windows</strong>: familia NT, modo usuario y modo núcleo, servicios, NTFS y ReFS, GPT con 128 particiones en Windows, <code>MAX_PATH</code> de 260.</li>
+    <li><strong>macOS</strong>: base UNIX/BSD; APFS desde 10.13, con contenedor de hasta 100 volúmenes.</li>
+    <li><strong>Móviles</strong>: iOS firma y revisa, con Protección de datos y Secure Enclave; Android usa núcleo Linux LTS con parches, cifrado por archivo desde 7.0, permisos de instalación, de ejecución y especiales, y actualizaciones A/B.</li>
+    <li><strong>Almacenamiento</strong>: magnético (mecánico), óptico (láser), flash (celdas, desgaste y reparto), SSD (el dispositivo) y NVMe (el protocolo, sobre PCIe, RDMA o TCP).</li>
+    <li><strong>RAID</strong>: 0 franjas sin redundancia · 1 espejo · 4 paridad dedicada · 5 paridad distribuida (N − 1) · 6 doble paridad (N − 2) · 10 espejo en franjas.</li>
+    <li><strong>Límites de archivo</strong>: FAT32 4 GB − 1 · NTFS 16 TB con clúster de 4 KB (256 TB con 64 KB, 8 PB con 2 MB) · ext4 16 TiB con bloques de 4 KiB · HFS+ 2<sup>63</sup> bytes.</li>
+    <li><strong>Límites de volumen</strong>: FAT32 32 GB al formatear (≈8 TB teóricos) · NTFS 8 PB en versiones modernas · ext4 64 ZiB teóricos · exFAT hasta 2<sup>32</sup> − 11 clústeres.</li>
+  </ul>
+</div>
+<h2>24. Qué no se ha afirmado en este tema, y por qué</h2>
+<div class="aviso">
+  <span class="aviso__titulo">Límites de este tema</span>
+  <p>
+    El estándar del bloque es solo documentación oficial del fabricante o del proyecto. Queda
+    deliberadamente fuera lo siguiente:
+  </p>
+  <ul>
+    <li>
+      <strong>Capacidades de CD, DVD y Blu-ray.</strong> Los comités que publican esas normas
+      —ECMA para el CD y el DVD— no ofrecieron en abierto el texto ni la ficha en el momento de
+      redactar, así que el apartado 16.2 explica el medio sin dar una sola cifra de capacidad. Si el
+      examen pregunta «700 MB», la respuesta es memoria de manual y no está respaldada aquí.
+    </li>
+    <li>
+      <strong>Cifras de densidad, revoluciones por minuto y latencias del disco magnético.</strong>
+      No se afirma ninguna: dependen del modelo y no hay una fuente oficial única que las fije.
+    </li>
+    <li>
+      <strong>Resistencia y vida útil de la memoria flash</strong> —ciclos por celda, terabytes
+      escritos—. Son datos por producto, no de especificación, y no se han consultado hojas de
+      datos de fabricante.
+    </li>
+    <li>
+      <strong>Que MS/DOS fuese monotarea y monousuario como hecho documentado.</strong> Es la
+      respuesta esperada en el test y así se dice, pero la documentación oficial consultada solo
+      acredita versiones y autoría conjunta con IBM. No se le atribuye ninguna cifra de memoria ni
+      de versiones intermedias.
+    </li>
+    <li>
+      <strong>Certificación UNIX de macOS.</strong> El registro de productos certificados de The
+      Open Group no expone su contenido al acceso automatizado, así que no se afirma que una versión
+      concreta de macOS figure en él, ni con qué nombre.
+    </li>
+    <li>
+      <strong>Tamaño máximo de archivo de APFS.</strong> La referencia oficial de Apple no publica
+      una cifra única; se dan los datos estructurales (100 volúmenes por contenedor, direcciones de
+      64 bits) y se deja el hueco declarado en la tabla del apartado 19.6.
+    </li>
+    <li>
+      <strong>Límites de capacidad de las tarjetas SD.</strong> La SD Association publica la
+      clasificación por familias (SD, SDHC, SDXC, SDUC), pero su página de especificaciones
+      simplificadas no expone en texto las fronteras de capacidad, así que no se dan.
+    </li>
+    <li>
+      <strong>Fechas de aparición de cada versión de Windows, macOS, iOS y Android.</strong> No se
+      afirma ninguna: los ciclos de vida cambian y este tema no es de historia de versiones.
+    </li>
+    <li>
+      <strong>Sistemas de archivos que no están en el epígrafe</strong> —XFS, Btrfs, ZFS, ReFS—: se
+      nombran cuando la fuente los asocia a una plataforma, y no se analizan. Tampoco se describen
+      planificadores ni estructuras internas de los núcleos: ni Windows ni Apple los publican, y
+      Linux los cambia entre versiones.
+    </li>
+  </ul>
+</div>
+
+<h2>25. Fuentes de este tema</h2>
+<p>
+  Todas las fuentes son documentación oficial del fabricante o del proyecto, y se han consultado el
+  <strong>16 de noviembre de 2026</strong>. Cada dirección se ha comprobado abriéndola: se indica el
+  título tal como lo devuelve el servidor y el uso que se le da en el tema.
+</p>
+
+<h3>25.1. Microsoft: sistemas de archivos, particiones y Windows</h3>
+<ul>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/ntfs-overview" rel="noopener">NTFS overview</a>
+    (Microsoft Learn). Tabla de tamaños máximos de volumen y archivo por clúster, 2<sup>32</sup> − 1
+    clústeres, 8 PB en versiones modernas, 256 TB anteriores, alias 8.3 y límite de rutas.
+    Apartados 9, 6.1 y 19.3.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/exfat-specification" rel="noopener">exFAT File System Specification</a>
+    (Microsoft Learn). Campo <code>DataLength</code> de 64 bits, 2<sup>32</sup> − 11 clústeres y
+    límites de directorio de 256 MB. Apartado 19.2.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc776720(v=ws.10)" rel="noopener">How FAT Works</a>
+    (Microsoft Learn, biblioteca de Windows Server 2003). FAT12 por debajo de 16 MB, 65 524
+    clústeres en FAT16, 4 GB − 1 byte de archivo, 32 GB de volumen en FAT32 y ~8 TB teóricos.
+    Apartados 6.1 y 19.1.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison" rel="noopener">File System Functionality Comparison</a>
+    (Microsoft Learn). Comparación de capacidades entre los sistemas de archivos de Windows.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation" rel="noopener">Maximum Path Length Limitation</a>
+    y <a href="https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file" rel="noopener">Naming Files, Paths, and Namespaces</a>
+    (Microsoft Learn). <code>MAX_PATH</code> de 260 caracteres y rutas extendidas. Apartados 6.1,
+    9 y 19.3.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq" rel="noopener">Windows and GPT FAQ</a>
+    (Microsoft Learn). Cuatro entradas en MBR, GPT con tabla de respaldo y CRC32, 128 particiones en
+    la implementación de Windows, tipos de volumen y límite de 2 TB por disco en Windows XP.
+    Apartado 18.3.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode" rel="noopener">User Mode and Kernel Mode</a>
+    (Microsoft Learn). Separación entre aplicaciones y código del sistema. Apartados 3 y 9.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/win32/services/services" rel="noopener">Services</a>
+    (Microsoft Learn). Qué es un servicio de Windows. Apartado 9.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview" rel="noopener">Resilient File System (ReFS) overview</a>
+    (Microsoft Learn). Ubicación de ReFS junto a NTFS. Apartado 9.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/whats-new/windows-11-requirements" rel="noopener">Windows 11 requirements</a>
+    (Microsoft Learn). Procesador, 4 GB de memoria, 64 GB de almacenamiento, UEFI con arranque seguro
+    y TPM 2.0. Apartado 9.1.
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information" rel="noopener">Windows 11 release information</a>
+    (Microsoft Learn). Canales y versiones de la rama vigente.
+  </li>
+  <li>
+    <a href="https://github.com/microsoft/MS-DOS" rel="noopener">The original sources of MS-DOS 1.25, 2.0, and 4.0 for reference purposes</a>
+    (repositorio oficial de Microsoft en GitHub). Versiones conservadas y desarrollo conjunto con
+    IBM de la 4.00. Apartado 6.
+  </li>
+</ul>
+
+<h3>25.2. The Open Group: POSIX y la marca UNIX</h3>
+<ul>
+  <li>
+    <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap01.html" rel="noopener">POSIX.1-2017, Base Definitions, capítulo 1: Introduction</a>
+    (The Open Group). Definición de interfaz y entorno estándar, alcance y exclusiones. Apartado 3.1.
+  </li>
+  <li>
+    <a href="https://pubs.opengroup.org/onlinepubs/9699919799/" rel="noopener">The Open Group Base Specifications Issue 7, 2018 edition</a>
+    (The Open Group). Volúmenes de la norma POSIX.1-2017.
+  </li>
+  <li>
+    <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html" rel="noopener">POSIX.1-2017, General Concepts</a>
+    (The Open Group). Permisos de acceso a archivos por propietario, grupo y resto. Apartado 2.1.
+  </li>
+  <li>
+    <a href="https://www.opengroup.org/membership/forums/platform/unix" rel="noopener">The UNIX® Standard</a>
+    y <a href="https://www.opengroup.org/openbrand/register/" rel="noopener">The Register of UNIX® Certified Products</a>
+    (The Open Group). Marca registrada, certificación y registro público. Apartado 7.
+  </li>
+</ul>
+
+<h3>25.3. Linux: núcleo y sistema</h3>
+<ul>
+  <li>
+    <a href="https://www.kernel.org/" rel="noopener">The Linux Kernel Archives</a>
+    (kernel.org). Distribución del núcleo y del proyecto.
+  </li>
+  <li>
+    <a href="https://raw.githubusercontent.com/torvalds/linux/master/COPYING" rel="noopener">COPYING del árbol de Linux</a>
+    (repositorio oficial del núcleo). Licencia «GPL-2.0 WITH Linux-syscall-note». Apartado 8.
+  </li>
+  <li>
+    <a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html" rel="noopener">ext4 Data Structures and Algorithms</a>
+    (documentación del núcleo Linux). Bloques de 1 a 64 KiB, 2<sup>32</sup> o 2<sup>64</sup>
+    bloques y tabla «File System Maximums» con 16 TiB de archivo y 64 ZiB de volumen. Apartados 8.2
+    y 19.4.
+  </li>
+  <li>
+    <a href="https://www.kernel.org/doc/html/latest/admin-guide/md.html" rel="noopener">RAID arrays</a>
+    y <a href="https://man7.org/linux/man-pages/man4/md.4.html" rel="noopener">md(4)</a>
+    (documentación del núcleo y man-pages de Linux). Niveles 0, 1, 4, 5, 6, 10, LINEAR y MULTIPATH,
+    paridad y reparto. Apartado 17.
+  </li>
+  <li>
+    <a href="https://man7.org/linux/man-pages/man2/intro.2.html" rel="noopener">intro(2)</a>,
+    <a href="https://man7.org/linux/man-pages/man7/file-hierarchy.7.html" rel="noopener">file-hierarchy(7)</a> y
+    <a href="https://man7.org/linux/man-pages/man2/mount.2.html" rel="noopener">mount(2)</a>
+    (man-pages de Linux). Llamadas al sistema, árbol de directorios y montaje de volúmenes.
+    Apartados 2.1 y 8.1.
+  </li>
+  <li>
+    <a href="https://www.kernel.org/doc/man-pages/" rel="noopener">The Linux man-pages project</a>
+    (kernel.org). Origen y alcance del conjunto de páginas consultado.
+  </li>
+</ul>
+
+<h3>25.4. Apple: macOS, iOS y sistemas de archivos</h3>
+<ul>
+  <li>
+    <a href="https://support.apple.com/guide/security/welcome/web" rel="noopener">Apple Platform Security</a>
+    (soporte de Apple), también en
+    <a href="https://help.apple.com/pdf/security/en_US/apple-platform-security-guide.pdf" rel="noopener">PDF oficial</a>.
+    Protección de datos, Secure Enclave, firma de código con permisos declarados, volumen de sistema
+    firmado y aislamiento de aplicaciones. Apartados 10.2, 13.1 y 13.2.
+  </li>
+  <li>
+    <a href="https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac" rel="noopener">File system formats available in Disk Utility on Mac</a>
+    (soporte de Apple). APFS por omisión desde macOS 10.13, variantes, contenedor con espacio
+    compartido y recomendación de FAT hasta 32 GB y exFAT por encima. Apartados 10 y 19.1.
+  </li>
+  <li>
+    <a href="https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf" rel="noopener">Apple File System Reference</a>
+    (Apple, 2020). Capas de contenedor y sistema de archivos, 100 volúmenes por contenedor,
+    <strong>checkpoints</strong> y copia al escribir. Apartados 10.1 y 19.5.
+  </li>
+  <li>
+    <a href="https://developer.apple.com/library/archive/technotes/tn/tn1150.html" rel="noopener">Technical Note TN1150: HFS Plus Volume Format</a>
+    (Apple). Archivos de 2<sup>63</sup> bytes y números de bloque de asignación de 32 bits.
+    Apartado 19.5.
+  </li>
+  <li>
+    <a href="https://developer.apple.com/app-store/review/guidelines/" rel="noopener">App Review Guidelines</a>
+    (Apple Developer). Revisión previa de las aplicaciones de la App Store. Apartados 10.2 y 13.2.
+  </li>
+</ul>
+
+<h3>25.5. Android y Google</h3>
+<ul>
+  <li>
+    <a href="https://source.android.com/docs/core/architecture" rel="noopener">Architecture overview</a>
+    (Android Open Source Project). Código público y modificable, y niveles de compatibilidad.
+    Apartado 14.1.
+  </li>
+  <li>
+    <a href="https://source.android.com/docs/core/architecture/kernel" rel="noopener">Kernel overview</a>
+    (AOSP). Núcleo Linux LTS con parches de Android y los <strong>Android Common Kernels</strong>.
+    Apartado 14.1.
+  </li>
+  <li>
+    <a href="https://source.android.com/docs/security/features/encryption/file-based" rel="noopener">File-based encryption</a>
+    (AOSP). Cifrado por archivo desde Android 7.0, almacenamiento por credenciales y por
+    dispositivo, y Direct Boot. Apartado 14.3.
+  </li>
+  <li>
+    <a href="https://source.android.com/docs/core/ota" rel="noopener">OTA updates</a>
+    y <a href="https://source.android.com/docs/security/bulletin" rel="noopener">Android Security and Update Bulletins</a>
+    (AOSP). Actualizaciones A/B y boletines de seguridad. Apartado 14.3.
+  </li>
+  <li>
+    <a href="https://developer.android.com/guide/topics/permissions/overview" rel="noopener">Permissions on Android</a>
+    (Android Developers). Permisos de instalación, en tiempo de ejecución y especiales. Apartados 14.2
+    y 15.
+  </li>
+  <li>
+    <a href="https://developer.android.com/google/play/requirements/target-sdk" rel="noopener">Meet Google Play's target API level requirement</a>
+    (Android Developers). Requisito de nivel de API objetivo para publicar. Apartado 14.3.
+  </li>
+</ul>
+
+<h3>25.6. Estándares de almacenamiento e interfaz</h3>
+<ul>
+  <li>
+    <a href="https://nvmexpress.org/specifications/" rel="noopener">Specifications</a>
+    (NVM Express). Familia de especificaciones NVMe: base, conjuntos de comandos y transportes PCIe,
+    RDMA y TCP. Apartado 16.3.
+  </li>
+  <li>
+    <a href="https://www.snia.org/tech_activities/standards/curr_standards/ddf" rel="noopener">Common RAID Disk Data Format (DDF)</a>
+    (SNIA). Estructura estándar de datos de un grupo RAID y migración entre fabricantes.
+    Apartado 17.
+  </li>
+  <li>
+    <a href="https://www.sdcard.org/downloads/pls/" rel="noopener">Simplified Specifications</a>
+    (SD Association). Familias de tarjeta por capacidad (SD, SDHC, SDXC, SDUC) y por velocidad.
+    Apartados 16.3 y 24.
+  </li>
+  <li>
+    <a href="https://www.t13.org/" rel="noopener">Technical Committee T13, AT Attachment</a>
+    (T13). Comité de los estándares de la familia ATA. Apartado 16.1.
+  </li>
+</ul>
+
+<p>
+  Texto de elaboración propia a partir de la documentación citada, publicado bajo CC BY-SA 4.0.
+  Ninguna parte procede de un temario comercial, de una academia ni de un blog, y las etiquetas
+  doctrinales están señaladas como tales en el propio texto.
+</p>

@@ -407,3 +407,20 @@ límites es más grande porque el material verificable es menor.
 - Scratch pendiente de borrar por el padre: `%TEMP%\t31`, `t32`, `t33`, `t34.cEuw`, `t35`, `C:\tmp\t31` y
   `C:\tmp\t33`.
 - Quedan el 36 y el 37 (lengua española) y los ocho del bloque C (38-45).
+
+### L22 — bloque B cerrado y bloque C (I): temas 36 a 40, 40 de 45 publicados
+
+- `36.html` (109 874 B, 28 apartados, 32 tablas): gramática desde el DLE, el GTG 2019 y la NGLE, con **tres
+  oraciones analizadas** de principio a fin y la doble nomenclatura declarada (complemento directo / objeto
+  directo).
+- `37.html` (109 397 B, 26 apartados, 16 tablas): ortografía de la OLE 2010, regla por regla y con parágrafo,
+  más 15 preguntas con la respuesta razonada.
+- `38.html` (109 748 B, 25 apartados, 17 tablas): sistemas operativos y sistemas de archivos con **límites
+  reales** tomados de Microsoft Learn, Apple, Android, kernel.org y POSIX; 44 URL comprobadas una a una.
+- `39.html` (109 930 B, 25 apartados, 23 tablas): OSI y TCP/IP desde los RFC y X.200, con **tres ejercicios de
+  subred resueltos** y la aritmética verificada contra un cálculo independiente.
+- `40.html` (106 442 B, 22 apartados, 17 tablas): inteligencia y OSINT. Separa lo que el CNI publica de la
+  ampliación doctrinal de tipologías, y avisa de que «OSINT no es hacking», con los preceptos de intimidad y
+  prueba digital.
+- `programa.json` regenerado: 40 publicados, 5 pendientes (41-45).
+- Scratch pendiente de borrar por el padre: `%TEMP%\t36-Iqao`, `t37`, `t38`, `t39`, `t40`, `C:\tmp\t38`.

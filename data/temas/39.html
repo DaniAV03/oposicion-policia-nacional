@@ -1,0 +1,1814 @@
+<div class="clave">
+  <span class="clave__titulo">Objetivos del tema</span>
+  <p>Al terminar este tema tienes que ser capaz de:</p>
+  <ol>
+    <li>Definir qué es una red de conmutación de paquetes y qué distingue una LAN de una WAN.</li>
+    <li>Enumerar las siete capas del modelo OSI en orden, con la función de cada una y la unidad de datos que maneja.</li>
+    <li>Explicar la encapsulación de principio a fin, nombrando la PDU y la dirección de cada paso.</li>
+    <li>Corresponder las capas de TCP/IP con las de OSI y decir qué capas de OSI no existen como tales en Internet.</li>
+    <li>Situar cada dispositivo —concentrador, conmutador, encaminador, cortafuegos, proxy— en su capa y justificarlo.</li>
+    <li>Explicar el reparto DHCP con sus cuatro mensajes en orden, los puertos y los tiempos de renovación.</li>
+    <li>Describir la jerarquía DNS, los tipos de registro y el recorrido de una resolución con y sin recursión.</li>
+    <li>Calcular dirección de red, dirección de difusión y rango de hosts a partir de una IP y una máscara.</li>
+    <li>Distinguir IPv4 de IPv6 en formato, cabecera, tipos de dirección y forma de autoconfiguración.</li>
+  </ol>
+</div>
+
+<h2>1. Qué se pregunta de este tema</h2>
+<p>
+  El tema 39 es el segundo del bloque C, Materias Técnico-Científicas. El epígrafe oficial pide tres
+  cosas distintas y las pregunta de tres maneras: los <strong>dos modelos</strong> (OSI y TCP/IP) se
+  preguntan como <strong>clasificación</strong> («¿en qué capa trabaja un switch?»), los
+  <strong>dispositivos y servicios</strong> como <strong>función</strong> («¿qué servidor entrega la
+  máscara de subred?») y el <strong>direccionamiento</strong> como <strong>cálculo</strong> («¿cuál es la
+  dirección de difusión de esta red?»). Aquí no se memoriza un artículo: se memoriza una
+  <strong>tabla de capas</strong> y se practica una <strong>operación aritmética</strong>. Los dos errores
+  más frecuentes son colocar el switch en la capa de red y confundir la dirección de red con la primera
+  dirección utilizable.
+</p>
+<table>
+  <caption>Los ocho datos que más se preguntan y dónde están en el tema</caption>
+  <thead>
+    <tr><th>Pregunta típica</th><th>Respuesta corta</th><th>Apartado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>¿Cuántas capas tiene OSI y cuántas TCP/IP?</td><td>OSI, siete; TCP/IP, cuatro (o cinco, si se separa el nivel físico del de enlace)</td><td>4 y 6</td></tr>
+    <tr><td>¿En qué capa trabaja un hub?</td><td>Capa física (1): repite bits, no lee direcciones</td><td>8</td></tr>
+    <tr><td>¿En qué capa trabaja un switch?</td><td>Capa de enlace (2): reenvía tramas por la dirección MAC</td><td>8</td></tr>
+    <tr><td>¿En qué capa decide un router?</td><td>Capa de red (3): decide por la dirección IP y su tabla de rutas</td><td>9</td></tr>
+    <tr><td>Puertos de DHCP</td><td>Servidor 67, cliente 68; los dos sobre UDP</td><td>11</td></tr>
+    <tr><td>Bloques privados de IPv4</td><td>10/8, 172.16/12 y 192.168/16</td><td>17</td></tr>
+    <tr><td>Prefijo de las direcciones locales de enlace en IPv6</td><td>FE80::/10</td><td>18</td></tr>
+  </tbody>
+</table>
+<p>
+  Cada afirmación se apoya en una fuente primaria y abierta: los RFC del IETF y el texto del modelo OSI.
+  Las referencias van en el cuerpo del texto —«RFC 791, §3.2», «X.200, §7.7.2»— y se reúnen al final, en
+  el apartado 25, con su enlace y su fecha de consulta.
+</p>
+<h2>2. Qué es una red y cómo se organiza</h2>
+
+<h3>2.1. Tres definiciones que hay que tener separadas</h3>
+<p>
+  El glosario del IETF (RFC 1983) da las tres definiciones con las que se construye todo lo demás:
+</p>
+<dl class="glosario">
+  <dt>Red</dt>
+  <dd>
+    «Un sistema de comunicaciones de datos que interconecta sistemas informáticos en sitios
+    distintos». Una red puede estar compuesta por cualquier combinación de LAN, MAN y WAN (RFC 1983,
+    entrada <strong>network</strong>).
+  </dd>
+  <dt>Protocolo</dt>
+  <dd>
+    «Una descripción formal de los formatos de mensaje y de las reglas que dos ordenadores deben
+    seguir para intercambiarlos» (RFC 1983, entrada <strong>protocol</strong>). Un protocolo no es un
+    programa: es una especificación. Por eso dos implementaciones distintas pueden hablar entre sí.
+  </dd>
+  <dt>Conmutación de paquetes</dt>
+  <dd>
+    «Un paradigma en el que los paquetes se encaminan individualmente entre hosts, sin un camino de
+    comunicación previamente establecido» (RFC 1983, <strong>packet switching</strong>). Su contrario es
+    la conmutación de circuitos, con un camino dedicado por el que viajan todos los paquetes; el ejemplo
+    clásico es la telefonía (RFC 1983, <strong>circuit switching</strong>).
+  </dd>
+</dl>
+<p>
+  Internet es lo segundo, no lo primero. La consecuencia práctica es enorme y el examen la pregunta:
+  en una red de paquetes <strong>no hay garantía de entrega</strong>. El propio RFC 1122, §1.1.3, lo
+  dice del Protocolo de Internet: es un servicio de datagramas «que no ofrece garantías de entrega
+  extremo a extremo», y son las capas superiores las que tienen que ocuparse de la fiabilidad cuando
+  se necesita. Esa es exactamente la división de trabajo entre IP y TCP que estudias en el apartado 6.
+</p>
+
+<h3>2.2. Por extensión: LAN, MAN y WAN</h3>
+<p>
+  Por su extensión, el glosario del IETF distingue tres tipos: la <strong>LAN</strong> (red de área
+  local), que sirve a unos pocos kilómetros cuadrados o menos; la <strong>MAN</strong> (red de área
+  metropolitana), que cubre el área de una gran ciudad; y la <strong>WAN</strong> (red de área amplia),
+  que cubre una gran área geográfica y se construye normalmente con líneas serie (RFC 1983, entradas
+  <strong>LAN</strong>, <strong>MAN</strong> y <strong>WAN</strong>). El criterio es la extensión, no la
+  velocidad ni el dueño: «red de área local» es una extensión pequeña, no una tecnología concreta.
+</p>
+
+<h3>2.3. Qué significa que un medio sea compartido</h3>
+<p>
+  En una LAN clásica, varios equipos cuelgan del mismo medio físico: si dos transmiten a la vez, las
+  señales se suman y se destruyen. El glosario del IETF describe el resultado catastrófico de ese
+  compartir en las entradas <strong>broadcast storm</strong> y <strong>Ethernet meltdown</strong> (RFC
+  1983). De ahí salen las dos preguntas que separan un concentrador de un conmutador: si el aparato
+  <strong>repite la señal por todos los puertos</strong>, todos siguen compartiendo el medio y ven el
+  tráfico de todos; si <strong>lee la dirección de destino de la trama</strong> y la envía solo por el
+  puerto donde está ese destino, cada puerto es un medio distinto a efectos de tráfico (apartado 8). La
+  diferencia no es de velocidad ni de precio: es <strong>qué información lee el aparato</strong>.
+</p>
+
+<h2>3. El modelo OSI: una norma, no una marca</h2>
+
+<h3>3.1. Qué documento es y cómo se cita</h3>
+<p>
+  El modelo OSI (Open Systems Interconnection, interconexión de sistemas abiertos) es la
+  norma <strong>ISO/IEC 7498-1</strong>, titulada «Information technology — Open Systems
+  Interconnection — Basic Reference Model: The Basic Model». Su texto es idéntico al de la
+  Recomendación <strong>ITU-T X.200</strong>, y así lo declara el propio prólogo de la Recomendación:
+  «el texto idéntico se publica también como Norma Internacional ISO/IEC 7498-1».
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Cómo he citado esta norma</span>
+  <p>
+    La norma ISO/IEC no es de acceso abierto: no he podido leer el PDF de ISO. Sí he leído, en cambio,
+    el <strong>texto idéntico</strong> publicado por la UIT como Recomendación X.200 (07/94), que es
+    descarga libre. Todas las referencias «X.200, §…» de este tema remiten a ese texto, y por tanto a la
+    misma cláusula de ISO/IEC 7498-1:1994.
+  </p>
+</div>
+
+<h3>3.2. La idea: capas y fronteras</h3>
+<p>
+  El modelo no describe protocolos concretos: describe <strong>dónde va cada problema</strong>. Divide la
+  comunicación entre dos sistemas en <strong>siete capas</strong>, cada una con una función propia y una
+  frontera definida con la de arriba y la de abajo. La ventaja la resume el glosario del IETF: los métodos
+  para pasar información de una capa a otra están especificados como parte del conjunto de protocolos y
+  «los cambios dentro de una capa no afectan a las demás» (RFC 1983, entrada <strong>layer</strong>). De
+  ahí sale el vocabulario que está en la propia norma (X.200, §5.8.8): la <strong>SDU</strong> (service data
+  unit) es lo que una capa recibe de la superior y debe transportar; la <strong>PCI</strong> (protocol
+  control information) es lo que añade la propia capa para entenderse con su capa par en el otro sistema;
+  y la <strong>PDU</strong> (protocol data unit) es el resultado de añadir la PCI a la SDU, porque «dentro
+  de una capa, la información de control de protocolo (N) se añade a la unidad de datos de servicio (N)
+  para formar una unidad de datos de protocolo (N)» (§5.8.8.5.2). Ese «añadir una cabecera» es la
+  encapsulación del apartado 5, y una PDU de una capa es la SDU de la capa inferior.
+</p>
+
+<h3>3.3. Entidades, sistemas y relevos</h3>
+<p>
+  La norma distingue dos papeles que el examen mezcla: un <strong>sistema extremo</strong> (OSI end system)
+  es el que, para una comunicación concreta, es el origen o el destino último de los datos, y un
+  <strong>sistema de relevo</strong> (OSI (N)-relay system) es el que usa las funciones <strong>hasta la capa
+  N incluida</strong> y ejecuta el relevo <strong>dentro de la capa N</strong> (X.200, §6.5.1). De ahí sale la
+  definición operativa de todo el capítulo de dispositivos: un aparato no «trabaja en una capa» por su
+  precio, sino porque <strong>ejecuta el relevo de esa capa y no el de la de arriba</strong>. Un repetidor es
+  un relevo de capa 1; un puente, de capa 2; un encaminador, de capa 3; un proxy, de capa 7.
+</p>
+<h2>4. Las siete capas, una por una</h2>
+<p>
+  La norma define cada capa por su <strong>propósito</strong> —lo que ofrece a la capa de arriba— y por
+  las <strong>funciones</strong> que ejecuta para conseguirlo. Lo que sigue es la descripción de X.200
+  (apartados 7.1 a 7.7) resumida en el orden en que se enumeran las capas, de la 7 a la 1, con la
+  traducción al uso del examen.
+</p>
+
+<h3>4.1. La tabla que hay que saber de memoria</h3>
+<table>
+  <caption>Las siete capas de OSI: función, PDU y ejemplos</caption>
+  <thead>
+    <tr>
+      <th>N.º</th>
+      <th>Capa</th>
+      <th>Qué hace (X.200)</th>
+      <th>PDU</th>
+      <th>Protocolos y aparatos típicos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7</td>
+      <td><strong>Aplicación</strong></td>
+      <td>Único medio de acceso del proceso de aplicación al entorno OSI; no tiene frontera superior
+        (§7.1.2.1)</td>
+      <td>Datos</td>
+      <td>HTTP, DNS, DHCP, SMTP, FTP</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>Presentación</strong></td>
+      <td>Representación común de la información: elige una sintaxis de transferencia aceptable para
+        los dos extremos (§7.2.2)</td>
+      <td>Datos</td>
+      <td>ASN.1, codificaciones; en la práctica, TLS y los formatos de archivo</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Sesión</strong></td>
+      <td>Organiza y sincroniza el diálogo entre entidades de presentación: establece, mantiene y
+        libera la conexión de sesión, con puntos de sincronización (§7.3.2.1)</td>
+      <td>Datos</td>
+      <td>RPC, NetBIOS; en Internet, funciones asumidas por la aplicación</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Transporte</strong></td>
+      <td>Transferencia transparente entre entidades de sesión, con extremo a extremo real: los
+        protocolos de esta capa solo operan entre sistemas extremos (§7.4.2)</td>
+      <td>Segmento (TCP) / datagrama (UDP)</td>
+      <td>TCP, UDP; no hay aparato de red que la ejecute</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Red</strong></td>
+      <td>Transmisión entre entidades de transporte con independencia del encaminamiento y el relevo:
+        direcciones de red y rutas (§7.5.2)</td>
+      <td>Paquete o datagrama</td>
+      <td>IP, ICMP; <strong>encaminador</strong></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Enlace de datos</strong></td>
+      <td>Medios funcionales y de procedimiento para transmitir entre entidades de red; detecta y
+        corrige los errores de la capa física y usa direcciones de enlace (§7.6.2)</td>
+      <td>Trama</td>
+      <td>Ethernet, PPP, HDLC; <strong>puente y conmutador</strong></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><strong>Física</strong></td>
+      <td>Medios mecánicos, eléctricos, funcionales y de procedimiento para activar, mantener y
+        desactivar conexiones físicas de transmisión de bits (§7.7.2)</td>
+      <td>Bit</td>
+      <td>Medio, conectores, repetidor y <strong>concentrador</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.2. Las capas de arriba: 7, 6 y 5</h3>
+<p>
+  La capa de <strong>aplicación</strong> no tiene frontera superior: es «el único medio para que el
+  proceso de aplicación acceda al entorno OSI» (X.200, §7.1.2.1). La de <strong>presentación</strong> se
+  ocupa de la forma y no del contenido: negocia una sintaxis de transferencia común y «asegura que el
+  contenido de información de los datos de la capa de aplicación se conserva durante la transferencia»
+  (§7.2.2.3). La de <strong>sesión</strong> organiza el diálogo: establece la conexión de sesión, ordena
+  el intercambio, ofrece puntos de sincronización y la libera de forma ordenada (§7.3.2.1).
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    En el modelo TCP/IP <strong>no existen</strong> capas de sesión ni de presentación separadas: sus
+    funciones se reparten entre la capa de aplicación y los propios protocolos de aplicación. Si una
+    pregunta dice que TCP/IP tiene siete capas, o que tiene una capa de sesión propia, es falsa.
+  </p>
+</div>
+
+<h3>4.3. La capa de transporte (4): la frontera que importa</h3>
+<p>
+  El transporte es la primera capa con significado <strong>extremo a extremo</strong>: sus protocolos
+  «solo operan entre sistemas extremos» (X.200, §7.4.2.3) y quedan libres de toda preocupación por el
+  encaminamiento, porque eso lo resolvió la capa de red (§7.4.2.4). Es la frontera que el examen
+  pregunta de dos formas: «¿dónde acaba la red y empieza el programa?» y «¿quién garantiza la entrega?».
+  La respuesta a la segunda es que <strong>nadie por debajo del transporte</strong>: IP no garantiza
+  nada (RFC 1122, §1.1.3); TCP sí, porque es un servicio orientado a conexión y fiable (RFC 9293), y UDP
+  no, porque es un servicio de datagramas sin conexión (RFC 768).
+</p>
+
+<h3>4.4. La capa de red (3): direcciones y rutas</h3>
+<p>
+  La capa de red da a las entidades de transporte «independencia del encaminamiento y del relevo»
+  (X.200, §7.5.2.1) y para ello ejecuta dos funciones que la norma enumera juntas: <strong>encaminamiento
+  y relevo</strong> (§7.5.4.1). El encaminamiento decide la ruta; el relevo mueve el paquete de una
+  subred a otra. Todo aparato que hace eso trabaja en la capa 3. La norma define además la subred como
+  «una colección de equipos y medios físicos que forma un todo autónomo y que puede usarse para
+  interconectar sistemas reales con el fin de transferir datos» (§7.5.1.1); esa definición es la que se
+  usa en el apartado 16 para decidir qué direcciones pertenecen a la misma subred IP.
+</p>
+
+<h3>4.5. La capa de enlace (2) y la física (1)</h3>
+<p>
+  El <strong>enlace de datos</strong> hace dos cosas que la física no puede: detectar —y en su caso
+  corregir— los errores que produce el medio (X.200, §7.6.2.2) y <strong>dirigir</strong> el tráfico
+  dentro de la misma red mediante direcciones de enlace (§7.6.2.4). Esa dirección es la MAC en Ethernet,
+  y por eso el conmutador —que decide con ella— es un aparato de capa 2. La <strong>física</strong> no
+  conoce direcciones ni tramas: solo bits. Su unidad de datos es «uno o una cadena de bits»
+  (§7.7.3.4.1) y su servicio es la transmisión transparente de flujos de bits entre entidades de enlace
+  (§7.7.3.3.1). Un aparato que solo regenera y repite bits es un aparato de capa 1.
+</p>
+<h2>5. Encapsulación: un mensaje de principio a fin</h2>
+
+<h3>5.1. El mecanismo</h3>
+<p>
+  Encapsular es <strong>meter la PDU de una capa dentro de la PDU de la capa inferior</strong>, añadiendo
+  la información de control de esa capa inferior. Lo dice la norma con precisión: la PCI de la capa (N)
+  se añade a la SDU de la capa (N) para formar la PDU de la capa (N) (X.200, §5.8.8.5.2). En el
+  receptor, el proceso es el inverso y se llama <strong>desencapsulación</strong>: cada capa lee y quita
+  su propia cabecera y entrega el resto a la capa de arriba.
+</p>
+<p>
+  Un detalle decide muchas preguntas del examen: <strong>no todas las cabeceras viajan de extremo a
+  extremo</strong>. Las de aplicación y transporte las pone el origen y solo las lee el destino; la
+  cabecera IP la lee cada encaminador; y la de enlace <strong>cambia en cada salto</strong>, porque cada
+  tramo tiene sus propias direcciones físicas. Por eso un paquete IP llega intacto a su destino y una
+  trama Ethernet no.
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 400" role="img" aria-labelledby="fig-encapsulacion">
+    <title id="fig-encapsulacion">Crecimiento de la unidad de datos al bajar por las capas: cada capa añade su cabecera</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <text x="20" y="26" font-size="13" font-weight="700" fill="var(--texto)">Lo que se envía, capa a capa (un mensaje HTTP hacia una web)</text>
+
+      <text x="20" y="66" font-size="12" font-weight="600" fill="var(--texto)">7 · Aplicación</text>
+      <rect x="150" y="50" width="560" height="26" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="162" y="68" font-size="11.5" fill="var(--texto)">GET /tema.html HTTP/1.1 · Host · cabeceras · cuerpo</text>
+
+      <text x="20" y="126" font-size="12" font-weight="600" fill="var(--texto)">4 · Transporte</text>
+      <rect x="150" y="110" width="96" height="26" rx="5" fill="var(--acento)" />
+      <text x="198" y="128" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">TCP</text>
+      <rect x="246" y="110" width="464" height="26" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="258" y="128" font-size="11.5" fill="var(--texto)">datos de aplicación</text>
+
+      <text x="20" y="186" font-size="12" font-weight="600" fill="var(--texto)">3 · Red</text>
+      <rect x="150" y="170" width="70" height="26" rx="5" fill="var(--acento)" />
+      <text x="185" y="188" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">IP</text>
+      <rect x="220" y="170" width="96" height="26" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="268" y="188" font-size="11" fill="var(--texto)" text-anchor="middle">TCP</text>
+      <rect x="316" y="170" width="394" height="26" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="328" y="188" font-size="11.5" fill="var(--texto)">datos</text>
+
+      <text x="20" y="246" font-size="12" font-weight="600" fill="var(--texto)">2 · Enlace</text>
+      <rect x="150" y="230" width="70" height="26" rx="5" fill="var(--acento)" />
+      <text x="185" y="248" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">Eth</text>
+      <rect x="220" y="230" width="70" height="26" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="255" y="248" font-size="11" fill="var(--texto)" text-anchor="middle">IP</text>
+      <rect x="290" y="230" width="96" height="26" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="338" y="248" font-size="11" fill="var(--texto)" text-anchor="middle">TCP</text>
+      <rect x="386" y="230" width="294" height="26" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="398" y="248" font-size="11.5" fill="var(--texto)">datos</text>
+      <rect x="680" y="230" width="30" height="26" rx="5" fill="var(--clave-borde)" />
+      <text x="695" y="248" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">FCS</text>
+
+      <text x="20" y="306" font-size="12" font-weight="600" fill="var(--texto)">1 · Física</text>
+      <rect x="150" y="290" width="560" height="26" rx="5" fill="var(--superficie)" stroke="var(--borde)" stroke-dasharray="4 3" />
+      <text x="162" y="308" font-size="11.5" fill="var(--texto-suave)">1010 0110 1111 0000 · la trama entera, bit a bit</text>
+
+      <rect x="150" y="338" width="560" height="46" rx="6" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="164" y="357" font-size="11.5" fill="var(--texto)">Cada capa añade su cabecera y NO quita la de arriba: el mensaje solo crece.</text>
+      <text x="164" y="374" font-size="11.5" fill="var(--texto)">Al recibir, cada capa quita la suya y entrega el resto hacia arriba.</text>
+    </g>
+  </svg>
+  <figcaption>
+    La cabecera de cada capa envuelve el contenido de la capa superior. El reparto de colores marca lo
+    que añade cada paso: TCP en el transporte, IP en la red y la cabecera Ethernet con su control de
+    errores en el enlace.
+  </figcaption>
+</figure>
+
+<h3>5.2. El recorrido, paso a paso</h3>
+<p>
+  Supón que un agente pulsa un enlace del temario. En su equipo pasan estas cosas, en este orden:
+</p>
+<ol>
+  <li>
+    <strong>Aplicación.</strong> El navegador construye una petición HTTP con su método, su ruta y sus
+    cabeceras (RFC 9110). Esa es la primera SDU: todavía no tiene nada de red.
+  </li>
+  <li>
+    <strong>Transporte.</strong> TCP antepone su cabecera: puertos de origen y destino, número de
+    secuencia, acuse de recibo, banderas, ventana y suma de control (RFC 9293, §3.1). El resultado es un
+    <strong>segmento</strong>, y su tamaño máximo se negocia para no pasarse del MTU (RFC 9293, §3.7.1).
+  </li>
+  <li>
+    <strong>Red.</strong> IP antepone su cabecera de 20 octetos como mínimo: versión, longitud total,
+    identificador, banderas, desplazamiento de fragmento, tiempo de vida, protocolo (6 para TCP), suma de
+    control, dirección origen y dirección destino (RFC 791, §3.1). El resultado es un
+    <strong>paquete</strong>.
+  </li>
+  <li>
+    <strong>Enlace.</strong> Para entregarlo en el primer tramo hace falta una dirección física: el
+    equipo la pregunta con <strong>ARP</strong> (RFC 826) y encapsula el datagrama en una trama Ethernet
+    con la MAC de destino, la de origen, el tipo 0x0800 y una suma de control; el campo de datos admite
+    hasta 1500 octetos, que es el MTU de Ethernet (RFC 894).
+  </li>
+  <li>
+    <strong>Física.</strong> La trama se convierte en señales. Aquí ya no hay direcciones, solo bits.
+  </li>
+</ol>
+<p>
+  En el camino, cada <strong>encaminador</strong> repite tres pasos por paquete: quita la trama de
+  enlace, mira la dirección IP de destino, consulta su tabla, decrementa el tiempo de vida, recalcula la
+  suma de control de la cabecera y encapsula en una trama nueva. El datagrama no cambia de contenido
+  salvo esos campos; la trama sí cambia entera.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    La suma de control de la cabecera IP <strong>se recalcula en cada salto</strong>, porque el tiempo de
+    vida cambia (RFC 791, §3.1). Si una pregunta dice que el encaminador no toca el paquete, es falsa.
+    Lo que no toca son las direcciones IP de origen y destino ni los datos.
+  </p>
+</div>
+
+<h3>5.3. Qué se fragmenta y quién</h3>
+<p>
+  Si el datagrama es mayor que el MTU del tramo, hay que partirlo. En IPv4 puede fragmentar el encaminador
+  y el destino reensambla (RFC 791, §3.2); en IPv6 la fragmentación «solo la realizan los nodos origen, no
+  los encaminadores» (RFC 8200, §4.5), así que el origen averigua el MTU del camino o se queda en 1280
+  octetos, el mínimo que todo enlace IPv6 debe soportar (RFC 8200, §5).
+</p>
+
+<h2>6. El modelo TCP/IP y su correspondencia con OSI</h2>
+
+<h3>6.1. Las capas del conjunto de protocolos de Internet</h3>
+<p>
+  El RFC 1122 fija el vocabulario oficial y enumera cuatro capas (§1.1.3):
+</p>
+<ul>
+  <li>
+    <strong>Aplicación</strong>: capa superior, que el conjunto de Internet no subdivide y que
+    «esencialmente combina las funciones de las dos capas superiores —presentación y aplicación— del
+    modelo de referencia OSI».
+  </li>
+  <li>
+    <strong>Transporte</strong>: comunicación extremo a extremo para las aplicaciones; sus dos
+    protocolos principales son TCP, fiable y orientado a conexión, y UDP, sin conexión.
+  </li>
+  <li>
+    <strong>Internet</strong>: todos los protocolos de transporte usan IP para llevar los datos de un
+    host a otro; IP es un servicio de datagramas sin garantías, y las capas de arriba se encargan de la
+    fiabilidad. ICMP forma parte de esta capa aunque viaje sobre IP.
+  </li>
+  <li>
+    <strong>Enlace</strong>: el protocolo de la red directamente conectada, con «una amplia variedad de
+    protocolos de enlace».
+  </li>
+</ul>
+<p>
+  Y hay dos precisiones que el examen explota: el glosario del IETF dice que «TCP/IP tiene cinco capas
+  de protocolos» (RFC 1983, entrada <strong>layer</strong>) porque separa el <strong>hardware de
+  red</strong> del <strong>interfaz de red</strong>; y su glosario de seguridad dibuja esa misma
+  separación en cinco columnas: Network H/W, Network Interface, Internet, Transport y Application (RFC
+  4949, tabla del apartado <strong>OSIRM Security Architecture</strong>).
+</p>
+
+<h3>6.2. La correspondencia, capa a capa</h3>
+<figure>
+  <svg viewBox="0 0 760 430" role="img" aria-labelledby="fig-modelos">
+    <title id="fig-modelos">Correspondencia entre las siete capas de OSI y las cuatro capas de TCP/IP</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <text x="30" y="26" font-size="13" font-weight="700" fill="var(--texto)">OSI (ISO/IEC 7498-1)</text>
+      <text x="470" y="26" font-size="13" font-weight="700" fill="var(--texto)">TCP/IP (RFC 1122)</text>
+
+      <rect x="30" y="44" width="290" height="34" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="44" y="66" font-size="12" fill="var(--texto)">7 · Aplicación</text>
+      <rect x="30" y="82" width="290" height="34" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="44" y="104" font-size="12" fill="var(--texto)">6 · Presentación</text>
+      <rect x="30" y="120" width="290" height="34" rx="5" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="44" y="142" font-size="12" fill="var(--texto)">5 · Sesión</text>
+      <rect x="30" y="176" width="290" height="34" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="44" y="198" font-size="12" fill="var(--texto)">4 · Transporte</text>
+      <rect x="30" y="232" width="290" height="34" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="44" y="254" font-size="12" fill="var(--texto)">3 · Red</text>
+      <rect x="30" y="288" width="290" height="34" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="44" y="310" font-size="12" fill="var(--texto)">2 · Enlace de datos</text>
+      <rect x="30" y="326" width="290" height="34" rx="5" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="44" y="348" font-size="12" fill="var(--texto)">1 · Física</text>
+
+      <rect x="470" y="44" width="260" height="110" rx="6" fill="var(--acento)" />
+      <text x="600" y="86" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">Aplicación</text>
+      <text x="600" y="108" font-size="10.5" fill="#dbe9f4" text-anchor="middle">absorbe sesión y presentación</text>
+      <text x="600" y="126" font-size="10.5" fill="#dbe9f4" text-anchor="middle">HTTP · DNS · DHCP · SMTP</text>
+
+      <rect x="470" y="176" width="260" height="34" rx="6" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="600" y="198" font-size="13" font-weight="600" fill="var(--texto)" text-anchor="middle">Transporte · TCP · UDP</text>
+
+      <rect x="470" y="232" width="260" height="34" rx="6" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="600" y="254" font-size="13" font-weight="600" fill="var(--texto)" text-anchor="middle">Internet · IP · ICMP</text>
+
+      <rect x="470" y="288" width="260" height="72" rx="6" fill="var(--acento)" />
+      <text x="600" y="318" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">Enlace</text>
+      <text x="600" y="338" font-size="10.5" fill="#dbe9f4" text-anchor="middle">Ethernet · Wi-Fi · PPP</text>
+
+      <path d="M332 44 L462 44" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M332 154 L462 100" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M332 193 L462 193" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M332 249 L462 249" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M332 305 L462 316" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M332 343 L462 330" stroke="var(--texto-suave)" stroke-width="1.4" />
+
+      <rect x="30" y="382" width="700" height="38" rx="6" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="46" y="406" font-size="11.5" fill="var(--texto)">La correspondencia es aproximada: los dos modelos se diseñaron por separado. Solo las capas 3 y 4 coinciden una a una.</text>
+    </g>
+  </svg>
+  <figcaption>
+    Las tres capas superiores de OSI caen en la aplicación de TCP/IP; las dos inferiores, en el enlace.
+  </figcaption>
+</figure>
+<table>
+  <caption>Tabla de equivalencias y advertencias</caption>
+  <thead>
+    <tr><th>OSI</th><th>TCP/IP</th><th>Qué se pierde al pasar de uno a otro</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aplicación, presentación y sesión (7, 6, 5)</td>
+      <td><strong>Aplicación</strong></td>
+      <td>No hay negociación de sintaxis ni gestión de diálogo como servicios independientes: lo
+        resuelve cada protocolo de aplicación (RFC 1122, §1.1.3)</td>
+    </tr>
+    <tr>
+      <td>Transporte (4)</td>
+      <td><strong>Transporte</strong></td>
+      <td>Nada esencial: TCP y UDP cubren el extremo a extremo</td>
+    </tr>
+    <tr>
+      <td>Red (3)</td>
+      <td><strong>Internet</strong></td>
+      <td>Coinciden en función; IP añade el direccionamiento y el encaminamiento reales</td>
+    </tr>
+    <tr>
+      <td>Enlace de datos y física (2, 1)</td>
+      <td><strong>Enlace</strong> (o «interfaz de red», o «hardware de red»)</td>
+      <td>Se agrupan; algunos textos las separan y entonces hablan de cinco capas (RFC 1983,
+        <strong>layer</strong>; RFC 4949, tabla de capas IPS)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.3. Qué capa de OSI no tiene equivalente y qué significa</h3>
+<p>
+  Las capas de <strong>sesión</strong> y <strong>presentación</strong> no existen como servicios
+  independientes en TCP/IP: sus funciones se reparten entre la capa de aplicación y los protocolos
+  concretos. Un ejemplo claro es TLS, que en el modelo de Internet se considera parte de la aplicación
+  aunque haga algo que OSI situaría en presentación.
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «TCP/IP tiene una capa de sesión» es <strong>falso</strong>, y «OSI tiene una capa de Internet»
+    también: la capa de Internet es el nombre que da TCP/IP a la de red.
+  </p>
+</div>
+
+<h2>7. Por qué ganó TCP/IP</h2>
+
+<h3>7.1. Un dato con fecha</h3>
+<p>
+  El documento que zanjó la cuestión es el <strong>RFC 801</strong>, «NCP/TCP Transition Plan», de
+  noviembre de 1981. Su plan general dice, literalmente, que «el objetivo es hacer un cambio completo de
+  NCP a IP/TCP para el <strong>1 de enero de 1983</strong>», y reparte la tarea: cada organización tenía
+  que implementar IP/TCP en sus equipos y, además, los servicios principales —Telnet, transferencia de
+  ficheros y correo— sobre esa base. Ese párrafo es la respuesta documentable a «¿por qué TCP/IP?»: la red
+  experimental que después sería Internet tenía que hablar un solo conjunto de protocolos, y el elegido fue
+  IP/TCP. Fíjate en que el RFC 801 no habla de OSI: los dos proyectos fueron paralelos y con propósitos
+  distintos, porque OSI nació como <strong>modelo de referencia</strong> para normalizar la interconexión
+  de sistemas abiertos (X.200) y TCP/IP como <strong>conjunto de protocolos</strong> que había que hacer
+  funcionar en máquinas reales.
+</p>
+
+<h3>7.2. Las dos razones técnicas que sí están documentadas</h3>
+<ul>
+  <li>
+    <strong>La robustez como principio de diseño.</strong> El RFC 791 lo escribe en su apartado de
+    discusión: una implementación «debe ser conservadora al enviar y liberal al recibir», es decir,
+    enviar datagramas bien formados y aceptar cualquiera que se pueda interpretar (§3.2). Ese criterio
+    favorece que equipos distintos y de generaciones distintas acaben hablando.
+  </li>
+  <li>
+    <strong>Capas independientes.</strong> El glosario del IETF señala como ventaja de las capas que los
+    métodos de paso entre ellas están especificados y que «los cambios dentro de una capa no afectan a
+    las demás» (RFC 1983, <strong>layer</strong>). Eso permitió cambiar Ethernet sin tocar IP, y IP sin
+    tocar HTTP.
+  </li>
+</ul>
+<p>
+  Se oye a menudo que «OSI fracasó por la burocracia de ISO» o «porque sus protocolos eran pesados».
+  Ninguna de esas dos afirmaciones se sostiene con un RFC ni con la norma, así que aquí no se hacen; el
+  detalle está en la caja del apartado 24.
+</p>
+<h2>8. Dispositivos de capa 1 y capa 2: concentrador y conmutador</h2>
+<p>
+  Antes de entrar en cada aparato, fija el criterio del apartado 3.3: un dispositivo pertenece a una
+  capa si <strong>ejecuta el relevo de esa capa</strong>. Todo lo que sigue se deduce de ahí, y así no
+  hay que memorizar listas que se olvidan.
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 400" role="img" aria-labelledby="fig-dispositivos">
+    <title id="fig-dispositivos">Qué información lee cada dispositivo: concentrador, conmutador, encaminador y proxy</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <text x="24" y="26" font-size="13" font-weight="700" fill="var(--texto)">De menos a más información: cuatro aparatos y lo que miran</text>
+
+      <rect x="24" y="44" width="150" height="66" rx="6" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="99" y="70" font-size="12.5" font-weight="700" fill="var(--texto)" text-anchor="middle">Capa 1</text>
+      <text x="99" y="90" font-size="11" fill="var(--texto-suave)" text-anchor="middle">física</text>
+
+      <rect x="196" y="44" width="220" height="66" rx="6" fill="var(--acento)" />
+      <text x="306" y="70" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Concentrador (hub)</text>
+      <text x="306" y="90" font-size="10.5" fill="#dbe9f4" text-anchor="middle">repetidor multipuerto</text>
+
+      <text x="440" y="68" font-size="11.5" fill="var(--texto)">No lee ninguna dirección:</text>
+      <text x="440" y="86" font-size="11.5" fill="var(--texto)">regenera la señal y la repite</text>
+      <text x="440" y="102" font-size="11.5" fill="var(--texto)">por todos los puertos</text>
+
+      <rect x="24" y="130" width="150" height="66" rx="6" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="99" y="156" font-size="12.5" font-weight="700" fill="var(--texto)" text-anchor="middle">Capa 2</text>
+      <text x="99" y="176" font-size="11" fill="var(--texto-suave)" text-anchor="middle">enlace</text>
+
+      <rect x="196" y="130" width="220" height="66" rx="6" fill="var(--acento)" />
+      <text x="306" y="156" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Conmutador (switch)</text>
+      <text x="306" y="176" font-size="10.5" fill="#dbe9f4" text-anchor="middle">puente multipuerto</text>
+
+      <text x="440" y="154" font-size="11.5" fill="var(--texto)">Lee la MAC de destino de la</text>
+      <text x="440" y="170" font-size="11.5" fill="var(--texto)">trama y la envía solo por</text>
+      <text x="440" y="186" font-size="11.5" fill="var(--texto)">el puerto correspondiente</text>
+
+      <rect x="24" y="216" width="150" height="66" rx="6" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="99" y="242" font-size="12.5" font-weight="700" fill="var(--texto)" text-anchor="middle">Capa 3</text>
+      <text x="99" y="262" font-size="11" fill="var(--texto-suave)" text-anchor="middle">red</text>
+
+      <rect x="196" y="216" width="220" height="66" rx="6" fill="var(--acento)" />
+      <text x="306" y="242" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Encaminador (router)</text>
+      <text x="306" y="262" font-size="10.5" fill="#dbe9f4" text-anchor="middle">conmuta paquetes IP</text>
+
+      <text x="440" y="240" font-size="11.5" fill="var(--texto)">Lee la IP de destino, consulta</text>
+      <text x="440" y="256" font-size="11.5" fill="var(--texto)">su tabla de rutas y cambia la</text>
+      <text x="440" y="272" font-size="11.5" fill="var(--texto)">trama en cada salto</text>
+
+      <rect x="24" y="302" width="150" height="66" rx="6" fill="var(--superficie-alt)" stroke="var(--borde)" />
+      <text x="99" y="328" font-size="12.5" font-weight="700" fill="var(--texto)" text-anchor="middle">Capa 7</text>
+      <text x="99" y="348" font-size="11" fill="var(--texto-suave)" text-anchor="middle">aplicación</text>
+
+      <rect x="196" y="302" width="220" height="66" rx="6" fill="var(--clave-borde)" />
+      <text x="306" y="328" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Proxy</text>
+      <text x="306" y="348" font-size="10.5" fill="#eaf4ee" text-anchor="middle">relevo de la transacción</text>
+
+      <text x="440" y="326" font-size="11.5" fill="var(--texto)">Abre la petición, la entiende y</text>
+      <text x="440" y="342" font-size="11.5" fill="var(--texto)">la reenvía en nombre del cliente:</text>
+      <text x="440" y="358" font-size="11.5" fill="var(--texto)">puede filtrar, cachear y registrar</text>
+
+      <path d="M170 77 L192 77" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M170 163 L192 163" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M170 249 L192 249" stroke="var(--texto-suave)" stroke-width="1.4" />
+      <path d="M170 335 L192 335" stroke="var(--texto-suave)" stroke-width="1.4" />
+    </g>
+  </svg>
+  <figcaption>
+    Cuanto más arriba trabaja un aparato, más información del mensaje tiene que abrir y más caro le
+    resulta mover cada bit. De ahí sale la regla práctica: se pone el aparato más simple que resuelva
+    el problema.
+  </figcaption>
+</figure>
+
+<h3>8.1. El concentrador (hub): capa 1</h3>
+<p>
+  El concentrador es un <strong>repetidor multipuerto</strong>. El glosario del IETF define repetidor
+  como «un dispositivo que propaga señales eléctricas de un cable a otro» (RFC 1983, entrada
+  <strong>repeater</strong>), y la norma OSI sitúa esa función en la capa física: una conexión física
+  «puede implicar sistemas abiertos intermedios, cada uno de los cuales retransmite la transmisión de
+  bits dentro de la capa física» (X.200, §7.7.2). «Concentrador» y «hub» son nombres comerciales de ese
+  mismo aparato; la equivalencia es terminología de mercado y así se declara en el apartado 24.
+</p>
+<p>Tres consecuencias que el examen pregunta como si fueran tres hechos distintos:</p>
+<ul>
+  <li><strong>No filtra nada:</strong> todo lo que entra por un puerto sale por todos los demás.</li>
+  <li><strong>No aprende direcciones:</strong> no tiene tabla de MAC, porque no lee la trama.</li>
+  <li>
+    <strong>Comparte el medio:</strong> todos los equipos siguen formando una sola red a efectos de
+    tráfico, así que dos transmisiones simultáneas se estorban (RFC 1983, <strong>broadcast storm</strong>
+    y <strong>Ethernet meltdown</strong>).
+  </li>
+</ul>
+
+<h3>8.2. El conmutador (switch): capa 2</h3>
+<p>
+  El conmutador es un <strong>puente multipuerto</strong>, y aquí sí hay definición normativa. El glosario
+  del IETF dice que un puente es «un dispositivo que reenvía tráfico entre segmentos de red basándose en
+  información de la capa de enlace de datos», y añade el detalle que lo distingue del encaminador: «estos
+  segmentos tendrían una dirección de capa de red común» (RFC 1983, <strong>bridge</strong>). El glosario
+  de seguridad lo dice igual: «una pasarela para el tráfico que fluye en la capa 2 del modelo OSI entre dos
+  redes» (RFC 4949, <strong>bridge</strong>). El RFC 1812 saca la consecuencia que más se pregunta: los
+  segmentos unidos por puentes «comparten el mismo prefijo de red IP formando una única subred IP»
+  (§2.2.3), es decir, <strong>un switch no separa subredes</strong>.
+</p>
+<table>
+  <caption>Concentrador frente a conmutador: las diferencias que se preguntan</caption>
+  <thead>
+    <tr><th></th><th>Concentrador (hub)</th><th>Conmutador (switch)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Capa</td><td>1, física</td><td>2, enlace de datos</td></tr>
+    <tr><td>Qué lee</td><td>Nada: solo la señal eléctrica u óptica</td><td>La dirección MAC de destino de cada trama</td></tr>
+    <tr><td>Por dónde reenvía</td><td>Por todos los puertos menos el de entrada</td><td>Solo por el puerto donde está el destino</td></tr>
+    <tr><td>Efecto en la red IP</td><td>Ninguno: todos los puertos son el mismo medio</td><td>Ninguno: todos los puertos siguen en la misma subred (RFC 1812, §2.2.3)</td></tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «El switch trabaja en la capa 3 porque lee direcciones» es falso: lee <strong>direcciones
+    físicas</strong> (MAC), que son de capa 2. Existen conmutadores que además ejecutan relevo de capa 3,
+    y esos ya no son aparatos de capa 2; la pregunta honesta es siempre la misma: ¿qué dirección lee para
+    decidir?
+  </p>
+</div>
+
+<h2>9. El encaminador (router): la capa 3</h2>
+<p>
+  El RFC 1812, norma de requisitos para los encaminadores IPv4, lo define con precisión: en el modelo de
+  Internet, las redes constituyentes se conectan mediante «reenviadores de datagramas IP llamados
+  encaminadores»; un encaminador se conecta a <strong>dos o más interfaces lógicas</strong>, representadas
+  por subredes IP o líneas punto a punto; reenviar un datagrama exige elegir la dirección y la interfaz del
+  siguiente salto y esa elección —«llamada relevo o reenvío»— depende de una base de rutas (§2.2.3). El
+  glosario del IETF da las dos versiones cortas que suelen aparecer en los test: «un dispositivo que
+  reenvía tráfico entre redes, con la decisión basada en información de la capa de red y en tablas de
+  rutas» (RFC 1983, <strong>router</strong>) y, en clave OSI, «un ordenador que es una pasarela entre dos
+  redes en la capa 3» (RFC 4949, <strong>router</strong>).
+</p>
+
+<h3>9.1. Switch frente a router, en una tabla</h3>
+<table>
+  <caption>Conmutador y encaminador: qué cambia y por qué importa</caption>
+  <thead>
+    <tr><th>Criterio</th><th>Conmutador (capa 2)</th><th>Encaminador (capa 3)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dirección que usa</td><td>MAC, 48 bits, del hardware</td><td>IP, 32 o 128 bits, lógica</td></tr>
+    <tr><td>Unidad que maneja</td><td>Trama</td><td>Paquete o datagrama</td></tr>
+    <tr><td>Alcance</td><td>Dentro de la misma red</td><td>Entre redes distintas</td></tr>
+    <tr><td>Tabla</td><td>Direcciones físicas por puerto</td><td>Redes de destino, máscara, siguiente salto e interfaz</td></tr>
+    <tr><td>¿Separa subredes?</td><td>No (RFC 1812, §2.2.3)</td><td>Sí: cada interfaz está en una subred distinta</td></tr>
+    <tr><td>¿Filtra difusiones?</td><td>No: las propaga</td><td>Sí: no reenvía la difusión de una subred a otra</td></tr>
+    <tr><td>¿Toca el TTL?</td><td>No, no lo ve</td><td>Sí: lo decrementa y descarta el paquete si llega a cero</td></tr>
+  </tbody>
+</table>
+
+<h3>9.2. Cómo se construye la tabla de rutas</h3>
+<p>
+  Un encaminador necesita saber, para cada red de destino, por qué interfaz y hacia qué vecino salir.
+  Puede saberlo por rutas <strong>directamente conectadas</strong> (las de sus propias interfaces, que no
+  necesitan protocolo), por rutas <strong>estáticas</strong> (las escribe el administrador) o por rutas
+  <strong>dinámicas</strong> (las aprende de otros encaminadores): el RFC 1812 describe la base de rutas
+  como algo «mantenido dinámicamente para reflejar la topología actual», lo que un encaminador consigue
+  «participando en algoritmos distribuidos de encaminamiento y alcanzabilidad» (§2.2.3). La lista
+  concreta de protocolos de encaminamiento queda fuera de este epígrafe.
+</p>
+<p>
+  El RFC 1812 añade un rasgo de diseño que conviene citar: los encaminadores «proporcionan solo
+  transporte de datagramas» y buscan <strong>minimizar la información de estado</strong> necesaria, en
+  aras de la flexibilidad y la robustez del encaminamiento (§2.2.3).
+</p>
+
+<h2>10. Cortafuegos: tipos y reglas</h2>
+
+<h3>10.1. Qué es</h3>
+<p>
+  El glosario de seguridad del IETF lo define en dos planos: es una «pasarela de interconexión que
+  restringe el tráfico de datos hacia y desde una de las redes conectadas —la de dentro— y protege así los
+  recursos de esa red frente a las amenazas de la otra», y, en su segunda acepción, «un dispositivo o
+  sistema que controla el flujo de tráfico entre redes con posturas de seguridad distintas» (RFC 4949,
+  entrada <strong>firewall</strong>). Dos ideas de esa entrada son oro para el examen: el cortafuegos «se
+  instala en el punto donde las redes se conectan» y aplica reglas de política al tráfico que entra y sale;
+  y <strong>no tiene por qué ser un solo ordenador</strong>, porque el glosario describe cortafuegos
+  formados por «un par de encaminadores filtrantes y uno o más servidores proxy» en una LAN pequeña y
+  dedicada entre ambos, que es la <strong>zona de amortiguación</strong> (buffer zone) o DMZ: «un segmento
+  de interconexión neutral usado para conectar otros segmentos que operan bajo políticas de seguridad
+  distintas» (RFC 4949, <strong>buffer zone</strong>).
+</p>
+
+<h3>10.2. Los tipos, según cómo tratan el tráfico</h3>
+<p>
+  La clasificación más sólida es la del RFC 2979, que distingue dos maneras de trabajar y su mezcla:
+  «los cortafuegos actúan o bien como <strong>punto final de protocolo y relevo</strong> (por ejemplo,
+  un agente proxy web), o bien como <strong>filtro de paquetes</strong>, o bien como alguna combinación
+  de ambos» (§2).
+</p>
+<table>
+  <caption>Tipos de cortafuegos y qué mira cada uno</caption>
+  <thead>
+    <tr><th>Tipo</th><th>Cómo decide</th><th>Qué puede ver</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Filtro de paquetes</strong></td>
+      <td>Compara campos de la cabecera con una lista de reglas y pasa, descarta o trata el paquete</td>
+      <td>Direcciones IP de origen y destino y puertos TCP; el RFC 4949 cita además las opciones IP y
+        los fragmentos</td>
+      <td>RFC 2979, §2; RFC 4949, <strong>filtering router</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Filtro con estado</strong></td>
+      <td>Añade la memoria de las conexiones pasadas y presentes a la decisión</td>
+      <td>Lo anterior más el estado de cada conexión</td>
+      <td>NIST SP 800-82r3, apéndice E.1.1</td>
+    </tr>
+    <tr>
+      <td><strong>Cortafuegos de aplicación</strong> (proxy)</td>
+      <td>Termina el protocolo, lo valida y lo vuelve a emitir en nombre del cliente</td>
+      <td>La transacción completa: método, URL, cabeceras, contenido</td>
+      <td>RFC 2979, §2; RFC 4949, <strong>proxy</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Pasarela de próxima generación</strong></td>
+      <td>Amplía el filtro con estado con inspección profunda, filtrado por aplicación y detección de amenazas</td>
+      <td>Todo lo anterior más el contenido</td>
+      <td>NIST SP 800-82r3, apéndice E.1.1</td>
+    </tr>
+  </tbody>
+</table>
+<h3>10.3. Cómo se escribe una regla</h3>
+<p>
+  Una regla de filtrado tiene <strong>condiciones</strong> y una <strong>acción</strong>. Las condiciones
+  son los campos que el aparato puede leer; la acción es, en palabras del RFC 2979, «pasar el paquete al
+  otro lado sin cambios, descartarlo por completo o tratarlo de alguna manera» (§2). Las reglas se evalúan
+  de arriba abajo y <strong>se aplica la primera que coincide</strong>; por eso el orden importa tanto
+  como el contenido, y por eso al final se pone una regla por defecto.
+</p>
+<table>
+  <caption>Ejemplo de tabla de reglas de un cortafuegos de filtrado</caption>
+  <thead>
+    <tr><th>N.º</th><th>Origen</th><th>Destino</th><th>Protocolo y puerto</th><th>Acción</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Red interna</td><td>Cualquiera</td><td>TCP 443</td><td>Permitir</td></tr>
+    <tr><td>2</td><td>Cualquiera</td><td>Servidor web de la DMZ</td><td>TCP 443</td><td>Permitir</td></tr>
+    <tr><td>3</td><td>Cualquiera</td><td>Red interna</td><td>Cualquiera</td><td>Denegar</td></tr>
+    <tr><td>4</td><td>Cualquiera</td><td>Cualquiera</td><td>Cualquiera</td><td>Denegar (por defecto)</td></tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Un cortafuegos <strong>no es un antivirus</strong> y no «cifra» nada. Y no basta con filtrar la
+    entrada: la regla 4 del ejemplo existe porque un cortafuegos que solo mira hacia fuera deja salir
+    cualquier cosa. El RFC 2979 lo recuerda al decir que el cortafuegos tiene que dejar pasar el tráfico
+    autorizado en los dos sentidos (§2).
+  </p>
+</div>
+<h2>11. Servidores DHCP</h2>
+
+<h3>11.1. El problema que resuelve</h3>
+<p>
+  Un equipo recién conectado necesita, como mínimo, cuatro datos para hablar por IP: su dirección, la
+  máscara de su red, la dirección de su encaminador y la de un servidor de nombres. Escribirlos a mano
+  en cada equipo no escala. El <strong>DHCP</strong> los entrega automáticamente: su nombre completo es
+  Dynamic Host Configuration Protocol, protocolo de configuración dinámica de equipos, y su
+  especificación es el <strong>RFC 2131</strong>, con las opciones en el <strong>RFC 2132</strong>.
+</p>
+
+<h3>11.2. Los puertos y el sentido del tráfico</h3>
+<p>
+  DHCP funciona sobre <strong>UDP</strong> y usa dos puertos: los mensajes del cliente al servidor van
+  al puerto <strong>67</strong> («DHCP server») y los del servidor al cliente, al puerto
+  <strong>68</strong> («DHCP client») (RFC 2131, §4.1). Es una pregunta de una línea que aparece mucho,
+  así que memorízala al revés de lo que parece natural: <strong>67 es el servidor, 68 el cliente</strong>.
+</p>
+
+<h3>11.3. El reparto en cuatro mensajes: DORA</h3>
+<p>
+  El RFC 2131 describe la interacción típica en cuatro pasos (§3.1). Se conocen por sus iniciales en
+  inglés, que forman la palabra <strong>DORA</strong>:
+</p>
+<table>
+  <caption>Los cuatro mensajes del reparto de una dirección</caption>
+  <thead>
+    <tr><th>Paso</th><th>Mensaje</th><th>Quién lo envía</th><th>Qué dice</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>DHCPDISCOVER</strong></td>
+      <td>Cliente, en difusión</td>
+      <td>Busca servidores disponibles. Va en difusión porque todavía no tiene dirección ni sabe quién
+        es el servidor</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>DHCPOFFER</strong></td>
+      <td>Servidor</td>
+      <td>Ofrece una dirección disponible en el campo <span class="documento__ref">yiaddr</span> y el
+        resto de parámetros en opciones</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>DHCPREQUEST</strong></td>
+      <td>Cliente, en difusión</td>
+      <td>Pide los parámetros ofrecidos por un servidor y, con ello, rechaza implícitamente las ofertas
+        de los demás</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>DHCPACK</strong></td>
+      <td>Servidor</td>
+      <td>Confirma la dirección y entrega los parámetros definitivos</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  La especificación define cuatro mensajes más que el examen pregunta de vez en cuando:
+  <strong>DHCPNAK</strong> (el servidor avisa de que la dirección que cree tener el cliente no vale),
+  <strong>DHCPDECLINE</strong> (el cliente avisa de que la dirección ya está en uso),
+  <strong>DHCPRELEASE</strong> (el cliente renuncia a la dirección y cancela el arrendamiento) y
+  <strong>DHCPINFORM</strong> (el cliente ya tiene dirección y solo pide parámetros locales). Están en
+  la tabla de mensajes del RFC 2131, §3.1.
+</p>
+<div class="clave">
+  <span class="clave__titulo">Dos detalles que valen una pregunta</span>
+  <ul>
+    <li>
+      Antes de ofrecer una dirección, el servidor «debería» comprobar que no está en uso; el RFC 2131
+      propone, como ejemplo, sondearla con una petición de eco ICMP (§3.1).
+    </li>
+    <li>
+      Si el servidor está en otra subred, la difusión inicial no le llegaría. Por eso existe el
+      <strong>agente de relevo</strong> DHCP: el RFC 2131 prevé que los agentes de relevo BOOTP
+      reenvíen el mensaje a servidores que no están en la misma subred física (§3.1).
+    </li>
+  </ul>
+</div>
+
+<h3>11.4. El arrendamiento y sus dos relojes</h3>
+<p>
+  La dirección no es para siempre: se <strong>alquila</strong> por un tiempo, el «lease time», con dos
+  temporizadores, T1 y T2, y una regla de orden estricta: T1 antes que T2 y T2 antes del vencimiento (RFC
+  2131, §4.4.5). <strong>En T1</strong> el cliente pasa al estado RENEWING y pide la renovación
+  <strong>por unidifusión al servidor que le dio la dirección</strong>; T1 vale por defecto la mitad del
+  arrendamiento. <strong>En T2</strong>, si nadie ha contestado, pasa al estado REBINDING y manda la
+  petición <strong>en difusión a cualquier servidor</strong>; T2 vale por defecto 0,875 × duración. Los dos
+  son configurables por el servidor y se expresan como tiempos relativos para no depender de relojes
+  sincronizados (§4.4.5).
+</p>
+
+<h3>11.5. Las opciones: los demás datos viajan aquí</h3>
+<table>
+  <caption>Opciones DHCP que hay que reconocer por su número</caption>
+  <thead>
+    <tr><th>Código</th><th>Opción</th><th>Qué entrega</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Máscara de subred</td><td>La máscara del cliente, según el RFC 950</td><td>RFC 2132, §3.3</td></tr>
+    <tr><td>3</td><td>Encaminador</td><td>Lista de direcciones de encaminadores de la subred, por orden de preferencia</td><td>RFC 2132, §3.5</td></tr>
+    <tr><td>6</td><td>Servidor de nombres de dominio</td><td>Lista de servidores DNS disponibles</td><td>RFC 2132, §3.8</td></tr>
+    <tr><td>51</td><td>Tiempo de arrendamiento</td><td>Duración en segundos, entero de 32 bits</td><td>RFC 2132, §9.2</td></tr>
+  </tbody>
+</table>
+
+<h3>11.6. Cuando no hay DHCP: la dirección local de enlace</h3>
+<p>
+  Si nadie contesta, el equipo no se queda sin red del todo. El RFC 3927 define cómo autoconfigurar una
+  dirección IPv4 dentro del prefijo <strong>169.254/16</strong>, válida para comunicarse con los equipos
+  del mismo enlace, y advierte de que esas direcciones no sirven para hablar con equipos no conectados
+  directamente al mismo enlace. Es la explicación de las direcciones «169.254.x.x» que aparecen cuando el
+  servidor no responde.
+</p>
+<p>
+  En IPv6 el servicio equivalente es el <strong>DHCPv6</strong> (RFC 8415), con tres diferencias que se
+  preguntan: los mensajes se llaman <strong>Solicit</strong>, <strong>Advertise</strong>,
+  <strong>Request</strong> y <strong>Reply</strong> (§5.2); los puertos son el UDP <strong>546</strong>
+  para el cliente y el <strong>547</strong> para servidores y agentes de relevo (§7.2); y compite con la
+  autoconfiguración sin estado, con dos banderas en el anuncio de encaminador que reparten el trabajo: la
+  <strong>M</strong> («Managed address configuration») indica que hay direcciones que se piden por
+  DHCPv6 y la <strong>O</strong> («Other configuration») que hay otros parámetros, como los servidores
+  DNS, que también se piden por DHCPv6 (RFC 4861, §4.2).
+</p>
+
+<h2>12. Servidores DNS</h2>
+
+<h3>12.1. Los tres componentes</h3>
+<p>
+  El <strong>DNS</strong> (Domain Name System) traduce nombres a direcciones y hace mucho más, pero su
+  arquitectura se entiende con las tres piezas que enumera el RFC 1034, §2.4: el <strong>espacio de
+  nombres y los registros de recursos</strong> (un árbol de nombres y los datos asociados a cada nodo),
+  los <strong>servidores de nombres</strong> (programas que tienen información completa de una parte del
+  árbol —son <strong>autoridad</strong> sobre ella— y punteros a otros servidores; la información
+  autoritativa se organiza en <strong>zonas</strong>) y los <strong>resolvedores</strong> (programas que
+  extraen la información de los servidores en respuesta a las peticiones de los clientes).
+</p>
+<p>
+  En la jerarquía, la <strong>raíz</strong> se representa con un punto; debajo están los dominios de primer
+  nivel (genéricos como <span class="documento__ref">.com</span> y territoriales como
+  <span class="documento__ref">.es</span>) y después los de segundo nivel. La raíz no la sirve un solo
+  aparato: la IANA publica <strong>trece identidades de servidor raíz</strong>, de
+  <span class="documento__ref">a.root-servers.net</span> a
+  <span class="documento__ref">m.root-servers.net</span>.
+</p>
+
+<h3>12.2. Los tipos de registro</h3>
+<table>
+  <caption>Tipos de registro que el examen pregunta, con su función</caption>
+  <thead>
+    <tr><th>Tipo</th><th>Qué guarda</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>A</strong></td><td>Una dirección IPv4 de 32 bits</td><td>RFC 1035, §3.4.1</td></tr>
+    <tr><td><strong>AAAA</strong></td><td>Una dirección IPv6</td><td>RFC 3596, §2.1</td></tr>
+    <tr><td><strong>CNAME</strong></td><td>Un alias: el nombre canónico al que apunta otro nombre</td><td>RFC 1035, §3.3.1</td></tr>
+    <tr><td><strong>NS</strong></td><td>El servidor de nombres autoritativo de una zona</td><td>RFC 1035, §3.3.11</td></tr>
+    <tr><td><strong>SOA</strong></td><td>El inicio de autoridad de la zona: servidor primario, responsable y
+      parámetros de la zona</td><td>RFC 1035, §3.3.13</td></tr>
+    <tr><td><strong>PTR</strong></td><td>Un puntero: se usa para la resolución inversa, de dirección a nombre</td><td>RFC 1035, §3.3.12</td></tr>
+    <tr><td><strong>MX</strong></td><td>El servidor de correo de un dominio, con su preferencia</td><td>RFC 1035, §3.3.9</td></tr>
+    <tr><td><strong>TXT</strong></td><td>Texto libre asociado al nombre</td><td>RFC 1035, §3.3.14</td></tr>
+  </tbody>
+</table>
+<p>
+  La resolución inversa no inventa un tipo nuevo: usa <strong>PTR</strong> sobre un dominio especial,
+  <span class="documento__ref">in-addr.arpa</span>, en el que la dirección IPv4 se escribe al revés.
+</p>
+
+<h3>12.3. Cómo se resuelve un nombre</h3>
+<p>
+  El RFC 1034 distingue dos modos de responder (§4.3.1) y esa distinción es la que cae en el test. En el
+  <strong>no recursivo</strong> el servidor contesta con lo que tiene —una respuesta, un error o una
+  <strong>referencia</strong> a otro servidor «más cercano»—, y todos los servidores tienen que saber
+  hacerlo. En el <strong>recursivo</strong> el servidor actúa como resolvedor y devuelve el error o la
+  respuesta, pero <strong>nunca referencias</strong>; es un servicio opcional y puede limitarse a ciertos
+  clientes.
+</p>
+<p>
+  El recorrido completo, con los nombres del RFC 8499: el equipo pregunta a su <strong>resolvedor</strong>;
+  si no lo tiene en caché, el resolvedor pregunta a un servidor raíz, que responde con una referencia al
+  servidor del dominio de primer nivel; este responde con otra referencia al autoritativo del dominio; y el
+  autoritativo da la respuesta, que el resolvedor devuelve y guarda en caché durante el tiempo de vida del
+  registro.
+</p>
+
+<h3>12.4. El transporte y el tamaño</h3>
+<p>
+  El DNS usa el puerto <strong>53</strong> en los dos transportes, y con dos reglas distintas (RFC 1035,
+  §4.2): las consultas normales van por <strong>UDP</strong>, donde el mensaje se limita a
+  <strong>512 octetos</strong> y, si no cabe, se trunca y se marca el bit TC (§4.2.1); las
+  <strong>transferencias de zona</strong> y las respuestas largas van por <strong>TCP</strong> (§4.2.2).
+</p>
+<h2>13. Servidores proxy</h2>
+
+<h3>13.1. Qué es exactamente</h3>
+<p>
+  El glosario de seguridad del IETF lo define así: «un proceso informático —a menudo usado como
+  cortafuegos, o como parte de él— que retransmite transacciones de aplicación o un protocolo entre
+  sistemas cliente y servidor, <strong>apareciendo ante el cliente como el servidor</strong> y
+  <strong>ante el servidor como el cliente</strong>» (RFC 4949, entrada <strong>proxy</strong>).
+</p>
+<p>
+  Esa doble apariencia es la definición operativa: el proxy <strong>termina</strong> la conexión del
+  cliente, entiende la petición y abre <strong>otra</strong> conexión hacia el servidor. No reenvía
+  paquetes, <strong>reconstruye</strong> la petición; por eso es un aparato de capa 7 y por eso puede
+  filtrar por URL, cachear respuestas, autenticar usuarios o registrar la transacción entera. El glosario
+  lo dice: un proxy en la capa 7 «puede prestar un servicio de seguridad más fino que el de un encaminador
+  filtrante en la capa 3» (RFC 4949, <strong>proxy</strong>).
+</p>
+
+<h3>13.2. Las tres formas de intermediario de HTTP</h3>
+<p>
+  El RFC 9110, que es la norma de la semántica de HTTP, distingue tres formas de intermediario: proxy,
+  pasarela y túnel (§3.7). Las definiciones literales sirven para separar conceptos que el examen mezcla:
+</p>
+<ul>
+  <li>
+    <strong>Proxy</strong>: «un agente que reenvía mensajes y que <strong>elige el cliente</strong>,
+    normalmente mediante reglas de configuración local, para recibir peticiones de ciertos tipos de URI
+    absoluto e intentar satisfacerlas».
+  </li>
+  <li>
+    <strong>Pasarela</strong> (o <strong>proxy inverso</strong>): «un intermediario que actúa como
+    servidor de origen» para las peticiones que recibe. El cliente cree hablar con el servidor y habla
+    con la pasarela.
+  </li>
+  <li>
+    <strong>Túnel</strong>: un intermediario que no interpreta el mensaje, solo lo transporta.
+  </li>
+</ul>
+<p>
+  La diferencia entre proxy directo y proxy inverso no está en el programa, sino en <strong>quién lo
+  elige</strong>: en el directo lo configura el cliente; en el inverso lo pone el dueño del servicio y
+  el cliente ni lo sabe.
+</p>
+
+<h3>13.3. Proxy, NAT y cortafuegos: tres cosas distintas</h3>
+<table>
+  <caption>No son lo mismo, aunque los tres «estén en medio»</caption>
+  <thead>
+    <tr><th></th><th>Proxy</th><th>NAT</th><th>Cortafuegos</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Capa</td><td>7: entiende el protocolo de aplicación</td><td>3 (y 4, si traduce puertos):
+      reescribe direcciones</td><td>3 y 4 en el filtro de paquetes; 7 si hace de proxy</td></tr>
+    <tr><td>Qué modifica</td><td>La petición entera, que reconstruye</td><td>Las direcciones y los
+      puertos de las cabeceras</td><td>Nada: deja pasar o descarta</td></tr>
+    <tr><td>Para qué sirve</td><td>Filtrar por contenido, cachear, registrar, autenticar</td><td>Que
+      muchos equipos salgan con una sola dirección pública</td><td>Aplicar una política de tráfico</td></tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Un proxy <strong>no es un encaminador</strong> y no sirve para «dar salida a Internet» por sí solo:
+    si el cliente no está configurado para usarlo, no pasa por él. Y si la pregunta dice que el proxy
+    trabaja en la capa 4 porque usa TCP, es falsa: usa TCP, pero decide con información de la capa 7.
+  </p>
+</div>
+<h2>14. Direccionamiento IPv4: estructura, máscara y notación</h2>
+
+<h3>14.1. La dirección</h3>
+<p>
+  Una dirección IPv4 es un número de <strong>32 bits</strong> escrito en cuatro grupos decimales
+  separados por puntos. Cada grupo es un octeto, de 0 a 255, porque 2⁸ = 256 valores. Los 32 bits se
+  reparten en una parte que identifica la <strong>red</strong> y otra que identifica el
+  <strong>host</strong>; dónde acaba una y empieza la otra lo dice <strong>la máscara</strong>, no la
+  dirección. El RFC 791 explica el reparto así: la interpretación del campo de dirección se codifica para
+  permitir «un número pequeño de redes con muchos hosts, un número moderado de redes con un número
+  moderado de hosts y un número grande de redes con pocos hosts», más un código de escape (§3.2). Esa
+  frase es la explicación de por qué existen las clases y también la de por qué se quedaron cortas.
+</p>
+
+<h3>14.2. La máscara</h3>
+<p>
+  La máscara es otro número de 32 bits con una propiedad: los unos van <strong>delante</strong> y los ceros
+  <strong>detrás</strong>, sin mezclarse. Donde hay un 1, el bit de la dirección pertenece a la red; donde
+  hay un 0, pertenece al host. El RFC 1812 lo formaliza al definir el prefijo como la porción que
+  seleccionaría «una máscara de subred cuyos bits más significativos son todos unos y el resto ceros»
+  (§4.2.3.1), y el RFC 4632 fija la notación con barra (§3.1).
+</p>
+<table>
+  <caption>Las máscaras que se usan y lo que dejan para hosts</caption>
+  <thead>
+    <tr><th>Prefijo</th><th>Máscara</th><th>Bits de host</th><th>Direcciones</th><th>Hosts utilizables</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>/24</td><td>255.255.255.0</td><td>8</td><td>256</td><td>254</td></tr>
+    <tr><td>/26</td><td>255.255.255.192</td><td>6</td><td>64</td><td>62</td></tr>
+    <tr><td>/27</td><td>255.255.255.224</td><td>5</td><td>32</td><td>30</td></tr>
+    <tr><td>/28</td><td>255.255.255.240</td><td>4</td><td>16</td><td>14</td></tr>
+    <tr><td>/30</td><td>255.255.255.252</td><td>2</td><td>4</td><td>2</td></tr>
+    <tr><td>/31</td><td>255.255.255.254</td><td>1</td><td>2</td><td>2, solo en enlaces punto a punto (RFC 3021)</td></tr>
+  </tbody>
+</table>
+<p>
+  Las dos fórmulas que hay que dominar son de una línea: con <strong>h</strong> bits de host hay
+  2<sup>h</sup> direcciones, de las que <strong>2<sup>h</sup> − 2</strong> se pueden asignar a equipos,
+  porque la primera es la dirección de red y la última la de difusión. Con <strong>s</strong> bits de
+  subred hay 2<sup>s</sup> subredes; la regla clásica del RFC 950 resta dos, porque los valores de todo
+  ceros y todo unos en el campo de subred «no deben asignarse a subredes reales» (RFC 950, «Special
+  Addresses»). Con CIDR el campo de subred desaparece y queda un prefijo; el propio RFC 3021 recuerda
+  que, en la práctica, las subredes numeradas no usan máscaras de más de 30 bits «en la mayoría de los
+  casos», y aprovecha los dos valores extremos para enlaces punto a punto.
+</p>
+
+<h3>14.3. Las direcciones que no se pueden asignar a un equipo</h3>
+<table>
+  <caption>Direcciones especiales de IPv4 y su significado</caption>
+  <thead>
+    <tr><th>Dirección o bloque</th><th>Qué significa</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Todo ceros en la parte de host</td><td>Dirección de la red</td><td>RFC 950, «Special Addresses»</td></tr>
+    <tr><td>Todo unos en la parte de host</td><td>Difusión dirigida a esa red</td><td>RFC 1122, §3.2.1.3</td></tr>
+    <tr><td>127.0.0.0/8</td><td>Bucle local: «direcciones de esta forma no deben aparecer fuera de un host»</td><td>RFC 1122, §3.2.1.3</td></tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    La primera dirección de una red <strong>no es utilizable</strong> y la última tampoco. Si una opción
+    del test dice que en una /24 «hay 256 hosts», es falsa: hay 256 direcciones y 254 hosts. Y la
+    dirección de difusión de una red no siempre termina en 255: solo si la máscara es /24 o más corta y
+    la red está alineada. En un /26, la difusión puede terminar en 63, en 127, en 191 o en 255.
+  </p>
+</div>
+
+<h2>15. Las clases históricas y el paso a CIDR</h2>
+
+<h3>15.1. Las clases tal como las definió el RFC 791</h3>
+<p>
+  El RFC 791 no define «clases» con ese nombre en su tabla, sino que describe cuatro formatos según los
+  bits de mayor peso (§3.2), y el RFC 4632 los resume después con el nombre de clase A, B y C (§2):
+</p>
+<table>
+  <caption>El direccionamiento con clases, con los datos del RFC 791 y del RFC 4632</caption>
+  <thead>
+    <tr><th>Clase</th><th>Bits iniciales</th><th>Red / host (RFC 791)</th><th>Primer octeto</th><th>Redes y hosts (RFC 4632)</th><th>Máscara implícita</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A</strong></td><td>0</td><td>7 bits de red, 24 de host</td><td>1 a 126</td>
+      <td>128 redes de hasta 16 777 216 direcciones</td><td>255.0.0.0</td>
+    </tr>
+    <tr>
+      <td><strong>B</strong></td><td>10</td><td>14 bits de red, 16 de host</td><td>128 a 191</td>
+      <td>16 384 redes de 65 536 direcciones</td><td>255.255.0.0</td>
+    </tr>
+    <tr>
+      <td><strong>C</strong></td><td>110</td><td>21 bits de red, 8 de host</td><td>192 a 223</td>
+      <td>2 097 152 redes de 254 hosts</td><td>255.255.255.0</td>
+    </tr>
+    <tr>
+      <td><strong>D</strong></td><td>1110</td><td>Multidifusión</td><td>224 a 239</td>
+      <td>Sin reparto de red y host</td><td>—</td>
+    </tr>
+    <tr>
+      <td><strong>E</strong></td><td>1111</td><td>Reservado para uso futuro</td><td>240 a 255</td>
+      <td>Sin reparto de red y host</td><td>—</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Un detalle separa la respuesta exacta de la aproximada: el RFC 791 dice <strong>7 bits de red</strong>
+  para la clase A, no 8, porque el primer bit está fijado a cero; y 14 para la B y 21 para la C por la
+  misma razón. Por eso la clase A tiene 128 redes (2⁷) y no 256.
+</p>
+
+<h3>15.2. Por qué se abandonaron</h3>
+<p>
+  El RFC 4632 cuenta la historia con fechas y no deja lugar a la leyenda (§2). En noviembre de 1991 el
+  IETF creó el grupo ROAD, y en enero de 1992 se identificaron tres problemas: el <strong>agotamiento del
+  espacio de clase B</strong>, porque no existía una clase de tamaño intermedio (la C, con 254 hosts, era
+  demasiado pequeña y la B, con 65 534, demasiado grande para la mayoría); el <strong>crecimiento de las
+  tablas de rutas</strong> por encima de lo que el software, el hardware y las personas podían gestionar;
+  y el <strong>agotamiento final del espacio de 32 bits</strong>.
+</p>
+<p>
+  La solución fue el <strong>enrutamiento entre dominios sin clases</strong> (CIDR, «Classless Inter-Domain
+  Routing»), cuya especificación vigente es el RFC 4632. Su idea, en una frase del propio documento:
+  hacer explícito qué bits son el prefijo de la red y cuáles numeran a los equipos, mediante la notación
+  <span class="documento__ref">dirección/prefijo</span> (§3.1).
+</p>
+<div class="clave">
+  <span class="clave__titulo">Qué queda de las clases</span>
+  <p>
+    Las clases ya no se usan para asignar direcciones, pero su vocabulario sigue vivo: se llama «clase C»
+    a una /24 y «clase B» a una /16 por comodidad. También sigue viva en las preguntas de test, que a
+    veces piden «la clase de la dirección 172.20.4.1» (clase B, primer octeto 172). Responde a eso, pero
+    no uses las clases para calcular subredes: se calculan con la máscara o el prefijo.
+  </p>
+</div>
+
+<h3>15.3. Quién reparte las direcciones</h3>
+<p>
+  El RFC 4632 describe la cadena completa (§3.1): el conjunto no asignado lo administra la
+  <strong>IANA</strong>, que hace asignaciones a los <strong>registros regionales de Internet</strong> en
+  bloques contiguos y alineados de 2²⁴ direcciones, es decir, prefijos /8. Los registros regionales
+  asignan bloques menores a proveedores y estos a sus clientes. El registro de la IANA marca con fecha
+  <strong>2011-02</strong> la asignación de los últimos bloques /8 a los cinco registros regionales, que es
+  el dato que se cita al explicar el agotamiento de IPv4.
+</p>
+
+<h2>16. Subredes: cálculo paso a paso</h2>
+<p>
+  Todo el cálculo se reduce a <strong>una operación</strong>: la conjunción lógica (AND) entre la dirección
+  y la máscara. Bit a bit, 1 con 1 da 1 y cualquier otra combinación da 0. Hecho eso quedan tres
+  cantidades: la dirección de red (el resultado del AND), la de difusión (la de red con todos los bits de
+  host a 1) y el rango utilizable (de la de red más uno a la de difusión menos uno).
+</p>
+
+<h3>16.1. Ejercicio resuelto 1: dividir una /24 en cuatro partes iguales</h3>
+<div class="clave">
+  <span class="clave__titulo">Enunciado</span>
+  <p>
+    La red 192.168.10.0/24 tiene que dividirse en cuatro subredes iguales. Calcula la máscara, la
+    dirección de red y de difusión de cada una y el rango de hosts.
+  </p>
+</div>
+<p><strong>Paso 1. ¿Cuántos bits necesito?</strong> Cuatro subredes son 2², así que necesito
+<strong>2 bits</strong> más de red. El prefijo pasa de /24 a <strong>/26</strong>.</p>
+<p><strong>Paso 2. La máscara.</strong> 26 unos seguidos son 255.255.255.192, porque el último octeto
+tiene los dos primeros bits a 1: 128 + 64 = 192.</p>
+<p><strong>Paso 3. El salto.</strong> El tamaño de bloque es 2⁶ = <strong>64</strong> direcciones, o lo
+que es lo mismo, 256 − 192 = 64. Las subredes empiezan en 0, 64, 128 y 192.</p>
+<p><strong>Paso 4. La tabla.</strong> Con el salto ya se escribe sola:</p>
+<table>
+  <caption>Las cuatro subredes de 192.168.10.0/24 con máscara /26</caption>
+  <thead>
+    <tr><th>Subred</th><th>Dirección de red</th><th>Primer host</th><th>Último host</th><th>Difusión</th><th>Hosts</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1.ª</td><td>192.168.10.0</td><td>192.168.10.1</td><td>192.168.10.62</td><td>192.168.10.63</td><td>62</td></tr>
+    <tr><td>2.ª</td><td>192.168.10.64</td><td>192.168.10.65</td><td>192.168.10.126</td><td>192.168.10.127</td><td>62</td></tr>
+    <tr><td>3.ª</td><td>192.168.10.128</td><td>192.168.10.129</td><td>192.168.10.190</td><td>192.168.10.191</td><td>62</td></tr>
+    <tr><td>4.ª</td><td>192.168.10.192</td><td>192.168.10.193</td><td>192.168.10.254</td><td>192.168.10.255</td><td>62</td></tr>
+  </tbody>
+</table>
+<p>
+  <strong>Comprobación.</strong> Cuatro subredes por 64 direcciones son 256: no sobra ni falta ninguna.
+  Y 4 × 62 = 248 hosts utilizables, frente a los 254 de la red original: se han perdido seis
+  direcciones, dos por cada subred nueva.
+</p>
+
+<h3>16.2. Ejercicio resuelto 2: averiguar la red de una dirección dada</h3>
+<div class="clave">
+  <span class="clave__titulo">Enunciado</span>
+  <p>
+    Un equipo tiene la dirección 172.16.5.130 con máscara 255.255.255.192. ¿Cuál es su dirección de red,
+    su dirección de difusión y el rango de hosts de su subred? ¿Está el equipo 172.16.5.70 en la misma
+    subred?
+  </p>
+</div>
+<p><strong>Paso 1. El prefijo.</strong> La máscara 255.255.255.192 tiene 24 + 2 = <strong>26</strong>
+bits a uno, así que es una /26 y el bloque es de 64 direcciones.</p>
+<p><strong>Paso 2. El AND en el octeto que cambia.</strong> Solo hay que operar con el cuarto octeto,
+porque los tres primeros son idénticos en la dirección y en la máscara:</p>
+<ul>
+  <li>130 en binario es <span class="documento__ref">1000 0010</span>.</li>
+  <li>192 en binario es <span class="documento__ref">1100 0000</span>.</li>
+  <li>AND bit a bit: <span class="documento__ref">1000 0000</span>, que es <strong>128</strong>.</li>
+</ul>
+<p><strong>Paso 3. Los tres resultados.</strong> Dirección de red <strong>172.16.5.128</strong>; dirección
+de difusión 172.16.5.<strong>191</strong> (128 + 64 − 1); rango de hosts de 172.16.5.129 a 172.16.5.190,
+es decir, 62 hosts.</p>
+<p><strong>Paso 4. La segunda pregunta.</strong> 172.16.5.70 cae en el bloque que empieza en 64 y termina
+en 127 (64 a 63 + 64). Como 128 es otro bloque, <strong>no están en la misma subred</strong>: para
+hablar entre ellos hace falta un encaminador, aunque los dos empiecen por 172.16.5.</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    Dos direcciones que empiezan igual <strong>no tienen por qué estar en la misma red</strong>. Lo que
+    decide es la máscara. Este es el error que más se cuela en los ejercicios y en los test.
+  </p>
+</div>
+
+<h3>16.3. Ejercicio resuelto 3: subredes de tamaño distinto (VLSM)</h3>
+<div class="clave">
+  <span class="clave__titulo">Enunciado</span>
+  <p>
+    Con la red 192.168.20.0/24 hay que atender cuatro necesidades: 60 equipos, 28 equipos, 12 equipos y
+    5 equipos. Propón el reparto y di qué queda libre.
+  </p>
+</div>
+<p><strong>Paso 1. De la necesidad al prefijo.</strong> Se busca el prefijo más pequeño que quepa, porque
+gastar de más es lo que agota una red:</p>
+<table>
+  <caption>Tamaño necesario y prefijo que le corresponde</caption>
+  <thead>
+    <tr><th>Necesidad</th><th>Prefijo mínimo</th><th>Hosts que da</th><th>Direcciones que ocupa</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>60 equipos</td><td>/26</td><td>62</td><td>64</td></tr>
+    <tr><td>28 equipos</td><td>/27</td><td>30</td><td>32</td></tr>
+    <tr><td>12 equipos</td><td>/28</td><td>14</td><td>16</td></tr>
+    <tr><td>5 equipos</td><td>/29</td><td>6</td><td>8</td></tr>
+  </tbody>
+</table>
+<p><strong>Paso 2. Se ordena de mayor a menor y se reparte en bloques alineados.</strong> Este orden es
+obligatorio: si empiezas por la subred pequeña, los bloques grandes ya no caben alineados.</p>
+<table>
+  <caption>Reparto resultante de 192.168.20.0/24</caption>
+  <thead>
+    <tr><th>Uso</th><th>Prefijo</th><th>Red</th><th>Rango de hosts</th><th>Difusión</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>60 equipos</td><td>/26</td><td>192.168.20.0</td><td>.1 a .62</td><td>192.168.20.63</td></tr>
+    <tr><td>28 equipos</td><td>/27</td><td>192.168.20.64</td><td>.65 a .94</td><td>192.168.20.95</td></tr>
+    <tr><td>12 equipos</td><td>/28</td><td>192.168.20.96</td><td>.97 a .110</td><td>192.168.20.111</td></tr>
+    <tr><td>5 equipos</td><td>/29</td><td>192.168.20.112</td><td>.113 a .118</td><td>192.168.20.119</td></tr>
+  </tbody>
+</table>
+<p>
+  <strong>Paso 3. Lo que queda libre.</strong> De 192.168.20.120 a 192.168.20.255: 136 direcciones, que
+  dan para futuras ampliaciones o para una subred /25 (126 hosts) más.
+</p>
+<div class="clave">
+  <span class="clave__titulo">Método para no fallar nunca</span>
+  <ol>
+    <li>Escribe el prefijo y calcula el <strong>tamaño de bloque</strong> (2 elevado a los bits de host).</li>
+    <li>Escribe las subredes <strong>sumando el bloque</strong> desde cero.</li>
+    <li>Localiza en qué bloque cae la dirección y escribe <strong>red, primer host, último host y difusión</strong>.</li>
+    <li>Comprueba que la difusión de una subred es <strong>una menos</strong> que la red de la siguiente.</li>
+  </ol>
+</div>
+
+<h2>17. Direcciones privadas y NAT</h2>
+
+<h3>17.1. Los tres bloques privados</h3>
+<p>
+  El RFC 1918 reserva tres bloques para redes privadas, y su ventaja es que se pueden usar «sin
+  coordinación con la IANA ni con un registro de Internet» (§3): por eso millones de redes los repiten y
+  no chocan, porque no salen a Internet tal cual.
+</p>
+<table>
+  <caption>Los tres bloques del RFC 1918</caption>
+  <thead>
+    <tr><th>Bloque</th><th>Rango</th><th>Prefijo</th><th>Tamaño</th><th>Origen histórico</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>24 bits</td><td>10.0.0.0 – 10.255.255.255</td><td>10/8</td><td>16 777 216 direcciones</td><td>Una sola red de clase A</td></tr>
+    <tr><td>20 bits</td><td>172.16.0.0 – 172.31.255.255</td><td>172.16/12</td><td>1 048 576 direcciones</td><td>16 redes de clase B contiguas</td></tr>
+    <tr><td>16 bits</td><td>192.168.0.0 – 192.168.255.255</td><td>192.168/16</td><td>65 536 direcciones</td><td>256 redes de clase C contiguas</td></tr>
+  </tbody>
+</table>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    172.16/12 <strong>no</strong> es 172.16.0.0/16. Abarca desde 172.16.0.0 hasta 172.31.255.255, así
+    que 172.20.0.1 y 172.31.9.9 son privadas y 172.32.0.1 <strong>no</strong> lo es. Y 192.168/16 es el
+    único de los tres que coincide con una máscara natural de clase C: 192.168.0.0/16 no es una red de
+    clase C, es un bloque de 256 redes de clase C.
+  </p>
+</div>
+
+<h3>17.2. NAT y NAPT</h3>
+<p>
+  Como las direcciones privadas no son enrutables en Internet, hay que traducirlas al salir. Es el
+  <strong>NAT</strong> («Network Address Translation»), y su documento de referencia es el RFC 3022, que
+  describe dos variantes de la traducción tradicional: el <strong>NAT básico</strong>, que traduce
+  <strong>solo la dirección IP</strong> y por tanto necesita una dirección pública por cada host privado
+  que salga a la vez (§2.1), y el <strong>NAPT</strong> («Network Address Port Translation»), que traduce
+  además el <strong>puerto</strong>, de manera que muchos hosts comparten una sola dirección pública y el
+  encaminador distingue las conexiones por el puerto de origen asignado a cada una (§2.2).
+</p>
+<div class="clave">
+  <span class="clave__titulo">NAT no es un cortafuegos</span>
+  <p>
+    Que un equipo privado no sea accesible desde fuera es un <strong>efecto secundario</strong> de la
+    traducción, no una política de seguridad. Un cortafuegos aplica reglas explícitas y decide; el NAT
+    solo traduce. Confundir las dos cosas es un error clásico de examen y de auditoría.
+  </p>
+</div>
+<h2>18. IPv6: formato, direcciones y autoconfiguración</h2>
+
+<h3>18.1. Qué cambia en la dirección</h3>
+<p>
+  El RFC 8200 lo dice en su primera página: IPv6 «aumenta el tamaño de la dirección IP de 32 bits a
+  <strong>128 bits</strong>, para soportar más niveles de jerarquía de direccionamiento, un número mucho
+  mayor de nodos direccionables y una autoconfiguración de direcciones más sencilla» (§1). Se escriben en
+  ocho grupos de cuatro dígitos hexadecimales. El RFC 4291 admite varias formas (§2.2), pero el RFC 5952
+  fija la <strong>representación canónica</strong> (§4): se suprimen los ceros a la izquierda de cada
+  grupo; la secuencia de grupos cero más larga se abrevia con <strong>::</strong> y hay que abreviar lo
+  máximo posible; no se usa :: para abreviar <strong>un solo</strong> grupo; y las letras hexadecimales
+  van en <strong>minúscula</strong>. De ahí sale una consecuencia que el examen pregunta mucho: el
+  símbolo :: <strong>solo puede aparecer una vez</strong>, porque con dos no habría forma de saber
+  cuántos grupos representa cada uno.
+</p>
+
+<h3>18.2. La cabecera</h3>
+<p>
+  La cabecera IPv6 tiene <strong>ocho campos y 40 octetos</strong> fijos (RFC 8200, §3):
+</p>
+<table>
+  <caption>Los ocho campos de la cabecera IPv6</caption>
+  <thead>
+    <tr><th>Campo</th><th>Bits</th><th>Para qué sirve</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Versión</td><td>4</td><td>Vale 6</td></tr>
+    <tr><td>Clase de tráfico</td><td>8</td><td>Distingue clases o prioridades de tráfico</td></tr>
+    <tr><td>Etiqueta de flujo</td><td>20</td><td>Identifica flujos que necesitan el mismo tratamiento</td></tr>
+    <tr><td>Longitud de carga útil</td><td>16</td><td>Octetos que siguen a esta cabecera, incluidas las cabeceras de extensión</td></tr>
+    <tr><td>Siguiente cabecera</td><td>8</td><td>Qué va detrás: usa los mismos valores que el campo «protocolo» de IPv4</td></tr>
+    <tr><td>Límite de saltos</td><td>8</td><td>El TTL de IPv4 con otro nombre: se decrementa en cada nodo que reenvía</td></tr>
+    <tr><td>Dirección de origen</td><td>128</td><td>—</td></tr>
+    <tr><td>Dirección de destino</td><td>128</td><td>—</td></tr>
+  </tbody>
+</table>
+<p>
+  Compara con IPv4: allí el TTL se llama TTL, aquí límite de saltos; allí hay suma de control de
+  cabecera, aquí <strong>no la hay</strong>; y las opciones de IPv4 se convierten en cabeceras de
+  extensión, que van <strong>fuera</strong> de la cabecera básica. El RFC 8200 lo resume como
+  «simplificación del formato de cabecera»: se han eliminado o hecho opcionales algunos campos de IPv4
+  para reducir el coste de proceso y el ancho de banda de la cabecera (§1).
+</p>
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «IPv6 tiene suma de control de cabecera» es falso: IPv6 no la tiene, y las sumas de control de las
+    capas superiores (TCP, UDP, ICMPv6) son obligatorias porque, «a diferencia de IPv4, no están
+    cubiertas por una suma de control de la capa de Internet» (RFC 8200, §8.1). Y «los encaminadores IPv6
+    fragmentan» también es falso: la fragmentación «solo la realizan los nodos origen» (§4.5).
+  </p>
+</div>
+
+<h3>18.3. Los tipos de dirección</h3>
+<table>
+  <caption>Tipos de dirección IPv6 y su prefijo, según el RFC 4291 y el RFC 4193</caption>
+  <thead>
+    <tr><th>Tipo</th><th>Prefijo</th><th>Qué es</th><th>Fuente</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>No especificada</td><td>::/128</td><td>Todos los bits a cero: «sin dirección todavía»</td><td>RFC 4291, §2.4</td></tr>
+    <tr><td>Bucle local</td><td>::1/128</td><td>El propio equipo</td><td>RFC 4291, §2.4</td></tr>
+    <tr><td>Multidifusión</td><td>FF00::/8</td><td>Un paquete para todas las interfaces identificadas por la dirección</td><td>RFC 4291, §2.4</td></tr>
+    <tr><td>Local de enlace</td><td>FE80::/10</td><td>Solo válida en un enlace; los encaminadores no la reenvían a otros enlaces</td><td>RFC 4291, §2.5.6</td></tr>
+    <tr><td>Unidifusión global</td><td>Todo lo demás</td><td>Enrutable en Internet; se estructura en prefijo global, identificador de subred e identificador de interfaz</td><td>RFC 4291, §2.5.4</td></tr>
+    <tr><td>Local única</td><td>FC00::/7</td><td>Equivalente a las direcciones privadas: uso dentro de un sitio; el bit L a 1 marca el bloque FD00::/8 de asignación local</td><td>RFC 4193, §3 y §3.2</td></tr>
+    <tr><td>Cualdifusión (anycast)</td><td>Del espacio unidifusión</td><td>Un paquete para <strong>una</strong> de las interfaces del grupo, la más cercana</td><td>RFC 4291, §2.4</td></tr>
+  </tbody>
+</table>
+<p>
+  Tres consecuencias de esa tabla: <strong>en IPv6 no hay difusión</strong>, porque «no hay direcciones de
+  difusión en IPv6; su función la asumen las direcciones de multidifusión» (RFC 4291, §2.1); <strong>la
+  local de enlace no cruza el encaminador</strong>, porque los encaminadores «no deben reenviar a otros
+  enlaces ningún paquete con direcciones locales de enlace de origen o destino» (§2.5.6), y solo sirve
+  para autoconfiguración y descubrimiento de vecinos; y <strong>el identificador de interfaz es de 64
+  bits</strong> en las direcciones globales que no empiezan por 000, de manera que quedan 64 bits para
+  prefijo global y subred (§2.5.4).
+</p>
+
+<h3>18.4. Cómo se configura un equipo solo</h3>
+<p>
+  IPv6 puede funcionar sin servidor de direcciones. El RFC 4862 describe la
+  <strong>autoconfiguración sin estado</strong> (§1): el equipo genera una dirección local de enlace,
+  escucha los anuncios de los encaminadores —que anuncian los prefijos de la subred— y se genera él mismo
+  el identificador de interfaz; la dirección sale de combinar prefijo e identificador. Después ejecuta la
+  <strong>detección de direcciones duplicadas</strong> para comprobar que es única en el enlace. Ese
+  intercambio es el <strong>descubrimiento de vecinos</strong> (RFC 4861), que sustituye a ARP y usa estos
+  mensajes ICMPv6: <strong>133</strong> solicitud de encaminador, <strong>134</strong> anuncio de
+  encaminador, <strong>135</strong> solicitud de vecino, <strong>136</strong> anuncio de vecino y
+  <strong>137</strong> redirección.
+</p>
+<table>
+  <caption>Las tres formas de conseguir una dirección en IPv6</caption>
+  <thead>
+    <tr><th>Mecanismo</th><th>Cómo funciona</th><th>Cuándo se usa</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Manual</strong></td><td>Se escribe la dirección en el equipo</td><td>Servidores y equipos de red</td></tr>
+    <tr><td><strong>Sin estado (SLAAC)</strong></td><td>El equipo combina el prefijo que anuncia el encaminador con un identificador que genera él (RFC 4862)</td><td>Redes normales; modo por defecto en muchos sistemas</td></tr>
+    <tr><td><strong>Con estado (DHCPv6)</strong></td><td>Un servidor entrega la dirección y los parámetros; las banderas M y O del anuncio deciden qué se pide</td><td>Cuando se necesita control centralizado</td></tr>
+  </tbody>
+</table>
+
+<h3>18.5. Por qué se pasó a IPv6</h3>
+<p>
+  La razón documentada no es una opinión: es un cálculo de agotamiento. El RFC 1752 lo explica en sus
+  antecedentes (§2): aunque IPv4 puede enumerar más de 4000 millones de hosts en hasta 16,7 millones de
+  redes, «la eficiencia real de asignación de direcciones es mucho menor», y esa ineficiencia se agrava
+  por «la granularidad de las asignaciones con direcciones de clase A, B y C». Añade que en 1990 se
+  proyectó el agotamiento de la clase B para marzo de 1994 y que sustituir una clase B por varias clase C
+  empeoraba las tablas de rutas. De ese diagnóstico salieron dos respuestas y en ese orden: primero
+  <strong>CIDR</strong>, para frenar las tablas y aprovechar el espacio (RFC 4632, §2), y después un
+  protocolo con direcciones más grandes. El registro de la IANA, con la fecha de 2011-02 en la última
+  asignación de bloques /8 a los registros regionales, marca el final del margen. A eso se suman las
+  ventajas que el propio RFC 8200 enumera (§1): direccionamiento más jerárquico, autoconfiguración más
+  sencilla, multidifusión con campo de alcance, cualdifusión y una cabecera más simple de procesar.
+</p>
+
+<h2>19. IPv4 frente a IPv6: la tabla del último repaso</h2>
+<table>
+  <caption>Las dos versiones del protocolo, campo a campo</caption>
+  <thead>
+    <tr><th>Rasgo</th><th>IPv4 (RFC 791)</th><th>IPv6 (RFC 8200)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tamaño de la dirección</td><td>32 bits</td><td>128 bits</td></tr>
+    <tr><td>Cabecera básica</td><td>20 octetos mínimo, hasta 60 con opciones</td><td>40 octetos fijos</td></tr>
+    <tr><td>Suma de control de cabecera</td><td>Sí, se recalcula en cada salto</td><td>No existe (RFC 8200, §8.1)</td></tr>
+    <tr><td>Fragmentación</td><td>La pueden hacer los encaminadores</td><td>Solo el origen (RFC 8200, §4.5)</td></tr>
+    <tr><td>Difusión</td><td>Sí, dirigida y limitada</td><td>No existe: se sustituye por multidifusión (RFC 4291, §2.1)</td></tr>
+    <tr><td>Direcciones privadas</td><td>10/8, 172.16/12 y 192.168/16 (RFC 1918)</td><td>Locales únicas FC00::/7 (RFC 4193)</td></tr>
+  </tbody>
+</table>
+
+<h2>20. Trampas del examen</h2>
+<table>
+  <caption>Las diez trampas que más veces se repiten en este tema</caption>
+  <thead>
+    <tr><th>Afirmación falsa</th><th>Por qué es falsa</th></tr>
+  </thead>
+  <tbody>
+        <tr>
+      <td>«El hub separa dominios de colisión»</td>
+      <td>Al contrario: los une, porque repite la señal por todos los puertos</td>
+    </tr>
+    <tr>
+      <td>«TCP/IP tiene siete capas, como OSI»</td>
+      <td>Tiene cuatro en el RFC 1122, §1.1.3, o cinco si se separa el hardware de red (RFC 1983)</td>
+    </tr>
+    <tr>
+      <td>«La capa de transporte de OSI garantiza la entrega»</td>
+      <td>La capa ofrece el servicio; quien garantiza es el protocolo: TCP sí, UDP no</td>
+    </tr>
+    <tr>
+      <td>«DHCP usa los puertos 68 en el servidor y 67 en el cliente»</td>
+      <td>Es al revés: 67 servidor, 68 cliente (RFC 2131, §4.1)</td>
+    </tr>
+    <tr>
+      <td>«DNS usa solo UDP»</td>
+      <td>Las transferencias de zona van por TCP, también en el puerto 53 (RFC 1035, §4.2)</td>
+    </tr>
+    <tr>
+      <td>«Una /24 tiene 256 hosts»</td>
+      <td>Tiene 256 direcciones y 254 hosts: dos se reservan</td>
+    </tr>
+    <tr>
+      <td>«172.32.0.1 es una dirección privada»</td>
+      <td>El bloque privado es 172.16/12 y llega hasta 172.31.255.255 (RFC 1918, §3)</td>
+    </tr>
+    <tr>
+      <td>«IPv6 tiene direcciones de difusión»</td>
+      <td>No las tiene: las sustituye la multidifusión (RFC 4291, §2.1)</td>
+    </tr>
+      </tbody>
+</table>
+
+<h2>21. Reglas mnemotécnicas</h2>
+<div class="clave">
+  <span class="clave__titulo">Las siete capas, de abajo arriba</span>
+  <p>
+    <strong>F</strong>ísica · <strong>E</strong>nlace · <strong>R</strong>ed ·
+    <strong>T</strong>ransporte · <strong>S</strong>esión · <strong>P</strong>resentación ·
+    <strong>A</strong>plicación: «<strong>FE</strong>liz <strong>R</strong>ecuerda <strong>T</strong>res
+    <strong>S</strong>esiones <strong>P</strong>ara <strong>A</strong>probar».
+  </p>
+</div>
+<div class="clave">
+  <span class="clave__titulo">Dispositivos, capas y mensajes</span>
+  <ul>
+    <li><strong>1</strong> · repetidor y <strong>hub</strong>: «uno que repite»; <strong>2</strong> ·
+      puente y <strong>switch</strong>: «dos que leen la MAC»; <strong>3</strong> ·
+      <strong>router</strong>: «tres que deciden la ruta»; <strong>7</strong> ·
+      <strong>proxy</strong>: «siete que entienden la petición».</li>
+    <li>DHCP en <strong>D</strong>ORA (Discover, Offer, Request, Ack), con el 6<strong>7</strong> en el
+      <strong>s</strong>ervidor y el 6<strong>8</strong> en el <strong>c</strong>liente: la s va antes que
+      la c.</li>
+    <li>Privadas: «<strong>diez</strong> para todo, <strong>dieciséis</strong> para la empresa,
+      <strong>192.168</strong> para casa».</li>
+  </ul>
+</div>
+<div class="clave">
+  <span class="clave__titulo">Subredes sin calculadora</span>
+  <ul>
+    <li><strong>Salto</strong> = 256 − el octeto de la máscara: para /26, 256 − 192 = 64.</li>
+    <li><strong>Hosts</strong> = 2<sup>h</sup> − 2, donde h son los ceros de la máscara.</li>
+    <li><strong>Difusión</strong> = red + salto − 1.</li>
+    <li><strong>Misma subred</strong> si las dos direcciones caen en el mismo bloque, no si empiezan igual.</li>
+  </ul>
+</div>
+
+<h2>22. Autoevaluación</h2>
+<p>Responde antes de abrir las soluciones. Si fallas una, vuelve al apartado indicado.</p>
+
+<details>
+  <summary><strong>1.</strong> ¿En qué capa trabaja un conmutador y por qué?</summary>
+  <p>
+    En la capa 2. Reenvía la trama basándose en la dirección MAC de destino, y los segmentos que une
+    comparten la misma dirección de capa de red (RFC 1983, <strong>bridge</strong>; RFC 1812, §2.2.3).
+    Apartado 8.2.
+  </p>
+</details>
+
+<details>
+  <summary><strong>2.</strong> En el reparto DHCP, ¿quién envía el DHCPREQUEST y en qué modalidad?</summary>
+  <p>
+    El cliente, en difusión: pide los parámetros de un servidor y rechaza implícitamente las ofertas de
+    los demás (RFC 2131, §3.1). Apartado 11.3.
+  </p>
+</details>
+
+<details>
+  <summary><strong>3.</strong> Un arrendamiento DHCP dura 8 horas. ¿Cuándo entra en RENEWING y cuándo en REBINDING?</summary>
+  <p>
+    En T1, la mitad: a las 4 horas, pide la renovación por unidifusión al servidor que le dio la
+    dirección. En T2, 0,875 × 8 = 7 horas, pasa a REBINDING y pregunta en difusión a cualquier servidor
+    (RFC 2131, §4.4.5). Apartado 11.4.
+  </p>
+</details>
+
+<details>
+  <summary><strong>4.</strong> ¿Qué diferencia hay entre una respuesta DNS recursiva y una no recursiva?</summary>
+  <p>
+    La recursiva devuelve la respuesta o un error; la no recursiva puede devolver una referencia a otro
+    servidor más cercano (RFC 1034, §4.3.1). El registro de la resolución inversa es PTR (RFC 1035,
+    §3.3.12). Apartado 12.
+  </p>
+</details>
+
+<details>
+  <summary><strong>5.</strong> ¿Por qué no se pueden usar hoy las clases para calcular subredes?</summary>
+  <p>
+    Porque el reparto es sin clases: lo que define la red es el prefijo escrito con barra (RFC 4632,
+    §3.1). Las clases se abandonaron por el agotamiento de la clase B, el crecimiento de las tablas de
+    rutas y el agotamiento del espacio de 32 bits (RFC 4632, §2). Apartado 15.
+  </p>
+</details>
+
+<details>
+  <summary><strong>6.</strong> ¿Qué hace un proxy que no hace un encaminador, y en qué se diferencia del NAT?</summary>
+  <p>
+    Termina la conexión del cliente, entiende la petición y abre otra conexión hacia el servidor, así que
+    puede filtrar por contenido, cachear, autenticar y registrar (RFC 4949, <strong>proxy</strong>). El
+    NAT, en cambio, solo reescribe direcciones y puertos en las capas 3 y 4 (RFC 3022). Apartados 13 y 17.
+  </p>
+</details>
+
+<details>
+  <summary><strong>7.</strong> ¿Qué significa una dirección IPv6 que empieza por FE80 y cuántos octetos tiene su cabecera?</summary>
+  <p>
+    Que es una dirección local de enlace (FE80::/10), válida solo en su enlace (RFC 4291, §2.5.6). La
+    cabecera IPv6 tiene 40 octetos fijos y ocho campos, y su equivalente al TTL es el límite de saltos
+    (RFC 8200, §3). Apartados 18.2 y 18.3.
+  </p>
+</details>
+
+<h2>23. Resumen para memorizar</h2>
+<div class="clave">
+  <span class="clave__titulo">Los datos que se preguntan</span>
+  <ul>
+    <li><strong>OSI</strong>: siete capas, norma ISO/IEC 7498-1, texto idéntico ITU-T X.200. De abajo
+      arriba: física, enlace, red, transporte, sesión, presentación, aplicación.</li>
+    <li><strong>PDU por capa</strong>: bit, trama, paquete, segmento (TCP) o datagrama (UDP), datos.</li>
+    <li><strong>TCP/IP</strong>: cuatro capas (aplicación, transporte, Internet, enlace). Sesión y
+      presentación se diluyen en la aplicación (RFC 1122, §1.1.3).</li>
+    <li><strong>Cambio de la ARPANET a IP/TCP</strong>: fijado para el 1 de enero de 1983 (RFC 801).</li>
+    <li><strong>Dispositivos</strong>: hub en capa 1; switch en capa 2; router en capa 3; proxy en capa 7.
+      El switch no separa subredes.</li>
+    <li><strong>DHCP</strong>: UDP, 67 servidor y 68 cliente; DORA (DISCOVER, OFFER, REQUEST, ACK);
+      renovación en T1 = 50 % y T2 = 87,5 % del arrendamiento; opciones 1, 3, 6 y 51.</li>
+    <li><strong>DNS</strong>: puerto 53, UDP para consultas y TCP para transferencias; A, AAAA, CNAME, NS,
+      SOA, PTR, MX, TXT; trece identidades de servidor raíz (IANA).</li>
+    <li><strong>Cortafuegos</strong>: filtro de paquetes en las capas 3 y 4, o punto final de protocolo con
+      relevo en la capa 7, o la mezcla (RFC 2979, §2).</li>
+    <li><strong>IPv4</strong>: 32 bits; clases A (1-126), B (128-191), C (192-223), D multicast, E
+      reservada; hoy se usa el prefijo /n (RFC 4632).</li>
+    <li><strong>Privadas</strong>: 10/8, 172.16/12 y 192.168/16 (RFC 1918); el NAT traduce direcciones y
+      el NAPT también puertos (RFC 3022).</li>
+    <li><strong>Subredes</strong>: hosts = 2<sup>h</sup> − 2; salto = 256 − octeto de la máscara;
+      difusión = red + salto − 1.</li>
+    <li><strong>IPv6</strong>: 128 bits; cabecera de 40 octetos y ocho campos; sin suma de control de
+      cabecera y sin difusión; MTU mínimo 1280.</li>
+    <li><strong>Direcciones IPv6</strong>: ::1 bucle local, FE80::/10 local de enlace, FF00::/8
+      multidifusión, FC00::/7 local única; autoconfiguración sin estado (RFC 4862) o DHCPv6.</li>
+  </ul>
+</div>
+
+<h2>24. Qué no se ha afirmado en este tema, y por qué</h2>
+<div class="aviso">
+  <span class="aviso__titulo">Límites de este tema</span>
+  <ul>
+    <li>
+      <strong>La norma ISO/IEC 7498-1 no se ha leído directamente</strong>, porque es de pago. Se ha leído
+      el texto que la propia UIT declara idéntico, la Recomendación X.200 (07/94), de descarga libre, y
+      todas las referencias a cláusulas remiten a ese texto.
+    </li>
+    <li>
+      <strong>Las normas IEEE no se han podido consultar.</strong> La lectura de IEEE 802.3 (repetidores y
+      medio compartido) y de IEEE 802.1D (puentes MAC: aprendizaje de direcciones, árbol de expansión)
+      devolvió un error de acceso. Por eso la equivalencia «hub = repetidor multipuerto» y «switch = puente
+      multipuerto» se presenta como <strong>terminología de mercado</strong>, apoyada en las definiciones de
+      repetidor y de puente del IETF, y no se afirma nada sobre el algoritmo de aprendizaje ni sobre el
+      árbol de expansión.
+    </li>
+    <li>
+      <strong>«Dominio de colisión» y «dominio de difusión»</strong> no están definidos en ningún RFC
+      consultado: se usan como vocabulario habitual de la industria, sin respaldo normativo.
+    </li>
+    <li>
+      <strong>No se ha entrado en los protocolos de encaminamiento</strong> por su nombre, ni en VLAN,
+      calidad de servicio, MPLS, redes definidas por software, telefonía IP o Wi-Fi como tecnología: no
+      forman parte del epígrafe.
+    </li>
+    <li>
+      <strong>No se afirma por qué fracasaron comercialmente los protocolos OSI.</strong> La explicación
+      habitual —burocracia, peso, lentitud— no aparece en ninguna fuente primaria consultada; lo único
+      documentado es qué es cada modelo, qué fecha tenía el cambio a IP/TCP (RFC 801) y qué principios de
+      diseño tenía el conjunto de Internet.
+    </li>
+    <li>
+      <strong>El «argumento extremo a extremo»</strong> es una tesis doctrinal de la literatura técnica, no
+      una norma del IETF. Solo se ha descrito la parte que está en los RFC: que IP no garantiza la entrega
+      y que los encaminadores buscan minimizar el estado (RFC 1122, §1.1.3; RFC 1812, §2.2.3).
+    </li>
+    <li>
+      <strong>No se citan cifras de mercado</strong> —cuota de IPv6, número de dispositivos, tráfico—
+      porque no se ha consultado ninguna fuente primaria que las publique. Tampoco se describen los
+      mecanismos de transición de IPv4 a IPv6 ni la normativa española de seguridad, que no forman parte
+      del epígrafe.
+    </li>
+  </ul>
+</div>
+
+<h2>25. Fuentes de este tema</h2>
+<p>
+  Todas son públicas y de acceso abierto, consultadas el <strong>16 de noviembre de 2026</strong>: los RFC
+  en el editor oficial de la serie, rfc-editor.org, y el texto del modelo OSI en la UIT. Cada afirmación
+  lleva en el cuerpo del texto el documento y el apartado del que sale.
+</p>
+
+<h3>25.1. El modelo OSI</h3>
+<ul>
+  <li>
+    <strong>ISO/IEC 7498-1:1994</strong>, «Information technology — Open Systems Interconnection — Basic
+    Reference Model: The Basic Model», citada por su número y su título (el texto de ISO no es de acceso
+    abierto).
+  </li>
+  <li>
+    <a href="https://www.itu.int/rec/T-REC-X.200-199407-I/en" rel="noopener">Recomendación ITU-T X.200
+    (07/94)</a>, texto que la UIT declara idéntico a ISO/IEC 7498-1: apartados 5.8.8, 6.5 y 7.1 a 7.7.
+  </li>
+</ul>
+
+<h3>25.2. Conceptos, dispositivos y servicios</h3>
+<ul>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1983.txt" rel="noopener">RFC 1983, «Internet Users' Glossary»</a>.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc4949.txt" rel="noopener">RFC 4949, «Internet Security Glossary, Version 2»</a>.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1812.txt" rel="noopener">RFC 1812, «Requirements for IP Version 4 Routers»</a>: §2.2.3, §4.2.2 y §4.2.3.1.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1122.txt" rel="noopener">RFC 1122, «Requirements for Internet Hosts»</a>: §1.1.3 y §3.2.1.3.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc801.txt" rel="noopener">RFC 801, «NCP/TCP Transition Plan»</a>.</li>
+  <li><a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf" rel="noopener">NIST SP 800-82r3</a>: apéndice E.1.1.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc826.txt" rel="noopener">RFC 826</a> (ARP), <a href="https://www.rfc-editor.org/rfc/rfc894.txt" rel="noopener">RFC 894</a> (IP sobre Ethernet), <a href="https://www.rfc-editor.org/rfc/rfc768.txt" rel="noopener">RFC 768</a> (UDP) y <a href="https://www.rfc-editor.org/rfc/rfc9293.txt" rel="noopener">RFC 9293</a> (TCP: §3.1 y §3.7.1).</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc2131.txt" rel="noopener">RFC 2131</a> (DHCP: §3.1, §4.1 y §4.4.5), <a href="https://www.rfc-editor.org/rfc/rfc2132.txt" rel="noopener">RFC 2132</a> (opciones 1, 3, 6 y 51), <a href="https://www.rfc-editor.org/rfc/rfc8415.txt" rel="noopener">RFC 8415</a> (DHCPv6) y <a href="https://www.rfc-editor.org/rfc/rfc3927.txt" rel="noopener">RFC 3927</a> (169.254/16).</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1034.txt" rel="noopener">RFC 1034</a> (DNS: §2.4, §4.2, §4.3.1 y §4.3.2), <a href="https://www.rfc-editor.org/rfc/rfc1035.txt" rel="noopener">RFC 1035</a> (§3.3, §3.4.1 y §4.2), <a href="https://www.rfc-editor.org/rfc/rfc3596.txt" rel="noopener">RFC 3596</a> (AAAA) y <a href="https://www.rfc-editor.org/rfc/rfc8499.txt" rel="noopener">RFC 8499</a>.</li>
+  <li><a href="https://www.iana.org/domains/root/servers" rel="noopener">IANA, «Root Servers»</a>.</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc2979.txt" rel="noopener">RFC 2979</a> (cortafuegos) y <a href="https://www.rfc-editor.org/rfc/rfc9110.txt" rel="noopener">RFC 9110</a> (§3.7, §4.2.1 y §4.2.2).</li>
+</ul>
+
+<h3>25.3. Direccionamiento</h3>
+<ul>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc791.txt" rel="noopener">RFC 791</a> (§3.1 y §3.2), <a href="https://www.rfc-editor.org/rfc/rfc792.txt" rel="noopener">RFC 792</a> (ICMP), <a href="https://www.rfc-editor.org/rfc/rfc950.txt" rel="noopener">RFC 950</a> (subredes) y <a href="https://www.rfc-editor.org/rfc/rfc1112.txt" rel="noopener">RFC 1112</a> (multidifusión).</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc4632.txt" rel="noopener">RFC 4632</a> (§2 y §3.1), <a href="https://www.rfc-editor.org/rfc/rfc1918.txt" rel="noopener">RFC 1918</a> (§3), <a href="https://www.rfc-editor.org/rfc/rfc3022.txt" rel="noopener">RFC 3022</a> (§2.1 y §2.2), <a href="https://www.rfc-editor.org/rfc/rfc3021.txt" rel="noopener">RFC 3021</a> (§2) y <a href="https://www.rfc-editor.org/rfc/rfc6890.txt" rel="noopener">RFC 6890</a> (direcciones especiales).</li>
+  <li><a href="https://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml" rel="noopener">IANA, registro del espacio de direcciones IPv4</a>: la fecha 2011-02 en los últimos bloques /8.</li>
+</ul>
+
+<h3>25.4. IPv6</h3>
+<ul>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc8200.txt" rel="noopener">RFC 8200</a> (§1, §3, §4.5, §5 y §8.1), <a href="https://www.rfc-editor.org/rfc/rfc4291.txt" rel="noopener">RFC 4291</a> (§2.1, §2.2, §2.4, §2.5.4 y §2.5.6) y <a href="https://www.rfc-editor.org/rfc/rfc5952.txt" rel="noopener">RFC 5952</a> (§4).</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc4193.txt" rel="noopener">RFC 4193</a> (FC00::/7), <a href="https://www.rfc-editor.org/rfc/rfc4443.txt" rel="noopener">RFC 4443</a> (ICMPv6), <a href="https://www.rfc-editor.org/rfc/rfc4861.txt" rel="noopener">RFC 4861</a> (§4.2) y <a href="https://www.rfc-editor.org/rfc/rfc4862.txt" rel="noopener">RFC 4862</a> (§1).</li>
+  <li><a href="https://www.rfc-editor.org/rfc/rfc1752.txt" rel="noopener">RFC 1752</a> (§2), recomendación del protocolo de siguiente generación.</li>
+</ul>
+<p>
+  Texto de elaboración propia a partir de las fuentes citadas, publicado bajo CC BY-SA 4.0. Ninguna parte
+  procede de un temario comercial ni de un blog técnico. Lo que no tiene fuente primaria consultada está
+  declarado en el apartado 24 y no se presenta como hecho verificado.
+</p>

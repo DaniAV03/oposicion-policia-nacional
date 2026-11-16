@@ -1,0 +1,2159 @@
+<div class="clave">
+  <span class="clave__titulo">Objetivos del tema</span>
+  <p>Al terminar este tema tienes que ser capaz de:</p>
+  <ol>
+    <li>Definir las <strong>18 amenazas del epígrafe</strong> con una frase propia y sin confundir ninguna pareja.</li>
+    <li>Decir de cada una <strong>qué vector usa, qué busca el atacante y qué contramedida la frena</strong>, en menos de veinte segundos.</li>
+    <li>Ordenar las conductas donde las coloca el <strong>Convenio de Budapest</strong>: confidencialidad, integridad y disponibilidad, delitos informáticos, contenido y propiedad intelectual.</li>
+    <li>Separar <strong>cibercriminal, hacktivista, insider y APT</strong> por motivación, recursos y forma de entrar, sin mezclar los cuatro.</li>
+    <li>Explicar qué se alquila en un modelo <strong>Crime as a Service</strong> y qué cambia para quien ataca y para quien investiga.</li>
+    <li>Recitar las <strong>siete fases de la Cyber Kill Chain</strong> en orden y saber por qué es un modelo lineal.</li>
+    <li>Decir con precisión <strong>qué añade MITRE ATT&amp;CK</strong> a la kill chain y qué añade la kill chain a ATT&amp;CK.</li>
+    <li>Resolver la pregunta de examen que enfrenta <strong>phishing con pharming</strong>, <strong>spoofing con suplantación</strong>, <strong>botnet con DDoS</strong> y <strong>troyano con spyware</strong>.</li>
+  </ol>
+</div>
+
+<h2>1. Qué se pregunta de este tema y con qué fuentes se estudia</h2>
+
+<p>
+  El tema 41 es el epígrafe de <strong>amenazas y actores</strong>, no de tipos penales. Eso significa dos
+  cosas. La primera: aquí no te van a pedir el artículo del Código Penal que castiga cada conducta,
+  porque esa parte se estudia en el tema 20 (delitos informáticos y prueba digital) y repetirla es la
+  forma más rápida de perder el tiempo. La segunda: lo que sí cae, y cae mucho, es
+  <strong>vocabulario, definición y frontera entre términos</strong>. El enunciado clásico no pregunta
+  «qué es un troyano», pregunta «¿cuál de estas cuatro características <strong>no</strong> corresponde a
+  un troyano?», o pone cuatro definiciones y te pide emparejarlas con cuatro nombres.
+</p>
+
+<p>
+  La segunda veta es conceptual: la <strong>clasificación de los actores</strong>, el modelo
+  <strong>Crime as a Service</strong> y la <strong>Cyber Kill Chain</strong>. Son las tres partes donde un
+  temario de academia suele patinar, porque copia listas de blogs sin decir de dónde salen; aquí cada una
+  lleva su fuente y su aviso.
+</p>
+
+<p>
+  Los dieciocho términos están en la <strong>tabla maestra del apartado 3</strong>, con su vector, su objetivo y
+  su contramedida, y resumidos al final en el apartado 17. El resto del tema los explica uno a uno.
+</p>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de método · el estándar de fuentes de este tema</span>
+  <p>
+    Este epígrafe no tiene una ley detrás de cada frase, así que el criterio es el del bloque:
+    <strong>solo fuentes primarias públicas</strong>. Aquí son seis familias: el
+    <strong>Convenio de Budapest</strong> y el BOE para lo jurídico; <strong>INCIBE</strong> y el
+    <strong>Centro Criptológico Nacional</strong> para la descripción técnica en español; el
+    <strong>NIST</strong> para las definiciones; <strong>MITRE ATT&amp;CK</strong> y el documento público
+    de <strong>Lockheed Martin</strong> para los modelos; <strong>OWASP</strong> para inyección SQL y XSS;
+    y <strong>ENISA</strong> y la <strong>ONUDD</strong> para el panorama y los actores. La
+    <strong>doctrina</strong> va señalada como tal.
+  </p>
+</div>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de límites · lo que este tema no hace</span>
+  <p>
+    Este tema <strong>describe amenazas, no enseña a ejecutarlas</strong>: no hay código, ni comandos, ni
+    procedimientos de intrusión. Y hay dos límites de fuente que se declaran desde el principio. Los portales del <strong>CCN-CERT</strong> responden con error de acceso automatizado en la fecha de consulta,
+    así que se cita el <strong>catálogo</strong> de guías pero no se atribuye ninguna afirmación a una guía
+    CCN-STIC concreta. Y el portal estadístico de <strong>Europol</strong> sirve su contenido mediante
+    código de cliente, de modo que <strong>no se cita ninguna cifra suya</strong>. Lo que queda fuera está
+    en el apartado 18.
+  </p>
+</div>
+
+<h2>2. Ciberdelincuencia: qué es y cómo se ordena el campo</h2>
+
+<p>
+  El concepto de ciberdelincuencia no llega al examen para que lo definas con un tratado, sino para
+  que sepas <strong>dónde se coloca cada conducta</strong>. El instrumento que ordena el campo es el
+  <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2010-14221" rel="noopener">Convenio sobre la
+  Ciberdelincuencia, hecho en Budapest el 23 de noviembre de 2001</a>, cuyo instrumento de ratificación
+  publica el BOE. Lo importante del convenio es que <strong>no da una definición única</strong>: reparte
+  las conductas en cuatro títulos, y esa división es la que reaparece en los esquemas de los manuales.
+</p>
+
+<table>
+  <caption>Las cuatro familias de conductas del Convenio de Budapest</caption>
+  <thead>
+    <tr><th>Título</th><th>Qué agrupa</th><th>Amenazas de este tema que se le parecen</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Título 1 · Delitos contra la confidencialidad, la integridad y la disponibilidad de los datos y sistemas informáticos (arts. 2 a 6)</td>
+      <td>Acceso ilícito, interceptación ilícita, interferencia en los datos, interferencia en el sistema y abuso de los dispositivos</td>
+      <td>Malware, botnet, troyano, zero-day, denegación de servicio, cryptojacking</td>
+    </tr>
+    <tr>
+      <td>Título 2 · Delitos informáticos (arts. 7 y 8)</td>
+      <td>Falsificación informática y fraude informático: el perjuicio patrimonial cometido con manipulación de datos o interferencia en el sistema</td>
+      <td>Business E-mail Compromise, cartas nigerianas, phishing, skimming</td>
+    </tr>
+    <tr>
+      <td>Título 3 · Delitos relacionados con el contenido (art. 9)</td>
+      <td>Pornografía infantil producida, ofrecida o poseída en un sistema informático</td>
+      <td>Ninguna del epígrafe: el contenido no es una amenaza técnica</td>
+    </tr>
+    <tr>
+      <td>Título 4 · Delitos relacionados con la propiedad intelectual (art. 10)</td>
+      <td>Reproducción y distribución no autorizadas a escala comercial mediante sistemas informáticos</td>
+      <td>Ninguna del epígrafe</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">El dato que conviene llevar aprendido</span>
+  <p>
+    Budapest se firmó el <strong>23 de noviembre de 2001</strong> y España lo ratificó con publicación en el
+    BOE bajo el identificador <strong>BOE-A-2010-14221</strong>. El <strong>fraude informático</strong> está en
+    el <strong>artículo 8</strong>, separado del <strong>acceso ilícito</strong> del artículo 2: esa separación
+    se traduce en España en dos bloques de tipos penales, y es la razón de que el tema 20 dedique apartados
+    distintos a descubrimiento de secretos y a estafa informática.
+  </p>
+</div>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    El convenio <strong>no</strong> contiene una lista de «las diez amenazas más frecuentes» ni habla de
+    phishing, ransomware ni botnets: ordena <strong>conductas</strong>, no herramientas. Si una opción del
+    test dice que el Convenio de Budapest tipifica el ransomware como categoría propia, es falsa. Lo que
+    tipifica es la interferencia en los datos y en el sistema, y el ransomware cae ahí y en el fraude,
+    según lo que haga.
+  </p>
+</div>
+
+<h2>3. El mapa de las dieciocho amenazas</h2>
+
+<p>
+  El epígrafe enumera dieciocho términos separados por punto y coma. Siete de ellos atacan a una
+  <strong>persona</strong> para que haga algo; siete atacan al <strong>equipo</strong> para quedarse dentro;
+  tres atacan a la <strong>aplicación o a los datos</strong> que hay detrás; y uno ataca solo a la
+  <strong>disponibilidad</strong>. Este mapa no es una clasificación oficial de nadie: es una forma de
+  ordenar el estudio y de saber, cuando dudes, a qué casilla pertenece el término que te han puesto en
+  el enunciado.
+</p>
+
+<h3>3.1. Tabla maestra: amenaza, vector, objetivo y contramedida</h3>
+
+<p>
+  Esta tabla es la columna vertebral del tema y está en el <strong>orden exacto del epígrafe</strong>, para
+  que puedas comprobar de un vistazo que no falta ninguna. Sirve para el último repaso: tapa la columna
+  de la contramedida y recítala.
+</p>
+
+<table>
+  <caption>Las dieciocho amenazas del epígrafe, en su orden</caption>
+  <thead>
+    <tr><th>Amenaza</th><th>Vector típico</th><th>Qué busca el atacante</th><th>Contramedida principal</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Botnet</strong></td>
+      <td>Infección masiva de equipos y canal de mando y control</td>
+      <td>Capacidad de cálculo y de red ajena, alquilable</td>
+      <td>Detección de tráfico de mando y control y de equipos que actúan en conjunto</td>
+    </tr>
+    <tr>
+      <td><strong>Business E-mail Compromise</strong></td>
+      <td>Cuenta de correo legítima comprometida o dirección muy parecida</td>
+      <td>Que alguien pague o entregue información creyendo que la orden es interna</td>
+      <td>Doble verificación por otro canal y doble aprobación de pagos</td>
+    </tr>
+    <tr>
+      <td><strong>Cartas nigerianas</strong></td>
+      <td>Mensaje que promete una fortuna a cambio de un anticipo</td>
+      <td>Pagos sucesivos de la víctima, y sus datos</td>
+      <td>Regla de oro: nadie regala dinero; no se paga ningún anticipo</td>
+    </tr>
+    <tr>
+      <td><strong>Cryptojacking</strong></td>
+      <td>Página con código de minado o programa que instala el minero</td>
+      <td>Potencia de cálculo, sin tocar los datos de la víctima</td>
+      <td>Control del consumo de CPU y de GPU y bloqueo de scripts no necesarios</td>
+    </tr>
+    <tr>
+      <td><strong>Denegación de servicio</strong></td>
+      <td>Aluvión de peticiones, desde una máquina (DoS) o desde muchas (DDoS)</td>
+      <td>Que el servicio deje de responder: daño y escaparate</td>
+      <td>Capacidad de absorción, filtrado en el borde y plan de continuidad</td>
+    </tr>
+    <tr>
+      <td><strong>Ingeniería social</strong></td>
+      <td>Cualquier canal humano: llamada, correo, mensaje, presencia física</td>
+      <td>Que la persona haga algo bajo manipulación</td>
+      <td>Formación y procedimientos que obliguen a verificar</td>
+    </tr>
+    <tr>
+      <td><strong>Inyección SQL</strong></td>
+      <td>Campo de formulario o parámetro que llega a la base de datos sin filtrar</td>
+      <td>Leer, alterar o destruir la base de datos</td>
+      <td>Consultas parametrizadas y validación de la entrada</td>
+    </tr>
+    <tr>
+      <td><strong>Malware</strong></td>
+      <td>Adjunto, descarga, <strong>pendrive</strong>, actualización falsa</td>
+      <td>Cualquier fin: robar, cifrar, espiar, dar acceso</td>
+      <td>Superficie mínima, filtrado y detección en el punto final</td>
+    </tr>
+    <tr>
+      <td><strong>Pharming</strong></td>
+      <td>Manipulación de la resolución de nombres o del archivo local de hosts</td>
+      <td>Que la víctima llegue a una web falsa sin hacer clic en un enlace</td>
+      <td>DNSSEC, DNS corporativo controlado y certificados válidos</td>
+    </tr>
+    <tr>
+      <td><strong>Phishing</strong></td>
+      <td>Correo, SMS o llamada que suplanta a una entidad legítima</td>
+      <td>Credenciales, datos bancarios o ejecución de un archivo</td>
+      <td>Autenticación multifactor resistente y filtrado del correo</td>
+    </tr>
+    <tr>
+      <td><strong>Spear phishing</strong></td>
+      <td>Mensaje dirigido a una persona concreta, con información previa</td>
+      <td>Lo mismo que el phishing, con más probabilidad de éxito</td>
+      <td>Las mismas, más verificación de peticiones sensibles</td>
+    </tr>
+    <tr>
+      <td><strong>Ransomware</strong></td>
+      <td>Malware que cifra o bloquea, tras un acceso previo</td>
+      <td>Un rescate económico y, cada vez más, doble extorsión</td>
+      <td>Copias de seguridad aisladas y probadas; segmentación</td>
+    </tr>
+    <tr>
+      <td><strong>Skimming</strong></td>
+      <td>Dispositivo en el cajero o código manipulado en la tienda <strong>online</strong></td>
+      <td>Datos de la tarjeta y el PIN para clonar o pagar</td>
+      <td>Inspección del cajero y control del código de la pasarela de pago</td>
+    </tr>
+    <tr>
+      <td><strong>Spoofing</strong></td>
+      <td>Falsificación del origen: IP, correo, web o DNS</td>
+      <td>Pasar por otro para que la víctima confíe</td>
+      <td>Autenticación del correo saliente, certificados y filtrado de origen</td>
+    </tr>
+    <tr>
+      <td><strong>Spyware</strong></td>
+      <td>Instalación oculta, a menudo junto a otro programa</td>
+      <td>Información: hábitos, credenciales, pantalla, teclas</td>
+      <td>Control de lo instalado y detección de exfiltración</td>
+    </tr>
+    <tr>
+      <td><strong>Troyano</strong></td>
+      <td>Programa aparentemente útil con función oculta</td>
+      <td>Abrir la puerta: acceso remoto, descarga de más malware</td>
+      <td>Origen del software, firma y permisos mínimos</td>
+    </tr>
+    <tr>
+      <td><strong>XSS</strong></td>
+      <td>Entrada del usuario que se devuelve sin codificar en la página</td>
+      <td>Ejecutar código en el navegador de otro usuario</td>
+      <td>Codificar la salida y usar políticas de seguridad de contenido</td>
+    </tr>
+    <tr>
+      <td><strong>Zero-day</strong></td>
+      <td>Vulnerabilidad desconocida para el fabricante, sin parche</td>
+      <td>Entrar antes de que exista remedio</td>
+      <td>Detección por comportamiento y reducción de superficie</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Aviso de forma</span>
+  <p>
+    En el epígrafe oficial, <strong>Spyware y Troyano comparten entrada</strong> («Spyware, Troyano»), pero
+    son dos cosas distintas y el examen los trata por separado: uno <strong>recoge información</strong>, el
+    otro <strong>abre una puerta</strong>. Cuéntalos como dos y tendrás las dieciocho amenazas del tema sin
+    discutir con el enunciado.
+  </p>
+</div>
+
+<h2>4. Bloque I · amenazas que se quedan dentro del equipo</h2>
+
+<p>
+  Siete amenazas con una lógica común: <strong>alguien consigue ejecutar código en un equipo que no es
+  suyo</strong>. La diferencia no está en cómo entran —casi siempre por lo mismo: un adjunto, una descarga,
+  una actualización falsa—, sino en <strong>qué hacen una vez dentro</strong>. Esa es la pregunta del examen.
+</p>
+
+<h3>4.1. Malware</h3>
+
+<p>
+  Malware no es una amenaza concreta: es el <strong>género</strong> que contiene a casi todas las de este
+  bloque. Si el enunciado te pide el término general, es este; si te pide el concreto, te está pidiendo
+  una de las especies.
+</p>
+
+<table>
+  <caption>Ficha · Malware</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Todo programa informático que se ejecuta <strong>sin el conocimiento ni la autorización</strong> del
+        propietario o usuario del equipo y realiza funciones perjudiciales para el usuario o para el sistema,
+        según la <a href="https://www.incibe.es/aprendeciberseguridad/malware" rel="noopener">definición de
+        INCIBE</a>. El glosario del NIST lo resume como software introducido intencionadamente con una
+        finalidad dañina.
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Necesita ejecutarse una vez. A partir de ahí puede copiarse, persistir en el arranque, descargar
+        otros módulos o esperar órdenes. La guía de INCIBE sobre ciberataques separa las familias por su
+        comportamiento: virus, gusano, troyano, spyware, adware, rootkit, botnet y
+        ransomware (<a href="https://www.incibe.es/sites/default/files/docs/guia-ciberataques/osi-guia-ciberataques.pdf" rel="noopener">INCIBE,
+        <strong>Guía de ciberataques</strong></a>, publicada el 14/10/2020, apartados 4.1 a 4.11).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Adjunto de correo, enlace a descarga, <strong>pendrive</strong>, instalador de programa pirata, actualización falsa.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Depende de la especie: información, dinero, control del equipo o simplemente persistencia.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Reducir la superficie de ejecución, bloquear el origen del archivo, analizar el comportamiento y no instalar software de origen desconocido.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.2. Troyano</h3>
+
+<p>
+  La clave del troyano es la <strong>apariencia</strong>: hace algo útil o inofensivo y, a la vez, algo
+  oculto. Es el caballo de Troya de la Odisea, y de ahí viene la mitad de las preguntas.
+</p>
+
+<table>
+  <caption>Ficha · Troyano</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Programa que <strong>parece tener una función útil pero también tiene una función oculta y
+        potencialmente maliciosa</strong>, que sortea los mecanismos de seguridad aprovechando a veces los
+        permisos legítimos de quien lo ejecuta
+        (<a href="https://csrc.nist.gov/glossary/term/trojan_horse" rel="noopener">NIST, glosario, voz
+        «Trojan horse»</a>, tomada de NIST SP 800-12 Rev. 1).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        No se propaga solo: <strong>alguien lo instala creyendo que instala otra cosa</strong>. Una vez
+        dentro abre una puerta (backdoor), captura teclas (keylogger), roba credenciales
+        (stealer) o descarga más módulos; la guía de INCIBE los agrupa como subtipos del troyano
+        (<a href="https://www.incibe.es/sites/default/files/docs/guia-ciberataques/osi-guia-ciberataques.pdf" rel="noopener">Guía
+        de ciberataques</a>, apartado 4.4 de la guía).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Programa «gratis» con función extra, crack, tema de escritorio, aplicación móvil fuera de la tienda oficial.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Acceso remoto y persistencia: es la <strong>puerta de entrada</strong> para lo demás.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Descargar solo de la fuente oficial, comprobar la firma del programa y revisar qué abre conexiones salientes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.3. Spyware</h3>
+
+<p>
+  El spyware no rompe nada: <strong>mira</strong>. Su daño es la información que sale del equipo, y por eso
+  se confunde con el troyano que lo transporta. El troyano es el vehículo; el spyware es la función.
+</p>
+
+<table>
+  <caption>Ficha · Spyware</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Software que <strong>recopila información de un ordenador y la envía después a una entidad remota</strong>
+        sin conocimiento ni consentimiento del propietario, según
+        <a href="https://www.incibe.es/aprendeciberseguridad/spyware" rel="noopener">INCIBE</a>. El NIST añade
+        que se instala de forma secreta o subrepticia para reunir información sin que la persona lo sepa.
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>Se instala junto a otro programa o por una extensión, y envía datos de forma periódica: hábitos de navegación, credenciales, capturas o pulsaciones.</td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Instalación «aceptada» sin leer, extensión de navegador, aplicación empaquetada con publicidad.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Información: cuanto más íntima o más útil para suplantar a alguien, mejor.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Revisar qué está instalado y qué extensiones hay activas, vigilar el tráfico saliente y limitar los permisos de las aplicaciones.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">Troyano frente a spyware: la frontera</span>
+  <p>
+    El <strong>troyano</strong> se define por cómo entra y por su doble cara: engaña para ejecutarse. El
+    <strong>spyware</strong> se define por lo que hace: espía. Un programa puede ser las dos cosas a la vez
+    —un troyano que instala un espía—, y por eso el epígrafe los pone juntos. Si la pregunta es
+    «¿cuál se caracteriza por aparentar una función útil?», la respuesta es troyano. Si es «¿cuál recopila
+    información y la envía fuera?», spyware.
+  </p>
+</div>
+
+<h3>4.4. Ransomware</h3>
+
+<p>
+  Es la amenaza que más titulares produce y la que peor se estudia, porque se confunde con «virus que
+  cifra». Cifrar es solo el mecanismo; el negocio es la <strong>extorsión</strong>.
+</p>
+
+<table>
+  <caption>Ficha · Ransomware</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Programa malicioso que <strong>toma el control del equipo bloqueando o cifrando la información</strong>
+        del usuario para, a continuación, <strong>pedir dinero</strong> a cambio de liberar o descifrar los
+        ficheros (<a href="https://www.incibe.es/aprendeciberseguridad/ransomware" rel="noopener">INCIBE,
+        voz «ransomware»</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Entra por un acceso previo —phishing, servicio expuesto, credenciales robadas—, copia datos y cifra. La
+        presión ya no es solo el cifrado: ENISA mide las reivindicaciones sobre los <strong>sitios de filtración
+        de datos</strong>, es decir, sobre la amenaza de publicar lo robado
+        (<a href="https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025" rel="noopener">ENISA,
+        Threat Landscape 2025</a>, apartado 6.1 del informe).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Correo con adjunto, servicio remoto mal protegido, proveedor comprometido, credenciales sin segundo factor.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Dinero rápido; y, en el modelo actual, una víctima que pague sin poder restaurar.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Copias de seguridad <strong>aisladas y probadas</strong>, segmentación de la red, detección temprana de cifrado masivo y un plan escrito de respuesta.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «El ransomware cifra los datos, luego la medida principal es el antivirus». La medida principal
+    es la <strong>copia de seguridad</strong> que la víctima puede restaurar sin depender del atacante. INCIBE
+    lo dice en su guía de actuación: no se paga el rescate
+    (<a href="https://www.incibe.es/ciudadania/ayuda/ransomware" rel="noopener">«Cómo actuar en caso de un
+    ataque de ransomware»</a>).
+  </p>
+</div>
+
+<h3>4.5. Cryptojacking</h3>
+
+<p>
+  La amenaza con la víctima más silenciosa: nadie pierde un fichero, nadie pierde una contraseña. Se paga
+  en electricidad y en rendimiento, y mucha gente no se entera nunca.
+</p>
+
+<table>
+  <caption>Ficha · Cryptojacking</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Secuestro de un dispositivo, sin consentimiento ni conocimiento del usuario, para <strong>aprovechar
+        su capacidad de procesamiento y de cálculo</strong> —procesador, memoria y tarjeta gráfica— en el
+        minado de criptomonedas. El término une cryptocurrency y hijacking
+        (<a href="https://www.incibe.es/ciudadania/blog/cryptojacking-el-nuevo-fraude-de-los-ciberdelincuentes" rel="noopener">INCIBE,
+        «Cryptojacking, el nuevo fraude de los ciberdelincuentes»</a>, 01/08/2018).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Dos vías: <strong>código de minado en una página web</strong> (mientras la pestaña está abierta, el
+        equipo mina) o <strong>programa instalado</strong> (sigue minando tras cerrar el navegador). MITRE
+        ATT&amp;CK lo recoge como Resource Hijacking, técnica T1496, que incluye el minado de
+        criptomonedas entre sus subtécnicas
+        (<a href="https://attack.mitre.org/techniques/T1496/" rel="noopener">ATT&amp;CK, T1496</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Enlace o anuncio que lleva a una web manipulada; extensión o programa con minero incrustado.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Capacidad de cálculo gratuita. <strong>No busca tus datos</strong>: eso lo distingue de casi todas las demás.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Consumo alto, equipo caliente, ventiladores a tope y batería que se agota; bloqueadores de publicidad y de scripts, y control del consumo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.6. Botnet</h3>
+
+<p>
+  La botnet no es un programa: es una <strong>red</strong>. Es la diferencia entre el soldado y el
+  ejército, y la razón por la que una botnet alquilada puede tumbar un servicio que ninguna máquina
+  aislada tumbaría.
+</p>
+
+<table>
+  <caption>Ficha · Botnet</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Conjunto de ordenadores —<strong>bots o zombis</strong>— infectados con un tipo de malware que son
+        <strong>controlados remotamente por un atacante</strong> y que pueden utilizarse <strong>de manera
+        conjunta</strong> para actividades maliciosas
+        (<a href="https://www.incibe.es/aprendeciberseguridad/botnet" rel="noopener">INCIBE, voz «botnet»</a>).
+        El NIST añade el origen de la palabra, «robot» y «network», y describe el mecanismo: los
+        delincuentes usan troyanos para tomar el control de los equipos y organizarlos en una red
+        (<a href="https://csrc.nist.gov/glossary/term/botnet" rel="noopener">NIST, glosario, voz
+        «botnet»</a>, de NIST SP 1800-15B).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Cada equipo infectado se conecta a un <strong>canal de mando y control</strong> y espera órdenes: con el
+        conjunto se lanzan campañas de correo, ataques de denegación de servicio o minado. La víctima puede
+        serlo dos veces, como parte de la botnet y como blanco.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>El mismo malware de siempre, en cualquier equipo con mala higiene: router sin actualizar, programa pirata, sistema sin parches.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Capacidad de red y de cálculo <strong>alquilable</strong>: la botnet es infraestructura, y la infraestructura se vende.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Tráfico periódico y extraño hacia un mismo destino, equipos que responden aunque su dueño no haga nada, consultas a dominios de mando; y en el lado propio, actualizar y segmentar.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>4.7. Zero-day</h3>
+
+<p>
+  El zero-day no es un tipo de programa: es una <strong>ventana de tiempo</strong>. Y esa es toda la
+  pregunta: mientras no hay parche, la defensa por firma no sirve.
+</p>
+
+<table>
+  <caption>Ficha · Zero-day</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Vulnerabilidad <strong>recién descubierta y aún sin parche</strong> que la corrija. Hasta que el
+        fabricante publica la actualización y los usuarios la instalan, el atacante tiene vía libre
+        (<a href="https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day" rel="noopener">INCIBE,
+        «¿Qué es una vulnerabilidad Zero Day?»</a>, 28/08/2020). El NIST lo llama zero-day attack:
+        «ataque que explota una vulnerabilidad de <strong>hardware, firmware o software previamente
+        desconocida</strong>»
+        (<a href="https://csrc.nist.gov/glossary/term/zero_day_attack" rel="noopener">NIST, glosario</a>,
+        de CNSSI 4009-2022).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>El ciclo que describe INCIBE: el fallo existe sin que nadie lo sepa, alguien lo encuentra, escribe el
+        exploit y lo usa, los usuarios notan fallos y el fabricante publica el parche.
+        <strong>Cuando hay parche, deja de ser zero-day.</strong></td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Un servicio expuesto, un formato de archivo, el propio navegador: lo que la víctima ya usa sin instalar nada.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Entrar sin que nada lo detecte: la ausencia de firma es su ventaja.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Detección por comportamiento y no solo por firma, reducción de superficie, mínimo privilegio y actualización rápida cuando llega el parche.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">La confusión que más se repite</span>
+  <p>
+    <strong>Zero-day no es «virus nuevo»</strong> y no es «malware desconocido». Es una vulnerabilidad sin
+    parche. Puede explotarse con un programa conocido y antiguo; lo nuevo es el fallo, no la herramienta. Y
+    el concepto relacionado es <strong>vulnerabilidad</strong>, no amenaza: INCIBE define vulnerabilidad como
+    el fallo o deficiencia técnica que permite a un usuario no legítimo acceder o hacer operaciones no
+    permitidas (<a href="https://www.incibe.es/aprendeciberseguridad/vulnerabilidad" rel="noopener">voz
+    «vulnerabilidad»</a>), y el NIST la define como debilidad que puede ser explotada por una fuente de
+    amenaza (<a href="https://csrc.nist.gov/glossary/term/vulnerability" rel="noopener">glosario</a>, de
+    FIPS 200).
+  </p>
+</div>
+
+<h2>5. Bloque II · amenazas que engañan a una persona</h2>
+
+<p>
+  Aquí no se rompe nada: se convence a alguien. La tecnología es casi irrelevante y por eso funcionan igual
+  por correo, por teléfono o en el portal de la oficina. La pregunta de examen casi nunca es «¿qué es el
+  phishing?», sino <strong>cuál de las siete es</strong> la del enunciado. La pista está en dos cosas: si hay
+  o no hay <strong>clic</strong> de la víctima y si el mensaje es <strong>genérico o dirigido</strong>.
+</p>
+
+<h3>5.1. Ingeniería social</h3>
+
+<p>
+  Es el <strong>género</strong> de este bloque, como el malware lo era del anterior. Phishing, spear
+  phishing, BEC, cartas nigerianas, vishing y smishing son especies del mismo tronco.
+</p>
+
+<table>
+  <caption>Ficha · Ingeniería social</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Técnica con la que el delincuente <strong>se gana la confianza del usuario</strong> para conseguir
+        que haga algo bajo su manipulación y engaño: ejecutar un programa malicioso, facilitar sus claves
+        o comprar en un sitio fraudulento
+        (<a href="https://www.incibe.es/aprendeciberseguridad/ingenieria-social" rel="noopener">INCIBE, voz
+        «ingeniería social»</a>). La ONU la describe en los mismos términos: manipular, engañar, influir o
+        embaucar para que alguien revele información confidencial o haga algo que beneficie al atacante
+        (<a href="https://www.unodc.org/e4j/en/cybercrime/module-2/key-issues/computer-related-offences.html" rel="noopener">UNODC,
+        <strong>Cybercrime Module 2</strong>, delitos informáticos</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        INCIBE publica el ciclo completo de un ataque de ingeniería social en una infografía: se estudia a
+        la víctima, se prepara el pretexto, se contacta, se consigue el objetivo y se borran las huellas
+        (<a href="https://www.incibe.es/ciudadania/formacion/infografias/el-ciclo-de-la-ingenieria-social-como-preparan-los-ciberdelincuentes-un-ataque-de-ingenieria-social" rel="noopener">«El
+        ciclo de la Ingeniería Social»</a>). El eslabón explotado no es técnico: es la <strong>confianza</strong>,
+        la prisa, la autoridad o el miedo.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Cualquier canal humano: correo, llamada, mensaje, red social, e incluso una visita presencial o un USB olvidado.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Que la persona ejecute una acción: abrir, pagar, revelar, firmar o dejar entrar.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Formación con casos reales y, sobre todo, <strong>procedimientos que obliguen a verificar por otro canal</strong>: la concienciación sola no aguanta una orden urgente del jefe.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5.2. Phishing</h3>
+
+<p>
+  El término más usado y el peor delimitado: mucha gente llama phishing a todo. Para el examen, phishing
+  es el envío <strong>masivo y suplantador</strong>; si está dirigido a una persona concreta, es spear
+  phishing.
+</p>
+
+<table>
+  <caption>Ficha · Phishing</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Técnica que consiste en <strong>enviar un correo simulando ser una entidad legítima</strong> —red social,
+        banco, institución pública— para robar información privada, realizar un cargo económico o infectar el
+        dispositivo, con archivos adjuntos infectados o enlaces a páginas fraudulentas
+        (<a href="https://www.incibe.es/aprendeciberseguridad/phishing" rel="noopener">INCIBE, voz
+        «phishing»</a>). El NIST lo describe como la solicitud fraudulenta en la que el autor se hace pasar por
+        una empresa legítima o una persona de reputación.
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Se imita la imagen y el tono de una entidad real y se añade una excusa con prisa; el enlace lleva a una
+        página que copia el formulario de acceso. MITRE ATT&amp;CK lo sitúa en la técnica <strong>T1566</strong>,
+        con subtécnicas para adjunto, enlace y servicio de terceros
+        (<a href="https://attack.mitre.org/techniques/T1566/" rel="noopener">ATT&amp;CK, T1566 Phishing</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Correo masivo; sus variantes por mensaje (smishing) y por voz (vishing) son la misma cosa en otro canal.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Credenciales, datos de tarjeta o que se ejecute un archivo. El objetivo final puede estar a dos pasos.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Segundo factor <strong>resistente al phishing</strong> (no un código que se pueda reenviar), filtrado del correo, comprobación del dominio real y desconfianza ante la urgencia.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5.3. Spear phishing</h3>
+
+<p>
+  La diferencia con el anterior no es tecnológica, es de <strong>puntería</strong>. Y esa puntería es lo
+  que lo hace peligroso: un mensaje que sabe tu nombre, tu jefe y el proyecto que tienes abierto no se
+  detecta mirando la ortografía.
+</p>
+
+<table>
+  <caption>Ficha · Spear phishing</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Phishing <strong>dirigido contra un objetivo específico</strong>, en el que el atacante intenta,
+        mediante un correo, conseguir información confidencial de esa víctima concreta
+        (<a href="https://www.incibe.es/aprendeciberseguridad/spear-phishing" rel="noopener">INCIBE, voz
+        «spear phishing»</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Antes de escribir, el atacante investiga: organigrama, proveedores, viajes, lenguaje interno. Luego
+        construye un mensaje verosímil para esa persona. Es el eslabón que la kill chain llama
+        <strong>reconocimiento</strong> puesto al servicio del engaño.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Correo con adjunto o enlace preparado para una persona; también mensaje en red social profesional.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Entrar en un puesto privilegiado, no en cualquier puesto: el becario no interesa, el administrador sí.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Verificación fuera de banda de cualquier petición sensible, doble aprobación y formación específica para los puestos expuestos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5.4. Business E-mail Compromise</h3>
+
+<p>
+  El BEC es la estafa más cara del bloque y la más difícil de detectar, porque <strong>el mensaje es
+  auténtico</strong>: sale de una cuenta real. No hay enlace raro ni falta de ortografía que delate nada.
+</p>
+
+<table>
+  <caption>Ficha · Business E-mail Compromise</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Estafa en la que los delincuentes <strong>tienen acceso a cuentas de correo legítimas</strong> de la
+        empresa y desde ellas envían mensajes haciéndose pasar por personas de confianza —directivos o
+        proveedores habituales— para que un empleado transfiera dinero o comparta información confidencial
+        (<a href="https://www.incibe.es/empresas/blog/bec-tipos-de-fraude-como-operan-los-estafadores-y-como-detectarlos" rel="noopener">INCIBE,
+        «BEC: tipos de fraude, cómo operan los estafadores y cómo detectarlos»</a>, actualizado el 08/01/2026).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Cinco fases que enumera la misma fuente: <strong>selección del objetivo, estudio, preparación,
+        establecimiento de confianza y ejecución</strong>, y después mantener el engaño. Lo que lo distingue:
+        <strong>no necesita malware ni técnicas avanzadas</strong>, solo una cuenta real y una relación de
+        confianza.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Cuenta de correo comprometida o dirección muy parecida a la oficial; a veces solo una llamada previa.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Una transferencia, un cambio de cuenta bancaria o información sensible. La variante con directivo suplantado se conoce como <strong>fraude del CEO</strong>
+        (<a href="https://www.incibe.es/empresas/blog/fraude-del-ceo-el-engano-que-puede-vaciar-la-cuenta-de-tu-pyme" rel="noopener">INCIBE</a>).</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Verificar cualquier pago <strong>por otro canal</strong>, doble aprobación, comprobación de cambios de datos bancarios y autenticación multifactor en el correo.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">Lo que distingue al BEC de un phishing normal</span>
+  <p>
+    En el phishing el remitente <strong>finge</strong> ser alguien; en el BEC el remitente <strong>es</strong>
+    alguien, con su cuenta real. Por eso el BEC no se cae por mirar la dirección del remitente, y por eso
+    la contramedida no es técnica sino <strong>procedimental</strong>: si la orden llega por correo, se
+    confirma por teléfono.
+  </p>
+</div>
+
+<h3>5.5. Cartas nigerianas</h3>
+
+<p>
+  Su estructura es siempre la misma, cambie el relato o el canal: <strong>una fortuna imposible y un
+  anticipo pequeño</strong>.
+</p>
+
+<table>
+  <caption>Ficha · Cartas nigerianas</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        El fraude de anticipo, conocido en la fuente de la ONU como <strong>fraude de anticipo</strong> o
+        <strong>estafa 419</strong>: se pide una cantidad pequeña para completar una transferencia, un
+        depósito u otra operación, a cambio de una suma mucho mayor. Cambia la historia —se presentan como
+        funcionarios, banqueros o abogados— pero la táctica es la misma: <strong>poco dinero ahora, mucho
+        dinero después</strong>
+        (<a href="https://www.unodc.org/e4j/en/cybercrime/module-2/key-issues/computer-related-offences.html" rel="noopener">UNODC,
+        Cybercrime Module 2</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        No hay un solo golpe: hay una <strong>secuencia</strong>. Cada obstáculo —una tasa, un impuesto, un
+        soborno, un error bancario— justifica un pago nuevo. La víctima que ya ha puesto dinero tiene
+        motivos para seguir poniéndolo, y ahí está el negocio.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Correo, carta, mensaje de redes sociales o de aplicaciones de citas; hoy también con perfil falso y meses de conversación.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Dinero en entregas sucesivas y datos personales y bancarios de la víctima.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Regla única y suficiente: <strong>nadie regala dinero</strong>. No se paga ningún anticipo, ni siquiera el primero, y no se comparte documentación.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Precisión de fuente · el número «419»</span>
+  <p>
+    La fuente de la ONU usa «419 scam» como alias del fraude de anticipo, y este tema lo reproduce así. Lo
+    que <strong>no</strong> se afirma aquí es de dónde sale el número: la explicación habitual —que
+    corresponde a un artículo del código penal nigeriano— no se ha verificado en ninguna fuente primaria
+    consultada, y por eso no se escribe. Si un enunciado te la ofrece como dato, no la descartes por falsa:
+    simplemente no está confirmada en este tema (apartado 18).
+  </p>
+</div>
+
+<h3>5.6. Pharming</h3>
+
+<p>
+  La diferencia con el phishing cabe en una frase: en el phishing <strong>te empujan a hacer clic</strong>;
+  en el pharming <strong>te llevan</strong>, aunque escribas bien la dirección.
+</p>
+
+<table>
+  <caption>Ficha · Pharming</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Uso de <strong>medios técnicos para redirigir al usuario</strong> a una web falsa que suplanta a la
+        legítima, con el fin de que revele información personal
+        (<a href="https://csrc.nist.gov/glossary/term/pharming" rel="noopener">NIST, glosario, voz
+        «pharming»</a>, tomada de NIST SP 800-44 versión 2).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Se manipula la <strong>resolución del nombre</strong>: la víctima escribe la dirección correcta y el
+        sistema la lleva a otra parte. Puede hacerse en el DNS —servidor envenenado o secuestrado— o en el
+        propio equipo, alterando el archivo que asocia nombres a direcciones. No requiere que la víctima
+        haga clic en nada.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Router doméstico mal configurado, DNS del proveedor comprometido, red wifi controlada por el atacante.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Credenciales y datos de banca: la página falsa es idéntica y la dirección parece buena.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>DNSSEC, usar un DNS de confianza, exigir HTTPS con certificado válido y desconfiar de avisos de certificado, aunque se ignoren por costumbre.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5.7. Spoofing</h3>
+
+<p>
+  Es el <strong>mecanismo</strong> que hay debajo de media docena de estas amenazas: falsificar el origen
+  para que la víctima crea que habla con quien no es. Por eso el NIST lo define en términos generales y
+  la guía de INCIBE lo despliega por capas.
+</p>
+
+<table>
+  <caption>Ficha · Spoofing</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Intento de acceder a un sistema <strong>haciéndose pasar por un usuario autorizado</strong>; el NIST
+        precisa que suplantar, enmascarar, usar credenciales ajenas y hacerse pasar por otro son formas de
+        spoofing (<a href="https://csrc.nist.gov/glossary/term/spoofing" rel="noopener">glosario NIST</a>,
+        de CNSSI 4009-2022).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        La guía de INCIBE lo ordena en cuatro capas —<strong>IP</strong> (dirección de origen falsa),
+        <strong>web</strong> (sitio copiado), <strong>correo</strong> (remitente falsificado) y
+        <strong>DNS</strong> (resolución manipulada, que es la puerta del pharming)—
+        (<a href="https://www.incibe.es/sites/default/files/docs/guia-ciberataques/osi-guia-ciberataques.pdf" rel="noopener">Guía
+        de ciberataques</a>, apartado 3.2 de la guía).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Correo con remitente falsificado, web clonada, red bajo control del atacante.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Que la identidad del emisor no se cuestione: la confianza es el producto que vende.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Autenticación del correo saliente en el dominio propio, certificados, filtrado por origen y verificación por un segundo canal cuando la petición es sensible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">Spoofing, pharming y phishing en una línea cada uno</span>
+  <ul>
+    <li><strong>Spoofing</strong>: falsifico el origen (la IP, el remitente, la web, el DNS).</li>
+    <li><strong>Pharming</strong>: uso el spoofing del DNS para llevarte a mi web sin que hagas clic.</li>
+    <li><strong>Phishing</strong>: te escribo haciéndome pasar por tu banco para que hagas clic tú.</li>
+  </ul>
+</div>
+
+<h2>6. Bloque III y IV · aplicaciones, datos y disponibilidad</h2>
+
+<p>
+  Cuatro amenazas que no van contra la persona ni contra el equipo del usuario, sino contra <strong>lo que
+  hay detrás de una web</strong> —la base de datos, el navegador de otro usuario, la pasarela de pago— o
+  contra la <strong>capacidad de responder</strong>. En todas, la víctima no es quien ejecuta el ataque.
+</p>
+
+<h3>6.1. Inyección SQL</h3>
+
+<p>
+  La palabra clave es <strong>inyectar</strong>: meter órdenes donde el programa esperaba datos. Y la causa
+  siempre es la misma desde hace veinte años: confiar en lo que llega del formulario.
+</p>
+
+<table>
+  <caption>Ficha · Inyección SQL</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Ataque en el que se <strong>inyectan comandos SQL</strong> en una entrada de datos para alterar la
+        ejecución de las consultas previstas. Un exploit con éxito puede leer datos sensibles, modificarlos
+        o borrarlos, ejecutar operaciones de administración de la base de datos e incluso dictar órdenes al
+        sistema operativo
+        (<a href="https://owasp.org/www-community/attacks/SQL_Injection" rel="noopener">OWASP, «SQL
+        Injection»</a>). El NIST lo describe como el ataque que busca sitios web que pasan a la base de
+        datos la entrada del usuario <strong>sin procesarla lo suficiente</strong>
+        (<a href="https://csrc.nist.gov/glossary/term/sql_injection" rel="noopener">glosario NIST</a>, de
+        NISTIR 7682).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        La web construye una consulta uniendo texto fijo con lo que escribe el usuario. Si ese texto no se
+        valida, lo que era un dato pasa a ser <strong>código</strong>. INCIBE lo explica con el caso normal:
+        formularios que consultan la base de datos y no validan bien lo que reciben
+        (<a href="https://www.incibe.es/empresas/blog/ataques-inyeccion-sql-amenaza-tu-web" rel="noopener">«Ataques
+        de inyección SQL, una amenaza para tu web»</a>, 26/10/2021).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Campo de formulario, parámetro de la dirección, buscador interno: cualquier entrada que llegue a la base de datos.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>La base de datos entera: leerla, venderla, alterarla o destruirla.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td><strong>Consultas parametrizadas</strong>, validación y filtrado de la entrada, mínimo privilegio del usuario de base de datos y bases internas no expuestas a internet (las cuatro medidas que enumera la fuente de INCIBE).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.2. XSS (Cross-Site Scripting)</h3>
+
+<p>
+  El XSS también es una inyección, pero el daño no lo sufre el servidor: lo sufre <strong>el navegador del
+  siguiente usuario</strong> que visita la página. Es la amenaza peor explicada de los manuales, porque
+  mucha gente la confunde con la inyección SQL solo por la palabra «inyección».
+</p>
+
+<table>
+  <caption>Ficha · XSS</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Tipo de inyección en la que se introducen <strong>scripts maliciosos en sitios web por lo demás legítimos y
+        de confianza</strong>. Ocurre cuando una aplicación usa una entrada del usuario dentro de la salida que
+        genera <strong>sin validarla ni codificarla</strong>
+        (<a href="https://owasp.org/www-community/attacks/xss/" rel="noopener">OWASP, «Cross Site Scripting
+        (XSS)»</a>); el script acaba ejecutándose con los permisos de la web objetivo.
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>El atacante deja el código en un punto que la web devuelve sin tratar —un comentario, un perfil, un parámetro— y espera. Cuando otro usuario abre la página, el código se ejecuta <strong>en su navegador</strong>, con la confianza que ese usuario tiene en el sitio.</td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Comentarios, mensajes, campos que se muestran a otros usuarios, enlaces preparados que llegan por correo.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Robar la sesión o las credenciales de otro usuario, o hacer que su navegador ejecute acciones en la web vulnerable.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td><strong>Codificar la salida</strong>, validar la entrada y aplicar una política de seguridad de contenido que limite qué scripts pueden ejecutarse.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">SQL frente a XSS: dos inyecciones, dos víctimas</span>
+  <table>
+    <caption>La pareja que más se confunde en el bloque de aplicaciones</caption>
+    <thead>
+      <tr><th></th><th>Inyección SQL</th><th>XSS</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Dónde se inyecta</td><td>En la consulta a la base de datos</td><td>En la página que verá otro usuario</td></tr>
+      <tr><td>Quién ejecuta</td><td>El servidor de base de datos</td><td>El navegador de la víctima</td></tr>
+      <tr><td>Quién sufre el daño</td><td>La organización dueña de los datos</td><td>Los usuarios de la web</td></tr>
+      <tr><td>Defensa principal</td><td>Consultas parametrizadas</td><td>Codificar la salida</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>6.3. Skimming</h3>
+
+<p>
+  El skimming es el único término del epígrafe que nació en el mundo físico y se trasladó al digital sin
+  cambiar de nombre. El objeto del robo no son datos personales cualesquiera: son <strong>los datos de la
+  tarjeta y el PIN</strong>.
+</p>
+
+<table>
+  <caption>Ficha · Skimming</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Robo de los datos de una tarjeta mediante un dispositivo colocado en el cajero o en el terminal de
+        pago, con el que se clona la tarjeta y se obtiene el PIN. Su versión digital, el
+        <strong>e-skimming</strong>, obtiene información bancaria y personal de tiendas online legítimas, con
+        la peculiaridad de que <strong>el pago se completa con normalidad</strong> y ni el cliente ni el
+        comercio lo notan
+        (<a href="https://www.incibe.es/empresas/blog/e-skimming-y-proteger-tu-tienda-esta-tecnica-maliciosa" rel="noopener">INCIBE,
+        «E-skimming»</a>, 14/11/2019).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>En el cajero, un lector superpuesto copia la banda o el chip y una cámara o un teclado falso capturan el PIN.
+        En la tienda online se accede por una vulnerabilidad sin parchear o por phishing y <strong>se modifica el
+        código</strong> para que los datos viajen también al atacante.</td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Cajero manipulado; en el comercio electrónico, gestor de contenidos sin actualizar o credenciales débiles del panel.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Datos de tarjeta utilizables: se venden o se usan directamente en compras.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Inspección física de cajeros y terminales; en la tienda, actualizar, credenciales robustas, doble factor en el panel y revisión del código de la pasarela de pago.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Precisión de fuente · cuidado con el glosario del NIST</span>
+  <p>
+    La voz «skimming» del glosario del NIST no se refiere a tarjetas: define la <strong>lectura no autorizada
+    de etiquetas</strong> (<a href="https://csrc.nist.gov/glossary/term/skimming" rel="noopener">NIST,
+    glosario</a>, de NIST SP 800-98), es decir, el mismo término en el mundo de la radiofrecuencia. Por eso
+    la definición de esta ficha se apoya en INCIBE y no en el NIST: <strong>elegir la fuente correcta es
+    parte del examen</strong>, porque la misma palabra designa cosas distintas en contextos distintos.
+  </p>
+</div>
+
+<h3>6.4. Denegación de servicio</h3>
+
+<p>
+  La única del epígrafe que no busca entrar ni leer: busca <strong>que el servicio no responda</strong>.
+  Funciona por saturación, y se mide en tiempo de caída.
+</p>
+
+<table>
+  <caption>Ficha · Denegación de servicio</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Ataque cuyo objetivo es <strong>inhabilitar el uso de un sistema, aplicación o máquina</strong> para bloquear
+        el servicio al que está destinado
+        (<a href="https://www.incibe.es/ciudadania/blog/que-son-los-ataques-dos-y-ddos" rel="noopener">INCIBE,
+        «¿Qué son los ataques DoS y DDoS?»</a>, 21/08/2018). El glosario del NIST lo formula como la prevención
+        del acceso autorizado a recursos o el retraso de operaciones críticas.
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Un servidor atiende un número limitado de peticiones simultáneas; si se supera, se ralentiza, deja
+        de responder o se cae. La diferencia entre <strong>DoS</strong> y <strong>DDoS</strong> es el número
+        de equipos y direcciones IP que atacan: una sola en el DoS, muchas en el DDoS, reclutadas por
+        malware y convertidas en bots, es decir, en una <strong>botnet</strong>.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Peticiones masivas directas o amplificadas, tráfico basura desde equipos infectados de terceros.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Perjuicio económico y de prestigio, y en algunos casos pura propaganda: es el ataque favorito del hacktivismo (apartado 9).</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Capacidad de absorción contratada, filtrado en el borde, detección de picos anómalos y un plan de continuidad probado.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Un DDoS es un DoS distribuido porque se lanza desde varias regiones». No: se distribuye entre
+    <strong>muchos equipos</strong>, y esos equipos son víctimas, no atacantes. La segunda trampa es la
+    dirección del daño: en un DDoS el dueño de la botnet no pierde nada; quien pierde es el servicio
+    atacado y, de paso, los dueños de los equipos zombis, que pagan la electricidad.
+  </p>
+</div>
+
+<h2>7. Cibercriminales: quién ataca y por qué</h2>
+
+<p>
+  El epígrafe pide «cibercriminales» en una sola palabra, así que el examen lo resuelve con una pregunta de
+  clasificación: qué actor es el del enunciado. El punto de partida es que <strong>actor</strong> es
+  cualquier individuo o grupo que supone una amenaza, sin más
+  (<a href="https://csrc.nist.gov/glossary/term/threat_actor" rel="noopener">NIST, glosario, voz «threat
+  actor»</a>, de NIST SP 800-150). Y el primer error que hay que desactivar es el de las palabras: en
+  español se usa «hacker» como sinónimo de delincuente y no lo es.
+</p>
+
+<div class="clave">
+  <span class="clave__titulo">Hacker no es cibercriminal</span>
+  <p>
+    INCIBE lo explica en su propia voz: <strong>hacker</strong> es quien trata de resolver, paliar o informar
+    sobre los problemas de seguridad que encuentra en programas, servicios o plataformas; y
+    <strong>cibercriminal</strong> es quien busca <strong>sacar beneficio</strong> de esos fallos usando
+    técnicas como la ingeniería social o el malware
+    (<a href="https://www.incibe.es/aprendeciberseguridad/hacker-vs-ciberdelincuente" rel="noopener">«Hacker
+    vs. Ciberdelincuente»</a>). La diferencia no está en el conocimiento técnico: está en el permiso y en
+    el fin.
+  </p>
+</div>
+
+<p>
+  La doctrina añade una segunda advertencia que la fuente de la ONU formula con claridad: sobre el crimen
+  organizado en el ciberespacio <strong>no hay consenso en la definición</strong>, y algunos rasgos clásicos
+  del crimen organizado —empezando por el control del territorio— <strong>no se trasladan bien</strong> al
+  ciberespacio
+  (<a href="https://www.unodc.org/e4j/en/cybercrime/module-13/key-issues/conceptualizing-organized-crime-and-defining-the-actors-involved.html" rel="noopener">UNODC,
+  Cybercrime Module 13</a>). Traducido al examen: no des por hecho que todo atacante es una «organización
+  criminal» ni que toda organización criminal es una empresa.
+</p>
+
+<table>
+  <caption>Tipología de actores (síntesis de doctrina; cada rasgo se apoya en la fuente citada en el texto)</caption>
+  <thead>
+    <tr><th>Actor</th><th>Motivación</th><th>Recursos</th><th>Cómo entra</th><th>Dónde se nota</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Cibercriminal individual</strong></td>
+      <td>Beneficio económico propio</td>
+      <td>Bajos o medios; usa lo que compra hecho</td>
+      <td>Phishing, fraude, reventado de credenciales</td>
+      <td>Volumen alto de incidentes pequeños</td>
+    </tr>
+    <tr>
+      <td><strong>Grupo de crimen organizado</strong></td>
+      <td>Beneficio económico a escala</td>
+      <td>Medios y reparto de tareas</td>
+      <td>Cadena de servicios comprados, extorsión</td>
+      <td>Campañas sostenidas y sectoriales</td>
+    </tr>
+    <tr>
+      <td><strong>Hacktivista</strong></td>
+      <td>Cambio social o político</td>
+      <td>Variables; mucha capacidad de convocatoria</td>
+      <td>Desfiguración web, DDoS, filtración</td>
+      <td>Reivindicación pública y oportunidad mediática</td>
+    </tr>
+    <tr>
+      <td><strong>Insider</strong></td>
+      <td>Resentimiento, dinero, coacción o simple descuido</td>
+      <td>El acceso que ya tiene por su puesto</td>
+      <td>Uso indebido de un permiso legítimo</td>
+      <td>Actividad anómala dentro del perímetro</td>
+    </tr>
+    <tr>
+      <td><strong>APT</strong></td>
+      <td>Espionaje o sabotaje por encargo de un Estado o de un gran interés</td>
+      <td>Altos y sostenidos en el tiempo</td>
+      <td>Spear phishing, zero-day, cadena de suministro</td>
+      <td>Permanencia prolongada y sigilo, no ruido</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «El hacktivista busca lucro» y «el cibercriminal busca notoriedad» son las dos permutaciones clásicas
+    del examen. Cada uno con lo suyo: el <strong>hacktivista</strong> busca el efecto político o social y
+    suele <strong>reivindicar</strong> el ataque; el <strong>cibercriminal</strong> busca el beneficio y
+    prefiere el <strong>silencio</strong>. Una víctima que descubre el ataque por un comunicado no está ante
+    un delincuente económico.
+  </p>
+</div>
+
+<h2>8. Crime as a Service: el ecosistema que lo cambió todo</h2>
+
+<p>
+  Si tuvieras que quedarte con una idea de todo el tema, sería esta: <strong>la mayoría de los ataques
+  actuales no los ejecuta quien los diseña</strong>. Se compran piezas. Y eso cambia tanto la forma de
+  atacar como la forma de investigar, porque el que aprieta el botón y el que construyó la herramienta
+  pueden no conocerse.
+</p>
+
+<p>
+  La fuente de la ONU describe el fenómeno sin rodeos: los grupos que se dedican al crimen organizado en
+  el ciberespacio <strong>también prestan servicios que facilitan delitos y ciberdelitos</strong> —lo que
+  llama crime as a service—, y enumera qué se vende:
+</p>
+
+<ul>
+  <li>Datos y documentos de identidad, incluidos datos financieros y sanitarios, pasaportes o documentos de registro.</li>
+  <li>Malware hecho a medida o ya conocido: la fuente pone como ejemplo un troyano bancario.</li>
+  <li>Ataques de denegación de servicio y <strong>servicios de botnet</strong>.</li>
+  <li><strong>Keyloggers</strong> y herramientas de phishing y spear phishing.</li>
+  <li>Tutoriales de intrusión e información sobre vulnerabilidades y exploits, con instrucciones para aprovecharlos.</li>
+  <li>Y, además, <strong>blanqueo de capitales como servicio</strong>.</li>
+</ul>
+
+<p>
+  Todo eso está en
+  <a href="https://www.unodc.org/e4j/en/cybercrime/module-13/key-issues/cyber-organized-crime-activities.html" rel="noopener">UNODC,
+  Cybercrime Module 13, «Cyber Organized Crime Activities»</a>, que relata además el caso de un creador de
+  malware que vendía el programa, sus complementos y <strong>versiones personalizadas</strong> a clientes que
+  pagaban: el producto se adapta al comprador.
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 226" role="img" aria-labelledby="fig-caas">
+    <title id="fig-caas">Eslabones del modelo Crime as a Service y qué aporta cada uno</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <rect x="20" y="24" width="720" height="34" rx="7" fill="var(--acento)" />
+      <text x="380" y="46" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">CRIME AS A SERVICE · cada pieza se compra hecha</text>
+
+      <rect x="20" y="76" width="228" height="60" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="32" y="97" font-size="11.5" font-weight="700" fill="var(--texto)">Acceso inicial</text>
+      <text x="32" y="114" font-size="10.5" fill="var(--texto-suave)">credenciales, sesiones y equipos</text>
+      <text x="32" y="129" font-size="10.5" fill="var(--texto-suave)">se vende como puerta de entrada</text>
+
+      <rect x="266" y="76" width="228" height="60" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="278" y="97" font-size="11.5" font-weight="700" fill="var(--texto)">Herramientas</text>
+      <text x="278" y="114" font-size="10.5" fill="var(--texto-suave)">malware, keyloggers, kits de phishing</text>
+      <text x="278" y="129" font-size="10.5" fill="var(--texto-suave)">alquiladas o hechas a medida</text>
+
+      <rect x="512" y="76" width="228" height="60" rx="7" fill="var(--acento-suave)" stroke="var(--acento)" />
+      <text x="524" y="97" font-size="11.5" font-weight="700" fill="var(--texto)">Infraestructura</text>
+      <text x="524" y="114" font-size="10.5" fill="var(--texto-suave)">botnets, servidores, alojamiento</text>
+      <text x="524" y="129" font-size="10.5" fill="var(--texto-suave)">capacidad de golpear en conjunto</text>
+
+      <rect x="20" y="152" width="228" height="60" rx="7" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="32" y="173" font-size="11.5" font-weight="700" fill="var(--texto)">Conocimiento</text>
+      <text x="32" y="190" font-size="10.5" fill="var(--texto-suave)">tutoriales, vulnerabilidades y exploits</text>
+      <text x="32" y="205" font-size="10.5" fill="var(--texto-suave)">con instrucciones de uso</text>
+
+      <rect x="266" y="152" width="228" height="60" rx="7" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="278" y="173" font-size="11.5" font-weight="700" fill="var(--texto)">Ejecución</text>
+      <text x="278" y="190" font-size="10.5" fill="var(--texto-suave)">el afiliado que despliega y negocia</text>
+      <text x="278" y="205" font-size="10.5" fill="var(--texto-suave)">puede no haber escrito nada</text>
+
+      <rect x="512" y="152" width="228" height="60" rx="7" fill="var(--clave-fondo)" stroke="var(--clave-borde)" />
+      <text x="524" y="173" font-size="11.5" font-weight="700" fill="var(--texto)">Dinero</text>
+      <text x="524" y="190" font-size="10.5" fill="var(--texto-suave)">blanqueo como servicio</text>
+      <text x="524" y="205" font-size="10.5" fill="var(--texto-suave)">convierte el botín en dinero usable</text>
+
+    </g>
+  </svg>
+  <figcaption>
+    Seis eslabones y un negocio. El catálogo de la izquierda es el que enumera la fuente de la ONU; el orden
+    de las casillas es una forma de contarlo, no una secuencia obligatoria: en la práctica las piezas se
+    combinan según lo que el comprador necesite.
+  </figcaption>
+</figure>
+
+<h3>8.1. Cómo se llama cada alquiler</h3>
+
+<p>
+  El modelo tiene una gramática propia: se nombra por lo que se alquila más el sufijo as a Service.
+  ENISA lo usa así en su panorama de amenazas y conviene reconocer los tres que aparecen en el informe.
+</p>
+
+<table>
+  <caption>Alquileres documentados por ENISA en su panorama de 2025</caption>
+  <thead>
+    <tr><th>Nombre</th><th>Qué se alquila</th><th>Qué implica</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PhaaS</strong> · phishing as a service</td>
+      <td>Plataformas que <strong>automatizan la generación de kits de phishing</strong> con marcas reales</td>
+      <td>Una campaña creíble deja de exigir saber hacer: se compra el kit y se elige la víctima</td>
+    </tr>
+    <tr>
+      <td><strong>RaaS</strong> · ransomware as a service</td>
+      <td>Programas de ransomware y su infraestructura, con reparto de beneficios</td>
+      <td>ENISA observa <strong>fragmentación</strong> del ecosistema y aparición continua de variantes y programas nuevos</td>
+    </tr>
+    <tr>
+      <td><strong>MaaS</strong> · malware as a service</td>
+      <td>Malware y su mantenimiento, ofrecido en foros</td>
+      <td>El comprador no desarrolla: despliega y paga</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Fuente: <a href="https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025" rel="noopener">ENISA,
+  Threat Landscape 2025</a> (versión 1.3, septiembre de 2026), que describe las plataformas PhaaS, los
+  programas RaaS y el modelo MaaS, y señala que la <strong>publicación del código de un programa RaaS</strong>
+  contribuye a <strong>bajar las barreras de entrada</strong> al mercado criminal. Su cifra de variantes de
+  ransomware desplegadas contra organizaciones de los Estados miembros es de <strong>82</strong> (Akira 11,6 %,
+  SafePay 10,1 %, Qilin 7,5 %): son reivindicaciones de su conjunto de datos, no condenas.
+</p>
+
+<div class="clave">
+  <span class="clave__titulo">Las tres consecuencias que puede preguntar el examen</span>
+  <p>
+    <strong>Especialización</strong> (quien construye la herramienta no es quien la usa),
+    <strong>barrera de entrada más baja</strong> (no hace falta saber para lanzar una campaña) y
+    <strong>atribución difícil</strong> (el rastro lleva a una herramienta en venta, no a una persona).
+  </p>
+</div>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «Crime as a Service» <strong>no es un tipo de malware</strong> ni una técnica de ataque: es un
+    <strong>modelo de negocio</strong>. Si un enunciado lo presenta como una familia de programas, es falso
+    por categoría, igual que sería falso decir que «la economía sumergida» es un producto.
+  </p>
+</div>
+
+<h2>9. Hacktivistas</h2>
+
+<p>
+  El hacktivista no quiere tu dinero: quiere que te enteres de algo. Esa frase explica por qué sus ataques
+  son ruidosos y por qué se reivindican, y es la clave para no confundirlo con un cibercriminal.
+</p>
+
+<table>
+  <caption>Ficha · Hacktivismo</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Acceso o interferencia <strong>intencionados y sin autorización</strong> en sistemas, sitios web o
+        datos con el fin de <strong>provocar un cambio social o político</strong>. La fuente de la ONU subraya
+        que la valoración de su legitimidad como forma de protesta <strong>varía</strong> y que no hay una
+        posición única al respecto
+        (<a href="https://www.unodc.org/e4j/en/cybercrime/module-14/key-issues/hacktivism.html" rel="noopener">UNODC,
+        Cybercrime Module 14, «Hacktivism»</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        La misma fuente enumera las acciones documentadas: <strong>desfiguración y redirección de sitios
+        web, ataques de denegación de servicio, distribución de malware, robo y publicación de datos y
+        sabotaje</strong>. No busca permanecer oculto: busca el efecto y el eco.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>DDoS como forma de presión pública, filtración de documentos, desfiguración de portadas institucionales.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Impacto político o social y <strong>reivindicación</strong>: que se sepa quién lo hizo y por qué.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Para la víctima, las mismas defensas que frente a un DDoS y una web; para el análisis, la <strong>reivindicación</strong> es el dato que orienta la atribución.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  El dato europeo lo pone ENISA. Con la cautela de siempre —son <strong>reivindicaciones</strong>
+  contabilizadas por la agencia, no impactos confirmados—, sitúa a los grupos hacktivistas como el actor
+  <strong>más activo</strong> contra los Estados miembros, con un <strong>79 %</strong> de los incidentes
+  reivindicados y el <strong>DDoS</strong> como técnica dominante (<strong>91,5 %</strong>). Identifica al
+  menos <strong>88 grupos</strong> y concluye que el impacto global fue <strong>marginal</strong>
+  (<a href="https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025" rel="noopener">ENISA,
+  Threat Landscape 2025</a>, páginas 50 y 51 del PDF).
+</p>
+
+<div class="clave">
+  <span class="clave__titulo">Hacktivismo no es ciberterrorismo</span>
+  <p>
+    La diferencia que pide el examen es la <strong>finalidad</strong> y el <strong>daño</strong>: el
+    hacktivista persigue un cambio político mediante presión y publicidad; el terrorismo busca intimidar a
+    la población o coaccionar a los poderes públicos. La propia fuente de la ONU trata ambas categorías en
+    <strong>apartados separados</strong> del mismo módulo —hacktivismo, ciberterrorismo, ciberespionaje y
+    ciberguerra—, y esa separación es el argumento: son figuras distintas, no grados de la misma.
+  </p>
+</div>
+
+<div class="aviso">
+  <span class="aviso__titulo">Un matiz que vale una pregunta</span>
+  <p>
+    La <strong>sentada virtual</strong> es el caso límite: miles de personas visitan a la vez un sitio hasta
+    saturarlo. La fuente de la ONU la describe como acción colectiva que <strong>no emplea equipos infectados</strong>
+    —no es un DDoS con botnet— y recoge que hay quien la considera protesta y quien la considera acceso
+    abusivo. Si el enunciado contrapone «DDoS con botnet» y «sentada virtual», la diferencia es el
+    <strong>uso de equipos ajenos infectados</strong>.
+  </p>
+</div>
+
+<h2>10. Insider threat: la amenaza que ya está dentro</h2>
+
+<p>
+  Toda la seguridad anterior supone que el enemigo está fuera. El insider rompe esa suposición: tiene
+  cuenta, tiene permisos y conoce los procedimientos. Por eso no se detecta con un cortafuegos.
+</p>
+
+<table>
+  <caption>Ficha · Insider threat</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Persona con <strong>acceso legítimo</strong> a la información o a los sistemas de una organización
+        que <strong>utiliza ese privilegio de forma indebida</strong> y pone en riesgo la seguridad. Puede ser
+        empleado, exempleado, proveedor o cualquiera con acceso
+        (<a href="https://www.incibe.es/empresas/blog/insiders-como-atacan-desde-dentro" rel="noopener">INCIBE,
+        «Insiders: cómo atacan desde dentro»</a>, 18/07/2023). El NIST lo formula como la amenaza de que
+        alguien use su acceso autorizado, <strong>a sabiendas o sin saberlo</strong>, para causar daño
+        (<a href="https://csrc.nist.gov/glossary/term/insider_threat" rel="noopener">glosario NIST, voz
+        «insider threat»</a>, de NIST SP 800-171r3).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        La fuente de INCIBE distingue <strong>dos clases</strong>: el insider que actúa deliberadamente
+        —por motivación propia o porque alguien lo coacciona— y el que <strong>no es consciente</strong> de
+        serlo, porque comete un error o cae en un engaño. El segundo es igual de dañino y mucho más frecuente.
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>El puesto de trabajo: copia de ficheros antes de irse, permisos excesivos, USB, correo personal.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Dinero, venganza, reconocimiento o simplemente terminar el trabajo más rápido saltándose el procedimiento.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Mínimo privilegio, revisión periódica de accesos y <strong>registro de la actividad</strong>; control del correo y del almacenamiento, y planes de salida con revocación inmediata.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="clave">
+  <span class="clave__titulo">Insider no es sinónimo de empleado desleal</span>
+  <p>
+    El concepto incluye al que <strong>no quiere hacer daño</strong>: el que se reenvía una base de datos a su
+    correo para trabajar el fin de semana, el que cae en un phishing desde una cuenta con privilegios. Por eso
+    la defensa es también <strong>arquitectura</strong>: que el error no se convierta en incidente grave.
+    INCIBE-CERT dedica una entrada a esa doble cara del empleado
+    (<a href="https://www.incibe.es/incibe-cert/blog/insider-las-dos-caras-del-empleado" rel="noopener">«Insider,
+    las dos caras del empleado»</a>).
+  </p>
+</div>
+
+<h2>11. APT: el actor que no tiene prisa</h2>
+
+<p>
+  APT son las siglas de <strong>Advanced Persistent Threat</strong>, amenaza persistente avanzada. Las tres
+  palabras describen las tres cosas que lo separan de un ataque común: <strong>avanzado</strong> en medios,
+  <strong>persistente</strong> en el tiempo y una <strong>amenaza</strong> con objetivo propio, casi siempre
+  información.
+</p>
+
+<table>
+  <caption>Ficha · APT</caption>
+  <tbody>
+    <tr>
+      <th>Qué es</th>
+      <td>
+        Adversario con <strong>niveles sofisticados de experiencia y recursos significativos</strong>, que usa
+        múltiples vectores —ciber, físicos y de engaño— para generar oportunidades de alcanzar sus objetivos,
+        que típicamente son <strong>establecer y extender su presencia</strong> en la infraestructura de la
+        organización para <strong>exfiltrar información de forma continua</strong>
+        (<a href="https://csrc.nist.gov/glossary/term/advanced_persistent_threat" rel="noopener">NIST,
+        glosario, voz «advanced persistent threat»</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Cómo funciona</th>
+      <td>
+        Entra sin ruido, se queda y se mueve despacio. El documento público de Lockheed Martin lo describe
+        como el adversario que planifica <strong>campañas de intrusión</strong> hábilmente preparadas y
+        subraya la asimetría: <strong>basta con detener una fase para romper la cadena</strong>
+        (<a href="https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/Gaining_the_Advantage_Cyber_Kill_Chain.pdf" rel="noopener">Lockheed
+        Martin, «Gaining the Advantage»</a>).
+      </td>
+    </tr>
+    <tr>
+      <th>Vector típico</th>
+      <td>Spear phishing dirigido, vulnerabilidad sin parche, proveedor comprometido, acceso comprado a un tercero.</td>
+    </tr>
+    <tr>
+      <th>Qué busca</th>
+      <td>Información y permanencia. El lucro inmediato es secundario, y eso cambia todo el modelo de detección.</td>
+    </tr>
+    <tr>
+      <th>Cómo se detecta o se evita</th>
+      <td>Detección de <strong>permanencia</strong> —movimientos laterales, cuentas nuevas, tareas programadas— y no solo de la entrada; inteligencia de amenazas y gestión de la cadena de suministro.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="aviso">
+  <span class="aviso__titulo">Trampa típica</span>
+  <p>
+    «APT es un tipo de malware» y «APT es un grupo de hackers que ataca rápido». Las dos son falsas. La
+    primera confunde al <strong>actor</strong> con su herramienta: un APT puede usar malware corriente, o
+    ninguno. La segunda contradice la palabra clave: <strong>persistente</strong>. Un ataque que entra y
+    sale en una noche es cualquier cosa menos un APT.
+  </p>
+</div>
+
+<div class="clave">
+  <span class="clave__titulo">Los cuatro actores, en una frase cada uno</span>
+  <ul>
+    <li><strong>Cibercriminal</strong>: quiere tu dinero y prefiere que no te enteres.</li>
+    <li><strong>Hacktivista</strong>: quiere el efecto político y necesita que te enteres.</li>
+    <li><strong>Insider</strong>: ya está dentro y usa un permiso que le dieron.</li>
+    <li><strong>APT</strong>: recursos, paciencia y un objetivo de información; su éxito es no ser visto.</li>
+  </ul>
+</div>
+
+<h2>12. Cyber Kill Chain: las siete fases</h2>
+
+<p>
+  La Cyber Kill Chain es un modelo de <strong>Lockheed Martin</strong>, parte de su método de defensa guiada
+  por inteligencia, que describe <strong>lo que el adversario tiene que completar</strong> para alcanzar su
+  objetivo. La idea central es la asimetría: el atacante debe recorrer <strong>todas</strong> las fases,
+  mientras que al defensor le basta con <strong>romper una</strong>.
+</p>
+
+<p>
+  El documento público de la compañía lo dice literalmente: «<strong>detener a los adversarios en cualquier
+  fase rompe la cadena del ataque</strong>; el adversario debe progresar completamente por todas las fases
+  para tener éxito»
+  (<a href="https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/Gaining_the_Advantage_Cyber_Kill_Chain.pdf" rel="noopener">Lockheed
+  Martin, Gaining the Advantage: Applying Cyber Kill Chain Methodology to Network Defense</a>, p. 2), y
+  añade que el intruso tiene éxito «si y solo si» puede pasar por las fases 1 a 6 y llegar a la última.
+</p>
+
+<figure>
+  <svg viewBox="0 0 760 110" role="img" aria-labelledby="fig-killchain">
+    <title id="fig-killchain">Las siete fases de la Cyber Kill Chain y el objetivo del defensor en cada una</title>
+    <g font-family="Lexend, system-ui, sans-serif">
+      <rect x="20" y="26" width="96" height="70" rx="7" fill="var(--acento)" />
+      <text x="68" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">1 · RECON</text>
+      <text x="68" y="63" font-size="9" fill="#ffffff" text-anchor="middle">Reconnaissance</text>
+      <text x="68" y="78" font-size="8.5" fill="#dbe9f4" text-anchor="middle">identificar el</text>
+      <text x="68" y="90" font-size="8.5" fill="#dbe9f4" text-anchor="middle">objetivo</text>
+
+      <rect x="124" y="26" width="96" height="70" rx="7" fill="var(--acento)" />
+      <text x="172" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">2 · WEAPON.</text>
+      <text x="172" y="63" font-size="9" fill="#ffffff" text-anchor="middle">Weaponization</text>
+      <text x="172" y="78" font-size="8.5" fill="#dbe9f4" text-anchor="middle">preparar la</text>
+      <text x="172" y="90" font-size="8.5" fill="#dbe9f4" text-anchor="middle">operación</text>
+
+      <rect x="228" y="26" width="96" height="70" rx="7" fill="var(--acento)" />
+      <text x="276" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">3 · DELIVERY</text>
+      <text x="276" y="63" font-size="9" fill="#ffffff" text-anchor="middle">Delivery</text>
+      <text x="276" y="78" font-size="8.5" fill="#dbe9f4" text-anchor="middle">lanzar la</text>
+      <text x="276" y="90" font-size="8.5" fill="#dbe9f4" text-anchor="middle">operación</text>
+
+      <rect x="332" y="26" width="96" height="70" rx="7" fill="var(--clave-borde)" />
+      <text x="380" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">4 · EXPLOIT</text>
+      <text x="380" y="63" font-size="9" fill="#ffffff" text-anchor="middle">Exploitation</text>
+      <text x="380" y="78" font-size="8.5" fill="#eaf4ee" text-anchor="middle">ganar acceso</text>
+      <text x="380" y="90" font-size="8.5" fill="#eaf4ee" text-anchor="middle">a la víctima</text>
+
+      <rect x="436" y="26" width="96" height="70" rx="7" fill="var(--clave-borde)" />
+      <text x="484" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">5 · INSTALL</text>
+      <text x="484" y="63" font-size="9" fill="#ffffff" text-anchor="middle">Installation</text>
+      <text x="484" y="78" font-size="8.5" fill="#eaf4ee" text-anchor="middle">cabeza de</text>
+      <text x="484" y="90" font-size="8.5" fill="#eaf4ee" text-anchor="middle">playa</text>
+
+      <rect x="540" y="26" width="96" height="70" rx="7" fill="var(--clave-borde)" />
+      <text x="588" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">6 · C2</text>
+      <text x="588" y="63" font-size="7.8" fill="#ffffff" text-anchor="middle">Command &amp; Control</text>
+      <text x="588" y="78" font-size="8.5" fill="#eaf4ee" text-anchor="middle">controlar los</text>
+      <text x="588" y="90" font-size="8.5" fill="#eaf4ee" text-anchor="middle">implantes</text>
+
+      <rect x="644" y="26" width="96" height="70" rx="7" fill="var(--aviso-borde)" />
+      <text x="692" y="47" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">7 · ACTIONS</text>
+      <text x="692" y="63" font-size="9" fill="#ffffff" text-anchor="middle">on Objectives</text>
+      <text x="692" y="78" font-size="8.5" fill="#fdf3e3" text-anchor="middle">cumplir el</text>
+      <text x="692" y="90" font-size="8.5" fill="#fdf3e3" text-anchor="middle">objetivo</text>
+
+      <path d="M116 61 L122 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <path d="M220 61 L226 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <path d="M324 61 L330 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <path d="M428 61 L434 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <path d="M532 61 L538 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+      <path d="M636 61 L642 61" stroke="var(--texto-suave)" stroke-width="1.5" />
+    </g>
+  </svg>
+  <figcaption>
+    Siete fases y una idea: cada casilla es una oportunidad de parar el ataque. El modelo es lineal porque
+    describe una intrusión clásica desde el exterior; no describe, por ejemplo, lo que ocurre después de
+    entrar, que es donde ATT&amp;CK se vuelve imprescindible.
+  </figcaption>
+</figure>
+
+<h3>12.1. Las siete fases, fase por fase</h3>
+
+<table>
+  <caption>Fases de la Cyber Kill Chain con el objetivo del defensor que da la fuente</caption>
+  <thead>
+    <tr><th>Fase</th><th>Qué hace el adversario</th><th>Qué persigue el defensor en esa fase</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Reconnaissance</strong><br>Reconocimiento</td>
+      <td>Investiga a quién atacar: correos, empleados en redes sociales, notas de prensa, servidores expuestos</td>
+      <td><strong>Identificar los objetivos</strong>: detectar el reconocimiento delata la intención</td>
+    </tr>
+    <tr>
+      <td><strong>2. Weaponization</strong><br>Armamentización</td>
+      <td>Prepara la operación: acopla un exploit a un documento o a un programa</td>
+      <td><strong>Preparar la operación</strong> defensiva: entender qué se está fabricando y con qué herramientas</td>
+    </tr>
+    <tr>
+      <td><strong>3. Delivery</strong><br>Entrega</td>
+      <td>Lanza el ataque: correo con adjunto, enlace, USB, web comprometida</td>
+      <td><strong>Lanzar la operación</strong> de bloqueo: es el punto donde se intercepta el mayor número de intentos</td>
+    </tr>
+    <tr>
+      <td><strong>4. Exploitation</strong><br>Explotación</td>
+      <td>Provoca la ejecución del código: abre el adjunto, salta la vulnerabilidad</td>
+      <td><strong>Ganar acceso a la víctima</strong>: bloquear la ejecución y registrarla</td>
+    </tr>
+    <tr>
+      <td><strong>5. Installation</strong><br>Instalación</td>
+      <td>Deja un implante o puerta trasera para volver cuando quiera</td>
+      <td><strong>Establecer cabeza de playa</strong>: detectar la persistencia que se crea</td>
+    </tr>
+    <tr>
+      <td><strong>6. Command and Control (C2)</strong><br>Mando y control</td>
+      <td>Abre un canal para dirigir el implante desde fuera</td>
+      <td><strong>Controlar los implantes</strong>: cortar el canal es la última oportunidad de bloquear</td>
+    </tr>
+    <tr>
+      <td><strong>7. Actions on Objectives</strong><br>Acciones sobre los objetivos</td>
+      <td>Cumple la misión: roba, cifra, destruye o se mueve lateralmente</td>
+      <td><strong>Cumplir el objetivo</strong> de respuesta: detección forense y evaluación de daños</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  La traducción al español no es oficial y varía entre manuales, así que el examen las pregunta en inglés o
+  con la inicial. Si las quieres en español: <strong>reconocimiento, armamentización, entrega, explotación,
+  instalación, mando y control, acciones sobre los objetivos</strong>.
+</p>
+
+<h3>12.2. Quién usa la kill chain y para qué</h3>
+
+<ul>
+  <li><strong>Equipos de defensa y respuesta.</strong> Su uso natural es ordenar la detección: para cada fase, qué señal se ve y qué control la corta. La gestión del incidente se apoya en marcos públicos de preparación y respuesta, como NIST SP 800-61 Rev. 3.</li>
+  <li><strong>Análisis de campañas.</strong> Superponer varias cadenas revela patrones: por dónde entra siempre el adversario y qué conviene reforzar.</li>
+  <li><strong>Comunicación.</strong> Es un lenguaje corto: siete casillas se explican a un mando en dos minutos, y eso también vale en un informe policial.</li>
+</ul>
+
+<p>
+  Lo que <strong>no</strong> es: ni una lista de comprobación forense, ni una medida de cobertura de detección,
+  ni una descripción del interior de una red ya comprometida. Para eso está el modelo de MITRE, y aquí empieza
+  la parte que más se pregunta.
+</p>
+
+<h3>12.3. El límite de la kill chain frente a MITRE ATT&amp;CK</h3>
+
+<p>
+  La comparación no es una opinión: el propio MITRE la escribe en el documento de diseño de ATT&amp;CK, que
+  clasifica los modelos en tres niveles de abstracción y coloca a la kill chain <strong>arriba</strong>. Los
+  modelos de alto nivel, dice, «son útiles para entender procesos y objetivos generales del adversario»,
+  pero «<strong>no son eficaces</strong> para expresar qué acciones individuales realiza, cómo se relaciona
+  una acción con otra, cómo se relacionan las secuencias de acciones con los objetivos tácticos y cómo se
+  corresponden con las fuentes de datos, defensas y configuraciones»
+  (<a href="https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf" rel="noopener">MITRE,
+  ATT&amp;CK: Design and Philosophy</a>, apartado 4.1.3).
+</p>
+
+<table>
+  <caption>Kill chain y ATT&amp;CK: qué da cada uno</caption>
+  <thead>
+    <tr><th></th><th>Cyber Kill Chain</th><th>MITRE ATT&amp;CK</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Naturaleza</td><td>Modelo <strong>de alto nivel</strong> y lineal</td><td>Base de conocimiento <strong>de nivel intermedio</strong> por comportamientos</td></tr>
+    <tr><td>Unidad</td><td>Siete <strong>fases</strong> de una intrusión</td><td><strong>Tácticas</strong> (el porqué) y <strong>técnicas</strong> (el cómo), con subtécnicas</td></tr>
+    <tr><td>Orden</td><td>Sí: la cadena se recorre en orden</td><td>No: las tácticas agrupan comportamientos y no imponen secuencia</td></tr>
+    <tr><td>Uso</td><td>Explicar y detener un ataque en una fase</td><td>Mapear comportamientos observados, detecciones y mitigaciones</td></tr>
+    <tr><td>Límite</td><td>No describe el detalle ni el interior de la red</td><td>No es un relato: no cuenta una historia, cataloga</td></tr>
+  </tbody>
+</table>
+
+<p>
+  Dos datos de ATT&amp;CK con fecha de consulta, porque cambian: en la matriz de <strong>Enterprise</strong>
+  había <strong>quince tácticas</strong> al redactar este tema, la que se llamaba Defense Evasion aparecía como
+  <strong>Stealth</strong> y había una nueva, <strong>Defense Impairment</strong>
+  (<a href="https://attack.mitre.org/tactics/enterprise/" rel="noopener">ATT&amp;CK, tácticas de
+  Enterprise</a>). Un temario con catorce nombres antiguos no está equivocado: está desactualizado.
+</p>
+
+<div class="aviso">
+  <span class="aviso__titulo">La trampa de la comparación</span>
+  <p>
+    La pregunta suele ofrecer cuatro frases y solo una es cierta. La buena suele decir que la kill chain
+    describe <strong>fases</strong> de una intrusión y ATT&amp;CK <strong>comportamientos</strong> agrupados
+    en tácticas y técnicas. Las malas cambian el número de fases («cinco», «nueve»), atribuyen la kill chain
+    a MITRE o convierten ATT&amp;CK en una metodología de ataque. Ninguna de las tres es verdad.
+  </p>
+</div>
+
+<h2>13. Tablas comparativas para el último repaso</h2>
+
+<h3>13.1. Las parejas que se confunden</h3>
+
+<table>
+  <caption>Seis parejas y la clave que las separa</caption>
+  <thead>
+    <tr><th>Pareja</th><th>La clave</th><th>Ejemplo que lo aclara</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Phishing / spear phishing</td><td>Masivo y genérico frente a dirigido y personalizado</td><td>«Estimado cliente» frente a «Hola Marta, sobre el contrato de Sevilla»</td></tr>
+    <tr><td>Phishing / pharming</td><td>Hace falta un clic frente a no hace falta</td><td>Enlace en el correo frente a DNS manipulado con la dirección bien escrita</td></tr>
+    <tr><td>Spoofing / pharming</td><td>Falsificar el origen frente a usar esa falsificación del DNS para redirigir</td><td>Remitente falso frente a escribir el banco y llegar a otra web</td></tr>
+    <tr><td>Malware / troyano / spyware</td><td>Género, especie que engaña y función que espía</td><td>Cualquier programa dañino; el que aparenta ser útil; el que recopila y envía</td></tr>
+    <tr><td>Botnet / DoS / DDoS</td><td>La red de equipos frente al ataque, y una máquina frente a muchas</td><td>Ejército de zombis; una IP que se puede bloquear; miles de IP que no</td></tr>
+    <tr><td>Inyección SQL / XSS</td><td>La base de datos frente al navegador de otro usuario</td><td>Consulta alterada frente a script que se ejecuta en quien visita la web</td></tr>
+  </tbody>
+</table>
+
+<h2>14. Trampas del examen</h2>
+
+<p>Diez trampas, con el enunciado que las activa y la respuesta correcta.</p>
+
+<ol>
+  <li><strong>«Ciberdelincuente» como sinónimo de «hacker».</strong> No lo son: el hacker busca resolver o informar; el ciberdelincuente, sacar beneficio (INCIBE).</li>
+  <li><strong>Phishing dirigido = spear phishing.</strong> Si el enunciado dice «a un directivo concreto», no es phishing genérico.</li>
+  <li><strong>«El pharming necesita que la víctima haga clic».</strong> Falso: el pharming redirige por medios técnicos.</li>
+  <li><strong>Confundir el 419 con una técnica de intrusión.</strong> Es un fraude de anticipo: pide dinero, no explota sistemas.</li>
+  <li><strong>«Cryptojacking roba datos».</strong> No: consume capacidad de cálculo. La víctima pierde rendimiento, no información.</li>
+  <li><strong>«Una botnet es un tipo de ataque DDoS».</strong> Al revés: la botnet es la red; el DDoS es uno de los usos.</li>
+  <li><strong>«El ransomware ya no se usa en el móvil» o «un ransomware es un virus».</strong> Es malware, y la especie se define por la extorsión, no por el sistema que infecta.</li>
+  <li><strong>Atribuir el nombre «kill chain» a MITRE.</strong> La Cyber Kill Chain es de Lockheed Martin; ATT&amp;CK, de MITRE.</li>
+  <li><strong>Decir que la kill chain tiene cinco fases.</strong> Son siete, y la séptima son las <strong>acciones sobre los objetivos</strong>.</li>
+  <li><strong>«El insider siempre actúa a propósito».</strong> El NIST incluye expresamente el daño causado <strong>sin saberlo</strong>.</li>
+</ol>
+
+<div class="aviso">
+  <span class="aviso__titulo">La trampa compuesta</span>
+  <p>
+    «Un APT contrató a un afiliado de RaaS que, mediante spear phishing masivo, instaló un spyware y
+    después lanzó un DDoS». Cuatro errores en una frase: un APT no suele subcontratar así, el spear phishing
+    no es masivo, el spyware no cifra ni tumba servicios y el DDoS no roba datos. Cuando una opción acumula
+    términos técnicos y encadena acciones, <strong>cuéntala por partes</strong>: casi siempre sobra una.
+  </p>
+</div>
+
+<h2>15. Reglas mnemotécnicas</h2>
+
+<dl class="glosario">
+  <dt>Las cuatro familias del Convenio de Budapest</dt>
+  <dd><strong>C-IDAC</strong>: <strong>C</strong>onfidencialidad, integridad y disponibilidad (arts. 2-6); <strong>I</strong>nformáticos, delitos (arts. 7-8); <strong>D</strong>e contenido (art. 9); <strong>A</strong>utor, propiedad intelectual (art. 10).</dd>
+  <dt>Las siete fases de la kill chain</dt>
+  <dd><strong>«Reconozco, armo, entrego, exploto, instalo, controlo, actúo»</strong>. Siete verbos en orden; el último siempre se llama «acciones sobre los objetivos».</dd>
+  <dt>Los cuatro actores</dt>
+  <dd><strong>«Dinero, idea, dentro, sigilo»</strong>: cibercriminal = dinero; hacktivista = idea; insider = dentro; APT = sigilo.</dd>
+  <dt>Las tres palabras del APT</dt>
+  <dd><strong>A-P-T</strong>: <strong>A</strong>vanzado en medios, <strong>P</strong>ersistente en el tiempo, <strong>T</strong>hreat: actor detrás. Si una opción habla de «velocidad», no es un APT.</dd>
+  <dt>Phishing frente a pharming</dt>
+  <dd><strong>P</strong>hishing <strong>p</strong>ide clic; pharming <strong>h</strong>ace el <strong>h</strong>ostaje: el desvío ocurre sin ti.</dd>
+  <dt>SQL frente a XSS</dt>
+  <dd><strong>SQL = S</strong>ervidor y base de datos; <strong>XSS = X</strong> (el cruce) al navegador de otro usuario.</dd>
+  <dt>Los tres alquileres del Crime as a Service</dt>
+  <dd><strong>PhaaS, RaaS, MaaS</strong>: phishing, ransomware y malware. Se memoriza por la inicial del producto.</dd>
+</dl>
+
+<h2>16. Autoevaluación</h2>
+
+<p>Responde antes de abrir las soluciones. Si fallas una, vuelve al apartado indicado.</p>
+
+<details>
+  <summary><strong>1.</strong> Un correo del banco pide confirmar la clave. Escribes tú mismo la dirección del banco, sin hacer clic en nada, y aun así llegas a una web falsa. ¿Qué amenaza es?</summary>
+  <p>Pharming: se ha manipulado la resolución del nombre o el archivo local de hosts. Si hubieras llegado por el enlace del correo, sería phishing. Apartado 5.6.</p>
+</details>
+
+<details>
+  <summary><strong>2.</strong> ¿Cuántas fases tiene la Cyber Kill Chain, cómo se llama la última y por qué se dice que es lineal?</summary>
+  <p>Siete; la última es <strong>Actions on Objectives</strong>, acciones sobre los objetivos. Es lineal porque describe una intrusión como una secuencia: el adversario debe recorrer las siete para alcanzar su meta. Apartado 12.</p>
+</details>
+
+<details>
+  <summary><strong>3.</strong> Un equipo se calienta, va lento y el ventilador no para; no falta ningún fichero y nadie ha pedido rescate. ¿Qué puede ser?</summary>
+  <p>Cryptojacking: consume capacidad de cálculo y no toca los datos. Apartado 4.5.</p>
+</details>
+
+<details>
+  <summary><strong>4.</strong> ¿Un DDoS es un ataque con una botnet?</summary>
+  <p>Puede serlo, pero no es lo mismo: la botnet es la red de equipos infectados; el DDoS es el ataque de saturación, que puede lanzarse con una botnet o de otras formas. Apartados 4.6 y 6.4.</p>
+</details>
+
+<details>
+  <summary><strong>5.</strong> Un empleado de finanzas recibe un correo del director, que está de viaje, pidiendo una transferencia urgente y confidencial. El correo sale de la cuenta real del director. ¿Qué amenaza es y qué se hace?</summary>
+  <p>Business E-mail Compromise, variante fraude del CEO. La contramedida es verificar por otro canal y exigir doble aprobación: el remitente es real, así que mirar la dirección no sirve. Apartado 5.4.</p>
+</details>
+
+<details>
+  <summary><strong>6.</strong> En el Convenio de Budapest, ¿en qué título está el fraude informático y en cuál el acceso ilícito?</summary>
+  <p>El fraude, en el título 2 (artículo 8); el acceso ilícito, en el título 1 (artículo 2), junto a la interceptación y las interferencias. Apartado 2.</p>
+</details>
+
+<details>
+  <summary><strong>7.</strong> ¿Qué diferencia hay entre un insider y un APT?</summary>
+  <p>El insider ya tiene acceso legítimo y lo usa indebidamente, a sabiendas o sin saberlo; el APT es un actor externo con recursos y persistencia que busca establecerse y exfiltrar. Apartados 10 y 11.</p>
+</details>
+
+<details>
+  <summary><strong>8.</strong> Un formulario devuelve comentarios sin tratarlos y un visitante ejecuta código en su navegador con la sesión de otro. ¿Inyección SQL o XSS?</summary>
+  <p>XSS: la inyección se ejecuta en el navegador de la víctima. Si el daño estuviera en la base de datos, sería inyección SQL. Apartado 6.2.</p>
+</details>
+
+<details>
+  <summary><strong>9.</strong> Venden en un foro un programa de ransomware con reparto de beneficios y soporte. ¿Cómo se llama ese modelo y qué tres consecuencias tiene?</summary>
+  <p>RaaS, dentro del modelo Crime as a Service. Consecuencias: especialización, barrera de entrada más baja y atribución más difícil. Apartado 8.</p>
+</details>
+
+<details>
+  <summary><strong>11.</strong> Un grupo desfigura la web de un ministerio y lo reivindica con un comunicado político. ¿Cibercriminal, hacktivista o APT?</summary>
+  <p>Hacktivista: busca un efecto político y necesita el eco público. El cibercriminal no reivindica y el APT no busca notoriedad. Apartado 9.</p>
+</details>
+
+<h2>17. Resumen para memorizar</h2>
+
+<div class="clave">
+  <span class="clave__titulo">Los datos que se preguntan</span>
+  <ul>
+    <li><strong>Dieciocho amenazas</strong>, contando spyware y troyano por separado.</li>
+    <li><strong>Convenio de Budapest</strong>: cuatro títulos (confidencialidad-integridad-disponibilidad; delitos informáticos; contenido; propiedad intelectual). Fraude informático = art. 8.</li>
+    <li><strong>Malware</strong> = género. <strong>Troyano</strong> = engaña con una función aparente. <strong>Spyware</strong> = recopila y envía información.</li>
+    <li><strong>Ransomware</strong> = cifra o bloquea y pide rescate. <strong>Cryptojacking</strong> = mina con tu equipo. <strong>Botnet</strong> = red de zombis.</li>
+    <li><strong>Zero-day</strong> = vulnerabilidad sin parche; deja de serlo cuando hay parche.</li>
+    <li><strong>Ingeniería social</strong> = género del engaño. <strong>Phishing</strong> = masivo. <strong>Spear phishing</strong> = dirigido.</li>
+    <li><strong>BEC</strong> = cuenta real comprometida, fraude al pago; variante: fraude del CEO.</li>
+    <li><strong>Cartas nigerianas</strong> = fraude de anticipo (419). <strong>Pharming</strong> = redirección técnica sin clic. <strong>Spoofing</strong> = falsificación del origen.</li>
+    <li><strong>Inyección SQL</strong> = base de datos. <strong>XSS</strong> = navegador de otro usuario. <strong>Skimming</strong> = datos de tarjeta.</li>
+    <li><strong>DoS / DDoS</strong> = una máquina frente a muchas; el DDoS se apoya en botnets.</li>
+    <li><strong>Actores</strong>: cibercriminal (dinero), hacktivista (idea y reivindicación), insider (acceso legítimo mal usado), APT (recursos, persistencia, sigilo).</li>
+    <li><strong>Crime as a Service</strong>: datos, malware, DDoS y botnets, keyloggers, kits de phishing, tutoriales, exploits y blanqueo.</li>
+    <li><strong>Kill chain</strong>: siete fases, de Reconnaissance a Actions on Objectives; detener una rompe la cadena.</li>
+    <li><strong>ATT&amp;CK</strong>: quince tácticas de Enterprise en la fecha de consulta y miles de técnicas; nivel intermedio, no lineal.</li>
+  </ul>
+</div>
+
+<h2>18. Qué no se ha afirmado en este tema, y por qué</h2>
+
+<div class="aviso">
+  <span class="aviso__titulo">Límites de este tema</span>
+  <p>
+    El estándar de este bloque es solo fuente primaria pública. Queda deliberadamente fuera lo siguiente, y se
+    dice para que nadie lo rellene con material de academia:
+  </p>
+  <ul>
+    <li>
+      <strong>Cómo se ejecuta un ataque.</strong> No hay código, ni exploits, ni instrucciones, ni
+      nombres de plataformas ilícitas, ni direcciones. Un temario describe la amenaza; no la enseña a usar.
+    </li>
+    <li>
+      <strong>Contenido de las guías CCN-STIC.</strong> El portal del CCN-CERT respondió con una página de
+      comprobación de navegador (error 403) a las peticiones automatizadas en la fecha de consulta. Por eso
+      este tema cita el <strong>catálogo</strong> de guías desde el portal del CCN, pero <strong>no atribuye
+      ninguna afirmación a una guía concreta</strong>.
+    </li>
+    <li>
+      <strong>Cifras de Europol.</strong> El portal de Europol sirve su contenido mediante código de cliente y
+      no se ha podido leer. En consecuencia, aquí <strong>no se cita ninguna cifra del IOCTA</strong> ni se
+      usa ese informe como respaldo de ninguna frase.
+    </li>
+    <li>
+      <strong>Cifras económicas y de volumen.</strong> No se da importe medio de un rescate, ni porcentaje de
+      empresas afectadas, ni número de botnets activas, ni reparto de malware por países: no se han verificado
+      en fuente primaria y no se rellenan. Las únicas cifras del tema son las de ENISA, con año, página y su
+      advertencia de que son reivindicaciones contadas por la agencia.
+    </li>
+    <li>
+      <strong>El origen del número «419».</strong> La fuente de la ONU lo usa como alias del fraude de
+      anticipo, y así se recoge. La explicación habitual —su correspondencia con un artículo del código penal
+      nigeriano— <strong>no se ha verificado</strong> y no se escribe (apartado 5.5).
+    </li>
+    <li><strong>Casos, campañas y sentencias.</strong> No se menciona ningún grupo nombrado, ni operación policial, ni resolución judicial.</li>
+    <li>
+      <strong>La traducción oficial de las fases de la kill chain.</strong> No existe una traducción
+      normalizada al español: la que se ofrece es una propuesta de este tema y así se advierte (apartado 12.1).
+    </li>
+    <li>
+      <strong>El régimen penal y procesal.</strong> El tema nombra el Convenio de Budapest y remite al tema 20
+      para los tipos del Código Penal, la prueba digital y la cadena de custodia. No se reproduce aquí ningún
+      artículo del Código Penal.
+    </li>
+    <li>
+      <strong>Una definición legal de «ciberdelincuencia».</strong> No se afirma que exista ni que no exista:
+      lo que se afirma, y se ha comprobado en el texto del convenio, es que <strong>Budapest ordena las
+      conductas en cuatro títulos</strong> en lugar de definirlas unitariamente.
+    </li>
+    <li>
+      <strong>La tipología de actores y el mapa de las dieciocho amenazas.</strong> Son <strong>síntesis
+      propias</strong> para estudiar, no una clasificación oficial de ningún organismo. Cada rasgo concreto de
+      cada actor se apoya en la fuente citada en el texto; el orden de las casillas, no.
+    </li>
+  </ul>
+</div>
+
+<h2>19. Fuentes de este tema</h2>
+
+<p>
+  Todas las fuentes son públicas y se han consultado el <strong>16 de noviembre de 2026</strong>. Las URL se han
+  comprobado una a una: se descartaron las que respondían con error y también las que devolvían una página de
+  «no encontrado» con código 200, algo habitual en algunos portales.
+</p>
+
+<h3>19.1. Normativa y Derecho internacional público</h3>
+
+<ul>
+  <li>
+    <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2010-14221" rel="noopener">Instrumento de
+    Ratificación del Convenio sobre la Ciberdelincuencia, hecho en Budapest el 23 de noviembre de 2001</a>
+    (BOE-A-2010-14221): títulos 1 a 4 y artículos 2 a 10.
+  </li>
+</ul>
+
+<h3>19.2. Organismos públicos españoles</h3>
+
+<ul>
+  <li>
+    <a href="https://www.incibe.es/aprendeciberseguridad" rel="noopener">INCIBE, «Aprende Ciberseguridad»</a>:
+    voces de botnet, malware, ransomware, spyware, phishing, spear phishing, ingeniería social, vulnerabilidad
+    y hacker frente a ciberdelincuente.
+  </li>
+  <li>
+    <a href="https://www.incibe.es/sites/default/files/docs/guia-ciberataques/osi-guia-ciberataques.pdf" rel="noopener">INCIBE,
+    Guía de ciberataques. Todo lo que debes saber a nivel usuario</a>, publicada el 14/10/2020: spoofing en sus
+    cuatro capas (3.2 a 3.2.4), DDoS (3.4), inyección SQL (3.5) y familias de malware (4.1 a 4.11).
+  </li>
+  <li>
+    <a href="https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day" rel="noopener">«¿Qué es
+    una vulnerabilidad Zero Day?»</a> (28/08/2020) y
+    <a href="https://www.incibe.es/ciudadania/blog/que-son-los-ataques-dos-y-ddos" rel="noopener">«¿Qué son
+    los ataques DoS y DDoS?»</a> (21/08/2018).
+  </li>
+  <li>
+    <a href="https://www.incibe.es/ciudadania/blog/cryptojacking-el-nuevo-fraude-de-los-ciberdelincuentes" rel="noopener">«Cryptojacking,
+    el nuevo fraude de los ciberdelincuentes»</a> (01/08/2018) y
+    <a href="https://www.incibe.es/empresas/blog/e-skimming-y-proteger-tu-tienda-esta-tecnica-maliciosa" rel="noopener">«E-skimming,
+    qué es y cómo proteger tu tienda»</a> (14/11/2019).
+  </li>
+  <li>
+    <a href="https://www.incibe.es/empresas/blog/bec-tipos-de-fraude-como-operan-los-estafadores-y-como-detectarlos" rel="noopener">«BEC:
+    tipos de fraude, cómo operan los estafadores y cómo detectarlos»</a> (actualizado el 08/01/2026) y
+    <a href="https://www.incibe.es/empresas/blog/fraude-del-ceo-el-engano-que-puede-vaciar-la-cuenta-de-tu-pyme" rel="noopener">«Fraude
+    del CEO»</a>.
+  </li>
+  <li>
+    <a href="https://www.incibe.es/empresas/blog/insiders-como-atacan-desde-dentro" rel="noopener">«Insiders:
+    cómo atacan desde dentro»</a> (18/07/2023);
+    <a href="https://www.incibe.es/incibe-cert/blog/insider-las-dos-caras-del-empleado" rel="noopener">INCIBE-CERT,
+    «Insider, las dos caras del empleado»</a>; y
+    <a href="https://www.incibe.es/empresas/blog/ataques-inyeccion-sql-amenaza-tu-web" rel="noopener">«Ataques de
+    inyección SQL»</a> (26/10/2021).
+  </li>
+  <li>
+    <a href="https://www.incibe.es/ciudadania/formacion/infografias/el-ciclo-de-la-ingenieria-social-como-preparan-los-ciberdelincuentes-un-ataque-de-ingenieria-social" rel="noopener">«El
+    ciclo de la Ingeniería Social»</a> y
+    <a href="https://www.incibe.es/ciudadania/ayuda/ransomware" rel="noopener">«Cómo actuar en caso de un
+    ataque de ransomware»</a>.
+  </li>
+  <li>
+    <a href="https://www.ccn.cni.es/es/menu-guias-ccn-stic-es" rel="noopener">Centro Criptológico Nacional,
+    «Guías CCN-STIC»</a>: citado únicamente como localización del catálogo. Su contenido no se ha podido
+    consultar (apartado 18).
+  </li>
+</ul>
+
+<h3>19.3. Unión Europea y Naciones Unidas</h3>
+
+<ul>
+  <li>
+    <a href="https://www.enisa.europa.eu/publications/enisa-threat-landscape-2025" rel="noopener">ENISA,
+    Threat Landscape 2025</a>, versión 1.3 de septiembre de 2026: cifras de hacktivismo (páginas 50 y 51 del
+    PDF), plataformas PhaaS (página 7), programas RaaS y variantes de ransomware (páginas 29 y 34) y modelo
+    MaaS (página 31).
+  </li>
+  <li>
+    <a href="https://www.unodc.org/e4j/en/cybercrime/module-2/key-issues/computer-related-offences.html" rel="noopener">UNODC,
+    Cybercrime Module 2, «Computer-related offences»</a>: fraude de anticipo o estafa 419 y definición de
+    ingeniería social.
+  </li>
+  <li>
+    <a href="https://www.unodc.org/e4j/en/cybercrime/module-13/key-issues/cyber-organized-crime-activities.html" rel="noopener">UNODC,
+    Cybercrime Module 13, «Cyber Organized Crime Activities»</a>: catálogo de servicios del modelo Crime as a
+    Service. Y
+    <a href="https://www.unodc.org/e4j/en/cybercrime/module-13/key-issues/conceptualizing-organized-crime-and-defining-the-actors-involved.html" rel="noopener">«Conceptualizing
+    Organized Crime and Defining the Actors Involved»</a>: ausencia de consenso en la definición.
+  </li>
+  <li>
+    <a href="https://www.unodc.org/e4j/en/cybercrime/module-14/key-issues/hacktivism.html" rel="noopener">UNODC,
+    Cybercrime Module 14, «Hacktivism»</a>: definición, repertorio de acciones y sentada virtual.
+  </li>
+</ul>
+
+<h3>19.4. Organismos técnicos y modelos</h3>
+
+<ul>
+  <li>
+    <a href="https://csrc.nist.gov/glossary" rel="noopener">NIST, Computer Security Resource Center,
+    glosario</a>: voces botnet, denial of service, insider threat, advanced persistent threat, threat actor,
+    malware, spyware, Trojan horse, phishing, pharming, spoofing, skimming, SQL injection, cross-site
+    scripting, vulnerability y zero-day attack, cada una con la publicación de origen.
+  </li>
+  <li>
+    <a href="https://csrc.nist.gov/pubs/ir/7298/final" rel="noopener">NIST, IR 7298, Glossary of Key
+    Information Security Terms</a> y
+    <a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" rel="noopener">NIST, SP 800-61 Rev. 3, Incident
+    Response Recommendations and Considerations for Cybersecurity Risk Management</a>, este último como marco
+    general de preparación y respuesta.
+  </li>
+  <li>
+    <a href="https://owasp.org/www-community/attacks/SQL_Injection" rel="noopener">OWASP, «SQL Injection»</a> y
+    <a href="https://owasp.org/www-community/attacks/xss/" rel="noopener">«Cross Site Scripting (XSS)»</a>.
+  </li>
+  <li>
+    <a href="https://attack.mitre.org/tactics/enterprise/" rel="noopener">MITRE ATT&amp;CK, tácticas de
+    Enterprise</a>;
+    <a href="https://attack.mitre.org/techniques/T1566/" rel="noopener">T1566 Phishing</a>;
+    <a href="https://attack.mitre.org/techniques/T1496/" rel="noopener">T1496 Resource Hijacking</a>; y
+    <a href="https://attack.mitre.org/docs/ATTACK_Design_and_Philosophy_March_2020.pdf" rel="noopener">«ATT&amp;CK:
+    Design and Philosophy»</a> (marzo de 2020), apartado 4.1.3 sobre niveles de abstracción.
+  </li>
+  <li>
+    <a href="https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html" rel="noopener">Lockheed
+    Martin, «Cyber Kill Chain»</a> y el documento público
+    <a href="https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/Gaining_the_Advantage_Cyber_Kill_Chain.pdf" rel="noopener">«Gaining
+    the Advantage: Applying Cyber Kill Chain Methodology to Network Defense»</a>, del que proceden las siete
+    fases y sus objetivos de defensa.
+  </li>
+</ul>
+
+<p>
+  Texto de elaboración propia a partir de las fuentes citadas, publicado bajo CC BY-SA 4.0. Ninguna parte
+  procede de un temario comercial, de una academia ni de un blog de empresa. La parte doctrinal —la tipología
+  de actores por motivación, el mapa de las dieciocho amenazas y la traducción al español de las fases de la
+  kill chain— está señalada como tal a lo largo del tema y no se presenta como hecho verificado ni como norma.
+</p>
+

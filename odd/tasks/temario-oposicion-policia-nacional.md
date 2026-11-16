@@ -424,3 +424,28 @@ límites es más grande porque el material verificable es menor.
   prueba digital.
 - `programa.json` regenerado: 40 publicados, 5 pendientes (41-45).
 - Scratch pendiente de borrar por el padre: `%TEMP%\t36-Iqao`, `t37`, `t38`, `t39`, `t40`, `C:\tmp\t38`.
+
+### L23 — temario completo: 45 de 45 publicados
+
+- `41.html` (112 598 B, 19 apartados, 29 tablas): las 18 amenazas del epígrafe con ficha homogénea
+  (qué es, cómo funciona, vector, objetivo, detección), actores, CaaS, kill chain frente a ATT&CK. INCIBE,
+  NIST, OWASP, ENISA y Lockheed; el portal del CCN-CERT daba 403 y no se rellenó nada con eso.
+- `42.html` (109 889 B, 24 apartados, 23 tablas): armas de fuego desde el Reglamento de Armas consolidado,
+  con las nueve categorías, la documentación de cada una y la balística separada de la norma. Discrepancia
+  declarada: el art. 113.1 atribuye la Tarjeta Europea a la DGGC y la ficha de trámite al jefe de Comandancia.
+- `43.html` (99 477 B, 20 apartados, 15 tablas): vehículo prioritario con el Reglamento de Circulación **en
+  vigor desde el 01/10/2026**, incluido el **art. 32** del carril de emergencia y la detención por luz roja
+  (art. 69.2). Nada de cifras de velocidad: la norma habilita y no fija margen, y así se dice.
+- `44.html` (112 544 B, 24 apartados, 19 tablas): seguridad activa y pasiva con el Reglamento UE 2019/2144 y
+  los reglamentos UNECE como fuente, y la exención del cinturón del art. 119.2 RGC limitada a poblado.
+- `45.html` (110 000 B, 24 apartados, 13 tablas): PRL vial con DGT 2025 e INSST 2024. La exclusión de los
+  EPI del art. 2.2.c del RD 773/1997 y su resolución por el art. 6.2 del RD 2/2006 es la tesis del tema.
+- `programa.json` regenerado: **45 publicados, 0 pendientes**. Los tres verificadores en verde.
+- **El temario está completo.** Lo que queda para aspirar a un 10 no es contenido nuevo, es auditoría:
+  (1) revisión jurídica independiente de los 45 temas, empezando por las cifras (L11);
+  (2) ampliar el banco, bloqueado por el OCR y por el ©JURISPOL de 2023;
+  (3) verificar a mano las 200 claves transcritas;
+  (4) los psicotécnicos por algoritmo (T7), que hoy no existen;
+  (5) la pasada visual del dueño, que ningún agente puede hacer sin navegador.
+- Scratch pendiente de borrar por el padre: `%TEMP%\t41` (bajo `gpwMcxNs\ga874tDN`), `t42`, `t43`, `t44`,
+  `t45`, `C:\tmp\t43`, `C:\tmp\t44` y `C:\tmp\t45`.

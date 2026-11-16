@@ -350,7 +350,7 @@
           "titulo": "Ciberdelincuencia y agentes de la Amenaza: Botnet; Business E-mail Compromise; Cartas nigerianas; Cryptojac…",
           "epigrafe": "Ciberdelincuencia y agentes de la Amenaza: Botnet; Business E-mail Compromise; Cartas nigerianas; Cryptojacking; Denegación de servicio; Ingeniería social; Inyección SQL; Malware; Pharming; Phishing; Spear phishing; Ransomware; Skimming; Spoofing; Spyware, Troyano; XSS; Zero-day. Cibercriminales. Crimen as Service. Hacktivistas. Insider threat. APTs. Cyber Kill Chain.",
           "ruta": "data/temas/41.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 42,
@@ -358,7 +358,7 @@
           "titulo": "Origen de las armas de fuego",
           "epigrafe": "Origen de las armas de fuego. Definición, clasificación, categorías y funcionamiento de las armas de fuego: especial referencia al reglamento de armas. Cartucho: definición y componentes. Armas prohibidas. Documentación que ampara la tenencia y porte de armas. Balística forense.",
           "ruta": "data/temas/42.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 43,
@@ -366,7 +366,7 @@
           "titulo": "El vehículo prioritario",
           "epigrafe": "El vehículo prioritario. Definición de vehículo prioritario. Facultades de los conductores de vehículos prioritarios. Comportamiento de los demás conductores respecto de los vehículos prioritarios. La conducción de vehículos en situación de emergencia. Utilización de las señales de emergencia.",
           "ruta": "data/temas/43.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 44,
@@ -374,7 +374,7 @@
           "titulo": "La Seguridad en la Conducción de Vehículos Prioritarios",
           "epigrafe": "La Seguridad en la Conducción de Vehículos Prioritarios. Definición de Seguridad Activa y Pasiva. Sistemas de Seguridad Activa y Pasiva en vehículos tipo turismo y motocicleta. Influencia de los Sistemas de Seguridad en los accidentes de tráfico. Repercusión de los Sistemas de Seguridad en la conducción policial y traslado de detenidos.",
           "ruta": "data/temas/44.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 45,
@@ -382,7 +382,7 @@
           "titulo": "Prevención de Riesgos Laborales en Seguridad Vial",
           "epigrafe": "Prevención de Riesgos Laborales en Seguridad Vial. Factores del Tráfico y su influencia en la siniestralidad vial. Factor Humano, Factor Ambiental y Factor Vehículo. Riesgos Laborales en la conducción de vehículos prioritarios. Equipos de Protección Individual del conductor y pasajeros de vehículos policiales. Estrategias y mantenimiento preventivo del vehículo prioritario.",
           "ruta": "data/temas/45.html",
-          "publicado": false
+          "publicado": true
         }
       ]
     }

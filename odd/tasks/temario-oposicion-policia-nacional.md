@@ -259,3 +259,26 @@ antes del arreglo (temas 13 y 26) y en verde después; el resto de los 43 epígr
   Conviene no fiarse de identificadores BOE escritos de memoria: se comprueban en el ELI.
 - `programa.json` regenerado, 13 publicados y 32 pendientes, y los tres verificadores en verde.
   El siguiente lote del orden de L10 son los temas 20 (delitos informáticos) y 10 (extranjería).
+
+### L15 — lote 20 y 10: 15 de 45 publicados
+
+- `data/temas/20.html` (148 654 B, 21 apartados, 17 tablas, 3 SVG): CP consolidado a 09/04/2026 (197 a
+  197 quater, 249.1.a, 264 a 264 quater, 270-274), LECrim (588 bis a 588 octies), CE 18.4, LO 1/1982,
+  LO 3/2018, LOPJ y Ley 25/2007. Corrige dos errores del encargo: la estafa informática es el
+  **249.1.a** desde la LO 1/2015 y no el «248.2»; y la LO 1/2025 no toca los preceptos penales del tema
+  (la última reforma es la LO 1/2026, en 248 y 250.1.8.ª). Tres identificadores BOE del encargo eran
+  falsos y quedaron sustituidos; el Convenio de Budapest está en `BOE-A-2010-14221`.
+- `data/temas/10.html` (142 566 B, 27 apartados, 20 tablas, 3 SVG): LO 4/2000, RD 240/2007 y
+  **RD 1155/2024**. Hallazgo que hay que recordar: el **RD 557/2011 está derogado**; el Reglamento
+  vigente de extranjería es el RD 1155/2024, en vigor desde el 20/05/2025, y con él cambian las cifras
+  (arraigo general de dos años, renovaciones a dos meses, cinco tipos de arraigo, estancia de larga
+  duración, larga duración UE y nacional). Cualquier manual que siga citando el 557/2011 está muerto,
+  igual que el RD 734/2020 del tema 8.
+- Aviso de método del redactor del tema 10: **boe.es devuelve 200 incluso a un ELI inexistente**, así
+  que un 200 no valida un identificador; hay que comprobar el `<title>` de la página.
+- `programa.json` regenerado: 15 publicados, 30 pendientes, y los tres verificadores en verde.
+- Los redactores no pueden ejecutar `rm` (el arnés de los hijos bloquea comandos destructivos): el
+  padre borra el scratch. Restos de este lote: `C:\tmp\t20`, `C:\tmp\t10`,
+  `%TEMP%\gpwMcxNs\gaFkcbaZ\t20` y `/tmp/t10`.
+- Siguiente lote del orden de L10: 11 y 12 (ambos de extranjería y asilo), o 13 y 15 si se prefiere
+  cerrar el bloque A por peso.

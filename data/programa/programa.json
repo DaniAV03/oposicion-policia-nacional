@@ -90,7 +90,7 @@
           "titulo": "Entrada, libre circulación y residencia en España de ciudadanos de los Estados miembros de la Unión Europea…",
           "epigrafe": "Entrada, libre circulación y residencia en España de ciudadanos de los Estados miembros de la Unión Europea y de otros Estados parte en el Acuerdo sobre el Espacio Económico Europeo. Derechos y libertades de los extranjeros en España y su integración social. La entrada y salida del territorio español. La autorización de estancia y de residencia.",
           "ruta": "data/temas/10.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 11,
@@ -170,7 +170,7 @@
           "titulo": "Delitos informáticos",
           "epigrafe": "Delitos informáticos. Especial consideración al derecho a la intimidad. La prueba digital en el proceso penal.",
           "ruta": "data/temas/20.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 21,

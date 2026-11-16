@@ -146,7 +146,7 @@
           "titulo": "Derecho Penal Especial: Del homicidio y sus formas",
           "epigrafe": "Derecho Penal Especial: Del homicidio y sus formas. Del aborto. De las lesiones. Delitos contra la libertad. De las torturas y otros delitos contra la integridad moral. Delitos contra la libertad sexual.",
           "ruta": "data/temas/17.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 18,
@@ -218,7 +218,7 @@
           "titulo": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Da…",
           "epigrafe": "La protección de datos de carácter personal: la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales. Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales.",
           "ruta": "data/temas/26.html",
-          "publicado": false
+          "publicado": true
         }
       ]
     },

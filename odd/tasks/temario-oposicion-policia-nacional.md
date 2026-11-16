@@ -241,3 +241,21 @@ extractor solo filtraba las líneas que empezaban por él. Corregido en `scripts
 con un recorte en cualquier posición, más una comprobación nueva en `scripts/verificar.mjs` que
 falla si algún epígrafe o título contiene `cve:`, «Verificable en» o una URL. Observado en rojo
 antes del arreglo (temas 13 y 26) y en verde después; el resto de los 43 epígrafes quedó idéntico.
+
+### L14 — lote 26 y 17: 13 de 45 publicados
+
+- `data/temas/26.html` (136 254 B, 26 apartados, 3 SVG, 23 tablas): LO 3/2018 consolidada, LO 7/2021
+  y el RGPD (DOUE L 119, pp. 1-88). Declara las fechas de consolidación (LO 3/2018: 27/12/2025;
+  LO 7/2021: 29/07/2022) y deja en «Qué no se ha afirmado» el reglamento de desarrollo, el
+  Estatuto de la AEPD, las directrices y la jurisprudencia.
+- `data/temas/17.html` (166 833 B, 22 apartados, 17 tablas, 3 SVG): CP consolidado a 09/04/2026 de los
+  títulos I a VIII del libro II, más LO 2/2010 (aborto, tras LO 1/2023) y LO 3/2021 (eutanasia).
+  Declara siete puntos que no afirma, entre ellos la doctrina del dolo eventual y los umbrales
+  cuantitativos de las lesiones.
+- **Identificadores verificados**: en el encargo del tema 26 se citaron `BOE-A-2021-8809` y
+  `DOUE-L-2016-81207` como LO 7/2021 y RGPD; no lo son (son un recurso de inconstitucionalidad y una
+  decisión sobre precursores). El identificador bueno de la LO 7/2021 es `BOE-A-2021-8806`
+  (`boe.es/eli/es/lo/2021/05/26/7/con`) y el RGPD se leyó en `boe.es/doue/2016/119/L00001-00088.pdf`.
+  Conviene no fiarse de identificadores BOE escritos de memoria: se comprueban en el ELI.
+- `programa.json` regenerado, 13 publicados y 32 pendientes, y los tres verificadores en verde.
+  El siguiente lote del orden de L10 son los temas 20 (delitos informáticos) y 10 (extranjería).

@@ -162,7 +162,7 @@
           "titulo": "Delitos contra el orden público: de los atentados contra la autoridad, sus agentes y los funcionarios públi…",
           "epigrafe": "Delitos contra el orden público: de los atentados contra la autoridad, sus agentes y los funcionarios públicos, resistencia y desobediencia. Desórdenes públicos. Disposición común. Tenencia, tráfico y depósito de armas, municiones o explosivos.",
           "ruta": "data/temas/19.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 20,
@@ -186,7 +186,7 @@
           "titulo": "La Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
           "epigrafe": "La Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito. Ámbito. Concepto general de víctima. Derechos básicos. Protección de las víctimas. Medidas de protección a la víctima.",
           "ruta": "data/temas/22.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 23,
@@ -194,7 +194,7 @@
           "titulo": "Políticas de igualdad, protección y no discriminación en la AGE",
           "epigrafe": "Políticas de igualdad, protección y no discriminación en la AGE. La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres. Los Planes para la igualdad en la Administración General del Estado y en sus organismos públicos. Políticas contra la violencia de género. La Ley Orgánica 1/2004, de 28 de diciembre, de medidas de protección integral contra la violencia de género. Políticas de integración de las personas con discapacidad. La Ley 39/2006, de 14 de diciembre, de promoción de la autonomía personal y atención a las personas en situación de dependencia. Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
           "ruta": "data/temas/23.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 24,
@@ -202,7 +202,7 @@
           "titulo": "Introducción a la Prevención de Riesgos Laborales",
           "epigrafe": "Introducción a la Prevención de Riesgos Laborales. Concepto general de trabajo. Concepto de salud y condiciones de trabajo. El trabajo y la salud. Concepto general de riesgos Laborales. Principios generales de la actividad preventiva. Conceptos de prevención y protección. Consecuencia de los riesgos. Daños a la salud.",
           "ruta": "data/temas/24.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 25,
@@ -210,7 +210,7 @@
           "titulo": "Marco normativo básico en prevención de riesgos laborales",
           "epigrafe": "Marco normativo básico en prevención de riesgos laborales. La Ley 31/1995, de Prevención de Riesgos Laborales. RD 39/1997, Reglamento de los servicios de prevención. El RD 2/2006, sobre Prevención de Riesgos Laborales en los funcionarios del Cuerpo Nacional de Policía. El RD 67/2010 sobre adaptación de la Prevención de Riesgos Laborales en la Administración General del Estado. Derechos y deberes básicos en materia de Prevención de Riesgos laborales.",
           "ruta": "data/temas/25.html",
-          "publicado": false
+          "publicado": true
         },
         {
           "numero": 26,

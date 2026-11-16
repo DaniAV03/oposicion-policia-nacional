@@ -305,3 +305,29 @@ antes del arreglo (temas 13 y 26) y en verde después; el resto de los 43 epígr
 - Scratch pendiente de borrar por el padre: `%TEMP%\t11`, `%TEMP%\t12`, `%TEMP%\t13`, `%TEMP%\t15` y
   `C:\tmp\t15` (vacío).
 - Siguiente lote en el orden de L10: 19 y 22 (o 6 y 7 para cerrar los primeros del bloque A).
+
+### L17 — lote 19, 22, 23, 24 y 25: 24 de 45 publicados
+
+Con este lote el bloque A queda a falta de los temas 6 y 7.
+
+- `19.html` (114 292 B, 19 apartados, 14 tablas, 3 SVG): CP títulos XXI y XXII. Corregido respecto a lo que
+  dicen muchos manuales: las penas del atentado están en el 550.2 y 550.3 (el 551 es catálogo de
+  agravaciones), la sedición de los arts. 544-549 está **suprimida** por la LO 14/2022, el 557 bis vigente es
+  la ocupación de locales y la LO 1/2026 añadió el 568.2 (combustible líquido).
+- `22.html` (99 458 B, 25 apartados, 26 tablas, 2 SVG): Ley 4/2015 y RD 1109/2015. Corrección de fondo: el
+  párrafo del **art. 448 LECrim está suprimido por la LO 8/2021** y la regla de no confrontación vive en el
+  **art. 707.2**, que además cubre a las víctimas. La norma de 27/04/2023 es la **LO 4/2023**, no una ley
+  ordinaria, y no toca el Estatuto.
+- `23.html` (119 944 B, 25 apartados, 24 tablas, 3 SVG): LO 3/2007, LO 1/2004, Ley 39/2006, Ley 4/2023 y
+  discapacidad. Tres cambios recientes que invalidan manuales: el **art. 49 CE reformado el 15/02/2024**, la
+  **Ley 4/2026** que deja el catálogo de la dependencia en **9 servicios** (no 6), y el umbral del plan de
+  igualdad de empresa en **50** trabajadores, no 250.
+- `24.html` (112 206 B, 20 apartados, 13 tablas, 3 SVG): conceptual. Corregido el identificador del cuadro de
+  enfermedades profesionales: es `BOE-A-2006-22169`, no `BOE-A-2007-221`.
+- `25.html` (169 765 B, 28 apartados, 19 tablas, 3 SVG): normativo. El **título oficial del RD 2/2006 no es
+  el que trae el epígrafe del programa** («en la actividad de los funcionarios del CNP»), el RD 2/2006 remite
+  al derogado RD 1488/1998 y los **arts. 46-52 de la LPRL están derogados** (la tipificación está en la LISOS).
+- `programa.json` regenerado: 24 publicados, 21 pendientes, tres verificadores en verde.
+- Scratch pendiente de borrar por el padre: `%TEMP%\t19`, `%TEMP%\t22`, `%TEMP%\t2302rP`, `%TEMP%\t24`,
+  `%TEMP%\gpwMcxNs\garkA86L`, `%TEMP%\t25` y `C:\tmp\t22`.
+- Siguiente: temas 6 y 7, con los que se cierra el bloque A.

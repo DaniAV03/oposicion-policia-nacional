@@ -54,8 +54,13 @@ for (const campo of ['fuente', 'fuenteUrl', 'licencia']) {
 
 /* --- 2. Recursos referenciados -------------------------------------------- */
 
-const paginas = ['index.html', 'tema.html'];
-const modulos = ['assets/js/app.js'];
+const paginas = ['index.html', 'tema.html', 'test.html', 'oficiales.html', 'no-oficiales.html'];
+const modulos = [
+  'assets/js/app.js',
+  'assets/js/banco.js',
+  'assets/js/test.js',
+  'assets/js/test-paginas.js',
+];
 const estilos = ['assets/css/style.css'];
 
 const referencias = new Set();
@@ -84,8 +89,16 @@ for (const hoja of estilos) {
 }
 
 for (const modulo of modulos) {
+  if (!(await existe(modulo))) {
+    fallo(`Falta el módulo ${modulo}`);
+    continue;
+  }
   const js = await readFile(modulo, 'utf8');
   for (const m of js.matchAll(/fetch\('([^']+)'/g)) referencias.add(m[1]);
+  // Los manifiestos se declaran como constante y se pasan a `fetch` por variable,
+  // así que se recogen también los literales de datos del módulo: una ruta de
+  // datos mal escrita tiene que romper el build, no la página en el navegador.
+  for (const m of js.matchAll(/'((?:data)\/[\w./-]+\.json)'/g)) referencias.add(m[1]);
 }
 
 // Normaliza rutas relativas de CSS a rutas de repositorio.
@@ -142,8 +155,12 @@ const fuentesInterfaz = [
   'index.html',
   'tema.html',
   'test.html',
+  'oficiales.html',
+  'no-oficiales.html',
   'assets/js/app.js',
+  'assets/js/banco.js',
   'assets/js/test.js',
+  'assets/js/test-paginas.js',
 ];
 
 const rastrosDeObra = [
@@ -234,12 +251,112 @@ for (const [clase, fuente] of clasesUsadas) {
   }
 }
 
+/* --- 9. Apartado Test: portada, destino y enlaces profundos ---------------- */
+
+// El apartado Test es una portada con dos accesos y dos páginas de destino. Las
+// páginas ya las revisan las listas de arriba; aquí se comprueba lo que decide
+// qué enseña cada una: el filtro que abre un enlace profundo y el recuento de
+// cada colección. Se importa el módulo del navegador tal cual, sin transformarlo.
+let moduloBanco = null;
+let resumenTest = '';
+try {
+  const fuente = await readFile('assets/js/banco.js', 'utf8');
+  moduloBanco = await import(
+    `data:text/javascript;base64,${Buffer.from(fuente, 'utf8').toString('base64')}`,
+  );
+} catch (error) {
+  fallo(`assets/js/banco.js no se puede importar sin DOM: ${error.message}`);
+}
+
+if (moduloBanco) {
+  const manifiestoOficiales = JSON.parse(await readFile('data/examenes/index.json', 'utf8'));
+  const manifiestoPropio = JSON.parse(await readFile('data/banco/index.json', 'utf8'));
+
+  const oficiales = moduloBanco.entradasDe('oficiales', manifiestoOficiales);
+  const propias = moduloBanco.entradasDe('propio', manifiestoPropio);
+
+  if (oficiales.length === 0) fallo('El manifiesto de oficiales no declara ninguna entrada utilizable');
+  if (oficiales.some((e) => !e.id || !e.archivo || e.preguntas < 1)) {
+    fallo('Alguna entrada de oficiales se queda sin id, archivo o recuento de preguntas');
+  }
+  if (propias.some((e) => !e.id || !e.archivo)) {
+    fallo('Alguna entrada del banco propio se queda sin id o sin archivo');
+  }
+  for (const entrada of [...oficiales, ...propias]) {
+    if (!(await existe(entrada.ruta))) {
+      fallo(`El manifiesto de ${entrada.tipo ?? 'una colección'} apunta a un fichero que no existe: ${entrada.ruta}`);
+    }
+  }
+
+  // Enlaces profundos: `oficiales.html?convocatoria=2021` y
+  // `no-oficiales.html?tema=1` seleccionan su entrada; un valor que no está en
+  // el manifiesto se ignora y la página enseña la lista completa.
+  const filtro = (coleccion, lista, consulta) =>
+    moduloBanco.filtroDesdeParametros(coleccion, lista, new URLSearchParams(consulta));
+
+  const porAnio = filtro('oficiales', oficiales, 'convocatoria=2021');
+  if (porAnio !== oficiales.find((e) => e.convocatoria === 2021)?.id) {
+    fallo(`oficiales.html?convocatoria=2021 no abre su convocatoria (devuelve ${porAnio})`);
+  }
+  if (filtro('oficiales', oficiales, 'convocatoria=1999') !== null) {
+    fallo('Un año que no está en el manifiesto debería ignorarse');
+  }
+  if (filtro('oficiales', oficiales, 'convocatoria=todas') !== null) {
+    fallo('Un año no numérico debería ignorarse');
+  }
+  if (filtro('oficiales', oficiales, '') !== null) {
+    fallo('Sin parámetro, oficiales.html debe enseñar todas las convocatorias');
+  }
+
+  const primerTema = propias.find((e) => e.tipo === 'tema');
+  if (primerTema && filtro('propio', propias, `tema=${primerTema.tema}`) !== primerTema.id) {
+    fallo(`no-oficiales.html?tema=${primerTema.tema} no abre su tema`);
+  }
+  if (filtro('propio', propias, 'tema=0') !== null || filtro('propio', propias, 'tema=999') !== null) {
+    fallo('Un tema que no está en el manifiesto debería ignorarse');
+  }
+
+  // El banco de mezcla puede no existir todavía (hoy no existe): mientras no
+  // esté en el manifiesto, el enlace profundo no puede prometer nada.
+  const mezcla = propias.find((e) => e.tipo === 'mezcla');
+  const pedida = filtro('propio', propias, 'tema=mezcla');
+  if (mezcla ? pedida !== mezcla.id : pedida !== null) {
+    fallo('El enlace profundo de las preguntas mezcladas no sigue al manifiesto');
+  }
+
+  const cuenta = moduloBanco.contarEntradas('oficiales', oficiales);
+  const sumaDeclarada = oficiales.reduce((total, e) => total + e.preguntas, 0);
+  if (cuenta.preguntas !== sumaDeclarada || cuenta.entradas !== oficiales.length) {
+    fallo('El recuento de la portada no suma lo que declara el manifiesto');
+  }
+  resumenTest = `${oficiales.length} convocatoria(s) · ${cuenta.preguntas} preguntas oficiales · ${moduloBanco.contarEntradas('propio', propias).temas} tema(s) del banco propio`;
+
+  // Las dos páginas de destino tienen que estar enlazadas desde la portada, o
+  // los dos accesos que pide la función no llevan a ninguna parte.
+  const portadaTest = await readFile('assets/js/test-paginas.js', 'utf8');
+  for (const destino of ['oficiales.html', 'no-oficiales.html']) {
+    if (!portadaTest.includes(`'${destino}'`)) fallo(`La portada de Test no enlaza ${destino}`);
+  }
+  for (const pagina of ['test.html', 'oficiales.html', 'no-oficiales.html']) {
+    const html = await readFile(pagina, 'utf8');
+    const actuales = (html.match(/aria-current="page"/g) ?? []).length;
+    if (actuales !== 1) fallo(`${pagina}: se espera un solo aria-current="page" y hay ${actuales}`);
+  }
+  for (const pagina of ['oficiales.html', 'no-oficiales.html']) {
+    const html = await readFile(pagina, 'utf8');
+    if (!/<a href="test\.html" aria-current="page">/.test(html)) {
+      fallo(`${pagina}: la entrada de navegación marcada como actual debe ser Test`);
+    }
+  }
+}
+
 /* --- Informe -------------------------------------------------------------- */
 
 console.log(`Temas: ${temas.length}`);
 console.log(`Bloques: ${programa.bloques.length}`);
 console.log(`Publicados: ${publicados}`);
 console.log(`Pendientes: ${pendientes.length}${pendientes.length ? ` → ${pendientes.join(', ')}` : ''}`);
+if (resumenTest) console.log(`Test: ${resumenTest}`);
 
 if (avisos.length) {
   console.log('\nAvisos:');

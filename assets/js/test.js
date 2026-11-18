@@ -5,6 +5,13 @@
 // comparación con marcas anteriores y almacenamiento versionado) vive en
 // test-core.js, que no depende del navegador y se puede importar desde Node.
 //
+// El mismo módulo sirve a las dos páginas de destino del apartado Test:
+// `oficiales.html` (cuadernillos de convocatorias anteriores) y
+// `no-oficiales.html` (banco propio por tema y mezclado). El atributo
+// `data-coleccion` del <body> dice cuál de los dos manifiestos se carga; todo lo
+// demás —sesiones, corrección, rachas, reto del día, repaso de fallos,
+// marcador y progreso— es exactamente el mismo código.
+//
 // Sin JavaScript incrustado y sin atributos de estilo: la CSP del sitio es
 // script-src 'self' y style-src 'self', así que todos los manejadores se
 // enlazan desde aquí y las marcas de estado se resuelven con clases CSS.
@@ -22,7 +29,6 @@ import {
   claveFecha,
   compararConRecord,
   construirPool,
-  contarPorConvocatoria,
   corregir,
   crearAlmacenVacio,
   crearGeneradorAleatorio,
@@ -44,8 +50,13 @@ import {
   tasaDeAcierto,
   validarAlmacen,
 } from './test-core.js';
+import { cargarColeccion, filtroDesdeParametros } from './banco.js';
 
-const RUTA_INDICE = 'data/examenes/index.json';
+// La colección la declara la página: `oficiales` para los cuadernillos de
+// convocatorias anteriores y `propio` para el banco por tema.
+const COLECCION = document.body.dataset.coleccion === 'propio' ? 'propio' : 'oficiales';
+const ES_OFICIALES = COLECCION === 'oficiales';
+
 const LETRAS = ['a', 'b', 'c'];
 const AVISO_RELOJ_SEGUNDOS = 60;
 const MODOS_CON_MARCA = ['corta', 'media', 'completa', 'examen'];
@@ -103,6 +114,18 @@ function boton(texto, clase, alPulsar, id) {
 }
 
 const letra = (indice) => LETRAS[indice] ?? '?';
+
+/**
+ * Explicación docente de una pregunta, si el banco la trae.
+ *
+ * El banco oficial no la tiene; el propio, sí: dice por qué la correcta lo es y
+ * por qué fallan las otras. Cuando no hay texto no se pinta nada, así que la
+ * misma interfaz sirve a las dos colecciones sin huecos vacíos.
+ */
+function textoExplicacion(pregunta) {
+  const texto = pregunta?.explicacion;
+  return typeof texto === 'string' ? texto.trim() : '';
+}
 
 function anunciar(texto) {
   $('anuncio').textContent = texto;
@@ -165,47 +188,25 @@ function guardarAlmacen() {
 
 /* --- Carga del banco ------------------------------------------------------- */
 
-async function leerBanco(entrada) {
-  const respuesta = await fetch(`data/examenes/${entrada.archivo}`);
-  if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
-  const banco = await respuesta.json();
-  if (!Array.isArray(banco.preguntas) || banco.preguntas.length === 0) {
-    throw new Error('el fichero no contiene preguntas');
-  }
-  return banco;
-}
-
-async function cargarBancos() {
-  const respuesta = await fetch(RUTA_INDICE);
-  if (!respuesta.ok) {
-    throw new Error(`No se pudo leer el índice del banco (HTTP ${respuesta.status}).`);
-  }
-
-  const manifiesto = await respuesta.json();
-  const entradas = Array.isArray(manifiesto.examenes) ? manifiesto.examenes : [];
-  if (entradas.length === 0) {
-    throw new Error('El índice del banco no declara ninguna convocatoria.');
-  }
-
-  const resultados = await Promise.allSettled(entradas.map((entrada) => leerBanco(entrada)));
-  const bancos = [];
-  const errores = [];
-
-  resultados.forEach((resultado, i) => {
-    if (resultado.status === 'fulfilled') bancos.push(resultado.value);
-    else errores.push(`${entradas[i].archivo} (${resultado.reason?.message ?? 'error desconocido'})`);
-  });
-
-  return { bancos, errores };
-}
-
+/**
+ * Carga los bancos de la colección que declara la página.
+ *
+ * Los dos manifiestos los lee `banco.js`: aquí sólo se cuentan los fallos. Un
+ * banco que no carga deja su acceso fuera de la lista, así que la página nunca
+ * ofrece un test que no se puede hacer.
+ */
 async function iniciar() {
   try {
-    const { bancos, errores } = await cargarBancos();
+    const { bancos, errores } = await cargarColeccion(COLECCION);
 
     if (bancos.length === 0) {
+      const detalle = errores.length
+        ? errores.join(' · ')
+        : ES_OFICIALES
+          ? 'el índice no declara ninguna convocatoria'
+          : 'el índice no declara ningún banco';
       mostrarEstado(
-        `No se pudo cargar ningún banco de preguntas: ${errores.join(' · ')}. Comprueba la conexión y recarga la página.`,
+        `No se pudo cargar ningún banco de preguntas: ${detalle}. Comprueba la conexión y recarga la página.`,
         'error',
       );
       return;
@@ -220,17 +221,18 @@ async function iniciar() {
       return;
     }
 
-    const resumen = contarPorConvocatoria(bancos)
-      .map((fila) => `${fila.convocatoria} · promoción ${fila.promocion}: ${fila.total}`)
+    const resumen = bancosOrdenados()
+      .map((banco) => `${etiquetaBanco(banco)}: ${banco.preguntas.length}`)
       .join(' · ');
     const base = `Banco cargado: ${pool.length} preguntas (${resumen}).`;
     const aviso = errores.length
-      ? ` No se pudo cargar ${errores.join(' · ')}; la sesión continúa con las convocatorias disponibles.`
+      ? ` No se pudo cargar ${errores.join(' · ')}; la sesión continúa con los bancos disponibles.`
       : '';
     mostrarEstado(`${base}${aviso}`, errores.length ? 'aviso' : 'listo');
 
     pintarInicio();
     mostrarPanel('inicio');
+    abrirEnlaceProfundo();
   } catch (error) {
     console.error(error);
     mostrarEstado(
@@ -242,44 +244,201 @@ async function iniciar() {
 
 /* --- Configuración de la sesión -------------------------------------------- */
 
+/** Bancos en el orden en que se presentan: por año y promoción, o por tema. */
+function bancosOrdenados() {
+  const lista = [...estado.bancos];
+
+  if (ES_OFICIALES) {
+    lista.sort((a, b) => a.convocatoria - b.convocatoria || a.promocion - b.promocion);
+  } else {
+    // Los temas del programa primero y, al final, el banco de mezcla.
+    lista.sort((a, b) => {
+      const mezclaA = a.tipo === 'mezcla' ? 1 : 0;
+      const mezclaB = b.tipo === 'mezcla' ? 1 : 0;
+      return mezclaA - mezclaB || (a.tema ?? 0) - (b.tema ?? 0);
+    });
+  }
+
+  return lista;
+}
+
+/** Nombre corto del banco: la convocatoria, o el tema, sin la palabra del filtro. */
+const etiquetaBanco = (banco) =>
+  ES_OFICIALES ? `${banco.convocatoria} · promoción ${banco.promocion}` : banco.origen;
+
+const pluralPreguntas = (cantidad) =>
+  `${cantidad} ${cantidad === 1 ? 'pregunta' : 'preguntas'}`;
+
+/**
+ * Una entrada por banco (y la mezcla) con su recuento real.
+ *
+ * La tarjeta es un enlace con la misma forma que la rejilla de temas del
+ * temario. Al pulsarla se aplica su filtro y se puede empezar: el enlace lleva
+ * el parámetro en la URL para que el mismo test se pueda compartir o guardar.
+ */
+function tarjetaDeAcceso(acceso) {
+  const enlace = crear(
+    'a',
+    { clase: 'acceso', atributos: { href: acceso.href } },
+    [
+      ...(acceso.insignia
+        ? [
+            crear('span', {
+              clase: 'acceso__numero',
+              texto: acceso.insignia,
+              atributos: { 'aria-hidden': 'true' },
+            }),
+          ]
+        : []),
+      crear('span', { clase: 'acceso__cuerpo' }, [
+        crear('span', { clase: 'acceso__titulo', texto: acceso.titulo }),
+        crear('span', { clase: 'acceso__texto', texto: acceso.texto }),
+        crear('span', { clase: 'acceso__cuenta', texto: pluralPreguntas(acceso.preguntas) }),
+      ]),
+    ],
+  );
+
+  enlace.addEventListener('click', (evento) => {
+    // Con modificador o con un botón distinto del principal se deja que el
+    // navegador abra el enlace en otra pestaña, como cualquier otro enlace.
+    if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.altKey || evento.button !== 0) {
+      return;
+    }
+    evento.preventDefault();
+    aplicarFiltro(acceso.valor);
+  });
+
+  return crear('li', {}, [enlace]);
+}
+
+/** Epígrafe del tema sin el prefijo «Tema N · », que ya está en el título. */
+function descripcionDelTema(banco) {
+  const titulo = String(banco.titulo ?? '')
+    .replace(/^Tema\s+\d+\s*·\s*/i, '')
+    .trim();
+  return titulo || 'Preguntas propias de este tema, con la explicación de cada respuesta.';
+}
+
+function gruposDeEntradas() {
+  if (ES_OFICIALES) {
+    const porConvocatoria = bancosOrdenados().map((banco) => ({
+      insignia: String(banco.convocatoria).slice(-2),
+      titulo: etiquetaBanco(banco),
+      texto: 'Cuadernillo completo del examen teórico de esa convocatoria.',
+      preguntas: banco.preguntas.length,
+      href: `oficiales.html?convocatoria=${banco.convocatoria}`,
+      valor: banco.id,
+    }));
+
+    const todos = {
+      titulo: 'Mezcla de todos los años',
+      texto: 'Todas las preguntas de todas las convocatorias, barajadas en una sola sesión.',
+      preguntas: construirPool(estado.bancos).length,
+      href: 'oficiales.html',
+      valor: '',
+    };
+
+    return [
+      { titulo: 'Por convocatoria', tarjetas: porConvocatoria },
+      { titulo: 'Todos los años', tarjetas: [todos] },
+    ];
+  }
+
+  const temas = bancosOrdenados()
+    .filter((banco) => banco.tipo !== 'mezcla')
+    .map((banco) => ({
+      insignia: String(banco.tema ?? 0).padStart(2, '0'),
+      titulo: `Tema ${banco.tema}`,
+      texto: descripcionDelTema(banco),
+      preguntas: banco.preguntas.length,
+      href: `no-oficiales.html?tema=${banco.tema}`,
+      valor: banco.id,
+    }));
+
+  const mezclas = bancosOrdenados()
+    .filter((banco) => banco.tipo === 'mezcla')
+    .map((banco) => ({
+      titulo: banco.origen,
+      texto: 'Preguntas que cruzan dos temas, pensadas para examinar de forma docente.',
+      preguntas: banco.preguntas.length,
+      href: 'no-oficiales.html?tema=mezcla',
+      valor: banco.id,
+    }));
+
+  const grupos = [{ titulo: 'Por tema', tarjetas: temas }];
+  // El banco de mezcla puede no existir todavía: mientras el manifiesto no lo
+  // declare, la página no pinta un acceso que llevaría a una lista vacía.
+  if (mezclas.length > 0) grupos.push({ titulo: 'Mezcladas', tarjetas: mezclas });
+  return grupos;
+}
+
+/** Rejilla de accesos: una entrada por convocatoria, por tema o la mezcla. */
+function pintarEntradas() {
+  const grupos = gruposDeEntradas().filter((grupo) => grupo.tarjetas.length > 0);
+
+  $('entradas').replaceChildren(
+    ...grupos.map((grupo) =>
+      crear('section', {}, [
+        crear('h3', { texto: grupo.titulo }),
+        crear('ul', { clase: 'accesos' }, grupo.tarjetas.map(tarjetaDeAcceso)),
+      ]),
+    ),
+  );
+}
+
+/**
+ * Procedencia de las preguntas.
+ *
+ * En los oficiales se nombra al organismo que publica el cuestionario; la
+ * página nunca enlaza el fichero del PDF, así que no se expone el sitio que lo
+ * aloja (L26). Las URL de procedencia siguen en data/examenes/FUENTES.md y en el
+ * campo `fuente` de cada banco, que la página no pinta.
+ */
+function pintarFuentes() {
+  const fuentes = bancosOrdenados().map((banco) =>
+    crear('li', {
+      texto: ES_OFICIALES
+        ? `${banco.origen} — ${banco.preguntas.length} preguntas. Cuestionario de la Dirección General de la Policía, Área de Procesos Selectivos.`
+        : `${banco.origen} — ${banco.preguntas.length} preguntas. Preguntas de elaboración propia, con la norma que sostiene cada respuesta.`,
+    }),
+  );
+
+  $('fuentes-intro').textContent = ES_OFICIALES
+    ? 'Cuestionarios de la Dirección General de la Policía, Área de Procesos Selectivos, reutilizados con atribución conforme a la Ley 37/2007 y al RD 1495/2011. No se incluye material de academias ni de editoriales.'
+    : 'Preguntas escritas para este sitio desde la fuente legal que cita cada explicación, no copiadas de bancos de academias ni de editoriales. Cada pregunta declara su dificultad y la norma en la que se apoya.';
+
+  $('lista-fuentes').replaceChildren(...fuentes);
+  $('fuentes-banco').hidden = false;
+}
+
 function pintarInicio() {
-  const convocatoriaPrevia = $('filtro-convocatoria').value;
+  const filtroPrevio = $('filtro').value;
   const total = construirPool(estado.bancos).length;
 
   const opciones = [
     crear('option', {
-      texto: `Todas las convocatorias (${total} preguntas)`,
+      texto: `${ES_OFICIALES ? 'Todas las convocatorias' : 'Todo el banco'} (${total} preguntas)`,
       atributos: { value: '' },
     }),
   ];
 
-  for (const fila of contarPorConvocatoria(estado.bancos)) {
+  for (const banco of bancosOrdenados()) {
     opciones.push(
       crear('option', {
-        texto: `${fila.convocatoria} · promoción ${fila.promocion} (${fila.total} preguntas)`,
-        atributos: { value: String(fila.convocatoria) },
+        texto: `${etiquetaBanco(banco)} (${banco.preguntas.length} preguntas)`,
+        atributos: { value: banco.id },
       }),
     );
   }
-  $('filtro-convocatoria').replaceChildren(...opciones);
-  if (convocatoriaPrevia && $('filtro-convocatoria').querySelector(`option[value="${convocatoriaPrevia}"]`)) {
-    $('filtro-convocatoria').value = convocatoriaPrevia;
+
+  $('etiqueta-filtro').textContent = ES_OFICIALES ? 'Convocatoria' : 'Tema';
+  $('filtro').replaceChildren(...opciones);
+  if (filtroPrevio && $('filtro').querySelector(`option[value="${filtroPrevio}"]`)) {
+    $('filtro').value = filtroPrevio;
   }
 
-  // Attribution stays in text, naming the issuing body; the page never renders a link to the
-  // questionnaire file, so the hosting site of the PDF is not exposed (see L26). Provenance URLs
-  // remain in data/examenes/FUENTES.md and in the `fuente` field of each bank, which the page does
-  // not render.
-  const fuentes = estado.bancos.map((banco) =>
-    crear('li', {
-      texto:
-        `Convocatoria ${banco.convocatoria} · promoción ${banco.promocion} — ` +
-        `${banco.preguntas.length} preguntas. Cuestionario de la Dirección General de la Policía, ` +
-        'Área de Procesos Selectivos.',
-    }),
-  );
-  $('lista-fuentes').replaceChildren(...fuentes);
-  $('fuentes-banco').hidden = false;
+  pintarEntradas();
+  pintarFuentes();
 
   alternarConfirmacionBorrado(false, { enfocar: false });
   pintarHistorial();
@@ -290,12 +449,42 @@ function pintarInicio() {
 const tamanoSeleccionado = () =>
   document.querySelector('input[name="tamano"]:checked')?.value ?? 'corta';
 
-const valorConvocatoria = () => {
-  const valor = $('filtro-convocatoria').value;
-  return valor === '' ? null : Number(valor);
-};
+/** Bancos que entran en la sesión según el filtro elegido. */
+function bancosDelFiltro() {
+  const valor = $('filtro').value;
+  if (valor === '') return estado.bancos;
+  return estado.bancos.filter((banco) => banco.id === valor);
+}
 
-const poolDelFiltro = () => construirPool(estado.bancos, { convocatoria: valorConvocatoria() });
+const poolDelFiltro = () => construirPool(bancosDelFiltro());
+
+/**
+ * Aplica un filtro y deja la página lista para empezar.
+ *
+ * Devuelve false si el valor no corresponde a ninguna opción del desplegable:
+ * así un enlace profundo con un parámetro raro se ignora y la página sigue
+ * enseñando la lista completa, sin romperse.
+ */
+function aplicarFiltro(valor, { enfocar = true } = {}) {
+  const select = $('filtro');
+  if (![...select.options].some((opcion) => opcion.value === valor)) return false;
+
+  select.value = valor;
+  actualizarControles();
+  anunciar(
+    `Filtro aplicado: ${select.selectedOptions[0]?.textContent ?? ''} Elige el tamaño de la sesión y pulsa Empezar.`,
+  );
+  if (enfocar) $('empezar').focus();
+  return true;
+}
+
+/** Enlace profundo: `oficiales.html?convocatoria=2021`, `no-oficiales.html?tema=1`. */
+function abrirEnlaceProfundo() {
+  const parametros = new URLSearchParams(globalThis.location?.search ?? '');
+  const valor = filtroDesdeParametros(COLECCION, estado.bancos, parametros);
+  if (valor === null) return;
+  aplicarFiltro(valor, { enfocar: false });
+}
 
 function actualizarControles() {
   const tamano = tamanoSeleccionado();
@@ -340,7 +529,7 @@ function semillaAleatoria() {
 function empezarSesion() {
   const pool = poolDelFiltro();
   if (pool.length === 0) {
-    mostrarEstado('La convocatoria elegida no tiene preguntas en el banco. Elige otra o todas.', 'aviso');
+    mostrarEstado('El filtro elegido no tiene preguntas en el banco. Elige otro o todos.', 'aviso');
     return;
   }
 
@@ -431,7 +620,7 @@ function pintarPregunta(foco = 'enunciado') {
   pintarMarcador();
   pintarRacha();
 
-  $('origen').textContent = `Convocatoria ${pregunta.convocatoria} · promoción ${pregunta.promocion}`;
+  $('origen').textContent = pregunta.origen ?? 'Pregunta del banco';
   $('enunciado').textContent = pregunta.enunciado;
 
   $('opciones').replaceChildren(
@@ -569,6 +758,7 @@ function pintarRetroalimentacion(entrada, revelar) {
   const pregunta = entrada.pregunta;
   const acierto = entrada.respuesta === pregunta.correcta;
   const correcta = `${letra(pregunta.correcta)}) «${pregunta.opciones[pregunta.correcta]}»`;
+  const explicacion = textoExplicacion(pregunta);
 
   bloque.className = `retroalimentacion retroalimentacion--${acierto ? 'acierto' : 'fallo'}`;
   bloque.hidden = false;
@@ -582,6 +772,9 @@ function pintarRetroalimentacion(entrada, revelar) {
         ? `Has marcado la opción correcta: ${correcta}.`
         : `La opción correcta era la ${correcta}.`,
     }),
+    ...(explicacion
+      ? [crear('p', { clase: 'retroalimentacion__explicacion', texto: explicacion })]
+      : []),
     crear('p', { clase: 'retroalimentacion__id', texto: `Pregunta ${pregunta.id}` }),
   );
 }
@@ -841,7 +1034,7 @@ function notaPuntuacion(resultado, motivo) {
 }
 
 function crearDesglose() {
-  const filas = resumirPorConvocatoria(estado.intento);
+  const filas = ES_OFICIALES ? filasPorConvocatoria() : filasPorOrigen();
   const contenedor = crear('div', { clase: 'desglose' });
 
   if (filas.length === 0) {
@@ -849,9 +1042,67 @@ function crearDesglose() {
     return contenedor;
   }
 
-  const encabezados = ['Convocatoria', 'Promoción', 'Preguntas', 'Aciertos', 'Fallos', 'En blanco'];
+  contenedor.append(
+    ES_OFICIALES
+      ? tablaDeDesglose(
+          'Desglose por convocatoria',
+          ['Convocatoria', 'Promoción', 'Preguntas', 'Aciertos', 'Fallos', 'En blanco'],
+          filas.map((fila) => [
+            fila.convocatoria,
+            fila.promocion,
+            fila.total,
+            fila.aciertos,
+            fila.fallos,
+            fila.blancos,
+          ]),
+        )
+      : tablaDeDesglose(
+          'Desglose por tema',
+          ['Origen', 'Preguntas', 'Aciertos', 'Fallos', 'En blanco'],
+          filas.map((fila) => [fila.origen, fila.total, fila.aciertos, fila.fallos, fila.blancos]),
+        ),
+  );
+
+  return contenedor;
+}
+
+function filasPorConvocatoria() {
+  return resumirPorConvocatoria(estado.intento);
+}
+
+/**
+ * Desglose del banco propio por procedencia de cada pregunta.
+ *
+ * El banco propio no tiene convocatoria ni promoción, así que agrupar por años
+ * no diría nada: lo que interesa es en qué tema se falla.
+ */
+function filasPorOrigen() {
+  const filas = new Map();
+
+  for (const entrada of estado.intento) {
+    const origen = entrada.pregunta.origen ?? 'Banco propio';
+    const fila = filas.get(origen) ?? {
+      origen,
+      total: 0,
+      aciertos: 0,
+      fallos: 0,
+      blancos: 0,
+    };
+
+    fila.total += 1;
+    if (entrada.respuesta === null || entrada.respuesta === undefined) fila.blancos += 1;
+    else if (entrada.respuesta === entrada.pregunta.correcta) fila.aciertos += 1;
+    else fila.fallos += 1;
+
+    filas.set(origen, fila);
+  }
+
+  return [...filas.values()];
+}
+
+function tablaDeDesglose(caption, encabezados, filas) {
   const tabla = crear('table', {}, [
-    crear('caption', { texto: 'Desglose por convocatoria' }),
+    crear('caption', { texto: caption }),
     crear('thead', {}, [
       crear(
         'tr',
@@ -863,20 +1114,11 @@ function crearDesglose() {
 
   const cuerpo = crear('tbody');
   for (const fila of filas) {
-    cuerpo.append(
-      crear(
-        'tr',
-        {},
-        [fila.convocatoria, fila.promocion, fila.total, fila.aciertos, fila.fallos, fila.blancos].map(
-          (valor) => crear('td', { texto: String(valor) }),
-        ),
-      ),
-    );
+    cuerpo.append(crear('tr', {}, fila.map((valor) => crear('td', { texto: String(valor) }))));
   }
 
   tabla.append(cuerpo);
-  contenedor.append(tabla);
-  return contenedor;
+  return tabla;
 }
 
 function crearRepaso() {
@@ -905,7 +1147,7 @@ function crearRepaso() {
     const item = crear('li', { clase: 'repaso__item' }, [
       crear('p', {
         clase: 'repaso__origen',
-        texto: `Convocatoria ${pregunta.convocatoria} · promoción ${pregunta.promocion} · ${pregunta.id} · ${enBlanco ? 'En blanco' : 'Incorrecta'}`,
+        texto: `${pregunta.origen ?? 'Pregunta del banco'} · ${pregunta.id} · ${enBlanco ? 'En blanco' : 'Incorrecta'}`,
       }),
       crear('p', { clase: 'repaso__enunciado', texto: pregunta.enunciado }),
     ]);
@@ -925,6 +1167,11 @@ function crearRepaso() {
         texto: `Correcta: ${letra(pregunta.correcta)}) ${pregunta.opciones[pregunta.correcta]}`,
       }),
     );
+
+    const explicacion = textoExplicacion(pregunta);
+    if (explicacion) {
+      item.append(crear('p', { clase: 'repaso__explicacion', texto: explicacion }));
+    }
 
     lista.append(item);
   }
@@ -1121,7 +1368,7 @@ document.addEventListener('keydown', (evento) => {
   responder(Number(evento.key) - 1);
 });
 
-$('filtro-convocatoria').addEventListener('change', actualizarControles);
+$('filtro').addEventListener('change', actualizarControles);
 $('preguntas-sesion').addEventListener('input', actualizarControles);
 for (const radio of document.querySelectorAll('input[name="tamano"]')) {
   radio.addEventListener('change', actualizarControles);

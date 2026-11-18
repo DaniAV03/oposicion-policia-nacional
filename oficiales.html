@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test oficiales de convocatorias anteriores · Policía Nacional</title>
+    <meta
+      name="description"
+      content="Test aleatorizado con las preguntas de los cuestionarios oficiales de convocatorias anteriores a Policía Nacional, Escala Básica: cada convocatoria completa o todas mezcladas, con sesiones cortas, corrección inmediata y modo examen."
+    />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body data-coleccion="oficiales">
+    <header class="cabecera">
+      <div class="envoltorio cabecera__interior">
+        <a class="marca" href="index.html">
+          <span class="marca__sigla" aria-hidden="true">PN</span>
+          <span>Policía Nacional · Escala Básica</span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <a href="index.html">Temario</a>
+          <a href="test.html" aria-current="page">Test</a>
+          <a href="legal.html">Aviso legal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="envoltorio test">
+      <p class="migaja"><a href="test.html">Test</a> › Oficiales</p>
+
+      <div class="test__entrada">
+        <div class="test__entrada-texto">
+          <h1>Test oficiales</h1>
+          <p class="test__entradilla">
+            Las preguntas de los cuestionarios oficiales ya publicados, en orden aleatorio y sin
+            repetir dentro de la sesión. Puedes hacer una convocatoria entera o mezclar todos los
+            años. Elige cuánto quieres hacer hoy: diez preguntas bastan y dejan buen sabor de
+            boca; cien, en un día con fuerzas. Puedes parar cuando quieras.
+          </p>
+        </div>
+
+        <!-- Ilustración decorativa autorada (assets/img/test.svg). -->
+        <img
+          class="test__ilustracion"
+          src="assets/img/test.svg"
+          width="200"
+          height="200"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        />
+      </div>
+
+      <p class="aviso-oficial">
+        <strong>Sitio no oficial.</strong> Este proyecto no pertenece ni está respaldado por el
+        Ministerio del Interior ni por la Dirección General de la Policía. La puntuación que
+        muestra esta página es un recuento de práctica, no una calificación: la fórmula oficial
+        de penalización debe confirmarse en las bases publicadas en el BOE y aquí se aplica con
+        penalización 0.
+      </p>
+
+      <p class="test__estado" id="estado" role="status">Cargando el banco de preguntas…</p>
+      <p class="visualmente-oculto" id="anuncio" role="status" aria-live="polite"></p>
+
+      <section class="panel" id="panel-inicio" aria-labelledby="titulo-inicio" hidden>
+        <h2 id="titulo-inicio">Elige cuánto quieres hacer</h2>
+        <p class="test__nota-inicio">
+          Diez preguntas bien hechas cunden más que cien a disgusto. No hay rachas que mantener ni
+          sesiones que completar: se elige, se hace y se cierra.
+        </p>
+
+        <!-- Las entradas de cada convocatoria y la mezcla de todos los años las
+             pinta assets/js/test.js con el recuento real del manifiesto. -->
+        <div id="entradas"></div>
+
+        <fieldset class="modos">
+          <legend>Tamaño de la sesión</legend>
+
+          <label class="modo">
+            <input type="radio" name="tamano" value="corta" checked />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Sesión corta · <span class="modo__cuenta" id="cuenta-corta">10 preguntas</span></span>
+              <span class="modo__texto">
+                Diez preguntas con corrección al instante. Para un rato muerto, sin agotarse.
+              </span>
+            </span>
+          </label>
+
+          <label class="modo">
+            <input type="radio" name="tamano" value="media" />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Sesión media · <span class="modo__cuenta" id="cuenta-media">30 preguntas</span></span>
+              <span class="modo__texto">
+                Treinta preguntas al azar, sin repetir, con corrección inmediata.
+              </span>
+            </span>
+          </label>
+
+          <label class="modo">
+            <input type="radio" name="tamano" value="completa" />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Banco completo · <span class="modo__cuenta" id="cuenta-completa">todo el filtro</span></span>
+              <span class="modo__texto">
+                Todas las preguntas del filtro, en orden aleatorio. Para una sesión de fondo.
+              </span>
+            </span>
+          </label>
+
+          <label class="modo">
+            <input type="radio" name="tamano" value="examen" />
+            <span class="modo__cuerpo">
+              <span class="modo__titulo">Examen con tiempo · <span class="modo__cuenta" id="cuenta-examen">30 preguntas</span></span>
+              <span class="modo__texto">
+                Las preguntas que elijas, sin corregir hasta el final, con temporizador
+                orientativo de 60 segundos por pregunta. El tiempo real lo fijan las bases
+                oficiales.
+              </span>
+            </span>
+          </label>
+        </fieldset>
+
+        <div class="controles">
+          <div class="campo">
+            <label for="filtro" id="etiqueta-filtro">Convocatoria</label>
+            <select id="filtro"></select>
+          </div>
+
+          <div class="campo">
+            <label for="preguntas-sesion">Preguntas del examen</label>
+            <input
+              id="preguntas-sesion"
+              name="preguntas"
+              type="number"
+              min="1"
+              step="1"
+              value="30"
+              inputmode="numeric"
+            />
+            <p class="campo__ayuda" id="ayuda-preguntas">El máximo lo marca el banco disponible.</p>
+          </div>
+        </div>
+
+        <p class="botonera">
+          <button class="boton" type="button" id="empezar">Empezar</button>
+        </p>
+
+        <section class="reto" aria-labelledby="titulo-reto">
+          <h3 id="titulo-reto">Reto del día</h3>
+          <p>
+            Diez preguntas elegidas por la fecha: son las mismas durante todo el día y cambian
+            mañana. Sin reloj.
+          </p>
+          <p class="reto__estado" id="reto-estado"></p>
+          <p class="botonera">
+            <button class="boton boton--secundario" type="button" id="empezar-reto">
+              Hacer el reto de hoy
+            </button>
+          </p>
+        </section>
+
+        <section class="progreso" aria-labelledby="titulo-progreso">
+          <h3 id="titulo-progreso">Tu progreso</h3>
+          <p class="progreso__nota">
+            Se guarda sólo en este navegador, sin cuentas ni servidores. Puedes exportarlo a un
+            fichero y volver a importarlo, o borrarlo cuando quieras.
+          </p>
+          <div id="historial"></div>
+          <p class="progreso__aviso" id="aviso-almacen" hidden></p>
+
+          <p class="botonera">
+            <button class="boton boton--secundario" type="button" id="exportar">
+              Exportar progreso
+            </button>
+            <input
+              class="entrada-fichero"
+              type="file"
+              id="importar"
+              accept="application/json,.json"
+            />
+            <label class="boton boton--secundario boton--fichero" for="importar">
+              Importar progreso
+            </label>
+            <button
+              class="boton boton--secundario"
+              type="button"
+              id="borrar"
+              aria-expanded="false"
+              aria-controls="confirmar-borrado"
+            >
+              Borrar progreso
+            </button>
+          </p>
+
+          <div class="progreso__confirmacion" id="confirmar-borrado" hidden>
+            <p>
+              Se borrarán los récords, el récord de racha, el último intento y el reto de hoy
+              guardados en este navegador. No se puede deshacer.
+            </p>
+            <p class="botonera">
+              <button class="boton" type="button" id="borrar-confirmar">Sí, borrar el progreso</button>
+              <button class="boton boton--secundario" type="button" id="borrar-cancelar">
+                Cancelar
+              </button>
+            </p>
+          </div>
+        </section>
+
+        <div class="fuentes-banco" id="fuentes-banco" hidden>
+          <h3>Procedencia de las preguntas</h3>
+          <p id="fuentes-intro"></p>
+          <ul id="lista-fuentes"></ul>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-sesion" aria-labelledby="enunciado" hidden>
+        <div class="sesion__barra">
+          <p class="sesion__progreso" id="progreso"></p>
+          <p class="sesion__marcador" id="marcador"></p>
+          <p class="sesion__racha" id="racha" hidden></p>
+          <p class="sesion__reloj" id="reloj" role="timer" hidden></p>
+          <p class="sesion__ritmo" id="ritmo" hidden></p>
+        </div>
+
+        <progress class="sesion__medidor" id="medidor" value="0" max="10" aria-hidden="true"></progress>
+        <p class="sesion__hito" id="racha-hito" role="status" hidden></p>
+
+        <p class="pregunta__origen" id="origen"></p>
+        <h2 class="pregunta__enunciado" id="enunciado" tabindex="-1"></h2>
+        <div class="opciones" id="opciones"></div>
+        <div class="retroalimentacion" id="retroalimentacion" hidden></div>
+        <div class="botonera" id="acciones-sesion"></div>
+
+        <p class="sesion__atajos">
+          Teclado: <kbd>1</kbd>, <kbd>2</kbd> y <kbd>3</kbd> responden; <kbd>Intro</kbd> avanza.
+          Salir de la sesión no guarda nada y no se pierde ninguna marca.
+        </p>
+      </section>
+
+      <section class="panel" id="panel-resultado" aria-labelledby="titulo-resultado" hidden>
+        <h2 id="titulo-resultado" tabindex="-1">Sesión terminada</h2>
+        <div id="resultado-cifras"></div>
+        <p class="resultado__comparacion" id="comparacion"></p>
+        <p class="resultado__parada" id="parada" hidden></p>
+        <p class="test__nota" id="nota-puntuacion"></p>
+        <div id="desglose"></div>
+        <div id="fallos"></div>
+        <div class="botonera" id="acciones-resultado"></div>
+      </section>
+    </main>
+
+    <footer class="pie">
+      <div class="envoltorio">
+        <p class="pie__aviso">
+          <strong>Sin vinculación oficial.</strong> Sitio no oficial, sin relación con el
+          Ministerio del Interior ni con la Dirección General de la Policía. La convocatoria
+          vigente es la publicada en el BOE.
+        </p>
+        <p>
+          Preguntas procedentes de los cuestionarios oficiales de convocatorias anteriores,
+          reutilizadas con atribución (Ley 37/2007, RD 1495/2011). El motor de test y su
+          interfaz son de elaboración propia y se publican bajo CC BY-SA 4.0.
+        </p>
+        <p>
+          Tipografía <strong>Lexend</strong>, autoalojada, bajo SIL Open Font License 1.1.
+        </p>
+        <p class="pie__enlaces">
+          <a href="legal.html">Aviso legal, licencias y atribuciones</a>
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/js/test.js"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 25,
+  "titulo": "Tema 25 · Marco normativo básico en prevención de riesgos laborales. La Ley 31/1995, de Prevención de Riesgos Laborales. RD 39/1997, Reglamento de los servicios de prevención. El RD 2/2006, sobre Prevención de Riesgos Laborales en los funcionarios del Cuerpo Nacional de Policía. El RD 67/2010 sobre adaptación de la Prevención de Riesgos Laborales en la Administración General del Estado. Derechos y deberes básicos en materia de Prevención de Riesgos laborales.",
+  "preguntas": [
+    {
+      "id": "t25-g001",
+      "tema": 25,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál de estas actividades queda fuera de la aplicación directa de la Ley 31/1995 por el artículo 3.2?",
+      "opciones": [
+        "Las funciones públicas de policía, seguridad y resguardo aduanero, cuando sus particularidades lo impidan.",
+        "El personal estatutario sanitario al servicio de las Administraciones públicas.",
+        "El personal laboral de las Administraciones públicas."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3.2 excluye la ley, en aquellas actividades cuyas particularidades lo impidan, en el ámbito de las funciones públicas de policía, seguridad y resguardo aduanero, de los servicios operativos de protección civil y peritaje forense en casos de grave riesgo, catástrofe y calamidad pública, y de las Fuerzas Armadas y actividades militares de la Guardia Civil. El personal estatutario sanitario entra por el artículo 3.1 y el laboral por el Estatuto de los Trabajadores: son ámbitos incluidos, no excluidos. Y la exclusión no deja sin protección, porque la ley inspira la normativa específica.",
+      "referencia": {
+        "apartado": "4.2. Las tres exclusiones del artículo 3.2",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 3.2"
+      }
+    },
+    {
+      "id": "t25-g002",
+      "tema": 25,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Un empresario con veinte trabajadores en un único centro, cuya actividad no figura en el anexo I del Reglamento, asume personalmente la prevención. ¿Qué límite no puede superar?",
+      "opciones": [
+        "Ninguno: la asunción personal no tiene tope de trabajadores si acredita la capacidad necesaria.",
+        "En ningún caso puede asumir la vigilancia de la salud de los trabajadores.",
+        "No puede asumirla, porque con más de diez trabajadores la asunción personal está prohibida sin excepciones."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 11 del Reglamento permite al empresario asumir personalmente la prevención hasta diez trabajadores, o hasta veinticinco si tiene un único centro de trabajo, la actividad no está en el anexo I, trabaja habitualmente en el centro y dispone de la capacidad correspondiente; y en ningún caso puede asumir la vigilancia de la salud. Con veinte trabajadores en un solo centro la asunción es posible, así que la tercera opción se equivoca al aplicar el tope de diez sin la excepción de los veinticinco, y la primera ignora todos los límites, incluido el de la vigilancia de la salud.",
+      "referencia": {
+        "apartado": "8.1. Las cuatro modalidades del artículo 10",
+        "norma": "Real Decreto 39/1997, Reglamento de los Servicios de Prevención",
+        "articulo": "art. 11"
+      }
+    },
+    {
+      "id": "t25-g003",
+      "tema": 25,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál es el plazo para realizar la primera auditoría del sistema de prevención?",
+      "opciones": [
+        "Dos años desde que se dispone de la evaluación de riesgos.",
+        "Cuatro años desde la constitución del servicio de prevención propio.",
+        "Doce meses desde el momento en que se disponga de la planificación de la actividad preventiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 30.4 del Reglamento fija la primera auditoría dentro de los doce meses siguientes al momento en que se disponga de la planificación de la actividad preventiva; después se repite cada cuatro años, cada dos si se desarrollan actividades del anexo I, con dos años más cuando la modalidad se acordó con la representación especializada. El disparador es la planificación, no la evaluación ni la constitución del servicio, y los cuatro años son el intervalo de repetición, no el plazo inicial: por eso fallan las otras dos opciones.",
+      "referencia": {
+        "apartado": "10.2. Los plazos, que son la pregunta",
+        "norma": "Real Decreto 39/1997, Reglamento de los Servicios de Prevención",
+        "articulo": "art. 30.4"
+      }
+    },
+    {
+      "id": "t25-g004",
+      "tema": 25,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "Si el empresario no adopta las medidas ante un riesgo grave e inminente, ¿cómo pueden los representantes legales acordar la paralización de la actividad?",
+      "opciones": [
+        "Por mayoría de sus miembros, comunicándolo de inmediato a la empresa y a la autoridad laboral, que resuelve en el plazo de veinticuatro horas.",
+        "Por unanimidad de sus miembros, comunicándolo a la autoridad laboral, que resuelve en el plazo de tres días hábiles.",
+        "Por mayoría de sus miembros, comunicándolo a la Inspección de Trabajo, que resuelve en el plazo de quince días."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 21.3 exige mayoría de los miembros de los representantes legales, comunicación inmediata a la empresa y a la autoridad laboral, y resolución de esta en el plazo de veinticuatro horas, que anula o ratifica la paralización; si no es posible reunir con urgencia el órgano, pueden decidirlo por mayoría los delegados de prevención. La unanimidad no se pide en ningún precepto. Los otros dos plazos existen en el tema, pero para otra cosa: tres días hábiles es el plazo para impugnar la paralización ordenada por el Inspector (artículo 44.1) y quince días el del informe previo de los delegados de prevención (artículo 36.3).",
+      "referencia": {
+        "apartado": "19.2. Riesgo grave e inminente (artículo 21)",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 21.3"
+      }
+    },
+    {
+      "id": "t25-g005",
+      "tema": 25,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién designa a los delegados de prevención de la Policía Nacional?",
+      "opciones": [
+        "Los funcionarios del Cuerpo, mediante elección directa en cada Jefatura Superior de Policía.",
+        "Las organizaciones sindicales con representación en el Consejo de Policía.",
+        "El Director General de la Policía, a propuesta de los Comités de seguridad y salud."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 14.2 del Real Decreto 2/2006 atribuye la designación a las organizaciones sindicales con representación en el Consejo de Policía: un delegado por organización en cada Jefatura Superior y en el conjunto de los servicios centrales, más los que resulten de la escala por censo de electores. La elección por los funcionarios es el sistema del régimen general de la Ley 31/1995, donde los designan los representantes del personal, y aquí no rige. El Director General designa, en cambio, a los representantes de la Administración en los Comités del artículo 16, no a los delegados.",
+      "referencia": {
+        "apartado": "13.1. Los delegados de prevención policiales (artículo 14)",
+        "norma": "Real Decreto 2/2006, sobre prevención de riesgos laborales en la actividad de los funcionarios del Cuerpo Nacional de Policía",
+        "articulo": "art. 14.2"
+      }
+    },
+    {
+      "id": "t25-g006",
+      "tema": 25,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cada cuánto tiempo y por qué órgano se controla el sistema de prevención de la Policía Nacional?",
+      "opciones": [
+        "Cada dos años, por la Inspección de Trabajo y Seguridad Social.",
+        "Cada cuatro años, por el Instituto Nacional de Seguridad e Higiene en el Trabajo.",
+        "Cada cinco años, por la Inspección de Personal y Servicios de Seguridad de la Secretaría de Estado de Seguridad."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 19 del Real Decreto 2/2006 somete el sistema a auditorías y evaluaciones cada cinco años, realizadas por la Inspección de Personal y Servicios de Seguridad, que puede recabar el asesoramiento y la colaboración del INSHT, pero no sustituye a la Inspección. Los cuatro años son otra cosa: el plazo de revisión de la evaluación de riesgos del artículo 5.2. Y los dos años son el intervalo de auditoría del régimen general cuando la empresa desarrolla actividades del anexo I. Tres cifras próximas con tres sujetos distintos.",
+      "referencia": {
+        "apartado": "14.1. El control: la Inspección de Personal y Servicios de Seguridad",
+        "norma": "Real Decreto 2/2006, sobre prevención de riesgos laborales en la actividad de los funcionarios del Cuerpo Nacional de Policía",
+        "articulo": "art. 19"
+      }
+    },
+    {
+      "id": "t25-g007",
+      "tema": 25,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Según el artículo 8 de la Ley 31/1995, el análisis y estudio de las condiciones de seguridad y salud, así como la promoción y apoyo a su mejora, corresponde a…",
+      "opciones": [
+        "La Comisión Nacional de Seguridad y Salud en el Trabajo.",
+        "El Instituto Nacional de Seguridad e Higiene en el Trabajo.",
+        "La Inspección de Trabajo y Seguridad Social."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 8 atribuye al Instituto Nacional de Seguridad e Higiene en el Trabajo las competencias de análisis y estudio de las condiciones de seguridad y salud y de promoción y apoyo a su mejora, además del asesoramiento técnico. La Comisión Nacional del artículo 13 es el órgano colegiado asesor y de participación institucional, sin esa función técnica. Y la Inspección de Trabajo del artículo 9 es el órgano de vigilancia y control del cumplimiento, que puede requerir la subsanación y ordenar la paralización, pero no investiga ni promueve la mejora técnica.",
+      "referencia": {
+        "apartado": "5.1. Los órganos públicos del capítulo II",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 8"
+      }
+    },
+    {
+      "id": "t25-g008",
+      "tema": 25,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué empresas pueden reflejar en un documento único el plan de prevención, la evaluación de riesgos y la planificación de la actividad preventiva?",
+      "opciones": [
+        "Las de hasta cincuenta trabajadores que no desarrollen actividades del anexo I del Reglamento.",
+        "Las de hasta veinticinco trabajadores, cualquiera que sea su actividad.",
+        "Las de hasta cincuenta trabajadores, aunque desarrollen actividades del anexo I, si tienen un solo centro."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.4 del Real Decreto 39/1997 permite el documento único a las empresas de hasta cincuenta trabajadores que no desarrollen actividades del anexo I, con extensión reducida y fácil comprensión. La ausencia de actividades del anexo I es requisito excluyente, así que la tercera opción no vale por pequeño que sea el número de centros. Y veinticinco es el umbral de la asunción personal de la prevención por el empresario con un único centro, que es una modalidad organizativa distinta: la segunda opción confunde las dos cifras.",
+      "referencia": {
+        "apartado": "7.1. El plan de prevención y el documento único",
+        "norma": "Real Decreto 39/1997, Reglamento de los Servicios de Prevención",
+        "articulo": "art. 2.4"
+      }
+    },
+    {
+      "id": "t25-g009",
+      "tema": 25,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántas horas de formación mínima exige el nivel superior de cualificación y cómo se reparten?",
+      "opciones": [
+        "Trescientas horas, de las que doscientas corresponden a la especialidad elegida.",
+        "Trescientas cincuenta horas, todas ellas obligatorias y comunes.",
+        "Seiscientas horas: trescientas cincuenta obligatorias y comunes, cien de la especialidad elegida y ciento cincuenta de trabajo final o actividades preventivas."
+      ],
+      "correcta": 2,
+      "explicacion": "El anexo VI del Reglamento fija para el nivel superior un total de seiscientas horas: trescientas cincuenta obligatorias y comunes, cien de la especialidad elegida y ciento cincuenta de trabajo final o actividades preventivas. Las trescientas cincuenta horas existen, pero son solo la parte común, y por eso la segunda opción acierta la cifra y falla el total. Las trescientas horas son el nivel intermedio: la primera opción mezcla dos niveles distintos del capítulo VI.",
+      "referencia": {
+        "apartado": "11. Los niveles de cualificación y las horas de formación",
+        "norma": "Real Decreto 39/1997, Reglamento de los Servicios de Prevención",
+        "articulo": "art. 37 y anexo VI"
+      }
+    },
+    {
+      "id": "t25-g010",
+      "tema": 25,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "En la Administración General del Estado, ¿en qué centros se constituye Comité de Seguridad y Salud y cada cuánto se reúne?",
+      "opciones": [
+        "En todos los centros con más de cien empleados públicos, y se reúne cada semestre.",
+        "En cada centro de trabajo del anexo I del real decreto con cincuenta o más empleados públicos, y se reúne trimestralmente.",
+        "En cada centro con cincuenta o más empleados públicos, y se reúne cada dos meses."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 6 del Real Decreto 67/2010 exige Comité en cada centro de trabajo incluido en el anexo I del real decreto con cincuenta o más empleados públicos, y fija la reunión trimestral, sin perjuicio de las que solicite alguna de las representaciones. La tercera opción acierta el umbral pero prescinde del anexo I y cambia la periodicidad. La primera se equivoca en las dos cosas: cien empleados no es el umbral de ese supuesto y la reunión semestral es la de la Comisión de seguridad y salud laboral policial del Real Decreto 2/2006, no la del Comité de la Administración General del Estado.",
+      "referencia": {
+        "apartado": "15.2. Participación y representación (artículos 4 a 6)",
+        "norma": "Real Decreto 67/2010, de adaptación de la prevención a la Administración General del Estado",
+        "articulo": "art. 6"
+      }
+    },
+    {
+      "id": "t25-g011",
+      "tema": 25,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Qué accidentes de trabajo deben figurar en la relación que el empresario elabora y conserva según el artículo 23.1 de la Ley 31/1995?",
+      "opciones": [
+        "Los que hayan causado una incapacidad superior a un día de trabajo.",
+        "Todos, con independencia de que haya existido o no incapacidad.",
+        "Solo los que hayan causado una incapacidad superior a tres días."
+      ],
+      "correcta": 0,
+      "explicacion": "La letra e) del artículo 23.1 pide la relación de accidentes de trabajo y enfermedades profesionales «con incapacidad superior a un día de trabajo», que es el umbral literal del precepto. La segunda opción suprime el umbral y obliga a relacionar también los accidentes sin baja, que no entran. La tercera lo eleva a tres días, cifra que no aparece en la ley. No hay que confundir esta relación documental con la notificación de accidentes de la Orden TAS/2926/2002, que responde a otra obligación.",
+      "referencia": {
+        "apartado": "19.4. Documentación (artículo 23)",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 23.1.e)"
+      }
+    },
+    {
+      "id": "t25-g012",
+      "tema": 25,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Dónde están tipificadas hoy las infracciones y sanciones en materia de prevención de riesgos laborales?",
+      "opciones": [
+        "En los artículos 46 a 52 de la Ley 31/1995, que siguen vigentes.",
+        "En el capítulo VII del Real Decreto 39/1997, que las desarrolla.",
+        "En los artículos 11 a 13, 39 y 40 de la Ley sobre Infracciones y Sanciones en el Orden Social."
+      ],
+      "correcta": 2,
+      "explicacion": "El capítulo VII de la Ley 31/1995 quedó casi enteramente derogado en esta materia: las infracciones leves, graves y muy graves, las sanciones y su graduación están hoy en los artículos 11, 12, 13, 39 y 40.2 de la Ley sobre Infracciones y Sanciones en el Orden Social, cuyo texto refundido aprobó el Real Decreto Legislativo 5/2000. Por eso la primera opción es falsa aunque cite preceptos que existieron. Y el Reglamento de los Servicios de Prevención no tiene un capítulo sancionador: organiza la prevención, no la sanciona, de modo que la segunda opción también falla.",
+      "referencia": {
+        "apartado": "22.2. Lo que hay que citar en su lugar",
+        "norma": "Ley sobre Infracciones y Sanciones en el Orden Social (Real Decreto Legislativo 5/2000)",
+        "articulo": "arts. 11 a 13, 39 y 40.2"
+      }
+    }
+  ]
+}

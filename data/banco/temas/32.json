@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 32,
+  "titulo": "Tema 32 · Concepto de geografía humana. La ciudad, corrientes de estudio de la misma. Población, estructura y grupos sociales. La demografía: densidad demográfica, tasas de natalidad y mortalidad, crecimiento vegetativo. La sociedad de masas. Contaminación y protección del medio ambiente.",
+  "preguntas": [
+    {
+      "id": "t32-g001",
+      "tema": 32,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según el diccionario académico, la geografía humana estudia…",
+      "opciones": [
+        "La configuración de las tierras y los mares, es decir, el medio natural.",
+        "La descripción de la Tierra en su conjunto, sin atender a la ocupación humana.",
+        "La distribución de las sociedades humanas en la Tierra y su relación con el entorno físico."
+      ],
+      "correcta": 2,
+      "explicacion": "La definición léxica contiene las dos piezas que se preguntan: distribución de las sociedades humanas y relación con el entorno físico. La primera opción es la definición de geografía física, y la segunda se queda en la definición general de geografía como «ciencia que trata de la descripción de la Tierra», que no distingue la rama humana. La frontera entre ambas no es rígida: una inundación es física en su causa y humana en sus efectos.",
+      "referencia": {
+        "apartado": "2. La geografía humana: concepto y ramas",
+        "norma": "RAE y ASALE, Diccionario de la lengua española",
+        "articulo": "lema «geografía humana»"
+      }
+    },
+    {
+      "id": "t32-g002",
+      "tema": 32,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Existe en España un umbral legal general de población a partir del cual un núcleo deba considerarse ciudad?",
+      "opciones": [
+        "No: no hay una norma general que fije ese umbral; solo existen umbrales concretos dentro de normas concretas.",
+        "Sí: la legislación de régimen local fija el umbral general de ciudad en 10.000 habitantes.",
+        "Sí: la Constitución fija en 20.000 habitantes el umbral para que un municipio tenga ayuntamiento."
+      ],
+      "correcta": 0,
+      "explicacion": "Cada estadística y cada norma sectorial usa su propio umbral, de modo que no existe un umbral legal único de ciudad, y la opción de los 10.000 habitantes no se sostiene con ninguna norma general. La tercera es falsa por partida doble: el artículo 140 de la Constitución reconoce el ayuntamiento a todos los municipios, sin umbral de población. Lo que sí existe es un umbral dentro de una norma concreta, la aglomeración de la Ley 34/2007, que es una definición técnica de calidad del aire.",
+      "referencia": {
+        "apartado": "3. La ciudad: concepto, criterios y tipos",
+        "norma": "Ley 34/2007, de 15 de noviembre, de calidad del aire y protección de la atmósfera",
+        "articulo": "art. 3.b (único umbral legal de población citado en el tema)"
+      }
+    },
+    {
+      "id": "t32-g003",
+      "tema": 32,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿En cuántas categorías clasifica la Ley 42/2007 los espacios naturales protegidos y cuáles son?",
+      "opciones": [
+        "En cuatro: parques, reservas naturales, monumentos naturales y paisajes protegidos.",
+        "En cinco: parques, reservas naturales, áreas marinas protegidas, monumentos naturales y paisajes protegidos.",
+        "En tres: parques nacionales, parques naturales y reservas de la biosfera."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 30 vigente enumera cinco categorías, e incluye las áreas marinas protegidas: la Ley 33/2015 renumeró el precepto, que antes era el 29, y añadió esa categoría. La opción de las cuatro reproduce el catálogo anterior a esa reforma, y la tercera mezcla denominaciones de la ley con la reserva de la biosfera, que no figura en el catálogo del artículo 30: los parques nacionales y naturales son tipos dentro de la categoría «parques», no categorías autónomas.",
+      "referencia": {
+        "apartado": "12.3. Espacios protegidos: las cinco categorías",
+        "norma": "Ley 42/2007, de 13 de diciembre, del Patrimonio Natural y de la Biodiversidad",
+        "articulo": "art. 30, en la redacción de la Ley 33/2015"
+      }
+    },
+    {
+      "id": "t32-g004",
+      "tema": 32,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El modelo de zonas concéntricas, que explica el crecimiento de la ciudad por coronas alrededor de un centro de negocios, se atribuye a…",
+      "opciones": [
+        "Ernest W. Burgess, de la Escuela de Chicago.",
+        "Walter Christaller, autor de la teoría de los lugares centrales.",
+        "Homer Hoyt, que lo formuló como revisión del modelo de sectores."
+      ],
+      "correcta": 0,
+      "explicacion": "Las zonas concéntricas son de Burgess, dentro de la ecología urbana de la Escuela de Chicago, que estudia la ciudad como medio ambiente social. Hoyt no formula ese modelo, sino justo la revisión contraria: las clases altas crecen en cuñas o sectores que siguen los ejes de prestigio y las vías de transporte. Christaller es el de los lugares centrales, con la jerarquía de núcleos y los conceptos de umbral y rango.",
+      "referencia": {
+        "apartado": "5.1. Cuadro de corrientes, autores e ideas",
+        "norma": "Robert E. Park y Ernest W. Burgess, The City (Escuela de Chicago), doctrina",
+        "articulo": "modelo de zonas concéntricas"
+      }
+    },
+    {
+      "id": "t32-g005",
+      "tema": 32,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "En la teoría de los lugares centrales de Christaller, el «umbral» y el «rango» son…",
+      "opciones": [
+        "El rango, la población mínima que hace rentable un servicio, y el umbral, la distancia máxima que acepta recorrer el usuario.",
+        "Dos nombres del mismo concepto: la distancia que separa dos núcleos vecinos de la jerarquía urbana.",
+        "El umbral, la población mínima que hace rentable un servicio, y el rango, la distancia máxima que el usuario acepta recorrer."
+      ],
+      "correcta": 2,
+      "explicacion": "El umbral mira al oferente —qué población hace rentable el servicio— y el rango mira al usuario —qué distancia está dispuesto a recorrer—, de modo que un hospital comarcal tiene ambos mayores que una panadería. La primera opción los invierte, que es el error más frecuente en el examen, y la segunda los convierte en sinónimos de la distancia entre núcleos, cuando son dos conceptos distintos y ninguno mide la separación entre dos núcleos.",
+      "referencia": {
+        "apartado": "5.2. Los tres conceptos de doctrina que se preguntan con más frecuencia",
+        "norma": "Walter Christaller, teoría de los lugares centrales, doctrina",
+        "articulo": "umbral y rango"
+      }
+    },
+    {
+      "id": "t32-g006",
+      "tema": 32,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El índice de envejecimiento de España es del 148,05 %. ¿Cómo se interpreta correctamente?",
+      "opciones": [
+        "Que el 148 % de la población tiene 65 años o más, lo que demuestra que el dato publicado es erróneo.",
+        "Que por cada 100 personas menores de 16 años hay unas 148 personas de 65 o más años.",
+        "Que por cada 100 personas de 16 a 64 años hay 148 en edad teóricamente dependiente."
+      ],
+      "correcta": 1,
+      "explicacion": "El índice de envejecimiento es una razón entre dos grupos —mayores de 64 y menores de 16—, no un porcentaje sobre el total, y precisamente por eso puede superar el 100 %: no hay ningún error en el dato. Un porcentaje sobre el total es la proporción de mayores, que vale 20,72 %. La tercera opción describe otra cosa, la tasa de dependencia (53,17 %), que pone en el denominador a la población de 16 a 64 años e incluye en el numerador a niños y a mayores.",
+      "referencia": {
+        "apartado": "6.2. Cómo se leen las tres cifras de envejecimiento",
+        "norma": "INE, Indicadores Demográficos Básicos",
+        "articulo": "tablas 1417, 1418 y 1419 (2025)"
+      }
+    },
+    {
+      "id": "t32-g007",
+      "tema": 32,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Una provincia de 1.000.000 de habitantes registra 8.500 nacimientos en un año. ¿Cuál es su tasa bruta de natalidad?",
+      "opciones": [
+        "El 8,5 %, porque la tasa se expresa en porcentaje de la población.",
+        "8.500 nacimientos por cada mil habitantes, que es el recuento anual del registro.",
+        "8,5 nacimientos por cada mil habitantes."
+      ],
+      "correcta": 2,
+      "explicacion": "La tasa bruta de natalidad es (nacimientos ÷ población total) × 1.000, así que 8.500 entre 1.000.000 es 0,0085 y, multiplicado por mil, 8,5 nacimientos por cada mil habitantes. Un 8,5 % equivaldría a 85.000 nacimientos, cien veces más, y confundir la tasa con el recuento de nacimientos es el error más caro del tema: 8.500 es el número de nacimientos, no una tasa.",
+      "referencia": {
+        "apartado": "8.2. Tasa bruta de natalidad",
+        "norma": "INE, Indicadores Demográficos Básicos",
+        "articulo": "tasa bruta de natalidad (tabla 1381)"
+      }
+    },
+    {
+      "id": "t32-g008",
+      "tema": 32,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "En 2024 España registró 318.005 nacimientos y 436.118 defunciones. ¿Qué se deduce de esos dos datos?",
+      "opciones": [
+        "Que el crecimiento vegetativo fue negativo, de −118.113 personas, lo que no implica por sí solo que la población disminuyera.",
+        "Que la población española perdió 118.113 habitantes a lo largo de 2024.",
+        "Que el crecimiento real fue de −118.113 personas, porque en esa cifra ya va incluido el saldo migratorio."
+      ],
+      "correcta": 0,
+      "explicacion": "El crecimiento vegetativo es nacimientos menos defunciones: 318.005 − 436.118 = −118.113 personas, es decir, −2,37 por mil según el INE. Un saldo vegetativo negativo solo significa que los nacimientos no compensan las defunciones, no que la población baje: en 2024 la población creció porque el saldo migratorio lo compensó con creces. La tercera opción confunde el crecimiento vegetativo con el crecimiento real, que es la suma de ese saldo y el migratorio, y fue de unos +511.200 personas (+10,41 por mil).",
+      "referencia": {
+        "apartado": "8.4. Crecimiento vegetativo",
+        "norma": "INE, Indicadores Demográficos Básicos",
+        "articulo": "tabla 1416 (crecimiento vegetativo, 2024)"
+      }
+    },
+    {
+      "id": "t32-g009",
+      "tema": 32,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Si en un año el saldo vegetativo es de −2,37 por mil y el saldo migratorio de +12,81 por mil, ¿cuál es el crecimiento real?",
+      "opciones": [
+        "+15,18 por mil, que es la suma de los dos valores sin atender al signo.",
+        "+10,44 por mil, que es la suma algebraica de los dos saldos.",
+        "−15,18 por mil, porque el saldo vegetativo negativo invierte el signo del migratorio."
+      ],
+      "correcta": 1,
+      "explicacion": "El crecimiento real se obtiene sumando los dos saldos con sus signos: −2,37 + 12,81 = +10,44 por mil, y el INE publica +10,41 porque cada sumando está redondeado. El orden importa —primero el saldo vegetativo, después el migratorio y al final la suma—, pero nunca se suman valores absolutos: 15,18 es el resultado de prescindir del signo negativo, y el signo negativo del vegetativo no invierte el del migratorio, solo lo reduce.",
+      "referencia": {
+        "apartado": "8.5. Crecimiento real o total",
+        "norma": "INE, Indicadores Demográficos Básicos",
+        "articulo": "tablas 5224 y 61769 (crecimiento y saldo migratorio, 2024)"
+      }
+    },
+    {
+      "id": "t32-g010",
+      "tema": 32,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El concepto de sociedad de masas se asocia, en la tradición española, a…",
+      "opciones": [
+        "Gustave Le Bon y su Psicología de las masas, que describe la sociedad española de la posguerra.",
+        "Louis Wirth y su obra El urbanismo como forma de vida, escrita para el caso español.",
+        "José Ortega y Gasset y La rebelión de las masas, donde el hombre-masa es un modo de ser."
+      ],
+      "correcta": 2,
+      "explicacion": "En español el autor de referencia es Ortega y Gasset, y su tesis central es que la masa no es una clase social sino un modo de ser: el hombre que no se exige nada porque se siente como todo el mundo, definido por lo que es y no por su renta. Le Bon estudia la muchedumbre reunida, que es un antecedente y no la sociedad de masas, y además no escribió sobre la sociedad española; Wirth hace sociología urbana y tampoco es autor español.",
+      "referencia": {
+        "apartado": "10.1. La formulación clásica en español: Ortega y Gasset",
+        "norma": "José Ortega y Gasset, La rebelión de las masas, doctrina",
+        "articulo": "el hombre-masa como modo de ser"
+      }
+    },
+    {
+      "id": "t32-g011",
+      "tema": 32,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Regula la Ley 34/2007, de calidad del aire y protección de la atmósfera, la contaminación acústica?",
+      "opciones": [
+        "Sí, porque el ruido es una forma de energía incluida en su definición de contaminación atmosférica.",
+        "No: excluye expresamente los ruidos y las vibraciones, que se rigen por su normativa específica, aunque sí define la contaminación lumínica.",
+        "No: la ley solo se ocupa de la contaminación del suelo, que además regula la Ley 7/2022."
+      ],
+      "correcta": 1,
+      "explicacion": "El ámbito de la Ley 34/2007 excluye expresamente los ruidos y las vibraciones y los remite a su normativa específica, así que la contaminación acústica no se rige por ella; lo que sí define, en el artículo 3.f, es la contaminación lumínica. La primera opción confunde «formas de energía» de la definición de contaminación atmosférica con el ruido, que la ley deja fuera, y la tercera se equivoca de norma: el suelo contaminado se regula por la Ley 7/2022, de residuos y suelos contaminados.",
+      "referencia": {
+        "apartado": "11.1. Tipos de contaminación",
+        "norma": "Ley 34/2007, de 15 de noviembre, de calidad del aire y protección de la atmósfera",
+        "articulo": "arts. 2 y 3.f"
+      }
+    },
+    {
+      "id": "t32-g012",
+      "tema": 32,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál de estos objetivos para 2030 fija el artículo 3 de la Ley 7/2021, de cambio climático y transición energética?",
+      "opciones": [
+        "Reducir al menos un 23 % las emisiones de gases de efecto invernadero del conjunto de la economía respecto de 1990.",
+        "Reducir al menos un 42 % las emisiones respecto de 1990 y alcanzar la neutralidad climática en 2050.",
+        "Cubrir con renovables el 39,5 % de la generación eléctrica y mejorar la eficiencia energética un 74 %."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3 fija el 23 % de reducción de emisiones respecto de 1990, el 42 % de renovables sobre el consumo de energía final, el 74 % de generación eléctrica renovable y el 39,5 % de mejora de la eficiencia energética. La segunda opción traslada el 42 % a las emisiones, que es el 23 %, y adelanta la neutralidad climática, que debe alcanzarse antes de 2050 y, en todo caso, en el plazo más corto posible; la tercera intercambia las dos últimas cifras.",
+      "referencia": {
+        "apartado": "12.2. Los objetivos de la Ley 7/2021, uno por uno",
+        "norma": "Ley 7/2021, de 20 de mayo, de cambio climático y transición energética",
+        "articulo": "art. 3"
+      }
+    }
+  ]
+}

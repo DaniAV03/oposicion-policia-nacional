@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 30,
+  "titulo": "Tema 30 · Principios éticos de la sociedad actual. Transmisión de valores en la sociedad actual: proceso de socialización. Libertad responsabilidad. Igualdad- solidaridad. Tolerancia. Contravalores, reacciones sociales a los valores mayoritarios: Racismo, fanatismo, fundamentalismo, sectarismo, hooliganismo. Especial consideración de los delitos de odio.",
+  "preguntas": [
+    {
+      "id": "t30-g001",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuáles son los valores superiores del ordenamiento jurídico que enumera el artículo 1.1 de la Constitución?",
+      "opciones": [
+        "Libertad, justicia, igualdad y pluralismo político.",
+        "Libertad, igualdad, solidaridad y tolerancia.",
+        "Libertad, justicia, igualdad y solidaridad."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 1.1 CE enumera cuatro valores superiores: libertad, justicia, igualdad y pluralismo político. La solidaridad no está en esa lista: aparece en el artículo 2 CE, entre las nacionalidades y regiones que integran el Estado, y también en los artículos 31.1 y 138.1. La tolerancia tampoco figura en el 1.1, sino en la Declaración de la UNESCO y en el desarrollo legal. Añadir cualquiera de las dos a la enumeración es la trampa más repetida de este epígrafe.",
+      "referencia": {
+        "apartado": "2. De dónde salen los valores de una sociedad",
+        "norma": "Constitución Española",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t30-g002",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según la Declaración de Principios sobre la Tolerancia de la UNESCO, la tolerancia…",
+      "opciones": [
+        "Es una actitud pasiva de no intervención ante lo que no se comparte.",
+        "No es lo mismo que concesión, condescendencia o indulgencia: es una actitud activa de reconocimiento de los derechos humanos universales.",
+        "Obliga a aceptar cualquier conducta ajena, incluso la que quebranta derechos fundamentales."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 1.2 de la Declaración de la UNESCO dice literalmente que la tolerancia no es lo mismo que concesión, condescendencia o indulgencia, sino una actitud activa de reconocimiento de los derechos humanos universales, y que en ningún caso puede utilizarse para justificar el quebrantamiento de los valores fundamentales. Por eso fallan la primera opción, que la convierte en pasividad, y la tercera, que la convierte en un «todo vale» que la propia Declaración excluye.",
+      "referencia": {
+        "apartado": "2.2. La tolerancia como valor internacional: la UNESCO la define",
+        "norma": "UNESCO, Declaración de Principios sobre la Tolerancia (1995)",
+        "articulo": "art. 1, apartados 1.1 y 1.2"
+      }
+    },
+    {
+      "id": "t30-g003",
+      "tema": 30,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué agente de socialización tiene carácter primario?",
+      "opciones": [
+        "La escuela, porque actúa antes que la familia en la transmisión de valores.",
+        "El grupo de iguales, porque gana peso en la adolescencia y puede contradecir a la familia.",
+        "La familia, porque actúa antes que ningún otro agente y deja el poso más duradero."
+      ],
+      "correcta": 2,
+      "explicacion": "La familia es el agente primario por excelencia: actúa antes que ninguno y su poso es el más duradero, porque el vínculo afectivo hace casi automática la aceptación de lo que transmite. La escuela y el grupo de iguales son agentes secundarios, institucionales y más reversibles; el grupo de iguales gana peso en la adolescencia, pero eso no lo convierte en primario, y la escuela no actúa antes que la familia en ningún caso.",
+      "referencia": {
+        "apartado": "3.1. Los agentes de socialización",
+        "norma": "Constitución Española",
+        "articulo": "art. 27.2, finalidad de la educación"
+      }
+    },
+    {
+      "id": "t30-g004",
+      "tema": 30,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál es el límite que la Constitución impone a la libertad de expresión reconocida en el artículo 20.1.a)?",
+      "opciones": [
+        "Únicamente el orden público, sin referencia a otros derechos.",
+        "Los derechos reconocidos en el Título I y, en especial, el honor, la intimidad, la propia imagen y la protección de la juventud y de la infancia.",
+        "Ninguno: la libertad de expresión es un derecho absoluto."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 20.4 CE dispone que esas libertades tienen su límite en el respeto a los derechos reconocidos en el Título I y, especialmente, en el honor, la intimidad, la propia imagen y la protección de la juventud y de la infancia; el artículo 20.5 añade que el secuestro de publicaciones solo puede acordarse por resolución judicial. La primera opción confunde este límite con el del artículo 16.1 para la libertad ideológica, y la tercera desconoce que ningún derecho fundamental es absoluto.",
+      "referencia": {
+        "apartado": "4.1. Dónde está escrito en la Constitución",
+        "norma": "Constitución Española",
+        "articulo": "arts. 20.4 y 20.5"
+      }
+    },
+    {
+      "id": "t30-g005",
+      "tema": 30,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué precepto constitucional obliga a los poderes públicos a corregir las desigualdades de hecho?",
+      "opciones": [
+        "El artículo 9.2, que ordena promover las condiciones para que la libertad y la igualdad sean reales y efectivas y remover los obstáculos que lo impidan.",
+        "El artículo 14, que prohíbe la discriminación por nacimiento, raza, sexo, religión u otra condición o circunstancia personal o social.",
+        "El artículo 20.4, que fija los límites de la libertad de expresión."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 14 CE contiene la igualdad formal: prohíbe tratar de forma distinta lo que es igual. El artículo 9.2 contiene la igualdad material y ordena a los poderes públicos corregir las desigualdades de hecho, que es justo lo que hace una medida de acción positiva; por eso esa medida no vulnera el artículo 14, sino que cumple el mandato del 9.2. El artículo 20.4 no regula la igualdad, sino los límites de la libertad de expresión.",
+      "referencia": {
+        "apartado": "5.1. La igualdad en la Constitución",
+        "norma": "Constitución Española",
+        "articulo": "art. 9.2, en relación con el art. 14"
+      }
+    },
+    {
+      "id": "t30-g006",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones sobre el fundamentalismo es correcta?",
+      "opciones": [
+        "Es un fenómeno exclusivamente islámico, sin otra acepción recogida en el diccionario.",
+        "En su acepción general es la exigencia intransigente de sometimiento a una doctrina o práctica establecida.",
+        "Es sinónimo exacto de fanatismo, porque ambos designan la misma conducta."
+      ],
+      "correcta": 1,
+      "explicacion": "El diccionario recoge primero la acepción general, exigencia intransigente de sometimiento a una doctrina o práctica establecida, y después las dos religiosas: el movimiento que pretende restaurar la pureza islámica mediante la aplicación estricta de la ley coránica y la creencia basada en una interpretación literal de la Biblia. Por eso falla la que lo reduce al islam, que olvida la acepción bíblica, y también la que lo hace sinónimo de fanatismo, que mide la intensidad de la adhesión y no el sometimiento a una doctrina.",
+      "referencia": {
+        "apartado": "9.1. Las definiciones del diccionario",
+        "norma": "Diccionario de la lengua española (RAE y ASALE)",
+        "articulo": "s. v. fundamentalismo, aceps. 1.a, 1.b y 1.c"
+      }
+    },
+    {
+      "id": "t30-g007",
+      "tema": 30,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Dónde están las penas de la asociación ilícita del artículo 515.4 y qué se impone a sus fundadores, directores y presidentes?",
+      "opciones": [
+        "En el propio artículo 515: prisión de uno a tres años y multa de doce a veinticuatro meses.",
+        "En el artículo 517: prisión de dos a cuatro años, multa de doce a veinticuatro meses e inhabilitación especial para empleo o cargo público de seis a doce años.",
+        "En el artículo 516: prisión de dos a cuatro años y multa de doce a veinticuatro meses."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 515 define las asociaciones ilícitas, pero no fija penas: hay que acudir al artículo 517, que a fundadores, directores y presidentes impone prisión de dos a cuatro años, multa de doce a veinticuatro meses e inhabilitación especial para empleo o cargo público de seis a doce años, y a los miembros activos, prisión de uno a tres años y multa de doce a veinticuatro meses. El artículo 516 está suprimido desde la Ley Orgánica 5/2010, así que la opción que lo cita como vigente es falsa, y la que atribuye las penas al 515 confunde el precepto que define con el que sanciona.",
+      "referencia": {
+        "apartado": "10.1. Dónde entra el Derecho",
+        "norma": "Código Penal",
+        "articulo": "arts. 515.4 y 517"
+      }
+    },
+    {
+      "id": "t30-g008",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "Un grupo de aficionados exhibe en un estadio una pancarta que veja a un colectivo por su origen étnico. ¿Qué norma regula de forma específica esa conducta?",
+      "opciones": [
+        "El Código Penal, en el artículo 512, que castiga la denegación de prestaciones en actividades profesionales o empresariales.",
+        "La Ley Orgánica 4/2015, de protección de la seguridad ciudadana, con exclusión de cualquier otra norma.",
+        "La Ley 19/2007, contra la violencia, el racismo, la xenofobia y la intolerancia en el deporte, cuyo artículo 6.1.b prohíbe esas pancartas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 6.1.b de la Ley 19/2007 prohíbe introducir, exhibir o elaborar pancartas, banderas, símbolos u otras señales con mensajes que inciten a la violencia o que amenacen, insulten o vejen a una persona o grupo por su origen racial o étnico, religión, discapacidad, edad, sexo u otras causas protegidas. Es una infracción administrativa, sin perjuicio del Código Penal si el hecho es delito. El artículo 512 castiga la denegación de una prestación y no la exhibición de una pancarta, y la LO 4/2015 no es la norma específica del deporte.",
+      "referencia": {
+        "apartado": "11.1. La ley que lo regula: la Ley 19/2007",
+        "norma": "Ley 19/2007, de 11 de julio, contra la violencia, el racismo, la xenofobia y la intolerancia en el deporte",
+        "articulo": "art. 6.1.b"
+      }
+    },
+    {
+      "id": "t30-g009",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según la definición de la OSCE que reproducen las instituciones españolas, un delito de odio se compone de…",
+      "opciones": [
+        "Un delito y una motivación prejuiciosa: si falta uno de los dos elementos, no hay delito de odio.",
+        "Solo una motivación prejuiciosa, aunque no exista conducta delictiva previa.",
+        "La pertenencia de la víctima a un grupo protegido, con independencia del motivo del autor."
+      ],
+      "correcta": 0,
+      "explicacion": "La definición de la OSCE exige dos elementos: un delito y una motivación prejuiciosa. Sin conducta delictiva previa no hay delito de odio, por repugnante que sea el motivo, y sin motivación discriminatoria tampoco, aunque la víctima pertenezca a un grupo protegido: una agresión por dinero es un robo con violencia. Por eso fallan las otras dos, que se quedan con uno solo de los elementos y prescinden del otro.",
+      "referencia": {
+        "apartado": "12.1. La definición que usan las instituciones",
+        "norma": "Ministerio del Interior, Informe sobre la evolución de los delitos de odio en España 2023 (definición de la OSCE)",
+        "articulo": "definición operativa de delito de odio"
+      }
+    },
+    {
+      "id": "t30-g010",
+      "tema": 30,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Un hombre agrede a otra persona porque cree que es gitana; se acredita que la víctima no pertenece a ese pueblo. ¿Se aplica la agravante del artículo 22.4 del Código Penal?",
+      "opciones": [
+        "No, porque la condición o circunstancia debe concurrir efectivamente en la persona sobre la que recae la conducta.",
+        "No, porque el error del autor excluye la agravante y el hecho solo puede castigarse como delito común.",
+        "Sí, porque el precepto se aplica con independencia de que esas condiciones concurran efectivamente en la víctima."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 22.4.ª se aplica «con independencia de que tales condiciones o circunstancias concurran efectivamente en la persona sobre la que recaiga la conducta»: lo que se agrava es lo que el autor quiso atacar, no lo que la víctima era. Por eso la agravante se aprecia aunque el autor se equivocara sobre la pertenencia de la víctima, y fallan tanto la opción que exige la concurrencia real como la que convierte el error en una excusa que devuelve el hecho al delito común.",
+      "referencia": {
+        "apartado": "15. La agravante del artículo 22.4",
+        "norma": "Código Penal",
+        "articulo": "art. 22.4.ª"
+      }
+    },
+    {
+      "id": "t30-g011",
+      "tema": 30,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Qué pena fija el artículo 510.1 para quien públicamente fomenta, promueve o incita al odio, hostilidad, discriminación o violencia contra un grupo por los motivos que enumera?",
+      "opciones": [
+        "Prisión de uno a cuatro años y multa de seis a doce meses.",
+        "Prisión de seis meses a dos años y multa de seis a doce meses.",
+        "Prisión de dos a cinco años y multa de dos a cinco años."
+      ],
+      "correcta": 0,
+      "explicacion": "El apartado 1 del artículo 510 castiga con prisión de uno a cuatro años y multa de seis a doce meses las conductas más graves: fomentar e incitar, difundir material idóneo y negar o enaltecer genocidios. La segunda opción es la pena del apartado 2, reservada a lesionar la dignidad o enaltecer delitos, y la tercera mezcla la multa de dos a cinco años que el artículo 510 bis impone a las personas jurídicas con una pena de prisión que para ellas no existe.",
+      "referencia": {
+        "apartado": "16.1. Las conductas castigadas",
+        "norma": "Código Penal",
+        "articulo": "art. 510.1"
+      }
+    },
+    {
+      "id": "t30-g012",
+      "tema": 30,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Qué canales documenta la Oficina Nacional de Lucha contra los Delitos de Odio para denunciar o pedir asistencia?",
+      "opciones": [
+        "El 112 y el correo denuncias@interior.es.",
+        "Únicamente el 091, sin teléfono específico ni aplicación móvil.",
+        "El 091 y el 062, los teléfonos 900 100 091 y 900 101 062, el correo asistencia.ondod@interior.es y la aplicación AlertCops."
+      ],
+      "correcta": 2,
+      "explicacion": "La página «Cómo denunciar» de la ONDOD fija el 091 de la Policía Nacional y el 062 de la Guardia Civil para la intervención urgente, y añade los teléfonos de atención específica 900 100 091 y 900 101 062, el correo asistencia.ondod@interior.es y la aplicación AlertCops, con chat, botón SOS y avisos localizados. La primera opción no figura en esa lista de canales, y la segunda se queda con uno solo de los teléfonos de emergencia y deja fuera los específicos, el correo y la aplicación.",
+      "referencia": {
+        "apartado": "18.2. Canales oficiales",
+        "norma": "Oficina Nacional de Lucha contra los Delitos de Odio (ONDOD), «Cómo denunciar»",
+        "articulo": "canales de denuncia y asistencia"
+      }
+    }
+  ]
+}

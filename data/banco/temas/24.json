@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 24,
+  "titulo": "Tema 24 · Introducción a la Prevención de Riesgos Laborales. Concepto general de trabajo. Concepto de salud y condiciones de trabajo. El trabajo y la salud. Concepto general de riesgos Laborales. Principios generales de la actividad preventiva. Conceptos de prevención y protección. Consecuencia de los riesgos. Daños a la salud.",
+  "preguntas": [
+    {
+      "id": "t24-g001",
+      "tema": 24,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "El artículo 40.2 de la Constitución encomienda a los poderes públicos velar por…",
+      "opciones": [
+        "La seguridad e higiene en el trabajo.",
+        "La seguridad y salud en el trabajo.",
+        "La prevención de riesgos laborales, a través de la Inspección de Trabajo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 40.2 conserva la terminología de 1978 y habla literalmente de «seguridad e higiene en el trabajo», dentro de los principios rectores de la política social y económica. «Seguridad y salud en el trabajo» es la fórmula de la Ley 31/1995 y de las directivas europeas, que el precepto constitucional no emplea: atribuírsela es reescribirlo. Y la Inspección de Trabajo no aparece en el artículo 40.2, sino en el artículo 9 de la ley, como órgano de vigilancia y control.",
+      "referencia": {
+        "apartado": "2.1. El escalón constitucional",
+        "norma": "Constitución Española",
+        "articulo": "art. 40.2"
+      }
+    },
+    {
+      "id": "t24-g002",
+      "tema": 24,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según la Constitución de la Organización Mundial de la Salud, la salud es…",
+      "opciones": [
+        "La ausencia de afecciones o enfermedades, sin referencia alguna al bienestar.",
+        "Un estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades.",
+        "Un estado de completo bienestar físico y mental, y la ausencia de accidentes de trabajo y de enfermedades profesionales."
+      ],
+      "correcta": 1,
+      "explicacion": "La definición de la Organización Mundial de la Salud es acumulativa: suma el bienestar físico, mental y social a la ausencia de afecciones, y su segunda mitad dice «y no solamente la ausencia de afecciones o enfermedades». La primera opción se queda con esa mitad negativa y suprime el bienestar. La tercera cambia la segunda mitad y mete accidentes de trabajo y enfermedades profesionales, que la definición sanitaria general no menciona: es una definición de salud, no de siniestralidad laboral.",
+      "referencia": {
+        "apartado": "4.1. La definición de la Organización Mundial de la Salud",
+        "norma": "Constitución de la Organización Mundial de la Salud",
+        "articulo": "Preámbulo (principios)"
+      }
+    },
+    {
+      "id": "t24-g003",
+      "tema": 24,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "El artículo 2.2 de la Ley 31/1995 atribuye a sus disposiciones de carácter laboral el carácter de…",
+      "opciones": [
+        "Derecho dispositivo, disponible por acuerdo individual entre empresario y trabajador.",
+        "Derecho necesario mínimo indisponible, que puede ser mejorado y desarrollado por los convenios colectivos.",
+        "Norma reglamentaria de aplicación supletoria, en defecto de convenio colectivo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.2 declara que las disposiciones laborales de la ley y de sus reglamentos tienen «en todo caso» el carácter de Derecho necesario mínimo indisponible y que pueden ser mejoradas y desarrolladas en los convenios colectivos. Nunca empeoradas ni disponibles: por eso falla la primera opción, que la convierte en derecho dispositivo. Y tampoco es supletoria, como dice la tercera: se aplica siempre, y el convenio solo puede elevar el nivel de protección sobre ese mínimo.",
+      "referencia": {
+        "apartado": "2.3. El escalón legal y el objetivo declarado",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 2.2"
+      }
+    },
+    {
+      "id": "t24-g004",
+      "tema": 24,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué cuatro categorías quedan específicamente incluidas en la definición legal de condición de trabajo?",
+      "opciones": [
+        "Los locales e instalaciones, los agentes del ambiente, los procedimientos de utilización y la organización del trabajo.",
+        "Los locales, los equipos de protección individual, la formación recibida y el salario.",
+        "Las características generales de los locales, instalaciones, equipos, productos y útiles; la naturaleza e intensidad de los agentes físicos, químicos y biológicos; los procedimientos para utilizarlos; y todas las demás, incluidas las relativas a la organización y ordenación del trabajo."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 4.7.º define la condición de trabajo como cualquier característica del trabajo con influencia significativa en la generación de riesgos e incluye expresamente cuatro grupos: letra a) locales, instalaciones, equipos, productos y útiles; letra b) naturaleza e intensidad de los agentes físicos, químicos y biológicos; letra c) procedimientos para su utilización; y letra d) todas las demás, incluidas las relativas a la organización y ordenación. La primera opción resume de más y deja fuera la letra d), que es la puerta por la que entran el ritmo y el turno. La segunda mezcla el equipo de protección individual, la formación y el salario, que no son condiciones de trabajo de ese precepto.",
+      "referencia": {
+        "apartado": "5.1. La definición del artículo 4.7.º",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 4.7.º"
+      }
+    },
+    {
+      "id": "t24-g005",
+      "tema": 24,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Qué alcance tiene la exclusión de las funciones públicas de policía, seguridad y resguardo aduanero del artículo 3.2 de la Ley 31/1995?",
+      "opciones": [
+        "La ley no se aplica en esas actividades cuando sus particularidades lo impidan, pero inspira la normativa específica que regule la protección de quienes las prestan.",
+        "La ley no se aplica ni se inspira: esas actividades quedan sin cobertura preventiva hasta que se dicte una norma propia.",
+        "La ley se aplica íntegramente y sin excepción a esas funciones, porque su artículo 3.1 incluye al personal estatutario."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3.2 excluye la aplicación directa solo «en aquellas actividades cuyas particularidades lo impidan» y cierra con el mandato de que la ley inspirará la normativa específica de protección; para la Policía Nacional esa norma es el Real Decreto 2/2006. La exclusión es, por tanto, de aplicación directa y no de protección, y la segunda opción se equivoca al dejar a esos trabajadores sin cobertura alguna. La tercera confunde el ámbito subjetivo del artículo 3.1, que incluye al personal administrativo o estatutario, con la exclusión objetiva del artículo 3.2, que se refiere a la función y no al colectivo.",
+      "referencia": {
+        "apartado": "3.2. Quién queda dentro y quién queda fuera",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 3.2"
+      }
+    },
+    {
+      "id": "t24-g006",
+      "tema": 24,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo define el artículo 4.2.º de la Ley 31/1995 el riesgo laboral y cómo se califica su gravedad?",
+      "opciones": [
+        "Como la certeza de que el trabajador sufrirá un daño, cuya gravedad se mide por la severidad del mismo.",
+        "Como la posibilidad de que un trabajador sufra un determinado daño derivado del trabajo, valorando conjuntamente la probabilidad de que se produzca y la severidad del daño.",
+        "Como la posibilidad de que un trabajador sufra un daño derivado del trabajo, cuya gravedad se mide únicamente por la severidad del daño."
+      ],
+      "correcta": 1,
+      "explicacion": "El riesgo laboral es posibilidad, no certeza ni daño consumado, y su gravedad se valora «conjuntamente» la probabilidad de que se produzca el daño y su severidad: los dos componentes son necesarios y ninguno basta solo. La primera opción cambia posibilidad por certeza y además suprime la probabilidad. La tercera conserva la definición correcta, pero valora la gravedad solo por la severidad, que es justo la mitad que el precepto exige no separar.",
+      "referencia": {
+        "apartado": "7.1. El riesgo laboral: la definición del artículo 4.2.º",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 4.2.º"
+      }
+    },
+    {
+      "id": "t24-g007",
+      "tema": 24,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Define el artículo 4 de la Ley 31/1995 el peligro?",
+      "opciones": [
+        "Sí, lo define en el apartado 2.º como la probabilidad de sufrir un daño grave.",
+        "Sí, lo define en el apartado 7.º como la característica del trabajo que genera riesgos.",
+        "No: solo define lo «potencialmente peligroso» en el apartado 5.º, como lo que en ausencia de medidas preventivas específicas origina riesgos."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 4 contiene ocho definiciones numeradas del 1.º al 8.º y el peligro no es ninguna de ellas; la única fórmula próxima es la del apartado 5.º, que define los procesos, actividades, operaciones, equipos o productos «potencialmente peligrosos» en ausencia de medidas preventivas específicas. La identificación del peligro con la fuente o propiedad intrínseca capaz de causar daño es doctrina técnica, no texto legal. Las dos primeras opciones aciertan al afirmar que la ley define algo, pero se equivocan de apartado y de contenido: el 2.º es el riesgo laboral y el 7.º la condición de trabajo.",
+      "referencia": {
+        "apartado": "7.3. El peligro, que la ley no define",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 4.5.º"
+      }
+    },
+    {
+      "id": "t24-g008",
+      "tema": 24,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Según el orden de los principios del artículo 15.1 de la Ley 31/1995, ¿cuál es la primera obligación del empresario y cuál la segunda?",
+      "opciones": [
+        "Evitar los riesgos y, después, evaluar los que no hayan podido evitarse.",
+        "Evaluar todos los riesgos y, con el resultado, decidir cuáles se pueden evitar.",
+        "Combatir los riesgos en su origen y, cuando sea imposible, evaluarlos."
+      ],
+      "correcta": 0,
+      "explicacion": "Las letras a) y b) del artículo 15.1 fijan ese orden: primero evitar el riesgo y solo después evaluar el que no se ha podido evitar. El artículo 3.1 del Real Decreto 39/1997 lo confirma al definir la evaluación como el proceso dirigido a estimar la magnitud de los riesgos «que no hayan podido evitarse». La segunda opción invierte la escalera y hace de la evaluación el primer paso, y la tercera coloca la evaluación detrás del combate en el origen, cuando el precepto la sitúa antes.",
+      "referencia": {
+        "apartado": "8.2. Los cuatro primeros son una escalera",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 15.1"
+      }
+    },
+    {
+      "id": "t24-g009",
+      "tema": 24,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "En un taller ruidoso cabe enclaustrar la máquina o repartir orejeras. ¿Qué exige el artículo 17.2 de la Ley 31/1995 sobre el equipo de protección individual?",
+      "opciones": [
+        "Que se utilice siempre, porque la ley lo considera la medida preventiva más eficaz.",
+        "Que se utilice cuando los riesgos no puedan evitarse ni limitarse suficientemente por medios técnicos de protección colectiva o por la organización del trabajo, velando además por su uso efectivo.",
+        "Que se utilice cuando lo solicite el trabajador, que debe sufragar su coste si lo pide por iniciativa propia."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 17.2 hace del equipo individual una medida subsidiaria: solo cuando los riesgos no se puedan evitar o limitar suficientemente por medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo, y añade que el empresario debe proporcionarlos y velar por su uso efectivo. El artículo 15.1.h) ya antepone la protección colectiva, de modo que la primera opción invierte la jerarquía legal. La tercera es falsa de raíz porque el artículo 14.5 prohíbe que el coste de las medidas recaiga «en modo alguno» sobre el trabajador.",
+      "referencia": {
+        "apartado": "10.2. La protección individual",
+        "norma": "Ley 31/1995, de Prevención de Riesgos Laborales",
+        "articulo": "art. 17.2"
+      }
+    },
+    {
+      "id": "t24-g010",
+      "tema": 24,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "De los cinco resultados del riesgo que describe la técnica preventiva, ¿cuáles son categorías jurídicas con prestación económica propia?",
+      "opciones": [
+        "La fatiga y la insatisfacción, junto con el accidente de trabajo.",
+        "La enfermedad relacionada con el trabajo y la fatiga.",
+        "El accidente de trabajo y la enfermedad profesional."
+      ],
+      "correcta": 2,
+      "explicacion": "Solo el accidente de trabajo (artículo 156 de la Ley General de la Seguridad Social) y la enfermedad profesional (artículo 157) son contingencias con prestación y procedimiento propio; lo que no encaja en ellas se resuelve por la vía residual del artículo 158. La fatiga, la insatisfacción y la enfermedad relacionada con el trabajo son conceptos de la técnica preventiva que anuncian el daño, pero no figuran en el catálogo de contingencias: por eso fallan las dos primeras opciones, que presentan como categoría jurídica lo que es categoría técnica.",
+      "referencia": {
+        "apartado": "11. La consecuencia de los riesgos: los cinco resultados",
+        "norma": "Ley General de la Seguridad Social",
+        "articulo": "arts. 156 a 158"
+      }
+    },
+    {
+      "id": "t24-g011",
+      "tema": 24,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un agente sufre una lesión corporal en el trayecto de ida al servicio. ¿Cómo se califica?",
+      "opciones": [
+        "Accidente de trabajo, por asimilación del artículo 156.2.a) de la Ley General de la Seguridad Social.",
+        "Accidente no laboral, porque el trabajo aún no había comenzado.",
+        "Enfermedad común, por haber ocurrido fuera del centro de trabajo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 156.2.a) considera accidente de trabajo los que sufra el trabajador «al ir o al volver del lugar de trabajo», que es el supuesto conocido como accidente in itinere. La conexión con el trabajo no exige estar dentro del centro ni haber fichado, de modo que las otras dos opciones parten de un requisito que la ley no pide. El accidente no laboral del artículo 158.1 y la enfermedad común del artículo 158.2 son categorías residuales, y aquí no hay residuo porque el supuesto está expresamente asimilado.",
+      "referencia": {
+        "apartado": "13.1. Las siete asimilaciones del artículo 156.2",
+        "norma": "Ley General de la Seguridad Social",
+        "articulo": "art. 156.2.a)"
+      }
+    },
+    {
+      "id": "t24-g012",
+      "tema": 24,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Se prueba que una enfermedad no incluida en el cuadro del Real Decreto 1299/2006 tuvo por causa exclusiva el trabajo. ¿Cómo se califica?",
+      "opciones": [
+        "Como enfermedad profesional, porque el anexo 2 del real decreto recoge las enfermedades cuyo origen profesional se sospecha y permite calificarlas.",
+        "Como enfermedad profesional, siempre que la entidad gestora aprecie el origen laboral a la vista del informe del servicio de prevención.",
+        "Como accidente de trabajo por asimilación del artículo 156.2.e) de la Ley General de la Seguridad Social, porque la enfermedad profesional es de lista cerrada."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 157 de la Ley General de la Seguridad Social define la enfermedad profesional por remisión a un cuadro cerrado, y el anexo 1 del Real Decreto 1299/2006 es ese cuadro: fuera de él no hay enfermedad profesional, por evidente que sea el origen laboral. El cauce es entonces el artículo 156.2.e), que asimila al accidente de trabajo las enfermedades no incluidas en el artículo siguiente cuando se pruebe que el trabajo fue su causa exclusiva. El anexo 2 solo hace sospechar y no califica, y la competencia de la entidad gestora del artículo 3 del real decreto opera únicamente dentro del cuadro.",
+      "referencia": {
+        "apartado": "14.1. El cuadro vigente: Real Decreto 1299/2006",
+        "norma": "Ley General de la Seguridad Social",
+        "articulo": "arts. 156.2.e) y 157"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 31,
+  "titulo": "Tema 31 · Inmigración. Movimientos migratorios: concepto y causas de las migraciones. Tipos y efectos. Las grandes migraciones a través de la historia. Las migraciones en la actualidad. Integración social: factor esencial de la cohesión social.",
+  "preguntas": [
+    {
+      "id": "t31-g001",
+      "tema": 31,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "En el estudio de las migraciones, ¿qué elemento determina que un desplazamiento sea una migración?",
+      "opciones": [
+        "El motivo del viaje: solo hay migración cuando el móvil es económico o laboral.",
+        "La intención de marcharse, aunque el traslado no llegue a producirse.",
+        "El cambio efectivo de residencia habitual de un lugar a otro, con habitualidad en el destino."
+      ],
+      "correcta": 2,
+      "explicacion": "La migración se define por el cambio efectivo de residencia habitual, y sobre esa idea construye el INE su estadística de flujos a partir de las variaciones del Padrón. El motivo no define el fenómeno, porque hay migraciones políticas, familiares o ambientales, y la intención que no se materializa tampoco es migración: quien quiere emigrar y no lo hace no es un emigrante.",
+      "referencia": {
+        "apartado": "2.1. La definición operativa: cambio de residencia",
+        "norma": "INE, Estadística de migraciones: metodología",
+        "articulo": "definición de la operación y ámbito poblacional"
+      }
+    },
+    {
+      "id": "t31-g002",
+      "tema": 31,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de estos supuestos NO implica cambio de residencia habitual y, por tanto, no es una migración?",
+      "opciones": [
+        "Los desplazamientos diarios de una persona desde el municipio donde reside hasta el lugar donde trabaja.",
+        "La huida de una persona a otra región de su propio país a causa de un conflicto armado.",
+        "El traslado de una familia a otro país para establecerse en él de forma estable."
+      ],
+      "correcta": 0,
+      "explicacion": "La movilidad cotidiana no es migración porque la persona vuelve a dormir al mismo sitio: no hay traslado de la residencia habitual, que es el único criterio decisivo. Las otras dos sí lo son: la huida dentro del propio país es desplazamiento forzado interno, migración en sentido amplio aunque no cruce una frontera estatal, y el traslado a otro país con ánimo de permanecer es el caso típico de migración internacional.",
+      "referencia": {
+        "apartado": "2.2. Lo que se le parece y no lo es",
+        "norma": "INE, Estadística de migraciones: metodología",
+        "articulo": "ámbito poblacional: personas que pasan a establecer su residencia habitual"
+      }
+    },
+    {
+      "id": "t31-g003",
+      "tema": 31,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Al clasificar las causas de las migraciones, ¿cuál de estas afirmaciones es correcta?",
+      "opciones": [
+        "Las migraciones se explican únicamente por causas económicas; las demás son accidentales.",
+        "Se agrupan en cinco familias —económicas, demográficas, políticas, ambientales y familiares— y suelen actuar combinadas.",
+        "El modelo de factores de expulsión y atracción permite calcular cuántas personas van a migrar en un año."
+      ],
+      "correcta": 1,
+      "explicacion": "El epígrafe pide cinco familias de causas, y cada una puede operar como expulsión en origen o como atracción en destino; en la realidad casi siempre se combinan varias. Falla la primera por el «únicamente», que deja fuera cuatro familias, y falla la tercera porque el modelo de expulsión y atracción es un esquema descriptivo que ordena causas, no una ley que cuantifique flujos: no predice volúmenes.",
+      "referencia": {
+        "apartado": "4. Las cinco familias de causas",
+        "norma": "Programa oficial de la convocatoria (BOE-A-2026-15055, anexo I)",
+        "articulo": "epígrafe del tema 31: «concepto y causas de las migraciones»"
+      }
+    },
+    {
+      "id": "t31-g004",
+      "tema": 31,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "En relación con las migraciones por causas ambientales, ¿qué afirmación se sostiene?",
+      "opciones": [
+        "El clima puede motivar un desplazamiento, pero no existe la categoría jurídica de «refugiado climático».",
+        "Quien huye de una sequía prolongada tiene derecho al estatuto de refugiado por ese solo motivo.",
+        "Existe un registro administrativo que permite dar la cifra exacta de migrantes por causas climáticas."
+      ],
+      "correcta": 0,
+      "explicacion": "El estatuto de refugiado se reconoce por motivos tasados y el clima no está entre ellos, así que la expresión «refugiado climático» no es una situación legal: a lo sumo se habla de migración por causas ambientales o de desplazamiento. Tampoco puede darse una cifra, porque ningún registro administrativo cuenta el motivo ambiental, que no se declara ni se comprueba en ninguna frontera.",
+      "referencia": {
+        "apartado": "4.2. Ambientales: lo que sí y lo que no puede afirmarse",
+        "norma": "Ley 12/2009, de 30 de octubre, reguladora del derecho de asilo y de la protección subsidiaria",
+        "articulo": "motivos tasados del reconocimiento (régimen en el tema 12)"
+      }
+    },
+    {
+      "id": "t31-g005",
+      "tema": 31,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué distingue una migración interior de una migración internacional?",
+      "opciones": [
+        "La duración de la estancia: la interior es siempre temporal y la internacional, permanente.",
+        "La situación administrativa: la interior es regular y la internacional puede ser irregular.",
+        "El cruce o no de una frontera estatal: la interior se produce dentro de un mismo Estado."
+      ],
+      "correcta": 2,
+      "explicacion": "El criterio es el cruce de una frontera estatal: de una provincia a otra hay migración interior, y de un país a otro, internacional. El INE las recoge en tablas distintas —migraciones interautonómicas y migraciones con el extranjero—, que es la prueba de que son categorías diferentes. Las otras dos opciones confunden este criterio con la duración y con la regularidad, que son clasificaciones independientes.",
+      "referencia": {
+        "apartado": "5.1. Interior e internacional",
+        "norma": "INE, Estadística de migraciones: metodología",
+        "articulo": "migraciones interautonómicas y migraciones con el extranjero"
+      }
+    },
+    {
+      "id": "t31-g006",
+      "tema": 31,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Una persona extranjera reside en España sin autorización para ello. ¿Qué implica esa situación irregular?",
+      "opciones": [
+        "Constituye un delito penal de estancia irregular, castigado con pena de prisión.",
+        "Es una situación contraria a la normativa de extranjería, con consecuencias administrativas.",
+        "Le impide solicitar la protección internacional mientras no regularice su situación."
+      ],
+      "correcta": 1,
+      "explicacion": "La irregularidad administrativa no es una categoría penal: es una situación contraria a la normativa de extranjería, con consecuencias administrativas, y confundirla con delincuencia es un error jurídico. Tampoco cierra la puerta al asilo: la entrada irregular no impide solicitar protección internacional, porque esa materia se rige por el derecho de asilo y no por la normativa de extranjería.",
+      "referencia": {
+        "apartado": "5.2. Regular e irregular",
+        "norma": "Ley Orgánica 4/2000, de 11 de enero, sobre derechos y libertades de los extranjeros en España y su integración social",
+        "articulo": "régimen sancionador administrativo (se estudia en el tema 10)"
+      }
+    },
+    {
+      "id": "t31-g007",
+      "tema": 31,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "La migración en la que la persona va y vuelve de forma repetida, manteniendo residencia en dos países, se denomina…",
+      "opciones": [
+        "Circular.",
+        "Estacional.",
+        "De retorno."
+      ],
+      "correcta": 0,
+      "explicacion": "La migración circular son idas y venidas repetidas con residencia en dos países, y desmonta la idea de que migrar es un viaje de ida. La estacional está ligada a campañas agrícolas o turísticas con retorno anual, de modo que hay un solo ciclo y no un ir y venir continuo, y el retorno es la vuelta al lugar de origen, sea espontánea o dentro de un programa público: una dirección, no una alternancia.",
+      "referencia": {
+        "apartado": "6.1. Por la duración",
+        "norma": "Programa oficial de la convocatoria (BOE-A-2026-15055, anexo I)",
+        "articulo": "epígrafe del tema 31: «tipos y efectos»"
+      }
+    },
+    {
+      "id": "t31-g008",
+      "tema": 31,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Según la base de población de ACNUR, ¿cuál era la mayor categoría de desplazamiento forzado en el mundo al cierre de 2024?",
+      "opciones": [
+        "Los refugiados, con 30,9 millones de personas.",
+        "Los desplazados internos, con 68,1 millones de personas.",
+        "Los solicitantes de asilo, con 8,35 millones de personas."
+      ],
+      "correcta": 1,
+      "explicacion": "Los desplazados internos eran 68.131.711 de un total de 117.138.644 personas desplazadas por la fuerza, un 58 %, y su rasgo jurídico es decisivo: no han cruzado una frontera, así que no tienen estatuto de refugiado ni acceso al asilo por esa sola condición. Los 30,9 millones son la columna de refugiados —no el total— y los 8,35 millones, la de solicitantes de asilo, que es una categoría distinta de las otras dos.",
+      "referencia": {
+        "apartado": "10. El desplazamiento forzado en datos: la serie de ACNUR",
+        "norma": "ACNUR, base de datos de población (Refugee Data Finder)",
+        "articulo": "año 2024, suma de las cinco categorías"
+      }
+    },
+    {
+      "id": "t31-g009",
+      "tema": 31,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "En España hay más personas nacidas en el extranjero que personas con nacionalidad extranjera. ¿Cómo se explica?",
+      "opciones": [
+        "Porque el INE cuenta dos veces a los extranjeros nacionalizados en las tablas de población.",
+        "Porque la cifra de nacidos en el extranjero incluye a los turistas y a los residentes temporales.",
+        "Porque quien adquiere la nacionalidad española deja de contar como extranjero, pero sigue contando como nacido en el extranjero."
+      ],
+      "correcta": 2,
+      "explicacion": "El lugar de nacimiento no cambia nunca, mientras que la nacionalidad sí: por eso a 1 de enero de 2025 había 3.051.382 españoles nacidos en el extranjero y, a la vez, 499.143 extranjeros nacidos en España. No hay doble conteo —cada persona aparece una vez, en una sola casilla del cruce— y los turistas no entran en ninguna estadística de población residente, que es un stock, no un flujo.",
+      "referencia": {
+        "apartado": "15.2. El cruce que lo explica todo",
+        "norma": "INE, tabla 56944 (población por nacionalidad y lugar de nacimiento)",
+        "articulo": "tabla 56944, a 1 de enero de 2025"
+      }
+    },
+    {
+      "id": "t31-g010",
+      "tema": 31,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "A 1 de enero de 2025, ¿qué proporción de los españoles residentes en el extranjero había nacido fuera de España, según el PERE?",
+      "opciones": [
+        "El 71,8 %, es decir, casi tres de cada cuatro.",
+        "El 4,7 %, que es lo que creció el colectivo respecto del año anterior.",
+        "El 59,5 %, que es la proporción de los que residen en el país donde nacieron."
+      ],
+      "correcta": 0,
+      "explicacion": "De los 3.045.966 españoles residentes fuera, 2.186.588 —el 71,8 %— habían nacido fuera de España: son en buena parte descendientes de emigrantes españoles o personas nacionalizadas que se instalaron fuera. El 4,7 % es la variación anual del colectivo (137.317 personas más), no un porcentaje interno, y el 59,5 % (1.811.878) es el peso de quienes residen en su actual país de nacimiento, que es otra magnitud.",
+      "referencia": {
+        "apartado": "14.2. La emigración española: el otro lado",
+        "norma": "INE, Estadística del Padrón de Españoles Residentes en el Extranjero (PERE)",
+        "articulo": "datos a 1 de enero de 2025"
+      }
+    },
+    {
+      "id": "t31-g011",
+      "tema": 31,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones describe la integración social tal como la plantea el tema?",
+      "opciones": [
+        "Consiste en que quien llega abandone su cultura de origen y adopte por completo la del país receptor.",
+        "Es un proceso bidireccional: cambia quien llega y cambia también la sociedad receptora, y persigue la igualdad material del artículo 9.2 CE.",
+        "Se agota en la igualdad formal ante la ley del artículo 14 CE, que por sí sola garantiza la cohesión social."
+      ],
+      "correcta": 1,
+      "explicacion": "La integración es bidireccional: la persona que llega cambia y la sociedad que recibe también, y su objetivo es la igualdad material del artículo 9.2 CE, es decir, corregir desigualdades de hecho. La primera opción describe la asimilación, que exigía abandonar la cultura de origen, y la tercera confunde la igualdad formal del artículo 14 CE con la integración, que no se agota en ella ni se mide con una sola cifra.",
+      "referencia": {
+        "apartado": "16.2. Lo que la integración no es",
+        "norma": "Constitución Española",
+        "articulo": "arts. 9.2 y 14"
+      }
+    },
+    {
+      "id": "t31-g012",
+      "tema": 31,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿A qué órgano corresponde la política de integración de las personas migrantes en la Administración General del Estado?",
+      "opciones": [
+        "A la Dirección General de Tráfico, dentro del Ministerio del Interior.",
+        "Al Observatorio Español del Racismo y la Xenofobia (OBERAXE), que asume la competencia plena en la materia.",
+        "A la Secretaría de Estado de Migraciones, del Ministerio de Inclusión, Seguridad Social y Migraciones."
+      ],
+      "correcta": 2,
+      "explicacion": "La política de integración corresponde a la Secretaría de Estado de Migraciones, del Ministerio de Inclusión, Seguridad Social y Migraciones, que la ejecuta con subvenciones a entidades, los fondos FAMI y FSE+ y su marco estratégico. OBERAXE es un observatorio dependiente del mismo ministerio que monitoriza el discurso de odio y ofrece información antidiscriminación, pero no es el titular de la política, y la Dirección General de Tráfico no tiene ninguna competencia en integración.",
+      "referencia": {
+        "apartado": "18.1. Quién y con qué",
+        "norma": "Ministerio de Inclusión, Seguridad Social y Migraciones: Migraciones · Integración (página oficial)",
+        "articulo": "competencia de la Secretaría de Estado de Migraciones"
+      }
+    }
+  ]
+}

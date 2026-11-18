@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 28,
+  "titulo": "Tema 28 · Globalización y antiglobalización. Conceptos y características. Consecuencia de la globalización. Reacciones a la globalización. El Movimiento Antiglobalización: Organizaciones, objetivos e historia. El Foro Social Mundial.",
+  "preguntas": [
+    {
+      "id": "t28-g001",
+      "tema": 28,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de las cuatro acepciones que el diccionario recoge de «globalización» lleva la etiqueta de materia «Economía»?",
+      "opciones": [
+        "La cuarta: proceso por el que las economías y mercados, con el desarrollo de las tecnologías de la comunicación, adquieren una dimensión mundial.",
+        "La segunda: extensión del ámbito propio de instituciones sociales, políticas y jurídicas a un plano internacional.",
+        "La tercera: difusión mundial de modos, valores o tendencias que fomenta la uniformidad de gustos y costumbres."
+      ],
+      "correcta": 0,
+      "explicacion": "El diccionario marca con la etiqueta «Economía» únicamente la cuarta acepción, y esa precisión es la que se examina: la definición económica no es «la» definición de globalización, sino una de las cuatro. Contiene además los dos elementos que resumen el tema, la dependencia de los mercados externos y la menor capacidad reguladora de los Gobiernos. La segunda acepción es la política y jurídica, que el diccionario ilustra con el ejemplo del Tribunal Penal Internacional, y la tercera es la cultural, la de la uniformidad de gustos y costumbres que después intenta corregir la Convención de la UNESCO de 2005.",
+      "referencia": {
+        "apartado": "2.2. La definición del diccionario: la RAE da cuatro acepciones",
+        "norma": "Diccionario de la lengua española (RAE y ASALE), 24.ª edición",
+        "articulo": "voz «globalización», acepción 4.ª"
+      }
+    },
+    {
+      "id": "t28-g002",
+      "tema": 28,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo se refiere la Declaración del Milenio de las Naciones Unidas al fenómeno que el texto inglés denomina «globalization»?",
+      "opciones": [
+        "La define con una fórmula jurídica obligatoria para los Estados que la suscriben.",
+        "La denomina «mundialización» y la valora: ofrece grandes posibilidades, pero sus beneficios se distribuyen de forma muy desigual al igual que sus costos.",
+        "La denomina «globalización» y se limita a constatar su carácter irreversible."
+      ],
+      "correcta": 1,
+      "explicacion": "La práctica de la ONU en español traduce «globalization» por «mundialización», y la Declaración del Milenio, resolución A/RES/55/2, pide en su párrafo quinto que esa mundialización se convierta en una fuerza positiva para todos los habitantes del mundo, porque ofrece grandes posibilidades pero reparte de forma muy desigual beneficios y costos. Lo decisivo para el examen es que no la define: la valora, y confundir definir con valorar es el error que explotan las preguntas conceptuales. Por eso falla la opción que le atribuye una definición jurídica obligatoria y también la que sostiene que usa la palabra inglesa y se limita a declararla irreversible.",
+      "referencia": {
+        "apartado": "2.3. El aviso terminológico: la ONU en español dice «mundialización»",
+        "norma": "Declaración del Milenio, resolución A/RES/55/2 de la Asamblea General de las Naciones Unidas",
+        "articulo": "párrafo 5"
+      }
+    },
+    {
+      "id": "t28-g003",
+      "tema": 28,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué dos instituciones nacieron de la conferencia de Bretton Woods de 1944?",
+      "opciones": [
+        "La Organización Mundial del Comercio y el Acuerdo General sobre Aranceles Aduaneros y Comercio.",
+        "El Banco Mundial y el Fondo Monetario Internacional.",
+        "El Fondo Monetario Internacional y la Organización de las Naciones Unidas."
+      ],
+      "correcta": 1,
+      "explicacion": "Bretton Woods es 1944 y de allí salen las dos instituciones financieras, el Banco Mundial y el Fondo Monetario Internacional, con misiones complementarias: reducir la pobreza y estabilizar el sistema monetario internacional. El comercio tiene otra cronología, y ahí está la trampa: el GATT funcionó de 1948 a 1994 como acuerdo y organización provisional y la Organización Mundial del Comercio nació el 1 de enero de 1995 tras el Acuerdo de Marrakech, que además no es un organismo de la ONU. La tercera opción mezcla una institución de 1944 con la ONU, creada en 1945.",
+      "referencia": {
+        "apartado": "17. Las instituciones internacionales y la gobernanza global",
+        "norma": "Banco Mundial, «The World Bank Group and the International Monetary Fund (IMF)»",
+        "articulo": "apartado sobre la fundación en la conferencia de Bretton Woods en 1944"
+      }
+    },
+    {
+      "id": "t28-g004",
+      "tema": 28,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿En cuál de las seis dimensiones de la globalización se sitúa el ejemplo de que el Tribunal Penal Internacional es un efecto de la globalización?",
+      "opciones": [
+        "En la jurídica.",
+        "En la política, porque el tribunal es una institución supranacional de decisión.",
+        "En la cultural, porque extiende valores comunes a todo el planeta."
+      ],
+      "correcta": 0,
+      "explicacion": "El ejemplo del Tribunal Penal Internacional es el que el propio diccionario pone para su segunda acepción, la que habla de extender instituciones sociales, políticas y jurídicas a un plano internacional, y en el esquema de las seis dimensiones corresponde a la jurídica: si hay crímenes que no respetan fronteras, aparecen normas e instituciones que tampoco respetan la frontera del Estado. La dimensión política se manifiesta en la pérdida de margen regulador del Estado y en la creación de foros de decisión como la OMC y el G20, y la cultural en la difusión de modos y valores que fomenta la uniformidad, cuya respuesta institucional es la Convención de la UNESCO de 2005.",
+      "referencia": {
+        "apartado": "5. Las seis dimensiones de la globalización",
+        "norma": "Diccionario de la lengua española (RAE y ASALE), 24.ª edición",
+        "articulo": "voz «globalización», acepción 2.ª"
+      }
+    },
+    {
+      "id": "t28-g005",
+      "tema": 28,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Según el Banco Mundial, ¿cuántas personas vivían en pobreza extrema en 2026 y con qué umbral se mide esa cifra?",
+      "opciones": [
+        "Unos 700 millones, con el umbral de 1,90 dólares al día en paridad de poder adquisitivo de 2011.",
+        "Unos 2 300 millones, con el umbral de 3,00 dólares al día en paridad de poder adquisitivo de 2021.",
+        "811 millones, con el umbral de 3,00 dólares al día en paridad de poder adquisitivo de 2021."
+      ],
+      "correcta": 2,
+      "explicacion": "El dato del Banco Mundial que se cita es de 811 millones de personas en 2026 medidos con la línea de 3,00 dólares al día en paridad de poder adquisitivo de 2021; los 2 300 millones son la cifra de 1990, no la actual, y los 700 millones corresponden al umbral antiguo de 1,90 dólares, que mide otra cosa. De ahí la regla que conviene memorizar: umbral, año y organismo, los tres juntos o ninguno. El mismo panel explica el descenso por el crecimiento de Asia Oriental y Meridional y advierte de que la reducción se ha ralentizado por la deuda, la pandemia, los conflictos y los shocks climáticos, con la pobreza concentrada hoy en África subsahariana.",
+      "referencia": {
+        "apartado": "8. Consecuencias (II): pobreza y desigualdad",
+        "norma": "Banco Mundial, «Pobreza»",
+        "articulo": "indicador de pobreza extrema con el umbral de 3,00 dólares al día (PPA 2021)"
+      }
+    },
+    {
+      "id": "t28-g006",
+      "tema": 28,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "De las cuatro reacciones a la globalización, ¿cuáles se sitúan desde fuera de las instituciones del sistema?",
+      "opciones": [
+        "La corrección desde dentro y la integración regional.",
+        "La contestación organizada y la vuelta al Estado y al conflicto.",
+        "Solo la contestación organizada, porque la vuelta al Estado es una reacción desde dentro del sistema."
+      ],
+      "correcta": 1,
+      "explicacion": "Las dos primeras reacciones son desde dentro: la corrección, que actúa en las instituciones con objetivos, convenciones y programas como la Declaración del Milenio, la Agenda 2030, la Convención de la UNESCO o el Acuerdo de París, y la integración regional, que abre mercados entre bloques como la Unión Europea. Las dos últimas son desde fuera, aunque por motivos opuestos: la contestación organizada de ATTAC y del Foro Social Mundial quiere más regulación democrática de los mercados, y la vuelta al Estado y al conflicto prioriza el interés propio, el arancel y la seguridad. Confundir esas dos últimas es el error conceptual más grave del tema, y por eso la tercera opción es falsa.",
+      "referencia": {
+        "apartado": "11. Reacciones a la globalización",
+        "norma": "Comité Organizador del Foro Social Mundial 2024, «WSF 2024 Nepal Call»",
+        "articulo": "párrafo sobre la globalización antes defendida por Occidente y los conflictos comerciales"
+      }
+    },
+    {
+      "id": "t28-g007",
+      "tema": 28,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Por qué el propio movimiento prefiere llamarse «altermundialista» antes que «antiglobalización»?",
+      "opciones": [
+        "Porque rechaza cualquier forma de globalización, también la circulación de personas e ideas.",
+        "Porque «antiglobalización» es la etiqueta que dieron los medios a las protestas y describe lo que el movimiento rechaza, no lo que propone.",
+        "Porque «antiglobalización» es el nombre jurídico que le atribuyó la ONU en la Declaración del Milenio."
+      ],
+      "correcta": 1,
+      "explicacion": "«Antiglobalización» es el nombre mediático de las protestas contra las cumbres desde finales de los noventa y pone el acento en lo que se rechaza, mientras que el movimiento usa «altermundialista» o «alterglobalización»: ATTAC se presenta como movimiento internacional por el control democrático de los mercados financieros y de sus instituciones, con el acento en otra globalización y no en su ausencia. Falla la opción del rechazo total, porque el movimiento no se opone a la circulación de personas o ideas, y falla la que habla de un nombre jurídico de la ONU: la Declaración del Milenio no nombra a ningún movimiento social.",
+      "referencia": {
+        "apartado": "12. El Movimiento Antiglobalización: dos nombres para lo mismo",
+        "norma": "ATTAC, «Our platform», plataforma internacional de 11 y 12 de diciembre de 1998",
+        "articulo": "definición del movimiento y presentación como movimiento alterglobalizador"
+      }
+    },
+    {
+      "id": "t28-g008",
+      "tema": 28,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál es el primer hito documentado del movimiento altermundialista y en qué fecha se produce?",
+      "opciones": [
+        "La plataforma internacional de ATTAC, adoptada en el encuentro de los días 11 y 12 de diciembre de 1998.",
+        "La III Conferencia Ministerial de la OMC en Seattle, del 30 de noviembre al 3 de diciembre de 1999.",
+        "El primer Foro Social Mundial, celebrado en Porto Alegre en enero de 2001."
+      ],
+      "correcta": 0,
+      "explicacion": "El primer hito documentado no es una protesta sino un texto: la plataforma internacional de ATTAC, adoptada el 11 y 12 de diciembre de 1998, que ya contiene el programa de las cumbres posteriores —frenar la especulación, gravar las rentas del capital, penalizar los paraísos fiscales y regular las operaciones bancarias— y la propuesta de la tasa Tobin. Seattle es el símbolo mediático, pero llegó un año después, y la ficha oficial de la OMC da sede y fechas sin calificar el desenlace de la conferencia. El Foro Social Mundial de Porto Alegre es de 2001 y aporta el marco propio del movimiento, no el primer hito.",
+      "referencia": {
+        "apartado": "13.1. Antes de 1999: la red se organiza",
+        "norma": "ATTAC, «Our platform», plataforma internacional de 11 y 12 de diciembre de 1998",
+        "articulo": "encabezamiento de la plataforma adoptada en el encuentro internacional"
+      }
+    },
+    {
+      "id": "t28-g009",
+      "tema": 28,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Quién decide la sede y la fecha de cada edición mundial del Foro Social Mundial?",
+      "opciones": [
+        "El Consejo Internacional.",
+        "El Comité Organizador Nacional del país candidato, a propuesta de sus subcomités.",
+        "La Asamblea General de las Naciones Unidas, a propuesta de los foros regionales."
+      ],
+      "correcta": 0,
+      "explicacion": "El proceso tiene tres niveles y cada uno hace una cosa: el Consejo Internacional decide la sede y la fecha de cada edición mundial —la de Katmandú se aprobó en marzo de 2023—, los foros regionales articulan el proceso por continentes y proponen candidaturas, y el Comité Organizador Nacional organiza materialmente la edición con su consejo general y sus subcomités de programa, logística, recursos, comunicación, voluntariado, salud y seguridad. Por eso la segunda opción confunde organizar con decidir, y la tercera atribuye a la Asamblea General de la ONU una competencia que no tiene sobre un espacio de la sociedad civil.",
+      "referencia": {
+        "apartado": "15.2. Quién lo facilita: tres niveles",
+        "norma": "Comité Organizador del Foro Social Mundial 2024, «About»",
+        "articulo": "apartado sobre el Consejo Internacional y la elección de la sede"
+      }
+    },
+    {
+      "id": "t28-g010",
+      "tema": 28,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué consecuencia tiene que el Foro Social Mundial se defina como espacio abierto y se rija por su Carta de Principios?",
+      "opciones": [
+        "Que sus acuerdos obligan a todas las organizaciones participantes desde la clausura de cada edición.",
+        "Que solo pueden participar organizaciones con personalidad jurídica y sede permanente.",
+        "Que no hay portavoz único ni declaración final obligatoria: las declaraciones las firman las organizaciones que las adoptan."
+      ],
+      "correcta": 2,
+      "explicacion": "La Carta de Principios gobierna todo el proceso y convierte una protesta en un método: el Foro es un espacio de debate y no una instancia de decisión, de modo que nadie habla en nombre del Foro y no existe una declaración final única que obligue a todos. En la práctica, el último día se dedica a la plaza de declaraciones y a las convergencias, y los textos los firman quienes los adoptan, así que un enunciado del tipo «el Foro Social Mundial aprobó una resolución» es falso en cuanto al sujeto. Las otras dos opciones invierten esa naturaleza: ni hay acuerdos vinculantes, ni se exige personalidad jurídica o sede permanente a quien participa.",
+      "referencia": {
+        "apartado": "15.1. La Carta de Principios",
+        "norma": "Comité Organizador del Foro Social Mundial 2024, «About»",
+        "articulo": "epígrafe sobre la Carta de Principios y el carácter de espacio abierto"
+      }
+    },
+    {
+      "id": "t28-g011",
+      "tema": 28,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Según la enumeración de ediciones que publica el propio comité organizador, el Foro Social Mundial…",
+      "opciones": [
+        "Se celebra todos los años sin excepción desde 2001.",
+        "Se celebra cada dos años, alternando una sede del norte y otra del sur.",
+        "No es una serie anual: faltan, entre otros, 2002, 2008, 2014, 2017, 2019, 2020 y 2023, y en 2006 fue policéntrico."
+      ],
+      "correcta": 2,
+      "explicacion": "La lista del propio comité organizador no es una serie anual: la propia enumeración omite 2002, 2008, 2014, 2017, 2019, 2020 y 2023, y en 2006 el Foro fue policéntrico, con Caracas, Bamako y Karachi a la vez, mientras que en 2021 se celebró de forma virtual. Por eso fallan tanto la opción de la cita anual sin excepción como la de la alternancia bienal entre norte y sur, que no describe ninguna regla del proceso. La secuencia arranca en Porto Alegre 2001 y llega a Katmandú 2024, calificada por el comité como la 16.ª asamblea del Foro.",
+      "referencia": {
+        "apartado": "13.4. Las ediciones intermedias, tal como las enumera el propio Foro",
+        "norma": "Comité Organizador del Foro Social Mundial 2024, «History»",
+        "articulo": "enumeración de ediciones desde 2001"
+      }
+    },
+    {
+      "id": "t28-g012",
+      "tema": 28,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Qué naturaleza tiene el G20 y cuándo se creó?",
+      "opciones": [
+        "Es un organismo especializado de las Naciones Unidas, creado en 1995 junto con la Organización Mundial del Comercio.",
+        "Es una organización internacional con secretaría permanente, creada en 1944 en la conferencia de Bretton Woods.",
+        "Es un foro informal sin secretaría permanente y con presidencia anual rotatoria, creado en 1999 en respuesta a las crisis financieras de finales de los noventa."
+      ],
+      "correcta": 2,
+      "explicacion": "El G20 es un foro informal, no una organización: reúne a las principales economías avanzadas y emergentes, representa alrededor del 85 % del PIB mundial y dos tercios de la población, no tiene secretaría permanente y su presidencia rota cada año, y se creó en 1999 por las crisis financieras de finales de esa década para promover la estabilidad financiera internacional. Esa falta de personalidad y de secretaría explica por qué puede acordar políticamente mucho y no obligar jurídicamente a nada. Falla la opción que lo hace organismo especializado de la ONU en 1995, año de la OMC, y la que lo sitúa en Bretton Woods en 1944, año del Banco Mundial y del Fondo Monetario Internacional.",
+      "referencia": {
+        "apartado": "13.2. 1999: Seattle y el nacimiento del G20",
+        "norma": "G20, sitio oficial",
+        "articulo": "presentación institucional del foro"
+      }
+    }
+  ]
+}

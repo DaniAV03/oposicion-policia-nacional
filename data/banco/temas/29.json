@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 29,
+  "titulo": "Tema 29 · Actitudes y valores sociales. Formación de las actitudes: concepto, componentes y funciones. Estereotipos, prejuicios y discriminación. Actitudes de la personalidad autoritaria: xenofobia y dogmatismo. Los grupos sociales.",
+  "preguntas": [
+    {
+      "id": "t29-g001",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un vecino declara en un informe que «los de ese bloque son unos ruidosos». Conforme al modelo ABC de la actitud, esa afirmación corresponde al componente…",
+      "opciones": [
+        "Afectivo, porque expresa desagrado hacia el grupo.",
+        "Conductual, porque anuncia una conducta futura hacia el grupo.",
+        "Cognitivo, porque atribuye una característica al grupo sin expresar sentimiento ni trato."
+      ],
+      "correcta": 2,
+      "explicacion": "El componente cognitivo reúne creencias, información y categorías que se aplican al objeto, y es el terreno propio del estereotipo: «son así» es una atribución, no un sentimiento ni una conducta. El afectivo sería «me molestan» y el conductual, «no les alquilo el piso»; ninguna de esas dos cosas aparece en la frase, así que las otras opciones describen componentes distintos del que el enunciado pone en juego.",
+      "referencia": {
+        "apartado": "3.1. Qué es cada componente",
+        "norma": "Rosenberg y Hovland (1960), modelo ABC de la actitud",
+        "articulo": "componentes cognitivo, afectivo y conductual"
+      }
+    },
+    {
+      "id": "t29-g002",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según la clasificación de Katz (1960), ¿qué función de las actitudes cumple quien desprecia a un colectivo para sentirse más valioso?",
+      "opciones": [
+        "La función instrumental o de ajuste, porque la actitud cambia cuando cambia el interés práctico.",
+        "La función de defensa del yo, porque protege la autoestima y reduce la ansiedad ante lo que se percibe como amenaza.",
+        "La función de conocimiento, porque organiza la información y da sentido a un mundo complejo."
+      ],
+      "correcta": 1,
+      "explicacion": "La función ego-defensiva protege la autoestima y reduce la ansiedad, y se reconoce porque la actitud es intensa, rígida y desproporcionada al objeto, justo lo que ocurre cuando el desprecio sirve para sentirse por encima del otro. La instrumental persigue un beneficio práctico y cambia cuando cambia el interés, y la de conocimiento simplifica la información mediante categorías y estereotipos; ninguna de las dos explica que la actitud sirva para proteger la propia imagen.",
+      "referencia": {
+        "apartado": "5. Las funciones de las actitudes",
+        "norma": "Katz (1960), The Functional Approach to the Study of Attitudes",
+        "articulo": "las cuatro funciones de las actitudes"
+      }
+    },
+    {
+      "id": "t29-g003",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un agente adopta el criterio de actuación de un instructor con el que se identifica y lo abandona cuando lo destinan a otra unidad. Según Kelman (1958), ese cambio de actitud es…",
+      "opciones": [
+        "Internalización, porque el criterio se ha incorporado a sus propios valores.",
+        "Complianza, porque depende de la recompensa o del castigo que recibe del instructor.",
+        "Identificación, porque acepta la actitud por el vínculo con quien la sostiene y dura mientras dura ese vínculo."
+      ],
+      "correcta": 2,
+      "explicacion": "Kelman ordena el cambio en tres grados: complianza (premio o castigo), identificación (modelo o grupo) e internalización (coherencia con los propios valores). Que el criterio se mantenga mientras existe el vínculo con el instructor y se pierda al romperse es el rasgo propio de la identificación; la complianza habría cesado al desaparecer la sanción y la internalización habría sobrevivido al cambio de destino, porque no depende de quién proponga la actitud.",
+      "referencia": {
+        "apartado": "6.2. Complianza, identificación e internalización",
+        "norma": "Kelman (1958), Compliance, Identification, and Internalization",
+        "articulo": "los tres grados de cambio de actitud"
+      }
+    },
+    {
+      "id": "t29-g004",
+      "tema": 29,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál de estas afirmaciones describe correctamente la relación entre valor y actitud?",
+      "opciones": [
+        "De jerarquía: el valor es más general y estable y se traduce en actitudes concretas, más próximas a la conducta.",
+        "De sinonimia: valor y actitud son dos nombres de la misma evaluación.",
+        "De independencia: los valores no guardan relación con las actitudes de una persona."
+      ],
+      "correcta": 0,
+      "explicacion": "La relación es de jerarquía, no de sinonimia: los valores son principios más generales y más estables, como la igualdad, y se traducen en actitudes hacia objetos concretos, una ley o un colectivo, que a su vez quedan más cerca de la conducta. Llamarlos sinónimos borra esa gradación, y negar su relación ignora que las actitudes concretas se apoyan en los valores que la persona comparte con su grupo.",
+      "referencia": {
+        "apartado": "2.3. Las cuatro fronteras que pregunta el test",
+        "norma": "Diccionario de la lengua española (RAE y ASALE)",
+        "articulo": "s. v. actitud, acep. 2, y s. v. valor"
+      }
+    },
+    {
+      "id": "t29-g005",
+      "tema": 29,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué organismo público mide en la Unión Europea experiencias declaradas de discriminación y de delitos de odio mediante encuestas comparadas por países?",
+      "opciones": [
+        "El CIS, con sus barómetros y la Encuesta Social General Española.",
+        "El INE, con la Estadística Continua de Población.",
+        "La FRA, la Agencia de los Derechos Fundamentales de la Unión Europea."
+      ],
+      "correcta": 2,
+      "explicacion": "La FRA mide experiencias declaradas, es decir, lo que las personas cuentan que han vivido, con encuestas comparadas por países. El CIS mide opiniones y valores, y el INE mide estructura de la población: cuántas personas hay, de qué edad y con qué nacionalidad. Una cifra del INE no es una actitud y una del CIS no es un recuento de población; además, la encuesta de experiencias no se compara con un registro policial de denuncias, porque miden cosas distintas.",
+      "referencia": {
+        "apartado": "7.3. Las encuestas públicas que se usan en España",
+        "norma": "Agencia de los Derechos Fundamentales de la Unión Europea (FRA)",
+        "articulo": "Being Black in the EU (2023), encuesta de experiencias declaradas"
+      }
+    },
+    {
+      "id": "t29-g006",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Una inmobiliaria se niega a alquilar un piso a una persona por su origen nacional. Conforme a la distinción entre estereotipo, prejuicio y discriminación, ese comportamiento es…",
+      "opciones": [
+        "Estereotipo, porque aplica una imagen simplificada y compartida del grupo.",
+        "Discriminación, porque es un trato desigual y perjudicial, propio del componente conductual.",
+        "Prejuicio, porque anticipa un juicio desfavorable sin conocer a la persona."
+      ],
+      "correcta": 1,
+      "explicacion": "La discriminación es el trato diferenciado, contrario a la igualdad y normalmente perjudicial: el componente conductual de la cadena. El estereotipo es la creencia compartida sobre cómo es un grupo y el prejuicio, el juicio previo con carga afectiva; aquí no se describe lo que la inmobiliaria cree o siente, sino lo que hace, y por eso la respuesta correcta es la conducta.",
+      "referencia": {
+        "apartado": "8.1. Las tres definiciones",
+        "norma": "Diccionario panhispánico del español jurídico (RAE, ASALE y CGPJ)",
+        "articulo": "s. v. discriminación, acep. 1"
+      }
+    },
+    {
+      "id": "t29-g007",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Una prueba física aparentemente neutra excluye, sin justificación, a casi todas las personas de un determinado origen nacional. Según el artículo 6 de la Ley 15/2022, esa práctica es discriminación…",
+      "opciones": [
+        "Directa, porque trata de manera menos favorable a quien está en situación análoga o comparable.",
+        "Indirecta, porque una disposición, criterio o práctica aparentemente neutros ocasionan una desventaja particular por una causa protegida.",
+        "Interseccional, porque en ella interactúan varias causas protegidas a la vez."
+      ],
+      "correcta": 1,
+      "explicacion": "La discriminación indirecta es la que produce una medida aparentemente neutra cuando ocasiona una desventaja particular por una causa protegida, y esa expresión, «aparentemente neutros», es la clave del precepto. La directa exige un trato menos favorable en una situación análoga o comparable, y la interseccional requiere que varias causas interactúen generando una forma específica de discriminación; aquí solo hay una causa y ningún trato expresamente desigual.",
+      "referencia": {
+        "apartado": "8.3. Qué es discriminación según la ley española",
+        "norma": "Ley 15/2022, de 12 de julio, integral para la igualdad de trato y la no discriminación",
+        "articulo": "art. 6"
+      }
+    },
+    {
+      "id": "t29-g008",
+      "tema": 29,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Qué pena señala el Código Penal para quien públicamente fomenta, promueve o incita al odio, hostilidad, discriminación o violencia contra un grupo por los motivos del artículo 510.1.a)?",
+      "opciones": [
+        "Prisión de seis meses a dos años y multa de seis a doce meses.",
+        "Prisión de uno a cuatro años y multa de seis a doce meses.",
+        "Prisión de dos a cuatro años y multa de doce a veinticuatro meses."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 510.1.a) castiga la incitación pública, directa o indirecta, con prisión de uno a cuatro años y multa de seis a doce meses. La primera opción adelanta el mínimo a los seis meses, que es el límite del supuesto de menor gravedad del apartado 2, y la tercera mezcla la multa de doce a veinticuatro meses del artículo 511 con una pena de prisión que el precepto no fija; confundir los tres es el error clásico de este bloque.",
+      "referencia": {
+        "apartado": "10.2. El marco constitucional y penal español",
+        "norma": "Código Penal",
+        "articulo": "art. 510.1.a)"
+      }
+    },
+    {
+      "id": "t29-g009",
+      "tema": 29,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones sobre el contacto entre grupos es correcta?",
+      "opciones": [
+        "Cualquier contacto entre grupos reduce el prejuicio, con independencia de las condiciones en que se produzca.",
+        "El contacto solo reduce el prejuicio si se dan las cuatro condiciones de Allport, sin ninguna excepción.",
+        "El contacto puede reforzar el prejuicio si falta igualdad de estatus, objetivos comunes, cooperación o apoyo institucional."
+      ],
+      "correcta": 2,
+      "explicacion": "Allport (1954) condicionó el efecto del contacto a la igualdad de estatus, los objetivos comunes, la cooperación y el apoyo institucional, y advirtió de que sin esas condiciones el contacto puede reforzar el prejuicio. El metaanálisis de Pettigrew y Tropp (2006), con 515 estudios, matizó que esas condiciones facilitan el efecto pero no son imprescindibles. Por eso fallan las dos respuestas absolutas: ni cualquier contacto sirve, ni las cuatro condiciones son una exigencia sin excepciones.",
+      "referencia": {
+        "apartado": "6.3. Resistencia al cambio y contacto intergrupal",
+        "norma": "Allport (1954), The Nature of Prejudice; Pettigrew y Tropp (2006)",
+        "articulo": "hipótesis del contacto y metaanálisis de 515 estudios"
+      }
+    },
+    {
+      "id": "t29-g010",
+      "tema": 29,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "En los experimentos de conformidad de Asch, ¿qué efecto tiene sobre la conformidad que un solo cómplice discrepe de la mayoría?",
+      "opciones": [
+        "La conformidad cae en picado, porque se rompe la unanimidad del grupo.",
+        "La conformidad aumenta, porque el disidente refuerza la presión del grupo.",
+        "La conformidad no varía, porque lo decisivo es el tamaño de la mayoría."
+      ],
+      "correcta": 0,
+      "explicacion": "Asch comprobó que la unanimidad es uno de los factores que más pesa: basta un aliado que discrepe para que la conformidad caiga en picado, porque abre la posibilidad de que la mayoría se equivoque. El tamaño de la mayoría influye, pero el efecto crece hasta tres o cuatro personas y luego se estabiliza, así que no explica la respuesta; y la presión aumenta, no disminuye, cuando la respuesta se da en público.",
+      "referencia": {
+        "apartado": "13.2. Conformidad: los experimentos de Sherif y Asch",
+        "norma": "Asch (1955), Opinions and Social Pressure",
+        "articulo": "experimentos de conformidad con comparación de líneas"
+      }
+    },
+    {
+      "id": "t29-g011",
+      "tema": 29,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué distingue el dogmatismo del autoritarismo?",
+      "opciones": [
+        "El dogmatismo mira a la forma de sostener las creencias y puede darse en cualquier ideología, mientras que el autoritarismo mira al contenido: sumisión, convencionalismo y agresión hacia quien se desvía.",
+        "El dogmatismo solo aparece en las ideologías extremas, y el autoritarismo, en cambio, en cualquiera.",
+        "Son sinónimos: ambos describen la misma disposición a obedecer a la autoridad."
+      ],
+      "correcta": 0,
+      "explicacion": "Rokeach (1960) sostuvo que lo que define a una mente cerrada no es qué cree, sino cómo lo cree: rigidez, compartimentos estancos e intolerancia a la ambigüedad, y por eso diseñó la escala D para medir ese cierre sin depender de las ideas concretas. El autoritarismo, en Adorno y en Altemeyer, atiende al contenido: sumisión, convencionalismo y agresión autoritarias. Falla la que encierra el dogmatismo en las ideologías extremas y también la que los hace sinónimos.",
+      "referencia": {
+        "apartado": "10.4. Dogmatismo",
+        "norma": "Rokeach (1960), The Open and Closed Mind",
+        "articulo": "concepto de dogmatismo y escala D"
+      }
+    },
+    {
+      "id": "t29-g012",
+      "tema": 29,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué tres conglomerados de actitudes forman el autoritarismo de derechas con el que Altemeyer (1981) reformuló la personalidad autoritaria?",
+      "opciones": [
+        "Sumisión autoritaria, agresión autoritaria y convencionalismo.",
+        "Convencionalismo, superstición y proyectividad.",
+        "Sumisión, identificación e internalización."
+      ],
+      "correcta": 0,
+      "explicacion": "Altemeyer midió el autoritarismo de derechas con tres conglomerados: sumisión a la autoridad legítima, agresión hacia quien se desvía y convencionalismo. La segunda opción mezcla rasgos que Adorno añadió a su formulación original, como la superstición y la proyectividad, y la tercera enumera los tres grados de cambio de actitud de Kelman (1958), que no son componentes del autoritarismo sino formas de aceptar una actitud.",
+      "referencia": {
+        "apartado": "9.2. La reformulación: Altemeyer (1981)",
+        "norma": "Altemeyer (1981), Right-Wing Authoritarianism",
+        "articulo": "escala de autoritarismo de derechas (RWA)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 26,
+  "titulo": "Tema 26 · La protección de datos de carácter personal: la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales. Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales.",
+  "preguntas": [
+    {
+      "id": "t26-g001",
+      "tema": 26,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Un cuerpo policial trata los datos de su personal para confeccionar las nóminas. ¿Qué norma rige ese tratamiento?",
+      "opciones": [
+        "La Ley Orgánica 7/2021, porque el responsable del tratamiento es una autoridad policial.",
+        "El Reglamento (UE) 2016/679 y la Ley Orgánica 3/2018, porque la finalidad no es penal.",
+        "Las tres normas a la vez, porque la Ley Orgánica 7/2021 se aplica en todo caso a las Fuerzas y Cuerpos de Seguridad."
+      ],
+      "correcta": 1,
+      "explicacion": "El reparto entre las tres normas se decide por la finalidad del tratamiento, no por el sujeto que lo realiza: el artículo 2.3.a) de la Ley Orgánica 7/2021 devuelve al Reglamento general y a la Ley Orgánica 3/2018 los tratamientos con fines distintos de los penales, y una nómina lo es. Por eso falla la opción que atiende al sujeto que trata y también la que acumula las tres normas: el régimen penal solo entra cuando el fin es de prevención, detección, investigación o enjuiciamiento de infracciones penales o de ejecución de sanciones penales.",
+      "referencia": {
+        "apartado": "3. El mapa normativo: quién manda en cada supuesto",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "art. 2.3.a)"
+      }
+    },
+    {
+      "id": "t26-g002",
+      "tema": 26,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿A partir de qué edad puede un menor prestar por sí mismo el consentimiento para el tratamiento de sus datos personales en España?",
+      "opciones": [
+        "Catorce años, salvo los supuestos en que la ley exija la asistencia de los titulares de la patria potestad o tutela.",
+        "Dieciséis años, que es la edad que fija el Reglamento general para los servicios de la sociedad de la información.",
+        "Trece años, que es el límite mínimo que el Reglamento permite rebajar a los Estados."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 7 de la Ley Orgánica 3/2018 fija la regla general en catorce años: por debajo de esa edad el consentimiento lo presta el titular de la patria potestad o tutela, y el artículo 12.6 le permite ejercer en nombre del menor los derechos de acceso, rectificación, supresión y oposición. Los dieciséis años son el límite del artículo 8.1 del Reglamento para los servicios de la sociedad de la información, no la edad española general, y los trece son el suelo que el Reglamento autoriza a los Estados, no la edad que eligió España.",
+      "referencia": {
+        "apartado": "5.1. El consentimiento y la edad de catorce años",
+        "norma": "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales",
+        "articulo": "art. 7"
+      }
+    },
+    {
+      "id": "t26-g003",
+      "tema": 26,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál de las bases jurídicas del artículo 6.1 del Reglamento general no puede invocar una Administración pública cuando trata datos en el ejercicio de sus funciones?",
+      "opciones": [
+        "El cumplimiento de una obligación legal aplicable al responsable.",
+        "La protección de intereses vitales del interesado o de otra persona física.",
+        "Los intereses legítimos del responsable o de un tercero."
+      ],
+      "correcta": 2,
+      "explicacion": "El propio artículo 6.1 del Reglamento excluye la letra f) cuando el tratamiento lo realiza una autoridad pública en el ejercicio de sus funciones, de modo que ni un ayuntamiento ni la Dirección General de la Policía pueden fundar un tratamiento en su interés legítimo. Las otras dos bases sí están a su disposición, pero con una exigencia añadida que el artículo 8 de la Ley Orgánica 3/2018 impone: para invocar la obligación legal o los poderes públicos hace falta una norma con rango de ley que fije condiciones, tipos de datos y cesiones, y no basta un reglamento ni una instrucción interna.",
+      "referencia": {
+        "apartado": "5. Base jurídica y consentimiento",
+        "norma": "Reglamento (UE) 2016/679, general de protección de datos",
+        "articulo": "art. 6.1, in fine"
+      }
+    },
+    {
+      "id": "t26-g004",
+      "tema": 26,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué régimen tienen los datos personales de una persona fallecida?",
+      "opciones": [
+        "Están plenamente protegidos por el Reglamento general, porque la protección no se extingue con la muerte.",
+        "Quedan fuera del ámbito de aplicación de la ley, sin perjuicio de la legitimación que el artículo 3 reconoce a familiares, herederos y personas designadas para pedir acceso, rectificación o supresión.",
+        "Pueden tratarse libremente, porque al no existir interesado no hay derechos que ejercer en ningún caso."
+      ],
+      "correcta": 1,
+      "explicacion": "El tratamiento de datos de personas fallecidas está excluido del ámbito de aplicación, pero el artículo 3 de cada ley orgánica legitima a las personas vinculadas al fallecido por razones familiares o de hecho, a sus herederos y a las personas o instituciones designadas expresamente para solicitar acceso, rectificación o supresión; en el caso de menores fallecidos se añaden los representantes legales y el Ministerio Fiscal. Por eso no vale decir que están plenamente protegidos ni que se tratan libremente: hay una legitimación limitada y un límite, porque no se accede a los datos si el fallecido lo prohibió expresamente o si lo impide una ley, salvo los datos patrimoniales respecto de los herederos.",
+      "referencia": {
+        "apartado": "2.1. Los datos de las personas fallecidas",
+        "norma": "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales",
+        "articulo": "arts. 2.2.b) y 3"
+      }
+    },
+    {
+      "id": "t26-g005",
+      "tema": 26,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Se produce una violación de la seguridad de un tratamiento y es probable que constituya un riesgo para los derechos de los afectados. ¿Qué debe hacer el responsable y en qué plazo?",
+      "opciones": [
+        "Notificarla a la autoridad de protección de datos sin dilación y, de ser posible, en el plazo de 72 horas desde que tenga constancia.",
+        "Comunicarla a cada interesado afectado en el plazo de 72 horas desde que tenga constancia.",
+        "Notificarla a la autoridad de protección de datos en el plazo de un mes, junto con la evaluación de impacto."
+      ],
+      "correcta": 0,
+      "explicacion": "Las 72 horas del artículo 33.1 del Reglamento son para notificar la violación a la autoridad de protección de datos, no al interesado, y solo se eximen cuando es improbable que constituya un riesgo. La comunicación al afectado se rige por el artículo 34.1 y se hace sin dilación indebida y únicamente cuando la violación entraña un alto riesgo, de modo que la segunda opción confunde destinatario y plazo. La tercera inventa un plazo de un mes que no existe para esta obligación y mezcla dos instituciones distintas: la evaluación de impacto es previa al tratamiento y no acompaña a la notificación.",
+      "referencia": {
+        "apartado": "11. Seguridad del tratamiento y violaciones de seguridad",
+        "norma": "Reglamento (UE) 2016/679, general de protección de datos",
+        "articulo": "art. 33.1, en relación con el art. 34.1"
+      }
+    },
+    {
+      "id": "t26-g006",
+      "tema": 26,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "En el ámbito de la Ley Orgánica 7/2021, ¿cada cuánto tiempo debe revisarse la necesidad de conservar los datos y cuál es el plazo máximo general de supresión?",
+      "opciones": [
+        "La revisión es anual y la supresión procede como máximo a los cinco años.",
+        "No hay revisión periódica: el único límite es el plazo de prescripción de la infracción penal.",
+        "La revisión, como máximo cada tres años, y la supresión, con carácter general, a los veinte años."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 8.2 impone revisar la necesidad de conservar, limitar o suprimir el conjunto de datos de cada actividad de tratamiento como máximo cada tres años, atendiendo a la edad del afectado, al carácter de los datos y a la conclusión de una investigación o procedimiento penal, y el artículo 8.3 fija los veinte años como plazo máximo general de supresión, con excepciones motivadas como una investigación abierta, un delito no prescrito o la protección de las víctimas. No es una cifra de adorno: incumplir estos plazos es infracción muy grave del artículo 58.ñ) de la propia ley. La revisión anual con supresión a los cinco años y la supuesta ausencia de revisión son las dos falsedades que el examen intercala.",
+      "referencia": {
+        "apartado": "14.1. El artículo 8: revisar cada tres años, suprimir a los veinte",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "arts. 8.2 y 8.3"
+      }
+    },
+    {
+      "id": "t26-g007",
+      "tema": 26,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Cuál de estas figuras queda expresamente fuera del régimen sancionador de la Ley Orgánica 3/2018?",
+      "opciones": [
+        "El encargado del tratamiento.",
+        "El delegado de protección de datos.",
+        "El representante de un responsable no establecido en la Unión Europea."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 70.1 enumera cinco sujetos sancionables —responsables, encargados, representantes de responsables o encargados no establecidos en la Unión, entidades de certificación y entidades acreditadas de supervisión de códigos de conducta— y el apartado 2 establece la excepción: el delegado de protección de datos no está sujeto a este régimen. Por eso el encargado y el representante sí responden, aunque el primero sea un sujeto que no decide los fines y el segundo actúe por cuenta de otro. El delegado queda fuera en las dos leyes orgánicas, también en el artículo 56.3 de la Ley Orgánica 7/2021.",
+      "referencia": {
+        "apartado": "12.1. Sujetos responsables",
+        "norma": "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales",
+        "articulo": "art. 70"
+      }
+    },
+    {
+      "id": "t26-g008",
+      "tema": 26,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "La Agencia Española de Protección de Datos constata que un ayuntamiento ha cometido una infracción muy grave. ¿Qué puede imponerle?",
+      "opciones": [
+        "Una multa de hasta 20 millones de euros o el 4 % del volumen de negocio total anual, la mayor de las dos cuantías.",
+        "Una multa de hasta 10 millones de euros, con publicación de la sanción en el Boletín Oficial del Estado.",
+        "Ninguna multa: dicta resolución declarando la infracción y estableciendo las medidas para que cese la conducta o se corrijan sus efectos, y puede amonestar y proponer actuaciones disciplinarias."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 77.2 excluye expresamente la multa del artículo 58.2.i) del Reglamento cuando el responsable es uno de los sujetos del apartado 1, entre ellos las Administraciones territoriales y sus organismos públicos: la autoridad declara la infracción, impone medidas correctivas, puede amonestar a autoridades y directivos y propone actuaciones disciplinarias, además de comunicarlo al Defensor del Pueblo. Las dos cuantías de las otras opciones existen en el Reglamento, pero se reservan a responsables y encargados privados, y la publicidad en el Boletín Oficial se ordena para la amonestación, no como acompañamiento de una multa.",
+      "referencia": {
+        "apartado": "12.4. El régimen especial de las Administraciones Públicas",
+        "norma": "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales",
+        "articulo": "art. 77"
+      }
+    },
+    {
+      "id": "t26-g009",
+      "tema": 26,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué derechos puede ejercer el interesado frente a un tratamiento sometido a la Ley Orgánica 7/2021?",
+      "opciones": [
+        "Los siete del Reglamento general, con plazos más breves.",
+        "Información, acceso, rectificación, supresión y limitación.",
+        "Acceso, rectificación, supresión, limitación, portabilidad y oposición."
+      ],
+      "correcta": 1,
+      "explicacion": "El capítulo III de la Ley Orgánica 7/2021 reduce el catálogo a cinco derechos: información, acceso, rectificación, supresión y limitación, con un régimen general en los artículos 20 a 25 y uno especial para investigaciones y procesos penales en el artículo 26. No hay portabilidad ni oposición, y no es un olvido: no tienen sentido en una investigación criminal. Por eso falla la opción que traslada los siete derechos del Reglamento y también la que copia seis del régimen general, incluidos precisamente los dos que el régimen penal no reconoce.",
+      "referencia": {
+        "apartado": "15. Los derechos en el ámbito penal",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "arts. 20 a 26"
+      }
+    },
+    {
+      "id": "t26-g010",
+      "tema": 26,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué categorías de interesados obliga la Ley Orgánica 7/2021 a distinguir en el tratamiento de datos policiales?",
+      "opciones": [
+        "Sospechosos, condenados o sancionados, víctimas y terceros involucrados.",
+        "Investigados, testigos, peritos y responsables civiles.",
+        "Detenidos, investigados, imputados y encausados."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 9 obliga al responsable a distinguir, en la medida de lo posible, entre sospechosos, condenados o sancionados, víctimas o afectados y terceros involucrados, y cierra el precepto advirtiendo que esa distinción no puede impedir la aplicación de la presunción de inocencia del artículo 24 de la Constitución. El artículo 10 añade una segunda distinción, esta sobre la calidad del dato: entre datos basados en hechos y datos basados en apreciaciones personales. Las otras dos opciones usan categorías procesales o de investigación que no aparecen en la ley, y mezclan detenidos e imputados, que no son categorías del artículo 9.",
+      "referencia": {
+        "apartado": "14.2. Las cuatro categorías de interesados",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "arts. 9 y 10"
+      }
+    },
+    {
+      "id": "t26-g011",
+      "tema": 26,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Para usar una cámara móvil policial que capte imagen y sonido de forma conjunta, ¿qué autorización se exige y con qué límite temporal?",
+      "opciones": [
+        "La del titular de la Delegación o Subdelegación del Gobierno, por el plazo adecuado al evento y con un máximo de un mes prorrogable por otro.",
+        "La del juez de instrucción competente, por un plazo máximo de tres meses.",
+        "La del titular de la Delegación o Subdelegación del Gobierno, sin límite temporal mientras subsista el evento que la motiva."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 17 de la Ley Orgánica 7/2021 exige que la toma de imagen y sonido sea conjunta y esté supeditada a un peligro o evento concreto, que la autorice el titular de la Delegación o Subdelegación del Gobierno —en las comunidades con policía propia, sus órganos correspondientes— y que las autorizaciones no sean indefinidas ni permanentes: se conceden por el plazo adecuado al evento, con un máximo de un mes prorrogable por otro. La opción del juez añade una autorización judicial que este precepto no pide, y la que permite mantener la cámara mientras subsista el evento contradice la prohibición expresa de autorizaciones permanentes. En urgencia decide el responsable operativo, comunicándolo en 24 horas.",
+      "referencia": {
+        "apartado": "16.1. Los dispositivos móviles y sus autorizaciones",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "art. 17"
+      }
+    },
+    {
+      "id": "t26-g012",
+      "tema": 26,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Una empresa se niega a facilitar a la Policía Judicial los datos que esta le pide de forma motivada y concreta al amparo del artículo 7 de la Ley Orgánica 7/2021. ¿Quién es competente para sancionarla?",
+      "opciones": [
+        "La Agencia Española de Protección de Datos, porque es la autoridad de control en materia de protección de datos.",
+        "El Ministerio Fiscal, porque la negativa perjudica una investigación penal.",
+        "La persona titular de la Secretaría de Estado de Seguridad si la infracción es muy grave, y las personas titulares de las Delegaciones del Gobierno si es grave."
+      ],
+      "correcta": 2,
+      "explicacion": "El incumplimiento del deber de colaboración del artículo 7 se tipifica en los artículos 58.j) y 59.j) y el artículo 61.2 atribuye su sanción, respectivamente, a la persona titular de la Secretaría de Estado de Seguridad y a las personas titulares de las Delegaciones del Gobierno, con el procedimiento común; el resto de infracciones sí corresponde a las autoridades de protección de datos. Por eso fallan la opción que se la atribuye a la Agencia y la que la lleva al Ministerio Fiscal: el Fiscal interviene en la dirección de la investigación, no en la potestad sancionadora sobre el obligado a colaborar. Conviene recordar que, en estos supuestos, el interesado no es informado de la transmisión ni del acceso.",
+      "referencia": {
+        "apartado": "19.3. Sanciones, prescripción y caducidad",
+        "norma": "Ley Orgánica 7/2021, de 26 de mayo, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales y de ejecución de sanciones penales",
+        "articulo": "art. 61.2, en relación con los arts. 58.j) y 59.j)"
+      }
+    }
+  ]
+}

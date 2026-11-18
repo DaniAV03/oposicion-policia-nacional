@@ -1,5 +1,27 @@
 {
   "version": 1,
   "descripcion": "Manifiesto del banco propio de preguntas. Una entrada por fichero; el cliente carga sólo los que aparecen aquí, sin adivinar nombres. El esquema completo está en ESQUEMA.md.",
-  "bancos": []
+  "bancos": [
+    {
+      "id": "tema-01",
+      "archivo": "temas/01.json",
+      "tipo": "tema",
+      "tema": 1,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-27",
+      "archivo": "temas/27.json",
+      "tipo": "tema",
+      "tema": 27,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-38",
+      "archivo": "temas/38.json",
+      "tipo": "tema",
+      "tema": 38,
+      "preguntas": 12
+    }
+  ]
 }

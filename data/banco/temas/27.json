@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 27,
+  "titulo": "Tema 27 · Derechos Humanos. Declaración Universal de Derechos Humanos. Convenio Europeo para la Protección de los Derechos Humanos y Libertades Fundamentales. Convenio contra la Tortura. Protocolo facultativo de la Convención contra la tortura. Mecanismo Nacional de Prevención de la Tortura del Defensor del Pueblo.",
+  "preguntas": [
+    {
+      "id": "t27-g001",
+      "tema": 27,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué protección adicional establece el artículo 53.2 de la Constitución para los derechos fundamentales frente a los principios del capítulo tercero del título I?",
+      "opciones": [
+        "El procedimiento preferente y sumario ante los tribunales ordinarios y, en su caso, el recurso de amparo ante el Tribunal Constitucional.",
+        "Únicamente el recurso de amparo ante el Tribunal Constitucional, sin cauce previo ante la jurisdicción ordinaria.",
+        "Ninguna: los principios del capítulo tercero se invocan en las mismas condiciones que los derechos del capítulo segundo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 53.2 CE abre para los derechos del capítulo segundo el procedimiento preferente y sumario ante la jurisdicción ordinaria y, en su caso, el amparo constitucional. La opción que reduce la protección al amparo suprime la vía ordinaria previa, y la que iguala el capítulo tercero olvida que el artículo 53.3 solo permite invocar sus principios «de acuerdo con lo que dispongan las leyes que los desarrollen».",
+      "referencia": {
+        "apartado": "2.3. «Derechos humanos» y «derechos fundamentales» no son sinónimos",
+        "norma": "Constitución Española",
+        "articulo": "art. 53.2, en relación con el art. 53.3"
+      }
+    },
+    {
+      "id": "t27-g002",
+      "tema": 27,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Con qué forma jurídica y con qué extensión se adoptó la Declaración Universal de Derechos Humanos?",
+      "opciones": [
+        "Como resolución de la Asamblea General, la 217 A (III), con un preámbulo y treinta artículos.",
+        "Como tratado abierto a ratificación, con un preámbulo y treinta y tres artículos.",
+        "Como resolución del Consejo de Seguridad, con un preámbulo y treinta y siete artículos."
+      ],
+      "correcta": 0,
+      "explicacion": "La Declaración se proclamó el 10 de diciembre de 1948 en París mediante la Resolución 217 A (III) de la Asamblea General, y consta de un preámbulo y treinta artículos, sin partes ni capítulos. Los treinta y tres artículos son los de la Convención contra la Tortura y los treinta y siete los del Protocolo facultativo, y el órgano que la aprobó fue la Asamblea General, no el Consejo de Seguridad.",
+      "referencia": {
+        "apartado": "3. La Declaración Universal de Derechos Humanos",
+        "norma": "Declaración Universal de Derechos Humanos",
+        "articulo": "Resolución 217 A (III) de la Asamblea General, preámbulo y arts. 1 a 30"
+      }
+    },
+    {
+      "id": "t27-g003",
+      "tema": 27,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué valor jurídico tiene la Declaración Universal de Derechos Humanos dentro del ordenamiento español?",
+      "opciones": [
+        "Es canon de interpretación de las normas sobre derechos fundamentales, por mandato expreso del artículo 10.2 CE.",
+        "Es un tratado ratificado por España y, por tanto, vincula por sí misma igual que los Pactos de 1966.",
+        "Ninguno: al no ser un tratado, no puede ser invocada de ningún modo por los tribunales españoles."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 10.2 CE ordena interpretar las normas sobre derechos fundamentales de conformidad con la Declaración Universal y los tratados ratificados sobre la materia: ese es su valor interno como criterio interpretativo. No es un tratado, porque es la Resolución 217 A (III), así que no obliga por sí sola como los Pactos; y tampoco carece de valor jurídico, porque la Constitución la nombra expresamente.",
+      "referencia": {
+        "apartado": "4. El valor jurídico de la Declaración Universal",
+        "norma": "Constitución Española",
+        "articulo": "art. 10.2"
+      }
+    },
+    {
+      "id": "t27-g004",
+      "tema": 27,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Cuántos miembros tiene el Comité de Derechos Humanos que crea el Pacto Internacional de Derechos Civiles y Políticos?",
+      "opciones": [
+        "Diez.",
+        "Dieciocho.",
+        "Veinticinco."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 28 del Pacto Internacional de Derechos Civiles y Políticos crea el Comité de Derechos Humanos con dieciocho miembros, que examinan los informes de los Estados conforme al artículo 40. Diez es la cifra del Comité contra la Tortura (artículo 17 de la Convención de 1984) y veinticinco la del Subcomité para la Prevención desde la quincuagésima ratificación (artículo 5.1 del Protocolo facultativo): las tres cifras se confunden en el examen.",
+      "referencia": {
+        "apartado": "5. El sistema de Naciones Unidas: los Pactos y los órganos de tratado",
+        "norma": "Pacto Internacional de Derechos Civiles y Políticos",
+        "articulo": "art. 28.1"
+      }
+    },
+    {
+      "id": "t27-g005",
+      "tema": 27,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Qué cambió el Protocolo número 11 en el sistema de control del Convenio Europeo de Derechos Humanos?",
+      "opciones": [
+        "Creó la Comisión Europea de Derechos Humanos para que filtrara las demandas antes de llegar al Tribunal.",
+        "Suprimió la Comisión Europea de Derechos Humanos y dejó un Tribunal único y permanente.",
+        "Introdujo el juez único y los comités de tres jueces, que antes no existían en el Convenio."
+      ],
+      "correcta": 1,
+      "explicacion": "El Protocolo 11, en vigor desde el 1 de noviembre de 1998, reescribió los artículos 19 a 51 del Convenio: suprimió la Comisión y dejó un Tribunal único y permanente. La primera opción describe el sistema de dos órganos que publicó el BOE en 1979, ya derogado; el juez único y los comités de tres jueces llegaron con el Protocolo 14, en vigor desde el 1 de junio de 2010.",
+      "referencia": {
+        "apartado": "6.3. Los protocolos y lo que añade cada uno",
+        "norma": "Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales",
+        "articulo": "art. 2 del Protocolo número 11, que sustituye los arts. 19 a 51 del Convenio"
+      }
+    },
+    {
+      "id": "t27-g006",
+      "tema": 27,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Agotadas las vías internas, ¿en qué plazo hay que presentar una demanda individual ante el Tribunal Europeo de Derechos Humanos?",
+      "opciones": [
+        "Seis meses desde la resolución interna definitiva.",
+        "Un año desde la resolución interna definitiva.",
+        "Cuatro meses desde la resolución interna definitiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 35.1 del Convenio exige el agotamiento de las vías internas y una demanda presentada en los cuatro meses siguientes a la resolución interna definitiva. Los seis meses son la redacción anterior: el Protocolo 15 la redujo a cuatro y, por su artículo 8, el plazo nuevo rige desde el 1 de febrero de 2022, seis meses después de la entrada en vigor del Protocolo. El año es el plazo del artículo 954.3 de la Ley de Enjuiciamiento Criminal para pedir la revisión, no el de la demanda.",
+      "referencia": {
+        "apartado": "7.2. Quién puede demandar y con qué requisitos",
+        "norma": "Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales",
+        "articulo": "art. 35.1, en la redacción del art. 4 del Protocolo número 15 y su art. 8"
+      }
+    },
+    {
+      "id": "t27-g007",
+      "tema": 27,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Declarada por Estrasburgo la violación de un derecho del Convenio en un proceso penal español, ¿quién puede pedir la revisión de la resolución firme y en qué plazo?",
+      "opciones": [
+        "El Ministerio Fiscal, de oficio, en los cuatro meses siguientes a la sentencia de Estrasburgo.",
+        "Cualquier persona con interés legítimo, en el plazo de un año desde la sentencia de Estrasburgo.",
+        "Quien hubiera sido demandante ante el Tribunal Europeo, en el plazo de un año desde que la sentencia de Estrasburgo adquiere firmeza."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 954.3 de la Ley de Enjuiciamiento Criminal reserva la revisión a quien hubiera sido demandante ante el Tribunal Europeo y da un año desde que la sentencia europea adquiere firmeza. El Ministerio Fiscal no aparece como legitimado en ese precepto y los cuatro meses son el plazo para demandar, no para revisar; la segunda opción amplía la legitimación a cualquier interesado y además cuenta el plazo desde un momento distinto del que fija la ley.",
+      "referencia": {
+        "apartado": "8. La ejecución de las sentencias del Tribunal Europeo en España",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 954.3, en relación con el art. 5 bis de la Ley Orgánica del Poder Judicial"
+      }
+    },
+    {
+      "id": "t27-g008",
+      "tema": 27,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Según el artículo 1 de la Convención contra la Tortura, ¿qué finalidad tiene que perseguir el acto para ser tortura?",
+      "opciones": [
+        "Tiene que ser necesariamente obtener una confesión o información de la persona.",
+        "Solo puede ser castigar una conducta ya realizada, nunca obtener información.",
+        "Puede ser obtener información o una confesión, pero también castigar, intimidar, coaccionar o discriminar."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1 exige intención, dolores o sufrimientos graves —físicos o mentales—, una finalidad y un sujeto activo público, y la finalidad es alternativa: obtener información o confesión, castigar, intimidar o coaccionar, o cualquier razón basada en discriminación. Por eso fallan la opción que exige la confesión y la que reduce la finalidad al castigo: las dos convierten en requisito único lo que la Convención enumera como lista abierta.",
+      "referencia": {
+        "apartado": "9.1. La definición del artículo 1",
+        "norma": "Convención contra la Tortura y otros tratos o penas crueles, inhumanos o degradantes",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t27-g009",
+      "tema": 27,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Qué actuación puede abrir el Comité contra la Tortura por su propia iniciativa, sin esperar la denuncia de un Estado ni de un particular?",
+      "opciones": [
+        "El procedimiento de comunicaciones entre Estados del artículo 21, con el acuerdo de los dos Estados interesados.",
+        "El procedimiento de comunicaciones individuales del artículo 22, una vez agotados los recursos internos.",
+        "La investigación confidencial del artículo 20, cuando información fiable indique que se practica sistemáticamente la tortura."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 20 es el único procedimiento que el Comité abre de oficio, y puede incluir una visita al territorio con acuerdo del Estado. Las comunicaciones entre Estados (artículo 21) y las individuales (artículo 22) requieren que otro Estado o la propia víctima las pongan en marcha, y además exigen que los Estados implicados hayan reconocido la competencia del Comité mediante declaración.",
+      "referencia": {
+        "apartado": "10.1. Los cuatro procedimientos que puede abrir",
+        "norma": "Convención contra la Tortura y otros tratos o penas crueles, inhumanos o degradantes",
+        "articulo": "art. 20"
+      }
+    },
+    {
+      "id": "t27-g010",
+      "tema": 27,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Un Estado parte del Protocolo facultativo contra la Tortura quiere aplazar el cumplimiento de su parte III. ¿Qué le permite el Protocolo?",
+      "opciones": [
+        "Declararlo al ratificar, con un aplazamiento de tres años, prorrogable por dos más.",
+        "Declararlo en cualquier momento, con un aplazamiento de un año, prorrogable por otro.",
+        "Nada: el Protocolo no admite aplazamientos de ninguna clase, igual que prohíbe las reservas."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 24 permite al Estado declarar al ratificar que aplaza el cumplimiento de la parte III o de la parte IV por tres años, prorrogables por dos. El año es el plazo del artículo 17 para establecer el mecanismo nacional, no un plazo de aplazamiento; y el artículo 30 prohíbe las reservas, pero no esta declaración de aplazamiento, que es una figura distinta y por eso la tercera opción confunde las dos.",
+      "referencia": {
+        "apartado": "11.2. A qué obliga",
+        "norma": "Protocolo facultativo de la Convención contra la Tortura y otros tratos o penas crueles, inhumanos o degradantes",
+        "articulo": "art. 24, en relación con los arts. 17 y 30"
+      }
+    },
+    {
+      "id": "t27-g011",
+      "tema": 27,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué mayoría se exige para nombrar al Defensor del Pueblo, que ejerce el Mecanismo Nacional de Prevención de la Tortura?",
+      "opciones": [
+        "Mayoría absoluta del Congreso en primera votación, sin intervención del Senado.",
+        "Tres quintas partes del Congreso, con ratificación posterior por la misma mayoría del Senado.",
+        "Dos tercios del Congreso, con ratificación posterior por mayoría simple del Senado."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.4 de la Ley Orgánica 3/1981 exige en el Congreso el voto favorable de tres quintas partes y después la ratificación por la misma mayoría del Senado, para un mandato de cinco años que fija el artículo 2.1. La mayoría absoluta sin el Senado y los dos tercios con ratificación por mayoría simple son las dos cifras que el examen interpone: ninguna de las dos es la que la ley pide para nombrar al titular del Mecanismo.",
+      "referencia": {
+        "apartado": "12.1. La institución que lo ejerce: cuatro datos del Defensor del Pueblo",
+        "norma": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo",
+        "articulo": "arts. 2.1 y 2.4"
+      }
+    },
+    {
+      "id": "t27-g012",
+      "tema": 27,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "El Defensor del Pueblo, como Mecanismo Nacional de Prevención, pide documentación clasificada como secreta. ¿Quién puede acordar que se le niegue?",
+      "opciones": [
+        "El propio organismo requerido, que puede negarse sin acuerdo de ningún otro órgano.",
+        "El Consejo de Ministros, con certificación acreditativa del acuerdo denegatorio.",
+        "El Ministerio del Interior, por conducto de la Secretaría de Estado de Seguridad."
+      ],
+      "correcta": 1,
+      "explicacion": "Los artículos 19.3 y 22.1 de la Ley Orgánica 3/1981 permiten al Defensor acceder a cualquier expediente, incluso a los clasificados como secretos, y solo el acuerdo del Consejo de Ministros, con certificación acreditativa, puede negar la entrega. El organismo requerido no puede decidirlo por su cuenta, y el Ministerio del Interior no es el órgano que la ley designa: la garantía está precisamente en que la negativa exige acuerdo del Consejo de Ministros.",
+      "referencia": {
+        "apartado": "13.1. Lo que puede hacer dentro de España",
+        "norma": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo",
+        "articulo": "arts. 19.3 y 22.1"
+      }
+    }
+  ]
+}

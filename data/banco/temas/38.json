@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 38,
+  "titulo": "Tema 38 · Fundamentos de sistemas operativos: Funciones de un sistema operativo. Tipologías: MS/DOS; UNIX; Linux; Windows; MAC OS. Sistemas operativos móviles: iOS, Android. Sistemas de almacenamiento. Sistemas de archivos.",
+  "preguntas": [
+    {
+      "id": "t38-g001",
+      "tema": 38,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Dentro de la gestión de dispositivos, ¿cómo presenta Linux el hardware de entrada y salida al sistema?",
+      "opciones": [
+        "Como archivos especiales que aparecen en /dev, de modo que se manejan con llamadas parecidas a las de un fichero ordinario.",
+        "Como claves del registro del sistema, una por cada controlador que se instala.",
+        "Como procesos del núcleo a los que se envía una señal por cada operación de lectura o escritura."
+      ],
+      "correcta": 0,
+      "explicacion": "La gestión de dispositivos se apoya en controladores y en un tratamiento uniforme de las interrupciones, y Linux expone cada dispositivo como un archivo especial en /dev. Las otras dos opciones describen mecanismos de otro sistema o confunden un dispositivo con un proceso: el registro es propio de Windows y un proceso no representa hardware.",
+      "referencia": {
+        "apartado": "2.1. Las cinco funciones",
+        "norma": "Linux man-pages project",
+        "articulo": "file-hierarchy(7)"
+      }
+    },
+    {
+      "id": "t38-g002",
+      "tema": 38,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un programa de usuario quiere leer un archivo del disco. ¿Qué ocurre según la separación entre modo usuario y modo núcleo?",
+      "opciones": [
+        "Accede directamente al controlador del disco, porque al ejecutarse tiene privilegios plenos sobre el hardware.",
+        "Hace una llamada al sistema: la CPU cambia a modo núcleo, el núcleo ejecuta la operación en su nombre y le devuelve el control.",
+        "Pide al planificador que le ceda el disco y espera su turno como un proceso más de la cola de dispositivos."
+      ],
+      "correcta": 1,
+      "explicacion": "En modo usuario el procesador impide tocar el hardware y provoca una excepción si se intenta, así que la única vía es la llamada al sistema, que cambia de modo y ejecuta la rutina del núcleo. Falla la opción del acceso directo porque solo el código del sistema operativo corre en modo núcleo, y la tercera confunde la planificación de la CPU con el acceso a un dispositivo, que no se reparte como turnos de proceso.",
+      "referencia": {
+        "apartado": "3. Cómo funciona por dentro: modo núcleo, modo usuario y llamadas al sistema",
+        "norma": "Microsoft Learn",
+        "articulo": "User Mode and Kernel Mode"
+      }
+    },
+    {
+      "id": "t38-g003",
+      "tema": 38,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué define POSIX?",
+      "opciones": [
+        "La arquitectura interna que debe tener el núcleo de todo sistema que quiera llamarse UNIX.",
+        "El conjunto de llamadas al sistema que todas las implementaciones conformes ejecutan con el mismo código binario.",
+        "Una norma de interfaz y entorno: lo que el sistema ofrece a los programas, no la forma de implementarlo."
+      ],
+      "correcta": 2,
+      "explicacion": "POSIX.1-2017 describe las características externas y las utilidades que importan al programador y deja libre la arquitectura interna, de modo que garantiza que el mismo código fuente compile, no un binario idéntico ni un diseño de núcleo. La marca UNIX es otra cosa: la certifica The Open Group con el nombre UNIX 03 sobre la base de POSIX, y por eso la primera opción confunde la norma con la marca.",
+      "referencia": {
+        "apartado": "3.1. Qué es POSIX y qué no es",
+        "norma": "POSIX.1-2017 (IEEE Std 1003.1), The Open Group",
+        "articulo": "capítulo 1, Introduction"
+      }
+    },
+    {
+      "id": "t38-g004",
+      "tema": 38,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué significa la convención de nombres 8.3 que MS/DOS dejó en Windows?",
+      "opciones": [
+        "Ocho caracteres de nombre, un punto y tres caracteres de extensión.",
+        "Ocho caracteres de extensión y tres de nombre, separados por un punto.",
+        "Ocho caracteres en total, con la extensión incluida y sin punto de separación."
+      ],
+      "correcta": 0,
+      "explicacion": "El formato 8.3 son ocho caracteres de nombre, un punto y tres de extensión, y Windows sigue generando ese alias en NTFS por compatibilidad con el software antiguo. Las otras dos opciones invierten los campos o suprimen el punto: la extensión nunca ocupa ocho caracteres y el punto forma parte del propio formato.",
+      "referencia": {
+        "apartado": "6.1. Lo que MS/DOS dejó en Windows",
+        "norma": "Microsoft Learn",
+        "articulo": "NTFS overview"
+      }
+    },
+    {
+      "id": "t38-g005",
+      "tema": 38,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué es Linux en sentido estricto y qué añade una distribución?",
+      "opciones": [
+        "Linux es la distribución completa, y cada fabricante le sustituye el núcleo por el suyo.",
+        "Linux es el núcleo, publicado bajo GPL v2, y la distribución añade herramientas, bibliotecas, gestor de paquetes y configuración propia.",
+        "Linux es el núcleo, y la distribución es solo el entorno de escritorio que se instala encima."
+      ],
+      "correcta": 1,
+      "explicacion": "Linux es el núcleo que se publica en kernel.org bajo GPL v2, y lo que el usuario instala es una distribución: ese núcleo más herramientas, bibliotecas, gestor de paquetes y decisiones de configuración. Lo común a todas las distribuciones es el núcleo, la licencia y la interfaz POSIX, así que ninguna cambia el núcleo por otro; y el entorno de escritorio es una pieza más del conjunto, no la distribución entera.",
+      "referencia": {
+        "apartado": "8. Linux: el núcleo y sus distribuciones",
+        "norma": "Licencia del núcleo Linux (kernel.org)",
+        "articulo": "COPYING: GPL-2.0 WITH Linux-syscall-note"
+      }
+    },
+    {
+      "id": "t38-g006",
+      "tema": 38,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "En los requisitos mínimos de Windows 11, ¿qué exigencia de seguridad de hardware figura y qué representan los 64 GB?",
+      "opciones": [
+        "TPM versión 1.2 y 64 GB de memoria RAM.",
+        "TPM versión 2.0 y 64 GB de almacenamiento disponible.",
+        "TPM versión 2.0 y 64 GB de memoria RAM."
+      ],
+      "correcta": 1,
+      "explicacion": "Microsoft exige TPM 2.0, firmware UEFI capaz de arranque seguro, 4 GB de memoria y 64 GB de almacenamiento disponible. Las dos opciones falsas fallan por motivos distintos: una rebaja el TPM a la versión 1.2 y la otra convierte el almacenamiento en memoria, que es el error que el examen busca, porque la RAM mínima son 4 GB.",
+      "referencia": {
+        "apartado": "9.1. Requisitos de la versión vigente, como dato del fabricante",
+        "norma": "Microsoft Learn",
+        "articulo": "Windows 11 requirements"
+      }
+    },
+    {
+      "id": "t38-g007",
+      "tema": 38,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál es el linaje de macOS y qué sistema de archivos usa por omisión desde macOS 10.13?",
+      "opciones": [
+        "Linaje Linux, con ext4 como sistema de archivos por omisión.",
+        "Linaje UNIX/BSD, con HFS+ como sistema de archivos por omisión.",
+        "Linaje UNIX/BSD, con APFS como sistema de archivos por omisión."
+      ],
+      "correcta": 2,
+      "explicacion": "macOS desciende de UNIX y de BSD, no de Linux: comparten POSIX y la línea de órdenes, pero no el linaje. Desde macOS 10.13 el sistema por omisión es APFS, que aporta cifrado, instantáneas y espacio compartido entre volúmenes, mientras que HFS+ (Mac OS Extended) es el sistema anterior, todavía legible y habitual en discos antiguos.",
+      "referencia": {
+        "apartado": "10. macOS: el linaje BSD y APFS",
+        "norma": "Soporte de Apple",
+        "articulo": "File system formats available in Disk Utility on Mac"
+      }
+    },
+    {
+      "id": "t38-g008",
+      "tema": 38,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En iOS, ¿dónde se custodian las claves de cifrado de los datos y cómo se cifra cada archivo?",
+      "opciones": [
+        "En el Secure Enclave, con una clave derivada de la clave del dispositivo y de la clase de protección asignada al archivo.",
+        "En el propio archivo cifrado, con la contraseña que el usuario teclea en cada arranque.",
+        "En un registro único del sistema, con una sola clave compartida por todos los archivos."
+      ],
+      "correcta": 0,
+      "explicacion": "La Protección de datos de Apple custodia las claves en el Secure Enclave, un coprocesador separado del principal, y cifra cada archivo con una clave derivada de la del dispositivo y de su clase de protección: unos archivos solo se descifran con el dispositivo desbloqueado y otros hacen falta para tareas de arranque. Las otras dos opciones son falsas porque no hay una clave única compartida ni la clave se guarda junto al archivo cifrado.",
+      "referencia": {
+        "apartado": "13.1. Arranque y protección de datos",
+        "norma": "Apple Platform Security",
+        "articulo": "Protección de datos y Secure Enclave"
+      }
+    },
+    {
+      "id": "t38-g009",
+      "tema": 38,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué es NVMe?",
+      "opciones": [
+        "Un tipo de memoria flash que sustituye por completo a las celdas del SSD convencional.",
+        "El nombre comercial de los SSD de 2,5 pulgadas que reemplazan al disco magnético.",
+        "Una especificación de interfaz para memoria no volátil, con transportes PCIe, RDMA y TCP."
+      ],
+      "correcta": 2,
+      "explicacion": "NVMe es una especificación de interfaz pensada para memoria no volátil: la familia incluye especificación base, conjuntos de comandos y transportes PCIe, RDMA y TCP. SSD es el dispositivo y flash es el medio, de modo que un SSD SATA no usa NVMe y uno NVMe no deja de ser memoria flash; tampoco es una marca ni un formato de 2,5 pulgadas.",
+      "referencia": {
+        "apartado": "16.3. Memoria flash, SSD y NVMe",
+        "norma": "NVM Express",
+        "articulo": "NVM Express Specifications"
+      }
+    },
+    {
+      "id": "t38-g010",
+      "tema": 38,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Cuatro discos de 3 TB se configuran en RAID 6. ¿Cuánta capacidad útil queda y cuántos fallos simultáneos tolera el conjunto?",
+      "opciones": [
+        "9 TB útiles y un fallo.",
+        "6 TB útiles y dos fallos.",
+        "12 TB útiles y dos fallos."
+      ],
+      "correcta": 1,
+      "explicacion": "RAID 6 usa doble paridad, así que la capacidad útil es (N − 2) por el tamaño de cada disco: (4 − 2) × 3 = 6 TB, y tolera el fallo de dos discos simultáneos. Los 9 TB corresponden a RAID 5, que solo pierde un disco y tolera uno, y los 12 TB serían los de un RAID 0, que no reserva paridad y por tanto no tolera ningún fallo.",
+      "referencia": {
+        "apartado": "17.2. La tabla que hay que saber calcular",
+        "norma": "Documentación del núcleo Linux",
+        "articulo": "md(4) y RAID arrays"
+      }
+    },
+    {
+      "id": "t38-g011",
+      "tema": 38,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántas entradas de partición tiene la tabla MBR y cuántas particiones admite GPT en la implementación de Windows?",
+      "opciones": [
+        "128 entradas en MBR y cuatro en GPT.",
+        "Cuatro entradas en MBR y 64 en GPT.",
+        "Cuatro entradas en MBR y 128 en GPT."
+      ],
+      "correcta": 2,
+      "explicacion": "MBR reserva cuatro entradas de partición y, para pasar de ahí, exige una partición extendida con unidades lógicas; GPT no tiene ese límite estructural y Microsoft documenta 128 particiones en su implementación. La primera opción intercambia las cifras de ambos esquemas y la segunda cambia las 128 de GPT por 64.",
+      "referencia": {
+        "apartado": "18.3. MBR frente a GPT",
+        "norma": "Microsoft Learn",
+        "articulo": "Windows and GPT FAQ"
+      }
+    },
+    {
+      "id": "t38-g012",
+      "tema": 38,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "En FAT32, ¿cuál es el tamaño máximo de archivo y el volumen máximo que Windows formatea?",
+      "opciones": [
+        "4 GB menos 1 byte de archivo y 32 GB de volumen.",
+        "4 GB menos 1 byte de archivo y 8 TB de volumen al formatear con Windows.",
+        "32 GB de archivo y 4 GB menos 1 byte de volumen."
+      ],
+      "correcta": 0,
+      "explicacion": "En FAT32 el archivo más grande posible es de 4 GB menos 1 byte y el volumen que Windows formatea está limitado a 32 GB, aunque el formato admita teóricamente volúmenes de unos 8 TB creados por otros sistemas. La segunda opción presenta ese máximo teórico como volumen que Windows formatea y la tercera intercambia las dos cifras, que es la confusión que el examen busca.",
+      "referencia": {
+        "apartado": "19.1. FAT: el más compatible y el más limitado",
+        "norma": "Microsoft Learn",
+        "articulo": "How FAT Works"
+      }
+    }
+  ]
+}

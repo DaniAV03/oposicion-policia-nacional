@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 1,
+  "titulo": "Tema 1 · El Derecho: concepto y acepciones. Las normas jurídicas positivas: concepto, estructura, clases y caracteres. El principio de jerarquía normativa. La persona en sentido jurídico: concepto y clases; su nacimiento y extinción; capacidad jurídica y capacidad de obrar. Adquisición, conservación y pérdida de la nacionalidad española. El domicilio. La vecindad civil.",
+  "preguntas": [
+    {
+      "id": "t01-g001",
+      "tema": 1,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El derecho natural se distingue del derecho positivo porque el primero…",
+      "opciones": [
+        "Es el derecho efectivamente vigente en un Estado y en un momento determinado.",
+        "Es el derecho no escrito que rige en defecto de ley aplicable, es decir, la costumbre.",
+        "Está formado por principios superiores, previos y no escritos que inspiran al derecho positivo."
+      ],
+      "correcta": 2,
+      "explicacion": "El derecho natural son principios superiores y previos al derecho dictado por el Estado, que lo inspiran; el ejemplo que maneja el tema es la dignidad de la persona. La primera opción define justamente el derecho positivo, y la segunda comete la confusión clásica: la costumbre es derecho no escrito, pero es derecho positivo porque el Estado la admite como fuente.",
+      "referencia": {
+        "apartado": "2.2. Acepciones",
+        "norma": "Constitución Española",
+        "articulo": "art. 10.1"
+      }
+    },
+    {
+      "id": "t01-g002",
+      "tema": 1,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué dos elementos forman la estructura de la norma jurídica positiva?",
+      "opciones": [
+        "Generalidad y abstracción.",
+        "Supuesto de hecho y consecuencia jurídica.",
+        "Coercibilidad y bilateralidad."
+      ],
+      "correcta": 1,
+      "explicacion": "La estructura de la norma es dual: un supuesto de hecho que describe la situación y una consecuencia jurídica que le anuda un efecto, y la doctrina añade la ratio o finalidad que ayuda a interpretarla. Las otras dos opciones no son elementos estructurales, sino caracteres de la norma: generalidad y abstracción miran a destinatarios y supuestos, y coercibilidad y bilateralidad describen su fuerza y su reciprocidad.",
+      "referencia": {
+        "apartado": "3.1. Concepto y estructura",
+        "norma": "Código Civil",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t01-g003",
+      "tema": 1,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Cuando se dice que la norma jurídica se dicta para una pluralidad indeterminada de supuestos o casos, se está describiendo su…",
+      "opciones": [
+        "Abstracción.",
+        "Generalidad.",
+        "Legitimidad."
+      ],
+      "correcta": 0,
+      "explicacion": "La abstracción mira a los supuestos que la norma cubre: se aplica a una pluralidad indeterminada de casos. La generalidad se refiere a las personas destinatarias, también una pluralidad indeterminada, y es la confusión que el examen busca; la legitimidad es un carácter distinto, el de proceder del órgano competente y por el procedimiento previsto.",
+      "referencia": {
+        "apartado": "3.3. Caracteres",
+        "norma": "Código Civil",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t01-g004",
+      "tema": 1,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué mayoría exige la Constitución para aprobar una ley orgánica?",
+      "opciones": [
+        "Mayoría simple de cada una de las dos Cámaras.",
+        "Mayoría de tres quintos del Congreso de los Diputados.",
+        "Mayoría absoluta del Congreso de los Diputados en una votación final sobre el conjunto del proyecto."
+      ],
+      "correcta": 2,
+      "explicacion": "La ley orgánica exige mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto, es decir, la mitad más uno de los miembros de la Cámara, no de los presentes. La mayoría simple es la que basta para una ley ordinaria, y los tres quintos son la mayoría reforzada que la Constitución reserva a otros acuerdos, no a las leyes orgánicas.",
+      "referencia": {
+        "apartado": "4. El principio de jerarquía normativa",
+        "norma": "Constitución Española",
+        "articulo": "art. 81.2"
+      }
+    },
+    {
+      "id": "t01-g005",
+      "tema": 1,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Una ley autonómica regula una materia que su Estatuto no le atribuye y que corresponde al Estado. ¿Cómo se califica esa ley?",
+      "opciones": [
+        "Es nula por infracción del principio de jerarquía normativa, porque la ley estatal es superior a la autonómica.",
+        "Es inconstitucional por incompetencia, porque entre el Estado y las Comunidades Autónomas hay reparto de competencias y no jerarquía.",
+        "Es válida, porque la ley autonómica tiene el mismo rango que la ley estatal."
+      ],
+      "correcta": 1,
+      "explicacion": "La jerarquía ordena normas del mismo ordenamiento; entre el Estado y las Comunidades Autónomas no hay jerarquía, sino reparto de competencias, de modo que una ley autonómica que invade una competencia estatal no es «inferior», es inconstitucional por incompetencia. Por eso falla la que la anula por jerarquía y también la que la salva con el argumento del mismo rango: el rango no cura la falta de competencia.",
+      "referencia": {
+        "apartado": "4.1. Dos precisiones que valen una pregunta",
+        "norma": "Constitución Española",
+        "articulo": "art. 9.3"
+      }
+    },
+    {
+      "id": "t01-g006",
+      "tema": 1,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuáles son las fuentes del ordenamiento jurídico español según el artículo 1.1 del Código Civil?",
+      "opciones": [
+        "La ley, la costumbre y los principios generales del Derecho.",
+        "La ley, la jurisprudencia y la costumbre.",
+        "La Constitución, los tratados internacionales y el reglamento."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 1.1 del Código Civil enumera la ley, la costumbre y los principios generales del Derecho, y el orden es de prelación: solo se acude a la siguiente fuente cuando falla la anterior. La segunda opción mete la jurisprudencia, que complementa el ordenamiento con la doctrina reiterada del Tribunal Supremo (art. 1.6) pero no figura en esa lista; la tercera enumera normas ordenadas jerárquicamente, que es otra cosa.",
+      "referencia": {
+        "apartado": "5. Las fuentes del Derecho: el artículo 1 del Código Civil",
+        "norma": "Código Civil",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t01-g007",
+      "tema": 1,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué requisitos exige hoy el Código Civil para que el nacimiento determine la personalidad?",
+      "opciones": [
+        "Nacimiento con vida y supervivencia durante veinticuatro horas separado del claustro materno.",
+        "Nacimiento con vida y viabilidad del nacido, acreditada por el facultativo que asiste al parto.",
+        "Nacimiento con vida y entero desprendimiento del seno materno."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 30 del Código Civil, en la redacción de la Ley 20/2011, exige solo nacimiento con vida y entero desprendimiento del seno materno. El requisito de las veinticuatro horas de vida se suprimió, así que esa opción es la trampa heredada de los temarios antiguos, y la viabilidad tampoco es requisito legal en nuestro Derecho.",
+      "referencia": {
+        "apartado": "6.1. Nacimiento de la personalidad",
+        "norma": "Código Civil",
+        "articulo": "art. 30"
+      }
+    },
+    {
+      "id": "t01-g008",
+      "tema": 1,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones describe correctamente la capacidad jurídica?",
+      "opciones": [
+        "Se adquiere con la mayoría de edad y admite grados y limitaciones.",
+        "Es única e indivisible, se adquiere con el nacimiento y es irrenunciable e indisponible.",
+        "Se adquiere con el nacimiento, pero puede perderse por resolución judicial."
+      ],
+      "correcta": 1,
+      "explicacion": "La capacidad jurídica es la aptitud para ser titular de derechos y obligaciones: se adquiere con el nacimiento (art. 29 CC), es igual para todos, única e indivisible, y nadie puede renunciar a ella ni ser privado de ella. La primera opción describe la capacidad de obrar, que se alcanza a los 18 años (art. 315 CC) y sí admite grados y medidas de apoyo; la tercera confunde la capacidad de obrar, que puede verse afectada judicialmente, con la jurídica, que no se pierde.",
+      "referencia": {
+        "apartado": "7. Capacidad jurídica y capacidad de obrar",
+        "norma": "Código Civil",
+        "articulo": "arts. 29 y 315"
+      }
+    },
+    {
+      "id": "t01-g009",
+      "tema": 1,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una nacional de origen de Filipinas reside legalmente en España y solicita la nacionalidad española por residencia. ¿Qué plazo de residencia se le exige?",
+      "opciones": [
+        "Diez años, porque es el plazo general aplicable a cualquier extranjero.",
+        "Un año, porque procede de un país con vinculación histórica con España.",
+        "Dos años, porque los nacionales de origen de Filipinas están entre los supuestos de dos años del artículo 22 CC."
+      ],
+      "correcta": 2,
+      "explicacion": "El plazo de dos años se aplica a los nacionales de origen de países iberoamericanos, Andorra, Filipinas, Guinea Ecuatorial y Portugal, y a los sefardíes; exige nacionalidad de origen, no cualquier residencia procedente de esos países. Diez años es la regla general y un año es para los supuestos del artículo 22.4, como haber nacido en España o llevar un año casado con español, que no es este caso.",
+      "referencia": {
+        "apartado": "8.1. Plazos de residencia (artículo 22 CC)",
+        "norma": "Código Civil",
+        "articulo": "art. 22"
+      }
+    },
+    {
+      "id": "t01-g010",
+      "tema": 1,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Para recuperar la nacionalidad española, el artículo 26 del Código Civil exige, con carácter general…",
+      "opciones": [
+        "La residencia legal en España y la declaración de voluntad ante el encargado del Registro Civil.",
+        "La carta de naturaleza concedida por real decreto, a petición del interesado.",
+        "Un año de residencia legal en España y el juramento de fidelidad al Rey."
+      ],
+      "correcta": 0,
+      "explicacion": "La recuperación exige residencia legal en España y declaración ante el encargado del Registro Civil, que es el órgano ante quien se formaliza, sin perjuicio de los supuestos que permiten recuperarla sin residencia previa, como el emigrante que retorna. La carta de naturaleza es una vía de adquisición (art. 21 CC), no de recuperación, y el año de residencia con juramento no es el requisito del artículo 26.",
+      "referencia": {
+        "apartado": "8.2. Conservación, pérdida y recuperación",
+        "norma": "Código Civil",
+        "articulo": "art. 26"
+      }
+    },
+    {
+      "id": "t01-g011",
+      "tema": 1,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Para el ejercicio de los derechos y el cumplimiento de las obligaciones civiles, ¿cuál es el domicilio de las personas naturales?",
+      "opciones": [
+        "El municipio donde figuren empadronadas, aunque residan habitualmente en otro.",
+        "El lugar de su residencia habitual.",
+        "El que el interesado elija libremente y comunique al Registro Civil."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 40 del Código Civil fija el domicilio de las personas naturales en el lugar de su residencia habitual, con dos excepciones: los diplomáticos acreditados en el extranjero conservan el último domicilio que tuvieron en España y los militares en servicio, el último que tuvieron en territorio nacional. El empadronamiento es un dato administrativo que no sustituye a la residencia habitual, y el domicilio no se elige libremente: es una situación de hecho cualificada por el Derecho.",
+      "referencia": {
+        "apartado": "9. El domicilio",
+        "norma": "Código Civil",
+        "articulo": "art. 40"
+      }
+    },
+    {
+      "id": "t01-g012",
+      "tema": 1,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuántos años de residencia continuada se exigen para adquirir la vecindad civil sin necesidad de declaración, siempre que el interesado no manifieste voluntad en contrario?",
+      "opciones": [
+        "Diez años de residencia continuada.",
+        "Dos años de residencia continuada.",
+        "Cinco años de residencia continuada."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 14 del Código Civil permite adquirir la vecindad civil por residencia continuada de diez años sin declaración, siempre que el interesado no manifieste voluntad en contrario durante ese plazo; los dos años solo operan si declara su voluntad de adoptar esa vecindad, que es la confusión que el examen explota. Cinco años no es plazo de vecindad civil en ningún supuesto.",
+      "referencia": {
+        "apartado": "10.1. Cómo se adquiere",
+        "norma": "Código Civil",
+        "articulo": "art. 14"
+      }
+    }
+  ]
+}

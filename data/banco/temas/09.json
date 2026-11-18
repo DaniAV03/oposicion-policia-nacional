@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 9,
+  "titulo": "Tema 9 · La Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad: disposiciones generales; principios básicos de actuación; disposiciones estatutarias comunes. De las Fuerzas y Cuerpos de Seguridad del Estado: los derechos de representación colectiva; el Consejo de Policía; organización de las unidades de Policía Judicial; de las Policías de las Comunidades Autónomas; de la colaboración y coordinación entre el Estado y las Comunidades Autónomas; de las Policías Locales.",
+  "preguntas": [
+    {
+      "id": "t09-g001",
+      "tema": 9,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Según la disposición final sexta de la Ley Orgánica 2/1986, ¿qué preceptos del título II no tienen carácter de ley orgánica?",
+      "opciones": [
+        "Los artículos 5 y 6.",
+        "Los artículos 10, 11.2 a 11.6 y 12.1.",
+        "Los artículos 9 y 13 a 15."
+      ],
+      "correcta": 1,
+      "explicacion": "La disposición final sexta, añadida por la Ley Orgánica 9/2015, da carácter orgánico a los títulos I, III, IV y V y, del título II, a todos sus preceptos salvo los artículos 10, 11.2 a 11.6 y 12.1, la disposición adicional tercera y las disposiciones finales excepto la quinta. La razón es que el reparto interno de mando y de tareas entre la Policía Nacional y la Guardia Civil puede regularse por ley ordinaria. Los artículos 5 y 6 pertenecen al título I y sí son orgánicos, y los artículos 9 y 13 a 15 no están entre las excepciones, así que también lo son.",
+      "referencia": {
+        "apartado": "2.1. Qué preceptos tienen carácter de ley orgánica",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "disposición final sexta"
+      }
+    },
+    {
+      "id": "t09-g002",
+      "tema": 9,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "Según el artículo 1 de la Ley Orgánica 2/1986, la seguridad pública es…",
+      "opciones": [
+        "Competencia exclusiva del Estado, y su mantenimiento corresponde al Gobierno de la Nación con la participación de las Comunidades Autónomas y las Corporaciones Locales.",
+        "Competencia compartida entre el Estado y las Comunidades Autónomas que hayan creado cuerpo de policía propio.",
+        "Competencia exclusiva de las Corporaciones Locales dentro de su término municipal."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 1 separa dos cosas que el examen mezcla: la competencia es exclusiva del Estado, pero su mantenimiento corresponde al Gobierno de la Nación con la participación de las Comunidades Autónomas y las Corporaciones Locales en los términos de sus Estatutos y de la Ley reguladora de las Bases del Régimen Local. Por eso es falsa la opción que convierte la competencia en compartida y también la que la traslada al municipio: las Comunidades y los municipios participan en el mantenimiento, no son titulares de la competencia.",
+      "referencia": {
+        "apartado": "3. Disposiciones generales",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t09-g003",
+      "tema": 9,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Cuando los miembros de las Fuerzas y Cuerpos de Seguridad actúan con la decisión necesaria y sin demora para evitar un daño grave, inmediato e irreparable, se rigen por los principios de…",
+      "opciones": [
+        "Jerarquía, subordinación y disciplina.",
+        "Eficacia, celeridad y economía de medios.",
+        "Congruencia, oportunidad y proporcionalidad."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 5.2.c emplea literalmente tres palabras: congruencia, oportunidad y proporcionalidad. Jerarquía y subordinación pertenecen al apartado 1.d, donde funcionan como límite de la obediencia debida, no como regla de la intervención urgente. La tercera opción sustituye una de las tres palabras legales por otras que no figuran en el precepto, y esa sustitución basta para invalidarla en el examen.",
+      "referencia": {
+        "apartado": "4. Los principios básicos de actuación",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 5.2.c"
+      }
+    },
+    {
+      "id": "t09-g004",
+      "tema": 9,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuándo tienen los miembros de las Fuerzas y Cuerpos de Seguridad la consideración de autoridad a efectos de protección penal?",
+      "opciones": [
+        "Siempre que actúen uniformados o exhiban su credencial, aunque no estén de servicio.",
+        "Cuando se cometa contra ellos delito de atentado empleando armas de fuego, explosivos u otros medios de agresión de análoga peligrosidad.",
+        "Únicamente mientras presten servicio en unidades de Policía Judicial a las órdenes del juez."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 7 distingue dos planos: en el ejercicio de sus funciones los miembros de los cuerpos son agentes de la autoridad a todos los efectos legales, y solo tienen la consideración de autoridad, a efectos de protección penal, en el delito de atentado con armas de fuego, explosivos u otros medios de análoga peligrosidad. La primera opción confunde el uniforme con la condición de autoridad y la tercera la limita a la Policía Judicial, donde no está esa consideración.",
+      "referencia": {
+        "apartado": "5.2. Los artículos 7 y 8",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 7"
+      }
+    },
+    {
+      "id": "t09-g005",
+      "tema": 9,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "En tiempo de guerra y durante el estado de sitio, la Guardia Civil depende…",
+      "opciones": [
+        "Exclusivamente del Ministro de Defensa.",
+        "Del Ministro del Interior, como en el resto de sus funciones.",
+        "Conjuntamente de los Ministros del Interior y de Defensa."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 9.2 de la Ley Orgánica 2/1986 describe un doble mando ordinario —Interior para las funciones de la ley y Defensa para las misiones militares— y lo cierra con una regla tajante: en tiempo de guerra y durante el estado de sitio depende exclusivamente del Ministro de Defensa, sin concurrencia del Interior. Las otras dos opciones mantienen al Interior en ese escenario y, por tanto, contradicen el «exclusivamente» del precepto.",
+      "referencia": {
+        "apartado": "6. Las Fuerzas y Cuerpos de Seguridad del Estado",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 9.2"
+      }
+    },
+    {
+      "id": "t09-g006",
+      "tema": 9,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Una patrulla de la Policía Nacional y otra de la Guardia Civil coinciden en el mismo servicio y ninguna cede su actuación. ¿Cómo se resuelve el conflicto de competencias?",
+      "opciones": [
+        "Se hace cargo la Guardia Civil, porque el artículo 11.5 reserva estos conflictos al cuerpo de naturaleza militar.",
+        "Se hace cargo la unidad que designe el Delegado del Gobierno en la Comunidad Autónoma.",
+        "Se hace cargo del servicio el cuerpo que haya realizado las primeras actuaciones, hasta que se resuelva lo procedente."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 11.5 resuelve el conflicto, positivo o negativo, con un criterio puramente temporal: se hace cargo del servicio el cuerpo que haya realizado las primeras actuaciones, hasta que la autoridad competente resuelva lo procedente. No hay preferencia por la naturaleza militar o civil del cuerpo, como pretende la primera opción, ni la designación se hace de oficio por el Delegado del Gobierno. La regla busca que el servicio no quede sin cubrir mientras se decide.",
+      "referencia": {
+        "apartado": "6.1. El reparto de funciones",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 11.5"
+      }
+    },
+    {
+      "id": "t09-g007",
+      "tema": 9,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué exige la ley para que una organización sindical de la Policía Nacional sea declarada representativa?",
+      "opciones": [
+        "Obtener la mayoría absoluta de los votos emitidos en el conjunto de las cuatro escalas.",
+        "Haber obtenido al menos un representante en el Consejo de Policía o, en dos escalas, al menos el 10 por ciento de los votos emitidos en cada una.",
+        "Obtener el 10 por ciento de los votos emitidos en una sola escala, cualquiera que sea."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 89.1 de la Ley Orgánica 9/2015 abre dos puertas alternativas: al menos un representante en el Consejo de Policía en las últimas elecciones, o el 10 por ciento de los votos emitidos en dos escalas. No se exige mayoría absoluta en el conjunto del Cuerpo, como dice la primera opción, y el porcentaje no basta en una sola escala, que es el detalle que falla la tercera: son dos escalas.",
+      "referencia": {
+        "apartado": "7.2. La constitución y la representatividad",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 89.1"
+      }
+    },
+    {
+      "id": "t09-g008",
+      "tema": 9,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En un expediente disciplinario por falta muy grave, el informe del Consejo de Policía es…",
+      "opciones": [
+        "Preceptivo y no vinculante.",
+        "Potestativo y no vinculante.",
+        "Preceptivo y vinculante."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 27 de la Ley Orgánica 4/2010 exige, antes de resolver los expedientes por falta muy grave, el informe de la Comisión correspondiente del Consejo de Policía, y el artículo 94.2 de la Ley Orgánica 9/2015 le atribuye esa función. Es preceptivo, porque hay que pedirlo siempre, y no vinculante, porque el órgano competente puede resolver en sentido distinto motivándolo. La opción potestativa lo convierte en facultativo y la tercera lo hace obligatorio en su sentido, y ninguna de las dos cosas es cierta.",
+      "referencia": {
+        "apartado": "8. El Consejo de Policía",
+        "norma": "Ley Orgánica 4/2010",
+        "articulo": "art. 27"
+      }
+    },
+    {
+      "id": "t09-g009",
+      "tema": 9,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo se reparte la representación de los funcionarios en el Consejo de Policía?",
+      "opciones": [
+        "Con un número fijo de consejeros por escala, que se fija en cada convocatoria electoral.",
+        "Con un representante por cada 6.000 funcionarios o fracción del conjunto del Cuerpo, sin distinción de escalas.",
+        "Con un representante por cada 6.000 funcionarios o fracción de cada una de las cuatro escalas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 95 de la Ley Orgánica 9/2015 fija la representación sobre la base de un representante por cada 6.000 funcionarios o fracción de cada una de las cuatro escalas, de modo que la cifra no es un número cerrado ni se calcula sobre el total del Cuerpo. A estos solos efectos, los titulares de plazas de facultativos computan en la Escala Ejecutiva y los de técnicos en la de Subinspección. El mandato dura cuatro años y es reelegible.",
+      "referencia": {
+        "apartado": "8.1. Composición y elección",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 95"
+      }
+    },
+    {
+      "id": "t09-g010",
+      "tema": 9,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Las unidades de Policía Judicial dependen…",
+      "opciones": [
+        "Orgánicamente de los jueces, tribunales y Ministerio Fiscal, y funcionalmente del Ministerio del Interior.",
+        "Orgánicamente del Ministerio del Interior y funcionalmente de los jueces, tribunales y Ministerio Fiscal.",
+        "Funcionalmente del Ministerio del Interior y del Ministerio Fiscal a la vez, sin dependencia orgánica de ningún órgano."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 31.1 de la Ley Orgánica 2/1986, en desarrollo del artículo 126 de la Constitución, combina las dos dependencias: la orgánica es del Ministerio del Interior y la funcional de los jueces, tribunales o Ministerio Fiscal que conozcan del asunto. La primera opción las invierte y es la trampa clásica del tema. La tercera suprime la dependencia orgánica, que sí existe, y reparte la funcional entre dos órganos que la ley no sitúa en pie de igualdad.",
+      "referencia": {
+        "apartado": "9.1. La doble dependencia",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 31.1"
+      }
+    },
+    {
+      "id": "t09-g011",
+      "tema": 9,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "El otorgamiento de la licencia de armas a los miembros de los cuerpos de policía de las Comunidades Autónomas corresponde…",
+      "opciones": [
+        "En todo caso al Gobierno de la Nación.",
+        "A la Comunidad Autónoma de la que depende el cuerpo.",
+        "Al Ayuntamiento donde tenga su sede la jefatura del cuerpo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 41 de la Ley Orgánica 2/1986 permite a los cuerpos autonómicos portar armas de fuego, pero reserva el otorgamiento de la licencia de armas en todo caso al Gobierno de la Nación. La Comunidad regula su régimen estatutario, su selección y su formación, y el Ayuntamiento no interviene en nada de esto, porque la policía autonómica no es municipal. La palabra «todo caso» del precepto es la que cierra la discusión.",
+      "referencia": {
+        "apartado": "10.2. El régimen estatutario y el ámbito territorial",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 41"
+      }
+    },
+    {
+      "id": "t09-g012",
+      "tema": 9,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿En qué ámbito territorial ordena, señaliza y dirige el tráfico la Policía Local según el artículo 53 de la Ley Orgánica 2/1986?",
+      "opciones": [
+        "En las vías interurbanas que discurran por el término municipal.",
+        "En todo el término municipal, incluidas las travesías y carreteras que lo atraviesen.",
+        "En el casco urbano."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 53.1.b limita la ordenación, señalización y dirección del tráfico al casco urbano, y el apartado c hace lo mismo con la instrucción de atestados por accidentes de circulación. Las vías interurbanas corresponden a la Guardia Civil por el artículo 12.1.B.c, de modo que las dos primeras opciones amplían la competencia municipal más allá de donde la ley la sitúa. El artículo 53.2 añade que los atestados y las diligencias de prevención deben comunicarse a las Fuerzas y Cuerpos de Seguridad del Estado.",
+      "referencia": {
+        "apartado": "12.2. Las nueve funciones del artículo 53",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 53.1.b y c"
+      }
+    }
+  ]
+}

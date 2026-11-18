@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 11,
+  "titulo": "Tema 11 · De las infracciones en materia de extranjería y su régimen sancionador. Tipos de infracciones: infracciones leves, infracciones graves e infracciones muy graves. Sanciones. Prescripción de las infracciones y de las sanciones. Efectos de la expulsión y devolución. Efectos de la denegación de entrada.",
+  "preguntas": [
+    {
+      "id": "t11-g001",
+      "tema": 11,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "El artículo 50 de la Ley Orgánica 4/2000 remite, para el ejercicio de la potestad sancionadora, a una ley que ya no está vigente. ¿Cuál es hoy la norma aplicable?",
+      "opciones": [
+        "La Ley 30/1992, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común.",
+        "La Ley 39/2015, del Procedimiento Administrativo Común de las Administraciones Públicas.",
+        "El Real Decreto 1398/1993, por el que se aprueba el Reglamento del procedimiento para el ejercicio de la potestad sancionadora."
+      ],
+      "correcta": 1,
+      "explicacion": "La remisión del artículo 50 a la Ley 30/1992 se entiende hecha a la Ley 39/2015, que la derogó expresamente en su disposición derogatoria única, apartado 2.a), y el artículo 215.1 del Reglamento de 2024 cita ya la Ley 39/2015 como norma de aplicación. El Real Decreto 1398/1993, que regulaba el procedimiento sancionador, también quedó derogado por la Ley 39/2015, de modo que las otras dos opciones están desactualizadas.",
+      "referencia": {
+        "apartado": "2.2. Las tres remisiones a leyes derogadas que arrastra el texto",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 50"
+      }
+    },
+    {
+      "id": "t11-g002",
+      "tema": 11,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿A quién de los siguientes puede imponerse la expulsión del territorio español como sanción?",
+      "opciones": [
+        "Al empresario que contrata a un extranjero sin autorización de residencia y trabajo.",
+        "Al transportista que traslada a un viajero sin comprobar su documentación.",
+        "Solo al extranjero: el artículo 57.1 empieza diciendo «cuando los infractores sean extranjeros»."
+      ],
+      "correcta": 2,
+      "explicacion": "La expulsión es una sanción que solo se impone a extranjeros, como recuerda el arranque del artículo 57.1. Al empresario que contrata sin autorización se le impone multa y, en su caso, clausura del establecimiento, y al transportista multa, inmovilización del medio de transporte o suspensión de actividades, pero la expulsión no está prevista para ninguno de los dos.",
+      "referencia": {
+        "apartado": "3. Los sujetos responsables",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 57.1"
+      }
+    },
+    {
+      "id": "t11-g003",
+      "tema": 11,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un extranjero con autorización de residencia temporal caducada hace cuatro meses no ha solicitado la renovación. ¿Cómo se califica su situación?",
+      "opciones": [
+        "Infracción leve del artículo 52.b) por retraso en solicitar la renovación de una autorización caducada.",
+        "Infracción grave del artículo 53.1.a) por encontrarse irregularmente en España.",
+        "Ninguna infracción: la autorización caducada se prorroga de forma automática hasta que se resuelva la renovación."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 52.b) solo cubre el retraso de hasta tres meses en pedir la renovación; pasados esos tres meses sin solicitarla, la permanencia pasa a ser irregular y la conducta se tipifica como grave en el artículo 53.1.a). La prórroga de la validez se produce cuando la renovación se pide dentro de plazo, no cuando no se pide, así que la tercera opción describe mal el efecto de la solicitud.",
+      "referencia": {
+        "apartado": "4. Las infracciones leves: artículo 52",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "arts. 52.b y 53.1.a"
+      }
+    },
+    {
+      "id": "t11-g004",
+      "tema": 11,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántos supuestos de infracción grave suma el artículo 53 de la Ley Orgánica 4/2000?",
+      "opciones": [
+        "Ocho, que son las letras de su apartado 1.",
+        "Diez, que son las letras de sus dos apartados.",
+        "Doce: ocho en el apartado 1 y cuatro en el apartado 2."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 53 tiene doce supuestos: ocho en el apartado 1, letras a a h, y cuatro en el apartado 2, letras a a d, que agrupan las conductas del empresario y del titular de la vivienda. Ocho es solo el primer apartado y diez es el número de supuestos del artículo 54, que se reparten siete en el apartado 1 y tres en el apartado 2.",
+      "referencia": {
+        "apartado": "5. Las infracciones graves: artículo 53",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 53"
+      }
+    },
+    {
+      "id": "t11-g005",
+      "tema": 11,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "La clausura del establecimiento prevista en el artículo 55.6 de la Ley Orgánica 4/2000…",
+      "opciones": [
+        "Se acuerda, sin perjuicio de la multa, en el supuesto de contratación de trabajadores sin autorización, y dura de seis meses a cinco años.",
+        "Se acuerda frente al transportista que no se hace cargo del pasajero y dura como máximo seis meses.",
+        "Sustituye a la multa en todas las infracciones muy graves y dura de seis meses a cinco años."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 55.6 permite a la autoridad gubernativa acordar la clausura del establecimiento o local, además de la multa, en el supuesto del artículo 54.1.d), es decir, la contratación sin autorización de residencia y trabajo, por un período de seis meses a cinco años. Frente al transportista lo que procede es la suspensión temporal de actividades, que no puede exceder de seis meses, y la clausura ni sustituye a la multa ni se prevé para todas las muy graves.",
+      "referencia": {
+        "apartado": "8.1. Las demás consecuencias del artículo 55",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 55.6"
+      }
+    },
+    {
+      "id": "t11-g006",
+      "tema": 11,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Sobre la relación entre la expulsión y la multa, el artículo 57 de la Ley Orgánica 4/2000 establece que…",
+      "opciones": [
+        "Pueden imponerse conjuntamente cuando la infracción sea muy grave.",
+        "El interesado puede elegir entre cumplir la multa o ser expulsado.",
+        "La expulsión se aplica en lugar de la multa y en ningún caso pueden imponerse conjuntamente ambas sanciones."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 57.1 permite aplicar la expulsión «en lugar de» la sanción de multa, previo expediente y con resolución motivada, y el 57.3 prohíbe sin matices imponerlas conjuntamente. La elección no es del sancionado, sino de la Administración, que decide con criterios de proporcionalidad, y por eso fallan tanto la acumulación en las muy graves como la opción que atribuye la elección al interesado.",
+      "referencia": {
+        "apartado": "10.1. Las reglas que acompañan siempre a la expulsión",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "arts. 57.1 y 57.3"
+      }
+    },
+    {
+      "id": "t11-g007",
+      "tema": 11,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿A quién de los siguientes no se le puede imponer la expulsión, salvo por la infracción del artículo 54.1.a) o por reincidencia en un año en una infracción de la misma naturaleza sancionable con expulsión?",
+      "opciones": [
+        "A quien nació en España y ha residido legalmente en España en los últimos cinco años.",
+        "A quien nació en España y ha residido legalmente en España en los últimos dos años.",
+        "Al titular de una residencia de larga duración concedida por otro Estado miembro que se encuentra en España."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 57.5.a) protege a los nacidos en España que hayan residido legalmente en los últimos cinco años, y ese plazo no se rebaja a dos. Los dos años son el tiempo de residencia legal que se exige al cónyuge de una persona protegida para extenderle el círculo familiar. El residente de larga duración de otro Estado miembro no está en ese círculo: su expulsión se rige por el artículo 57.10, con consulta previa al Estado que le reconoció la residencia.",
+      "referencia": {
+        "apartado": "10.2. A quién no se le puede imponer la expulsión",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 57.5"
+      }
+    },
+    {
+      "id": "t11-g008",
+      "tema": 11,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "En el procedimiento preferente, el plazo para formular alegaciones y el período de prueba son, respectivamente…",
+      "opciones": [
+        "Quince días y un período de prueba no superior a treinta días ni inferior a diez.",
+        "Cuarenta y ocho horas y un período de prueba no superior a tres días.",
+        "Diez días y un período de prueba de hasta dos meses."
+      ],
+      "correcta": 1,
+      "explicacion": "En el preferente las alegaciones se formulan en cuarenta y ocho horas y la prueba no puede exceder de tres días, con audiencia posterior de otras cuarenta y ocho horas y ejecución inmediata, sin período de salida voluntaria. Los quince días de alegaciones y el período de prueba de diez a treinta días son del procedimiento ordinario, y los diez días con dos meses de duración máxima corresponden al simplificado.",
+      "referencia": {
+        "apartado": "12.1. Plazo a plazo, con su artículo",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 63.4"
+      }
+    },
+    {
+      "id": "t11-g009",
+      "tema": 11,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "El procedimiento sancionador en materia de extranjería caduca…",
+      "opciones": [
+        "A los seis meses de su iniciación sin que se haya dictado y notificado la resolución.",
+        "A los dos meses de su iniciación, salvo que se tramite por el procedimiento preferente.",
+        "A los tres meses de su iniciación, salvo que se haya acordado el internamiento del expedientado."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 224.1 del Reglamento fija la caducidad en seis meses desde la iniciación sin dictar y notificar, con archivo de las actuaciones de oficio o a solicitud de cualquier interesado, y solo se exceptúan la paralización imputable a los interesados y la suspensión acordada. Los dos meses son la duración máxima del procedimiento simplificado y los tres meses son el plazo de resolución de una renovación, no de caducidad del expediente.",
+      "referencia": {
+        "apartado": "12.2. Cómo se interrumpe y cómo se caduca",
+        "norma": "Real Decreto 1155/2024, Reglamento de la Ley Orgánica 4/2000",
+        "articulo": "art. 224.1"
+      }
+    },
+    {
+      "id": "t11-g010",
+      "tema": 11,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "El internamiento preventivo acordado en un expediente de expulsión…",
+      "opciones": [
+        "Lo acuerda el Juez de Instrucción por auto motivado, previa audiencia del interesado y del Ministerio Fiscal, y no puede exceder de sesenta días.",
+        "Lo acuerda el Subdelegado del Gobierno mediante resolución motivada, con una duración máxima de sesenta días.",
+        "Lo acuerda el Juez de Instrucción y puede prorrogarse hasta ciento veinte días si persiste el riesgo de incomparecencia."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 62 exige auto motivado del Juez de Instrucción, previa audiencia del interesado y del Ministerio Fiscal, y fija un máximo de sesenta días por el tiempo imprescindible, sin que quepa un nuevo internamiento por las mismas causas en el mismo expediente. La autoridad gubernativa no puede acordarlo y no existe prórroga hasta ciento veinte días: agotados los sesenta, la medida no se prolonga.",
+      "referencia": {
+        "apartado": "13.1. El internamiento: seis reglas que se preguntan",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "arts. 62.1 y 62.2"
+      }
+    },
+    {
+      "id": "t11-g011",
+      "tema": 11,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "La devolución acordada por intento de entrada ilegal, del artículo 58.3.b) de la Ley Orgánica 4/2000…",
+      "opciones": [
+        "Lleva consigo una prohibición de entrada en España de hasta tres años, conforme al artículo 58.7.",
+        "Reinicia el cómputo de la prohibición de entrada que se hubiera quebrantado, igual que la devolución del artículo 58.3.a).",
+        "No lleva aparejada una prohibición de entrada de tres años, porque ese inciso fue declarado inconstitucional y nulo por la STC 17/2013, y su resolución prescribe a los dos años."
+      ],
+      "correcta": 2,
+      "explicacion": "El inciso del artículo 58.7 que imponía tres años de prohibición fue declarado inconstitucional y nulo por la STC 17/2013, de modo que la devolución por intento de entrada irregular no impone hoy ese plazo, y su resolución prescribe a los dos años según el artículo 23.7 del Reglamento. El reinicio del cómputo es propio de la devolución del artículo 58.3.a), que además prescribe a los cinco años, no de la del 58.3.b).",
+      "referencia": {
+        "apartado": "16.1. Los efectos, con la advertencia que casi nadie da",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 58.7"
+      }
+    },
+    {
+      "id": "t11-g012",
+      "tema": 11,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "La resolución que deniega la entrada en un puesto fronterizo…",
+      "opciones": [
+        "Agota la vía administrativa y solo puede impugnarse ante el orden jurisdiccional contencioso-administrativo.",
+        "No agota la vía administrativa, es recurrible y la mera interposición del recurso no tiene efecto suspensivo.",
+        "Lleva aparejada la prohibición de entrar en España durante un plazo máximo de tres años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 15.2 del Reglamento declara que la resolución no agota la vía administrativa, y la interposición del recurso no suspende la denegación. La prohibición de entrada no es un efecto de la denegación, sino de la expulsión, con hasta cinco años y excepcionalmente diez, o del quebrantamiento de una prohibición previa; la de tres años asociada a la devolución fue anulada por la STC 17/2013.",
+      "referencia": {
+        "apartado": "17.3. La resolución y su recurso",
+        "norma": "Real Decreto 1155/2024, Reglamento de la Ley Orgánica 4/2000",
+        "articulo": "art. 15.2"
+      }
+    }
+  ]
+}

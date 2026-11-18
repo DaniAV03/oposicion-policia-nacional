@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 14,
+  "titulo": "Tema 14 · La Ley Orgánica 4/2015, de 30 de marzo, de protección de la seguridad ciudadana. Disposiciones generales. Documentación e identificación personal. Actuaciones para el mantenimiento y restablecimiento de la seguridad ciudadana. Potestades especiales de policía administrativa de seguridad. Régimen sancionador.",
+  "preguntas": [
+    {
+      "id": "t14-g001",
+      "tema": 14,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "El carácter orgánico de la Ley Orgánica 4/2015 no alcanza a toda la ley. ¿Qué preceptos lo tienen según su disposición final tercera?",
+      "opciones": [
+        "Todo el capítulo II y todo el capítulo V, sin más excepciones que las disposiciones adicionales.",
+        "Únicamente el capítulo I completo y los artículos 35 y 36 del capítulo V.",
+        "El capítulo I completo salvo el artículo 5, los artículos 9 y 11 del capítulo II, el capítulo III entero y solo determinados apartados del capítulo V."
+      ],
+      "correcta": 2,
+      "explicacion": "La disposición final tercera distribuye el rango con precisión: capítulo I salvo el artículo 5, artículos 9 y 11 del capítulo II, capítulo III íntegro y, del capítulo V, el artículo 30.3, el 35.1, los apartados 2, 7, 8 y 23 del 36 y los apartados 1 y 4 del 37. Por eso falla la primera opción, porque el capítulo II solo es orgánico en dos artículos, y la segunda, porque excluye el artículo 5 y da por orgánicos preceptos que no lo son: el régimen sancionador es en su mayor parte norma de rango ordinario, y de ahí que el artículo 41 permita completarlo por reglamento.",
+      "referencia": {
+        "apartado": "2.1. Qué parte de la ley es orgánica y qué parte no",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "disposición final tercera"
+      }
+    },
+    {
+      "id": "t14-g002",
+      "tema": 14,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de las siguientes es un fin del artículo 3 y no un principio rector del artículo 4?",
+      "opciones": [
+        "La transparencia en la actuación de los poderes públicos en materia de seguridad ciudadana.",
+        "La eficiencia en la actuación de los poderes públicos en materia de seguridad ciudadana.",
+        "La oportunidad en la actuación de los poderes públicos en materia de seguridad ciudadana."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3 enumera nueve fines y su letra i) es precisamente la transparencia en la actuación de los poderes públicos. La eficiencia y la oportunidad son dos de los siete principios rectores del artículo 4.1, junto con la legalidad, la igualdad de trato y no discriminación, la proporcionalidad, la eficacia y la responsabilidad. Las dos listas se confunden a propósito porque miden cosas distintas: el fin dice qué persigue la ley y el principio, cómo se ejerce la potestad.",
+      "referencia": {
+        "apartado": "3.2. Los fines del artículo 3",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "arts. 3 y 4.1"
+      }
+    },
+    {
+      "id": "t14-g003",
+      "tema": 14,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Dentro de la Administración General del Estado, ¿a quién corresponde imponer las sanciones por infracciones graves y leves de la Ley Orgánica 4/2015?",
+      "opciones": [
+        "Al Ministro del Interior.",
+        "Al Secretario de Estado de Seguridad.",
+        "A los Delegados del Gobierno en las comunidades autónomas y en las Ciudades de Ceuta y Melilla."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 32 reserva al Ministro del Interior las infracciones muy graves en grado máximo y al Secretario de Estado de Seguridad las muy graves en grado medio y mínimo, de modo que ninguna de esas dos opciones sirve para graves y leves: esas las imponen los Delegados del Gobierno. Conviene retener el detalle que más se falla: los Subdelegados del Gobierno y los Directores Insulares son autoridad del artículo 5, pero no figuran entre los órganos que sancionan, y los alcaldes solo alcanzan a los espacios públicos municipales o a los bienes de titularidad local.",
+      "referencia": {
+        "apartado": "4. Las autoridades y órganos competentes",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "arts. 5 y 32"
+      }
+    },
+    {
+      "id": "t14-g004",
+      "tema": 14,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Al titular de un pasaporte español le han sustraído el documento cuando se encontraba en el extranjero. ¿Con qué diligencia y ante quién debe dar cuenta del hecho?",
+      "opciones": [
+        "En el plazo de veinticuatro horas, ante la representación diplomática o consular.",
+        "De manera inmediata, ante las Fuerzas y Cuerpos de Seguridad o, en el extranjero, ante la representación diplomática o consular.",
+        "Tan pronto como sea posible, ante la comisaría de Policía o puesto de las Fuerzas y Cuerpos de Seguridad más próximo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 11 emplea para el pasaporte la fórmula «de manera inmediata» y añade la vía diplomática o consular cuando el extravío ocurre fuera de España; esa premura es mayor que la del Documento Nacional de Identidad, que se comunica «tan pronto como sea posible» a la comisaría o puesto más próximo, y esa es justamente la opción que se cuela como distractor. Las veinticuatro horas no aparecen en la ley: es un plazo inventado para que falle quien estudia de memoria sin fijarse en la redacción.",
+      "referencia": {
+        "apartado": "5.2. El pasaporte",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 11"
+      }
+    },
+    {
+      "id": "t14-g005",
+      "tema": 14,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Cuando una persona es trasladada a dependencias policiales a los solos efectos de su identificación, ¿cuánto tiempo puede permanecer allí como máximo?",
+      "opciones": [
+        "Cuatro horas.",
+        "Seis horas.",
+        "Setenta y dos horas."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 16.2 permite el traslado a las dependencias más próximas que dispongan de medios adecuados, por el tiempo estrictamente necesario y con un límite que no admite excepción: seis horas. Las setenta y dos horas son el límite constitucional de la detención (artículo 17.2 de la Constitución), que es una medida cautelar distinta, y la propia ley advierte en el artículo 19.1 que esta diligencia no está sujeta a las formalidades de la detención. Las cuatro horas no figuran en ningún precepto de la ley.",
+      "referencia": {
+        "apartado": "6.2. La identificación de personas: el artículo 16",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 16.2"
+      }
+    },
+    {
+      "id": "t14-g006",
+      "tema": 14,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué exige la ley respecto del agente que practica un registro corporal externo y superficial?",
+      "opciones": [
+        "Que sea siempre un agente del mismo sexo que la persona registrada, sin ninguna excepción.",
+        "Que exista autorización judicial previa, salvo en caso de flagrante delito.",
+        "Que sea un agente del mismo sexo que la persona registrada, salvo situación de urgencia por riesgo grave e inminente para los agentes."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 20.2.a impone el agente del mismo sexo con una única excepción, la urgencia por riesgo grave e inminente para los propios agentes, y por eso la primera opción falla: su «sin ninguna excepción» la hace falsa aunque el resto de la frase sea correcto. La autorización judicial no es el presupuesto de esta diligencia, que se apoya en indicios racionales y puede practicarse incluso contra la voluntad del afectado, con las medidas de compulsión indispensables y conforme a los principios de idoneidad, necesidad y proporcionalidad.",
+      "referencia": {
+        "apartado": "6.4. Los registros corporales externos",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 20"
+      }
+    },
+    {
+      "id": "t14-g007",
+      "tema": 14,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "La intervención de armas, explosivos, cartuchería y artículos pirotécnicos corresponde al Ministerio del Interior, que la ejerce a través de…",
+      "opciones": [
+        "La Secretaría de Estado de Seguridad.",
+        "La Dirección General de la Guardia Civil.",
+        "La Dirección General de la Policía, a través de la Comisaría General de Seguridad Ciudadana."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 28.2 atribuye la intervención al Ministerio del Interior, que la ejerce a través de la Dirección General de la Guardia Civil, cuyos servicios pueden realizar en cualquier momento las inspecciones y comprobaciones necesarias en los espacios de fabricación, depósito, comercialización o utilización. La opción de la Policía Nacional es la respuesta trampa por excelencia, porque el tema se estudia pensando en ese cuerpo, y la Secretaría de Estado de Seguridad no ejerce esta intervención, sino que es el órgano superior del Sistema en la Ley 8/2011.",
+      "referencia": {
+        "apartado": "8.3. Armas, explosivos, cartuchería y artículos pirotécnicos",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 28.2"
+      }
+    },
+    {
+      "id": "t14-g008",
+      "tema": 14,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "A efectos de apreciar la reincidencia que permite sancionar en grado medio, el artículo 33.2 exige la comisión, en un determinado plazo, de más de una infracción de la misma naturaleza declarada por resolución firme en vía administrativa. ¿Cuál es ese plazo?",
+      "opciones": [
+        "Dos años.",
+        "Seis meses.",
+        "Un año."
+      ],
+      "correcta": 0,
+      "explicacion": "La reincidencia administrativa del artículo 33.2.a se mide en dos años y exige resolución firme en vía administrativa, no condena judicial; esa es la razón por la que no sirve la reincidencia del artículo 22.8 del Código Penal, que requiere condena ejecutoria anterior por un delito del mismo título y de la misma naturaleza. El año y los seis meses son los plazos de prescripción de las infracciones grave y leve, que es la cifra que el examen traslada aquí: la comisión de una infracción se sanciona en grado mínimo salvo que concurra alguna de las cuatro circunstancias legales.",
+      "referencia": {
+        "apartado": "9.2. La graduación de la multa",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 33.2"
+      }
+    },
+    {
+      "id": "t14-g009",
+      "tema": 14,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "La proyección de haces de luz mediante cualquier dispositivo sobre los pilotos o conductores de medios de transporte, de modo que puedan deslumbrarles o distraer su atención y provocar accidentes, es una infracción…",
+      "opciones": [
+        "Leve, porque los haces de luz nunca llegan a comprometer la seguridad ciudadana.",
+        "Grave, porque compromete la seguridad del tráfico.",
+        "Muy grave."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 35.4 tipifica como muy grave la proyección de haces de luz sobre pilotos o conductores de medios de transporte que pueda deslumbrarles o distraer su atención y provocar accidentes. La confusión se construye con el artículo 37.6, que castiga como leve la misma proyección, pero sobre miembros de las Fuerzas y Cuerpos de Seguridad, para impedir o dificultar sus funciones: el destinatario decide la clase. El catálogo del artículo 36 no contiene este supuesto, así que la opción de infracción grave no tiene apoyo legal.",
+      "referencia": {
+        "apartado": "10.1. Las infracciones muy graves",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "arts. 35.4 y 37.6"
+      }
+    },
+    {
+      "id": "t14-g010",
+      "tema": 14,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Las sanciones impuestas por infracciones graves, ¿cuándo prescriben?",
+      "opciones": [
+        "A los dos años, contados desde el día siguiente a aquel en que la resolución adquiera firmeza en vía administrativa.",
+        "Al año, contado desde el día en que se cometió la infracción.",
+        "A los tres años, contados desde la firmeza de la resolución."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 40.1 fija la prescripción de las sanciones en tres años para las muy graves, dos para las graves y uno para las leves, y el cómputo arranca del día siguiente a la firmeza en vía administrativa. Las otras dos opciones desplazan la serie: el año es el plazo de la sanción leve y, a la vez, el de prescripción de la infracción grave del artículo 38.1, de modo que quien memoriza una sola serie responde mal la mitad de las preguntas; los tres años corresponden a la sanción por infracción muy grave.",
+      "referencia": {
+        "apartado": "11.2. Prescripción de infracciones y de sanciones",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "arts. 38.1 y 40.1"
+      }
+    },
+    {
+      "id": "t14-g011",
+      "tema": 14,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Notificado el acuerdo de incoación, ¿en qué infracciones y con qué plazo puede el interesado pagar voluntariamente con una reducción del cincuenta por ciento del importe de la multa?",
+      "opciones": [
+        "En cualquier infracción, incluidas las muy graves, dentro de los quince días siguientes a la notificación.",
+        "Solo en las infracciones graves y leves, dentro de los quince días siguientes a la notificación.",
+        "Solo en las infracciones leves, dentro de los diez días siguientes a la notificación."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 54 reserva el procedimiento abreviado a las infracciones graves y leves y concede quince días desde la notificación para pagar con reducción del cincuenta por ciento, lo que supone renunciar a alegaciones y terminar el procedimiento sin resolución expresa el día del pago. Las muy graves quedan fuera, así que la primera opción es falsa, y los diez días no existen en este trámite: los quince días que aparecen dos veces en el capítulo son los del pago voluntario y los de ratificación de las medidas provisionales del artículo 47.2.",
+      "referencia": {
+        "apartado": "12.3. El procedimiento abreviado",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 54"
+      }
+    },
+    {
+      "id": "t14-g012",
+      "tema": 14,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿En qué supuesto pueden las unidades actuantes disolver una reunión o manifestación sin necesidad de previo aviso?",
+      "opciones": [
+        "Cuando la alteración de la seguridad ciudadana se produzca con armas, artefactos explosivos u objetos contundentes o de cualquier otro modo peligrosos.",
+        "Siempre que la reunión o manifestación no haya sido comunicada a la autoridad competente.",
+        "En ningún caso: el aviso previo es un requisito ineludible."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 23.3 obliga a avisar antes de adoptar las medidas de intervención, incluso verbalmente si la urgencia lo hace imprescindible, y levanta esa exigencia solo cuando la alteración se produce con armas, artefactos explosivos u objetos contundentes o de cualquier otro modo peligrosos. La falta de comunicación no habilita por sí sola a disolver: genera las infracciones de los artículos 35.1 y 37.1 según el caso, y la disolución sigue siendo el último recurso. El aviso tampoco es absoluto, porque la ley contempla expresamente esa excepción.",
+      "referencia": {
+        "apartado": "7. Las reuniones y manifestaciones",
+        "norma": "Ley Orgánica 4/2015, de 30 de marzo",
+        "articulo": "art. 23.3"
+      }
+    }
+  ]
+}

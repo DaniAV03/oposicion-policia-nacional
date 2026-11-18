@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 10,
+  "titulo": "Tema 10 · Entrada, libre circulación y residencia en España de ciudadanos de los Estados miembros de la Unión Europea y de otros Estados parte en el Acuerdo sobre el Espacio Económico Europeo. Derechos y libertades de los extranjeros en España y su integración social. La entrada y salida del territorio español. La autorización de estancia y de residencia.",
+  "preguntas": [
+    {
+      "id": "t10-g001",
+      "tema": 10,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El Real Decreto 240/2007 se aplica a los ciudadanos suizos y a sus familiares…",
+      "opciones": [
+        "Porque Suiza es Estado parte del Acuerdo sobre el Espacio Económico Europeo desde su entrada en vigor.",
+        "Por su disposición adicional tercera, en virtud del Acuerdo entre la Comunidad Europea y la Confederación Suiza sobre libre circulación de personas.",
+        "Porque el Reglamento aprobado en 2024 los ha incorporado expresamente al régimen comunitario."
+      ],
+      "correcta": 1,
+      "explicacion": "El Real Decreto 240/2007 cubre a los Estados miembros, a los Estados parte en el Acuerdo sobre el Espacio Económico Europeo y, por su disposición adicional tercera, a los suizos, que no pertenecen al EEE: esa es la respuesta. La primera opción es falsa justamente por eso, porque Suiza no es Estado parte del EEE, y la tercera confunde planos, ya que el Reglamento de 2024 ni deroga el 240/2007 ni convierte a los suizos en comunitarios.",
+      "referencia": {
+        "apartado": "2.2. Las normas del régimen comunitario",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "disposición adicional 3.ª"
+      }
+    },
+    {
+      "id": "t10-g002",
+      "tema": 10,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "En el régimen general, la estancia de corta duración se computa, conforme al artículo 4 del Reglamento de extranjería…",
+      "opciones": [
+        "Por semestres naturales: noventa días en cada semestre, con reinicio del cómputo el 1 de enero y el 1 de julio.",
+        "Por años naturales: ciento ochenta días de estancia como máximo en cada año.",
+        "Noventa días naturales dentro de cualquier período de ciento ochenta días naturales, mirando los ciento ochenta días que preceden a cada día de estancia."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 4.1 del Reglamento fija la estancia en noventa días naturales en cualquier período de ciento ochenta, y el 4.2 ordena contar los ciento ochenta días anteriores a cada día: es una ventana móvil, no un semestre ni un año natural. La opción del semestre confunde el criterio de cómputo con la definición del visado de estancia del artículo 25 bis de la ley, y la del año natural invierte las cifras al poner ciento ochenta días de estancia dentro de noventa.",
+      "referencia": {
+        "apartado": "3.2. El artículo 4 del Reglamento",
+        "norma": "Real Decreto 1155/2024, Reglamento de la Ley Orgánica 4/2000",
+        "articulo": "art. 4.1 y 4.2"
+      }
+    },
+    {
+      "id": "t10-g003",
+      "tema": 10,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Acordada la denegación de entrada en un puesto fronterizo, el regreso de la persona a su punto de origen…",
+      "opciones": [
+        "Dispone de un plazo de cumplimiento voluntario de siete a treinta días, prorrogable según las circunstancias.",
+        "Se produce en el plazo máximo de quince días, prorrogable hasta noventa días por circunstancias excepcionales.",
+        "Se ejecuta de forma inmediata y, en todo caso, dentro de las setenta y dos horas; si no puede ejecutarse, se acude al Juez de Instrucción para que fije el lugar de internamiento."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 60.1 de la ley y el 15.3 del Reglamento imponen el regreso inmediato y, en todo caso, dentro de las setenta y dos horas, y si no puede ejecutarse se pide al Juez de Instrucción que determine el lugar de internamiento. Las otras dos opciones son plazos de instituciones distintas: los siete a treinta días son el cumplimiento voluntario de la expulsión en el procedimiento ordinario y los quince días prorrogables a noventa son el plazo de salida de la resolución denegatoria de residencia del artículo 28.3.",
+      "referencia": {
+        "apartado": "4.2. La denegación de entrada",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 60.1"
+      }
+    },
+    {
+      "id": "t10-g004",
+      "tema": 10,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "La devolución de quien pretende entrar ilegalmente en España, interceptado en la frontera o en sus inmediaciones…",
+      "opciones": [
+        "Requiere expediente de expulsión y la autoriza el Juez de Instrucción.",
+        "La acuerda el Subdelegado del Gobierno o el Delegado del Gobierno en las comunidades uniprovinciales, sin expediente de expulsión.",
+        "La acuerdan los funcionarios del puesto fronterizo mediante una resolución de denegación de entrada."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 58.3 permite la devolución sin expediente de expulsión y el 58.5 atribuye la competencia a la autoridad gubernativa competente para la expulsión, que es el Subdelegado del Gobierno o el Delegado en las comunidades uniprovinciales. El juez no la autoriza: solo interviene si no se ejecuta en setenta y dos horas, para acordar el internamiento. Y la denegación de entrada es otra figura, la del control previo al acceso, que produce el regreso y no la devolución.",
+      "referencia": {
+        "apartado": "4.3. La devolución",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "arts. 58.3 y 58.5"
+      }
+    },
+    {
+      "id": "t10-g005",
+      "tema": 10,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una ciudadana italiana lleva cuatro meses residiendo en España y cumple las condiciones del artículo 7 del Real Decreto 240/2007. ¿Qué le corresponde?",
+      "opciones": [
+        "Solicitar personalmente la inscripción en el Registro Central de Extranjeros en el plazo de tres meses desde la entrada; se le expide de inmediato un certificado de registro.",
+        "Pedir una autorización de residencia en la oficina de extranjería en el mes siguiente a la entrada, con tarjeta de identidad de extranjero.",
+        "Nada: al superar los tres meses ya tiene derecho de residencia permanente."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 7.5 obliga a inscribirse personalmente en el Registro Central de Extranjeros en los tres meses siguientes a la entrada, y el certificado de registro se expide de inmediato con nombre, nacionalidad, domicilio, NIE y fecha de registro. En el régimen comunitario no hay autorización de residencia ni tarjeta para el ciudadano de la Unión, porque la residencia es un derecho que se ejerce y no una autorización que se concede, y la residencia permanente exige cinco años continuados, no tres meses.",
+      "referencia": {
+        "apartado": "7.1. La inscripción y el certificado de registro",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "art. 7.5"
+      }
+    },
+    {
+      "id": "t10-g006",
+      "tema": 10,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "La tarjeta de residencia de familiar de ciudadano de la Unión se expide…",
+      "opciones": [
+        "De forma inmediata, con la misma validez que el certificado de registro del familiar comunitario, y se renueva cada cinco años.",
+        "En el plazo de un mes, con validez de dos años prorrogables si se mantienen los requisitos.",
+        "En el plazo de tres meses, con validez de cinco años y efectos retroactivos a la fecha acreditada de entrada como familiar."
+      ],
+      "correcta": 2,
+      "explicacion": "La tarjeta se expide en el plazo de tres meses y la resolución favorable tiene efectos retroactivos a la fecha acreditada de entrada como familiar, con validez de cinco años desde la expedición o el período de residencia del ciudadano si fuera inferior. Lo inmediato es el resguardo que acredita la estancia legal hasta la entrega de la tarjeta, no la tarjeta, y por eso falla la primera opción; la segunda mezcla la validez de dos años de la renovación de la residencia no lucrativa con un documento que no funciona así.",
+      "referencia": {
+        "apartado": "8. La tarjeta de residencia de familiar de ciudadano de la Unión",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "art. 8"
+      }
+    },
+    {
+      "id": "t10-g007",
+      "tema": 10,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Por qué causa se pierde el derecho de residencia permanente del régimen comunitario?",
+      "opciones": [
+        "Por ausencia del territorio español durante más de doce meses consecutivos.",
+        "Por ausencia del territorio español durante más de dos años consecutivos.",
+        "Por dejar de acreditar trabajo, recursos suficientes y seguro de enfermedad."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 10.7 pierde el derecho por ausencia del territorio español durante más de dos años consecutivos. Los doce meses consecutivos son el plazo que extingue la residencia de larga duración del régimen general cuando se sale de la Unión Europea, y la tercera opción es imposible porque la residencia permanente ya no está sujeta a las condiciones de trabajo, recursos, seguro o estudios del capítulo III.",
+      "referencia": {
+        "apartado": "9. La residencia permanente y la expulsión en el régimen comunitario",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "art. 10.7"
+      }
+    },
+    {
+      "id": "t10-g008",
+      "tema": 10,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Sobre la expulsión de un ciudadano de la Unión por razones de orden público, ¿qué afirma correctamente el Real Decreto 240/2007?",
+      "opciones": [
+        "Bastan las condenas penales anteriores, aunque no se valore la conducta actual del interesado.",
+        "Puede acordarse cuando el interesado carece de recursos y podría ser carga para la asistencia social.",
+        "Debe fundarse exclusivamente en la conducta personal, que ha de ser una amenaza real, actual y suficientemente grave, y no puede adoptarse con fines económicos."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 15 exige que la medida se funde exclusivamente en la conducta personal, que ha de ser una amenaza real, actual y suficientemente grave para un interés fundamental de la sociedad, y prohíbe adoptarla con fines económicos. Las condenas anteriores no bastan por sí solas, así que la primera opción es falsa, y el recurso a la asistencia social no produce expulsión automática, de modo que tampoco vale la segunda.",
+      "referencia": {
+        "apartado": "9.1. Orden público, seguridad y salud pública",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "art. 15"
+      }
+    },
+    {
+      "id": "t10-g009",
+      "tema": 10,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Antes de resolver la expulsión de un titular de tarjeta o de certificado del régimen comunitario, el Real Decreto 240/2007 exige…",
+      "opciones": [
+        "Un informe previo de la Abogacía del Estado en la provincia, salvo urgencia motivada.",
+        "Un informe previo del Ministerio Fiscal, que actúa aquí como órgano consultivo.",
+        "La autorización previa del Juez de Instrucción del lugar del domicilio del interesado."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 16 exige el informe previo de la Abogacía del Estado en la provincia antes de resolver la expulsión de un titular de tarjeta o certificado, salvo urgencia motivada, y el interesado puede pedir el examen del Servicio Jurídico del Estado. El Ministerio Fiscal no emite ese informe: es oído en el internamiento y en la autorización de la expulsión del procesado. Y el juez no autoriza la expulsión comunitaria, sino que decide sobre la suspensión cuando se recurre con medida cautelar.",
+      "referencia": {
+        "apartado": "9.2. Garantías del procedimiento",
+        "norma": "Real Decreto 240/2007",
+        "articulo": "art. 16"
+      }
+    },
+    {
+      "id": "t10-g010",
+      "tema": 10,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Quién es competente para conceder la prórroga de la estancia de corta duración del régimen general?",
+      "opciones": [
+        "La persona titular de la Comisaría General de Extranjería y Fronteras, previo informe de la jefatura o comisaría.",
+        "El Subdelegado del Gobierno de la provincia donde resida el solicitante.",
+        "El Jefe de la Oficina de Extranjería de la provincia del domicilio."
+      ],
+      "correcta": 0,
+      "explicacion": "La prórroga de la estancia de corta duración la concede la persona titular de la Comisaría General de Extranjería y Fronteras, previo informe de la jefatura o comisaría, sin que pueda superar tres meses dentro de un período de seis. El Subdelegado del Gobierno resuelve autorizaciones, impone sanciones y acuerda expulsiones y devoluciones, pero no esta prórroga, y la Oficina de Extranjería tramita otro tipo de autorizaciones.",
+      "referencia": {
+        "apartado": "10.1. La estancia de corta duración",
+        "norma": "Ley Orgánica 4/2000",
+        "articulo": "art. 30.3"
+      }
+    },
+    {
+      "id": "t10-g011",
+      "tema": 10,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Presentada la solicitud de reagrupación familiar ante la oficina de extranjería, la resolución…",
+      "opciones": [
+        "Se dicta en el plazo máximo de dos meses y, sin respuesta, la solicitud se entiende desestimada.",
+        "Se dicta en el plazo máximo de un mes y, sin respuesta, se entiende estimada.",
+        "Se dicta en el plazo máximo de tres meses y, sin respuesta, se entiende estimada, como en las renovaciones."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 68.6 del Reglamento fija un plazo máximo de dos meses y silencio desestimatorio, coherente con la regla de que las autorizaciones iniciales se entienden denegadas sin respuesta. Un mes es el plazo de resolución de la residencia temporal no lucrativa, y el silencio estimatorio es el de las prórrogas, renovaciones y larga duración, no el de la reagrupación, que es una autorización inicial.",
+      "referencia": {
+        "apartado": "12. La reagrupación familiar",
+        "norma": "Real Decreto 1155/2024, Reglamento de la Ley Orgánica 4/2000",
+        "articulo": "art. 68.6"
+      }
+    },
+    {
+      "id": "t10-g012",
+      "tema": 10,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué permanencia en España exige, con carácter general, el Reglamento de 2024 para conceder un arraigo?",
+      "opciones": [
+        "Tres años de permanencia continuada, como exigía el Reglamento de 2011.",
+        "Dos años de permanencia continuada como regla general, sin que el arraigo familiar la exija.",
+        "Cinco años de permanencia continuada, igual que para la residencia de larga duración."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 126 exige dos años de permanencia continuada como regla general, y el arraigo familiar no exige permanencia mínima, sino ser padre, madre o tutor de un menor nacional de otro Estado miembro, del EEE o de Suiza, con una autorización de cinco años. Los tres años son la cifra del Reglamento derogado de 2011 y los cinco años son el plazo de la residencia de larga duración, que es otro instituto distinto.",
+      "referencia": {
+        "apartado": "14. Las autorizaciones por circunstancias excepcionales: el arraigo",
+        "norma": "Real Decreto 1155/2024, Reglamento de la Ley Orgánica 4/2000",
+        "articulo": "art. 126"
+      }
+    }
+  ]
+}

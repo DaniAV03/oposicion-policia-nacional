@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 15,
+  "titulo": "Tema 15 · Medidas para la Protección de Infraestructuras Críticas. El Catálogo Nacional de Infraestructuras Críticas. El Sistema de Protección de Infraestructuras Críticas. Ciberseguridad.",
+  "preguntas": [
+    {
+      "id": "t15-g001",
+      "tema": 15,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cómo se denomina oficialmente el registro que contiene la información de las infraestructuras estratégicas del territorio nacional?",
+      "opciones": [
+        "Catálogo Nacional de Infraestructuras Críticas.",
+        "Catálogo Nacional de Infraestructuras Estratégicas.",
+        "Catálogo Nacional de Infraestructuras Críticas Europeas."
+      ],
+      "correcta": 1,
+      "explicacion": "La ley lo llama Catálogo Nacional de Infraestructuras Estratégicas (artículos 2.o y 4.1) porque contiene todas las infraestructuras estratégicas y, entre ellas, las críticas y las críticas europeas. Por eso falla «de Infraestructuras Críticas», aunque sea el nombre popular que usa el propio epígrafe del programa, y también falla el que le añade «Europeas», que designa solo el escalón superior: la infraestructura crítica cuya perturbación o destrucción afectaría gravemente al menos a dos Estados miembros.",
+      "referencia": {
+        "apartado": "3.1. Las quince definiciones del artículo 2",
+        "norma": "Ley 8/2011, de 28 de abril",
+        "articulo": "arts. 2.o y 4.1"
+      }
+    },
+    {
+      "id": "t15-g002",
+      "tema": 15,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántos sectores estratégicos recoge el anexo de la Ley 8/2011 y cómo puede modificarse esa lista?",
+      "opciones": [
+        "Nueve, uno por cada agente del Sistema, y se modifica por orden del Ministro del Interior.",
+        "Quince, como las definiciones del artículo 2, y se modifica por real decreto-ley.",
+        "Doce, y solo se modifica por real decreto a propuesta conjunta del Ministro del Interior y del titular del departamento competente por razón de la materia."
+      ],
+      "correcta": 2,
+      "explicacion": "El anexo de la Ley 8/2011 contiene doce sectores estratégicos, desde Administración hasta Transporte, y la disposición final cuarta exige un real decreto aprobado a propuesta conjunta del Ministro del Interior y del titular del departamento competente por razón de la materia. Las otras dos cifras son las que el examen mezcla: nueve son los agentes del Sistema del artículo 5.2 y quince las definiciones del artículo 2. Los subsectores no están en el anexo: los fija un documento técnico que aprueba el CNPIC a propuesta de los ministerios afectados.",
+      "referencia": {
+        "apartado": "5. Los doce sectores estratégicos del anexo",
+        "norma": "Ley 8/2011, de 28 de abril",
+        "articulo": "anexo y disposición final cuarta"
+      }
+    },
+    {
+      "id": "t15-g003",
+      "tema": 15,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué calificación tiene el Catálogo Nacional de Infraestructuras Estratégicas y quién se la confirió?",
+      "opciones": [
+        "SECRETO, por Acuerdo del Consejo de Ministros de 2 de noviembre de 2007.",
+        "RESERVADO, por Acuerdo del Consejo de Ministros de 2 de noviembre de 2007.",
+        "SECRETO, por acuerdo de la Comisión Nacional para la Protección de las Infraestructuras Críticas."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 4.3 del Reglamento califica el Catálogo de SECRETO conforme a la legislación de secretos oficiales y precisa que la calificación la confirió el Acuerdo del Consejo de Ministros de 2 de noviembre de 2007; comprende además los equipos, aplicaciones informáticas y sistemas de comunicaciones y el nivel de habilitación de quien accede. La opción del RESERVADO rebaja la calificación, y la tercera se equivoca de órgano: la Comisión Nacional designa operadores críticos y aprueba los Planes Estratégicos Sectoriales, pero no clasifica documentos.",
+      "referencia": {
+        "apartado": "6.2. La confidencialidad: el Catálogo es SECRETO",
+        "norma": "Real Decreto 704/2011, de 20 de mayo",
+        "articulo": "art. 4.3"
+      }
+    },
+    {
+      "id": "t15-g004",
+      "tema": 15,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿A quién corresponde designar a los operadores críticos?",
+      "opciones": [
+        "Al CNPIC, que además dicta la resolución de designación.",
+        "A la Comisión Nacional para la Protección de las Infraestructuras Críticas, a propuesta del Grupo de Trabajo Interdepartamental.",
+        "Al Secretario de Estado de Seguridad, a propuesta del CNPIC."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 11.2 de la ley atribuye la designación a la Comisión Nacional, y el artículo 14 del Reglamento ordena la cadena: el CNPIC elabora la propuesta de resolución y la notifica al titular, que tiene quince días para alegar, el Grupo de Trabajo propone y la Comisión dicta la resolución de designación. Por eso falla la opción que se la atribuye al CNPIC, que solo impulsa y notifica, y también la que se la da al Secretario de Estado de Seguridad, que conoce del recurso de alzada contra la designación, pero no la acuerda.",
+      "referencia": {
+        "apartado": "8. Los dos órganos colegiados",
+        "norma": "Ley 8/2011, de 28 de abril",
+        "articulo": "art. 11.2; Reglamento, art. 14"
+      }
+    },
+    {
+      "id": "t15-g005",
+      "tema": 15,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Designado un operador crítico, ¿qué plazo tiene para elaborar su Plan de Seguridad del Operador y qué plazo tiene después para cada Plan de Protección Específico?",
+      "opciones": [
+        "Cuatro meses para el Plan de Seguridad del Operador y seis meses para cada Plan de Protección Específico.",
+        "Seis meses para el Plan de Seguridad del Operador y cuatro meses para cada Plan de Protección Específico, contados desde la aprobación del anterior.",
+        "Seis meses para los dos, contados ambos desde la notificación de la designación como operador crítico."
+      ],
+      "correcta": 1,
+      "explicacion": "La cadena de plazos es sucesiva y no simultánea: seis meses para el Plan de Seguridad del Operador desde la notificación de la designación (artículo 22.2) y cuatro meses para cada Plan de Protección Específico desde la aprobación del plan del operador (artículo 25.2); después, cuatro meses más para el Plan de Apoyo Operativo. La primera opción invierte las cifras y la tercera supone que los dos plazos arrancan del mismo acto, cuando el segundo depende de la aprobación del primero.",
+      "referencia": {
+        "apartado": "10. Los cinco instrumentos de planificación",
+        "norma": "Real Decreto 704/2011, de 20 de mayo",
+        "articulo": "arts. 22.2 y 25.2"
+      }
+    },
+    {
+      "id": "t15-g006",
+      "tema": 15,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "El Plan Nacional de Protección de las Infraestructuras Críticas, ¿con qué periodicidad se revisa?",
+      "opciones": [
+        "Cada dos años, como los demás planes del Sistema.",
+        "Cada cuatro años, en coincidencia con la revisión de los Planes de Apoyo Operativo.",
+        "Cada cinco años, y toda modificación de sus datos obliga a actualizarlo con aprobación expresa del Secretario de Estado de Seguridad."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 18.1 del Reglamento fija en cinco años la revisión del Plan Nacional, que es el único de los cinco instrumentos con ese plazo; los otros cuatro se revisan cada dos años. La opción de los cuatro años confunde un plazo de elaboración con un plazo de revisión, porque los cuatro meses son los del Plan de Protección Específico y los del Plan de Apoyo Operativo. Y la revisión no se hace por coincidencia entre planes: cada instrumento tiene su propio cómputo.",
+      "referencia": {
+        "apartado": "10.1. Los cuatro datos que se repiten",
+        "norma": "Real Decreto 704/2011, de 20 de mayo",
+        "articulo": "arts. 17.1 y 18.1"
+      }
+    },
+    {
+      "id": "t15-g007",
+      "tema": 15,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué dice la normativa sobre la escala de niveles de seguridad en la protección de infraestructuras críticas?",
+      "opciones": [
+        "Que son cuatro: bajo, medio, alto y crítico, y que están definidos en el artículo 2 de la Ley 8/2011.",
+        "Que son tres: normal, reforzado y crítico, y que se fijan por real decreto del Consejo de Ministros.",
+        "Que la escala no se publica: el Plan Nacional, que está clasificado, prevé los distintos niveles y los activa el Ministerio del Interior."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 2.n define el nivel de seguridad remitiéndolo al Plan Nacional y a la evaluación general y específica de la amenaza, y el Reglamento precisa que ese plan prevé los niveles de seguridad e intervención policial; como el Plan Nacional está clasificado conforme a la legislación de secretos oficiales, la escala no se publica. Las dos opciones que enumeran niveles se los inventan, y conviene desconfiar de cualquier material que los detalle: no procede de una fuente pública. Quien declara el nivel es el Secretario de Estado de Seguridad.",
+      "referencia": {
+        "apartado": "11.1. El nivel de seguridad en la protección de infraestructuras críticas",
+        "norma": "Ley 8/2011, de 28 de abril",
+        "articulo": "art. 2.n; Reglamento, art. 16.3"
+      }
+    },
+    {
+      "id": "t15-g008",
+      "tema": 15,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál de estas afirmaciones sobre el Delegado de Seguridad del operador crítico es correcta?",
+      "opciones": [
+        "Es único por operador y representa a la empresa ante la Secretaría de Estado de Seguridad.",
+        "Hay uno por cada infraestructura crítica o crítica europea, se comunica en el plazo de tres meses desde que la infraestructura se identifica como crítica y es el enlace operativo ante la Delegación del Gobierno o el órgano autonómico competente.",
+        "Lo designa el CNPIC y no el operador, para garantizar su independencia."
+      ],
+      "correcta": 1,
+      "explicacion": "El Delegado de Seguridad es una figura por instalación: el artículo 35.1 del Reglamento exige designarlo por cada infraestructura crítica o crítica europea y comunicarlo en tres meses a la Delegación del Gobierno o al órgano autonómico competente, ante quien actúa como enlace operativo. La primera opción describe al Responsable de Seguridad y Enlace, que es uno por operador, representa a la empresa ante la Secretaría de Estado y necesita habilitación de Director de Seguridad. Y la designación corresponde al operador, no al CNPIC, que es solo su interlocutor.",
+      "referencia": {
+        "apartado": "12.1. Tres precisiones que deciden preguntas",
+        "norma": "Ley 8/2011, de 28 de abril",
+        "articulo": "arts. 16 y 17; Reglamento, art. 35"
+      }
+    },
+    {
+      "id": "t15-g009",
+      "tema": 15,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿A qué proveedores de servicios digitales impone obligaciones el Real Decreto-ley 12/2018?",
+      "opciones": [
+        "A los mercados en línea, a los motores de búsqueda en línea y a los servicios de computación en nube, quedando excluidas las microempresas y las pequeñas empresas.",
+        "A todos los prestadores de servicios de la sociedad de la información establecidos en España, sin exclusiones por razón del tamaño.",
+        "A los operadores de redes y servicios de comunicaciones electrónicas, salvo que sean operadores críticos."
+      ],
+      "correcta": 0,
+      "explicacion": "El ámbito subjetivo de la norma ciber se cierra con dos categorías: operadores de servicios esenciales y proveedores de servicios digitales, y de estos últimos solo tres tipos, mercados en línea, motores de búsqueda en línea y servicios de computación en nube, con exclusión expresa de microempresas y pequeñas empresas. La segunda opción generaliza a todo el sector, y la tercera invierte la regla del artículo 2.3.a: los operadores de comunicaciones electrónicas y los prestadores de servicios de confianza quedan fuera precisamente salvo que sean operadores críticos de la Ley 8/2011.",
+      "referencia": {
+        "apartado": "14.1. Objeto y ámbito",
+        "norma": "Real Decreto-ley 12/2018, de 7 de septiembre",
+        "articulo": "art. 2"
+      }
+    },
+    {
+      "id": "t15-g010",
+      "tema": 15,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Una entidad del sector público estatal incluida en el ámbito de la Ley 40/2015 sufre un ciberincidente. ¿Cuál es su CSIRT de referencia?",
+      "opciones": [
+        "El CCN-CERT, del Centro Criptológico Nacional, que depende del CNI.",
+        "El INCIBE-CERT, que se opera conjuntamente con el CNPIC.",
+        "El ESPDEF-CERT, del Ministerio de Defensa, por su carácter transversal."
+      ],
+      "correcta": 0,
+      "explicacion": "El CCN-CERT atiende a las entidades del ámbito de la Ley 40/2015 y asume la coordinación nacional de la respuesta técnica en los incidentes de especial gravedad, bajo dependencia del Centro Criptológico Nacional y, por tanto, del CNI. El INCIBE-CERT cubre a las entidades no incluidas en esa ley, a la ciudadanía y al sector privado, y se opera junto al CNPIC cuando el afectado es un operador crítico. El ESPDEF-CERT apoya a los otros dos y presta servicio a los operadores con incidencia en la Defensa Nacional, no a cualquier entidad pública.",
+      "referencia": {
+        "apartado": "15. Autoridades competentes y equipos de respuesta",
+        "norma": "Real Decreto-ley 12/2018, de 7 de septiembre",
+        "articulo": "art. 11"
+      }
+    },
+    {
+      "id": "t15-g011",
+      "tema": 15,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un operador de servicios esenciales sufre un ciberincidente clasificado con impacto MUY ALTO. ¿Qué notificaciones debe presentar y en qué plazos?",
+      "opciones": [
+        "Inicial inmediata, intermedia a las 72 horas y final a los 40 días.",
+        "Inicial inmediata, intermedia a las 24 horas y final a los 20 días.",
+        "Solo inicial inmediata: en ese nivel no hay notificaciones intermedias ni final."
+      ],
+      "correcta": 0,
+      "explicacion": "La tabla de la Instrucción nacional del anexo del Real Decreto 43/2021 asigna al nivel MUY ALTO una notificación inicial inmediata, otra intermedia a las 72 horas y una final a los 40 días, contadas la intermedia y la final desde la inicial. Las 24 horas y los 20 días son las ventanas del nivel CRÍTICO, y la tercera opción describe el nivel ALTO, en el que efectivamente solo hay notificación inicial. En MEDIO y BAJO no se notifica nada, y el umbral de notificación son los niveles CRÍTICO, MUY ALTO y ALTO.",
+      "referencia": {
+        "apartado": "16.2. La notificación de incidentes",
+        "norma": "Real Decreto 43/2021, de 26 de enero",
+        "articulo": "anexo, tabla 3 (y art. 9.1)"
+      }
+    },
+    {
+      "id": "t15-g012",
+      "tema": 15,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Cuál es la multa máxima prevista para las infracciones muy graves del Real Decreto-ley 12/2018 y quién las impone?",
+      "opciones": [
+        "600.000 euros, y las impone el Secretario de Estado de Seguridad.",
+        "1.000.000 de euros, y las impone la Comisión Nacional para la Protección de las Infraestructuras Críticas.",
+        "1.000.000 de euros, y las impone el Ministro competente según el artículo 9."
+      ],
+      "correcta": 2,
+      "explicacion": "Las infracciones muy graves se castigan con multa de 500.001 a 1.000.000 de euros y su imposición corresponde al Ministro competente según el artículo 9, mientras que las graves y leves las impone el órgano de la autoridad competente que determine el reglamento (artículo 41.1). La opción de los 600.000 euros traslada aquí el techo de la Ley Orgánica 4/2015, que es otra norma, y la de la Comisión Nacional confunde un órgano de la protección de infraestructuras críticas con el sancionador de la norma ciber, que no le atribuye esa competencia.",
+      "referencia": {
+        "apartado": "18. Régimen sancionador",
+        "norma": "Real Decreto-ley 12/2018, de 7 de septiembre",
+        "articulo": "arts. 37 y 41.1"
+      }
+    }
+  ]
+}

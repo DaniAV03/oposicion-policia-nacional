@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 13,
+  "titulo": "Tema 13 · Disposiciones generales en materia de seguridad privada en España. Coordinación. Empresas de seguridad privada y despachos de detectives privados. Personal de seguridad privada. Servicios y medidas de seguridad.",
+  "preguntas": [
+    {
+      "id": "t13-g001",
+      "tema": 13,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué carácter tienen las actividades de seguridad privada respecto de la seguridad pública según la Ley 5/2014?",
+      "opciones": [
+        "Complementarias y subordinadas respecto de la seguridad pública.",
+        "Sustitutivas de la seguridad pública en los ámbitos que el Estado les cede.",
+        "Autónomas e independientes, coordinadas solo mediante convenio."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 1 declara que las actividades de seguridad privada son complementarias y subordinadas respecto de la seguridad pública, y el artículo 4.3 lo formula como complemento del monopolio estatal. Por eso falla la opción que las hace sustitutivas: el Estado no cede ámbitos, solo integra funcionalmente un recurso externo. Y tampoco son autónomas e independientes: la ley impone deberes de colaboración permanente y sujeción a las instrucciones de las Fuerzas y Cuerpos de Seguridad.",
+      "referencia": {
+        "apartado": "3. Qué es la seguridad privada: concepto, fines y subordinación",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t13-g002",
+      "tema": 13,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué órgano habilita profesionalmente a los guardas rurales y a sus especialidades?",
+      "opciones": [
+        "La Dirección General de la Policía, como al resto del personal de seguridad privada.",
+        "La Dirección General de la Guardia Civil.",
+        "La Secretaría de Estado de Seguridad, a propuesta de la Guardia Civil."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 27.3 habilita la Dirección General de la Policía con carácter general, pero atribuye a la Dirección General de la Guardia Civil la habilitación de los guardas rurales y de sus especialidades, coherente con el artículo 12.2.b), que le encomienda su control. La Secretaría de Estado de Seguridad no habilita a nadie: es el órgano que impone las sanciones muy graves distintas de la extinción, según el artículo 66.1.",
+      "referencia": {
+        "apartado": "12.1. La habilitación profesional (artículo 27)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 27.3"
+      }
+    },
+    {
+      "id": "t13-g003",
+      "tema": 13,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Para habilitarse como guarda de caza, ¿qué habilitación previa exige la ley?",
+      "opciones": [
+        "Ninguna: la especialidad se obtiene directamente superando el curso específico.",
+        "Haber sido vigilante de seguridad durante al menos dos años.",
+        "Haber sido guarda rural, porque las especialidades exigen la habilitación básica previa."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 26.2 exige la habilitación básica previa para las especialidades: hay que ser vigilante de seguridad antes de vigilante de explosivos y guarda rural antes de guarda de caza o guardapesca marítimo. No existe un acceso directo a la especialidad ni se sustituye por antigüedad como vigilante: la cadena de habilitaciones es la que la ley impone, y de ahí salen las preguntas sobre quién habilita cada escalón.",
+      "referencia": {
+        "apartado": "12. El personal de seguridad privada: clases y habilitación",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 26.1 y 26.2"
+      }
+    },
+    {
+      "id": "t13-g004",
+      "tema": 13,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Una empresa pretende dedicarse exclusivamente a instalar y mantener sistemas de seguridad conectados a centrales receptoras de alarmas. ¿Qué necesita para ello?",
+      "opciones": [
+        "Autorización administrativa previa, como cualquier empresa de seguridad privada.",
+        "Declaración responsable, porque es la única actividad del artículo 5.1 exceptuada de autorización.",
+        "Ni autorización ni declaración: basta comunicar el contrato antes de iniciar el servicio."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 18.2 permite sustituir la autorización por declaración responsable solo cuando la empresa pretenda dedicarse exclusivamente a la actividad del artículo 5.1.f), es decir, a instalar y mantener aparatos y sistemas conectados a centrales. La regla general sigue siendo la autorización previa con inscripción de oficio, así que la vigilancia y el resto de actividades la necesitan; y la comunicación del contrato del artículo 9 no sustituye ni a la autorización ni a la declaración.",
+      "referencia": {
+        "apartado": "9.1. Autorización frente a declaración responsable (artículo 18)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 18.2"
+      }
+    },
+    {
+      "id": "t13-g005",
+      "tema": 13,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Qué plazos rigen para las medidas provisionales adoptadas antes del procedimiento sancionador?",
+      "opciones": [
+        "Deben ratificarse, modificarse o revocarse en el plazo máximo de quince días y no pueden exceder de seis meses.",
+        "Deben ratificarse en el plazo de un mes y pueden mantenerse hasta un año.",
+        "No requieren ratificación y se mantienen hasta que se resuelva el procedimiento."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 55.2 exige ratificar, modificar o revocar las medidas provisionales anteriores al procedimiento en el plazo máximo de quince días, y el artículo 55.3 fija su duración máxima en seis meses, con notificación a los interesados. El año es el límite de las medidas cautelares del artículo 69.5, ya dentro del procedimiento sancionador, no de estas; y la ratificación es obligatoria, de modo que no pueden quedar vigentes sin ella.",
+      "referencia": {
+        "apartado": "18.2. Medidas provisionales anteriores al procedimiento (artículo 55)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 55.2 y 55.3"
+      }
+    },
+    {
+      "id": "t13-g006",
+      "tema": 13,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "En la Administración General del Estado, ¿quién impone las sanciones por infracciones muy graves?",
+      "opciones": [
+        "El Ministro del Interior impone todas las sanciones por infracciones muy graves.",
+        "El Secretario de Estado de Seguridad impone todas las muy graves, incluidas las extinciones.",
+        "El Ministro del Interior impone la extinción de autorizaciones, habilitaciones y declaraciones responsables, y el Secretario de Estado de Seguridad las restantes muy graves."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 66.1 reserva al Ministro del Interior las sanciones de extinción de autorizaciones, habilitaciones y declaraciones responsables, y atribuye al Secretario de Estado de Seguridad las restantes sanciones por infracciones muy graves. Por eso falla la opción que da todas las muy graves al Ministro y también la que se las da íntegras al Secretario de Estado: la extinción tiene órgano propio, y las graves y leves corresponden a los directores generales y a los delegados del Gobierno.",
+      "referencia": {
+        "apartado": "19.5. Quién sanciona (artículo 66)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 66.1"
+      }
+    },
+    {
+      "id": "t13-g007",
+      "tema": 13,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué plazos de prescripción tienen, respectivamente, las infracciones y las sanciones en materia de seguridad privada?",
+      "opciones": [
+        "Ambas prescriben a los seis meses, al año o a los dos años, según la gravedad.",
+        "Las infracciones prescriben a los seis meses, un año o dos años, y las sanciones al año, dos años o cuatro años, según sean leves, graves o muy graves.",
+        "Las infracciones prescriben al año, dos años o cuatro años, y las sanciones a los seis meses, un año o dos años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 56.2 hace prescribir las infracciones a los seis meses, un año o dos años según sean leves, graves o muy graves, mientras que el artículo 68.1 fija la prescripción de las sanciones en un año, dos años o cuatro años. Las otras dos opciones igualan ambas tablas o las intercambian, que es la confusión que el examen busca: la infracción prescribe antes que su sanción y los plazos no coinciden en ningún grado.",
+      "referencia": {
+        "apartado": "19.1. Clasificación y prescripción (artículo 56)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 56.2"
+      }
+    },
+    {
+      "id": "t13-g008",
+      "tema": 13,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El vigilante de seguridad que presta servicio en un establecimiento y el plan de seguridad aprobado para ese establecimiento son, respectivamente, medidas de seguridad…",
+      "opciones": [
+        "Personal y electrónica.",
+        "Organizativa y personal.",
+        "Personal y organizativa."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 52.1 define la medida personal como la prestación de los servicios de seguridad regulados en la ley y la organizativa como la disposición, programación o planificación de cometidos, funciones o tareas de personas. El vigilante es, por tanto, medida personal y el plan de seguridad, organizativa. La primera opción confunde el plan con una medida electrónica y la segunda invierte los dos tipos, que es el error que empuja el sentido común.",
+      "referencia": {
+        "apartado": "17. Las medidas de seguridad privada",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 52.1"
+      }
+    },
+    {
+      "id": "t13-g009",
+      "tema": 13,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Una empresa va a prestar vigilancia y protección en un polígono industrial delimitado, con sus vías y espacios comunes. ¿Qué régimen se le aplica?",
+      "opciones": [
+        "Autorización previa, en coordinación con las Fuerzas y Cuerpos de Seguridad.",
+        "Ninguna autorización, porque la vigilancia en la vía pública está excluida del ámbito de la ley.",
+        "Basta la decisión del órgano competente, que imparte instrucciones a la empresa."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 41.2.a) exige autorización previa, en coordinación con las Fuerzas y Cuerpos de Seguridad, para vigilar polígonos industriales y urbanizaciones delimitados con sus vías y espacios comunes. La vigilancia en vía pública no está prohibida en bloque: el artículo 41.1 la permite sin autorización en supuestos operativos como la retirada de fondos en cajeros. Y la decisión del órgano competente del artículo 41.3 se reserva a perímetros de prisiones, centros de internamiento y edificios públicos.",
+      "referencia": {
+        "apartado": "16. Vía pública, espacios comunes y autorización previa",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 41.2.a)"
+      }
+    },
+    {
+      "id": "t13-g010",
+      "tema": 13,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas facultades NO corresponde al escolta privado?",
+      "opciones": [
+        "Acompañar y proteger a personas determinadas o a grupos concretos.",
+        "Impedir agresiones o actos delictivos contra la persona protegida.",
+        "Identificar a quienes se aproximan a la persona protegida y retener su documentación."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 33 permite al escolta acompañar, defender y proteger a personas determinadas o grupos concretos e impedir agresiones o actos delictivos, pero no le atribuye identificar ni detener, salvo que resulte imprescindible por una agresión o intento manifiesto, y en ese caso entrega al detenido sin interrogatorio. Retener la documentación es una facultad que la ley niega expresamente al personal de seguridad privada, de modo que la opción marcada no existe en el artículo 33.",
+      "referencia": {
+        "apartado": "14. Qué puede y qué no puede hacer cada clase de personal",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 33"
+      }
+    },
+    {
+      "id": "t13-g011",
+      "tema": 13,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Qué órgano ejerce el control en materia de armas y sobre los guardas rurales y sus especialidades?",
+      "opciones": [
+        "La Dirección General de la Guardia Civil.",
+        "La Dirección General de la Policía, a través de la Unidad Central de Seguridad Privada.",
+        "Las comisiones mixtas de seguridad privada, que son órganos consultivos."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 12.2.b) encomienda a la Dirección General de la Guardia Civil sus competencias en materia de armas sobre empresas y personal y el control de los guardas rurales y sus especialidades. La Dirección General de la Policía controla empresas, personal, medios y actuaciones, pero no las armas ni el guarderío rural, y las comisiones mixtas del artículo 16.2 son órganos consultivos que no autorizan, no inspeccionan y no sancionan.",
+      "referencia": {
+        "apartado": "6.4. Quién controla: Policía, Guardia Civil y Unidad Central",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 12.2.b)"
+      }
+    },
+    {
+      "id": "t13-g012",
+      "tema": 13,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto tiempo deben conservarse los informes de investigación privada y cuándo se destruyen las imágenes y los sonidos obtenidos?",
+      "opciones": [
+        "Un año los informes y un año las grabaciones desde su obtención.",
+        "Al menos tres años los informes, y las imágenes y sonidos tres años después de finalizar la investigación, salvo relación con procedimiento judicial, investigación policial o expediente sancionador.",
+        "Cinco años los informes y cinco años las grabaciones, sin excepciones."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 49.4 obliga a conservar los informes al menos tres años y a destruir las imágenes y sonidos tres años después de finalizar la investigación, salvo que guarden relación con un procedimiento judicial, una investigación policial o un expediente sancionador. Un año es insuficiente y cinco no son el plazo legal; además, la opción de cinco años suprime las excepciones que la propia ley prevé para no destruir pruebas.",
+      "referencia": {
+        "apartado": "11.3. La investigación privada: objeto y límites (artículos 48 a 50)",
+        "norma": "Ley 5/2014, de 4 de abril, de Seguridad Privada",
+        "articulo": "art. 49.4"
+      }
+    }
+  ]
+}

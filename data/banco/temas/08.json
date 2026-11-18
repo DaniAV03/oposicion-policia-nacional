@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 8,
+  "titulo": "Tema 8 · La Dirección General de la Policía. Estructura orgánica y funciones de los servicios centrales y territoriales de la Policía Nacional. La Policía Nacional: funciones, escalas y categorías; sistemas de acceso; régimen disciplinario y situaciones administrativas.",
+  "preguntas": [
+    {
+      "id": "t08-g001",
+      "tema": 8,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "El mando superior de la Policía Nacional corresponde al Ministro del Interior. ¿A través de qué órgano lo ejerce?",
+      "opciones": [
+        "A través del Director General de la Policía, que es el titular del mando directo.",
+        "A través del Secretario de Estado de Seguridad.",
+        "A través del Subsecretario del Interior, de quien depende la Dirección General."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.4 de la Ley Orgánica 9/2015 atribuye el mando superior al Ministro del Interior y le da un cauce concreto: la Secretaría de Estado de Seguridad. La primera opción confunde los dos escalones, porque el Director General ejerce el mando directo bajo la autoridad del Secretario de Estado, no el mando superior. La tercera inventa un escalón: la Dirección General no depende del Subsecretario del Interior, sino de la Secretaría de Estado de Seguridad.",
+      "referencia": {
+        "apartado": "3. La Policía Nacional: naturaleza, dependencia y misión",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 2.4"
+      }
+    },
+    {
+      "id": "t08-g002",
+      "tema": 8,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál de estas competencias está atribuida en exclusiva a la Policía Nacional por el artículo 12 de la Ley Orgánica 2/1986?",
+      "opciones": [
+        "La vigilancia e inspección del cumplimiento de la normativa en materia de juego.",
+        "La custodia de costas, fronteras, puertos y aeropuertos.",
+        "La vigilancia del tráfico en las vías interurbanas."
+      ],
+      "correcta": 0,
+      "explicacion": "El juego figura entre las competencias exclusivas de la Policía Nacional del artículo 12. Las otras dos son de la Guardia Civil: la custodia de costas, fronteras, puertos y aeropuertos y el tráfico en las vías interurbanas aparecen en el apartado B del mismo artículo. Conviene no confundir este último dato con el tráfico urbano, que el artículo 53.1.b encomienda a la Policía Local en el casco urbano.",
+      "referencia": {
+        "apartado": "4.1. Las competencias exclusivas del artículo 12",
+        "norma": "Ley Orgánica 2/1986",
+        "articulo": "art. 12.1.A"
+      }
+    },
+    {
+      "id": "t08-g003",
+      "tema": 8,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué rango orgánico tiene el titular de la Dirección General de la Policía?",
+      "opciones": [
+        "Rango de secretario de Estado, porque depende directamente del Ministro del Interior.",
+        "Rango asimilado al de delegado del Gobierno en las Comunidades Autónomas.",
+        "Rango de subsecretario."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 3.1 del Real Decreto 207/2024 atribuye al titular de la Dirección General el rango de subsecretario, aunque su superior inmediato sea el Secretario de Estado de Seguridad. Por eso falla la primera opción: el rango de secretario de Estado es el de su superior en la cadena de mando, no el suyo. El delegado del Gobierno es la autoridad periférica del Estado en la Comunidad Autónoma y no tiene asimilación con este cargo.",
+      "referencia": {
+        "apartado": "5. La Dirección General de la Policía: posición y funciones",
+        "norma": "Real Decreto 207/2024",
+        "articulo": "art. 3.1"
+      }
+    },
+    {
+      "id": "t08-g004",
+      "tema": 8,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué comisaría general tiene atribuida la captación y el tratamiento de la información de interés para el orden y la seguridad pública, especialmente en materia antiterrorista?",
+      "opciones": [
+        "La Comisaría General de Policía Judicial.",
+        "La Comisaría General de Información.",
+        "La Comisaría General de Seguridad Ciudadana."
+      ],
+      "correcta": 1,
+      "explicacion": "La Comisaría General de Información es la que el artículo 3.3 del Real Decreto 207/2024 especializa en la información de interés para el orden y la seguridad pública y su explotación operativa, con mención expresa del ámbito antiterrorista. La de Policía Judicial se ocupa de infracciones supraterritoriales, sobre todo drogas, delincuencia organizada, económica, financiera y tecnológica. La de Seguridad Ciudadana atiende la prevención y el restablecimiento del orden, la seguridad privada y la protección de personalidades e instalaciones.",
+      "referencia": {
+        "apartado": "6.2. La Dirección Adjunta Operativa y las cinco comisarías generales",
+        "norma": "Real Decreto 207/2024",
+        "articulo": "art. 3.3"
+      }
+    },
+    {
+      "id": "t08-g005",
+      "tema": 8,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Cuál es el ámbito de actuación de una Jefatura Superior de Policía?",
+      "opciones": [
+        "Coordina el Cuerpo en el ámbito de una Comunidad Autónoma.",
+        "Coordina el Cuerpo en el ámbito de una provincia, y hay una por provincia.",
+        "Coordina el Cuerpo en el ámbito de un municipio o de un distrito urbano."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3.7 del Real Decreto 207/2024 sitúa la Jefatura Superior en el ámbito de la Comunidad Autónoma, con la particularidad de que su titular puede asumir además la jefatura de la Comisaría Provincial de la capital donde tiene su sede. La unidad territorial de la provincia es la Comisaría Provincial, que es lo que describe la segunda opción. Los municipios y distritos se cubren con Comisarías Locales, Zonales y de Distrito.",
+      "referencia": {
+        "apartado": "7. La organización periférica",
+        "norma": "Real Decreto 207/2024",
+        "articulo": "art. 3.7"
+      }
+    },
+    {
+      "id": "t08-g006",
+      "tema": 8,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "La categoría de Oficial de Policía pertenece a…",
+      "opciones": [
+        "La Escala de Subinspección, como su segunda categoría.",
+        "La Escala Básica, como su primera categoría.",
+        "La Escala Ejecutiva, como su segunda categoría, junto a la de Inspector."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 17.1.d de la Ley Orgánica 9/2015 sitúa al Oficial de Policía como primera categoría de la Escala Básica, por delante de la categoría de Policía. La Escala de Subinspección tiene una sola categoría, Subinspector, y es el error más repetido del tema porque los manuales anteriores a 2015 colocaban allí al Oficial. La Escala Ejecutiva se ordena en Inspector Jefe e Inspector, de modo que tampoco es la tercera opción.",
+      "referencia": {
+        "apartado": "8. Escalas y categorías",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 17.1"
+      }
+    },
+    {
+      "id": "t08-g007",
+      "tema": 8,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Las plazas de facultativos y de técnicos de la Policía Nacional…",
+      "opciones": [
+        "Forman la quinta escala del Cuerpo, junto a la Superior, la Ejecutiva, la de Subinspección y la Básica.",
+        "Se integran todas en el subgrupo A1 y se cubren en todo caso por oposición libre.",
+        "Se integran, respectivamente, en los subgrupos A1 y A2, y no constituyen una escala."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 17.4 de la Ley Orgánica 9/2015 crea plazas de facultativos en el subgrupo A1 y de técnicos en el A2 para apoyar la función policial, y advierte que no son una escala: las escalas siguen siendo cuatro. Se cubren entre funcionarios de carrera de cualquiera de las administraciones públicas y solo excepcionalmente con especialistas temporales, así que la oposición libre no es su vía de provisión. Sus funciones son de auxilio a la función policial conforme a la titulación que las habilita.",
+      "referencia": {
+        "apartado": "8.1. La nomenclatura y las plazas de facultativos y técnicos",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 17.4"
+      }
+    },
+    {
+      "id": "t08-g008",
+      "tema": 8,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿En qué categorías de la Policía Nacional se puede ingresar por oposición libre?",
+      "opciones": [
+        "Solo en Inspector y en Policía.",
+        "En Policía, en Oficial de Policía y en Subinspector.",
+        "En cualquiera de las categorías de la Escala Básica y de la Escala Ejecutiva."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 25.1 de la Ley Orgánica 9/2015 abre la oposición libre únicamente a las categorías de Inspector, que exige título de grado, y de Policía, que exige bachiller o equivalente. A Oficial de Policía y a Subinspector, como a Inspector Jefe, Comisario y Comisario Principal, se llega solo por promoción interna. Por eso fallan las otras dos opciones: ni la Escala Básica se cubre entera por oposición libre ni la Ejecutiva permite entrar directamente como Inspector Jefe.",
+      "referencia": {
+        "apartado": "9.1. La oposición libre",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 25.1"
+      }
+    },
+    {
+      "id": "t08-g009",
+      "tema": 8,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "El límite de tres convocatorias como máximo para la promoción interna se aplica…",
+      "opciones": [
+        "A las dos modalidades de promoción interna, el concurso-oposición y la antigüedad selectiva.",
+        "Solo al concurso-oposición, que además exige dos años de servicios efectivos en la categoría.",
+        "Solo a la antigüedad selectiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 43.3 de la Ley Orgánica 9/2015 limita a tres las convocatorias de antigüedad selectiva, y ese límite no se extiende a ninguna otra vía. Los dos años de servicios efectivos son el requisito del concurso-oposición del artículo 42.1, que no tiene tope de convocatorias; tampoco lo tiene la oposición libre. De ahí que sobren las opciones que llevan el límite al concurso-oposición o a las dos modalidades a la vez.",
+      "referencia": {
+        "apartado": "9.4. La promoción interna",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 43.3"
+      }
+    },
+    {
+      "id": "t08-g010",
+      "tema": 8,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién puede imponer a un Policía Nacional una suspensión de funciones de cuatro años por falta muy grave?",
+      "opciones": [
+        "El Director General de la Policía, que impone las sanciones por faltas graves y por faltas muy graves.",
+        "El Secretario de Estado de Seguridad.",
+        "El Ministro del Interior, a quien corresponde la separación del servicio por falta muy grave."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 13 de la Ley Orgánica 4/2010 reparte la competencia por tramos: al Director General le corresponde la suspensión de hasta tres años por faltas muy graves y todas las sanciones por faltas graves, y al Secretario de Estado de Seguridad la suspensión de tres años y un día a seis años y el traslado forzoso. Cuatro años caen en el tramo del Secretario de Estado, no del Director General. Al Ministro del Interior solo le corresponde la separación del servicio, que es otra sanción distinta.",
+      "referencia": {
+        "apartado": "10.3. Quién sanciona",
+        "norma": "Ley Orgánica 4/2010",
+        "articulo": "art. 13"
+      }
+    },
+    {
+      "id": "t08-g011",
+      "tema": 8,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un Policía Nacional obtiene la excedencia voluntaria por interés particular. ¿Qué efectos tiene esa situación?",
+      "opciones": [
+        "No se le reserva el puesto, el tiempo no computa a efectos de trienios y antigüedad y no puede participar en la promoción interna.",
+        "Se le reserva el puesto de trabajo y el tiempo computa a efectos de trienios, pero no puede ascender.",
+        "No se le reserva el puesto, pero el tiempo computa siempre a efectos de antigüedad y puede participar en la promoción interna."
+      ],
+      "correcta": 0,
+      "explicacion": "La excedencia voluntaria por interés particular del artículo 58 de la Ley Orgánica 9/2015 exige cinco años previos en servicio activo o servicios especiales, obliga a permanecer al menos un año y tiene un efecto triple: no reserva de puesto, no cómputo del tiempo a efectos de trienios, antigüedad y Seguridad Social, y prohibición de participar en la promoción interna. Las otras dos opciones salvan alguno de esos efectos, y ninguna de las dos cosas ocurre: ni hay reserva de puesto ni el tiempo computa.",
+      "referencia": {
+        "apartado": "11. Las situaciones administrativas",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 58"
+      }
+    },
+    {
+      "id": "t08-g012",
+      "tema": 8,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿A qué edad puede pasar a segunda actividad, por petición propia, un Subinspector?",
+      "opciones": [
+        "A los 58 años.",
+        "A los 62 años.",
+        "A los 60 años."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 69.1 de la Ley Orgánica 9/2015 escalona la edad de pase por petición propia: 64 años en la Escala Superior, 62 en la Ejecutiva, 60 en la de Subinspección y 58 en la Básica. Un Subinspector, por tanto, la alcanza a los 60. Los 58 años corresponden a la Escala Básica, es decir, a Policías y Oficiales de Policía, y los 62 a la Ejecutiva, donde están Inspector e Inspector Jefe.",
+      "referencia": {
+        "apartado": "11.1. La segunda actividad",
+        "norma": "Ley Orgánica 9/2015",
+        "articulo": "art. 69.1"
+      }
+    }
+  ]
+}

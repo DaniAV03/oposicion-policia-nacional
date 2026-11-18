@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 12,
+  "titulo": "Tema 12 · La protección internacional. Reglas procedimentales para el reconocimiento de la protección internacional. De los menores y otras personas vulnerables. Centros de acogida a refugiados. Apátridas y desplazados.",
+  "preguntas": [
+    {
+      "id": "t12-g001",
+      "tema": 12,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué modalidades comprende la protección internacional en España según el artículo 1 de la Ley 12/2009?",
+      "opciones": [
+        "El derecho de asilo, la protección subsidiaria y la protección temporal de desplazados.",
+        "Únicamente el derecho de asilo, que absorbe la protección subsidiaria como un grado menor.",
+        "El derecho de asilo y la protección subsidiaria, que comparten procedimiento pero no presupuesto."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1 articula la protección internacional en dos modalidades: el derecho de asilo, que reconoce la condición de refugiado, y la protección subsidiaria, cuyo presupuesto es el riesgo real de daño grave. La primera opción añade la protección temporal, que es una figura distinta, regulada por el Real Decreto 1325/2003 para afluencias masivas; la segunda emplea el vocabulario de «asilo menor», que la ley no utiliza: son estatutos distintos, con exclusiones y cese propios.",
+      "referencia": {
+        "apartado": "2. La protección internacional: concepto y las dos ramas",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t12-g002",
+      "tema": 12,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un solicitante alega que en su país vive en la pobreza extrema y carece de atención sanitaria. ¿Puede reconocérsele la protección subsidiaria por esos hechos?",
+      "opciones": [
+        "Sí, porque la falta de atención sanitaria constituye un trato inhumano del artículo 10.",
+        "No, porque la pobreza y la falta de sanidad no figuran entre los daños graves del artículo 10; en su caso, la vía es la permanencia por razones humanitarias del artículo 46.3.",
+        "Sí, siempre que acredite que la situación afecta a la generalidad de la población de su país."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 10 solo considera daños graves la pena de muerte o su ejecución, la tortura y los tratos inhumanos o degradantes y las amenazas graves contra civiles por violencia indiscriminada; la pobreza y la falta de sanidad no están en esa lista, y la ley no las convierte en daño grave aunque afecten a toda la población. Por eso fallan la primera y la tercera opción: la vía posible es la permanencia por razones humanitarias del artículo 46.3, que se rige por la normativa de extranjería.",
+      "referencia": {
+        "apartado": "5. La protección subsidiaria: los daños graves del artículo 10",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 10"
+      }
+    },
+    {
+      "id": "t12-g003",
+      "tema": 12,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "En el procedimiento de protección internacional, ¿qué órgano instruye, cuál formula la propuesta y cuál resuelve?",
+      "opciones": [
+        "Instruye la Oficina de Asilo y Refugio, propone la Comisión Interministerial de Asilo y Refugio y resuelve el Ministro del Interior.",
+        "Instruye la Comisión Interministerial de Asilo y Refugio, propone la Oficina de Asilo y Refugio y resuelve el Ministro del Interior.",
+        "Instruyen y resuelven la Oficina de Asilo y Refugio, y la Comisión Interministerial se limita a informar el expediente."
+      ],
+      "correcta": 0,
+      "explicacion": "La Oficina de Asilo y Refugio instruye el procedimiento, la Comisión Interministerial de Asilo y Refugio estudia el expediente y formula propuesta, y el Ministro del Interior resuelve concediendo o denegando. La segunda opción invierte los dos primeros papeles y la tercera suprime la propuesta de la Comisión, que es un órgano colegiado y no un simple informante del expediente.",
+      "referencia": {
+        "apartado": "7.2. Los órganos (artículo 23)",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "arts. 23 y 24.2"
+      }
+    },
+    {
+      "id": "t12-g004",
+      "tema": 12,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Qué plazo tiene el extranjero para presentar su solicitud de protección internacional?",
+      "opciones": [
+        "Un año desde su entrada en territorio español.",
+        "Un mes desde su entrada en territorio español o, en todo caso, desde que se produzcan los acontecimientos que justifiquen el temor.",
+        "Cuarenta y ocho horas desde su entrada, salvo que se encuentre en un centro de internamiento de extranjeros."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 17.2 exige presentar la solicitud sin demora y, como máximo, en el plazo de un mes desde la entrada en territorio español o desde que se produzcan los acontecimientos que justifican el temor. Un año es la duración inicial de la protección temporal del Real Decreto 1325/2003, no el plazo de presentación, y las cuarenta y ocho horas no aparecen en la ley: el plazo de dos días es el del reexamen en frontera.",
+      "referencia": {
+        "apartado": "8. Los plazos: la tabla que hay que memorizar",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 17.2"
+      }
+    },
+    {
+      "id": "t12-g005",
+      "tema": 12,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Presentada la solicitud en un puesto fronterizo, ¿en qué plazo debe notificarse la inadmisión o la denegación y hasta cuándo puede ampliarse a instancia del ACNUR?",
+      "opciones": [
+        "En diez días, ampliables hasta veinte cuando el ACNUR presente informe.",
+        "En cuatro días, ampliables hasta diez por resolución del Ministro en el supuesto de la letra f) del artículo 25.1.",
+        "En dos días, ampliables a cuatro si el solicitante anuncia reexamen."
+      ],
+      "correcta": 1,
+      "explicacion": "En frontera el artículo 21 acorta los plazos: cuatro días para notificar la inadmisión o la denegación, ampliables hasta diez por resolución del Ministro y a instancia del ACNUR en el supuesto de la letra f) del artículo 25.1. Diez días es el máximo de esa ampliación, no el plazo ordinario, y dos días es el plazo para pedir y resolver el reexamen, no para resolver la solicitud.",
+      "referencia": {
+        "apartado": "9. Tramitación: ordinaria, urgente, en frontera y en el CIE",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 21"
+      }
+    },
+    {
+      "id": "t12-g006",
+      "tema": 12,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "El solicitante de protección subsidiaria constituye, por razones fundadas, un peligro para el orden público. ¿Qué consecuencia tiene?",
+      "opciones": [
+        "Queda excluido de la protección subsidiaria por la letra d) del artículo 11.1.",
+        "Se le deniega el asilo por el artículo 9, que menciona expresamente el orden público.",
+        "No afecta a la solicitud: el orden público solo se valora al renovar la residencia."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 11.1.d) excluye de la protección subsidiaria a quien constituya un peligro para la seguridad interior o exterior de España o para el orden público, y esa letra no existe en el artículo 8. Por eso falla la opción que la convierte en causa de denegación del asilo: el artículo 9 deniega por peligro para la seguridad de España o por condena firme grave con amenaza para la comunidad, sin mencionar el orden público. Y el orden público no es una cuestión que se difiera a la renovación de la residencia.",
+      "referencia": {
+        "apartado": "6.2. Exclusión de la protección subsidiaria (artículo 11)",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 11.1.d)"
+      }
+    },
+    {
+      "id": "t12-g007",
+      "tema": 12,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un solicitante declara que le persiguen por ser cristiano, aunque en realidad no practica ninguna religión: los agentes de su país se lo atribuyen. ¿Qué relevancia tiene ese detalle?",
+      "opciones": [
+        "Ninguna: debe probar que profesa realmente la religión para que el motivo del artículo 7 sea aplicable.",
+        "Debe reconducirse la solicitud a la protección subsidiaria, porque el motivo de persecución no concurre.",
+        "Es indiferente que posea realmente la característica: basta con que el agente de persecución se la atribuya."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 7.2 declara indiferente que el solicitante posea realmente la característica que suscita la persecución, siempre que el agente se la atribuya: quien es perseguido por ser percibido como miembro de un grupo religioso está protegido aunque no practique. Exigir la prueba de la práctica religiosa, como hace la primera opción, contradice ese precepto, y reconducir el caso a la protección subsidiaria ignora que el motivo tasado concurre por la percepción del perseguidor.",
+      "referencia": {
+        "apartado": "4.2. Motivos de persecución (artículo 7)",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 7.2"
+      }
+    },
+    {
+      "id": "t12-g008",
+      "tema": 12,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿En qué supuesto la asistencia jurídica gratuita del solicitante de protección internacional es preceptiva?",
+      "opciones": [
+        "Cuando la solicitud se formaliza por el procedimiento del artículo 21, es decir, en frontera.",
+        "Solo cuando el solicitante se encuentra interno en un centro de internamiento de extranjeros.",
+        "En ningún caso: la asistencia jurídica gratuita es siempre potestativa y se presta por el turno de oficio."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 16.2 reconoce la asistencia jurídica gratuita, que se extiende a la formalización de la solicitud y a toda la tramitación, y la declara preceptiva cuando la solicitud se formaliza por el procedimiento del artículo 21, es decir, en frontera. No se limita al internamiento en un centro de extranjeros, que es solo uno de los lugares donde el artículo 19.4 reconoce abogado, y tampoco es potestativa en todo caso: en frontera es obligatoria.",
+      "referencia": {
+        "apartado": "10. Las garantías del solicitante",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 16.2"
+      }
+    },
+    {
+      "id": "t12-g009",
+      "tema": 12,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Llega un menor no acompañado y no puede establecerse con seguridad su minoría de edad. ¿Quién dispone la determinación de la edad y quién asume su tutela si se acredita que es menor?",
+      "opciones": [
+        "La Oficina de Asilo y Refugio dispone la determinación y la tutela la asume la Administración General del Estado.",
+        "El Ministerio Fiscal dispone la determinación, con las instituciones sanitarias, y la tutela la asume la entidad pública de protección de menores de la comunidad autónoma.",
+        "El Ministerio del Interior determina la edad y la tutela la asume el Ministerio Fiscal."
+      ],
+      "correcta": 1,
+      "explicacion": "Cuando la minoría de edad no puede establecerse con seguridad, se comunica de inmediato al Ministerio Fiscal, que dispone lo necesario para determinarla con la colaboración prioritaria y urgente de las instituciones sanitarias; acreditada la minoría, el Fiscal pone al menor a disposición de los servicios de protección de menores, y la tutela la asume la entidad pública de la comunidad autónoma. Ni la Oficina de Asilo ni el Ministerio del Interior determinan la edad, y la Fiscalía no ejerce la tutela.",
+      "referencia": {
+        "apartado": "13.2. Menores no acompañados (artículo 48): el supuesto más preguntado",
+        "norma": "Ley 12/2009, de 30 de octubre",
+        "articulo": "art. 48"
+      }
+    },
+    {
+      "id": "t12-g010",
+      "tema": 12,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "La revocación del estatuto de apátrida reconocido por el Ministro del Interior, ¿a quién corresponde?",
+      "opciones": [
+        "Al Ministro del Interior, a propuesta de la Oficina de Asilo y Refugio, igual que el reconocimiento.",
+        "Al Director General de la Policía, a propuesta de la Comisión Interministerial de Asilo y Refugio.",
+        "Al Consejo de Ministros, a propuesta del Ministro del Interior."
+      ],
+      "correcta": 2,
+      "explicacion": "El reconocimiento del estatuto de apátrida corresponde al Ministro del Interior, pero su revocación la acuerda el Consejo de Ministros a propuesta del Ministro, según el artículo 15.3 del Real Decreto 865/2001. La primera opción confunde la revocación con el cese, que sí declara el Ministro del Interior a propuesta de la OAR, y la segunda atribuye la decisión a un órgano que no interviene: la Comisión Interministerial propone en el procedimiento de asilo, no en el de apatridia.",
+      "referencia": {
+        "apartado": "15. Los apátridas",
+        "norma": "Real Decreto 865/2001, de 20 de julio",
+        "articulo": "art. 15.3"
+      }
+    },
+    {
+      "id": "t12-g011",
+      "tema": 12,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto dura la protección temporal de desplazados y cómo se prorroga?",
+      "opciones": [
+        "Un año, prorrogable automáticamente por otro año y, si persisten los motivos, por un año más como máximo.",
+        "Seis meses, prorrogables por periodos de seis meses mientras dure el conflicto.",
+        "Dos años, prorrogables una sola vez por otros dos años mediante acuerdo del Consejo de Ministros."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 7.1 del Real Decreto 1325/2003 fija una duración de un año, prorrogable automáticamente por otro año y, si persisten los motivos, por un año más como máximo, lo que da un total posible de tres años. Las opciones de seis meses y de dos años reducen o alargan el esquema legal y, además, la última atribuye la prórroga a un acuerdo del Consejo de Ministros, cuando la prórroga es automática.",
+      "referencia": {
+        "apartado": "16.1. Protección temporal (Real Decreto 1325/2003)",
+        "norma": "Real Decreto 1325/2003, de 24 de octubre",
+        "articulo": "art. 7.1"
+      }
+    },
+    {
+      "id": "t12-g012",
+      "tema": 12,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Qué norma regula hoy el sistema de acogida y cuál es la duración máxima del itinerario?",
+      "opciones": [
+        "El Reglamento aprobado por el Real Decreto 1325/2003, con un itinerario de doce meses prorrogables.",
+        "La Orden de 13 de enero de 1989, sobre Centros de Acogida a Refugiados, sin límite de estancia.",
+        "El Reglamento aprobado por el Real Decreto 220/2022, que deroga la Orden de 1989, con un itinerario de dieciocho meses como máximo, salvo vulnerabilidad excepcional."
+      ],
+      "correcta": 2,
+      "explicacion": "El Real Decreto 220/2022 aprobó el reglamento del sistema de acogida y su disposición derogatoria única dejó sin efecto la Orden de 13 de enero de 1989 sobre Centros de Acogida a Refugiados. El itinerario tiene tres fases y una duración total máxima de dieciocho meses, salvo casos de vulnerabilidad excepcionalmente autorizados. El Real Decreto 1325/2003 regula la protección temporal de desplazados, no la acogida, y la Orden de 1989 está derogada.",
+      "referencia": {
+        "apartado": "14.2. Cómo funciona hoy el sistema de acogida (Real Decreto 220/2022)",
+        "norma": "Real Decreto 220/2022, de 29 de marzo",
+        "articulo": "art. 11.7"
+      }
+    }
+  ]
+}

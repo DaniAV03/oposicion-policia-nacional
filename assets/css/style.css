@@ -1205,6 +1205,14 @@ details > p {
   color: var(--error);
 }
 
+/* La rejilla de accesos llega sin margen superior: en las páginas de destino va
+   pegada a la nota que la introduce. En la portada del apartado la presentan el
+   recuadro de aviso o el estado de carga, y sin este aire la primera fila de
+   tarjetas quedaba pegada al recuadro dorado. */
+.test #accesos {
+  margin-top: 1.5rem;
+}
+
 .test__nota-inicio {
   max-width: 62ch;
   margin: 0 0 1.5rem;

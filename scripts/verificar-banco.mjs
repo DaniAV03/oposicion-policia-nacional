@@ -57,6 +57,17 @@ function normalizar(texto) {
     .toLowerCase();
 }
 
+/**
+ * Normaliza una opción para compararla con las otras dos.
+ *
+ * Aquí **no** se pasa a minúsculas a propósito: hay preguntas de ortografía donde la única
+ * diferencia entre dos opciones es la mayúscula («el tribunal de instancia» / «el Tribunal de
+ * Instancia»), y tratarlas como iguales invalidaría una pregunta legítima.
+ */
+function normalizarOpcion(texto) {
+  return String(texto ?? '').replace(/\s+/g, ' ').trim();
+}
+
 const dosDigitos = (numero) => String(numero).padStart(2, '0');
 
 /**
@@ -186,7 +197,7 @@ export function erroresDePregunta(pregunta, contexto) {
     anota('opciones-numero', 'tiene que haber exactamente 3 opciones');
   } else {
     if (!pregunta.opciones.every(esTexto)) anota('opciones-texto', 'alguna opción está vacía');
-    const normalizadas = pregunta.opciones.map(normalizar);
+    const normalizadas = pregunta.opciones.map(normalizarOpcion);
     if (new Set(normalizadas).size !== normalizadas.length) {
       anota('opciones-texto', 'hay dos opciones idénticas');
     }
@@ -263,6 +274,7 @@ async function autoprueba() {
     ['la trampa inventada se detecta', { ...base, trampa: 'suerte' }, [], (c) => c.includes('trampa')],
     ['dos opciones se detectan', { ...base, opciones: ['Una.', 'Otra.'] }, [], (c) => c.includes('correcta-rango') || c.includes('opciones-numero') || c.includes('motor')],
     ['las opciones repetidas se detectan', { ...base, opciones: ['Igual.', 'Igual.', 'Otra.'] }, [], (c) => c.includes('opciones-texto')],
+    ['dos opciones que sólo cambian en mayúsculas no se marcan', { ...base, opciones: ['El Tribunal lo acordó.', 'el tribunal lo acordó.', 'Otra cosa distinta.'] }, [], (c) => !c.includes('opciones-texto')],
     ['la correcta fuera de rango se detecta', { ...base, correcta: 3 }, [], (c) => c.includes('correcta-rango')],
     ['la explicación corta se detecta', { ...base, explicacion: 'Porque sí.' }, [], (c) => c.includes('explicacion-corta')],
     ['la explicación ausente se detecta', { ...base, explicacion: '' }, [], (c) => c.includes('explicacion-corta')],

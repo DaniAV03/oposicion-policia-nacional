@@ -111,7 +111,7 @@ export function esPreguntaValida(pregunta) {
  *
  * Filtros opcionales, todos excluyentes cuando se indican:
  *   · `convocatoria`: año de la convocatoria.
- *   · `tipo`: «teorico», «psicotecnico»…
+ *   · `tipo`: «teorico». El banco solo contiene exámenes teóricos.
  *   · `tema`: número de tema del programa (hoy el banco lo tiene a null).
  *
  * Se descartan las preguntas mal formadas y los ids repetidos: un id duplicado

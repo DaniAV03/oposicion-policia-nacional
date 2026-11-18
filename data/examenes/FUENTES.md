@@ -137,6 +137,6 @@ espaciado.
 
 ## Psicotécnicos
 
-No se incorporan. Los cuadernillos psicotécnicos que circulan pueden contener material
-licenciado de terceros, así que esa parte del examen se cubre generando ejercicios propios
-por algoritmo, no copiando los oficiales.
+Fuera del alcance del sitio. Los cuadernillos psicotécnicos que circulan pueden contener
+material licenciado de terceros, así que no se incorporan al banco: la web cubre solo el
+examen teórico.

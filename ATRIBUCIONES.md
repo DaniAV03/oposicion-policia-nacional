@@ -28,7 +28,8 @@ y al RD 1495/2011, de 24 de octubre.
 - **Titularidad**: documentos oficiales del proceso selectivo (Ministerio del Interior).
 - **Reutilización**: permitida con atribución como documentos del sector público.
 - **Límite conocido**: algunos psicotécnicos de esos cuestionarios pueden ser material
-  licenciado de terceros; esa parte no se incorpora al banco de preguntas.
+  licenciado de terceros; esa parte queda fuera del alcance del sitio y no se incorpora al
+  banco de preguntas.
 - **Ventana temporal**: 2020 en adelante como banco principal, por vigencia normativa. Las
   preguntas anteriores se archivarán marcadas como históricas.
 

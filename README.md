@@ -10,8 +10,6 @@ Básica). Web estática, sin servidor y sin coste de hosting.
   autoevaluación.
 - **Test** — preguntas de exámenes oficiales de convocatorias anteriores, aleatorizadas,
   con modo examen y repaso de fallos.
-- **Psicotécnicos** — generados por algoritmo, con dificultad creciente. No se copia
-  material de terceros.
 
 ## Por qué no hay PHP
 

@@ -51,6 +51,12 @@ import {
   validarAlmacen,
 } from './test-core.js';
 import { cargarColeccion, filtroDesdeParametros } from './banco.js';
+import {
+  MIN_FALLOS_QUEMADA,
+  MIN_INTENTOS_TEMA,
+  UMBRAL_ACIERTO_FLOJO,
+  diagnosticar,
+} from './diagnostico.js';
 
 // La colección la declara la página: `oficiales` para los cuadernillos de
 // convocatorias anteriores y `propio` para el banco por tema.
@@ -266,8 +272,11 @@ function bancosOrdenados() {
 const etiquetaBanco = (banco) =>
   ES_OFICIALES ? `${banco.convocatoria} · promoción ${banco.promocion}` : banco.origen;
 
-const pluralPreguntas = (cantidad) =>
-  `${cantidad} ${cantidad === 1 ? 'pregunta' : 'preguntas'}`;
+/** Recuento con la palabra en singular o en plural: «1 pregunta», «10 preguntas». */
+const plural = (cantidad, singular, vario) =>
+  `${cantidad} ${cantidad === 1 ? singular : vario}`;
+
+const pluralPreguntas = (cantidad) => plural(cantidad, 'pregunta', 'preguntas');
 
 /**
  * Una entrada por banco (y la mezcla) con su recuento real.
@@ -443,6 +452,7 @@ function pintarInicio() {
   alternarConfirmacionBorrado(false, { enfocar: false });
   pintarHistorial();
   pintarReto();
+  pintarPuntos();
   actualizarControles();
 }
 
@@ -951,6 +961,7 @@ function finalizar(motivo) {
       porcentaje: resultado.porcentajeAcierto,
       fecha: claveFecha(new Date()),
       rachaMaxima: racha,
+      preguntas: resultadosPorPregunta(),
     });
     guardarAlmacen();
   }
@@ -1254,6 +1265,148 @@ function pintarHistorial() {
   );
 }
 
+/* --- Puntos débiles ------------------------------------------------------- */
+
+/** El banco propio como lista plana de preguntas, que es lo que lee el diagnóstico. */
+const preguntasDelBancoPropio = () => estado.bancos.flatMap((banco) => banco.preguntas);
+
+/**
+ * Resultados por pregunta de la sesión que se acaba de corregir.
+ *
+ * Sólo se anotan las contestadas: una pregunta en blanco no dice si se sabía. Las
+ * de los cuadernillos oficiales van sin tema y el registro por pregunta las
+ * descarta, así que nunca entran en las estadísticas por tema.
+ */
+function resultadosPorPregunta() {
+  return estado.intento
+    .filter((entrada) => entrada.respuesta !== null && entrada.respuesta !== undefined)
+    .map((entrada) => ({
+      id: entrada.pregunta.id,
+      tema: entrada.pregunta.tema,
+      acierto: entrada.respuesta === entrada.pregunta.correcta,
+    }));
+}
+
+/** Los criterios se escriben con los umbrales del módulo, no con números sueltos. */
+const CRITERIO_QUEMADAS = `Se avisa a partir de ${MIN_FALLOS_QUEMADA} fallos en la misma pregunta.`;
+const CRITERIO_FLOJOS = `Con ${MIN_INTENTOS_TEMA} intentos o más en el tema y menos del ${UMBRAL_ACIERTO_FLOJO} % de acierto.`;
+const CRITERIO_RIESGO = `Con ${MIN_INTENTOS_TEMA} intentos o más, el tema iba bien y la última vez que contestaste alguna de sus preguntas la fallaste.`;
+
+/** Apartados de un tema, en una línea, sin convertir el aviso en un índice. */
+function textoApartados(apartados) {
+  const lista = (apartados ?? []).slice(0, 3).map((apartado) => `«${apartado}»`);
+  if (lista.length === 0) return '';
+  return `Estudia ${lista.join(', ')}.`;
+}
+
+/** Aviso de pregunta quemada: la pregunta, sus fallos y el apartado que toca. */
+function itemQuemada(aviso) {
+  const partes = [`Tema ${aviso.tema}`, `${aviso.fallos} fallos de ${aviso.intentos} intentos`];
+  if (aviso.ultimoFallo) partes.push(`último fallo el ${aviso.ultimoFallo}`);
+
+  return crear('li', { clase: 'puntos__item' }, [
+    crear('p', { clase: 'puntos__etiqueta', texto: 'Pregunta que siempre fallas' }),
+    crear('p', { clase: 'puntos__titulo', texto: `«${aviso.enunciado}»` }),
+    crear('p', { clase: 'puntos__detalle', texto: `${partes.join(' · ')}.` }),
+    ...(aviso.apartado
+      ? [crear('p', { clase: 'puntos__apartado', texto: textoApartados([aviso.apartado]) })]
+      : []),
+    crear('a', {
+      clase: 'puntos__enlace',
+      texto: `Repasar el tema ${aviso.tema} en el temario`,
+      atributos: { href: aviso.enlace },
+    }),
+  ]);
+}
+
+/** Aviso de tema: el recuento con su porcentaje y los apartados que estudiar. */
+function itemTema(aviso, etiqueta, { enRiesgo = false } = {}) {
+  const partes = [`${aviso.texto} de acierto`];
+  if (enRiesgo && aviso.preguntasEnFallo > 0) {
+    const cuando = aviso.ultimoFallo ? ` (${aviso.ultimoFallo})` : '';
+    partes.push(
+      `${plural(aviso.preguntasEnFallo, 'pregunta fallada', 'preguntas falladas')} la última vez${cuando}`,
+    );
+  }
+
+  return crear('li', { clase: 'puntos__item' }, [
+    crear('p', { clase: 'puntos__etiqueta', texto: etiqueta }),
+    crear('p', { clase: 'puntos__titulo', texto: `Tema ${aviso.tema}` }),
+    crear('p', { clase: 'puntos__detalle', texto: `${partes.join(' · ')}.` }),
+    ...(aviso.apartados?.length
+      ? [crear('p', { clase: 'puntos__apartado', texto: textoApartados(aviso.apartados) })]
+      : []),
+    crear('a', {
+      clase: 'puntos__enlace',
+      texto: `Repasar el tema ${aviso.tema} en el temario`,
+      atributos: { href: aviso.enlace },
+    }),
+  ]);
+}
+
+/**
+ * Un grupo de avisos: encabezado de verdad, criterio a la vista y lista.
+ *
+ * Cuando no hay nada que enseñar en ese grupo se dice con una frase, no con una
+ * lista vacía: un cero sin más parece un resultado y aquí no lo es.
+ */
+function grupoDePuntos({ id, titulo, criterio, items, sinNada }) {
+  return crear('section', { clase: 'puntos__grupo', atributos: { 'aria-labelledby': id } }, [
+    crear('h4', { texto: titulo, atributos: { id } }),
+    crear('p', { clase: 'puntos__criterio', texto: criterio }),
+    items.length > 0
+      ? crear('ul', { clase: 'puntos__lista', atributos: { role: 'list' } }, items)
+      : crear('p', { clase: 'puntos__vacio', texto: sinNada }),
+  ]);
+}
+
+/** Panel de puntos débiles: las tres listas de S7, o el estado vacío honesto. */
+function pintarPuntos() {
+  const nodo = $('puntos');
+  if (!nodo) return;
+
+  const panel = diagnosticar(estado.almacen, preguntasDelBancoPropio());
+
+  if (panel.vacio) {
+    nodo.replaceChildren(
+      crear('p', {
+        clase: 'puntos__vacio',
+        texto:
+          'Todavía no hay datos suficientes para un diagnóstico: aparecerá aquí en cuanto contestes preguntas de este banco. Los exámenes oficiales no cuentan, porque no están clasificados por tema.',
+      }),
+    );
+    return;
+  }
+
+  nodo.replaceChildren(
+    crear('p', {
+      clase: 'puntos__resumen',
+      texto: `Con datos de ${plural(panel.preguntasConDatos, 'pregunta', 'preguntas')} de ${plural(panel.temasConDatos, 'tema', 'temas')}.`,
+    }),
+    grupoDePuntos({
+      id: 'puntos-quemadas',
+      titulo: 'Preguntas que siempre fallas',
+      criterio: CRITERIO_QUEMADAS,
+      items: panel.quemadas.map(itemQuemada),
+      sinNada: `Ninguna pregunta ha llegado a ${MIN_FALLOS_QUEMADA} fallos todavía.`,
+    }),
+    grupoDePuntos({
+      id: 'puntos-flojos',
+      titulo: 'Temas flojos',
+      criterio: CRITERIO_FLOJOS,
+      items: panel.flojas.map((aviso) => itemTema(aviso, 'Tema flojo')),
+      sinNada: `Ningún tema con datos suficientes baja del ${UMBRAL_ACIERTO_FLOJO} % de acierto.`,
+    }),
+    grupoDePuntos({
+      id: 'puntos-riesgo',
+      titulo: 'Temas en riesgo',
+      criterio: CRITERIO_RIESGO,
+      items: panel.enRiesgo.map((aviso) => itemTema(aviso, 'Tema en riesgo', { enRiesgo: true })),
+      sinNada: 'Ningún tema cumple el criterio de riesgo.',
+    }),
+  );
+}
+
 function pintarReto() {
   const reto = estado.almacen.reto;
   const hoy = claveFecha(new Date());
@@ -1290,6 +1443,7 @@ function borrarProgreso() {
   }
   pintarHistorial();
   pintarReto();
+  pintarPuntos();
   alternarConfirmacionBorrado(false, { enfocar: false });
   mostrarEstado('Progreso borrado de este navegador.', 'listo');
   anunciar('Progreso borrado.');
@@ -1334,6 +1488,7 @@ async function importarProgreso(archivo) {
   estado.almacen = resultado.almacen;
   pintarHistorial();
   pintarReto();
+  pintarPuntos();
   const guardado = guardarAlmacen();
   mostrarEstado(
     guardado

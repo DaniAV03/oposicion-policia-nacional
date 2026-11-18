@@ -1,8 +1,9 @@
 // Verifica el motor de test: manifiesto del banco, muestreo sin repetición,
 // reproducibilidad con una fuente aleatoria inyectada, barajado de opciones,
 // corrección de un intento, desglose por convocatoria, tamaño de sesión según el
-// ánimo, rachas de aciertos, reto diario determinista y el almacenamiento
-// versionado con exportación e importación validadas.
+// ánimo, rachas de aciertos, reto diario determinista, el almacenamiento
+// versionado con exportación e importación validadas y el diagnóstico de puntos
+// débiles (preguntas quemadas, temas flojos y temas en riesgo).
 // Sin dependencias, sin red y sin navegador: importa la lógica pura del motor.
 //
 // Uso: node scripts/verificar-test.mjs
@@ -12,6 +13,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const RUTA_NUCLEO = 'assets/js/test-core.js';
+const RUTA_DIAGNOSTICO = 'assets/js/diagnostico.js';
 const RUTA_INDICE = 'data/examenes/index.json';
 const DIRECTORIO_BANCOS = 'data/examenes';
 
@@ -50,7 +52,7 @@ const unicos = (valores) => new Set(valores).size === valores.length;
 const cerca = (a, b, tolerancia = 1e-9) => Math.abs(a - b) <= tolerancia;
 
 /**
- * Carga el motor como módulo ES.
+ * Carga un módulo del navegador como módulo ES.
  *
  * El repositorio no tiene package.json, así que Node interpreta los ficheros .js
  * como CommonJS y no puede importar `assets/js/test-core.js` con `import` directo.
@@ -58,11 +60,13 @@ const cerca = (a, b, tolerancia = 1e-9) => Math.abs(a - b) <= tolerancia;
  * no se transforma ni se copia código, y sigue siendo el fichero que usa el
  * navegador el que se está comprobando.
  */
-async function cargarNucleo() {
-  const fuente = await readFile(RUTA_NUCLEO, 'utf8');
+async function cargarModulo(ruta) {
+  const fuente = await readFile(ruta, 'utf8');
   const base64 = Buffer.from(fuente, 'utf8').toString('base64');
   return import(`data:text/javascript;base64,${base64}`);
 }
+
+const cargarNucleo = () => cargarModulo(RUTA_NUCLEO);
 
 let core = null;
 try {
@@ -70,6 +74,20 @@ try {
   comprobar(`${RUTA_NUCLEO} se puede importar sin DOM ni efectos al cargar`, typeof core === 'object' && core !== null);
 } catch (error) {
   comprobar(`${RUTA_NUCLEO} se puede importar sin DOM ni efectos al cargar`, false, error.message);
+}
+
+// El diagnóstico es un módulo aparte, también sin DOM: se carga igual y las
+// pruebas de abajo lo usan con `?.` para que, si falta, cada aserción diga qué
+// falta en lugar de tumbar el verificador entero.
+let diagnostico = null;
+try {
+  diagnostico = await cargarModulo(RUTA_DIAGNOSTICO);
+  comprobar(
+    `${RUTA_DIAGNOSTICO} se puede importar sin DOM ni efectos al cargar`,
+    typeof diagnostico === 'object' && diagnostico !== null,
+  );
+} catch (error) {
+  comprobar(`${RUTA_DIAGNOSTICO} se puede importar sin DOM ni efectos al cargar`, false, error.message);
 }
 
 if (!core) {
@@ -577,6 +595,375 @@ seccion('Comparación y parada', () => {
   comprobar(
     'la duración del examen sigue siendo 60 s por pregunta',
     core.duracionExamen(10) === 600 && core.SEGUNDOS_POR_PREGUNTA === 60,
+  );
+});
+
+/* --- 12. Diagnóstico de puntos débiles --------------------------------------- */
+
+// El diagnóstico es un módulo sin DOM que lee el registro por pregunta del
+// almacén y el banco cargado. Estas pruebas fijan el banco (3 preguntas del tema
+// 1, una del 7 y otra del 9, más una oficial sin tema) para que el resultado no
+// dependa del contenido publicado.
+
+seccion('Diagnóstico de puntos débiles', () => {
+  const referencia = (apartado) => ({ apartado, norma: 'Código Civil', articulo: 'art. 1.1' });
+  const BANCO = [
+    {
+      id: 't01-g001',
+      tema: 1,
+      enunciado: 'El derecho natural se distingue del derecho positivo porque…',
+      referencia: referencia('2.2. Acepciones'),
+    },
+    {
+      id: 't01-g002',
+      tema: 1,
+      enunciado: '¿Qué dos elementos forman la estructura de la norma jurídica?',
+      referencia: referencia('3.1. Concepto y estructura'),
+    },
+    {
+      id: 't01-g003',
+      tema: 1,
+      enunciado: '¿Qué carácter describe la abstracción de la norma?',
+      referencia: referencia('3.3. Caracteres'),
+    },
+    {
+      id: 't07-g001',
+      tema: 7,
+      enunciado: 'Pregunta del tema 7 sobre el acto administrativo.',
+      referencia: referencia('1. El acto administrativo'),
+    },
+    {
+      id: 't05-g001',
+      tema: 5,
+      enunciado: 'Pregunta del tema 5.',
+      referencia: referencia('2. La potestad reglamentaria'),
+    },
+    {
+      id: 't11-g001',
+      tema: 11,
+      enunciado: 'Pregunta del tema 11.',
+      referencia: referencia('4. El procedimiento'),
+    },
+    {
+      id: 't11-g002',
+      tema: 11,
+      enunciado: 'Otra pregunta del tema 11.',
+      referencia: referencia('5. La revisión'),
+    },
+    // Cuadernillo oficial: sin tema, así que no se clasifica ni ensucia las estadísticas.
+    {
+      id: '2021-p38-001',
+      tema: null,
+      convocatoria: 2021,
+      enunciado: 'Pregunta de un cuadernillo oficial.',
+      referencia: referencia('Apartado del temario'),
+    },
+  ];
+
+  /** Anota un intento sintético con el resultado de cada pregunta. */
+  const anotar = (almacen, fecha, preguntas) =>
+    core.registrarIntento(almacen, {
+      modo: 'corta',
+      aciertos: preguntas.filter((p) => p.acierto).length,
+      total: preguntas.length,
+      porcentaje: core.tasaDeAcierto(
+        preguntas.filter((p) => p.acierto).length,
+        preguntas.length,
+      ),
+      fecha,
+      preguntas,
+    });
+
+  /* Preguntas quemadas: la misma pregunta fallada tres veces o más. */
+  let conFallos = core.crearAlmacenVacio();
+  for (let i = 1; i <= 3; i += 1) {
+    conFallos = anotar(conFallos, `2026-07-0${i}`, [
+      { id: 't01-g001', tema: 1, acierto: false },
+    ]);
+  }
+  conFallos = anotar(conFallos, '2026-07-04', [{ id: 't01-g002', tema: 1, acierto: false }]);
+  conFallos = anotar(conFallos, '2026-07-05', [{ id: 't01-g002', tema: 1, acierto: false }]);
+
+  const quemadas = diagnostico?.preguntasQuemadas?.(conFallos, BANCO) ?? [];
+  comprobar(
+    'una pregunta fallada tres veces aparece como quemada',
+    quemadas.length === 1 && quemadas[0].id === 't01-g001',
+    JSON.stringify(quemadas.map((q) => q.id)),
+  );
+  comprobar(
+    'la pregunta quemada llega con enunciado, tema, apartado y enlace al tema',
+    quemadas[0]?.enunciado === BANCO[0].enunciado &&
+      quemadas[0]?.tema === 1 &&
+      quemadas[0]?.apartado === '2.2. Acepciones' &&
+      quemadas[0]?.enlace === 'tema.html?n=1',
+    JSON.stringify(quemadas[0]),
+  );
+  comprobar(
+    'la pregunta quemada trae su recuento de fallos e intentos',
+    quemadas[0]?.fallos === 3 && quemadas[0]?.intentos === 3 && quemadas[0]?.ultimoFallo === '2026-07-03',
+    JSON.stringify({ fallos: quemadas[0]?.fallos, intentos: quemadas[0]?.intentos }),
+  );
+  comprobar(
+    'una pregunta fallada dos veces todavía no es quemada',
+    !quemadas.some((q) => q.id === 't01-g002'),
+    JSON.stringify(quemadas.map((q) => q.id)),
+  );
+  comprobar(
+    'el umbral de pregunta quemada es 3 fallos, declarado como constante',
+    diagnostico?.MIN_FALLOS_QUEMADA === 3,
+    String(diagnostico?.MIN_FALLOS_QUEMADA),
+  );
+
+  let masFallos = core.crearAlmacenVacio();
+  for (let i = 1; i <= 4; i += 1) {
+    masFallos = anotar(masFallos, `2026-06-0${i}`, [{ id: 't01-g003', tema: 1, acierto: false }]);
+  }
+  for (let i = 5; i <= 7; i += 1) {
+    masFallos = anotar(masFallos, `2026-06-0${i}`, [{ id: 't01-g001', tema: 1, acierto: false }]);
+  }
+  const ordenadas = diagnostico?.preguntasQuemadas?.(masFallos, BANCO) ?? [];
+  comprobar(
+    'las preguntas quemadas se ordenan de más fallos a menos',
+    ordenadas.length === 2 && ordenadas[0].id === 't01-g003' && ordenadas[1].id === 't01-g001',
+    JSON.stringify(ordenadas.map((q) => `${q.id}:${q.fallos}`)),
+  );
+
+  /* Temas flojos: 3 intentos o más en el tema y menos del 60 % de acierto. */
+  let flojo = core.crearAlmacenVacio();
+  flojo = anotar(flojo, '2026-07-01', [{ id: 't07-g001', tema: 7, acierto: false }]);
+  flojo = anotar(flojo, '2026-07-02', [{ id: 't07-g001', tema: 7, acierto: false }]);
+  flojo = anotar(flojo, '2026-07-03', [{ id: 't07-g001', tema: 7, acierto: true }]);
+  flojo = anotar(flojo, '2026-07-04', [{ id: 't01-g002', tema: 1, acierto: false }]);
+
+  const flojas = diagnostico?.temasFlojos?.(flojo, BANCO) ?? [];
+  comprobar(
+    'un tema con 3 intentos y 2 fallos sale flojo',
+    flojas.length === 1 && flojas[0].tema === 7 && flojas[0].aciertos === 1 && flojas[0].intentos === 3,
+    JSON.stringify(flojas.map((t) => `${t.tema}:${t.aciertos}/${t.intentos}`)),
+  );
+  comprobar(
+    'un tema con un solo intento no sale flojo',
+    !flojas.some((t) => t.tema === 1),
+    JSON.stringify(flojas.map((t) => t.tema)),
+  );
+  comprobar(
+    'los umbrales del tema flojo son 3 intentos y 60 % de acierto, como constantes',
+    diagnostico?.MIN_INTENTOS_TEMA === 3 && diagnostico?.UMBRAL_ACIERTO_FLOJO === 60,
+    `${diagnostico?.MIN_INTENTOS_TEMA} / ${diagnostico?.UMBRAL_ACIERTO_FLOJO}`,
+  );
+  comprobar(
+    'un tema flojo enlaza a su tema y nombra el apartado que hay que estudiar',
+    flojas[0]?.enlace === 'tema.html?n=7' &&
+      Array.isArray(flojas[0]?.apartados) &&
+      flojas[0].apartados.includes('1. El acto administrativo'),
+    JSON.stringify(flojas[0]?.apartados),
+  );
+
+  /* Recuento siempre junto al porcentaje. */
+  comprobar(
+    'el porcentaje se acompaña del recuento: «3 de 5 (60 %)»',
+    diagnostico?.textoAcierto?.(3, 5) === '3 de 5 (60 %)',
+    String(diagnostico?.textoAcierto?.(3, 5)),
+  );
+  comprobar(
+    'el recuento usa coma decimal y no añade decimales vacíos',
+    diagnostico?.textoAcierto?.(1, 3) === '1 de 3 (33,3 %)' &&
+      diagnostico?.textoAcierto?.(2, 3) === '2 de 3 (66,7 %)',
+    `${diagnostico?.textoAcierto?.(1, 3)} / ${diagnostico?.textoAcierto?.(2, 3)}`,
+  );
+  comprobar(
+    'cada tema flojo lleva su porcentaje acompañado del recuento',
+    flojas[0]?.texto === '1 de 3 (33,3 %)',
+    String(flojas[0]?.texto),
+  );
+
+  /* Temas en riesgo: se acertaba y se ha empezado a fallar. */
+  let riesgo = core.crearAlmacenVacio();
+  riesgo = anotar(riesgo, '2026-06-01', [{ id: 't05-g001', tema: 5, acierto: true }]);
+  riesgo = anotar(riesgo, '2026-06-02', [{ id: 't05-g001', tema: 5, acierto: true }]);
+  riesgo = anotar(riesgo, '2026-07-03', [{ id: 't05-g001', tema: 5, acierto: false }]);
+
+  const enRiesgo = diagnostico?.temasEnRiesgo?.(riesgo, BANCO) ?? [];
+  comprobar(
+    'un tema que se acertaba y ha empezado a fallar sale en riesgo',
+    enRiesgo.length === 1 && enRiesgo[0].tema === 5,
+    JSON.stringify(enRiesgo.map((t) => t.tema)),
+  );
+  comprobar(
+    'el aviso de riesgo explica que la última respuesta del tema ha fallado',
+    enRiesgo[0]?.ultimoFallo === '2026-07-03' && enRiesgo[0]?.preguntasEnFallo === 1,
+    JSON.stringify(enRiesgo[0]),
+  );
+  comprobar(
+    'un tema en riesgo no se presenta además como flojo',
+    !(diagnostico?.temasFlojos?.(riesgo, BANCO) ?? []).some((t) => t.tema === 5),
+    JSON.stringify(diagnostico?.temasFlojos?.(riesgo, BANCO)),
+  );
+
+  let primerFallo = core.crearAlmacenVacio();
+  primerFallo = anotar(primerFallo, '2026-07-01', [{ id: 't11-g001', tema: 11, acierto: false }]);
+  primerFallo = anotar(primerFallo, '2026-07-02', [{ id: 't11-g001', tema: 11, acierto: false }]);
+  primerFallo = anotar(primerFallo, '2026-07-03', [{ id: 't11-g002', tema: 11, acierto: true }]);
+  primerFallo = anotar(primerFallo, '2026-07-04', [{ id: 't11-g002', tema: 11, acierto: true }]);
+  primerFallo = anotar(primerFallo, '2026-07-05', [{ id: 't11-g002', tema: 11, acierto: true }]);
+  comprobar(
+    'un fallo en el primer intento de una pregunta no es un tema en riesgo',
+    !(diagnostico?.temasEnRiesgo?.(primerFallo, BANCO) ?? []).some((t) => t.tema === 11),
+    JSON.stringify(diagnostico?.temasEnRiesgo?.(primerFallo, BANCO)),
+  );
+
+  /* Estado vacío honesto. */
+  const vacio = diagnostico?.diagnosticar?.(core.crearAlmacenVacio(), BANCO);
+  comprobar(
+    'sin datos el diagnóstico se declara vacío en vez de inventar ceros',
+    vacio?.vacio === true &&
+      vacio.quemadas.length === 0 &&
+      vacio.flojas.length === 0 &&
+      vacio.enRiesgo.length === 0 &&
+      vacio.preguntasConDatos === 0,
+    JSON.stringify(vacio),
+  );
+
+  /* Las preguntas de los cuadernillos oficiales no entran. */
+  const soloOficiales = core.registrarIntento(core.crearAlmacenVacio(), {
+    modo: 'examen',
+    aciertos: 0,
+    total: 2,
+    porcentaje: 0,
+    fecha: '2026-07-10',
+    preguntas: [
+      { id: '2021-p38-001', tema: null, acierto: false },
+      { id: '2021-p38-002', acierto: false },
+    ],
+  });
+  comprobar(
+    'un intento de cuadernillo oficial no crea registro por pregunta',
+    iguales(soloOficiales.porPregunta, {}),
+    JSON.stringify(soloOficiales.porPregunta),
+  );
+  comprobar(
+    'las preguntas de los oficiales no entran en el diagnóstico',
+    iguales(diagnostico?.diagnosticar?.(soloOficiales, BANCO), {
+      quemadas: [],
+      flojas: [],
+      enRiesgo: [],
+      preguntasConDatos: 0,
+      temasConDatos: 0,
+      vacio: true,
+    }),
+    JSON.stringify(diagnostico?.diagnosticar?.(soloOficiales, BANCO)),
+  );
+
+  // Un registro que apunta a una pregunta del banco oficial tampoco se clasifica:
+  // el banco dice que no tiene tema, y sin tema no hay diagnóstico posible.
+  const oficialEnAlmacen = core.validarAlmacen({
+    ...core.crearAlmacenVacio(),
+    porPregunta: {
+      '2021-p38-001': { tema: 1, intentos: 4, fallos: 4, rachaFallos: 4, ultimoFallo: '2026-07-10' },
+    },
+  });
+  comprobar(
+    'un registro de una pregunta sin tema en el banco se descarta del diagnóstico',
+    (diagnostico?.preguntasQuemadas?.(oficialEnAlmacen, BANCO) ?? []).length === 0 &&
+      (diagnostico?.diagnosticar?.(oficialEnAlmacen, BANCO) ?? {}).preguntasConDatos === 0,
+    JSON.stringify(diagnostico?.diagnosticar?.(oficialEnAlmacen, BANCO)),
+  );
+
+  /* Registro por pregunta en el almacén: compatible con lo ya exportado. */
+  comprobar(
+    'el almacén guarda un registro por pregunta con tema, intentos, fallos y fecha del último fallo',
+    conFallos.porPregunta['t01-g001']?.tema === 1 &&
+      conFallos.porPregunta['t01-g001']?.intentos === 3 &&
+      conFallos.porPregunta['t01-g001']?.fallos === 3 &&
+      conFallos.porPregunta['t01-g001']?.ultimoFallo === '2026-07-03',
+    JSON.stringify(conFallos.porPregunta['t01-g001']),
+  );
+  comprobar(
+    'acertar después pone la racha de fallos a cero y conserva el último fallo',
+    flojo.porPregunta['t07-g001']?.rachaFallos === 0 &&
+      flojo.porPregunta['t07-g001']?.fallos === 2 &&
+      flojo.porPregunta['t07-g001']?.ultimoFallo === '2026-07-02',
+    JSON.stringify(flojo.porPregunta['t07-g001']),
+  );
+
+  // Lo que ya hacía `registrarIntento` no cambia al añadirle el registro nuevo:
+  // se le puede seguir llamando sin resultados por pregunta.
+  const sinPreguntas = core.registrarIntento(core.crearAlmacenVacio(), {
+    modo: 'media',
+    aciertos: 7,
+    total: 10,
+    porcentaje: 70,
+    fecha: '2026-07-12',
+    rachaMaxima: 3,
+  });
+  comprobar(
+    'registrarIntento sin resultados por pregunta sigue guardando el récord del modo',
+    sinPreguntas.registros.media?.porcentaje === 70 &&
+      sinPreguntas.ultimoIntento?.modo === 'media' &&
+      sinPreguntas.rachaMaxima === 3 &&
+      iguales(sinPreguntas.porPregunta, {}),
+    JSON.stringify(sinPreguntas.registros),
+  );
+
+  const viejo = JSON.stringify({
+    version: core.VERSION_ALMACEN,
+    registros: { corta: { aciertos: 8, total: 10, porcentaje: 80, fecha: '2026-07-01' } },
+    rachaMaxima: 6,
+    ultimoIntento: { modo: 'corta', aciertos: 8, total: 10, porcentaje: 80, fecha: '2026-07-01' },
+    reto: { fecha: '2026-07-01', aciertos: 8, total: 10 },
+  });
+  const importado = core.importarAlmacen(viejo);
+  comprobar(
+    'un almacén exportado antes del registro por pregunta se importa entero',
+    importado.ok === true &&
+      importado.almacen.registros.corta.porcentaje === 80 &&
+      importado.almacen.rachaMaxima === 6 &&
+      importado.almacen.ultimoIntento.porcentaje === 80 &&
+      importado.almacen.reto.aciertos === 8,
+    JSON.stringify(importado),
+  );
+  comprobar(
+    'al almacén viejo se le añade el registro por pregunta vacío, sin perder nada',
+    iguales(importado.almacen?.porPregunta, {}) &&
+      iguales(core.validarAlmacen(JSON.parse(viejo))?.porPregunta, {}),
+    JSON.stringify(importado.almacen?.porPregunta),
+  );
+
+  const idaYVueltaDiagnostico = core.importarAlmacen(core.exportarAlmacen(conFallos));
+  comprobar(
+    'el registro por pregunta sobrevive a exportar e importar',
+    idaYVueltaDiagnostico.ok === true &&
+      iguales(idaYVueltaDiagnostico.almacen.porPregunta, conFallos.porPregunta),
+    JSON.stringify(idaYVueltaDiagnostico.almacen?.porPregunta),
+  );
+
+  const porPreguntaHostil = [
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":[]}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":"nada"}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"":{"tema":1,"intentos":1,"fallos":1,"rachaFallos":1,"ultimoFallo":"2026-07-10"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":0,"intentos":1,"fallos":1,"rachaFallos":1,"ultimoFallo":"2026-07-10"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":1,"intentos":0,"fallos":0,"rachaFallos":0,"ultimoFallo":null}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":1,"intentos":2,"fallos":3,"rachaFallos":2,"ultimoFallo":"2026-07-10"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":1,"intentos":2,"fallos":1,"rachaFallos":2,"ultimoFallo":"2026-07-10"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":1,"intentos":2,"fallos":1,"rachaFallos":1,"ultimoFallo":"ayer"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":{"tema":1,"intentos":2,"fallos":0,"rachaFallos":0,"ultimoFallo":"2026-07-10"}}}',
+    '{"version":1,"registros":{},"rachaMaxima":0,"porPregunta":{"t01-g001":"muchos"}}',
+  ];
+
+  let lanzoDiagnostico = false;
+  let aceptadosDiagnostico = 0;
+  for (const entrada of porPreguntaHostil) {
+    try {
+      if (core.importarAlmacen(entrada)?.ok) aceptadosDiagnostico += 1;
+    } catch {
+      lanzoDiagnostico = true;
+    }
+  }
+  comprobar('el registro por pregunta corrupto no lanza excepciones', !lanzoDiagnostico);
+  comprobar(
+    'un almacén con el registro por pregunta corrupto se rechaza entero',
+    aceptadosDiagnostico === 0,
+    `${aceptadosDiagnostico} aceptado(s)`,
   );
 });
 

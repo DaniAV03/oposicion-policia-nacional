@@ -58,6 +58,7 @@ const paginas = ['index.html', 'tema.html', 'test.html', 'oficiales.html', 'no-o
 const modulos = [
   'assets/js/app.js',
   'assets/js/banco.js',
+  'assets/js/diagnostico.js',
   'assets/js/tema-lectura.js',
   'assets/js/test.js',
   'assets/js/test-paginas.js',
@@ -508,6 +509,87 @@ if (moduloLectura) {
   resumenLectura = `lectura en voz alta · ${VELOCIDADES.map((v) => `${String(v).replace('.', ',')}×`).join(' ')} · clave ${CLAVE_POSICION}`;
 }
 
+/* --- 11. Panel de puntos débiles ------------------------------------------ */
+
+// El diagnóstico vive en un módulo sin DOM (para poder probarlo como el motor) y
+// se pinta sólo en la página del banco propio. Lo que se puede romper en
+// silencio es el enganche: un módulo que no se importa, un panel que no está en
+// la página, un criterio que se queda sin sus umbrales o un script incrustado
+// que la CSP bloquearía. La lógica en sí la comprueba verificar-test.mjs.
+let resumenPuntos = '';
+try {
+  const fuenteDiagnostico = await readFile('assets/js/diagnostico.js', 'utf8');
+  const moduloDiagnostico = await import(
+    `data:text/javascript;base64,${Buffer.from(fuenteDiagnostico, 'utf8').toString('base64')}`,
+  );
+
+  for (const [patron, que] of [
+    [/\bdocument\b/, 'el DOM'],
+    [/\bwindow\b/, 'el objeto window'],
+    [/\blocalStorage\b/, 'el almacén del navegador'],
+    [/\bfetch\(/, 'una petición de red'],
+  ]) {
+    if (patron.test(fuenteDiagnostico)) {
+      fallo(`diagnostico.js: el diagnóstico no puede tocar ${que}`);
+    }
+  }
+
+  const { MIN_FALLOS_QUEMADA, MIN_INTENTOS_TEMA, UMBRAL_ACIERTO_FLOJO, diagnosticar } =
+    moduloDiagnostico;
+  if (![MIN_FALLOS_QUEMADA, MIN_INTENTOS_TEMA, UMBRAL_ACIERTO_FLOJO].every(Number.isInteger)) {
+    fallo('diagnostico.js: los umbrales del diagnóstico deben ser constantes numéricas exportadas');
+  }
+
+  const sinDatos = diagnosticar(
+    { porPregunta: {} },
+    [{ id: 't01-g001', tema: 1, enunciado: 'Pregunta', referencia: { apartado: '1. Uno' } }],
+  );
+  if (sinDatos.vacio !== true) {
+    fallo('diagnostico.js: sin datos el diagnóstico debe declararse vacío, no inventar ceros');
+  }
+
+  const pagina = await readFile('no-oficiales.html', 'utf8');
+  const panelPuntos =
+    pagina.match(/<section[^>]*\baria-labelledby="titulo-puntos"[^>]*>/)?.[0] ?? '';
+  if (!panelPuntos) {
+    fallo('no-oficiales.html: falta el panel de puntos débiles');
+  } else if (!/class="puntos"/.test(panelPuntos)) {
+    fallo('no-oficiales.html: el panel de puntos débiles no lleva la clase «puntos»');
+  }
+  if (!/<h3[^>]*id="titulo-puntos"/.test(pagina)) {
+    fallo('no-oficiales.html: el panel de puntos débiles necesita un encabezado de verdad');
+  }
+  if (!/<div id="puntos"><\/div>/.test(pagina)) {
+    fallo('no-oficiales.html: falta el contenedor donde se pintan las tres listas');
+  }
+  if (/<script(?![^>]*\bsrc=)/i.test(pagina)) {
+    fallo('no-oficiales.html: hay un script incrustado y la CSP sólo permite script-src \'self\'');
+  }
+  if (/<style[\s>]/i.test(pagina) || /\sstyle="/i.test(pagina)) {
+    fallo('no-oficiales.html: hay CSS incrustado y la CSP sólo permite style-src \'self\'');
+  }
+
+  const codigoTest = await readFile('assets/js/test.js', 'utf8');
+  if (!/from '\.\/diagnostico\.js'/.test(codigoTest)) {
+    fallo('test.js: no importa el módulo de diagnóstico');
+  }
+  if (!/pintarHistorial\(\)[\s\S]{0,120}pintarPuntos\(\)/.test(codigoTest)) {
+    fallo('test.js: el panel de puntos débiles no se pinta al arrancar la página');
+  }
+  if (!/preguntas:\s*resultadosPorPregunta\(\)/.test(codigoTest)) {
+    fallo('test.js: el intento no guarda el resultado de cada pregunta');
+  }
+  for (const grupo of ['puntos-quemadas', 'puntos-flojos', 'puntos-riesgo']) {
+    if (!codigoTest.includes(`'${grupo}'`)) {
+      fallo(`test.js: falta el grupo «${grupo}» del panel de puntos débiles`);
+    }
+  }
+
+  resumenPuntos = `puntos débiles · quemada desde ${MIN_FALLOS_QUEMADA} fallos · flojo con ${MIN_INTENTOS_TEMA} intentos y menos del ${UMBRAL_ACIERTO_FLOJO} %`;
+} catch (error) {
+  fallo(`assets/js/diagnostico.js no se puede importar sin DOM: ${error.message}`);
+}
+
 /* --- Informe -------------------------------------------------------------- */
 
 console.log(`Temas: ${temas.length}`);
@@ -515,6 +597,7 @@ console.log(`Bloques: ${programa.bloques.length}`);
 console.log(`Publicados: ${publicados}`);
 console.log(`Pendientes: ${pendientes.length}${pendientes.length ? ` → ${pendientes.join(', ')}` : ''}`);
 if (resumenTest) console.log(`Test: ${resumenTest}`);
+if (resumenPuntos) console.log(`Diagnóstico: ${resumenPuntos}`);
 if (resumenLectura) console.log(`Tema: ${resumenLectura}`);
 
 if (avisos.length) {

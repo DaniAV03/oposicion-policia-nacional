@@ -1542,6 +1542,106 @@ input[type='number']:disabled {
   outline-offset: 2px;
 }
 
+/* --- Puntos débiles ------------------------------------------------------ */
+
+/* Tres listas: las preguntas que siempre falla, los temas flojos y los temas en
+   riesgo. Todo con tokens de la paleta y con el recuento al lado del porcentaje,
+   porque un porcentaje solo engaña. El color no es el único indicador: cada aviso
+   lleva su etiqueta escrita y su cifra, así que se entiende sin ver el tono. */
+.puntos {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borde);
+}
+
+.puntos h3 {
+  margin-top: 0;
+}
+
+.puntos p {
+  max-width: 62ch;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.puntos__nota {
+  color: var(--texto-suave);
+}
+
+.puntos__resumen {
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.puntos__grupo {
+  margin-top: 1.5rem;
+}
+
+.puntos h4 {
+  margin-bottom: 0.3rem;
+}
+
+.puntos__criterio {
+  margin-top: 0;
+  color: var(--texto-suave);
+  font-size: 0.84rem;
+}
+
+.puntos__vacio {
+  padding: 0.7rem 0.9rem;
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio);
+  color: var(--texto-suave);
+}
+
+.puntos__lista {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.puntos__item {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie-alt);
+}
+
+.puntos__item p {
+  margin: 0 0 0.35rem;
+}
+
+.puntos__etiqueta {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--aviso-borde);
+  border-radius: 999px;
+  background: var(--aviso-fondo);
+  color: var(--aviso-borde);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.puntos__titulo {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.puntos__detalle {
+  font-variant-numeric: tabular-nums;
+}
+
+.puntos__apartado {
+  color: var(--texto-suave);
+}
+
+.puntos__enlace {
+  font-size: 0.88rem;
+}
+
 /* --- Pregunta en curso --------------------------------------------------- */
 
 .sesion__barra {

@@ -491,6 +491,14 @@ export function sugerirParada(totalPreguntas, umbral = UMBRAL_SESION_LARGA) {
  * de versión. Todo lo que entra por `validarAlmacen` se comprueba campo a campo:
  * un JSON corrupto, de otra aplicación o de una versión que no es ésta se
  * descarta en silencio, nunca se propaga a la interfaz.
+ *
+ * Además del récord por modo, el almacén lleva un registro por pregunta
+ * (`porPregunta`) del que sale el diagnóstico de puntos débiles. Es un campo
+ * añadido, no una clave nueva ni una versión nueva: un progreso exportado antes
+ * de este cambio no lo trae, se valida igual y se completa con `{}`, así que
+ * importarlo no pierde ningún récord ni lanza ninguna excepción. Cuando el campo
+ * viene pero no cuadra, el almacén entero se rechaza como cualquier otro dato
+ * corrupto: media importación silenciosa sería peor que ninguna.
  */
 
 const esObjeto = (valor) => !!valor && typeof valor === 'object' && !Array.isArray(valor);
@@ -505,6 +513,7 @@ export function crearAlmacenVacio() {
     rachaMaxima: 0,
     ultimoIntento: null,
     reto: null,
+    porPregunta: {},
   };
 }
 
@@ -530,6 +539,91 @@ function normalizarReto(valor) {
   if (!Number.isInteger(aciertos) || !Number.isInteger(total)) return null;
   if (total < 1 || aciertos < 0 || aciertos > total) return null;
   return { fecha, aciertos, total };
+}
+
+/**
+ * Una entrada del registro por pregunta.
+ *
+ * `rachaFallos` son los fallos consecutivos de la pregunta ahora mismo: es lo
+ * único que distingue un tema que va bien de uno que ha empezado a torcerse, y
+ * por eso forma parte del registro y no se recalcula a posteriori.
+ * `ultimoFallo` sólo puede faltar cuando no ha fallado nunca.
+ */
+function normalizarRegistroPregunta(valor) {
+  if (!esObjeto(valor)) return null;
+  const { tema, intentos, fallos, rachaFallos, ultimoFallo } = valor;
+
+  if (!Number.isInteger(tema) || tema < 1) return null;
+  if (!Number.isInteger(intentos) || intentos < 1) return null;
+  if (!Number.isInteger(fallos) || fallos < 0 || fallos > intentos) return null;
+  if (!Number.isInteger(rachaFallos) || rachaFallos < 0 || rachaFallos > fallos) return null;
+
+  if (fallos === 0) {
+    if (ultimoFallo !== null && ultimoFallo !== undefined) return null;
+    return { tema, intentos, fallos, rachaFallos, ultimoFallo: null };
+  }
+  if (typeof ultimoFallo !== 'string' || !PATRON_FECHA.test(ultimoFallo)) return null;
+  return { tema, intentos, fallos, rachaFallos, ultimoFallo };
+}
+
+/**
+ * Normaliza el registro por pregunta completo.
+ *
+ * Ausente (un progreso exportado antes de que existiera) vale como vacío: es la
+ * única puerta por la que entra un almacén viejo. Presente y mal formado, null:
+ * el almacén se rechaza entero.
+ */
+function normalizarPorPregunta(valor) {
+  if (valor === undefined || valor === null) return {};
+  if (!esObjeto(valor)) return null;
+
+  const mapa = {};
+  for (const [id, registro] of Object.entries(valor)) {
+    if (typeof id !== 'string' || id.trim() === '') return null;
+    const limpio = normalizarRegistroPregunta(registro);
+    if (!limpio) return null;
+    mapa[id] = limpio;
+  }
+  return mapa;
+}
+
+/**
+ * Anota el resultado de cada pregunta respondida de un intento.
+ *
+ * Sólo entran las preguntas del banco propio, que son las únicas que declaran
+ * tema: los cuadernillos oficiales no se clasifican por tema (S5) y no pueden
+ * ensuciar las estadísticas por tema. Las preguntas en blanco no cuentan ni como
+ * intento ni como fallo, y acertar pone la racha de fallos a cero sin borrar la
+ * fecha del último fallo, que es lo que fecha la alerta.
+ */
+function anotarPreguntas(previo, preguntas, fecha) {
+  const mapa = { ...previo };
+  if (!Array.isArray(preguntas)) return mapa;
+
+  for (const resultado of preguntas) {
+    if (!resultado || typeof resultado.id !== 'string' || resultado.id.trim() === '') continue;
+    if (!Number.isInteger(resultado.tema) || resultado.tema < 1) continue;
+    if (typeof resultado.acierto !== 'boolean') continue;
+
+    const anterior = mapa[resultado.id] ?? {
+      tema: resultado.tema,
+      intentos: 0,
+      fallos: 0,
+      rachaFallos: 0,
+      ultimoFallo: null,
+    };
+    const fallo = !resultado.acierto;
+
+    mapa[resultado.id] = {
+      tema: resultado.tema,
+      intentos: anterior.intentos + 1,
+      fallos: anterior.fallos + (fallo ? 1 : 0),
+      rachaFallos: fallo ? anterior.rachaFallos + 1 : 0,
+      ultimoFallo: fallo ? fecha : anterior.ultimoFallo,
+    };
+  }
+
+  return mapa;
 }
 
 /** Devuelve una copia normalizada del almacén, o null si no es válido. */
@@ -559,7 +653,10 @@ export function validarAlmacen(datos) {
     if (!reto) return null;
   }
 
-  return { version: VERSION_ALMACEN, registros, rachaMaxima: datos.rachaMaxima, ultimoIntento, reto };
+  const porPregunta = normalizarPorPregunta(datos.porPregunta);
+  if (!porPregunta) return null;
+
+  return { version: VERSION_ALMACEN, registros, rachaMaxima: datos.rachaMaxima, ultimoIntento, reto, porPregunta };
 }
 
 /** Récord guardado de un modo, o null si todavía no hay ninguno. */
@@ -575,10 +672,14 @@ export function mejorDeModo(almacen, modo) {
  * se sustituye cuando el resultado es mejor, así que bajar el rendimiento nunca
  * borra la marca anterior. El último intento y el récord de racha se actualizan
  * siempre.
+ *
+ * `preguntas` es la lista opcional de resultados por pregunta del intento
+ * (`{ id, tema, acierto }`), de la que se alimenta el diagnóstico: sólo se
+ * anotan las que declaran tema, es decir, las del banco propio.
  */
 export function registrarIntento(
   almacen,
-  { modo, aciertos, total, porcentaje, fecha, rachaMaxima = 0 } = {},
+  { modo, aciertos, total, porcentaje, fecha, rachaMaxima = 0, preguntas = [] } = {},
 ) {
   const base = validarAlmacen(almacen) ?? crearAlmacenVacio();
   const intento = normalizarUltimoIntento({ modo, aciertos, total, porcentaje, fecha });
@@ -606,6 +707,7 @@ export function registrarIntento(
       intento.modo === 'reto'
         ? { fecha: intento.fecha, aciertos: intento.aciertos, total: intento.total }
         : base.reto,
+    porPregunta: anotarPreguntas(base.porPregunta, preguntas, intento.fecha),
   };
 }
 

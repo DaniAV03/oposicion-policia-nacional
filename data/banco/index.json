@@ -321,7 +321,7 @@
       "id": "mezcladas",
       "archivo": "mezcladas/mezcla.json",
       "tipo": "mezcla",
-      "preguntas": 40
+      "preguntas": 120
     }
   ]
 }

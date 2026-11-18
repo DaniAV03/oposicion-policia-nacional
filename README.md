@@ -53,6 +53,16 @@ Comprobar que la paleta mantiene el contraste AA en los dos modos:
 node scripts/verificar-contraste.mjs
 ```
 
+Comprobar el banco propio de preguntas contra su esquema (`data/banco/ESQUEMA.md`):
+
+```bash
+node scripts/verificar-banco.mjs
+```
+
+Este último comprueba también que ninguna pregunta sería descartada por el motor y que el
+apartado que cada una cita existe de verdad en el tema. Incluye una autoprueba que rompe
+preguntas a propósito para demostrar que detecta lo que dice detectar.
+
 ## Seguridad
 
 El sitio no tiene servidor, así que la superficie que se puede endurecer es el documento.

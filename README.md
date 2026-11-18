@@ -47,6 +47,12 @@ Comprobar que el programa está completo y que todo recurso referenciado existe:
 node scripts/verificar.mjs
 ```
 
+Comprobar que la paleta mantiene el contraste AA en los dos modos:
+
+```bash
+node scripts/verificar-contraste.mjs
+```
+
 ## Seguridad
 
 El sitio no tiene servidor, así que la superficie que se puede endurecer es el documento.

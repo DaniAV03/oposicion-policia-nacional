@@ -29,6 +29,7 @@ jobs:
       - run: node scripts/verificar.mjs
       - run: node scripts/verificar-examenes.mjs
       - run: node scripts/verificar-test.mjs
+      - run: node scripts/verificar-contraste.mjs
 
       - name: Preparar el sitio estático
         uses: actions/configure-pages@v6

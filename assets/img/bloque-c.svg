@@ -3,14 +3,14 @@
   <!-- Placa con el tinte del bloque C y anillo con su acento verde; el portátil
        lleva el acento principal y el escudo el detalle cálido, con la marca de
        verificación en blanco para no perderla sobre el naranja. -->
-  <rect x="4" y="4" width="192" height="192" rx="32" fill="#e0f5ef" stroke="#0f6558" stroke-width="6" />
-  <rect x="44" y="38" width="112" height="76" rx="12" fill="#0b5bc4" stroke="#0b0d12" stroke-width="6" />
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="#ddefe4" stroke="#0c5f52" stroke-width="6" />
+  <rect x="44" y="38" width="112" height="76" rx="12" fill="#1e5d8a" stroke="#15222e" stroke-width="6" />
   <g fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round">
     <path d="M62 60h62" />
     <path d="M62 78h48" />
     <path d="M62 96h52" />
   </g>
-  <path d="M38 116h124l18 22H20Z" fill="#0b5bc4" stroke="#0b0d12" stroke-width="6" stroke-linejoin="round" />
-  <path d="M138 92 172 104v22c0 18-14 30-34 36-20-6-34-18-34-36v-22Z" fill="#c2410c" stroke="#0b0d12" stroke-width="6" stroke-linejoin="round" />
+  <path d="M38 116h124l18 22H20Z" fill="#1e5d8a" stroke="#15222e" stroke-width="6" stroke-linejoin="round" />
+  <path d="M138 92 172 104v22c0 18-14 30-34 36-20-6-34-18-34-36v-22Z" fill="#b04b1c" stroke="#15222e" stroke-width="6" stroke-linejoin="round" />
   <path d="M126 116l11 11 20-24" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

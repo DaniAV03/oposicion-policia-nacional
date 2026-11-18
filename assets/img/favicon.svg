@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <!--
-    Marca del sitio: escudo geométrico sobre el azul de acento del tema (#0b5bc4).
+    Marca del sitio: escudo geométrico sobre el azul de acento del tema (#1e5d8a).
     Se dibuja a mano, sin tipografía incrustada, para que se lea a 16 px. El filete
     claro del borde mantiene el contorno visible sobre barras de pestañas oscuras.
     Código MIT, contenido CC BY-SA 4.0; ver legal.html.
   -->
-  <rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="#0b5bc4" stroke="#e3edfd" />
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="#1e5d8a" stroke="#d3e4f2" />
   <path
     d="M16 5.6 24.2 8.6v7.6c0 4.8-3.4 8.6-8.2 10.2-4.8-1.6-8.2-5.4-8.2-10.2V8.6Z"
     fill="none"

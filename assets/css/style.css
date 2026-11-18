@@ -31,26 +31,35 @@
 :root {
   --fuente: 'Lexend', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --fondo: #fdfcf7;
-  --superficie: #ffffff;
-  --superficie-alt: #f3f0e6;
-  --texto: #17181c;
-  --texto-suave: #54554e;
-  --borde: #ddd8c9;
+  --fondo: #e8eff7;
+  --superficie: #f7fafd;
+  --superficie-alt: #d9e4ef;
+  --texto: #15222e;
+  --texto-suave: #4b5f6e;
+  --borde: #b6c8d8;
   /* Borde de controles (desplegables, campos, opciones): el único que tiene que
      llegar a 3:1 contra el fondo, porque delimita un elemento de interfaz. */
-  --borde-control: #847f6d;
-  --acento: #0b5bc4;
-  --acento-suave: #e3edfd;
+  --borde-control: #5d7285;
+  --acento: #1e5d8a;
+  --acento-suave: #d3e4f2;
   /* Tercer acento, cálido, reservado a la llamada a la acción: el botón que
      arranca una sesión. Es el único sitio donde aparece un tono cálido saturado. */
-  --acento-vivo: #c2410c;
-  --aviso-fondo: #fdf3e3;
-  --aviso-borde: #8f5c0a;
-  --clave-fondo: #eaf7ee;
-  --clave-borde: #1c7a4d;
-  --error: #b02a12;
-  --error-fondo: #fbeeea;
+  --acento-vivo: #b04b1c;
+  --aviso-fondo: #fcf1de;
+  --aviso-borde: #7a5008;
+  --clave-fondo: #ddefe4;
+  --clave-borde: #13694a;
+  --error: #9d2e17;
+  --error-fondo: #f9e7e3;
+
+  /* Texto que va encima de un relleno saturado. En claro es blanco; en oscuro los
+     rellenos se aclaran y el texto tiene que oscurecerse, o el número desaparece.
+     Se declaran como token para que ese par se pueda verificar con
+     scripts/verificar-contraste.mjs y no quede en un #fff suelto. */
+  --sobre-acento: #ffffff;
+  --sobre-acento-vivo: #ffffff;
+  --sobre-clave: #ffffff;
+  --sobre-error: #ffffff;
 
   /* Acentos secundarios. El ámbar identifica el bloque de Ciencias Sociales y el
      verde el de Materias Técnico-Científicas; el azul sigue siendo el principal.
@@ -69,26 +78,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fondo: #14161a;
-    --superficie: #1c1f25;
-    --superficie-alt: #23272e;
-    --texto: #e8e8e4;
-    --texto-suave: #a3a39c;
-    --borde: #3a4048;
-    --borde-control: #767d8a;
-    /* En oscuro el azul sube de luminosidad en vez de saturarse: sobre #14161a
-       la saturación alta se apaga, y el botón invierte su texto a #10202c. */
-    --acento: #83b6f7;
-    --acento-suave: #1b2c46;
-    --acento-vivo: #ff9a6b;
-    --aviso-fondo: #2c2418;
-    --aviso-borde: #cfa04a;
-    --clave-fondo: #1b2a20;
-    --clave-borde: #6ed49b;
-    --error: #ff8a72;
-    --error-fondo: #33231f;
-    --ambar: #f5b52e;
-    --verde: #4ecfb8;
+    --fondo: #101820;
+    --superficie: #18222c;
+    --superficie-alt: #1f2a35;
+    --texto: #e6ecf2;
+    --texto-suave: #9fb0bd;
+    --borde: #33424f;
+    --borde-control: #7b8b99;
+    /* En oscuro el azul sube de luminosidad en vez de saturarse: sobre #101820
+       la saturación alta se apaga, y el texto que va encima se oscurece en vez de
+       quedarse blanco. */
+    --acento: #8ec0ea;
+    --acento-suave: #1a2c3e;
+    --acento-vivo: #ff9f6e;
+    --aviso-fondo: #2b2318;
+    --aviso-borde: #d3a44f;
+    --clave-fondo: #16281e;
+    --clave-borde: #6fd3a0;
+    --error: #ff8f79;
+    --error-fondo: #2f211d;
+    /* Los rellenos saturados se aclaran, así que el texto de encima se invierte. */
+    --sobre-acento: #10202c;
+    --sobre-acento-vivo: #2a1206;
+    --sobre-clave: #0c2a1b;
+    --sobre-error: #2e1208;
+    --ambar: #f2b73a;
+    --verde: #4fd0b8;
     --sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
   }
 }
@@ -229,16 +244,10 @@ code {
   height: 2rem;
   border-radius: 8px;
   background: var(--acento);
-  color: #fff;
+  color: var(--sobre-acento);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-}
-
-@media (prefers-color-scheme: dark) {
-  .marca__sigla {
-    color: #10202c;
-  }
 }
 
 .nav {
@@ -1138,7 +1147,7 @@ input[type='number']:disabled {
   font: inherit;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--sobre-acento-vivo);
   background: var(--acento-vivo);
   border: 1px solid var(--acento-vivo);
   border-radius: 8px;
@@ -1467,7 +1476,7 @@ input[type='number']:disabled {
 }
 
 .opcion--correcta .opcion__numero {
-  color: #fff;
+  color: var(--sobre-clave);
   background: var(--clave-borde);
 }
 
@@ -1477,7 +1486,7 @@ input[type='number']:disabled {
 }
 
 .opcion--fallada .opcion__numero {
-  color: #fff;
+  color: var(--sobre-error);
   background: var(--error);
 }
 

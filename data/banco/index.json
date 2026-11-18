@@ -227,10 +227,66 @@
       "preguntas": 12
     },
     {
+      "id": "tema-33",
+      "archivo": "temas/33.json",
+      "tipo": "tema",
+      "tema": 33,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-34",
+      "archivo": "temas/34.json",
+      "tipo": "tema",
+      "tema": 34,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-35",
+      "archivo": "temas/35.json",
+      "tipo": "tema",
+      "tema": 35,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-36",
+      "archivo": "temas/36.json",
+      "tipo": "tema",
+      "tema": 36,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-37",
+      "archivo": "temas/37.json",
+      "tipo": "tema",
+      "tema": 37,
+      "preguntas": 12
+    },
+    {
       "id": "tema-38",
       "archivo": "temas/38.json",
       "tipo": "tema",
       "tema": 38,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-39",
+      "archivo": "temas/39.json",
+      "tipo": "tema",
+      "tema": 39,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-40",
+      "archivo": "temas/40.json",
+      "tipo": "tema",
+      "tema": 40,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-41",
+      "archivo": "temas/41.json",
+      "tipo": "tema",
+      "tema": 41,
       "preguntas": 12
     }
   ]

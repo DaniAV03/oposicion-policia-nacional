@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 34,
+  "titulo": "Tema 34 · Drogodependencias. Conceptos de droga, consumidor, métodos de administración, adicción, dependencia, tolerancia, politoxicomanías. Clasificación de las drogas. Últimas tendencias en el consumo de drogas en nuestra sociedad.",
+  "preguntas": [
+    {
+      "id": "t34-g001",
+      "tema": 34,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según la Organización Mundial de la Salud, una sustancia psicoactiva es la que…",
+      "opciones": [
+        "Introducida en el organismo, afecta a los procesos mentales, como la percepción, la conciencia o el estado de ánimo.",
+        "Está incluida en las listas de los convenios internacionales y carece de uso médico autorizado.",
+        "Produce necesariamente dependencia física y síndrome de abstinencia al dejar de consumirla."
+      ],
+      "correcta": 0,
+      "explicacion": "La OMS describe las sustancias psicoactivas como aquellas que, ingeridas o administradas al organismo, afectan a los procesos mentales: percepción, conciencia, cognición, estado de ánimo y emociones. La legalidad no define la sustancia —eso es el criterio jurídico de las listas— y la propia OMS advierte de que lo psicoactivo no implica necesariamente dependencia, de modo que ni la ilegalidad ni la dependencia son notas del concepto.",
+      "referencia": {
+        "apartado": "3. La definición sanitaria: qué dice la OMS",
+        "norma": "Organización Mundial de la Salud (OMS)",
+        "articulo": "tema de salud «Drugs (psychoactive)»: definición de sustancia psicoactiva"
+      }
+    },
+    {
+      "id": "t34-g002",
+      "tema": 34,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuántos de los criterios de la CIE-11 se exigen para diagnosticar la dependencia de una droga?",
+      "opciones": [
+        "Uno solo, siempre que sea la tolerancia.",
+        "Dos o más, junto con una regulación alterada del uso.",
+        "Los tres, y además que el consumo sea diario."
+      ],
+      "correcta": 1,
+      "explicacion": "La CIE-11 exige una regulación alterada del uso más dos o más de tres criterios: control alterado del consumo, precedencia creciente del consumo sobre otras esferas de la vida y características fisiológicas de neuroadaptación, es decir, tolerancia, abstinencia o consumo para evitarla. Uno solo no basta, porque la tolerancia aislada no es dependencia, y el consumo diario es una categoría de encuesta y no un criterio diagnóstico.",
+      "referencia": {
+        "apartado": "8.1. Dependencia: la definición que hay que saber",
+        "norma": "CIE-11 (OMS), reproducida en UNODC y OMS, International Standards for the Treatment of Drug Use Disorders (2020)",
+        "articulo": "definición de «dependencia de drogas»"
+      }
+    },
+    {
+      "id": "t34-g003",
+      "tema": 34,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Por qué norma se incorporan al Derecho español las listas del Convenio sobre sustancias psicotrópicas de 1971?",
+      "opciones": [
+        "Por la Ley 17/1967, de 8 de abril, sobre estupefacientes.",
+        "Por el Reglamento (UE) 2023/1322, que crea la Agencia de la Unión Europea sobre Drogas.",
+        "Por el Real Decreto 2829/1977, de 6 de octubre, sobre sustancias y preparados medicinales psicotrópicos."
+      ],
+      "correcta": 2,
+      "explicacion": "El Convenio de 1971 se incorpora al Derecho español por el Real Decreto 2829/1977, que se remite a las listas I a IV de su anexo I y a la relación de sustancias no incluidas del anexo II. La Ley 17/1967 es la norma española de estupefacientes, que adapta el convenio de 1961, y el Reglamento (UE) 2023/1322 crea la Agencia de la Unión Europea sobre Drogas: ninguna de las dos incorpora las listas del convenio de 1971.",
+      "referencia": {
+        "apartado": "10.2. Las listas del convenio de 1971 y los cuadros de 1988",
+        "norma": "Real Decreto 2829/1977, de 6 de octubre",
+        "articulo": "anexo I, listas I a IV"
+      }
+    },
+    {
+      "id": "t34-g004",
+      "tema": 34,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de estas sustancias es depresora del sistema nervioso central?",
+      "opciones": [
+        "El alcohol.",
+        "La cocaína.",
+        "La nicotina."
+      ],
+      "correcta": 0,
+      "explicacion": "El alcohol es una droga depresora del sistema nervioso central que inhibe progresivamente las funciones cerebrales y afecta a la capacidad de autocontrol; la euforia y la desinhibición de la primera copa son el efecto que hace confundirlo con un estimulante. La cocaína y la nicotina son estimulantes, porque aceleran la actividad del sistema nervioso central, que es el criterio de esta clasificación farmacológica.",
+      "referencia": {
+        "apartado": "12. Las depresoras, sustancia por sustancia",
+        "norma": "Plan Nacional sobre Drogas (Ministerio de Sanidad), ficha de sustancias",
+        "articulo": "ficha del alcohol: efecto depresor del sistema nervioso central"
+      }
+    },
+    {
+      "id": "t34-g005",
+      "tema": 34,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿En qué listas de la Convención única de 1961 figuran el cannabis y la heroína?",
+      "opciones": [
+        "Solo en la Lista I.",
+        "En la Lista I y en la Lista IV.",
+        "En la Lista II y en la Lista III."
+      ],
+      "correcta": 1,
+      "explicacion": "El cannabis, su resina y la heroína figuran a la vez en la Lista I y en la Lista IV de la Convención única de 1961, porque el artículo 2.5 dispone que los estupefacientes de la Lista IV se incluyan también en la Lista I. No están solo en la I, ni en la II y la III, que son las listas de la codeína y de los preparados: una misma sustancia puede aparecer en dos lugares del mismo tratado.",
+      "referencia": {
+        "apartado": "10. Clasificación jurídica: las listas",
+        "norma": "Convención única de 1961 sobre estupefacientes",
+        "articulo": "arts. 2.5 y listas I y IV"
+      }
+    },
+    {
+      "id": "t34-g006",
+      "tema": 34,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En las urgencias hospitalarias relacionadas con la heroína en 2023, ¿qué vía de administración fue la predominante?",
+      "opciones": [
+        "La parenteral o inyectada, con el 54,0 %.",
+        "La intranasal, con el 54,0 %.",
+        "La pulmonar o fumada, con el 54,0 %."
+      ],
+      "correcta": 2,
+      "explicacion": "En las urgencias por heroína de 2023 la vía pulmonar o fumada fue la predominante, con el 54,0 %, seguida de la parenteral, con el 25,7 %; entre las personas admitidas a tratamiento, en cambio, la inyectada solo representa el 9,0 %. Las opciones que ponen en cabeza la parenteral o la intranasal invierten el dato, que tampoco debe confundirse con la vía que más preocupa sanitariamente por el riesgo infeccioso.",
+      "referencia": {
+        "apartado": "7.2. Lo que dicen los datos españoles",
+        "norma": "OEDA, Informe 2025. Alcohol, tabaco y drogas ilegales en España",
+        "articulo": "indicador de urgencias hospitalarias (datos de 2023)"
+      }
+    },
+    {
+      "id": "t34-g007",
+      "tema": 34,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Qué población y qué lugar de encuesta corresponden a la ESTUDES?",
+      "opciones": [
+        "Estudiantes de 14 a 18 años, encuestados en el centro educativo.",
+        "Población de 15 a 64 años, entrevistada en su domicilio.",
+        "Jóvenes de 18 a 30 años, entrevistados por teléfono."
+      ],
+      "correcta": 0,
+      "explicacion": "La ESTUDES se hace en el centro educativo a estudiantes de 14 a 18 años —35.256 alumnos en la edición de 2025—, mientras que la EDADES entrevista en el domicilio a la población de 15 a 64 años, con 26.878 personas en 2024. Las dos son bienales, pero no coinciden en el año de la última edición ni miden la misma población: atribuir a una encuesta el dato de la otra es el error que la pregunta detecta.",
+      "referencia": {
+        "apartado": "16. Las últimas tendencias (II): los adolescentes, ESTUDES 2025",
+        "norma": "OEDA, ESTUDES 2025. Informe nacional",
+        "articulo": "población y metodología: 14 a 18 años, centro educativo"
+      }
+    },
+    {
+      "id": "t34-g008",
+      "tema": 34,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué sustancia causó la mitad de las admisiones a tratamiento por drogas ilegales en España en 2023?",
+      "opciones": [
+        "El cannabis, que es además la droga ilegal más consumida.",
+        "La cocaína, con el 50 % del total.",
+        "La heroína, por su elevada letalidad."
+      ],
+      "correcta": 1,
+      "explicacion": "La cocaína causó el 50 % de las admisiones a tratamiento por drogas ilegales en 2023, seguida del cannabis (26,1 %) y de los opioides (17,4 %). No hay contradicción con que el cannabis sea la droga ilegal más consumida, con un 12,6 % en el último año: las admisiones miden gravedad y demanda de tratamiento, no prevalencia, y la heroína queda muy por detrás como motivo de admisión.",
+      "referencia": {
+        "apartado": "17. Los indicadores de daño y de tratamiento",
+        "norma": "OEDA, Informe 2025. Alcohol, tabaco y drogas ilegales en España",
+        "articulo": "indicador de admisiones a tratamiento (datos de 2023)"
+      }
+    },
+    {
+      "id": "t34-g009",
+      "tema": 34,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué es el policonsumo según la fuente oficial?",
+      "opciones": [
+        "El consumo simultáneo de dos o más sustancias en un mismo acto.",
+        "La dependencia simultánea a varias sustancias psicoactivas.",
+        "El consumo de dos o más sustancias psicoactivas en un mismo periodo de tiempo."
+      ],
+      "correcta": 2,
+      "explicacion": "El policonsumo es el consumo de dos o más sustancias psicoactivas en un mismo periodo de tiempo, no en el mismo acto: quien bebe alcohol unos días y fuma cannabis otros es policonsumidor para la encuesta. La dependencia simultánea a varias sustancias es la politoxicomanía, expresión clínica que añade algo que el dato medible no exige, y la simultaneidad es una condición que la fuente no pone.",
+      "referencia": {
+        "apartado": "9. Politoxicomanía y policonsumo",
+        "norma": "OEDA, Informe 2025. Alcohol, tabaco y drogas ilegales en España",
+        "articulo": "definición de policonsumo"
+      }
+    },
+    {
+      "id": "t34-g010",
+      "tema": 34,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "En la EDADES 2024, el 76,5 % de la población de 15 a 64 años declaró haber consumido alcohol…",
+      "opciones": [
+        "En los últimos 12 meses.",
+        "En los últimos 30 días.",
+        "Alguna vez en la vida."
+      ],
+      "correcta": 0,
+      "explicacion": "El 76,5 % es el consumo de alcohol en los últimos 12 meses según la EDADES 2024; en los últimos 30 días el porcentaje baja al 63,5 % y «alguna vez en la vida» alcanza el 92,9 %. Las tres cifras miden la misma sustancia en ventanas temporales distintas, y casi todos los distractores de este tema se construyen cambiando la ventana: hay que leerla antes de elegir la cifra.",
+      "referencia": {
+        "apartado": "15. Las últimas tendencias (I): la población general, EDADES 2024",
+        "norma": "OEDA, EDADES 2024. Encuesta sobre Alcohol y otras Drogas en España",
+        "articulo": "prevalencia de consumo de alcohol por ventana temporal"
+      }
+    },
+    {
+      "id": "t34-g011",
+      "tema": 34,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué valor tiene la distinción entre dependencia física y dependencia psíquica en la CIE-11?",
+      "opciones": [
+        "Es la clasificación oficial de la CIE-11, que las regula como dos trastornos distintos.",
+        "Es una distinción tradicional de los manuales que la CIE-11 no utiliza: habla de un único trastorno con características fisiológicas.",
+        "Equivale a la pareja formada por la tolerancia y el síndrome de abstinencia."
+      ],
+      "correcta": 1,
+      "explicacion": "La pareja dependencia física y dependencia psíquica es una distinción tradicional de los manuales que la CIE-11 no utiliza: el manual habla de un único trastorno de dependencia con características fisiológicas, que son la tolerancia, la abstinencia y el consumo para evitarla. No es una clasificación oficial de dos trastornos ni equivale a la pareja tolerancia y abstinencia, que son dos componentes del tercer criterio, no dos trastornos.",
+      "referencia": {
+        "apartado": "8.4. La distinción «dependencia física / dependencia psíquica»",
+        "norma": "CIE-11 (OMS), reproducida en UNODC y OMS (2020)",
+        "articulo": "dependencia de drogas: características fisiológicas"
+      }
+    },
+    {
+      "id": "t34-g012",
+      "tema": 34,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cómo distingue el Plan Nacional sobre Drogas la disminución del riesgo de la reducción del daño?",
+      "opciones": [
+        "Son sinónimos y el Plan los usa indistintamente en todos sus documentos.",
+        "La disminución del riesgo es asistencial y la reducción del daño es preventiva.",
+        "La disminución del riesgo está más próxima a la prevención y la reducción del daño es asistencial."
+      ],
+      "correcta": 2,
+      "explicacion": "El Plan Nacional sobre Drogas distingue la disminución del riesgo, más próxima a la prevención y ejemplificada con los programas para no conducir bajo los efectos, y la reducción del daño, de carácter asistencial, cuyos ejemplos oficiales son los programas de mantenimiento con derivados opiáceos y las salas de venopunción. Esas salas no suministran droga: permiten administrarse la que la persona ya obtuvo, con material higiénico y supervisión.",
+      "referencia": {
+        "apartado": "18.2. Reducción de daños: dos conceptos que no son el mismo",
+        "norma": "Plan Nacional sobre Drogas, «Disminución del riesgo y reducción del daño»",
+        "articulo": "distinción entre disminución del riesgo y reducción del daño"
+      }
+    }
+  ]
+}

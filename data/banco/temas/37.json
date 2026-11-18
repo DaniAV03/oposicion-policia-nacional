@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 37,
+  "titulo": "Tema 37 · Ortografía de la lengua española. Reglas ortográficas. Uso de las letras o grafemas. Uso de la tilde, de los signos ortográficos y de las letras mayúsculas y minúsculas. Representación gráfica de las unidades léxicas. Ortografía de las expresiones procedentes de otras lenguas, de nombres propios y expresiones numéricas.",
+  "preguntas": [
+    {
+      "id": "t37-g001",
+      "tema": 37,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuántas letras tiene el abecedario del español desde la Ortografía de 2010 y por qué?",
+      "opciones": [
+        "Veintinueve, porque la ch y la ll siguen contando como letras propias del abecedario.",
+        "Veintisiete, porque la ch y la ll son dígrafos y ya no se cuentan como letras independientes.",
+        "Veintiocho, porque solo la ll dejó de contarse como letra y la ch se mantuvo."
+      ],
+      "correcta": 1,
+      "explicacion": "El abecedario tiene veintisiete letras desde 2010: la ch y la ll pasaron a considerarse dígrafos, es decir, combinaciones de dos letras que representan un solo fonema, junto con gu, qu y rr. La opción de veintinueve es la cifra anterior a 2010, cuando ambas se contaban aparte, y la de veintiocho es imposible: el cambio afectó a las dos por igual, no solo a la ll.",
+      "referencia": {
+        "apartado": "3.1. Letras y dígrafos no son lo mismo",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo I, § 5"
+      }
+    },
+    {
+      "id": "t37-g002",
+      "tema": 37,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Quién fija la norma ortográfica del español que se estudia en este tema?",
+      "opciones": [
+        "La Real Academia Española junto con la Asociación de Academias de la Lengua Española, que reúne a las veintitrés academias.",
+        "La Real Academia Española, que es la única academia competente en materia ortográfica.",
+        "El Diccionario panhispánico de dudas, que es la obra que resuelve cada duda concreta de escritura."
+      ],
+      "correcta": 0,
+      "explicacion": "La norma ortográfica es panhispánica: la fijan las veintitrés academias a través de la RAE y de la ASALE, y así consta en la autoría de la Ortografía de 2010. La segunda opción deja fuera a la ASALE y convierte la RAE en academia única, que es el error de órgano típico; la tercera confunde el órgano que fija la regla con la obra que resuelve una consulta puntual, porque el DPD no legisla.",
+      "referencia": {
+        "apartado": "2.2. Las tres obras académicas que se manejan",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "página de la obra en rae.es: autoría de la RAE y de la ASALE"
+      }
+    },
+    {
+      "id": "t37-g003",
+      "tema": 37,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál es el plural correcto de «lápiz»?",
+      "opciones": [
+        "lápizes",
+        "lapices",
+        "lápices"
+      ],
+      "correcta": 2,
+      "explicacion": "El plural de las palabras terminadas en z cambia la z en c, porque ante e es la c la que representa ese fonema: lápiz pasa a lápices, igual que voz pasa a voces y arroz a arroces. «Lápizes» mantiene la z y es la grafía que la norma no admite; «lapices» acierta la letra pero pierde la tilde, obligatoria al convertirse la palabra en esdrújula.",
+      "referencia": {
+        "apartado": "5.1. El fonema /z/ y la distribución de c y z",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo I, § 6.2.2.7"
+      }
+    },
+    {
+      "id": "t37-g004",
+      "tema": 37,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo se escribe hoy «guion» y por qué?",
+      "opciones": [
+        "Sin tilde, porque la secuencia io se considera siempre diptongo a efectos ortográficos y la palabra cuenta como monosílabo.",
+        "Con tilde, porque la mayor parte de los hispanohablantes la pronuncia en dos sílabas.",
+        "Con tilde cuando funciona como sustantivo y sin tilde cuando funciona como forma verbal."
+      ],
+      "correcta": 0,
+      "explicacion": "La clasificación de las secuencias vocálicas es ortográfica, no fonética: io se considera siempre diptongo, así que guion es monosílabo a efectos ortográficos y los monosílabos no se tildan. Por eso la Ortografía de 2010 admite solo la forma sin tilde, frente a la de 1999, que toleraba las dos. La pronunciación en dos sílabas no cambia la norma, y no existe ninguna distinción entre sustantivo y verbo en esta palabra.",
+      "referencia": {
+        "apartado": "9.1. Qué combinaciones son diptongo siempre",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo II, § 3.4.2.1.1"
+      }
+    },
+    {
+      "id": "t37-g005",
+      "tema": 37,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Por qué el pronombre «ti» no lleva nunca tilde diacrítica?",
+      "opciones": [
+        "Porque es un monosílabo átono y los monosílabos átonos no se acentúan nunca gráficamente.",
+        "Porque, aunque es tónico, no existe un monosílabo átono de igual forma del que haya que distinguirlo.",
+        "Porque solo los pronombres personales de primera persona, como «mí», llevan tilde diacrítica."
+      ],
+      "correcta": 1,
+      "explicacion": "La tilde diacrítica sirve para separar una palabra tónica de otra átona formalmente idéntica, y «ti» es tónico pero no tiene ningún homónimo átono, así que la tilde no tendría función. La primera opción se equivoca en el punto de partida, porque ti es tónico; la tercera cae en una generalización falsa: tú, él, mí y sí son pronombres personales de distintas personas y sí llevan tilde diacrítica.",
+      "referencia": {
+        "apartado": "10.2. Los monosílabos con tilde diacrítica",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo II, § 3.4.3.1"
+      }
+    },
+    {
+      "id": "t37-g006",
+      "tema": 37,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En el enunciado «Aun cuando llueva, iremos», ¿está bien escrita la palabra «aun»?",
+      "opciones": [
+        "No: debería llevar tilde, porque el enunciado tiene valor concesivo y toda concesión es tónica.",
+        "Sí, pero solo porque la palabra abre el enunciado; en el interior de la frase llevaría tilde.",
+        "Sí: equivale a «aunque», es átona y va sin tilde; con tilde sería «aún» y equivaldría a «todavía»."
+      ],
+      "correcta": 2,
+      "explicacion": "El criterio es la sustitución: si cabe «aunque», «hasta» o «incluso», la forma es «aun», átona y sin tilde; si cabe «todavía», es «aún», tónica y con tilde. Aquí equivale a «aunque», de modo que está bien escrita. Ni el valor concesivo obliga a tildar, ni la posición inicial o interior de la frase interviene en la norma: lo que decide es el significado y con él la pronunciación.",
+      "referencia": {
+        "apartado": "11.1. aún y aun",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo II, § 3.4.4"
+      }
+    },
+    {
+      "id": "t37-g007",
+      "tema": 37,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo se escribe el plural de siglas como ONG o DVD?",
+      "opciones": [
+        "las ÓNG y los DVDS, con tilde en la sigla y con la marca de plural pegada.",
+        "las ONGs y los DVDs, añadiendo una ese al final de la sigla.",
+        "las ONG y los DVD, sin tilde y sin modificar la sigla, porque el plural lo marca el determinante."
+      ],
+      "correcta": 2,
+      "explicacion": "Las siglas escritas íntegramente en mayúsculas no llevan nunca tilde, ni siquiera cuando la letra acentuada es la inicial de una palabra que la llevaría, y tampoco admiten la marca de plural: se escribe las ONG, los DVD, algunos PC, y el plural lo aporta el artículo. La primera opción acumula los dos errores clásicos, tilde y ese; la segunda comete el de la ese, que el examen presenta a menudo como si fuera lo natural.",
+      "referencia": {
+        "apartado": "17.1. Las seis reglas de las siglas",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo IV, § 3.3.3"
+      }
+    },
+    {
+      "id": "t37-g008",
+      "tema": 37,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál es hoy la forma correcta de escribir el prefijo «ex-» con la base «ministro»?",
+      "opciones": [
+        "Ex-ministro, con guion, como prescribía la doctrina anterior para el sentido de «que fue y ya no es».",
+        "Exministro, unido, porque la base es una sola palabra.",
+        "Ex ministro, separado, siempre que signifique «que fue y ya no es»."
+      ],
+      "correcta": 1,
+      "explicacion": "La Ortografía de 2010 asimila el prefijo ex- a los demás: se escribe unido cuando la base es una sola palabra, con guion cuando la base empieza por mayúscula, sigla o número (ex-Yugoslavia) y separado cuando la base son varias palabras (ex primer ministro). Las otras dos opciones reproducen la doctrina anterior a 2010, que prescribía el guion o el espacio de forma sistemática y que hoy solo se admite en esos dos supuestos concretos.",
+      "referencia": {
+        "apartado": "16.2. La regla de los prefijos",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo V, § 2.2.2"
+      }
+    },
+    {
+      "id": "t37-g009",
+      "tema": 37,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué elementos se escriben con minúscula según la norma académica?",
+      "opciones": [
+        "Los cargos, los días de la semana, los meses y las estaciones.",
+        "Los cargos y los meses, pero no los días de la semana, que se consideran nombres propios.",
+        "Solo los cargos: los días, los meses y las estaciones se escriben con mayúscula."
+      ],
+      "correcta": 0,
+      "explicacion": "La mayúscula es una marca de función, no de importancia: se reserva para el inicio del enunciado, los nombres propios y las denominaciones institucionales completas. Por eso los cargos, títulos y empleos van en minúscula aunque sean altos (el rey, el presidente del Gobierno) y los días, meses y estaciones también (lunes, mayo, primavera). Las otras dos opciones salvan de la minúscula algún grupo de días o estaciones sin ningún apoyo en la norma.",
+      "referencia": {
+        "apartado": "15.2. La tabla de los casos que más caen",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo IV, § 4.2.4.1"
+      }
+    },
+    {
+      "id": "t37-g010",
+      "tema": 37,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cómo se escriben correctamente el nombre propio «Álvaro» y la sigla «CIA»?",
+      "opciones": [
+        "Alvaro y CIA: la mayúscula no necesita tilde y la sigla tampoco la lleva.",
+        "Álvaro y CÍA: el nombre propio lleva su tilde y la sigla conserva la de la palabra acentuada.",
+        "Álvaro y CIA: el nombre propio lleva tilde y la sigla escrita íntegramente en mayúsculas no la lleva."
+      ],
+      "correcta": 2,
+      "explicacion": "La mayúscula no exime de la tilde, así que Álvaro, CÓRDOBA o PINGÜINO se acentúan con normalidad; la excepción son las siglas escritas íntegramente en mayúsculas, que nunca llevan tilde, y por eso se escribe CIA y no CÍA. La primera opción suprime la tilde del nombre propio, que es el error heredado de la composición tipográfica antigua, y la segunda se la añade a la sigla, donde la norma no la admite.",
+      "referencia": {
+        "apartado": "12.1. Mayúsculas con tilde",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo IV, § 3.3"
+      }
+    },
+    {
+      "id": "t37-g011",
+      "tema": 37,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un informe dice que «el 60% de los encuestados» respondió afirmativamente. ¿Cuál es la forma correcta de escribir ese porcentaje?",
+      "opciones": [
+        "el 60% de los encuestados",
+        "el 60 % de los encuestados",
+        "el sesenta % de los encuestados"
+      ],
+      "correcta": 1,
+      "explicacion": "El símbolo del porcentaje es un símbolo del sistema internacional y va separado de la cifra por un espacio fino, de modo que lo correcto es el 60 %. La primera opción pega el símbolo a la cifra, que es el error más frecuente; la tercera usa el símbolo junto a un número escrito con palabras, y el símbolo solo se emplea cuando el porcentaje va con cifras: ahí habría que escribir el sesenta por ciento.",
+      "referencia": {
+        "apartado": "19.4. Porcentajes y unidades",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo VIII, § 5.4"
+      }
+    },
+    {
+      "id": "t37-g012",
+      "tema": 37,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué signo encierra el inciso en «Llegó tarde —como siempre— y no dijo nada»?",
+      "opciones": [
+        "La raya (—), que encierra incisos y, en los diálogos, introduce la intervención de cada personaje.",
+        "El guion (-), que es un signo auxiliar y también puede encerrar incisos dentro del enunciado.",
+        "Los dos puntos (:), que anuncian lo que sigue dentro del mismo enunciado."
+      ],
+      "correcta": 0,
+      "explicacion": "La raya es un signo de puntuación y sirve para encerrar incisos y para introducir la intervención de cada personaje en un diálogo. El guion es un signo auxiliar, más corto, que divide palabras a final de línea y une elementos de compuestos y prefijados, pero no delimita incisos; los dos puntos anuncian una enumeración, una cita o una consecuencia, y no encierran nada, porque carecen de signo de cierre.",
+      "referencia": {
+        "apartado": "14. Comillas, raya y guion: los tres que se confunden",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "capítulo III, § 3.4.7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 40,
+  "titulo": "Tema 40 · Inteligencia: dato, información e inteligencia. Tipologías de Inteligencia. Ciclo de la Inteligencia. Inteligencia de Fuentes Abiertas (OSINT). Surface Web. Deep Web. Dark Web. Dark Net.",
+  "preguntas": [
+    {
+      "id": "t40-g001",
+      "tema": 40,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "En la cadena dato, información, conocimiento e inteligencia, ¿qué añade el último escalón respecto del conocimiento?",
+      "opciones": [
+        "Un destinatario concreto, la orientación a una decisión y la valoración declarada de la fiabilidad.",
+        "El contexto que permite describir qué ha pasado, quién y cuándo.",
+        "La integración con la experiencia previa, que permite comprender el fenómeno."
+      ],
+      "correcta": 0,
+      "explicacion": "La inteligencia es conocimiento elaborado para un destinatario concreto, orientado a una decisión y con un grado de incertidumbre declarado, y el artículo 1 de la Ley 11/2002 lo confirma al describir el producto como informaciones, análisis, estudios o propuestas dirigidos al Gobierno para prevenir amenazas: sin destinatario y sin decisión no hay inteligencia, solo conocimiento. La primera opción falsa describe la información, que ya responde a quién, qué y cuándo pero no explica ni anticipa, y la segunda describe el conocimiento, el paso del qué al por qué.",
+      "referencia": {
+        "apartado": "2. La cadena: dato, información, conocimiento e inteligencia",
+        "norma": "Ley 11/2002, de 6 de mayo, reguladora del Centro Nacional de Inteligencia",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t40-g002",
+      "tema": 40,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántas disciplinas de obtención publica el CNI y cuáles son?",
+      "opciones": [
+        "Tres: HUMINT, OSINT y SIGINT.",
+        "Cuatro: HUMINT, OSINT, SIGINT y GEOINT.",
+        "Cinco: HUMINT, OSINT, SIGINT, GEOINT e IMINT."
+      ],
+      "correcta": 1,
+      "explicacion": "La página pública del CNI enumera cuatro clases de información según su procedencia: HUMINT (fuentes humanas), OSINT (fuentes abiertas), SIGINT (fuentes técnicas) y GEOINT (explotación y análisis de imágenes e información geográfica). Quien cuenta tres se deja el GEOINT, que es el que recoge las imágenes; y quien añade IMINT aplica la doctrina de otros países, porque en la fuente española el análisis de imágenes de satélite se cobija en el GEOINT, que las menciona expresamente.",
+      "referencia": {
+        "apartado": "4.1. Las cuatro que publica el CNI",
+        "norma": "Centro Nacional de Inteligencia, «La Inteligencia»",
+        "articulo": "fase de obtención: HUMINT, OSINT, SIGINT y GEOINT"
+      }
+    },
+    {
+      "id": "t40-g003",
+      "tema": 40,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Un informe sobre una red de blanqueo se elabora solo con registros públicos y se entrega al mando político para una decisión de largo plazo. ¿Cómo se clasifica?",
+      "opciones": [
+        "Es SIGINT, porque el soporte del informe son bases de datos y registros técnicos.",
+        "Es HUMINT y táctico, porque detrás de cada registro hay personas que lo declaran.",
+        "Es OSINT por la fuente y estratégico por el ámbito: son dos ejes distintos y no se excluyen."
+      ],
+      "correcta": 2,
+      "explicacion": "Hay dos ejes que no compiten: la disciplina mira de dónde sale el dato y el ámbito mira para quién es el producto, de modo que un mismo informe puede ser OSINT por la fuente y estratégico por el uso, sin contradicción. Llamarlo SIGINT confunde la fuente abierta con la fuente técnica, que es la de señales, y llamarlo HUMINT y táctico confunde el soporte documental con una fuente personal y además rebaja a táctica una decisión de mando que es de largo plazo.",
+      "referencia": {
+        "apartado": "4.3. La confusión más rentable: tipología por fuente y tipología por uso",
+        "norma": "Centro Nacional de Inteligencia, «La Inteligencia»",
+        "articulo": "clases de fuentes de la fase de obtención"
+      }
+    },
+    {
+      "id": "t40-g004",
+      "tema": 40,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Dentro del ciclo de inteligencia, la planificación de los recursos necesarios para obtener la información es…",
+      "opciones": [
+        "Una subfase de la dirección, junto con la Directiva de Inteligencia.",
+        "Una quinta fase autónoma, situada entre la dirección y la obtención.",
+        "La primera subfase de la elaboración, anterior a la valoración."
+      ],
+      "correcta": 0,
+      "explicacion": "La descripción pública del CNI tiene cuatro fases —dirección, obtención, elaboración y difusión— y coloca la planificación dentro de la dirección: primero se aprueba la Directiva de Inteligencia y después el Centro planifica y organiza los recursos para satisfacer esas necesidades. Convertirla en quinta fase rompe el recuento publicado, y situarla antes de la valoración la introduce en la elaboración, cuyas subfases son otras cinco y empiezan precisamente por la valoración.",
+      "referencia": {
+        "apartado": "5.1. Las cuatro fases y sus subfases",
+        "norma": "Centro Nacional de Inteligencia, «La Inteligencia»",
+        "articulo": "fases y subfases del ciclo de inteligencia"
+      }
+    },
+    {
+      "id": "t40-g005",
+      "tema": 40,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién aprueba la Directiva de Inteligencia y con qué carácter?",
+      "opciones": [
+        "La Comisión Delegada del Gobierno para Asuntos de Inteligencia, con carácter reservado y revisión semestral.",
+        "El Gobierno, con carácter anual y secreto.",
+        "El director del CNI, con carácter secreto y vigencia indefinida."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 3 de la Ley 11/2002 atribuye al Gobierno la determinación y aprobación anual de los objetivos del Centro mediante la Directiva de Inteligencia, que tendrá carácter secreto, y el artículo 6.4 encarga a la Comisión Delegada proponerlos y hacer su seguimiento. Falla por tanto la opción que se la atribuye a la Comisión con revisión semestral, que confunde proponer con aprobar y añade una periodicidad que la ley no fija, y también la que se la da al director, que carece de esa competencia y no puede darle vigencia indefinida a un documento anual.",
+      "referencia": {
+        "apartado": "6.1. La dirección empieza en el BOE, no en el analista",
+        "norma": "Ley 11/2002, de 6 de mayo, reguladora del Centro Nacional de Inteligencia",
+        "articulo": "arts. 3 y 6.4"
+      }
+    },
+    {
+      "id": "t40-g006",
+      "tema": 40,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿En qué orden describe el CNI las cinco subfases de la elaboración?",
+      "opciones": [
+        "Valoración, integración, examen, redacción e interpretación.",
+        "Valoración, examen, integración, interpretación y redacción.",
+        "Valoración, examen, integración, redacción e interpretación."
+      ],
+      "correcta": 2,
+      "explicacion": "El orden publicado es valoración (calidad y origen de la información), examen (toda la información disponible), integración (lo que procede de fuentes distintas), redacción (el producto final) e interpretación (qué significa según cada contexto); la interpretación va la última aunque suene al revés. La primera opción altera el orden de examen e integración, y la segunda adelanta la interpretación antes de la redacción, que es justo la inversión que el examen explota.",
+      "referencia": {
+        "apartado": "6.3. La elaboración, subfase por subfase",
+        "norma": "Centro Nacional de Inteligencia, «La Inteligencia»",
+        "articulo": "subfases de la elaboración del ciclo"
+      }
+    },
+    {
+      "id": "t40-g007",
+      "tema": 40,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿De qué depende orgánicamente el Centro Nacional de Inteligencia y cuánto dura el mandato de su director?",
+      "opciones": [
+        "Del Ministerio de Defensa, y el mandato es de cinco años.",
+        "Del Ministerio del Interior, y el mandato es de cuatro años.",
+        "Del Ministerio de la Presidencia, y el mandato es de cinco años sin posibilidad de sustitución."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 7.1 de la Ley 11/2002 adscribe el CNI al Ministerio de Defensa, y el artículo 9.1 fija en cinco años el mandato de su director, sin perjuicio de la facultad del Consejo de Ministros de sustituirlo en cualquier momento. Interior y Presidencia son los dos distractores de adscripción que más se repiten, y la opción que niega la sustitución ignora precisamente esa facultad, que es la que impide hablar de un mandato blindado.",
+      "referencia": {
+        "apartado": "7.1. El Centro Nacional de Inteligencia",
+        "norma": "Ley 11/2002, de 6 de mayo, reguladora del Centro Nacional de Inteligencia",
+        "articulo": "arts. 7.1 y 9.1"
+      }
+    },
+    {
+      "id": "t40-g008",
+      "tema": 40,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué categorías de materias clasificadas establece la Ley 9/1968?",
+      "opciones": [
+        "Tres: secreto, reservado y confidencial.",
+        "Dos: secreto y reservado.",
+        "Una sola: secreto, con grados internos según el órgano que la califique."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 3 de la Ley 9/1968 califica las materias clasificadas en dos categorías, secreto y reservado, en atención al grado de protección que requieran. «Confidencial» pertenece a otras escalas, como la de la OTAN o la de la información empresarial, y no es categoría legal española; y reducir todo a una sola categoría deja sin efecto el segundo grado que la ley nombra expresamente junto al primero.",
+      "referencia": {
+        "apartado": "7.3. La Oficina Nacional de Seguridad y la información clasificada",
+        "norma": "Ley 9/1968, de 5 de abril, sobre secretos oficiales",
+        "articulo": "arts. 1 y 3"
+      }
+    },
+    {
+      "id": "t40-g009",
+      "tema": 40,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Durante una investigación, un agente crea un perfil falso para que le admitan en un grupo privado y leer las conversaciones. ¿Cómo se califica esa actuación?",
+      "opciones": [
+        "Es OSINT, porque no ha vulnerado ninguna medida de seguridad del sistema.",
+        "Es lícita si la finalidad es una investigación penal, porque la finalidad ampara el medio empleado.",
+        "No es fuente abierta: hay engaño y acceso a un ámbito privado, con riesgo de acceso ilícito y de lesión de la intimidad."
+      ],
+      "correcta": 2,
+      "explicacion": "Fuente abierta es la accesible sin medios ilícitos, y el perfil falso es engaño para entrar en un ámbito privado: la regla de bolsillo es que si para verlo hay que engañar, saltar o romper, ya no es OSINT. La primera opción confunde no vulnerar una medida técnica con acceder legítimamente, y los artículos 197 y 197 bis del Código Penal no eximen por la finalidad, porque la autorización tiene que existir y, cuando la medida la exige, es judicial.",
+      "referencia": {
+        "apartado": "9.2. OSINT no es hacking",
+        "norma": "Código Penal",
+        "articulo": "arts. 197.2 y 197 bis"
+      }
+    },
+    {
+      "id": "t40-g010",
+      "tema": 40,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Diez medios publican el mismo dato, pero todos citan al mismo medio original. ¿Qué control de verificación ha fallado?",
+      "opciones": [
+        "La corroboración por fuentes independientes: repetir una fuente no multiplica la confirmación.",
+        "La autoría: mientras no conste quién firma en el medio original, el dato no se puede usar.",
+        "El contexto: el dato se ha extraído del documento en el que estaba publicado."
+      ],
+      "correcta": 0,
+      "explicacion": "El cuarto control es la corroboración, y la pregunta correcta no es cuántos lo dicen sino cuántas fuentes independientes lo sostienen: diez replicadores de un solo medio son una sola fuente, y esa apariencia de consenso es el error más frecuente en fuentes abiertas. La autoría importa, pero no es el control que falla cuando todos beben del mismo original, y el contexto tampoco: aquí no hay un recorte descontextualizado, sino una cadena de copias.",
+      "referencia": {
+        "apartado": "10.1. Los cuatro controles de verificación",
+        "norma": "Doctrina de análisis de fuentes abiertas sobre verificación",
+        "articulo": "control de corroboración por fuentes independientes"
+      }
+    },
+    {
+      "id": "t40-g011",
+      "tema": 40,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué distingue la dark net de la dark web?",
+      "opciones": [
+        "Son sinónimos: la dark web es la parte de la deep web que no se indexa.",
+        "La dark net es la red superpuesta y la dark web es el contenido publicado en ella.",
+        "La dark net es la web que no usa el DNS y la dark web es la que se abre con un navegador normal."
+      ],
+      "correcta": 1,
+      "explicacion": "La dark net es la infraestructura, la red superpuesta por la que se va, y la dark web es lo que se visita dentro de ella, los servicios y páginas que se publican en esa red. Igualarlas es el error que la pregunta busca; y la tercera opción mezcla las capas: lo que no se resuelve por el DNS es la red superpuesta, no la dark web como contenido, y un navegador de serie no abre esos servicios.",
+      "referencia": {
+        "apartado": "14. Dark net y dark web no son sinónimos",
+        "norma": "Doctrina técnica sobre redes superpuestas",
+        "articulo": "distinción entre la red (dark net) y el contenido (dark web)"
+      }
+    },
+    {
+      "id": "t40-g012",
+      "tema": 40,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones sobre los nombres .onion es correcta?",
+      "opciones": [
+        "Se contratan en un registrador acreditado y se renuevan cada año.",
+        "Se resuelven por el sistema de nombres de dominio como cualquier otro dominio de internet.",
+        "No se registran, asignan, transfieren ni revocan, y se resuelven fuera del DNS."
+      ],
+      "correcta": 2,
+      "explicacion": "El RFC 7686 registra .onion como nombre de dominio de uso especial: no usa la infraestructura DNS, se deriva del componente criptográfico de la propia dirección —es autocertificado— y no se puede registrar, asignar, transferir ni revocar, porque la red se diseñó para no depender de una autoridad central de publicación. Por eso falla la opción del registrador y la renovación anual, y también la que lo hace pasar por el DNS como un dominio corriente.",
+      "referencia": {
+        "apartado": "14.1. El único dato normalizado: el dominio .onion",
+        "norma": "IETF, RFC 7686, «The .onion Special-Use Domain Name»",
+        "articulo": "registro de .onion como nombre de dominio de uso especial"
+      }
+    }
+  ]
+}

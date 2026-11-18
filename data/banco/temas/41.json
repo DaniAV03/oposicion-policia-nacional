@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 41,
+  "titulo": "Tema 41 · Ciberdelincuencia y agentes de la Amenaza: Botnet; Business E-mail Compromise; Cartas nigerianas; Cryptojacking; Denegación de servicio; Ingeniería social; Inyección SQL; Malware; Pharming; Phishing; Spear phishing; Ransomware; Skimming; Spoofing; Spyware, Troyano; XSS; Zero-day. Cibercriminales. Crimen as Service. Hacktivistas. Insider threat. APTs. Cyber Kill Chain.",
+  "preguntas": [
+    {
+      "id": "t41-g001",
+      "tema": 41,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "En el Convenio de Budapest, ¿dónde se sitúan el fraude informático y el acceso ilícito?",
+      "opciones": [
+        "El fraude en el título de delitos informáticos (art. 8) y el acceso ilícito en el de confidencialidad, integridad y disponibilidad (art. 2).",
+        "Los dos en el título de delitos contra la confidencialidad, la integridad y la disponibilidad de los datos y sistemas informáticos.",
+        "El acceso ilícito en el título de delitos informáticos (art. 7) y el fraude en el de delitos relacionados con el contenido (art. 9)."
+      ],
+      "correcta": 0,
+      "explicacion": "El convenio reparte las conductas en cuatro títulos y separa dos cosas que el lenguaje común mezcla: el acceso ilícito, junto a la interceptación y las interferencias, está en el título 1 (arts. 2 a 6), y el fraude informático, junto a la falsificación, en el título 2 (arts. 7 y 8). Meter los dos en el título 1 borra esa separación, y la tercera opción cruza los títulos e incluye el del contenido, que es el de la pornografía infantil y no tiene relación con el fraude.",
+      "referencia": {
+        "apartado": "2. Ciberdelincuencia: qué es y cómo se ordena el campo",
+        "norma": "Convenio sobre la Ciberdelincuencia, hecho en Budapest el 23 de noviembre de 2001",
+        "articulo": "arts. 2 y 8"
+      }
+    },
+    {
+      "id": "t41-g002",
+      "tema": 41,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué define a un troyano frente a otras especies de malware?",
+      "opciones": [
+        "Que recopila información del equipo y la envía después a una entidad remota.",
+        "Que aparenta una función útil y oculta otra maliciosa, y no se propaga por sí solo.",
+        "Que cifra los ficheros del usuario y exige un rescate para liberarlos."
+      ],
+      "correcta": 1,
+      "explicacion": "El troyano se define por la apariencia: parece hacer algo útil o inofensivo y además ejecuta una función oculta, y entra porque alguien lo instala creyendo que instala otra cosa, no porque se propague solo. La primera opción describe la función del spyware, que recopila y envía información, y la tercera define el ransomware, cuya clave es la extorsión económica y no el engaño sobre la utilidad del programa.",
+      "referencia": {
+        "apartado": "4.2. Troyano",
+        "norma": "NIST, glosario de términos de seguridad informática",
+        "articulo": "voz «Trojan horse» (NIST SP 800-12 Rev. 1)"
+      }
+    },
+    {
+      "id": "t41-g003",
+      "tema": 41,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Frente a un ransomware, ¿cuál es la medida principal y por qué?",
+      "opciones": [
+        "Un antivirus actualizado, porque el ransomware es malware y se detecta por firma antes de ejecutarse.",
+        "Negociar y pagar el rescate, porque el negocio del atacante depende de descifrar lo que ha cifrado.",
+        "Copias de seguridad aisladas y probadas, porque permiten restaurar sin depender del atacante."
+      ],
+      "correcta": 2,
+      "explicacion": "La medida que decide el incidente es la copia que la víctima puede restaurar por sí misma: el ransomware entra por un acceso previo y sus variantes nuevas no se detectan por firma, así que la prevención sola no basta. La primera opción confía en una detección que falla justo con esas variantes, y la segunda contradice la recomendación de no pagar, porque el descifrado no está garantizado y el pago financia la campaña siguiente.",
+      "referencia": {
+        "apartado": "4.4. Ransomware",
+        "norma": "INCIBE, «Ransomware»",
+        "articulo": "voz «ransomware» y guía de actuación: no se paga el rescate"
+      }
+    },
+    {
+      "id": "t41-g004",
+      "tema": 41,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué se lleva el cryptojacking de la víctima?",
+      "opciones": [
+        "Capacidad de cálculo: consume procesador y tarjeta gráfica sin tocar sus datos.",
+        "Los datos de la tarjeta bancaria, que después revende o usa en compras.",
+        "Credenciales y pulsaciones, que envía periódicamente al atacante."
+      ],
+      "correcta": 0,
+      "explicacion": "El cryptojacking secuestra el dispositivo para minar criptomonedas aprovechando su capacidad de procesamiento, de modo que la víctima pierde rendimiento y electricidad, no información, y por eso suele pasar inadvertido. La primera opción falsa describe el skimming, que busca datos de tarjeta y PIN para clonar o pagar, y la segunda describe el spyware, cuya finalidad es recopilar y exfiltrar información.",
+      "referencia": {
+        "apartado": "4.5. Cryptojacking",
+        "norma": "MITRE ATT&CK",
+        "articulo": "T1496 Resource Hijacking"
+      }
+    },
+    {
+      "id": "t41-g005",
+      "tema": 41,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Qué es exactamente una botnet?",
+      "opciones": [
+        "Un ataque de saturación lanzado a la vez desde miles de direcciones IP distintas.",
+        "Una red de equipos infectados y controlados remotamente por un atacante.",
+        "Un programa que cifra los ficheros de todos los equipos conectados a la misma red."
+      ],
+      "correcta": 1,
+      "explicacion": "La botnet es la red: equipos zombis infectados que se conectan a un canal de mando y control y esperan órdenes, lo que la convierte en infraestructura alquilable. La primera opción confunde la red con uno de sus usos, el DDoS, que se lanza con muchas máquinas pero es el ataque y no la red; y la tercera describe un ransomware con propagación por red, que es una especie de malware y no una red de equipos controlados.",
+      "referencia": {
+        "apartado": "4.6. Botnet",
+        "norma": "INCIBE, «Botnet»",
+        "articulo": "voz «botnet»"
+      }
+    },
+    {
+      "id": "t41-g006",
+      "tema": 41,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuándo deja una vulnerabilidad de ser zero-day?",
+      "opciones": [
+        "Cuando el fabricante conoce el fallo, aunque todavía no exista corrección.",
+        "Cuando alguien publica un exploit que la aprovecha, porque deja de ser desconocida.",
+        "Cuando el fabricante publica el parche y los usuarios lo instalan."
+      ],
+      "correcta": 2,
+      "explicacion": "Zero-day designa la ventana en la que el fallo carece de parche: mientras no lo hay, la defensa por firma no sirve, y cuando el parche llega y se instala deja de serlo. Que el fabricante conozca el fallo o que circule un exploit no cierra esa ventana, porque lo que define el concepto es la ausencia de corrección disponible, no el conocimiento del fabricante ni la existencia de la herramienta.",
+      "referencia": {
+        "apartado": "4.7. Zero-day",
+        "norma": "NIST, glosario de términos de seguridad informática",
+        "articulo": "voz «zero-day attack» (CNSSI 4009-2022)"
+      }
+    },
+    {
+      "id": "t41-g007",
+      "tema": 41,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Una directora financiera recibe un correo con su nombre, el de su jefe y el proyecto que tiene abierto. ¿Qué amenaza es?",
+      "opciones": [
+        "Spear phishing: phishing dirigido a una persona concreta y preparado con información previa.",
+        "Phishing genérico, porque el canal empleado es el correo electrónico.",
+        "Pharming, porque el mensaje demuestra conocer datos internos de la organización."
+      ],
+      "correcta": 0,
+      "explicacion": "Lo que separa al spear phishing del phishing no es el canal, que es el mismo, sino la puntería: hay un objetivo concreto y un trabajo previo de documentación sobre él, de ahí que el mensaje resulte verosímil. Llamarlo phishing genérico ignora esa preparación, y llamarlo pharming confunde el engaño por correo con la redirección técnica de la resolución de nombres, que no necesita ningún mensaje.",
+      "referencia": {
+        "apartado": "5.3. Spear phishing",
+        "norma": "INCIBE, «Spear phishing»",
+        "articulo": "voz «spear phishing»"
+      }
+    },
+    {
+      "id": "t41-g008",
+      "tema": 41,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué distingue al Business E-mail Compromise de un phishing corriente?",
+      "opciones": [
+        "Que el remitente es siempre una dirección parecida a la oficial pero de otro dominio, y se detecta con una regla de filtrado.",
+        "Que el mensaje sale de una cuenta de correo real, de modo que la defensa es verificar la orden por otro canal.",
+        "Que llega por un canal distinto del correo, como una llamada, y no por la cuenta corporativa."
+      ],
+      "correcta": 1,
+      "explicacion": "En el BEC el remitente no finge ser alguien: es alguien, con su cuenta real comprometida, y por eso mirar la dirección no delata nada y la contramedida es procedimental, con doble verificación y doble aprobación de pagos. La primera opción describe el parentesco de dirección, que es un vector posible pero no la regla absoluta que enuncia, y la tercera se equivoca de canal: el BEC se hace por correo, aunque a veces lo preceda una llamada.",
+      "referencia": {
+        "apartado": "5.4. Business E-mail Compromise",
+        "norma": "INCIBE, «BEC: tipos de fraude, cómo operan los estafadores y cómo detectarlos»",
+        "articulo": "definición, fases y contramedidas del BEC"
+      }
+    },
+    {
+      "id": "t41-g009",
+      "tema": 41,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "La víctima escribe la dirección correcta de su banco, sin hacer clic en ningún enlace, y aun así acaba en una web falsa. ¿Qué amenaza es?",
+      "opciones": [
+        "Phishing, porque el objetivo final es capturar sus credenciales bancarias.",
+        "Spoofing del remitente del correo, porque la página suplanta a la entidad legítima.",
+        "Pharming: se ha manipulado la resolución del nombre o el archivo local de hosts."
+      ],
+      "correcta": 2,
+      "explicacion": "La clave del pharming es que no hace falta clic: se manipula la resolución de nombres, en el DNS o en el archivo local de hosts, y el usuario llega a la web falsa escribiendo bien la dirección. La primera opción se queda en la finalidad, que comparten varias amenazas y no identifica ninguna, y la segunda habla de un correo que aquí no ha existido: el spoofing es el mecanismo de falsificar el origen, no lo que ha ocurrido en este caso.",
+      "referencia": {
+        "apartado": "5.6. Pharming",
+        "norma": "NIST, glosario de términos de seguridad informática",
+        "articulo": "voz «pharming» (NIST SP 800-44 versión 2)"
+      }
+    },
+    {
+      "id": "t41-g010",
+      "tema": 41,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Un comentario publicado en una web legítima se devuelve sin codificar y se ejecuta en el navegador de quien lo lee. ¿Qué amenaza es y cómo se frena?",
+      "opciones": [
+        "XSS; se frena codificando la salida y con una política de seguridad de contenido.",
+        "Inyección SQL; se frena con consultas parametrizadas en la base de datos.",
+        "XSS; se frena sobre todo con consultas parametrizadas contra la base de datos."
+      ],
+      "correcta": 0,
+      "explicacion": "El daño se produce en el navegador del siguiente usuario, y eso define el XSS: la aplicación usa una entrada sin validar ni codificar en la salida que genera, y el script se ejecuta con la confianza del sitio. La opción 1 falla dos veces, porque el ataque no va contra la base de datos y porque esa defensa no lo frena; la opción 3 acierta el nombre pero propone la defensa del SQL, y las consultas parametrizadas no impiden que un script se ejecute en un navegador.",
+      "referencia": {
+        "apartado": "6.2. XSS (Cross-Site Scripting)",
+        "norma": "OWASP, «Cross Site Scripting (XSS)»",
+        "articulo": "descripción del ataque y prevención por codificación de salida"
+      }
+    },
+    {
+      "id": "t41-g011",
+      "tema": 41,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué es Crime as a Service?",
+      "opciones": [
+        "Una familia de malware que se alquila por suscripción en foros criminales.",
+        "Un modelo de negocio criminal en el que se compran y alquilan piezas y servicios ya hechos.",
+        "Una técnica de ataque que automatiza el envío masivo de correos de phishing."
+      ],
+      "correcta": 1,
+      "explicacion": "Crime as a Service es un modelo de negocio: se venden acceso inicial, herramientas, infraestructura, conocimiento y hasta blanqueo, de modo que quien ejecuta el ataque puede no haber construido nada. Presentarlo como una familia de malware es un error de categoría, igual que confundirlo con una técnica concreta: el envío masivo automatizado es PhaaS, uno de los servicios que ese modelo ofrece, no el modelo entero.",
+      "referencia": {
+        "apartado": "8. Crime as a Service: el ecosistema que lo cambió todo",
+        "norma": "UNODC, Cybercrime Module 13, «Cyber Organized Crime Activities»",
+        "articulo": "crime as a service: catálogo de servicios vendidos"
+      }
+    },
+    {
+      "id": "t41-g012",
+      "tema": 41,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál es la séptima y última fase de la Cyber Kill Chain?",
+      "opciones": [
+        "Command and Control: abrir un canal para dirigir el implante desde fuera.",
+        "Installation: dejar una puerta trasera para volver más adelante.",
+        "Actions on Objectives: cumplir la misión robando, cifrando o destruyendo."
+      ],
+      "correcta": 2,
+      "explicacion": "La cadena tiene siete fases y termina en las acciones sobre los objetivos, que es cuando el adversario ejecuta aquello para lo que entró; detener cualquiera de las siete rompe la cadena. Las otras dos opciones son fases reales pero anteriores: mando y control es la sexta e instalación la quinta, y el modelo, de Lockheed Martin, es lineal precisamente porque las ordena así y hay que recorrerlas todas.",
+      "referencia": {
+        "apartado": "12.1. Las siete fases, fase por fase",
+        "norma": "Lockheed Martin, «Gaining the Advantage: Applying Cyber Kill Chain Methodology to Network Defense»",
+        "articulo": "las siete fases del ciclo de intrusión"
+      }
+    }
+  ]
+}

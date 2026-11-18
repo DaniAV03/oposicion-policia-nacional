@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 35,
+  "titulo": "Tema 35 · El desarrollo sostenible. Concepto. Coordinación y cooperación internacional. Sociedad y desarrollo sostenible. Instrumentos de gestión ambiental.",
+  "preguntas": [
+    {
+      "id": "t35-g001",
+      "tema": 35,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿En qué documento se acuñó el concepto de desarrollo sostenible y en qué año?",
+      "opciones": [
+        "En el Programa 21, aprobado en la Cumbre de Río de Janeiro de 1992.",
+        "En «Nuestro futuro común», el informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, en 1987.",
+        "En la Declaración de Estocolmo sobre el Medio Humano, en 1972."
+      ],
+      "correcta": 1,
+      "explicacion": "El término nace en 1987, en el informe de la Comisión presidida por Gro Harlem Brundtland, «Nuestro futuro común» (A/42/427), que define el desarrollo sostenible como el que satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras. El Programa 21 es el plan de acción que salió de Río cinco años después, y la Declaración de Estocolmo es el antecedente de 1972, que creó el PNUMA pero no acuñó el concepto.",
+      "referencia": {
+        "apartado": "2.2. El informe que acuñó el concepto: 1987",
+        "norma": "Informe de la Comisión Mundial sobre el Medio Ambiente y el Desarrollo, «Nuestro futuro común»",
+        "articulo": "capítulo 2, párrafo 1 (A/42/427)"
+      }
+    },
+    {
+      "id": "t35-g002",
+      "tema": 35,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué objetivo de temperatura fija el artículo 2.1 del Acuerdo de París?",
+      "opciones": [
+        "Mantener el aumento muy por debajo de 2 °C respecto de los niveles preindustriales y proseguir los esfuerzos para limitarlo a 1,5 °C.",
+        "Limitar el aumento a 2 °C como máximo, sin mención de 1,5 °C, que es solo una recomendación del IPCC.",
+        "Reducir un 55 % las emisiones de gases de efecto invernadero respecto de 1990 antes de 2030."
+      ],
+      "correcta": 0,
+      "explicacion": "El texto acumula dos exigencias: mantener el aumento muy por debajo de 2 °C y, además, proseguir los esfuerzos para limitarlo a 1,5 °C; no son metas alternativas ni una recomendación ajena al tratado. La opción del 2 °C recorta la segunda mitad del precepto y atribuye al IPCC lo que dice el Acuerdo, y el 55 % es el objetivo comunitario de reducción para 2030 que la Ley 7/2021 cita en su preámbulo, no una cifra del artículo 2.",
+      "referencia": {
+        "apartado": "8.1. El artículo 2: los tres objetivos",
+        "norma": "Acuerdo de París, hecho en París el 12 de diciembre de 2015 (BOE-A-2017-1066)",
+        "articulo": "art. 2.1"
+      }
+    },
+    {
+      "id": "t35-g003",
+      "tema": 35,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué contiene la Declaración de Río de 1992 y cuál es su valor jurídico?",
+      "opciones": [
+        "Un tratado de 27 principios vinculantes para los Estados que lo ratifican.",
+        "La Agenda 2030 con sus 17 objetivos y 169 metas, aprobada por la Asamblea General.",
+        "27 principios sobre medio ambiente y desarrollo, sin fuerza jurídica obligatoria, junto con el Programa 21 y dos convenios que sí obligan."
+      ],
+      "correcta": 2,
+      "explicacion": "La Declaración de Río es una declaración de principios: compromiso político sin obligación jurídica directa, y lo que obliga de la conferencia son los tratados abiertos a la firma, la CMNUCC y el Convenio sobre la Diversidad Biológica. Por eso falla la que la presenta como tratado vinculante y también la que la confunde con la Agenda 2030, que se aprueba en 2015 y no en 1992.",
+      "referencia": {
+        "apartado": "3. La Declaración de Río de 1992: los principios que se preguntan",
+        "norma": "Declaración de Río sobre el Medio Ambiente y el Desarrollo (A/CONF.151/26/Rev.1)",
+        "articulo": "principios 1 a 27"
+      }
+    },
+    {
+      "id": "t35-g004",
+      "tema": 35,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién otorga la autorización ambiental integrada de una instalación incluida en el anexo 1 de la ley IPPC?",
+      "opciones": [
+        "El ayuntamiento del término municipal donde se ubica la instalación, a través de la licencia de apertura.",
+        "El órgano competente de la comunidad autónoma en la que se ubica la instalación.",
+        "El Ministerio para la Transición Ecológica y el Reto Demográfico, previo informe del órgano ambiental estatal."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 3.2 del texto refundido define la autorización ambiental integrada como resolución escrita del órgano competente de la comunidad autónoma en la que se ubica la instalación. El ayuntamiento otorga la licencia de actividad, que es un control municipal distinto y no la sustituye, y el Ministerio no autoriza instalaciones: cuando le corresponde, formula la declaración de impacto ambiental, que condiciona pero no autoriza.",
+      "referencia": {
+        "apartado": "16. Autorización ambiental integrada y licencias",
+        "norma": "Real Decreto Legislativo 1/2016, texto refundido de la Ley de prevención y control integrados de la contaminación",
+        "articulo": "art. 3.2"
+      }
+    },
+    {
+      "id": "t35-g005",
+      "tema": 35,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué carácter jurídico tiene la Agenda 2030 para el Desarrollo Sostenible?",
+      "opciones": [
+        "Es una resolución de la Asamblea General no vinculante: cada gobierno fija sus propias metas nacionales.",
+        "Es un tratado internacional, de modo que las 169 metas obligan a los Estados que lo ratifican.",
+        "Es un reglamento de la Unión Europea, de aplicación directa en España desde su publicación."
+      ],
+      "correcta": 0,
+      "explicacion": "La Agenda 2030 se aprueba por la resolución A/RES/70/1 y su párrafo 55 aclara que las metas expresan aspiraciones mundiales y que cada gobierno fijará las suyas, así que no hay un baremo único ni un suspenso oficial en ODS. No es un tratado, porque una resolución de la Asamblea General no crea obligaciones jurídicas, y tampoco es un reglamento europeo: la Unión Europea la apoya, pero el documento es de la ONU.",
+      "referencia": {
+        "apartado": "6.3. Qué carácter jurídico tiene",
+        "norma": "Resolución A/RES/70/1 de la Asamblea General de las Naciones Unidas",
+        "articulo": "párrafo 55"
+      }
+    },
+    {
+      "id": "t35-g006",
+      "tema": 35,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál es el último escalón de la jerarquía de residuos del artículo 8 de la Ley 7/2022?",
+      "opciones": [
+        "La valorización energética.",
+        "El reciclado.",
+        "La eliminación."
+      ],
+      "correcta": 2,
+      "explicacion": "El orden es prevención, preparación para la reutilización, reciclado, otro tipo de valorización —incluida la energética— y eliminación, que es el último escalón y en la práctica el vertedero. La valorización energética es un escalón anterior a la eliminación, y el reciclado va antes que cualquier valorización: colocarlos al revés invierte la jerarquía del precepto.",
+      "referencia": {
+        "apartado": "10.2. La jerarquía de residuos: el orden que hay que recitar",
+        "norma": "Ley 7/2022, de 8 de abril, de residuos y suelos contaminados para una economía circular",
+        "articulo": "art. 8.1"
+      }
+    },
+    {
+      "id": "t35-g007",
+      "tema": 35,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una declaración de impacto ambiental se formula y el promotor no inicia la ejecución del proyecto. ¿Cuánto tiempo conserva su vigencia?",
+      "opciones": [
+        "Dos años, prorrogables por otros dos a petición del promotor.",
+        "Tres años, el mismo plazo del informe de impacto ambiental de la vía simplificada.",
+        "Cuatro años, salvo que se solicite una prórroga antes de que venza el plazo."
+      ],
+      "correcta": 2,
+      "explicacion": "La declaración de impacto ambiental caduca a los cuatro años sin haberse comenzado la ejecución, y la única salvedad es la prórroga pedida antes de que el plazo venza. Los tres meses son el plazo para formular el informe de impacto ambiental de la vía simplificada, no una caducidad, y los dos años son el plazo del documento de alcance del estudio de impacto: ninguna de las otras dos opciones mide la vigencia.",
+      "referencia": {
+        "apartado": "15.2. Plazos que se preguntan",
+        "norma": "Ley 21/2013, de 9 de diciembre, de evaluación ambiental",
+        "articulo": "art. 43.1"
+      }
+    },
+    {
+      "id": "t35-g008",
+      "tema": 35,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué porcentaje mínimo de los residuos municipales debe prepararse para la reutilización y reciclarse en 2030?",
+      "opciones": [
+        "El 60 % en peso.",
+        "El 55 % en peso.",
+        "El 65 % en peso."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 26 fija la escalera del 55 % en 2025, el 60 % en 2030 y el 65 % en 2035, de modo que en 2030 la meta es el 60 % en peso. El 55 % es la meta de 2025 y el 65 %, la de 2035: las dos cifras existen en la ley, pero en otro año, que es exactamente la trampa de plazo que se pregunta.",
+      "referencia": {
+        "apartado": "11.1. Los objetivos de reciclado",
+        "norma": "Ley 7/2022, de 8 de abril, de residuos y suelos contaminados para una economía circular",
+        "articulo": "art. 26.1"
+      }
+    },
+    {
+      "id": "t35-g009",
+      "tema": 35,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Qué fecha límite fijó la Ley 7/2022 para la recogida separada de los biorresiduos domésticos en los municipios de más de 5.000 habitantes?",
+      "opciones": [
+        "Antes del 31 de diciembre de 2023.",
+        "Antes del 30 de junio de 2022.",
+        "Antes del 31 de diciembre de 2024."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 25.2 exige la recogida separada de biorresiduos domésticos antes del 30 de junio de 2022 en municipios de más de 5.000 habitantes y antes del 31 de diciembre de 2023 en el resto. El 31 de diciembre de 2023 es la fecha de los municipios pequeños, no la de los grandes, y el 31 de diciembre de 2024 es la fecha común del textil, los aceites de cocina usados, los domésticos peligrosos y los voluminosos.",
+      "referencia": {
+        "apartado": "11.2. El calendario de la recogida separada",
+        "norma": "Ley 7/2022, de 8 de abril, de residuos y suelos contaminados para una economía circular",
+        "articulo": "art. 25.2"
+      }
+    },
+    {
+      "id": "t35-g010",
+      "tema": 35,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué porcentaje de generación eléctrica a partir de energías renovables fija la Ley 7/2021 para 2030?",
+      "opciones": [
+        "Al menos el 74 %.",
+        "Al menos el 42 %.",
+        "El 100 %, porque el sistema eléctrico debe ser exclusivamente renovable en 2030."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 3.1.c fija al menos un 74 % de generación eléctrica renovable en 2030; el 42 % es la meta de renovables sobre el consumo de energía final del mismo año, no sobre la electricidad. El 100 % existe como objetivo, pero para antes de 2050 y para todo el sistema eléctrico, así que situarlo en 2030 convierte la opción en falsa.",
+      "referencia": {
+        "apartado": "12. Energía y clima en España: la Ley 7/2021",
+        "norma": "Ley 7/2021, de 20 de mayo, de cambio climático y transición energética",
+        "articulo": "art. 3.1.c"
+      }
+    },
+    {
+      "id": "t35-g011",
+      "tema": 35,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de estos instrumentos de gestión ambiental es voluntario para la organización?",
+      "opciones": [
+        "La autorización ambiental integrada.",
+        "La licencia de actividad o apertura municipal.",
+        "La inscripción en el registro de huella de carbono, compensación y proyectos de absorción."
+      ],
+      "correcta": 2,
+      "explicacion": "El registro de huella de carbono creado por el Real Decreto 163/2014 es voluntario, igual que EMAS y la Etiqueta Ecológica Europea, y sirve para acreditar ante terceros lo que la organización declara. La autorización ambiental integrada y la licencia de actividad son obligatorias: sin ellas la instalación no puede explotarse, de modo que no pueden ser la respuesta.",
+      "referencia": {
+        "apartado": "18.3. Las tres etiquetas que no hay que confundir",
+        "norma": "Real Decreto 163/2014, de 14 de marzo, por el que se crea el registro de huella de carbono, compensación y proyectos de absorción de dióxido de carbono",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t35-g012",
+      "tema": 35,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Quién puede ejercer la acción popular en materia de medio ambiente conforme a la Ley 27/2006?",
+      "opciones": [
+        "Cualquier persona física, sin necesidad de acreditar un interés determinado.",
+        "Las personas jurídicas sin ánimo de lucro que tengan la protección del medio ambiente entre sus fines, se hayan constituido al menos dos años antes y actúen en el ámbito territorial afectado.",
+        "Solo las administraciones públicas con competencias ambientales y el Ministerio Fiscal."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 22 reconoce la acción popular y el 23 la reserva a personas jurídicas sin ánimo de lucro con fines de protección del medio ambiente, constituidas al menos dos años antes y con actuación en el ámbito territorial afectado. Un particular no puede ejercerla por su cuenta, y las administraciones no necesitan esta legitimación especial: actúan como autoridades, no como demandantes populares.",
+      "referencia": {
+        "apartado": "19.2. Participación y acción popular",
+        "norma": "Ley 27/2006, de 18 de julio, reguladora de los derechos de acceso a la información, de participación pública y de acceso a la justicia en materia de medio ambiente",
+        "articulo": "arts. 22 y 23"
+      }
+    }
+  ]
+}

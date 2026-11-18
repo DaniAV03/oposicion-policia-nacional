@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 36,
+  "titulo": "Tema 36 · Gramática de la lengua española. Morfología. Sufijos, sustantivos y pronombres. Adjetivos: sus grados y tipos. Los adverbios y sus tipos. Verbos: modos y conjugación. Preposiciones y conjunciones. Sintaxis. La oración: partes y tipos. Análisis sintáctico.",
+  "preguntas": [
+    {
+      "id": "t36-g001",
+      "tema": 36,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántos morfemas tiene la forma verbal «cantábamos» y cuáles son?",
+      "opciones": [
+        "Dos: el lexema cant- y un único morfema -ábamos.",
+        "Tres: cant-, -ába- y -mos.",
+        "Cuatro: cant-, -á-, -ba- y -mos."
+      ],
+      "correcta": 2,
+      "explicacion": "La segmentación es cant- (lexema), -á- (vocal temática de la primera conjugación), -ba- (morfema de tiempo, modo y aspecto) y -mos (morfema de persona y número). La opción de tres morfemas funde la vocal temática con el morfema de TMA, y la de dos trata toda la terminación como un solo morfema: las dos pierden piezas que la gramática aísla por separado.",
+      "referencia": {
+        "apartado": "3. La palabra: lexema y morfemas",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «morfema» y «lexema»"
+      }
+    },
+    {
+      "id": "t36-g002",
+      "tema": 36,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "En «Pablo es el más guapo de su clase», el adjetivo está en grado…",
+      "opciones": [
+        "Superlativo relativo, porque la cualidad se restringe a un conjunto delimitado de seres.",
+        "Superlativo absoluto, porque el artículo refuerza la cualidad hasta el máximo.",
+        "Comparativo, porque la forma «el más» establece una comparación entre iguales."
+      ],
+      "correcta": 0,
+      "explicacion": "El superlativo relativo limita la propiedad a un conjunto delimitado de seres y casi siempre lleva complemento con de: «el más guapo de su clase». El absoluto no compara con nadie y se marca con el sufijo -ísimo, con muy o con un cuantificador de grado, como «guapísimo» o «sumamente listo». Y el comparativo compara dos términos —«más guapo que tú»—, no a uno frente a todo un grupo.",
+      "referencia": {
+        "apartado": "7.1. Los grados",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «grado» y «superlativo»"
+      }
+    },
+    {
+      "id": "t36-g003",
+      "tema": 36,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué género tiene el sustantivo «agua» y por qué se dice «el agua fría»?",
+      "opciones": [
+        "Es masculino, porque el artículo el lo marca como tal y el adjetivo se mantiene en femenino por costumbre.",
+        "Es femenino: el artículo el solo evita el hiato ante una a tónica, y la concordancia va en femenino.",
+        "Es un nombre común en cuanto al género, y por eso admite los dos artículos sin cambio de significado."
+      ],
+      "correcta": 1,
+      "explicacion": "El diccionario marca «agua» como femenino; la forma el se debe a que la palabra empieza por a tónica y el artículo evita el hiato, igual que en «el águila» o «el hacha». La prueba está en la concordancia: «el agua fría», no «el agua frío». Un nombre común en cuanto al género es «el estudiante» y «la estudiante», donde el artículo distingue el sexo del referente, cosa que no ocurre con agua.",
+      "referencia": {
+        "apartado": "5.1. El género",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «agua»"
+      }
+    },
+    {
+      "id": "t36-g004",
+      "tema": 36,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de estas palabras se ha formado por parasíntesis en la segunda acepción del diccionario, es decir, por prefijación y sufijación simultáneas?",
+      "opciones": [
+        "Desnacionalización, porque lleva el prefijo des- y dos sufijos.",
+        "Nacionalizar, porque añade un sufijo a la base nacional.",
+        "Embaldosar, porque no existen ni «embaldo» ni «baldosar»."
+      ],
+      "correcta": 2,
+      "explicacion": "La parasíntesis exige que los afijos entren a la vez: en «embaldosar» no existen «embaldo» ni «baldosar», así que prefijo y sufijo se añaden simultáneamente. En «desnacionalización» el prefijo se añade cuando ya existe «nacionalizar», de modo que es derivación sucesiva, y «nacionalizar» es una derivación con sufijo sobre «nacional», sin prefijo.",
+      "referencia": {
+        "apartado": "4. Formación de palabras: derivación, composición y parasíntesis",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «parasíntesis»"
+      }
+    },
+    {
+      "id": "t36-g005",
+      "tema": 36,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Con la nomenclatura académica, ¿cuántos modos tiene el verbo y cuál de ellos solo posee formas propias para «tú» y «vosotros»?",
+      "opciones": [
+        "Cuatro modos: indicativo, subjuntivo, imperativo y condicional; el condicional solo tiene formas propias de tú y vosotros.",
+        "Tres modos: indicativo, subjuntivo e imperativo; el imperativo solo tiene formas propias de tú y vosotros.",
+        "Tres modos: indicativo, subjuntivo e imperativo; el subjuntivo solo tiene formas propias de tú y vosotros."
+      ],
+      "correcta": 1,
+      "explicacion": "Los modos son tres: indicativo, subjuntivo e imperativo. El condicional es un tiempo del indicativo, y «modo condicional» es solo su etiqueta tradicional. El imperativo es el paradigma más pequeño, con formas propias únicamente de tú (canta) y vosotros (cantad), porque para usted y ustedes se usa el subjuntivo (cante, canten); el subjuntivo, en cambio, tiene paradigma completo.",
+      "referencia": {
+        "apartado": "9.1. Los modos",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «modo»"
+      }
+    },
+    {
+      "id": "t36-g006",
+      "tema": 36,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "En «La patrulla detuvo al sospechoso», ¿qué prueba demuestra que «al sospechoso» es complemento directo?",
+      "opciones": [
+        "Se sustituye por «lo» —«lo detuvo»— y pasa a sujeto paciente al poner la oración en pasiva.",
+        "Lleva la preposición a, que es la marca exclusiva del complemento directo de persona.",
+        "Se sustituye por «le» y no puede pasar a sujeto en la pasiva."
+      ],
+      "correcta": 0,
+      "explicacion": "El complemento directo se reconoce por la sustitución con lo, la, los, las y por el paso a sujeto paciente de la pasiva: «lo detuvo» y «el sospechoso fue detenido por la patrulla». La preposición a no decide, porque también la lleva el indirecto y aquí es solo la a de persona determinada; y sustituir por le es precisamente el leísmo, que no demuestra función directa alguna.",
+      "referencia": {
+        "apartado": "15.1. La prueba del complemento directo, paso a paso",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «complemento directo»"
+      }
+    },
+    {
+      "id": "t36-g007",
+      "tema": 36,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "En «El agente estaba muy cansado», ¿por qué «muy cansado» es atributo y no complemento directo?",
+      "opciones": [
+        "Porque concuerda con el sujeto y se sustituye por «lo» invariable: «el agente lo estaba».",
+        "Porque se sustituye por «lo, la, los, las» concordados con el sujeto: «el agente la estaba».",
+        "Porque se puede eliminar sin que la oración deje de ser gramatical, igual que un circunstancial."
+      ],
+      "correcta": 0,
+      "explicacion": "El atributo concuerda con el sujeto y se conmuta por lo invariable, sin género ni número: «el agente lo estaba», también con sujeto femenino o plural. El complemento directo se conmuta con las formas concordadas la, los, las, que es lo que propone la segunda opción y además sería imposible con un verbo copulativo. Y la eliminación no identifica el atributo: sin él, «el agente estaba» cambia de sentido, mientras que un circunstancial se quita sin perder la gramaticalidad.",
+      "referencia": {
+        "apartado": "15. Los complementos del verbo",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «atributo» y «verbo copulativo»"
+      }
+    },
+    {
+      "id": "t36-g008",
+      "tema": 36,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál de estas formas verbales es una perífrasis y no un tiempo compuesto del paradigma?",
+      "opciones": [
+        "He cantado.",
+        "Había cantado.",
+        "Voy a cantar."
+      ],
+      "correcta": 2,
+      "explicacion": "La perífrasis se compone de un auxiliar en forma personal y un verbo auxiliado en forma no personal, aquí «voy» más el infinitivo «cantar», y aporta significado de modo o de fase. «He cantado» y «había cantado» son tiempos compuestos: haber más participio forma parte del paradigma, como pretérito perfecto compuesto y pluscuamperfecto, y por eso no son perífrasis aunque tengan dos formas verbales.",
+      "referencia": {
+        "apartado": "10.4. Perífrasis y locuciones verbales",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «perífrasis verbal»"
+      }
+    },
+    {
+      "id": "t36-g009",
+      "tema": 36,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Qué tipo de oración es «Se detuvo a los sospechosos»?",
+      "opciones": [
+        "Pasiva refleja, porque lleva el pronombre se y el verbo en tercera persona.",
+        "Impersonal refleja, porque el verbo no concuerda con «los sospechosos» y este segmento lleva la preposición a de complemento directo.",
+        "Reflexiva directa, porque el sujeto ejecuta y recibe a la vez la acción de detener."
+      ],
+      "correcta": 1,
+      "explicacion": "La prueba es el número: en la pasiva refleja el verbo concuerda con el sujeto paciente, como en «se venden pisos», mientras que aquí el verbo sigue en singular aunque «los sospechosos» vaya en plural, señal de que no hay sujeto y de que ese segmento es complemento directo con a. No es reflexiva, porque no hay un sujeto que ejecute y reciba la acción: la oración carece de sujeto.",
+      "referencia": {
+        "apartado": "6.2. Los valores de «se»",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «pasiva refleja» e «impersonal»"
+      }
+    },
+    {
+      "id": "t36-g010",
+      "tema": 36,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál de estas palabras es una conjunción adversativa?",
+      "opciones": [
+        "Mas.",
+        "Sin embargo.",
+        "No obstante."
+      ],
+      "correcta": 0,
+      "explicacion": "Las conjunciones adversativas propias son pero, sino y mas. «Sin embargo» y «no obstante» son grupos fijos que funcionan como conectores discursivos adverbiales: ordenan el texto, pero no son conjunciones y no se analizan como nexo coordinante. Que las tres signifiquen lo mismo no las convierte en la misma clase de palabra.",
+      "referencia": {
+        "apartado": "12.1. Coordinantes y subordinantes",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entrada «conjunción adversativa»"
+      }
+    },
+    {
+      "id": "t36-g011",
+      "tema": 36,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántas preposiciones resultan de añadir a la lista tradicional las cuatro que el diccionario marca como preposición?",
+      "opciones": [
+        "Diecinueve, porque cabe y so completan la lista clásica.",
+        "Veintiuna, porque solo se añaden durante y mediante.",
+        "Veintitrés, con durante, mediante, versus y vía."
+      ],
+      "correcta": 2,
+      "explicacion": "La lista tradicional tiene diecinueve preposiciones, contando cabe y so, y a ellas se suman durante, mediante, versus y vía, que el diccionario registra con acepción propia de preposición: veintitrés en total. Las otras dos opciones se quedan en una sola de las dos cuentas: diecinueve es la lista escolar y veintiuna no corresponde a ningún inventario, porque deja fuera versus y vía.",
+      "referencia": {
+        "apartado": "11.1. El inventario, y por qué hay dos cuentas",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «durante», «mediante», «versus» y «vía»"
+      }
+    },
+    {
+      "id": "t36-g012",
+      "tema": 36,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "En «Los agentes comprobaron que la puerta estaba abierta, pero no encontraron a nadie», ¿cuántas proposiciones hay y cómo se relacionan?",
+      "opciones": [
+        "Tres proposiciones coordinadas entre sí por el nexo pero.",
+        "Dos proposiciones coordinadas adversativas, y la primera contiene una subordinada sustantiva de complemento directo.",
+        "Una sola proposición con dos verbos, porque comprobar y encontrar comparten el mismo sujeto."
+      ],
+      "correcta": 1,
+      "explicacion": "Hay tres formas personales, pero «estaba» está dentro del complemento directo de «comprobaron» —«los agentes lo comprobaron»—, así que no es un tercer miembro coordinado: son dos proposiciones del mismo nivel unidas por pero. La primera opción cuenta verbos en lugar de niveles, y la tercera ignora que dos predicados hacen compuesta la oración, aunque compartan sujeto.",
+      "referencia": {
+        "apartado": "22.1. Paso 1 y 2: tres verbos, dos proposiciones",
+        "norma": "Diccionario de la lengua española (RAE y ASALE, 24.ª edición)",
+        "articulo": "entradas «oración compuesta» y «oración subordinada»"
+      }
+    }
+  ]
+}

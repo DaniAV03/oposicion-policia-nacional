@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 33,
+  "titulo": "Tema 33 · La seguridad. Concepto. Seguridad individual y seguridad colectiva. Seguridad pública y seguridad privada. La inseguridad. Teorías explicativas de la delincuencia: concepto, modelos explicativos y clases de delincuencia.",
+  "preguntas": [
+    {
+      "id": "t33-g001",
+      "tema": 33,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según el artículo 104.1 de la Constitución, las Fuerzas y Cuerpos de seguridad tienen como misión…",
+      "opciones": [
+        "Proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana.",
+        "Garantizar la seguridad jurídica de los ciudadanos y la publicidad de las normas.",
+        "Ejercer la potestad jurisdiccional en las materias relacionadas con la seguridad pública."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 104.1 CE encomienda a las Fuerzas y Cuerpos de seguridad proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana: proteger derechos y garantizar seguridad, en ese orden. La opción que habla de seguridad jurídica confunde la seguridad ciudadana con el principio del artículo 9.3 CE, y la que atribuye potestad jurisdiccional olvida que juzgar corresponde a jueces y tribunales, no a la policía.",
+      "referencia": {
+        "apartado": "3. La seguridad en el marco jurídico español",
+        "norma": "Constitución Española",
+        "articulo": "art. 104.1"
+      }
+    },
+    {
+      "id": "t33-g002",
+      "tema": 33,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Qué alcance tiene la competencia exclusiva del Estado sobre la seguridad pública que proclama el artículo 149.1.29.ª de la Constitución?",
+      "opciones": [
+        "Impide que las comunidades autónomas creen cuerpos de policía propios, porque la competencia exclusiva supone su monopolio.",
+        "No impide que las comunidades autónomas creen policías propias en la forma que establezcan sus estatutos y una ley orgánica.",
+        "Solo alcanza a la coordinación de las policías locales, que son competencia exclusiva de los ayuntamientos."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 149.1.29.ª CE atribuye al Estado la competencia exclusiva sobre seguridad pública, pero añade expresamente la posibilidad de que las comunidades autónomas creen policías propias conforme a sus estatutos y a una ley orgánica; el artículo 1.1 de la Ley Orgánica 2/1986 declara la exclusividad y sus apartados 2 y 3 reconocen la participación autonómica y local, con los cuerpos del artículo 2. Falla la que convierte la exclusividad en monopolio de ejecución y también la que reduce la competencia estatal a coordinar policías locales.",
+      "referencia": {
+        "apartado": "7. Seguridad pública: quién la ejerce y con qué título",
+        "norma": "Constitución Española",
+        "articulo": "art. 149.1.29.ª"
+      }
+    },
+    {
+      "id": "t33-g003",
+      "tema": 33,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál es la posición de la seguridad privada respecto de la seguridad pública según la Ley 5/2014?",
+      "opciones": [
+        "Es una manifestación de la seguridad pública, porque sus funciones son potestades administrativas delegadas.",
+        "Es una actividad privada independiente, que no guarda ninguna relación con la seguridad pública.",
+        "Es una actividad complementaria y subordinada respecto de la seguridad pública."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1.1 de la Ley 5/2014 califica las actividades y servicios de seguridad privada como complementarios y subordinados respecto de la seguridad pública. No son potestades administrativas delegadas —sus facultades están tasadas en el artículo 32 y el personal de seguridad privada no figura en el artículo 2 de la Ley Orgánica 2/1986— ni una actividad independiente: el artículo 8.2 les obliga a colaborar con los cuerpos y a seguir sus instrucciones.",
+      "referencia": {
+        "apartado": "8. Seguridad privada: quién la ejerce, con qué título y con qué límites",
+        "norma": "Ley 5/2014, de Seguridad Privada",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t33-g004",
+      "tema": 33,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Qué cuentan los datos del Sistema Estadístico de Criminalidad que publica el Ministerio del Interior?",
+      "opciones": [
+        "Hechos conocidos por los cuerpos de seguridad, por denuncia o por actuación policial propia.",
+        "Personas condenadas por sentencia firme, según el Registro Central de Penados.",
+        "Delitos efectivamente cometidos, incluidos los que no se han denunciado ni detectado."
+      ],
+      "correcta": 0,
+      "explicacion": "El SEC recoge hechos conocidos: infracciones de las que tienen noticia los cuerpos por denuncia o por actuación propia, de modo que no incluye los delitos no denunciados ni detectados, que es la cifra negra u oculta. Las personas condenadas las cuenta el INE con el Registro Central de Penados, que es otra unidad, y los delitos efectivamente cometidos no son medibles: solo se conocen los registrados.",
+      "referencia": {
+        "apartado": "10.1. Hechos conocidos: el Sistema Estadístico de Criminalidad",
+        "norma": "Ministerio del Interior, Portal Estadístico de Criminalidad",
+        "articulo": "metodología de hechos conocidos"
+      }
+    },
+    {
+      "id": "t33-g005",
+      "tema": 33,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Según el Código Penal, ¿qué distingue a la organización criminal del grupo criminal?",
+      "opciones": [
+        "Que la organización criminal exige un mínimo de dos personas y el grupo criminal, de tres.",
+        "Que la organización criminal exige más de dos personas con carácter estable o por tiempo indefinido y reparto de tareas, mientras que el grupo criminal no reúne alguna de esas características.",
+        "Que solo la organización criminal puede cometer delitos castigados con pena grave."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 570 bis define la organización criminal como agrupación de más de dos personas, con carácter estable o por tiempo indefinido, que de manera concertada y coordinada se reparte tareas para cometer delitos; el grupo criminal del artículo 570 ter es la unión de más de dos personas que no reúne alguna de esas características. La opción de dos frente a tres invierte los umbrales —«dos o más» es la definición del diccionario jurídico tomada del Código Penal de Ecuador— y la gravedad de la pena no decide la categoría, sino la estructura.",
+      "referencia": {
+        "apartado": "20.2. Por autoría colectiva",
+        "norma": "Código Penal",
+        "articulo": "arts. 570 bis y 570 ter"
+      }
+    },
+    {
+      "id": "t33-g006",
+      "tema": 33,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál es el plazo máximo que la Constitución fija para poner al detenido en libertad o a disposición de la autoridad judicial?",
+      "opciones": [
+        "Veinticuatro horas.",
+        "Cuarenta y ocho horas.",
+        "Setenta y dos horas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 17.2 CE permite la detención preventiva solo el tiempo estrictamente necesario para las averiguaciones y fija, en todo caso, un máximo de setenta y dos horas para dejar al detenido en libertad o a disposición judicial. Veinticuatro y cuarenta y ocho horas son plazos de otras actuaciones y no el límite constitucional; el artículo 17.3 exige además informar de inmediato de los derechos y las razones de la detención, y el 17.4 articula el habeas corpus.",
+      "referencia": {
+        "apartado": "5. Seguridad individual: qué protege y cómo se garantiza",
+        "norma": "Constitución Española",
+        "articulo": "art. 17.2"
+      }
+    },
+    {
+      "id": "t33-g007",
+      "tema": 33,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "La seguridad jurídica que garantiza el artículo 9.3 de la Constitución consiste en…",
+      "opciones": [
+        "La certeza de las normas y la previsibilidad de su aplicación.",
+        "La tranquilidad pública y el libre ejercicio de los derechos individuales, garantizada por las Fuerzas y Cuerpos de seguridad.",
+        "El sistema público de prestaciones ante situaciones de necesidad, como la enfermedad o el desempleo."
+      ],
+      "correcta": 0,
+      "explicacion": "La seguridad jurídica del artículo 9.3 CE es la cualidad del ordenamiento que da certeza a sus normas y previsibilidad a su aplicación, y así la recoge el diccionario jurídico. La tranquilidad pública y el libre ejercicio de los derechos es la seguridad ciudadana que el artículo 104.1 CE encomienda a los cuerpos policiales, y el sistema público de prestaciones ante situaciones de necesidad es la Seguridad Social del artículo 41 CE: tres cosas distintas que solo comparten la palabra.",
+      "referencia": {
+        "apartado": "4. Seguridad, seguridad jurídica y seguridad social: tres cosas distintas",
+        "norma": "Constitución Española",
+        "articulo": "art. 9.3"
+      }
+    },
+    {
+      "id": "t33-g008",
+      "tema": 33,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según el artículo 2 de la Ley 17/2015, la vulnerabilidad es…",
+      "opciones": [
+        "El potencial de ocasionar daño en determinadas situaciones a colectivos de personas o bienes.",
+        "La característica de una colectividad de personas o bienes que los hace susceptibles de ser afectados en mayor o menor grado por un peligro.",
+        "La posibilidad de que una amenaza llegue a afectar a colectivos de personas o a bienes."
+      ],
+      "correcta": 1,
+      "explicacion": "La Ley 17/2015 define la vulnerabilidad como la característica de una colectividad de personas o bienes que los hace susceptibles de ser afectados en mayor o menor grado por un peligro en determinadas circunstancias. El potencial de ocasionar daño es el peligro, y la posibilidad de que una amenaza llegue a afectar a personas o bienes es el riesgo; la amenaza, por su parte, es la situación de exposición a un peligro inminente o latente. Son cuatro definiciones legales y no sinónimos.",
+      "referencia": {
+        "apartado": "9.3. El vocabulario del riesgo",
+        "norma": "Ley 17/2015, del Sistema Nacional de Protección Civil",
+        "articulo": "art. 2"
+      }
+    },
+    {
+      "id": "t33-g009",
+      "tema": 33,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "En la tipología de Merton, ¿qué adaptación acepta los fines culturales pero rechaza los medios legítimos para alcanzarlos?",
+      "opciones": [
+        "El ritualismo.",
+        "El retraimiento.",
+        "La innovación."
+      ],
+      "correcta": 2,
+      "explicacion": "En la tipología de Merton la innovación acepta los fines culturales —éxito, dinero, estatus— y rechaza los medios legítimos, y es la adaptación que se asocia al delito instrumental. El ritualismo acepta los medios pero abandona los fines, y el retraimiento rechaza unos y otros, de modo que ninguna de las dos encaja con la definición. Conviene recordar que Merton habla de estructura social y de la brecha entre fines y medios, no de personalidad.",
+      "referencia": {
+        "apartado": "16.1. Merton: fines, medios y cinco adaptaciones",
+        "norma": "Merton, R. K., «Social Structure and Anomie» (American Sociological Review, 1938)",
+        "articulo": "tipología de las cinco adaptaciones"
+      }
+    },
+    {
+      "id": "t33-g010",
+      "tema": 33,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "La tasa de 40,5 delitos por mil habitantes que publica el balance del primer semestre de 2026 se refiere a…",
+      "opciones": [
+        "La criminalidad convencional de ese semestre.",
+        "El total anual de infracciones penales de 2025.",
+        "La cibercriminalidad de ese semestre."
+      ],
+      "correcta": 0,
+      "explicacion": "El balance del segundo trimestre de 2026 da una tasa de 40,5 delitos por mil habitantes referida a la criminalidad convencional de enero a junio, y otra de 10,0 por mil para la cibercriminalidad. No es un total anual ni se compara con el total de 2025, que fue de 2.474.156 infracciones: el total y la tasa son magnitudes distintas, y la tasa se calcula por periodo y por población para permitir comparaciones entre territorios.",
+      "referencia": {
+        "apartado": "11.3. El dato más reciente: primer semestre de 2026",
+        "norma": "Ministerio del Interior, Balance de Criminalidad (segundo trimestre de 2026)",
+        "articulo": "tasa de criminalidad por mil habitantes"
+      }
+    },
+    {
+      "id": "t33-g011",
+      "tema": 33,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué autor sostuvo que la agresión se aprende por observación y se mantiene por refuerzo?",
+      "opciones": [
+        "Hans J. Eysenck.",
+        "Albert Bandura.",
+        "John Bowlby."
+      ],
+      "correcta": 1,
+      "explicacion": "Bandura defendió en Aggression: A Social Learning Analysis (1973) que la agresión se aprende por observación de modelos y se mantiene por refuerzo, lo que le convierte en la bisagra entre la psicología y la sociología. Eysenck (1964) relacionó la conducta antisocial con extraversión, neuroticismo y psicoticismo, y Bowlby (1944) estudió el vínculo temprano y la separación de la madre: ninguno de los dos formuló el aprendizaje por observación.",
+      "referencia": {
+        "apartado": "15.3. Aprendizaje social",
+        "norma": "Bandura, A., Aggression: A Social Learning Analysis (1973)",
+        "articulo": "teoría del aprendizaje social"
+      }
+    },
+    {
+      "id": "t33-g012",
+      "tema": 33,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En el balance anual de 2025 del Ministerio del Interior, ¿cuál fue la tipología más numerosa de infracciones penales conocidas?",
+      "opciones": [
+        "Las estafas informáticas, con 430.493 hechos.",
+        "Los robos con fuerza en domicilios, con 74.353 hechos.",
+        "Los hurtos, con 633.888 hechos."
+      ],
+      "correcta": 2,
+      "explicacion": "Los hurtos fueron la tipología más numerosa de 2025, con 633.888 hechos, por delante de las estafas informáticas (430.493) y de los robos con fuerza en domicilios (74.353), según la tabla anual del balance. El patrimonio concentra el volumen, mientras que los homicidios consumados se cuentan por cientos: comparar tipologías exige citar el año y la tabla, porque la cibercriminalidad y la criminalidad convencional se presentan en bloques separados.",
+      "referencia": {
+        "apartado": "11.1. El año 2025, tipología por tipología",
+        "norma": "Ministerio del Interior, Balance de Criminalidad (cuarto trimestre de 2025)",
+        "articulo": "tabla anual de tipologías penales"
+      }
+    }
+  ]
+}

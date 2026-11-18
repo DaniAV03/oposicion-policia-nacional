@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 39,
+  "titulo": "Tema 39 · Redes informáticas: Modelo OSI. Modelo TCP/IP. Dispositivos de red: Concentradores (hubs); conmutadores (switches); encaminadores (routers); cortafuegos (firewall); servidores DHCP; servidores DNS; servidores proxy. Direccionamiento IP: clase de redes; IPv4; IPv6.",
+  "preguntas": [
+    {
+      "id": "t39-g001",
+      "tema": 39,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuántas capas tienen el modelo OSI y el conjunto de protocolos TCP/IP?",
+      "opciones": [
+        "Siete y siete: los dos modelos tienen las mismas capas y TCP/IP solo cambia el nombre de algunas.",
+        "Siete y cuatro, o cinco si se separa el hardware de red del interfaz de red.",
+        "Cinco y cuatro: OSI también agrupa la presentación y la sesión en una sola capa."
+      ],
+      "correcta": 1,
+      "explicacion": "OSI tiene siete capas y el conjunto TCP/IP cuatro según el RFC 1122: aplicación, transporte, Internet y enlace; el glosario del IETF habla de cinco porque separa el hardware de red del interfaz de red. La primera opción confunde los dos modelos y la tercera inventa un OSI de cinco capas: en OSI la presentación y la sesión son capas propias, y son precisamente las que TCP/IP absorbe en la aplicación.",
+      "referencia": {
+        "apartado": "6.1. Las capas del conjunto de protocolos de Internet",
+        "norma": "RFC 1122 (Requirements for Internet Hosts)",
+        "articulo": "§ 1.1.3"
+      }
+    },
+    {
+      "id": "t39-g002",
+      "tema": 39,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué hace un concentrador (hub) cuando recibe una trama por uno de sus puertos?",
+      "opciones": [
+        "Filtra el tráfico: la reenvía solo por el puerto donde está la dirección MAC de destino.",
+        "Aprende las direcciones MAC de los equipos conectados y construye con ellas una tabla de reenvío.",
+        "No lee ninguna dirección: regenera la señal y la repite por todos los puertos menos el de entrada."
+      ],
+      "correcta": 2,
+      "explicacion": "El concentrador es un repetidor multipuerto: trabaja en la capa física, no interpreta la trama y se limita a regenerar la señal y repetirla por todos los puertos, de modo que todos los equipos siguen compartiendo el medio. Filtrar por la MAC de destino y aprender direcciones son funciones del conmutador, que trabaja en la capa de enlace; por eso las otras dos opciones describen un switch y no un hub.",
+      "referencia": {
+        "apartado": "8.1. El concentrador (hub): capa 1",
+        "norma": "ITU-T X.200 (texto idéntico a ISO/IEC 7498-1)",
+        "articulo": "§ 7.7.2"
+      }
+    },
+    {
+      "id": "t39-g003",
+      "tema": 39,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿En qué capa trabaja un conmutador (switch) y qué efecto tiene sobre las subredes IP?",
+      "opciones": [
+        "Trabaja en la capa 3, porque lee una dirección de destino para decidir por dónde reenviar.",
+        "Trabaja en la capa 2 y no separa subredes: los segmentos que une comparten el mismo prefijo de red IP.",
+        "Trabaja en la capa 2 y separa subredes, porque cada puerto constituye una red IP distinta."
+      ],
+      "correcta": 1,
+      "explicacion": "El conmutador es un puente multipuerto: decide con la dirección MAC de destino, que es una dirección de capa 2, y por eso los segmentos que une siguen formando una única subred IP, tal como recuerda el RFC 1812. La primera opción confunde leer una dirección con decidir por IP, que es lo que hace el encaminador; la tercera acierta la capa pero invierte el efecto, porque quien separa subredes es el router.",
+      "referencia": {
+        "apartado": "8.2. El conmutador (switch): capa 2",
+        "norma": "RFC 1812 (Requirements for IP Version 4 Routers)",
+        "articulo": "§ 2.2.3"
+      }
+    },
+    {
+      "id": "t39-g004",
+      "tema": 39,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "En DHCP, que funciona sobre UDP, ¿qué puerto usa el servidor y qué puerto el cliente?",
+      "opciones": [
+        "Los mensajes del cliente al servidor van al puerto 67 y los del servidor al cliente, al 68.",
+        "Los mensajes del cliente al servidor van al puerto 68 y los del servidor al cliente, al 67.",
+        "Los dos extremos usan el puerto 53, porque DHCP comparte el transporte de los servicios de nombres."
+      ],
+      "correcta": 0,
+      "explicacion": "El RFC 2131 asigna el puerto 67 al servidor DHCP y el 68 al cliente, de modo que el tráfico del cliente hacia el servidor va al 67 y la respuesta vuelve al 68. La segunda opción invierte los papeles, que es la trampa más repetida de este apartado porque parece más natural al revés; la tercera confunde DHCP con DNS, que es el servicio que escucha en el puerto 53.",
+      "referencia": {
+        "apartado": "11.2. Los puertos y el sentido del tráfico",
+        "norma": "RFC 2131 (Dynamic Host Configuration Protocol)",
+        "articulo": "§ 4.1"
+      }
+    },
+    {
+      "id": "t39-g005",
+      "tema": 39,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un cliente tiene un arrendamiento DHCP de ocho horas. ¿Qué ocurre en T1 y qué ocurre en T2?",
+      "opciones": [
+        "En T1, a las cuatro horas, pregunta en difusión a cualquier servidor; en T2, a las siete horas, pide la renovación por unidifusión al servidor que le dio la dirección.",
+        "En T1, a las siete horas, pasa a RENEWING; en T2, a las cuatro horas, pasa a REBINDING y pregunta en difusión a cualquier servidor.",
+        "En T1, a las cuatro horas, pide la renovación por unidifusión al servidor que le dio la dirección; en T2, a las siete horas, pasa a REBINDING y manda la petición en difusión a cualquier servidor."
+      ],
+      "correcta": 2,
+      "explicacion": "T1 vale por defecto la mitad del arrendamiento y en ese momento el cliente pasa a RENEWING y pide la renovación por unidifusión al servidor que le dio la dirección; T2 vale 0,875 del arrendamiento y allí pasa a REBINDING y difunde la petición a cualquier servidor. Con ocho horas, T1 cae a las cuatro y T2 a las siete. La primera opción intercambia las modalidades de envío y la segunda intercambia los dos plazos, invirtiendo el orden obligatorio T1 antes de T2.",
+      "referencia": {
+        "apartado": "11.4. El arrendamiento y sus dos relojes",
+        "norma": "RFC 2131 (Dynamic Host Configuration Protocol)",
+        "articulo": "§ 4.4.5"
+      }
+    },
+    {
+      "id": "t39-g006",
+      "tema": 39,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas afirmaciones sobre IPv6 es correcta?",
+      "opciones": [
+        "Tiene suma de control de cabecera, que se recalcula en cada salto como en IPv4.",
+        "No tiene direcciones de difusión: su función la asumen las direcciones de multidifusión.",
+        "Los encaminadores IPv6 pueden fragmentar un paquete demasiado grande para el MTU del tramo."
+      ],
+      "correcta": 1,
+      "explicacion": "En IPv6 no hay direcciones de difusión y su función la cumplen las direcciones de multidifusión, que van en el prefijo FF00::/8. La primera opción es falsa porque IPv6 suprime la suma de control de cabecera y por eso las sumas de las capas superiores pasan a ser obligatorias; la tercera también, porque en IPv6 la fragmentación solo la realizan los nodos de origen, nunca los encaminadores.",
+      "referencia": {
+        "apartado": "18.3. Los tipos de dirección",
+        "norma": "RFC 4291 (IP Version 6 Addressing Architecture)",
+        "articulo": "§ 2.1"
+      }
+    },
+    {
+      "id": "t39-g007",
+      "tema": 39,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un equipo tiene la dirección 172.16.5.130 con máscara 255.255.255.192. ¿Cuál es la dirección de su subred y cuál la de difusión de esa subred?",
+      "opciones": [
+        "Subred 172.16.5.128 y difusión 172.16.5.191.",
+        "Subred 172.16.5.130 y difusión 172.16.5.191.",
+        "Subred 172.16.5.128 y difusión 172.16.5.255."
+      ],
+      "correcta": 0,
+      "explicacion": "La máscara 255.255.255.192 equivale a un prefijo /26, con bloques de 64 direcciones: la conjunción lógica entre 130 y 192 da 128, así que la subred empieza en 172.16.5.128 y la difusión es 128 + 64 − 1, es decir, 172.16.5.191. La segunda opción toma la propia dirección del equipo como dirección de red, que es el error más común del cálculo; la tercera calcula la difusión como si la máscara fuera /24 y terminara siempre en 255.",
+      "referencia": {
+        "apartado": "16.2. Ejercicio resuelto 2: averiguar la red de una dirección dada",
+        "norma": "RFC 950 (Internet Standard Subnetting Procedure)",
+        "articulo": "«Special Addresses»"
+      }
+    },
+    {
+      "id": "t39-g008",
+      "tema": 39,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de estas direcciones no pertenece a ninguno de los tres bloques privados del RFC 1918?",
+      "opciones": [
+        "10.20.30.40",
+        "172.32.0.1",
+        "172.20.0.1"
+      ],
+      "correcta": 1,
+      "explicacion": "Los bloques privados son 10/8, 172.16/12 y 192.168/16: el segundo abarca de 172.16.0.0 a 172.31.255.255, de modo que 172.32.0.1 queda ya fuera y es una dirección pública. La opción 10.20.30.40 cae en 10/8 y la 172.20.0.1 cae dentro de 172.16/12, que es el error clásico de quien confunde ese bloque con una única red 172.16.0.0/16.",
+      "referencia": {
+        "apartado": "17.1. Los tres bloques privados",
+        "norma": "RFC 1918 (Address Allocation for Private Internets)",
+        "articulo": "§ 3"
+      }
+    },
+    {
+      "id": "t39-g009",
+      "tema": 39,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Cómo se reparte el espacio de direcciones IPv4 no asignado?",
+      "opciones": [
+        "La IANA reparte ese espacio a los registros regionales de Internet en bloques contiguos y alineados de prefijo /8.",
+        "Cada proveedor de servicios de Internet pide sus direcciones directamente a la IANA, que las asigna una a una.",
+        "Los registros regionales reparten bloques /8 a la IANA, y la IANA los distribuye después entre los proveedores."
+      ],
+      "correcta": 0,
+      "explicacion": "El RFC 4632 describe la cadena completa: la IANA administra el conjunto no asignado y hace asignaciones a los registros regionales en bloques contiguos y alineados de 2²⁴ direcciones, es decir, prefijos /8, y son esos registros los que después asignan bloques menores a proveedores y clientes. La segunda opción salta dos escalones de la cadena y la tercera la invierte, porque los registros regionales reciben de la IANA, no al contrario.",
+      "referencia": {
+        "apartado": "15.3. Quién reparte las direcciones",
+        "norma": "RFC 4632 (Classless Inter-Domain Routing)",
+        "articulo": "§ 3.1"
+      }
+    },
+    {
+      "id": "t39-g010",
+      "tema": 39,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Qué hace un servidor proxy que no hacen ni el cortafuegos de filtrado ni el NAT?",
+      "opciones": [
+        "Reescribe las direcciones y los puertos de las cabeceras para que muchos equipos compartan una sola dirección pública.",
+        "Deja pasar o descarta cada paquete según una lista de reglas, sin modificar su contenido.",
+        "Termina la conexión del cliente, entiende la petición y abre otra conexión hacia el servidor, de modo que puede filtrar por contenido, cachear y registrar la transacción."
+      ],
+      "correcta": 2,
+      "explicacion": "El proxy es un relevo de la capa de aplicación: termina la conexión del cliente, interpreta la petición y la vuelve a emitir hacia el servidor, y eso le permite filtrar por URL, cachear respuestas, autenticar usuarios y registrar la transacción entera. La primera opción describe el NAT o NAPT, que solo traduce direcciones y puertos; la segunda describe el filtro de paquetes, que decide con las cabeceras y no reconstruye la petición.",
+      "referencia": {
+        "apartado": "13.3. Proxy, NAT y cortafuegos: tres cosas distintas",
+        "norma": "RFC 4949 (Internet Security Glossary, Version 2)",
+        "articulo": "entrada proxy"
+      }
+    },
+    {
+      "id": "t39-g011",
+      "tema": 39,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "En la correspondencia entre OSI y TCP/IP, ¿qué capas de OSI absorbe la capa de aplicación de TCP/IP?",
+      "opciones": [
+        "Solo la capa de aplicación, porque la presentación y la sesión tienen su equivalente en la capa de transporte.",
+        "Las capas de aplicación y de transporte, porque TCP/IP no distingue el extremo a extremo.",
+        "Las capas de aplicación, presentación y sesión, es decir, las capas 7, 6 y 5 de OSI."
+      ],
+      "correcta": 2,
+      "explicacion": "La capa de aplicación de TCP/IP combina las funciones de las tres capas superiores de OSI: aplicación, presentación y sesión, tal como dice el RFC 1122, y por eso en Internet no hay negociación de sintaxis ni gestión de diálogo como servicios independientes. Las otras dos opciones colocan la presentación o la sesión en el transporte, cuando es el transporte el que coincide exactamente con su homónima de OSI, junto con la capa de red.",
+      "referencia": {
+        "apartado": "6.2. La correspondencia, capa a capa",
+        "norma": "RFC 1122 (Requirements for Internet Hosts)",
+        "articulo": "§ 1.1.3"
+      }
+    },
+    {
+      "id": "t39-g012",
+      "tema": 39,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "En DNS, ¿qué tipo de registro guarda el servidor de correo de un dominio y qué tipo se emplea para la resolución inversa?",
+      "opciones": [
+        "El registro MX guarda el servidor de correo y el PTR se usa para la resolución inversa, de dirección a nombre.",
+        "El registro SOA guarda el servidor de correo y el AAAA se usa para la resolución inversa.",
+        "El registro CNAME guarda el servidor de correo y el NS se usa para la resolución inversa."
+      ],
+      "correcta": 0,
+      "explicacion": "El registro MX identifica el servidor de correo de un dominio con su preferencia, y el PTR es el puntero que sostiene la resolución inversa sobre el dominio in-addr.arpa, con la dirección IPv4 escrita al revés. Las otras dos opciones cambian las funciones: el SOA marca el inicio de autoridad de la zona y el AAAA guarda una dirección IPv6, mientras que el CNAME es un alias y el NS señala el servidor de nombres autoritativo de la zona.",
+      "referencia": {
+        "apartado": "12.2. Los tipos de registro",
+        "norma": "RFC 1035 (Domain Names: Implementation and Specification)",
+        "articulo": "§ 3.3.9 y § 3.3.12"
+      }
+    }
+  ]
+}

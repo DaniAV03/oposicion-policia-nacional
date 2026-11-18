@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 16,
+  "titulo": "Tema 16 · Derecho Penal Parte General: concepto. Principios informadores del Derecho Penal. La infracción penal. Concepto material de delito. Grados de ejecución del delito. Personas físicas y jurídicas criminalmente responsables. Las consecuencias jurídicas de la infracción penal. Vigencia temporal y espacial de la Ley Penal. La edad penal y sus efectos. Circunstancias modificativas de la responsabilidad criminal.",
+  "preguntas": [
+    {
+      "id": "t16-g001",
+      "tema": 16,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El artículo 10 del Código Penal define el delito como…",
+      "opciones": [
+        "Las acciones u omisiones típicas, antijurídicas, culpables y punibles que describe la doctrina penal.",
+        "Las acciones y omisiones dolosas e imprudentes castigadas con pena, sin exigir que esa pena esté prevista en la ley.",
+        "Las acciones y omisiones dolosas o imprudentes penadas por la ley."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 10 dice literalmente «son delitos las acciones y omisiones dolosas o imprudentes penadas por la ley», y de esa frase se extraen los cuatro elementos del concepto material: conducta activa u omisiva, dolo o imprudencia, previsión legal de la pena y antijuridicidad. La primera opción enumera los estratos del delito que elabora la doctrina —tipicidad, antijuridicidad, culpabilidad y punibilidad—, que no son la definición legal; la segunda suprime justamente la exigencia de ley previa que impone el artículo 1.1.",
+      "referencia": {
+        "apartado": "4.1. El concepto material de delito",
+        "norma": "Código Penal",
+        "articulo": "art. 10"
+      }
+    },
+    {
+      "id": "t16-g002",
+      "tema": 16,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una figura delictiva está castigada con pena de prisión de tres meses a cinco años. Según los artículos 13 y 33 del Código Penal, ese delito es…",
+      "opciones": [
+        "Menos grave, porque no existe pena de prisión leve y solo la prisión superior a cinco años es pena grave.",
+        "Leve, porque su límite mínimo no llega a un año de prisión.",
+        "Grave, porque su límite máximo alcanza los cinco años."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 13 clasifica la infracción por la pena, y el artículo 33 fija los umbrales: es grave la prisión superior a cinco años y es menos grave la prisión de tres meses a cinco años, mientras que no existe pena de prisión leve, porque la prisión más corta posible son tres meses (artículo 36.2). Por eso la opción de la prisión grave confunde el límite superior incluido con la frontera de los cinco años, y la opción de la prisión leve describe una pena que el Código no contempla: las penas leves son la multa de hasta tres meses, la localización permanente y los trabajos de uno a treinta días.",
+      "referencia": {
+        "apartado": "4.2. Las clases de infracción",
+        "norma": "Código Penal",
+        "articulo": "arts. 13 y 33.2 a 4"
+      }
+    },
+    {
+      "id": "t16-g003",
+      "tema": 16,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un sujeto ha dado principio a la ejecución de un delito y, antes de consumarlo, evita voluntariamente el resultado. ¿Qué efecto tiene ese desistimiento?",
+      "opciones": [
+        "Es una atenuante que obliga a imponer la pena de la tentativa rebajada en un grado.",
+        "Exime de responsabilidad por el delito intentado, sin perjuicio de responder por los actos ya ejecutados que constituyan otro delito.",
+        "Solo tiene efecto si actuaba solo, porque con varios partícipes cada uno responde de la tentativa."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 16.2 no rebaja la pena: deja exento de responsabilidad por el delito intentado a quien evita voluntariamente la consumación, desistiendo de la ejecución ya iniciada o impidiendo el resultado, y solo responde por los actos ejecutados que ya sean constitutivos de otro delito. Por eso falla la opción que lo convierte en atenuante, que es la confusión más habitual con la tentativa del artículo 62. Y falla la que lo limita al autor único: el artículo 16.3 extiende la exención a quienes, en la intervención de varios sujetos, desistan e impidan o intenten impedir seria, firme y decididamente la consumación.",
+      "referencia": {
+        "apartado": "5.1. El iter criminis",
+        "norma": "Código Penal",
+        "articulo": "art. 16.2 y 16.3"
+      }
+    },
+    {
+      "id": "t16-g004",
+      "tema": 16,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Quien coopera a la ejecución del delito con un acto sin el cual no se habría efectuado tiene la consideración de…",
+      "opciones": [
+        "Cómplice, con la pena inferior en un grado a la de los autores.",
+        "Cómplice, con la pena inferior en dos grados a la de los autores.",
+        "Autor, porque el artículo 28 incluye entre los autores a los cooperadores necesarios."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 28 considera autores a quienes realizan el hecho por sí solos, conjuntamente o por medio de otro del que se sirven como instrumento, y añade a los que inducen directamente a otro a ejecutarlo y a los que cooperan a su ejecución con un acto sin el cual no se habría efectuado, es decir, a los cooperadores necesarios. Las dos opciones que hablan de complicidad aplican el artículo 29, reservado a quien coopera con actos anteriores o simultáneos sin ser necesario, y su pena del artículo 63, que es inferior en un grado exactamente y nunca en dos.",
+      "referencia": {
+        "apartado": "6.1. Autoría y participación",
+        "norma": "Código Penal",
+        "articulo": "arts. 28, 29 y 63"
+      }
+    },
+    {
+      "id": "t16-g005",
+      "tema": 16,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué exige el artículo 31 bis.2 para eximir a una persona jurídica cuando el delito lo ha cometido en su beneficio uno de sus representantes legales?",
+      "opciones": [
+        "Que el órgano de administración haya adoptado y ejecutado con eficacia, antes de la comisión del delito, un modelo de organización y gestión idóneo y que la supervisión se haya confiado a un órgano con poderes autónomos de iniciativa y control.",
+        "Que la persona física autora haya sido condenada antes de dirigir el procedimiento contra la entidad, porque la responsabilidad de la jurídica es subsidiaria.",
+        "Que la entidad confiese el hecho antes de conocer que el procedimiento se dirige contra ella y repare el daño antes del juicio oral."
+      ],
+      "correcta": 0,
+      "explicacion": "La exención del artículo 31 bis.2 gira sobre el modelo de organización y gestión adoptado y ejecutado eficazmente antes del delito, la supervisión confiada a un órgano con poderes autónomos de iniciativa y control, la elusión fraudulenta del modelo por los autores y la ausencia de omisión o ejercicio insuficiente de la supervisión; si esas circunstancias solo se acreditan parcialmente, valen como atenuación. La primera opción falsa contradice el artículo 31 ter, que permite exigir la responsabilidad de la jurídica aunque no se haya individualizado a la persona física ni haya sido posible dirigir el procedimiento contra ella. La segunda describe dos de las cuatro atenuantes del artículo 31 quater, que rebajan pero no eximen.",
+      "referencia": {
+        "apartado": "6.3. La responsabilidad penal de las personas jurídicas",
+        "norma": "Código Penal",
+        "articulo": "arts. 31 bis.2, 31 ter y 31 quater"
+      }
+    },
+    {
+      "id": "t16-g006",
+      "tema": 16,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Según el artículo 33, ¿en qué momento la pena de prisión pasa a ser grave?",
+      "opciones": [
+        "Cuando supera los tres años, porque la prisión de tres meses a tres años es la banda básica del sistema.",
+        "Cuando excede de cinco años, de modo que la prisión de tres meses a cinco años es menos grave.",
+        "Cuando alcanza los diez años, que es la frontera que el Código usa para la inhabilitación absoluta."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 33.2 califica como grave la prisión superior a cinco años, y el artículo 33.3 califica como menos grave la prisión de tres meses a cinco años, con lo que la frontera exacta son los cinco años. La opción de los tres años se apoya en el mínimo de la prisión del artículo 36.2, no en la clasificación de penas. Y la de los diez años mezcla otra frontera distinta: el artículo 55 usa los diez años para que la prisión lleve consigo, como accesoria obligatoria, la inhabilitación absoluta durante el tiempo de la condena.",
+      "referencia": {
+        "apartado": "7.2. La clasificación del artículo 33",
+        "norma": "Código Penal",
+        "articulo": "arts. 33.2, 33.3 y 55"
+      }
+    },
+    {
+      "id": "t16-g007",
+      "tema": 16,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Cuando la multa se impone a una persona jurídica por el sistema de días-multa, su extensión máxima es de…",
+      "opciones": [
+        "Dos años, exactamente igual que para las personas físicas.",
+        "Un año, que es el tope de la responsabilidad personal subsidiaria por impago.",
+        "Cinco años, frente a los dos años que rigen con carácter general."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 50 fija la extensión de la multa de días-multa entre diez días y dos años, y eleva el máximo a cinco años cuando se impone a una persona jurídica; la cuota diaria va de dos a cuatrocientos euros, o de treinta a cinco mil euros para las jurídicas, con meses de treinta días y años de trescientos sesenta. La opción de los dos años es la regla general aplicable a las personas físicas, así que se queda corta para la jurídica. Y la del año confunde la extensión de la multa con el límite de la responsabilidad personal subsidiaria de la multa proporcional, que no puede exceder de un año.",
+      "referencia": {
+        "apartado": "7.3. Duración de las penas y régimen de cada una",
+        "norma": "Código Penal",
+        "articulo": "arts. 50 y 53"
+      }
+    },
+    {
+      "id": "t16-g008",
+      "tema": 16,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Suspendida la ejecución de una pena privativa de libertad no superior a dos años por la vía ordinaria del artículo 80, ¿cuál es el plazo de la suspensión?",
+      "opciones": [
+        "De dos a cinco años.",
+        "De tres meses a un año, que es el plazo previsto para las penas leves.",
+        "De cinco a diez años, para permitir el cumplimiento de los deberes y prestaciones impuestos."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 81 fija el plazo de suspensión en dos a cinco años para las penas privativas de libertad no superiores a dos años. La banda de tres meses a un año es la que ese mismo artículo reserva a la suspensión de las penas leves, de modo que no cabe trasladarla a una pena de prisión. La banda de cinco a diez años no es plazo de suspensión: coincide con la duración de la suspensión de la prisión permanente revisable del artículo 92 y con la libertad vigilada de los delitos graves, que son instituciones distintas.",
+      "referencia": {
+        "apartado": "9.1. La suspensión de la ejecución de la pena",
+        "norma": "Código Penal",
+        "articulo": "arts. 80 y 81"
+      }
+    },
+    {
+      "id": "t16-g009",
+      "tema": 16,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Como regla general, la libertad condicional del artículo 90 exige…",
+      "opciones": [
+        "Estar clasificado en segundo grado y haber extinguido las dos terceras partes de la pena.",
+        "Estar clasificado en tercer grado, haber extinguido las tres cuartas partes de la pena y haber observado buena conducta.",
+        "Haber extinguido la mitad de la condena, salvo que se trate de una primera condena superior a tres años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 90.1 concede la libertad condicional al penado clasificado en tercer grado que haya extinguido las tres cuartas partes de la pena y haya observado buena conducta, y el Juez de Vigilancia Penitenciaria es quien la acuerda. Las dos terceras partes son el umbral del artículo 90.2, que además exige haber desarrollado actividades laborales, culturales u ocupacionales, así que sin ese requisito no basta. La opción de la mitad invierte la excepción del artículo 90.3, reservada a quien cumple su primera condena de prisión no superior a tres años, y la sitúa como regla general.",
+      "referencia": {
+        "apartado": "9.3. La libertad condicional",
+        "norma": "Código Penal",
+        "articulo": "art. 90"
+      }
+    },
+    {
+      "id": "t16-g010",
+      "tema": 16,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántas medidas de seguridad privativas de libertad y cuántas no privativas enumera el artículo 96?",
+      "opciones": [
+        "Seis privativas de libertad y tres no privativas.",
+        "Cuatro privativas de libertad y cinco no privativas.",
+        "Tres privativas de libertad y seis no privativas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 96 enumera tres medidas privativas de libertad —internamiento en centro psiquiátrico, internamiento en centro de deshabituación e internamiento en centro educativo especial— y seis no privativas: inhabilitación profesional, expulsión del territorio nacional de extranjeros no residentes legalmente, libertad vigilada, custodia familiar, privación del derecho a conducir y privación del derecho a la tenencia y porte de armas. Las otras dos opciones intercambian las cifras, que es la trampa del enunciado. Conviene retener además que la medida se funda en la peligrosidad y no puede exceder la pena abstractamente aplicable al hecho (artículo 6.2).",
+      "referencia": {
+        "apartado": "10.1. Las medidas de seguridad",
+        "norma": "Código Penal",
+        "articulo": "arts. 6 y 96"
+      }
+    },
+    {
+      "id": "t16-g011",
+      "tema": 16,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Un delito tiene señalada una pena máxima de prisión de doce años. ¿Cuál es el plazo de prescripción del delito?",
+      "opciones": [
+        "Quince años, porque la pena máxima excede de diez y no llega a quince.",
+        "Veinte años, porque cualquier pena de prisión superior a diez años abre ese tramo.",
+        "Diez años, porque el tramo de quince se reserva a las penas de prisión de quince años o más."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 131.1 ordena los tramos así: veinte años cuando la pena máxima es prisión de quince o más años; quince años cuando es inhabilitación por más de diez años o prisión por más de diez y menos de quince; diez años cuando es prisión o inhabilitación por más de cinco y que no exceda de diez; y cinco años los demás delitos, con el año para los leves y para las injurias y calumnias. Doce años de prisión caen en el tramo de quince. La opción de los veinte adelanta el tramo reservado a quince años o más, y la de los diez retrasa el cómputo un escalón.",
+      "referencia": {
+        "apartado": "11. La extinción de la responsabilidad criminal",
+        "norma": "Código Penal",
+        "articulo": "art. 131.1"
+      }
+    },
+    {
+      "id": "t16-g012",
+      "tema": 16,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Un joven de diecisiete años comete un hecho tipificado como delito en el Código Penal. ¿Quién es competente y qué se le impone?",
+      "opciones": [
+        "Los tribunales ordinarios, que le imponen las penas del Código rebajadas en un grado.",
+        "El Juez de Menores, que le impone las medidas de la Ley Orgánica 5/2000 y no penas.",
+        "El Juez de Menores, que le impone penas de prisión sustituidas por internamiento en centro educativo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 19 del Código Penal declara que los menores de dieciocho años no responden con arreglo a él, y la Ley Orgánica 5/2000 extiende su ámbito a los mayores de catorce y menores de dieciocho, cuyo enjuiciamiento corresponde al Juez de Menores con medidas y nunca con penas; las medidas y sus duraciones están en los artículos 7, 9 y 10 de esa ley orgánica. Por eso falla la opción de los tribunales ordinarios, que es la que se aplica a partir de los dieciocho años, y también la que mezcla las dos categorías hablando de penas sustituidas.",
+      "referencia": {
+        "apartado": "13. La edad penal y sus efectos",
+        "norma": "Ley Orgánica 5/2000, de 12 de enero",
+        "articulo": "art. 1.1, y art. 19 del Código Penal"
+      }
+    }
+  ]
+}

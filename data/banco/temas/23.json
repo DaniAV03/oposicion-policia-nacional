@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 23,
+  "titulo": "Tema 23 · Políticas de igualdad, protección y no discriminación en la AGE. La Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres. Los Planes para la igualdad en la Administración General del Estado y en sus organismos públicos. Políticas contra la violencia de género. La Ley Orgánica 1/2004, de 28 de diciembre, de medidas de protección integral contra la violencia de género. Políticas de integración de las personas con discapacidad. La Ley 39/2006, de 14 de diciembre, de promoción de la autonomía personal y atención a las personas en situación de dependencia. Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+  "preguntas": [
+    {
+      "id": "t23-g001",
+      "tema": 23,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién aprueba el Plan para la igualdad entre mujeres y hombres en la Administración General del Estado y con qué periodicidad?",
+      "opciones": [
+        "El Gobierno, mediante acuerdo del Consejo de Ministros, al inicio de cada legislatura.",
+        "La Secretaría de Estado de Función Pública, mediante resolución publicada en el BOE, cada cuatro años naturales.",
+        "La Comisión Técnica de Igualdad de la Mesa General de Negociación, al inicio de cada legislatura."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 64 de la Ley Orgánica 3/2007 dice literalmente que el Gobierno aprobará, al inicio de cada legislatura, un Plan para la igualdad en la Administración General del Estado y en sus organismos públicos, y su cumplimiento lo evalúa anualmente el Consejo de Ministros. La primera opción falsa confunde aprobar con publicar: la Secretaría de Estado de Función Pública solo publica el acuerdo por resolución, y el plan no se rige por un cómputo fijo de cuatro años naturales; la segunda atribuye la aprobación a la Comisión Técnica, que negocia el texto pero no lo aprueba.",
+      "referencia": {
+        "apartado": "7. Los Planes para la igualdad en la AGE y en sus organismos públicos",
+        "norma": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+        "articulo": "art. 64"
+      }
+    },
+    {
+      "id": "t23-g002",
+      "tema": 23,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "La Ley Orgánica 3/2007 se denomina «orgánica» porque…",
+      "opciones": [
+        "Todos sus preceptos desarrollan el derecho fundamental de igualdad del artículo 14 de la Constitución.",
+        "Solo sus disposiciones adicionales primera, segunda y tercera tienen carácter orgánico; el resto de la ley no lo tiene.",
+        "Su título IV, sobre el empleo privado, se dicta al amparo de la reserva de ley orgánica del artículo 81.1 de la Constitución."
+      ],
+      "correcta": 1,
+      "explicacion": "La disposición final segunda es explícita: únicamente las disposiciones adicionales primera, segunda y tercera tienen carácter orgánico, porque reforman la LOREG y la LOPJ. La primera opción falsa confunde el nombre de la ley con su contenido, ya que buena parte de sus preceptos son condiciones básicas del artículo 149.1.1.ª o legislación laboral del 149.1.7.ª; la tercera yerra el título y el motivo, porque el título IV es precisamente legislación laboral y queda fuera del carácter orgánico.",
+      "referencia": {
+        "apartado": "3.2. Fundamento competencial y naturaleza",
+        "norma": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+        "articulo": "disposición final 2.ª"
+      }
+    },
+    {
+      "id": "t23-g003",
+      "tema": 23,
+      "dificultad": "media",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué se entiende por composición equilibrada según la Ley Orgánica 3/2007?",
+      "opciones": [
+        "Que al menos el 40 % de las plazas de los cursos de formación se reserven a empleadas públicas.",
+        "Que cada sexo represente exactamente el 50 % de los puestos del órgano de que se trate.",
+        "Que las personas de cada sexo no superen el 60 % ni sean menos del 40 % del conjunto a que se refiera."
+      ],
+      "correcta": 2,
+      "explicacion": "La disposición adicional primera define la composición equilibrada como la presencia de mujeres y hombres de forma que, en el conjunto a que se refiera, cada sexo no supere el 60 % ni sea menos del 40 %. La primera opción describe la reserva del artículo 60.2 para los cursos de formación, que es un mínimo del 40 % de plazas y no la definición general; la segunda convierte una banda en una cuota exacta del 50 %, que la ley no exige en ningún supuesto.",
+      "referencia": {
+        "apartado": "4.2. La composición equilibrada",
+        "norma": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres",
+        "articulo": "disposición adicional 1.ª"
+      }
+    },
+    {
+      "id": "t23-g004",
+      "tema": 23,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿De qué órgano depende la Unidad de Igualdad de cada ministerio y quién puede ser su responsable?",
+      "opciones": [
+        "De la Subsecretaría del ministerio, a través de un órgano directivo, y su responsable debe ser funcionario de carrera del subgrupo A1.",
+        "Del Ministerio de Igualdad, y su responsable puede ser personal laboral con experiencia acreditada en igualdad.",
+        "De la Comisión Interministerial de Igualdad, y su responsable es un alto cargo nombrado por el Consejo de Ministros."
+      ],
+      "correcta": 0,
+      "explicacion": "El Real Decreto 259/2019 crea una Unidad de Igualdad por ministerio, adscrita a la Subsecretaría a través de un órgano directivo, con los puestos reservados a funcionarios de carrera y la persona responsable en el subgrupo A1, con formación y experiencia en igualdad. La primera opción falsa la coloca bajo el Ministerio de Igualdad y abre la puerta al personal laboral; la segunda la subordina a la Comisión Interministerial, que coordina las políticas departamentales pero no es el órgano superior de la Unidad.",
+      "referencia": {
+        "apartado": "8. Las Unidades de Igualdad y los órganos de coordinación",
+        "norma": "Real Decreto 259/2019, de 12 de abril, por el que se regulan las Unidades de Igualdad de la Administración General del Estado",
+        "articulo": "arts. 2.2 y 4"
+      }
+    },
+    {
+      "id": "t23-g005",
+      "tema": 23,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuándo entró en vigor la Ley Orgánica 1/2004 y con qué excepción?",
+      "opciones": [
+        "A los treinta días de su publicación, sin excepciones, el 28 de enero de 2005.",
+        "A los treinta días de su publicación, salvo los títulos IV y V, que lo hicieron a los seis meses.",
+        "A los seis meses de su publicación, salvo los títulos IV y V, que lo hicieron a los treinta días."
+      ],
+      "correcta": 1,
+      "explicacion": "La disposición final séptima fija la entrada en vigor a los treinta días de la publicación, de modo que la ley empezó a regir el 28 de enero de 2005, pero retrasa seis meses los títulos IV y V, es decir, la tutela penal y la tutela judicial. La primera opción suprime esa excepción y hace coincidir toda la ley con los treinta días; la tercera invierte los plazos, que es la trampa clásica, porque los títulos que más tardaron fueron precisamente los penales y procesales.",
+      "referencia": {
+        "apartado": "10.2. Estructura, naturaleza y entrada en vigor",
+        "norma": "Ley Orgánica 1/2004, de 28 de diciembre, de medidas de protección integral contra la violencia de género",
+        "articulo": "disposición final 7.ª"
+      }
+    },
+    {
+      "id": "t23-g006",
+      "tema": 23,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Cuál de estos supuestos queda dentro del ámbito de la Ley Orgánica 1/2004?",
+      "opciones": [
+        "La agresión sexual cometida por un desconocido en la vía pública.",
+        "La violencia ejercida por una mujer sobre su pareja hombre.",
+        "La violencia ejercida por quien estuvo ligado a la mujer por una relación de afectividad, aunque no hubiera convivencia."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1.1 delimita la violencia de género por el sujeto y por la relación: la que ejercen sobre las mujeres quienes son o han sido sus cónyuges o quienes están o han estado ligados a ellas por relaciones similares de afectividad, aun sin convivencia, de modo que la expareja sin convivencia entra. La primera opción carece de esa relación y se aborda por la Ley Orgánica 10/2022; la segunda no encaja porque la ley define la violencia como la ejercida por hombres sobre mujeres, y esa conducta se castiga como violencia doméstica del Código Penal.",
+      "referencia": {
+        "apartado": "10.1. El objeto y la definición del artículo 1",
+        "norma": "Ley Orgánica 1/2004, de 28 de diciembre, de medidas de protección integral contra la violencia de género",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t23-g007",
+      "tema": 23,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "En un asunto tramitado ante un Juzgado de Violencia sobre la Mujer, ¿cabe la mediación entre la víctima y el agresor?",
+      "opciones": [
+        "No: el artículo 87 ter.5 de la LOPJ la declara vedada en todos estos casos, sin excepciones.",
+        "Sí, si la víctima lo consiente de forma libre e informada y el Ministerio Fiscal informa favorablemente.",
+        "Solo en los procedimientos civiles de separación o divorcio, nunca en los penales."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 87 ter.5 de la Ley Orgánica del Poder Judicial dice, sin matices, que en todos estos casos está vedada la mediación, de modo que no hay margen para el consentimiento de la víctima. La primera opción falsa importa al proceso la lógica de la justicia restaurativa del artículo 15 del Estatuto de la víctima, que aquí está excluida; la segunda limita la prohibición a los asuntos penales cuando alcanza también a los civiles que conoce ese juzgado.",
+      "referencia": {
+        "apartado": "13.2. Los Juzgados de Violencia sobre la Mujer",
+        "norma": "Ley Orgánica 6/1985, de 1 de julio, del Poder Judicial",
+        "articulo": "art. 87 ter.5"
+      }
+    },
+    {
+      "id": "t23-g008",
+      "tema": 23,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué categoría tiene el Fiscal contra la Violencia sobre la Mujer y con qué periodicidad rinde su informe?",
+      "opciones": [
+        "Fiscal de Sala, y elabora un informe anual.",
+        "Fiscal de Sala, y elabora un informe semestral.",
+        "Fiscal Superior, y elabora un informe semestral."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 70 de la Ley Orgánica 1/2004 añade el artículo 18 quáter al Estatuto Orgánico del Ministerio Fiscal: el Fiscal General del Estado nombra, oído el Consejo Fiscal, un Fiscal contra la Violencia sobre la Mujer con categoría de Fiscal de Sala, que elabora un informe semestral. La primera opción acierta la categoría y cambia la periodicidad; la tercera acierta la periodicidad y rebaja la categoría, que es la trampa de rango que el examen utiliza.",
+      "referencia": {
+        "apartado": "13.3. El Fiscal contra la Violencia sobre la Mujer",
+        "norma": "Ley Orgánica 1/2004, de 28 de diciembre, de medidas de protección integral contra la violencia de género",
+        "articulo": "art. 70"
+      }
+    },
+    {
+      "id": "t23-g009",
+      "tema": 23,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Qué periodo de residencia en España se exige, con carácter general, para ser titular del derecho a la promoción de la autonomía personal y atención a la dependencia?",
+      "opciones": [
+        "Un año, de los cuales seis meses inmediatamente anteriores a la solicitud.",
+        "Cinco años, sin exigir que ninguno de ellos sea inmediatamente anterior a la solicitud.",
+        "Cinco años, de los cuales dos deben ser inmediatamente anteriores a la solicitud."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 5 de la Ley 39/2006 exige residir en España y haberlo hecho durante cinco años, dos de ellos inmediatamente anteriores a la presentación de la solicitud, con la regla especial de los menores de cinco años. La primera opción inventa un plazo de un año que la ley no contiene; la segunda acierta los cinco años pero suprime el requisito de inmediatez, que es justamente el dato que el examen cambia para que la opción parezca correcta.",
+      "referencia": {
+        "apartado": "16.1. Titulares, grados y procedimiento",
+        "norma": "Ley 39/2006, de 14 de diciembre, de promoción de la autonomía personal y atención a las personas en situación de dependencia",
+        "articulo": "art. 5"
+      }
+    },
+    {
+      "id": "t23-g010",
+      "tema": 23,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué grado de discapacidad se asimila a una situación de dependencia en grado II y dónde no se aplica esa asimilación?",
+      "opciones": [
+        "El 65 %, y la asimilación no se aplica en el ámbito tributario.",
+        "El 33 %, y la asimilación no se aplica en el ámbito tributario.",
+        "El 65 %, y la asimilación se aplica en todos los ámbitos, incluido el tributario."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 4.2 del texto refundido de 2013 asimila al 33 % la dependencia en grado I y al 65 % los grados II y III, y precisa que la asimilación solo produce efectos donde se contemple expresamente y no se aplica en el ámbito tributario. La primera opción falsa aplica el 33 % que corresponde al grado I; la segunda niega el límite tributario, que es la excepción que el examen pregunta y el único supuesto en que la asimilación no juega.",
+      "referencia": {
+        "apartado": "15.1. Quién es persona con discapacidad",
+        "norma": "Real Decreto Legislativo 1/2013, de 29 de noviembre, por el que se aprueba el Texto Refundido de la Ley General de derechos de las personas con discapacidad y de su inclusión social",
+        "articulo": "art. 4.2"
+      }
+    },
+    {
+      "id": "t23-g011",
+      "tema": 23,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Una persona de quince años quiere solicitar la rectificación registral de la mención relativa al sexo. ¿Cómo lo hace?",
+      "opciones": [
+        "Debe esperar a los dieciséis años, porque por debajo de esa edad no hay previsión legal.",
+        "Puede solicitarla por sí misma, asistida por sus representantes legales, y si hay desacuerdo se nombra defensor judicial.",
+        "Necesita autorización judicial, igual que los menores de doce y trece años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 43.2 de la Ley 4/2023 permite a los mayores de catorce y menores de dieciséis solicitar la rectificación por sí mismos, asistidos por sus representantes legales, y prevé el defensor judicial de los artículos 235 y 236 del Código Civil si hay desacuerdo entre ellos o con la persona menor. La primera opción ignora ese tramo de edad; la tercera traslada a los quince años la exigencia de autorización judicial, que la ley reserva a quienes tienen doce o trece.",
+      "referencia": {
+        "apartado": "18. La rectificación registral y el régimen sancionador",
+        "norma": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI",
+        "articulo": "art. 43"
+      }
+    },
+    {
+      "id": "t23-g012",
+      "tema": 23,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "En el procedimiento de rectificación registral, ¿qué plazos fija el artículo 44 para la segunda comparecencia y para dictar resolución?",
+      "opciones": [
+        "Un mes para la segunda comparecencia y tres meses para resolver.",
+        "Tres meses para la segunda comparecencia y tres meses para resolver.",
+        "Tres meses para la segunda comparecencia y un mes para resolver."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 44 fija un plazo máximo de tres meses para la segunda comparecencia de ratificación y un plazo máximo de un mes, desde esa comparecencia, para dictar la resolución, que se recurre en alzada ante la Dirección General de Seguridad Jurídica y Fe Pública. La primera opción invierte los dos plazos, y la segunda duplica el plazo de resolución, de modo que solo la tercera reproduce la secuencia legal.",
+      "referencia": {
+        "apartado": "18.1. El procedimiento del artículo 44",
+        "norma": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI",
+        "articulo": "art. 44"
+      }
+    }
+  ]
+}

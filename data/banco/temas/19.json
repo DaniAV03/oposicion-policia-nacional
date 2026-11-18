@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 19,
+  "titulo": "Tema 19 · Delitos contra el orden público: de los atentados contra la autoridad, sus agentes y los funcionarios públicos, resistencia y desobediencia. Desórdenes públicos. Disposición común. Tenencia, tráfico y depósito de armas, municiones o explosivos.",
+  "preguntas": [
+    {
+      "id": "t19-g001",
+      "tema": 19,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué ha ocurrido con el capítulo I del título XXII del Código Penal, dedicado a la sedición?",
+      "opciones": [
+        "Fue suprimido por la Ley Orgánica 14/2022 y sus artículos 544 a 549 figuran hoy como suprimidos.",
+        "Sigue vigente, aunque la pena se rebajó a prisión de uno a cuatro años.",
+        "Se trasladó íntegro al artículo 557, que es hoy el delito de sedición."
+      ],
+      "correcta": 0,
+      "explicacion": "El capítulo I del título XXII se titulaba «Sedición» y comprendía los artículos 544 a 549, que hoy figuran como suprimidos por el artículo 1.20 de la Ley Orgánica 14/2022. No hubo rebaja de pena ni traslado: el delito de sedición desapareció y lo que se aplica a esos hechos son los desórdenes públicos del artículo 557.",
+      "referencia": {
+        "apartado": "2. El bien jurídico y la sistemática del título XXII",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "arts. 544 a 549"
+      }
+    },
+    {
+      "id": "t19-g002",
+      "tema": 19,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Un ciudadano agrede a un magistrado a la salida del juzgado, por haber dictado la resolución que le perjudicaba. ¿Qué pena corresponde al atentado?",
+      "opciones": [
+        "Prisión de seis meses a tres años, que es la banda de los «demás casos» del artículo 550.2.",
+        "Prisión de uno a seis años y multa de seis a doce meses, por la lista del artículo 550.3.",
+        "Prisión de uno a cuatro años y multa de tres a seis meses, con independencia de quién sea la autoridad agredida."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 550.3 sube la pena a prisión de uno a seis años y multa de seis a doce meses cuando la autoridad agredida está en su lista cerrada, que incluye a jueces, magistrados y miembros del Ministerio Fiscal. La primera opción aplica la banda de los «demás casos», propia de agentes y funcionarios públicos, y la tercera la del primer inciso del 550.2, que ignora esa lista.",
+      "referencia": {
+        "apartado": "3.1. La lista de autoridades cualificadas del artículo 550.3",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 550.3"
+      }
+    },
+    {
+      "id": "t19-g003",
+      "tema": 19,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "En un atentado, un agente de la Policía Nacional sufre una agresión con un arma de fuego. ¿Qué alcance tiene la consideración de autoridad del artículo 7.2 de la Ley Orgánica 2/1986?",
+      "opciones": [
+        "Convierte a los policías en autoridad del artículo 24.1 para todos los efectos, incluso para la falta de respeto del artículo 556.2.",
+        "Se extiende a cualquier delito cometido contra el agente durante el servicio, aunque no sea un atentado ni medie arma.",
+        "Solo opera en el delito de atentado y solo cuando el medio empleado es un arma de fuego, explosivos u otro de análoga peligrosidad."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 7.2 de la Ley Orgánica 2/1986 atribuye a los miembros de las Fuerzas y Cuerpos de Seguridad la consideración de autoridad solo a efectos de su protección penal en el delito de atentado y solo cuando se emplean armas de fuego, explosivos u otros medios de análoga peligrosidad. Las otras dos opciones extienden la ficción más allá de sus dos límites: la primera la lleva al artículo 24.1 y con ello al 556.2, y la segunda a cualquier delito y sin exigir medio peligroso.",
+      "referencia": {
+        "apartado": "3.2. La consideración de autoridad de los policías: una ficción con dos límites",
+        "norma": "Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 7.2"
+      }
+    },
+    {
+      "id": "t19-g004",
+      "tema": 19,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuáles son las tres modalidades de acción del atentado del artículo 550.1?",
+      "opciones": [
+        "Agredir, oponer resistencia grave con intimidación grave o violencia, y acometer.",
+        "Agredir, amenazar y desobedecer gravemente.",
+        "Acometer, obstaculizar y resistir sin violencia."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 550.1 describe tres verbos: agredir, oponer resistencia grave con intimidación grave o violencia, y acometer. Amenazar y coaccionar tienen sus propias figuras en los artículos 169 y siguientes y en el 504, la desobediencia sin violencia se castiga por el artículo 556.1, y «obstaculizar» no es verbo del precepto, sino de los desórdenes públicos del artículo 557.",
+      "referencia": {
+        "apartado": "4.2. Las tres modalidades de acción",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 550.1"
+      }
+    },
+    {
+      "id": "t19-g005",
+      "tema": 19,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estos supuestos NO figura entre las cuatro agravaciones del artículo 551?",
+      "opciones": [
+        "Acometer a la autoridad con un vehículo de motor.",
+        "Hacer uso de armas u otros objetos peligrosos.",
+        "Prevalerse el autor de su condición de autoridad."
+      ],
+      "correcta": 2,
+      "explicacion": "Las cuatro agravaciones del artículo 551 son el uso de armas u otros objetos peligrosos, el acto de violencia potencialmente peligroso para la vida o que pueda causar lesiones graves, el acometimiento con vehículo de motor y la comisión con ocasión de un motín, plante o incidente colectivo en un centro penitenciario. Prevalerse de la condición de autoridad era una agravante del artículo 552, suprimido por la Ley Orgánica 1/2015.",
+      "referencia": {
+        "apartado": "5.1. Las cuatro agravaciones del artículo 551",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 551"
+      }
+    },
+    {
+      "id": "t19-g006",
+      "tema": 19,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un detenido se opone activamente a los agentes que lo trasladan, sin agredirles ni intimidarles, con una resistencia que el tribunal califica de grave. ¿Qué precepto se aplica?",
+      "opciones": [
+        "El artículo 550, porque oponerse a agentes de la autoridad en el ejercicio de sus funciones es atentado.",
+        "El artículo 556.1: prisión de tres meses a un año o multa de seis a dieciocho meses.",
+        "El artículo 36.6 de la Ley Orgánica 4/2015: infracción grave, porque no hay violencia."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 556.1 castiga resistir o desobedecer gravemente a la autoridad o a sus agentes sin estar comprendido en el artículo 550, con prisión de tres meses a un año o multa de seis a dieciocho meses; el adverbio «gravemente» y la ausencia de violencia e intimidación encajan aquí. No hay atentado porque el 550 exige agresión, acometimiento o resistencia con intimidación grave o violencia, y la vía administrativa del artículo 36.6 de la Ley Orgánica 4/2015 solo actúa «cuando no sean constitutivas de delito».",
+      "referencia": {
+        "apartado": "6.1. La frontera entre atentado, resistencia y desobediencia",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 556.1"
+      }
+    },
+    {
+      "id": "t19-g007",
+      "tema": 19,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué exige el tipo básico del artículo 557 tras la reforma de 2022?",
+      "opciones": [
+        "Actuar individualmente o en grupo, con violencia o amenaza de violencia, y alterar el orden público.",
+        "Actuar en grupo, con armas, y causar daños en instalaciones o edificios.",
+        "Actuar en grupo, con el fin de atentar contra la paz pública, ejecutando actos de violencia o intimidación."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 557.1, tras la reescritura de la Ley Orgánica 14/2022, exige actuar en grupo, con el fin de atentar contra la paz pública, ejecutando actos de violencia o intimidación sobre personas o cosas, obstaculizando vías públicas con peligro o invadiendo instalaciones. Las otras dos describen textos que ya no están en vigor: la comisión individual amparada en el grupo era la redacción de 2015, y las armas no son elemento del tipo básico.",
+      "referencia": {
+        "apartado": "8. Desórdenes públicos: el artículo 557",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 557.1"
+      }
+    },
+    {
+      "id": "t19-g008",
+      "tema": 19,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un grupo invade, contra la voluntad del gerente, la oficina de una sociedad mercantil y con ello perturba de forma relevante la paz pública y la actividad normal del lugar. ¿Qué precepto se aplica y con qué pena?",
+      "opciones": [
+        "El artículo 557 bis, con prisión de tres a seis meses o multa de seis a doce meses.",
+        "El artículo 557 bis, con prisión de uno a seis años, por las seis circunstancias agravantes de 2015.",
+        "El artículo 557 ter, con prisión de tres a seis meses o multa de seis a doce meses."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 557 bis vigente es el antiguo 557 ter y castiga, actuando en grupo, invadir u ocupar contra la voluntad del titular el domicilio de una persona jurídica, despacho, oficina, establecimiento o local, con perturbación relevante de la paz pública y de la actividad normal, con prisión de tres a seis meses o multa de seis a doce meses. La pena de uno a seis años y las seis circunstancias describen el 557 bis de 2015, y el 557 ter está suprimido desde 2022.",
+      "referencia": {
+        "apartado": "9.1. El artículo 557 bis no es el 557 bis de 2015",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 557 bis"
+      }
+    },
+    {
+      "id": "t19-g009",
+      "tema": 19,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Qué pena prevé el artículo 561 para quien simula una situación de peligro y provoca la movilización de los servicios de emergencia?",
+      "opciones": [
+        "Prisión de tres meses a un año o multa de tres a dieciocho meses.",
+        "Prisión de tres meses y un día a un año o multa de tres a dieciocho meses.",
+        "Multa de tres a seis meses, como la ocupación del artículo 557 bis."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 561 castiga simular un peligro o un siniestro que provoque la movilización de los servicios de policía, asistencia o salvamento con prisión de tres meses y un día a un año o multa de tres a dieciocho meses. La banda arranca un día después de los tres meses del artículo 556.1, y la opción de tres a seis meses de multa es la pena de la ocupación del artículo 557 bis, que nada tiene que ver.",
+      "referencia": {
+        "apartado": "9.2. Artículos 558, 560 y 561",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 561"
+      }
+    },
+    {
+      "id": "t19-g010",
+      "tema": 19,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Un alcalde, constituido en autoridad, comete un delito de los capítulos II o III del título XXII. ¿Qué efecto tiene el artículo 562?",
+      "opciones": [
+        "Sustituye la pena de prisión por inhabilitación absoluta de diez a quince años.",
+        "Sustituye la pena de inhabilitación prevista por inhabilitación absoluta de diez a quince años, salvo que el tipo ya contemple esa circunstancia.",
+        "Agrava en un grado la pena de prisión y mantiene la inhabilitación que prevea el tipo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 562 no sustituye la prisión ni la multa: sustituye la pena de inhabilitación prevista en cada caso por inhabilitación absoluta de diez a quince años cuando el autor está constituido en autoridad, y cede cuando esa circunstancia está específicamente contemplada en el tipo, como ocurre en el artículo 557.2. La primera opción confunde la pena sustituida, y la tercera inventa una agravación de la prisión que el precepto no contiene.",
+      "referencia": {
+        "apartado": "11. La disposición común: el artículo 562",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 562"
+      }
+    },
+    {
+      "id": "t19-g011",
+      "tema": 19,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Un particular guarda en su domicilio dos pistolas reglamentadas sin la licencia necesaria, sin que concurra ninguna de las circunstancias del artículo 564.2. ¿Qué pena corresponde?",
+      "opciones": [
+        "Prisión de seis meses a un año, porque se trata de armas de fuego reglamentadas.",
+        "Prisión de uno a tres años, como la tenencia de armas prohibidas del artículo 563.",
+        "Prisión de uno a dos años, por tratarse de armas cortas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 564.1 castiga la tenencia de armas de fuego reglamentadas sin licencia con prisión de uno a dos años si son cortas y de seis meses a un año si son largas; dos pistolas son armas cortas. Los tres años son el máximo del artículo 563, reservado a las armas prohibidas y a las reglamentadas modificadas sustancialmente, y de seis meses a un año es la banda de las armas largas.",
+      "referencia": {
+        "apartado": "12.2. El artículo 564: armas reglamentadas sin licencia",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 564.1"
+      }
+    },
+    {
+      "id": "t19-g012",
+      "tema": 19,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuántas armas de fuego reglamentadas hacen falta para que exista depósito a los efectos del artículo 567?",
+      "opciones": [
+        "Cinco o más, aun cuando se hallen en piezas desmontadas.",
+        "Dos o más, porque el Código exige pluralidad de armas.",
+        "Una sola, como ocurre con las armas de guerra."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 567.3 considera depósito de armas de fuego reglamentadas la fabricación, comercialización o reunión de cinco o más de ellas, aun en piezas desmontadas. El artículo 567.1 no exige cifra para las armas de guerra, donde una sola ya es depósito, y el Código no fija un umbral de dos: la mera pluralidad no constituye depósito.",
+      "referencia": {
+        "apartado": "13.2. El artículo 567: las definiciones que se preguntan como cifras",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 567.3"
+      }
+    }
+  ]
+}

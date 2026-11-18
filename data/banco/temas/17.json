@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 17,
+  "titulo": "Tema 17 · Derecho Penal Especial: Del homicidio y sus formas. Del aborto. De las lesiones. Delitos contra la libertad. De las torturas y otros delitos contra la integridad moral. Delitos contra la libertad sexual.",
+  "preguntas": [
+    {
+      "id": "t17-g001",
+      "tema": 17,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El homicidio doloso del artículo 138.1 se castiga con la pena de…",
+      "opciones": [
+        "Prisión de cinco a diez años.",
+        "Prisión de quince a veinticinco años.",
+        "Prisión de diez a quince años."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 138.1 castiga al que matare a otro con prisión de diez a quince años, y como ese mínimo alcanza los diez años, el artículo 55 añade siempre la accesoria de inhabilitación absoluta durante el tiempo de la condena. La banda de quince a veinticinco años es la del asesinato del artículo 139.1, para la que hace falta una de sus cuatro circunstancias. La de cinco a diez años no corresponde a ninguna figura del título: es una banda de distracción que no aparece en el homicidio.",
+      "referencia": {
+        "apartado": "3. El homicidio doloso: el artículo 138",
+        "norma": "Código Penal",
+        "articulo": "arts. 138.1 y 55"
+      }
+    },
+    {
+      "id": "t17-g002",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "En un asesinato concurren dos de las circunstancias del artículo 139.1. ¿Cómo se determina la pena?",
+      "opciones": [
+        "Se impone la pena inferior en grado a la del asesinato, porque las circunstancias se compensan entre sí.",
+        "Se impone la pena de quince a veinticinco años en su mitad superior, es decir, de veinte a veinticinco años.",
+        "Se impone la pena superior en grado, que en este título llega hasta los treinta años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 139.2 no cambia de grado: cuando concurre más de una de las cuatro circunstancias, la pena de quince a veinticinco años se impone en su mitad superior, de veinte a veinticinco años. La opción de la compensación confunde el artículo 139 con la regla del artículo 66.1.7.ª para atenuantes y agravantes genéricas, que aquí no opera porque las circunstancias están dentro del tipo. Y la opción de la pena superior en grado desconoce que la lista del artículo 139.1 es cerrada y que su escalón superior es la prisión permanente revisable del artículo 140, no una banda de treinta años.",
+      "referencia": {
+        "apartado": "4. El asesinato: las cuatro circunstancias y la prisión permanente",
+        "norma": "Código Penal",
+        "articulo": "art. 139"
+      }
+    },
+    {
+      "id": "t17-g003",
+      "tema": 17,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "El homicidio por imprudencia menos grave del artículo 142.2 se castiga con multa de tres a dieciocho meses y…",
+      "opciones": [
+        "Se persigue siempre de oficio, igual que el homicidio por imprudencia grave.",
+        "Exige denuncia de la persona agraviada en todo caso, incluso si se empleó un vehículo de motor.",
+        "Solo se persigue mediante denuncia de la persona agraviada o de su representante legal, salvo que se haya utilizado un vehículo de motor o ciclomotor."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 142 separa dos niveles con regímenes distintos: la imprudencia grave del apartado 1 se persigue de oficio, y la imprudencia menos grave del apartado 2 exige denuncia de la persona agraviada o de su representante legal, salvo que se haya utilizado un vehículo de motor o ciclomotor, en cuyo caso se persigue también de oficio. Por eso falla la opción que atribuye al 142.2 la perseguibilidad de oficio del 142.1, y falla la que niega la excepción del vehículo. Conviene recordar que la imprudencia leve no es delito, porque el artículo 12 exige previsión legal expresa.",
+      "referencia": {
+        "apartado": "5. El homicidio imprudente: artículos 142 y 142 bis",
+        "norma": "Código Penal",
+        "articulo": "art. 142.2"
+      }
+    },
+    {
+      "id": "t17-g004",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Entre la primera y la segunda solicitud de la prestación de ayuda para morir, el artículo 5 de la Ley Orgánica 3/2021 exige…",
+      "opciones": [
+        "Una separación mínima de siete días naturales, sin posibilidad de reducirla.",
+        "Una separación mínima de quince días naturales, que puede acortarse si el médico responsable considera inminente la pérdida de capacidad.",
+        "Una separación mínima de un mes, que solo puede reducirse por decisión de la Comisión de Garantía y Evaluación."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 5.1.c de la Ley Orgánica 3/2021 exige dos solicitudes por escrito con una separación de al menos quince días naturales, y admite expresamente un plazo menor cuando el médico responsable considera inminente la pérdida de capacidad de la persona solicitante. La opción de los siete días acorta el plazo sin apoyo en la ley, y la del mes lo alarga e inventa una intervención de la Comisión de Garantía y Evaluación en ese trámite. La Comisión verifica el proceso después, y el médico consultor corrobora las condiciones en un máximo de diez días naturales desde la segunda solicitud.",
+      "referencia": {
+        "apartado": "6.1. La Ley Orgánica 3/2021, de regulación de la eutanasia",
+        "norma": "Ley Orgánica 3/2021, de 24 de marzo",
+        "articulo": "art. 5.1.c"
+      }
+    },
+    {
+      "id": "t17-g005",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Para interrumpir el embarazo hasta la semana veintidós por riesgo de graves anomalías en el feto, la Ley Orgánica 2/2010 exige…",
+      "opciones": [
+        "Dictamen previo de dos médicos especialistas distintos del que practica o dirige la intervención.",
+        "Dictamen previo de un médico especialista distinto del que practica o dirige la intervención.",
+        "Confirmación de un comité clínico, como en la enfermedad extremadamente grave e incurable."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 15.b de la Ley Orgánica 2/2010 exige, para el riesgo de graves anomalías fetales dentro de las veintidós primeras semanas, el dictamen previo de dos médicos especialistas distintos del que practica o dirige la intervención. El dictamen de un solo especialista distinto es el que la letra a) pide para el grave riesgo para la vida o la salud de la embarazada. Y el comité clínico del artículo 16 solo se exige en los supuestos sin límite de plazo: anomalías incompatibles con la vida y enfermedad extremadamente grave e incurable en el momento del diagnóstico.",
+      "referencia": {
+        "apartado": "7.1. El sistema de plazos",
+        "norma": "Ley Orgánica 2/2010, de 3 de marzo",
+        "articulo": "arts. 15.b y 16"
+      }
+    },
+    {
+      "id": "t17-g006",
+      "tema": 17,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Una mujer interrumpe su embarazo fuera de los casos permitidos por la ley y lo hace ella misma. ¿Qué pena le corresponde?",
+      "opciones": [
+        "Prisión de uno a tres años, la misma que se impone a quien practica el aborto con su consentimiento.",
+        "Prisión de tres a cinco meses, porque se trata de un aborto por imprudencia grave.",
+        "Multa de seis a veinticuatro meses, porque el artículo 145.2 no prevé nunca prisión para ella."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 145.2 castiga a la mujer que produce su aborto o consiente que otra persona se lo cause fuera de los casos permitidos con multa de seis a veinticuatro meses, y esa es la única pena posible: la prisión de uno a tres años del artículo 145.1 se reserva a quien practica el aborto con el consentimiento de la mujer. La opción de la imprudencia grave mezcla el artículo 146, que castiga el aborto por imprudencia grave de un tercero y en el que la embarazada no responde en ningún caso. Desde la Ley Orgánica 2/2010 la mujer que aborta fuera de la ley no puede ir a prisión por ese hecho.",
+      "referencia": {
+        "apartado": "7.2. Los tipos penales que quedan: artículos 144 a 146",
+        "norma": "Código Penal",
+        "articulo": "arts. 145.2 y 146"
+      }
+    },
+    {
+      "id": "t17-g007",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuándo una lesión constituye el delito del artículo 147.1?",
+      "opciones": [
+        "Siempre que exista lesión que menoscabe la integridad corporal o la salud, aunque solo haya requerido una primera asistencia.",
+        "Cuando, además de una primera asistencia facultativa, requiera objetivamente tratamiento médico o quirúrgico; la simple vigilancia o seguimiento no cuenta como tratamiento.",
+        "Cuando la lesión requiera ingreso hospitalario o puntos de sutura, con independencia del tratamiento posterior."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 147.1 exige que la lesión menoscabe la integridad corporal o la salud física o mental y que requiera objetivamente, además de una primera asistencia facultativa, tratamiento médico o quirúrgico, y su último inciso aclara que la simple vigilancia o seguimiento facultativo del curso de la lesión no se considera tratamiento médico. La primera opción describe el artículo 147.2, que castiga con multa de uno a tres meses y exige denuncia previa. La tercera sustituye el criterio legal, que es el contenido de la asistencia, por datos asistenciales que la ley no menciona.",
+      "referencia": {
+        "apartado": "8. Las lesiones: del artículo 147 al 152 bis",
+        "norma": "Código Penal",
+        "articulo": "art. 147"
+      }
+    },
+    {
+      "id": "t17-g008",
+      "tema": 17,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El consentimiento válido, libre, espontáneo y expresamente emitido del ofendido en un delito de lesiones…",
+      "opciones": [
+        "Exime de responsabilidad penal, igual que el consentimiento del artículo 156.",
+        "Exime de responsabilidad penal solo si la lesión no requiere tratamiento quirúrgico.",
+        "No exime: impone la pena inferior en uno o dos grados, y no vale el prestado por un menor de edad ni por una persona con discapacidad necesitada de especial protección."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 155 no es una eximente: el hecho sigue siendo delito y se castiga con la pena inferior en uno o dos grados, y la ley excluye el consentimiento del menor de edad y el de la persona con discapacidad necesitada de especial protección. Quien exime es el artículo 156, y solo en tres supuestos tasados: trasplante de órganos conforme a la ley, esterilizaciones y cirugía transexual realizada por facultativo. La opción que limita la exención al tratamiento quirúrgico no se apoya en ningún precepto, porque las tres excepciones del artículo 156 no dependen de ese dato.",
+      "referencia": {
+        "apartado": "9. Consentimiento, trasplantes, esterilización y tráfico de órganos",
+        "norma": "Código Penal",
+        "articulo": "arts. 155 y 156"
+      }
+    },
+    {
+      "id": "t17-g009",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "El autor de una detención ilegal del artículo 163.1 da libertad al detenido al segundo día, sin haber logrado el objeto que se había propuesto. ¿Qué pena se le impone?",
+      "opciones": [
+        "La pena inferior en grado a la del artículo 163.1: de dos años a tres años y trescientos sesenta y cuatro días.",
+        "La pena del artículo 163.1 sin rebaja, porque la detención ya se había consumado.",
+        "Multa de tres a seis meses, como en la aprehensión para presentar a la autoridad del artículo 163.4."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 163.2 impone la pena inferior en grado cuando el culpable da libertad al encerrado o detenido dentro de los tres primeros días sin haber logrado el objeto que se había propuesto, y la pena del artículo 163.1 es de cuatro a seis años, de modo que la rebajada va de dos años a tres años y trescientos sesenta y cuatro días. La opción de la pena sin rebaja ignora ese apartado. Y la multa de tres a seis meses es la del artículo 163.4, que describe un tipo distinto —aprehender a una persona para presentarla inmediatamente a la autoridad— y no una detención ilegal rebajada.",
+      "referencia": {
+        "apartado": "11. Detenciones ilegales y secuestros: artículos 163 a 168",
+        "norma": "Código Penal",
+        "articulo": "arts. 163.1, 163.2 y 163.4"
+      }
+    },
+    {
+      "id": "t17-g010",
+      "tema": 17,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién puede ser sujeto activo de la tortura del artículo 174?",
+      "opciones": [
+        "Cualquier persona, porque el artículo 174 no exige condición especial en el autor.",
+        "Solo la autoridad o el funcionario público que abuse de su cargo.",
+        "Solo el personal de instituciones penitenciarias y de centros de protección o corrección de menores."
+      ],
+      "correcta": 1,
+      "explicacion": "La tortura del artículo 174 es un delito especial propio: solo puede cometerla una autoridad o un funcionario público abusando de su cargo y con alguna de las finalidades típicas, como obtener una confesión o información, castigar o discriminar. La primera opción describe el trato degradante del artículo 173.1, que es un delito común, y es la vía por la que responde un particular que somete a otro a sufrimientos graves. La tercera reduce indebidamente el círculo del autor: el personal penitenciario y de centros de menores es solo un supuesto expreso del artículo 174.2, que no agota el tipo, y además el artículo 176 castiga a la autoridad que permite que otros ejecuten esos hechos.",
+      "referencia": {
+        "apartado": "13.2. La tortura del artículo 174 y el atentado del artículo 175",
+        "norma": "Código Penal",
+        "articulo": "arts. 174, 176 y 173.1"
+      }
+    },
+    {
+      "id": "t17-g011",
+      "tema": 17,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Conforme al artículo 178.1, existe consentimiento sexual cuando…",
+      "opciones": [
+        "Se ha manifestado libremente mediante actos que, en atención a las circunstancias del caso, expresen de manera clara la voluntad de la persona.",
+        "La persona no se ha opuesto ni ha mostrado resistencia, aunque no haya manifestado nada.",
+        "Autor y víctima mantenían una relación previa, porque el Código presume el consentimiento en ese caso."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 178.1 solo entiende que hay consentimiento cuando se ha manifestado libremente mediante actos que, en atención a las circunstancias del caso, expresen de manera clara la voluntad de la persona, de modo que el silencio y la falta de resistencia no equivalen a consentir. La opción de la relación previa añade una presunción que la ley no contiene: la relación anterior puede operar como agravante del artículo 180, nunca como consentimiento presunto. Y la ausencia de violencia o de resistencia tampoco convierte el hecho en lícito, porque el tipo básico del artículo 178.1 no exige violencia; la violencia o la intimidación solo sitúan el hecho en la banda del artículo 178.3.",
+      "referencia": {
+        "apartado": "14.1. El consentimiento: la regla del artículo 178.1",
+        "norma": "Código Penal",
+        "articulo": "art. 178.1 y 178.2"
+      }
+    },
+    {
+      "id": "t17-g012",
+      "tema": 17,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Para proceder por los delitos de agresión sexual y de acoso sexual, el artículo 191 exige…",
+      "opciones": [
+        "Denuncia de la persona agraviada, de su representante legal o querella del Ministerio Fiscal, y el perdón del ofendido no extingue la acción penal ni la responsabilidad.",
+        "Denuncia de la persona agraviada en todo caso, sin intervención posible del Ministerio Fiscal.",
+        "Autorización judicial previa y firme, porque el perdón del ofendido extingue la responsabilidad criminal."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 191 exige denuncia de la persona agraviada, de su representante legal o querella del Ministerio Fiscal, que actúa ponderando los legítimos intereses en presencia; si la víctima es menor de edad, persona con discapacidad necesitada de especial protección o persona desvalida basta la denuncia del Ministerio Fiscal. Añade además que el perdón del ofendido no extingue la acción penal ni la responsabilidad de esa clase, de modo que la opción que hace del perdón un modo de extinción contradice el precepto. Y el Ministerio Fiscal no solo no está excluido, sino que es el único legitimado en los supuestos de víctima vulnerable.",
+      "referencia": {
+        "apartado": "15.2. Las disposiciones comunes del título: artículos 190 a 194 bis",
+        "norma": "Código Penal",
+        "articulo": "art. 191"
+      }
+    }
+  ]
+}

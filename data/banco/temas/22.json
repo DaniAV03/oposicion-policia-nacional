@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 22,
+  "titulo": "Tema 22 · La Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito. Ámbito. Concepto general de víctima. Derechos básicos. Protección de las víctimas. Medidas de protección a la víctima.",
+  "preguntas": [
+    {
+      "id": "t22-g001",
+      "tema": 22,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué exige el artículo 1 del Estatuto de la víctima para que la ley se aplique a la persona que ha sufrido un delito?",
+      "opciones": [
+        "Que el delito se haya cometido en España o pueda ser perseguido en España, sin importar su nacionalidad, su edad ni su residencia legal.",
+        "Que la víctima sea española o residente legal en España, aunque el delito se haya cometido fuera de territorio español.",
+        "Que la víctima sea mayor de edad y haya presentado denuncia ante la autoridad competente."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 1 aplica la ley a las víctimas de delitos cometidos en España o que puedan perseguirse en España, con independencia de la nacionalidad, de la edad y de que se disfrute o no de residencia legal; la única salvedad expresa es la del artículo 17. La primera opción falsa añade un requisito de nacionalidad o residencia que el precepto no tiene y desplaza el criterio territorial al lugar del delito solo para españoles; la segunda exige mayoría de edad y denuncia, y ninguna de las dos cosas condiciona la aplicación: ser menor activa la protección reforzada del artículo 26.",
+      "referencia": {
+        "apartado": "3. Ámbito de aplicación: el artículo 1",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t22-g002",
+      "tema": 22,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Una sociedad mercantil sufre un perjuicio económico por un delito cometido por un tercero. A efectos de la Ley 4/2015, esa sociedad es…",
+      "opciones": [
+        "Víctima indirecta, porque el artículo 2.b incluye a los perjudicados por el delito.",
+        "Un tercero perjudicado, expresamente excluido de la ley, aunque pueda reclamar civilmente el daño.",
+        "Víctima directa, porque el artículo 2.a no distingue entre persona física y persona jurídica."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.a exige que la víctima directa sea persona física y el párrafo final del precepto excluye a los terceros que hayan sufrido perjuicios derivados del delito, de modo que la sociedad puede reclamar la responsabilidad civil pero no tiene los derechos de los artículos 4 a 26. La primera opción confunde la víctima indirecta, que solo nace con la muerte o la desaparición de una persona, con el simple perjudicado; la tercera olvida el requisito de persona física, que es el dato que el examen cambia.",
+      "referencia": {
+        "apartado": "3.1. Las tres exclusiones que el examen usa como señuelo",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 2"
+      }
+    },
+    {
+      "id": "t22-g003",
+      "tema": 22,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Fallece una persona como consecuencia directa de un delito. ¿Qué condición exige el artículo 2.b.1.º a los progenitores y a los parientes en línea recta o colateral para ser víctimas indirectas en ese primer escalón?",
+      "opciones": [
+        "Basta el parentesco, sin límite de grado ni ninguna otra condición.",
+        "Deben convivir con la víctima en el momento de la muerte y estar dentro del segundo grado.",
+        "Deben estar dentro del tercer grado y encontrarse bajo la guarda de la víctima."
+      ],
+      "correcta": 2,
+      "explicacion": "El primer escalón del artículo 2.b.1.º exige parentesco hasta el tercer grado y que esos parientes se encontraren bajo la guarda de la víctima. La primera opción suprime los dos límites y describe, de hecho, el segundo escalón, donde los demás parientes en línea recta y los hermanos entran solo en defecto de los del primer escalón; la segunda introduce una convivencia y un grado que el precepto no pide para este grupo.",
+      "referencia": {
+        "apartado": "4.1. El orden de las personas del artículo 2.b",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 2.b.1.º"
+      }
+    },
+    {
+      "id": "t22-g004",
+      "tema": 22,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Qué rango tiene la Ley 4/2015, del Estatuto de la víctima del delito, y cuándo entró en vigor?",
+      "opciones": [
+        "Es una ley ordinaria y entró en vigor a los seis meses de su publicación, el 28 de octubre de 2015.",
+        "Es una ley orgánica y entró en vigor el día siguiente a su publicación, el 29 de abril de 2015.",
+        "Es una ley ordinaria y entró en vigor a los veinte días de su publicación en el BOE."
+      ],
+      "correcta": 0,
+      "explicacion": "Es una ley ordinaria, dictada al amparo del artículo 149.1.6.ª de la Constitución, y su disposición final sexta fijó una vacatio de seis meses, de modo que entró en vigor el 28 de octubre de 2015. La primera opción falsa comete los dos errores que el examen mezcla: llamarla orgánica, cuando no desarrolla derechos fundamentales, y adelantar la entrada en vigor al día siguiente; la segunda acierta el rango pero inventa un plazo de veinte días que la ley no contiene.",
+      "referencia": {
+        "apartado": "2. Por qué existe un Estatuto y qué directiva traspone",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "disposición final sexta"
+      }
+    },
+    {
+      "id": "t22-g005",
+      "tema": 22,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "El perjuicio añadido que para la víctima provocan la investigación y el proceso penal —declaraciones repetidas, encuentros con el autor o difusión de datos— se denomina…",
+      "opciones": [
+        "Victimización primaria.",
+        "Victimización secundaria.",
+        "Victimización reiterada."
+      ],
+      "correcta": 1,
+      "explicacion": "La victimización secundaria es el daño que añaden la investigación y el proceso, y el artículo 19 obliga a evitarla, mientras que el Reglamento la convierte en objetivo de toda la asistencia. La victimización primaria es el daño que causa el delito en sí, con lesiones y pérdidas patrimoniales, y la reiterada es la que produce la repetición del delito sobre la misma persona, cuyo riesgo el artículo 23.2.b obliga a valorar.",
+      "referencia": {
+        "apartado": "5.1. La triple victimización, que es el eje del sistema",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 19"
+      }
+    },
+    {
+      "id": "t22-g006",
+      "tema": 22,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué finalidad cumple la letra m) del artículo 5.1, que obliga a la víctima a designar un correo electrónico o, en su defecto, una dirección postal?",
+      "opciones": [
+        "Es un derecho de información autónomo y distinto de los demás, sin relación con el artículo 7.",
+        "Permite a la víctima personarse en la causa penal sin abogado ni procurador.",
+        "Es la vía para recibir las notificaciones del artículo 7 y poder recurrir después las resoluciones del artículo 13 sin haberse personado."
+      ],
+      "correcta": 2,
+      "explicacion": "La letra m) no es un derecho autónomo: es la puerta del artículo 7 y del artículo 13, porque solo quien ha pedido las notificaciones por esa vía puede luego impugnar las resoluciones penitenciarias sin ser parte. La primera opción la presenta como un derecho desconectado de esas notificaciones, que es justo lo contrario de su función; la segunda confunde pedir notificaciones con personarse, que son actuaciones distintas y con efectos distintos.",
+      "referencia": {
+        "apartado": "7.1. Las trece letras del artículo 5.1",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 5.1.m)"
+      }
+    },
+    {
+      "id": "t22-g007",
+      "tema": 22,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "En un procedimiento por violencia de género, ¿qué resoluciones del artículo 7.1 se notifican a la víctima sin necesidad de que ella lo solicite?",
+      "opciones": [
+        "Las de las letras c) y d): prisión, libertad o fuga del infractor y medidas cautelares personales, salvo que manifieste lo contrario.",
+        "Las seis resoluciones del artículo 7.1, porque en violencia de género la notificación es siempre automática.",
+        "Únicamente la sentencia que pone fin al procedimiento, que se notifica aunque la víctima no sea parte."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 7.3 limita la automaticidad a las letras c) y d), que se notifican sin solicitud previa salvo que la víctima manifieste lo contrario. La primera opción falsa generaliza la regla a todo el catálogo del artículo 7.1 y convierte una excepción en principio general; la segunda se queda en la letra b), que se notifica a cualquier víctima pero no es la especialidad que el precepto reserva a la violencia de género.",
+      "referencia": {
+        "apartado": "8.2. Las seis resoluciones del artículo 7.1",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 7.3"
+      }
+    },
+    {
+      "id": "t22-g008",
+      "tema": 22,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Durante la fase de enjuiciamiento, ¿quién acuerda las medidas de protección de los artículos 25 y 26 del Estatuto?",
+      "opciones": [
+        "Los funcionarios de policía que realizaron la evaluación inicial, que la elevan a definitiva.",
+        "El Juez o Tribunal que conozca de la causa, mediante resolución motivada.",
+        "La Oficina de Asistencia a las Víctimas, con el visto bueno del Ministerio Fiscal."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 24 reparte los papeles: en la investigación el Fiscal y los funcionarios de policía pueden hacer una evaluación provisional, y en el enjuiciamiento decide el Juez o Tribunal que conoce de la causa, con resolución motivada que refleja las circunstancias valoradas. La primera opción convierte en acuerdo lo que es una evaluación provisional y no vinculante; la tercera atribuye a la Oficina una competencia que no tiene, porque informa, acompaña y propone, pero no acuerda medidas.",
+      "referencia": {
+        "apartado": "13.2. Quién evalúa y quién decide: el artículo 24",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 24"
+      }
+    },
+    {
+      "id": "t22-g009",
+      "tema": 22,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Según el Reglamento que desarrolla el Estatuto, ¿cuándo realiza la policía la primera evaluación individual de la víctima?",
+      "opciones": [
+        "Cuando el Juez de Instrucción se lo encomienda expresamente por resolución.",
+        "Al terminar la instrucción, junto con el informe reservado de la Oficina.",
+        "En el momento de la denuncia, para determinar necesidades de protección e identificar víctimas vulnerables."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 30.1 del Real Decreto 1109/2015 ordena a las Fuerzas y Cuerpos de Seguridad efectuar en el momento de la denuncia una primera evaluación individual, informando a la víctima de la posibilidad de acudir a la Oficina. La primera opción hace depender esa actuación de un encargo judicial que el precepto no exige; la segunda la retrasa al final de la instrucción, cuando el propio Reglamento la sitúa en el primer contacto. La información recabada solo se traslada a la Oficina con consentimiento previo e informado de la víctima.",
+      "referencia": {
+        "apartado": "13.3. La primera evaluación la hace la policía",
+        "norma": "Real Decreto 1109/2015, de 11 de diciembre",
+        "articulo": "art. 30.1"
+      }
+    },
+    {
+      "id": "t22-g010",
+      "tema": 22,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué medidas del artículo 25.2, previstas para la fase de enjuiciamiento, pueden adoptarse también durante la investigación?",
+      "opciones": [
+        "Las de las letras a) y c): evitar el contacto visual con el autor y limitar las preguntas sobre la vida privada.",
+        "Las cuatro medidas del artículo 25.2, incluida la declaración sin estar presente y la vista oral sin público.",
+        "Ninguna: las medidas del artículo 25.2 son exclusivas del juicio oral."
+      ],
+      "correcta": 0,
+      "explicacion": "El párrafo final del artículo 25.2 permite trasvasar a la investigación las medidas a) y c) del enjuiciamiento, es decir, la evitación del contacto visual y la limitación de preguntas sobre la vida privada sin relevancia. La primera opción falsa generaliza el trasvase a las cuatro letras; la segunda lo niega en absoluto, y ese «ninguna» choca con una regla que el precepto formula expresamente.",
+      "referencia": {
+        "apartado": "14. Las medidas de protección del artículo 25",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "art. 25.2"
+      }
+    },
+    {
+      "id": "t22-g011",
+      "tema": 22,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una mujer víctima de violencia sexual reclama las ayudas públicas de la Ley 35/1995. ¿Qué plazo de prescripción rige para su derecho?",
+      "opciones": [
+        "Un año desde el hecho, con suspensión mientras se tramita el proceso penal.",
+        "Cinco años, contados en todo caso desde la resolución firme o desde que se acredite la condición de víctima.",
+        "Cinco años desde el hecho, sin que el proceso penal suspenda la prescripción."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 7 de la Ley 35/1995 fija un año como regla general, pero en violencias sexuales y de género eleva el plazo a cinco años y lo cuenta en todo caso desde la resolución firme o desde la acreditación de la condición de víctima. La primera opción aplica la regla general e ignora la excepción; la tercera acierta la cifra pero se equivoca en el dies a quo y en la suspensión, que es precisamente el detalle que el examen cambia.",
+      "referencia": {
+        "apartado": "17.2. Plazos, incompatibilidades y ayudas provisionales",
+        "norma": "Ley 35/1995, de 11 de diciembre, de ayudas y asistencia a las víctimas de delitos violentos y contra la libertad sexual",
+        "articulo": "art. 7"
+      }
+    },
+    {
+      "id": "t22-g012",
+      "tema": 22,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿En qué título de la Ley 4/2015 se regulan las Oficinas de Asistencia a las Víctimas?",
+      "opciones": [
+        "En el título I, dedicado a los derechos básicos.",
+        "En el título III, dedicado a la protección de las víctimas.",
+        "En el título IV, dedicado a las disposiciones comunes."
+      ],
+      "correcta": 2,
+      "explicacion": "Las Oficinas se regulan en los artículos 27 a 29, dentro del título IV, que también lleva la formación, los protocolos, la cooperación y la sensibilización. El título I (artículos 4 a 10) contiene los derechos básicos, como la información desde el primer contacto o la traducción, y el título III (19 a 26) la protección y la evaluación individual, de modo que las otras dos opciones colocan las Oficinas en el bloque equivocado.",
+      "referencia": {
+        "apartado": "6. El mapa del Estatuto: cuatro títulos y una lógica",
+        "norma": "Ley 4/2015, de 27 de abril, del Estatuto de la víctima del delito",
+        "articulo": "arts. 27 a 29"
+      }
+    }
+  ]
+}

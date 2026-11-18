@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 21,
+  "titulo": "Tema 21 · Noción de Derecho Procesal Penal. Concepto de jurisdicción y de competencia. Los órganos de la jurisdicción penal. Concepto de denuncia y la obligación de denunciar. La detención: concepto y duración. La obligación de detener. Los derechos del detenido. El procedimiento de habeas corpus. Procedimiento integral de la detención policial. El Ministerio Fiscal: funciones. La Policía Judicial.",
+  "preguntas": [
+    {
+      "id": "t21-g001",
+      "tema": 21,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una persona es detenida a las 22:00 horas. ¿Cuál es el plazo máximo para entregarla al juez más próximo al lugar de la detención?",
+      "opciones": [
+        "Veinticuatro horas, conforme al artículo 496 de la Ley de Enjuiciamiento Criminal.",
+        "Setenta y dos horas, que es el plazo máximo de duración de la detención.",
+        "Cuarenta y ocho horas, ampliables a setenta y dos si la detención es por terrorismo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 496 obliga a poner al detenido en libertad o a entregarlo al juez más próximo dentro de las 24 horas siguientes; las 72 horas son el techo de la detención (art. 520.1 y art. 17.2 de la Constitución), no el plazo de entrega. La opción de 48 horas confunde además la prórroga del artículo 520 bis, que se solicita dentro de las primeras 48 horas, con el plazo para entregar.",
+      "referencia": {
+        "apartado": "12. Procedimiento integral de la detención policial",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 496"
+      }
+    },
+    {
+      "id": "t21-g002",
+      "tema": 21,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué diferencia hay entre el artículo 490 y el artículo 492 de la Ley de Enjuiciamiento Criminal?",
+      "opciones": [
+        "El 490 impone la obligación de detener a la autoridad y el 492 permite detener a cualquier persona.",
+        "El 490 permite detener a cualquier persona en siete supuestos, mientras que el 492 obliga a la autoridad o agente de Policía Judicial en los suyos.",
+        "Los dos son facultativos, pero el 490 se refiere a delitos graves y el 492 a delitos leves."
+      ],
+      "correcta": 1,
+      "explicacion": "El 490 dice «cualquier persona puede detener» y enumera siete supuestos; el 492 dice que la autoridad o agente de Policía Judicial «tendrá obligación de detener» en los que fija. La primera opción invierte los sujetos y la tercera ignora que el 492 es obligatorio y que los delitos leves se rigen por el artículo 495, no por el 492.",
+      "referencia": {
+        "apartado": "9.2. Los supuestos en que la autoridad o el agente tienen obligación (artículo 492)",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "arts. 490 y 492"
+      }
+    },
+    {
+      "id": "t21-g003",
+      "tema": 21,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Se puede detener a una persona por la presunta comisión de un delito leve?",
+      "opciones": [
+        "No, en ningún caso: la ley lo prohíbe sin excepciones.",
+        "Sí, siempre que concurra flagrancia, porque la flagrancia habilita cualquier detención.",
+        "Solo si el presunto reo no tiene domicilio conocido ni da fianza bastante, a juicio de la autoridad o agente."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 495 prohíbe la detención por delito leve salvo que el presunto reo no tenga domicilio conocido ni dé fianza bastante, porque lo que se asegura es la comparecencia. La primera opción suprime esa excepción y la segunda añade una habilitación por flagrancia que la ley no contiene para los delitos leves.",
+      "referencia": {
+        "apartado": "9.3. Detención por delitos leves y nota de identificación",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 495"
+      }
+    },
+    {
+      "id": "t21-g004",
+      "tema": 21,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto puede durar la detención incomunicada y qué límite absoluto establece la ley?",
+      "opciones": [
+        "Tres días, prorrogables otros tres, y nunca puede aplicarse a menores de dieciocho años.",
+        "Cinco días, prorrogables por otros cinco en las causas por delincuencia organizada, y nunca puede aplicarse a menores de dieciséis años.",
+        "Diez días, sin prórroga, y nunca puede aplicarse a menores de dieciocho años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 509 fija un máximo de cinco días, prorrogables por otros cinco en las causas por los delitos del artículo 384 bis u otros cometidos concertadamente por dos o más personas, y excluye siempre a los menores de dieciséis años. Los tres días y los diez días no son plazos de incomunicación, y el límite de edad es dieciséis, no dieciocho.",
+      "referencia": {
+        "apartado": "8.2. La duración, precepto por precepto",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 509"
+      }
+    },
+    {
+      "id": "t21-g005",
+      "tema": 21,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El derecho del detenido a acceder a las actuaciones (letra d del artículo 520.2) le permite…",
+      "opciones": [
+        "Acceder a los elementos esenciales para impugnar la legalidad de la detención o de la privación de libertad, no a todo el sumario.",
+        "Conocer el atestado completo en el mismo momento de la detención.",
+        "Acceder a todas las actuaciones, salvo las declaraciones de los testigos protegidos."
+      ],
+      "correcta": 0,
+      "explicacion": "La letra d limita el acceso a los elementos esenciales para impugnar la legalidad de la detención, no al sumario entero. La primera opción falsa amplía el derecho al atestado completo y la segunda lo dibuja con una excepción que el precepto no menciona: no es una lista de exclusiones, sino un acceso tasado a lo esencial.",
+      "referencia": {
+        "apartado": "10.1. Los diez derechos del artículo 520.2",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 520.2.d"
+      }
+    },
+    {
+      "id": "t21-g006",
+      "tema": 21,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Designado abogado para asistir a un detenido, ¿en qué plazo máximo debe acudir al centro de detención?",
+      "opciones": [
+        "En el plazo de veinticuatro horas desde la recepción del encargo.",
+        "En el plazo de seis horas desde la recepción del encargo.",
+        "Con la máxima premura y siempre dentro del plazo máximo de tres horas desde la recepción del encargo."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 520.5 exige que el abogado acuda con la máxima premura y siempre dentro de las tres horas siguientes a la recepción del encargo; si no comparece, el Colegio designa otro de oficio. Las 24 horas son el plazo de entrega del detenido al juez (art. 496) y las seis horas el máximo de la identificación en dependencias (art. 16.2 de la Ley Orgánica 4/2015), no plazos de la asistencia letrada.",
+      "referencia": {
+        "apartado": "10.3. La asistencia de abogado",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 520.5"
+      }
+    },
+    {
+      "id": "t21-g007",
+      "tema": 21,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál es el plazo propio del procedimiento de «habeas corpus» y qué recurso cabe contra el auto que acuerda la incoación o la deniega?",
+      "opciones": [
+        "Setenta y dos horas, y contra el auto cabe recurso de apelación ante la Audiencia Provincial.",
+        "Veinticuatro horas desde el auto de incoación, y contra ese auto no cabe recurso alguno.",
+        "Cuarenta y ocho horas, y contra el auto cabe recurso de amparo ante el Tribunal Constitucional."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 7 de la Ley Orgánica 6/1984 ordena practicar las actuaciones y dictar resolución en las veinticuatro horas siguientes al auto de incoación, y el artículo 6 declara que contra el auto de incoación o de denegación no cabe recurso alguno. Las 72 horas son el plazo máximo de detención, no el del procedimiento, y el amparo no es el recurso que la ley prevé contra ese auto.",
+      "referencia": {
+        "apartado": "11.3. Cómo se tramita, paso a paso",
+        "norma": "Ley Orgánica 6/1984, reguladora del procedimiento de «habeas corpus»",
+        "articulo": "arts. 6 y 7"
+      }
+    },
+    {
+      "id": "t21-g008",
+      "tema": 21,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El artículo 261 exime de denunciar al cónyuge y a los parientes próximos del delincuente. ¿Cuándo deja de aplicarse esa exención?",
+      "opciones": [
+        "Siempre que el delito sea grave, con independencia de quién sea la víctima.",
+        "Cuando el delito sea de los del listado legal y la víctima sea mayor de edad.",
+        "Solo cuando concurren las dos condiciones: que sea uno de los delitos del listado legal y que la víctima sea menor de edad o persona con discapacidad necesitada de especial protección."
+      ],
+      "correcta": 2,
+      "explicacion": "La excepción a la exención familiar exige dos condiciones acumulativas: un delito del listado (vida, homicidio, lesiones de los artículos 149 y 150 del Código Penal, maltrato habitual del 173.2, libertad o indemnidad sexual, trata) y una víctima menor de edad o con discapacidad necesitada de especial protección. Con una sola de las dos, la exención sigue funcionando, y por eso fallan las opciones que se conforman con la gravedad o con el listado sin mirar a la víctima.",
+      "referencia": {
+        "apartado": "7.3. Quién no está obligado a denunciar",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 261"
+      }
+    },
+    {
+      "id": "t21-g009",
+      "tema": 21,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿A qué principios está sujeto el Ministerio Fiscal?",
+      "opciones": [
+        "Unidad de actuación y dependencia jerárquica, con sujeción en todo caso a legalidad e imparcialidad.",
+        "Independencia, inamovilidad, responsabilidad y sumisión únicamente al imperio de la ley.",
+        "Autonomía funcional plena y sometimiento exclusivo al principio de oportunidad."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 124 de la Constitución y el artículo 2 del Estatuto Orgánico someten al Fiscal a unidad de actuación y dependencia jerárquica, con sujeción en todo caso a legalidad e imparcialidad. La independencia, la inamovilidad y la sumisión solo a la ley definen a los jueces (art. 117.1 de la Constitución), y la autonomía funcional del Fiscal no elimina la dependencia jerárquica ni le permite actuar por oportunidad.",
+      "referencia": {
+        "apartado": "13.1. Los cuatro principios, sin confundirlos",
+        "norma": "Constitución Española y Estatuto Orgánico del Ministerio Fiscal",
+        "articulo": "arts. 124.2 CE y 2 EOMF"
+      }
+    },
+    {
+      "id": "t21-g010",
+      "tema": 21,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Los funcionarios adscritos a las Unidades de Policía Judicial, en el cumplimiento de sus funciones…",
+      "opciones": [
+        "Dependen orgánicamente de los jueces y tribunales y funcionalmente del Ministerio del Interior.",
+        "Dependen orgánicamente del Ministerio del Interior y funcionalmente de los jueces, tribunales o Ministerio Fiscal que conozcan del asunto.",
+        "Dependen orgánica y funcionalmente del Ministerio Fiscal, que dirige su actuación en todo momento."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 31.1 de la Ley Orgánica 2/1986 invierte los términos de la primera opción: la dependencia orgánica es del Ministerio del Interior y la funcional de jueces, tribunales y Ministerio Fiscal. La tercera convierte la dependencia funcional en orgánica, y el artículo 550 de la Ley Orgánica del Poder Judicial solo añade que el funcionario comisionado no puede ser removido sin decisión del juez o fiscal competente.",
+      "referencia": {
+        "apartado": "14.2. La doble dependencia",
+        "norma": "Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 31.1"
+      }
+    },
+    {
+      "id": "t21-g011",
+      "tema": 21,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "Tras la Ley Orgánica 1/2025, ¿qué órganos enumera el artículo 26 de la Ley Orgánica del Poder Judicial como titulares de la potestad jurisdiccional?",
+      "opciones": [
+        "Juzgados de Paz, Juzgados de Instrucción, Juzgados de lo Penal, Audiencias Provinciales, Audiencia Nacional y Tribunal Supremo.",
+        "Juzgados de Primera Instancia e Instrucción, Juzgados de lo Penal, Audiencias Provinciales, Tribunales Superiores de Justicia y Tribunal Supremo.",
+        "Jueces y juezas de paz, Tribunales de Instancia, Audiencias Provinciales, Tribunales Superiores de Justicia, Tribunal Central de Instancia, Audiencia Nacional y Tribunal Supremo."
+      ],
+      "correcta": 2,
+      "explicacion": "La Ley Orgánica 1/2025 sustituyó los juzgados unipersonales por Tribunales de Instancia con secciones, de modo que el artículo 26 ya no menciona juzgados de instrucción ni juzgados de lo penal. Las dos primeras opciones son la lista anterior a la reforma: el juez de instrucción sigue existiendo como función dentro de la Sección de Instrucción, pero no como órgano unipersonal separado.",
+      "referencia": {
+        "apartado": "3. Vigencia: la reforma que ha cambiado los nombres de los órganos",
+        "norma": "Ley Orgánica 6/1985, del Poder Judicial",
+        "articulo": "art. 26"
+      }
+    },
+    {
+      "id": "t21-g012",
+      "tema": 21,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué significa que la jurisdicción penal sea siempre improrrogable?",
+      "opciones": [
+        "Que no cabe pacto de sumisión ni prórroga por voluntad de las partes: solo conoce el órgano que la ley designa.",
+        "Que las partes pueden prorrogar la competencia territorial por acuerdo, pero no la objetiva.",
+        "Que el órgano puede ampliar su competencia a los delitos conexos cuando las partes lo soliciten."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 8 de la Ley de Enjuiciamiento Criminal dice que la jurisdicción criminal es siempre improrrogable: no hay pacto de sumisión ni prórroga por voluntad de las partes. La primera opción falsa acepta una prórroga territorial que la ley prohíbe, y la segunda confunde la improrrogabilidad con la regla de los delitos conexos, que opera por mandato legal y no por acuerdo de las partes.",
+      "referencia": {
+        "apartado": "4. La jurisdicción",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 8"
+      }
+    }
+  ]
+}

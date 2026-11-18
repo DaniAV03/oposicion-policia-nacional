@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 18,
+  "titulo": "Tema 18 · Delitos contra el patrimonio y contra el orden socioeconómico. El hurto. El robo. La extorsión. Robo y hurto de uso de vehículos a motor. Usurpación. De las defraudaciones: estafas; apropiación indebida; defraudaciones de fluido eléctrico y análogo.",
+  "preguntas": [
+    {
+      "id": "t18-g001",
+      "tema": 18,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un hurto recae sobre efectos cuyo valor se fija exactamente en 400 euros. ¿Qué apartado del artículo 234 se aplica?",
+      "opciones": [
+        "El artículo 234.2: multa de uno a tres meses.",
+        "El artículo 234.1: prisión de seis a dieciocho meses.",
+        "El artículo 235.1: prisión de uno a tres años."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 234.1 exige que la cuantía de lo sustraído «excediese de» 400 euros, de modo que 400 euros exactos se quedan fuera y se aplica el apartado 2, con multa de uno a tres meses. La opción del 234.1 es la trampa del umbral: solo entra si se supera la cifra. La del 235.1 exige además una de las diez circunstancias del hurto agravado, que el supuesto no menciona.",
+      "referencia": {
+        "apartado": "3.2. Los 400 euros: qué se mide y qué se compara",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 234.2"
+      }
+    },
+    {
+      "id": "t18-g002",
+      "tema": 18,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Al llevarse una prenda, el autor inutiliza la etiqueta antirrobo adherida a ella; el valor de lo sustraído supera los 400 euros. ¿Qué consecuencia tiene?",
+      "opciones": [
+        "Hay robo con fuerza del artículo 240.1, porque inutilizar la alarma es una de las cinco circunstancias del artículo 238.",
+        "Sigue habiendo hurto, con la pena del artículo 234.1 impuesta en su mitad superior.",
+        "Las penas se reducen en un grado, porque la alarma era un dispositivo de seguridad privado."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 234.3 obliga a imponer las penas del apartado correspondiente en su mitad superior cuando se neutralizan los dispositivos de alarma instalados en las cosas sustraídas: aquí el hurto sigue siendo hurto y la pena del 234.1 pasa a su mitad superior. Las otras dos leen mal el precepto: la alarma del lugar es la circunstancia 5.ª del artículo 238 y conduce al robo del 240, pero la etiqueta va adherida a la cosa; y el 234.3 no rebaja nada, sube el tramo.",
+      "referencia": {
+        "apartado": "3.3. La neutralización de alarmas: artículo 234.3",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 234.3"
+      }
+    },
+    {
+      "id": "t18-g003",
+      "tema": 18,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un robo con fuerza en las cosas concurre con una circunstancia del artículo 235. ¿Qué pena corresponde?",
+      "opciones": [
+        "Prisión de uno a tres años, que es la pena básica del robo con fuerza del artículo 240.1.",
+        "Prisión de uno a tres años en su mitad superior, porque el artículo 235.2 lo ordena.",
+        "Prisión de dos a cinco años, porque el artículo 240.2 sube la banda cuando concurre una circunstancia del artículo 235."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 240.2 eleva la pena del robo con fuerza de uno a tres años a dos a cinco cuando concurre alguna circunstancia del artículo 235. La primera opción se queda en la pena básica e ignora la remisión; la segunda aplica la regla del 235.2, que impone la mitad superior cuando concurren dos o más circunstancias del 235 dentro del hurto agravado, no cuando concurre una sola en un robo.",
+      "referencia": {
+        "apartado": "4.2. Cómo se combinan estas circunstancias con el resto del Código",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 240.2"
+      }
+    },
+    {
+      "id": "t18-g004",
+      "tema": 18,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un robo con fuerza se comete en un establecimiento abierto al público, ya fuera de las horas de apertura. ¿Qué pena de prisión prevé el artículo 241?",
+      "opciones": [
+        "De uno a cinco años.",
+        "De dos a cinco años.",
+        "De dos a seis años."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 241.1, párrafo segundo, fija para el establecimiento abierto al público y sus dependencias, fuera de las horas de apertura, prisión de uno a cinco años. De dos a cinco años es la banda del primer párrafo, que cubre la casa habitada y el edificio o local abiertos al público dentro del horario; y de dos a seis años es la del artículo 241.4, reservada a la especial gravedad y, en todo caso, a la concurrencia de una circunstancia del artículo 235.",
+      "referencia": {
+        "apartado": "5.4. Las penas del robo con fuerza: artículos 240 y 241",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 241.1, párrafo segundo"
+      }
+    },
+    {
+      "id": "t18-g005",
+      "tema": 18,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "En un robo con violencia cometido en una vivienda, el autor emplea además un arma. ¿Cómo se determina la pena?",
+      "opciones": [
+        "Se aplica el artículo 242.2, de tres años y seis meses a cinco años, sin más ajustes.",
+        "Se aplica la pena del apartado correspondiente en su mitad superior, de modo que la del artículo 242.2 se impone en su mitad superior.",
+        "Se aplica el tipo autónomo de robo con armas, castigado con prisión de tres a seis años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 242.3 no crea un tipo autónomo: ordena imponer la pena del apartado que corresponda en su mitad superior cuando se usan armas, de modo que sobre la banda del 242.2, de tres años y seis meses a cinco, se sube de tramo. La primera opción olvida esa regla; la tercera inventa una escala que el Código no contiene, porque el «robo con armas» con pena propia no existe.",
+      "referencia": {
+        "apartado": "6.2. Las cuatro reglas de pena del artículo 242",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 242.3"
+      }
+    },
+    {
+      "id": "t18-g006",
+      "tema": 18,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un sujeto, con intimidación, obliga al dueño de un comercio a firmar un documento por el que renuncia a un crédito. ¿Qué delito comete?",
+      "opciones": [
+        "Robo con intimidación del artículo 242, porque hay ánimo de lucro e intimidación en las personas.",
+        "Estafa del artículo 248, porque la víctima realiza un acto de disposición en perjuicio propio.",
+        "Extorsión del artículo 243, porque le obliga a realizar un acto o negocio jurídico en perjuicio de su patrimonio."
+      ],
+      "correcta": 2,
+      "explicacion": "La extorsión del artículo 243 castiga a quien, con ánimo de lucro y violencia o intimidación, obliga a otro a realizar u omitir un acto o negocio jurídico en perjuicio de su patrimonio o del de un tercero, con prisión de uno a cinco años: aquí la víctima firma una renuncia. No hay robo porque no se apodera de cosa mueble alguna, y no hay estafa porque falta el engaño bastante que exige el artículo 248.",
+      "referencia": {
+        "apartado": "7. La extorsión: artículo 243",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 243"
+      }
+    },
+    {
+      "id": "t18-g007",
+      "tema": 18,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Un sujeto utiliza sin autorización el coche de un vecino, sin ánimo de apropiárselo, y lo restituye a las 36 horas. ¿Qué consecuencia tiene?",
+      "opciones": [
+        "Responde por el artículo 244.1: trabajos en beneficio de la comunidad de 31 a 90 días o multa de dos a doce meses.",
+        "Responde por hurto del artículo 234.1, porque el valor del vehículo supera los 400 euros.",
+        "Queda impune, porque el vehículo se restituyó antes de 48 horas y no había ánimo de apropiación."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 244.1 castiga sustraer o utilizar un vehículo a motor ajeno sin ánimo de apropiárselo, y con restitución en plazo no superior a 48 horas impone trabajos en beneficio de la comunidad de 31 a 90 días o multa de dos a doce meses. No es hurto porque falta el ánimo de apropiación y porque el vehículo volvió dentro del plazo; y no queda impune, porque el precepto existe precisamente para este caso.",
+      "referencia": {
+        "apartado": "8.2. Las 48 horas y sus consecuencias",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 244.1"
+      }
+    },
+    {
+      "id": "t18-g008",
+      "tema": 18,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Un grupo ocupa de forma pacífica, sin autorización, una nave industrial que no es morada y se mantiene en ella contra la voluntad del titular. ¿Qué precepto se aplica?",
+      "opciones": [
+        "El artículo 245.1, con prisión de uno a dos años, porque la ocupación es ilegal y se prolonga en el tiempo.",
+        "El artículo 245.2, con prisión de uno a dos años, porque el titular no consintió la ocupación.",
+        "El artículo 245.2, con multa de tres a seis meses, porque no hay violencia ni intimidación."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 245.2 castiga ocupar sin autorización un inmueble que no sea morada o mantenerse en él contra la voluntad del titular, con multa de tres a seis meses, y no exige violencia. Las dos opciones que ofrecen prisión confunden los apartados: la prisión de uno a dos años es la del artículo 245.1, reservada a la ocupación con violencia o intimidación en las personas y a la usurpación de un derecho real inmobiliario.",
+      "referencia": {
+        "apartado": "9.1. Los dos apartados del artículo 245",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 245.2"
+      }
+    },
+    {
+      "id": "t18-g009",
+      "tema": 18,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué elemento distingue la estafa del hurto?",
+      "opciones": [
+        "El ánimo de lucro, que la estafa exige y el hurto no.",
+        "El engaño bastante que produce error y lleva a la víctima a un acto de disposición.",
+        "La violencia o intimidación sobre las personas, que la estafa exige y el hurto no."
+      ],
+      "correcta": 1,
+      "explicacion": "La estafa del artículo 248 se define por la cadena engaño bastante, error, acto de disposición y perjuicio; el engaño es lo que la separa del hurto, donde el sujeto toma la cosa sin que nadie se la entregue. El ánimo de lucro lo exigen las dos figuras, y la violencia o intimidación es lo que caracteriza al robo, no a la estafa.",
+      "referencia": {
+        "apartado": "10.1. La definición del artículo 248 y sus cuatro elementos",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 248"
+      }
+    },
+    {
+      "id": "t18-g010",
+      "tema": 18,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una estafa defrauda 300.000 euros sin que concurra ninguna otra circunstancia. ¿Qué pena corresponde?",
+      "opciones": [
+        "Prisión de uno a seis años y multa de seis a doce meses, por el artículo 250.1.5.º, al superar los 50.000 euros.",
+        "Prisión de cuatro a ocho años y multa de doce a veinticuatro meses, por el artículo 250.2.",
+        "Prisión de seis meses a tres años, porque el artículo 250 solo se aplica cuando concurre alguna de sus ocho circunstancias."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 250.2 impone prisión de cuatro a ocho años y multa de doce a veinticuatro meses cuando el valor de la defraudación supera los 250.000 euros, aunque no concurra ninguna otra circunstancia. Los 50.000 euros son el umbral del numeral 5.º del artículo 250.1, con pena de uno a seis años, y la tercera opción olvida que el apartado 2 tiene un supuesto autónomo por cuantía.",
+      "referencia": {
+        "apartado": "11.2. La hiperagravación del artículo 250.2",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 250.2"
+      }
+    },
+    {
+      "id": "t18-g011",
+      "tema": 18,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El administrador de una sociedad, con facultades para gestionar un patrimonio ajeno, las infringe excediéndose en su ejercicio y causa un perjuicio de 100.000 euros. ¿Qué figura se aplica?",
+      "opciones": [
+        "Administración desleal del artículo 252, con las penas del artículo 250 al superar el perjuicio los 50.000 euros.",
+        "Apropiación indebida del artículo 253, porque se ha quedado con lo que le entregaron.",
+        "Estafa del artículo 248, porque hay engaño y perjuicio patrimonial."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 252 castiga al que tiene facultades para administrar un patrimonio ajeno y las infringe excediéndose en su ejercicio, causando perjuicio; al superar el perjuicio los 50.000 euros se aplican las penas del artículo 250. No es apropiación indebida, porque no recibió la cosa con obligación de entregarla o devolverla, y no es estafa, porque no hay engaño que provoque un acto de disposición.",
+      "referencia": {
+        "apartado": "12.1. Por qué el Código separa dos delitos y no uno",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 252"
+      }
+    },
+    {
+      "id": "t18-g012",
+      "tema": 18,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Un hijo sustrae 1.500 euros de la caja de la tienda de su padre, sin violencia ni intimidación. ¿Qué consecuencia tiene?",
+      "opciones": [
+        "Responde por hurto agravado del artículo 235.1, porque media abuso de confianza.",
+        "Responde por hurto del artículo 234.1, con la atenuante de parentesco del artículo 22.",
+        "Está exento de responsabilidad criminal por el artículo 268 y solo responde civilmente."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 268 exime de responsabilidad criminal, y deja subsistente solo la civil, a los descendientes por los delitos patrimoniales causados entre sí, siempre que no haya violencia o intimidación ni abuso de la vulnerabilidad de la víctima; por eso el hijo no responde penalmente. No es una atenuante del artículo 22, y el abuso de confianza no convierte el hecho en hurto agravado del artículo 235.",
+      "referencia": {
+        "apartado": "14.1. La exención por parentesco: artículo 268",
+        "norma": "Código Penal (Ley Orgánica 10/1995, de 23 de noviembre)",
+        "articulo": "art. 268"
+      }
+    }
+  ]
+}

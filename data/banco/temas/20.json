@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 20,
+  "titulo": "Tema 20 · Delitos informáticos. Especial consideración al derecho a la intimidad. La prueba digital en el proceso penal.",
+  "preguntas": [
+    {
+      "id": "t20-g001",
+      "tema": 20,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "El artículo 197 bis.1 castiga el acceso ilícito a un sistema de información. Además del acceso, ¿qué exige el tipo?",
+      "opciones": [
+        "Ánimo de lucro y perjuicio patrimonial a tercero, que la ley presume.",
+        "Que se hayan vulnerado las medidas de seguridad establecidas para impedirlo y que el sujeto no esté debidamente autorizado.",
+        "Que el sistema contenga datos reservados de carácter personal o familiar."
+      ],
+      "correcta": 1,
+      "explicacion": "El 197 bis.1 exige vulnerar las medidas de seguridad y actuar sin autorización; no menciona el ánimo de lucro ni el perjuicio, que solo aparecen en el 197.6 y en la estafa. La primera opción añade elementos que el tipo no contiene, y la tercera confunde el objeto del 197 bis con el del 197.2, que es el que protege datos reservados de carácter personal o familiar.",
+      "referencia": {
+        "apartado": "3.1. Las cuatro bisagras, una por una",
+        "norma": "Código Penal",
+        "articulo": "art. 197 bis.1"
+      }
+    },
+    {
+      "id": "t20-g002",
+      "tema": 20,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué conducta castiga el apartado 7 del artículo 197 del Código Penal?",
+      "opciones": [
+        "Captar imágenes o grabaciones de otra persona sin su consentimiento en el interior de un domicilio.",
+        "Difundir imágenes obtenidas en la vía pública cuando la persona afectada no consiente la difusión.",
+        "Difundir, revelar o ceder a terceros imágenes obtenidas con la anuencia de la persona afectada en un domicilio o lugar fuera del alcance de la mirada de terceros, cuando la divulgación menoscabe gravemente su intimidad."
+      ],
+      "correcta": 2,
+      "explicacion": "El verbo del tipo es difundir, revelar o ceder, y la obtención tiene que haber sido con anuencia de la persona afectada: es un presupuesto del precepto. Por eso la captura sin consentimiento de la primera opción no es 197.7, y el lugar cerrado es también un requisito, de modo que la imagen captada en la vía pública de la segunda opción queda fuera.",
+      "referencia": {
+        "apartado": "5.1. Lo que el precepto no dice",
+        "norma": "Código Penal",
+        "articulo": "art. 197.7"
+      }
+    },
+    {
+      "id": "t20-g003",
+      "tema": 20,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Dónde está tipificada la estafa informática en el Código Penal vigente?",
+      "opciones": [
+        "En el artículo 249.1.a, que castiga la manipulación informática de la que resulta una transferencia no consentida de un activo patrimonial.",
+        "En el artículo 248.2, que la regula como modalidad de la estafa común.",
+        "En el artículo 264.1, dentro del capítulo de los daños."
+      ],
+      "correcta": 0,
+      "explicacion": "Desde la Ley Orgánica 14/2022 la estafa informática está en el artículo 249.1.a, y el artículo 248 solo tiene tres párrafos sin numerar: el antiguo 248.2 no existe. El 264.1 castiga los daños informáticos, que protegen la integridad del dato y del sistema, no el patrimonio.",
+      "referencia": {
+        "apartado": "7. Estafa informática y fraudes conexos",
+        "norma": "Código Penal",
+        "articulo": "art. 249.1.a"
+      }
+    },
+    {
+      "id": "t20-g004",
+      "tema": 20,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Obstaculizar o interrumpir el funcionamiento de un sistema informático ajeno, introduciendo datos o inutilizando el sistema, se castiga en…",
+      "opciones": [
+        "El artículo 264.1, que tipifica borrar o hacer inaccesibles datos ajenos.",
+        "El artículo 264 bis, que protege el funcionamiento del sistema y no solo el dato.",
+        "El artículo 264 ter, que castiga fabricar las herramientas."
+      ],
+      "correcta": 1,
+      "explicacion": "El 264 protege el dato y el 264 bis el funcionamiento del sistema, que es la conducta descrita. El 264 ter no castiga el ataque, sino la preparación: sanciona producir o facilitar los programas y contraseñas destinados a esos delitos, sin exigir que el ataque llegue a producirse.",
+      "referencia": {
+        "apartado": "8.1. Dato, sistema y herramienta",
+        "norma": "Código Penal",
+        "articulo": "art. 264 bis"
+      }
+    },
+    {
+      "id": "t20-g005",
+      "tema": 20,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto dura la intervención de las comunicaciones telefónicas y telemáticas acordada por el juez?",
+      "opciones": [
+        "Tres meses desde la autorización, prorrogables por períodos de igual duración hasta un máximo de dieciocho meses.",
+        "Seis meses desde la autorización, prorrogables por períodos de igual duración hasta un máximo de dieciocho meses.",
+        "Un mes desde la autorización, prorrogable hasta un máximo de tres meses."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 588 ter g fija tres meses iniciales y prórrogas de igual duración hasta dieciocho. Los seis meses no son plazo de ninguna medida de este bloque, y el mes prorrogable hasta tres es el del registro remoto de equipos informáticos del artículo 588 septies c, que es la confusión que busca el enunciado.",
+      "referencia": {
+        "apartado": "14.2. La interceptación de comunicaciones telefónicas y telemáticas",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 588 ter g"
+      }
+    },
+    {
+      "id": "t20-g006",
+      "tema": 20,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "La orden de conservación de datos o informaciones concretas de un sistema de almacenamiento, mientras se obtiene la autorización judicial de cesión, ¿quién puede requerirla?",
+      "opciones": [
+        "Solo el juez de instrucción, mediante auto motivado.",
+        "El Ministerio Fiscal o la Policía Judicial, sin necesidad de juez, por noventa días prorrogables hasta ciento ochenta.",
+        "Solo el juez, y su duración máxima es de treinta días."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 588 octies permite al Ministerio Fiscal y a la Policía Judicial ordenar la conservación sin juez, por 90 días prorrogables hasta 180; lo que exige autorización judicial es la cesión posterior de esos datos (588 ter j). Por eso fallan las dos opciones que reservan la medida al juez y la que reduce el plazo a treinta días.",
+      "referencia": {
+        "apartado": "13.1. Las medidas en particular",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 588 octies"
+      }
+    },
+    {
+      "id": "t20-g007",
+      "tema": 20,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Practicado un registro domiciliario en el que se incauta un teléfono móvil, ¿qué hace falta para examinar su contenido?",
+      "opciones": [
+        "Nada más: la incautación practicada en el registro legitima el acceso al contenido.",
+        "Basta la autorización del Ministerio Fiscal a instancia de la Policía Judicial.",
+        "Autorización judicial, que puede otorgarse después de la incautación, porque la simple incautación no legitima el acceso."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 588 sexies a.2 lo dice literalmente: la simple incautación durante el registro domiciliario no legitima el acceso al contenido, sin perjuicio de que el juez lo autorice ulteriormente. La primera opción contradice ese texto y la segunda atribuye al Ministerio Fiscal una autorización que la ley reserva al juez.",
+      "referencia": {
+        "apartado": "12.2. La cadena de custodia en la Ley de Enjuiciamiento Criminal",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 588 sexies a"
+      }
+    },
+    {
+      "id": "t20-g008",
+      "tema": 20,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "El artículo 198 castiga a la autoridad o funcionario que realice las conductas del artículo 197. ¿Qué exige además y qué pena impone?",
+      "opciones": [
+        "Exige que el secreto se haya conocido por razón del oficio y castiga con prisión de uno a tres años y multa.",
+        "No exige prevalimiento del cargo: basta la condición de funcionario, y la pena es la del 197 en su mitad inferior.",
+        "Exige actuar fuera de los casos permitidos por la ley, sin mediar causa legal por delito y prevaliéndose del cargo; la pena es la del 197 en su mitad superior más inhabilitación absoluta de seis a doce años."
+      ],
+      "correcta": 2,
+      "explicacion": "Los tres requisitos del 198 son acumulativos: fuera de los casos permitidos por la ley, sin causa legal por delito y con prevalimiento del cargo; la pena se agrava con inhabilitación absoluta de seis a doce años. La primera opción describe el 199, que castiga la revelación del secreto conocido por el oficio, y la segunda suprime un requisito del tipo.",
+      "referencia": {
+        "apartado": "4.2. El artículo 198: autoridad o funcionario",
+        "norma": "Código Penal",
+        "articulo": "art. 198"
+      }
+    },
+    {
+      "id": "t20-g009",
+      "tema": 20,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿A qué delitos del capítulo se extiende la responsabilidad de la persona jurídica del artículo 197 quinquies?",
+      "opciones": [
+        "A los de los artículos 197, 197 bis y 197 ter, con multa de seis meses a dos años.",
+        "A todos los del capítulo, incluidos el 198 y el 199.",
+        "Solo al artículo 197, y únicamente si concurre ánimo de lucro."
+      ],
+      "correcta": 0,
+      "explicacion": "El 197 quinquies menciona solo los artículos 197, 197 bis y 197 ter, y la multa es de seis meses a dos años, sin exigir ánimo de lucro. La opción que lo extiende al 198 y al 199 amplía el precepto sin base, y la que lo reduce al 197 le añade un límite que la ley no pone.",
+      "referencia": {
+        "apartado": "6.3. Organización criminal y personas jurídicas",
+        "norma": "Código Penal",
+        "articulo": "art. 197 quinquies"
+      }
+    },
+    {
+      "id": "t20-g010",
+      "tema": 20,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué relación tiene el Convenio sobre la Ciberdelincuencia, hecho en Budapest, con el Código Penal español?",
+      "opciones": [
+        "Tipifica por sí mismo los delitos informáticos y se aplica directamente cuando el Código no cubre el hecho.",
+        "Solo recomienda a los Estados tipificar las conductas, sin imponer obligación alguna.",
+        "Obliga a las partes a tipificar las conductas que enumera, y España las castiga en los artículos 197 y siguientes, 249.1.a, 264 y siguientes y 390 y siguientes."
+      ],
+      "correcta": 2,
+      "explicacion": "El Convenio es un tratado que obliga a tipificar, no un texto que cree delitos aplicables por sí solo ni una simple recomendación. España cumple ese mandato con los preceptos internos, que son los que se aplican: 197 y siguientes para la intimidad y el acceso, 249.1.a para la estafa informática, 264 y siguientes para los daños y 390 y siguientes para las falsedades.",
+      "referencia": {
+        "apartado": "2. Qué es un delito informático y qué bien jurídico se protege",
+        "norma": "Convenio sobre la Ciberdelincuencia, hecho en Budapest el 23 de noviembre de 2001",
+        "articulo": "arts. 2, 3, 6, 7 y 8"
+      }
+    },
+    {
+      "id": "t20-g011",
+      "tema": 20,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un programa concebido principalmente para apoderarse de datos reservados ajenos se fabrica y se facilita a un tercero con esa intención. ¿Qué precepto lo castiga?",
+      "opciones": [
+        "El artículo 197 ter, que castiga la fabricación y el suministro de herramientas destinadas a los delitos de los artículos 197.1, 197.2 y 197 bis.",
+        "El artículo 264 ter, porque es el precepto que castiga la fabricación de programas informáticos ilícitos.",
+        "El artículo 197 bis.2, porque la herramienta sirve para interceptar datos."
+      ],
+      "correcta": 0,
+      "explicacion": "El 197 ter es el delito de preparación del capítulo de la intimidad: castiga producir, adquirir, importar o facilitar programas y contraseñas con la intención de cometer los delitos del 197.1, 197.2 y 197 bis. El 264 ter es su gemelo en el capítulo de daños y solo remite al 264 y al 264 bis, y el 197 bis.2 castiga la interceptación, no la fabricación de la herramienta.",
+      "referencia": {
+        "apartado": "6.2. El artículo 197 ter: las herramientas",
+        "norma": "Código Penal",
+        "articulo": "art. 197 ter"
+      }
+    },
+    {
+      "id": "t20-g012",
+      "tema": 20,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Según el artículo 8.1 de la Ley Orgánica 1/1982, ¿cuándo no se reputa intromisión ilegítima en el honor, la intimidad o la propia imagen?",
+      "opciones": [
+        "Nunca: cualquier injerencia en esos derechos es intromisión ilegítima, aunque la autorice un juez.",
+        "Cuando la actuación está autorizada o acordada por la autoridad competente de acuerdo con la ley, o cuando predomina un interés histórico, científico o cultural relevante.",
+        "Solo cuando la persona afectada lo consiente por escrito y de forma expresa."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 8.1 excluye de la intromisión ilegítima las actuaciones autorizadas o acordadas por la autoridad competente conforme a la ley y las que responden a un interés histórico, científico o cultural relevante. La primera opción ignora esa excepción y la tercera reduce el precepto al consentimiento, que no es el supuesto que la norma regula.",
+      "referencia": {
+        "apartado": "11.1. La ley civil: la LO 1/1982",
+        "norma": "Ley Orgánica 1/1982, de 5 de mayo",
+        "articulo": "art. 8.1"
+      }
+    }
+  ]
+}

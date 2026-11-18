@@ -40,6 +40,13 @@ versionado. Sin PHP (GitHub Pages no ejecuta código de servidor).
   (promociones 37 en adelante). Los cuestionarios oficiales son documentos del sector
   público reutilizables con atribución (Ley 37/2007, RD 1495/2011). Cada pregunta conserva
   convocatoria, promoción y año.
+- **S9.** "psicotenicos temario de como pasarlos": una guía de estudio, no un banco. Un
+  apartado por tipo de prueba con qué mide, método paso a paso, un ejemplo resuelto a mano,
+  las trampas típicas y el tiempo recomendado por ítem. Debe poder estudiarse sola, sin las
+  pruebas delante.
+- **S10.** "los examenes psicotecnicos": pruebas generadas por algoritmo, con la lógica de
+  D3 (nada copiado de academias, aleatorización infinita), conectadas al motor de sesiones
+  que ya existe (modos, progreso en `localStorage`, racha, reto diario).
 
 ## Decisiones tomadas
 
@@ -83,6 +90,23 @@ versionado. Sin PHP (GitHub Pages no ejecuta código de servidor).
 - T22 · S2,S4,S5,S6 · worker · Autorar los Temas 24 y 25.
 - T23 · S2,S4,S5,S6 · worker · Autorar los Temas 27-37 (bloque B, sin ley detrás).
 - T24 · S2,S4,S5,S6 · worker · Autorar los Temas 38-45 (bloque C).
+- T25 · S9,S6 · worker · `data/psicotecnicos/guia.html`: guía de estudio por dominio, con
+  ejemplo resuelto, trampas y tiempo por ítem.
+- T26 · S10,S3 · worker · `assets/js/psicotecnicos-core.js`: generador determinista por
+  semilla con ocho tipos, solución única y distractores plausibles.
+- T27 · S10,S3 · inline · Integración con el motor de sesiones: entrenamiento por tipo,
+  examen cronometrado, sin repetir ítem, progreso propio en `localStorage`.
+- T28 · S5,S6 · inline · `psicotecnicos.html` con la CSP estricta, la guía arriba, el
+  lanzador debajo y entrada nueva en la portada.
+- T29 · S1 · inline · `scripts/verificar-psicotecnicos.mjs` con aserciones deterministas y
+  puerta en el build.
+- T30 · S6 · verify · Verificación funcional: cronómetro, corrección, progreso y
+  exportar/importar.
+- T31 · S2,S4 · worker · Auditoría jurídica por lotes: contrastar cada cita normativa de cada
+  tema con el texto consolidado del BOE y corregir lo que no cuadre.
+- T32 · S9,S10 · worker · Revisión humana del contenido curado del generador de psicotécnicos
+  (entradas de ortografía y pares de analogía).
+- T33 · S6 · inline · Reacomodar la paleta de las ilustraciones SVG a la nueva identidad.
 
 ## Log
 
@@ -364,6 +388,29 @@ la delincuencia) se presentan como tales, con la etiqueta de doctrina, no como h
 
 Orden de trabajo para los 19 restantes: 27-30, 31-33, 34-35, 36-37 (bloque B) y 38-45 (bloque C).
 
+- D8. La sección de psicotécnicos es **aparte**, con su propia entrada en la portada y su
+  propia página `psicotecnicos.html`. No es el tema 46 del temario: no pertenece al Anexo I.
+- D9. El progreso de psicotécnicos lleva **contador y mejor resultado propios**, separados
+  del marcador del temario, para no contaminar el avance de los 45 temas.
+- D10. **No se replica ninguna estructura oficial del psicotécnico**, porque no existe:
+  BOE-A-2026-15055, base 6.1.3.c, solo dice «uno o varios test dirigidos a determinar las
+  aptitudes (inteligencia general y específica) … con una duración total máxima de sesenta
+  minutos», y deja el mínimo al tribunal. Lo único que sí se toma del registro oficial es ese
+  techo de 60 minutos y el carácter apto/no apto. Los cinco dominios de ítem salen de los
+  criterios de corrección publicados por el Ayuntamiento de Madrid (Policía Municipal, 2025:
+  verbal, numérica, espacial, razonamiento y atención-percepción) y del material público del
+  IVAP sobre pruebas psicométricas; la ortografía se añade porque el Anexo I la incluye como
+  tema 37. Nunca se afirmará que esa mezcla es la del examen real.
+- D11. Cronómetro: en entrenamiento se mantiene el reloj de **60 s por ítem** que ya usa el
+  motor de test; en examen, **reloj global de 60 minutos** con 80 ítems (45 s por ítem), que
+  es el techo oficial y la batería del ejemplo público de Madrid. Nada de recortar el reloj
+  por ítem en el modo examen.
+- D12. El banco de test se queda **congelado en 2 convocatorias (200 preguntas)**. Desde 2023
+  los cuestionarios y plantillas oficiales están detrás de acceso autenticado (Mis
+  Inscripciones, cl@ve o DNI + captcha en `sede.policia.gob.es/OPOSITA`), así que no hay URL
+  pública que la Ley 37/2007 permita reutilizar; 2020 no tiene cuestionario publicado. Solo
+  crece si el dueño aporta un modelo al que tenga acceso legítimo.
+
 ### L20 — bloque B (I): temas 27 a 30, 30 de 45 publicados
 
 Primer lote redactado bajo **D7** (solo fuentes primarias públicas), y se nota: en estos temas la caja de
@@ -496,3 +543,314 @@ Se añaden dos requisitos y **no se implementa nada todavía**: queda todo listo
 
 **Estado del temario al cerrar**: 45 de 45 publicados, tres verificadores en verde. Nada de este encargo
 está implementado: no se ha creado ningún fichero de psicotécnicos.
+
+### L25 — «si hazlo»: psicotécnicos en marcha, y el banco de test se queda congelado
+
+Petición del dueño (17/11/2026), literal:
+
+> continua faltaba preparar psicotecnicos y continuar con el los tipo test de más años , no???
+
+Antes de escribir código se buscó el marco oficial (solo lectura, sin descargas). Resultados que cambian el
+plan de L24:
+
+- **El nombre oficial es «Test psicotécnicos», parte c) de la tercera prueba** (base 6.1.3.c de
+  BOE-A-2026-15055, Resolución de 7/07/2026). No existe «ejercicio psicotécnico» ni «prueba de
+  aptitudes» como prueba propia. Cita: «uno o varios test dirigidos a determinar las aptitudes
+  (inteligencia general y específica) … teniendo una duración total máxima de sesenta minutos».
+- **No fija número de ítems, ni tipos, ni orden**: solo el techo de 60 minutos y la fórmula
+  `[A–E/(n–1)]·10/P`, con el mínimo a criterio del tribunal. Por eso D10 se cierra en «no se replica».
+- **El psicotécnico no puntúa**: base 6.11, la calificación de la oposición es conocimientos + aptitud
+  física; el psicotécnico solo desempata (apto/no apto). Y base 6.7: la primera prueba y los
+  psicotécnicos van en acto único. Lo que decide es el examen de conocimientos: 100 ítems en 50
+  minutos, mínimo 3 y corte de 1,75 aspirantes por plaza.
+- Material público reutilizable para la guía: criterios de corrección del Ayuntamiento de Madrid
+  (Policía Municipal 2025, cinco dominios, 80 preguntas con 4 opciones) y el documento del IVAP
+  *Pruebas de evaluación psicométrica* (ítems resueltos y baremos).
+
+Segundo frente, el banco. La respuesta del dueño fue «no hagas nada busca de web oficial y no descargues
+nada». Resultado: 2020 (p37) sigue sin cuestionario publicado; 2023 (p40), 2024 (p41), 2025 (p42) y 2026
+(p43) publican plantillas y modelos **solo tras acceso autenticado** («Mis Inscripciones», cl@ve o DNI y
+captcha individualizado en `sede.policia.gob.es/OPOSITA`). No hay URL pública ni en `boe.es` ni en
+`datos.gob.es`, así que la reutilización de la Ley 37/2007 no es viable: queda **D12**, banco congelado.
+
+Decisiones del dueño para desbloquear la implementación:
+
+> si hazlo y como hacemos para los test ??
+
+Se cierran D8 a D11 con los valores por defecto recomendados (sección aparte, contador propio, sin
+estructura oficial, 60 s por ítem en entrenamiento y reloj global de 60 minutos en examen) y arranca el
+lote T25-T29.
+
+### L26 — la atribución del banco, sin enlace
+
+Petición del dueño, literal:
+
+> por cierto no pongas en los test el enlace al cuestionario oficial que no quiero que se vea la imagen de
+> jurispol jurispol no pongas el enlace ese
+
+La página de test renderizaba un enlace «Cuestionario oficial» a la URL del fichero del que se extrajeron
+las preguntas. Se retira el enlace: la atribución pasa a texto y nombra al organismo que publica el
+cuestionario (Dirección General de la Policía, Área de Procesos Selectivos), así que la Ley 37/2007 se sigue
+cumpliendo sin publicar dónde está alojado el PDF. Las URL de procedencia se quedan en
+`data/examenes/FUENTES.md` y en el campo `fuente` de cada banco, que la página ya no pinta.
+
+Se observó en rojo antes del arreglo (`git show HEAD:assets/js/test.js` seguía teniendo `href: banco.fuente`)
+y en verde después: `verificar-test.mjs` suma dos comprobaciones (la página no enlaza el fichero; la
+atribución nombra al organismo) y pasa de 96 a 98. Commit `0fced07`.
+
+### L27 — psicotécnicos entregados (T25-T29), T30 a la espera de un navegador
+
+Entregado en la rama `feat/psicotecnicos`, en cinco unidades de trabajo:
+
+- `0fced07` · atribución del banco sin enlace (L26).
+- `cdcca04` · `data/psicotecnicos/guia.html` (110 447 B, 16 apartados, ocho dominios, tres SVG).
+- `35cbf2e` · `assets/js/psicotecnicos-core.js` (generador determinista, ocho tipos, seis dominios).
+- `2a4362e` · `psicotecnicos.html` + `assets/js/psicotecnicos.js` (tres modos, contador propio) y la
+  entrada nueva en la navegación de las cuatro páginas.
+- `1999f0d` · `scripts/verificar-psicotecnicos.mjs` como cuarta puerta del build.
+
+**La revisión independiente encontró trece defectos reales y se corrigieron todos** (`9f8467a`), entre ellos
+tres graves: el modo examen enseñaba el recuento de aciertos en curso (delataba si habías acertado), el
+reloj del examen contaba ticks en vez de medir contra una hora límite (en pestaña de fondo se alargaba sin
+fin), y la importación de progreso aceptaba decimales y tipos inventados y dejaba `undefined %` en pantalla
+con el récord bloqueado para siempre. También se corrigió que la puerta tuviera dos aserciones tautológicas:
+la mutación «El examen oficial consta de 80 ítems y 45 segundos por ítem, con la estructura oficial» pasaba
+en verde y ahora sale en rojo en la página y en la guía.
+
+**Estado de verificación**: cuatro verificadores en verde — `verificar.mjs` (45 temas, sin errores
+estructurales), `verificar-examenes.mjs` (2 convocatorias, 200 preguntas), `verificar-test.mjs` (98
+comprobaciones) y `verificar-psicotecnicos.mjs` (87 comprobaciones).
+
+**Lo que ningún agente puede comprobar aquí**: no hay navegador. Contraste, foco visible, comportamiento real
+de `aria-live`, descarga del export, composición a 360 px y el estrangulamiento del reloj en pestaña de fondo
+quedan en manos del dueño. La lista concreta de siete comprobaciones manuales está en el informe de la
+revisión: (1) en examen, responder y mirar el marcador; (2) esperar 60 s en entrenamiento y leer el repaso;
+(3) mantener pulsada la tecla `1`; (4) cambiar de pestaña durante el examen; (5) escuchar la región viva al
+agotarse el tiempo; (6) bloquear el almacenamiento del sitio y terminar una sesión; (7) pasada visual a
+360 px.
+
+**Pendiente y declarado**: T30 (prueba funcional en navegador), una prueba de sesión con stub de DOM —hoy la
+lógica pura está cubierta pero el efecto visible no—, la revisión humana del contenido curado del generador
+(las 55 entradas de ortografía y los 37 conceptos de analogía, que el código valida en estructura pero no en
+exactitud) y la pasada visual del dueño, que sigue pendiente desde L11.
+
+Scratch de los redactores y del verificador: borrado por el padre. Ningún temporal dentro del árbol.
+
+### L28 — «continúa con lo que falta»: inventario y primer lote de la auditoría jurídica
+
+Petición del dueño, literal:
+
+> vale ahora continua con lo que falta en la web , que falt a??
+
+Inventario honesto de lo que queda, por valor:
+
+1. **Auditoría jurídica de los 45 temas** (T31). Es el hueco grande: los cuatro verificadores no comprueban
+   verdad jurídica, así que un número de artículo equivocado pasa todas las puertas. Se hará por lotes, dos
+   temas por lote, empezando por los de más peso.
+2. **Verificar a mano las 200 claves** del banco (L10). Las plantillas son escaneos sin capa de texto: la
+   prueba independiente exige abrir la imagen y transcribir otra vez. Sin OCR no hay atajo.
+3. **Banco congelado** (D12). Necesita que el dueño aporte un modelo desde Mis Inscripciones.
+4. **Pasada visual** de las cuatro páginas y de la sección nueva, que ningún agente puede hacer sin navegador.
+5. **Contenido curado del generador** (T32): 55 entradas de ortografía y 37 conceptos de analogía revisados a
+   mano, más el reflejo que falta en el tipo «matriz».
+6. **T30**, la prueba funcional en navegador de los psicotécnicos.
+
+Antes de arrancar el lote se cerró un defecto de estilo que estaba abierto desde L12: los temas 1 y 4 usaban
+`<em>` (siete y cinco veces) y Lexend no tiene cursiva, así que el navegador la fingía. Se sustituyeron por
+`<strong>` los énfasis reales y por texto plano los términos latinos y los nombres de sentencias
+(*Van Gend en Loos*, *Costa/ENEL*, *Faccini Dori*, *Francovich*). `verificar.mjs` gana la comprobación que lo
+habría cazado: ningún tema publicado ni la guía pueden usar `<em>` ni `<i>`.
+
+Sigue pendiente de decisión del dueño: la rama `feat/psicotecnicos` no se ha subido ni fusionado.
+
+### L29 — auditoría jurídica, lote 1: temas 21 y 18
+
+Método fijado para todos los lotes de T31: lectura del texto **consolidado** del BOE por streaming
+(`curl | grep`, cabecera XML de la API de datos abiertos), sin guardar un solo fichero, y clasificación de
+cada cita en correcta / incorrecta / no verificable con la frase literal que lo demuestra o lo contradice.
+Sólo se corrige lo que el BOE contradice, con cambio mínimo. Dos avisos de método que hay que recordar:
+
+- El campo `fecha_actualizacion` de la API **no** es la fecha de la ficha: hoy devuelve el día de la consulta
+  para normas que no han cambiado. La fecha de consolidación se lee en la ficha HTML.
+- `boe.es` sirve el texto consolidado de forma fiable por `curl`; lo que bloquea son los portales de
+  `interior.gob.es`.
+
+**Tema 21 · 131 preceptos de 10 normas auditados, 4 correcciones** (commit `5d3a608`):
+
+1. La entrada en vigor de la LO 1/2025 tiene **un adelanto y un retraso**, no dos adelantos.
+2. El EOMF es la **Ley** 50/1981, no «Ley Orgánica 50/1981» (la ficha del BOE declara rango «Ley»).
+3. El art. 9 LECrim se remite al **art. 801**, no a la ejecución de las secciones de vigilancia
+   penitenciaria. La glosa antigua era una lectura de manual.
+4. La tabla de decisión de §9.3 citaba el art. 490 como «podrá detener» cuando el Código dice
+   «Cualquier persona **puede** detener». Era la única **cita fabricada** del tema y estaba en la tabla que
+   decide la respuesta, no en el cuerpo.
+
+Quedaron sin tocar, por no ser contradicción comprobable y requerir decisión humana: la fianza del art. 492
+en los números 3 y 4, el rango de edad 14-18 de la Sección de Menores (viene de la LO 5/2000, que no está en
+las fuentes del tema) y la mención de «casación» en la competencia del TSJ.
+
+**Tema 18 · 39 bloques verificados, 0 correcciones.** Los umbrales (400 / 50.000 / 250.000 €), las penas de
+los artículos 234 a 256, la regla del art. 268 y los actos preparatorios del 269 coinciden con el texto
+consolidado, y la fecha declarada (09/04/2026) sigue siendo la última actualización publicada. Quedan tres
+imprecisiones de redacción reportadas sin corregir: el encuadre de los capítulos VII-XIV en el mapa SVG, la
+nomenclatura «apartado tercero» del art. 248 y la caracterización de la multa del 252/253.
+
+**Cola de auditoría** (43 temas restantes), por peso: 26 y 17 · 20 y 10 · 6 y 7 · 11 y 12 · 13 y 15 · 22 y 23 ·
+19 y 24 · 25 · 27 y 28 · 29 y 30 · 31 y 32 · 33 y 34 · 35 y 36 · 37 y 38 · 39 y 40 · 41 y 42 · 43 y 44 · 45 ·
+1 y 2 · 3 y 4 · 5 y 8 · 9 y 14 · 16. Un tema por auditor y dos auditores por lote; el informe se cierra con la
+tabla de citas y las correcciones, no con prosa.
+
+### L30 — auditoría jurídica, lote 2: temas 26 y 17
+
+**Tema 26 · ~160 preceptos auditados, 3 correcciones** (commit `dd2584b`):
+
+1. **La edad del RGPD estaba invertida** (Trampa 6): el art. 8.1 fija 16 años y permite a los Estados bajarla
+   **hasta 13**, no «bajar hasta los dieciséis». Era la trampa del tema y estaba mal.
+2. Art. 78.1 de la LO 3/2018: es prescripción de **sanciones**, no de infracciones (esas son los arts. 72-74).
+3. El desarrollo normativo es la **DF 15.ª**, no la DA 15.ª (que es el requerimiento de la CNMV).
+
+Fechas de consolidación confirmadas en la ficha HTML (27/12/2025 y 29/07/2022). Reportado sin tocar: el art. 9.2
+lista ocho circunstancias cuando tiene diez letras, el art. 12.7 omite una salvedad y la lista de artículos
+modificados de la LO 3/2018 omite el 76.
+
+**Tema 17 · 5 correcciones** (commit `dd2584b`), y dos de ellas habrían costado puntos:
+
+1. **Régimen de la prisión permanente revisable** (arts. 36.1 y 92.1): el tercer grado llega a los **15 años**
+   (20 si es terrorismo), los permisos a los **8** (12 en terrorismo) y los **25 años** son para la suspensión,
+   no para el tercer grado ni para los permisos. El tema tenía las tres cifras desplazadas.
+2. La enumeración del art. 379 recogía temeridad manifiesta y conducción sin permiso, que están en el **380**
+   y en el **384**.
+3. La cita literal del art. 147.1 llevaba una coma añadida que la volvía infiel.
+4. El art. 173.1 añade **tres** conductas, no cuatro.
+5. El glosario llamaba «otra ley» al art. 57.1, que es del propio Código.
+
+Reportado sin corregir por requerir criterio: la clase del delito del art. 163.1, la atribución de la LO 11/2022
+al 142, el alcance del art. 17 de la LO 2/2010 y la numeración de párrafos del 169.1.º.
+
+**Estado de T31**: 4 de 45 temas auditados (21, 18, 26, 17), 12 correcciones, tres de ellas en trampas de
+examen. Quedan 41 en la cola de L29.
+
+### L31 — imagen nueva, fuera los rastros de obra, y auditoría de los temas 20 y 10
+
+Petición del dueño, literal:
+
+> pues ponte con lo que falte quita lo de publicado obviamente quita las cosas que indiquen que estaba en
+> desarrollo hazlo profesional y pon algun color más vivo que está muy apagada la página
+
+**Interfaz** (commit `effb56c`). Con los 45 temas escritos, el estado por tema sobraba: el índice ya no sondea
+la existencia de cada fichero, no pinta la insignia «Publicado / En preparación», no cuenta publicados, no
+deja hueco para el tema inexistente y el reto diario ya no dice «pendiente». Se borraron las seis reglas CSS
+que quedaron sin uso. Los contadores del héroe pasan a «45 temas · 3 bloques · convocatoria» y cada bloque a
+«N temas».
+
+**Paleta.** El crema y el azul marino eran apagados. Ahora hay un azul saturado de acento, un acento cálido
+para la acción principal, tintes por bloque y un borde de control que sí llega al umbral de 3:1. El contraste
+se midió par a par en los dos esquemas: el único que incumplía AA era el título del aviso (2,20:1) y ahora
+está en 5,16:1; el resto supera 4,5:1 en texto y 3:1 en controles. Se añadieron tres comprobaciones a
+`verificar.mjs`: ni un texto de estado de obra en la interfaz, cada token declarado una vez por esquema, y
+ninguna clase usada sin regla. Si alguien vuelve a meter una insignia o borra un token, el build falla.
+
+**Sigue pendiente y es visible**: las ilustraciones SVG (`assets/img/portada.svg` y `bloque-*.svg`) conservan
+la paleta anterior. La banda tintada del héroe hace que el cuadrado claro del emblema se funda con el fondo:
+queda como T33.
+
+**Auditoría, lote 3** (temas 20 y 10, ocho correcciones):
+
+- **Tema 20 · delitos informáticos** (commit `db06478`). La trampa central estaba a medias: la estafa
+  informática sí está en el **249.1.a** y el 248.2 ya no existe, pero el trasvase lo hizo la **LO 14/2022**, no
+  la LO 1/2015. El error estaba en tres sitios, incluida la lista de fuentes, que además atribuía a la LO
+  14/2022 la reforma del 250 cuando toca el 248. La agravante del apartado 3 de los daños informáticos cubre
+  el **264 y el 264 bis**, no tres artículos.
+- **Tema 10 · extranjería** (commit `c441164`). La prohibición de entrada de tres años por devolución se había
+  corregido en cinco lugares, pero **quedaban dos vivos**: la Trampa 10 y la lista de repaso de cinco
+  minutos. El inciso del art. 58.7 está anulado por la STC 17/2013 y el quebrantamiento solo reinicia el
+  cómputo, así que la respuesta correcta es que no hay plazo propio. Además: los supuestos de colaboración
+  con la justicia son los arts. **311 a 318 y 510**, no 311 a 315, y el órgano competente en los demás casos
+  es la **Dirección General de Gestión Migratoria** (art. 130.4 del Reglamento).
+
+**Estado de T31**: 6 de 45 auditados (21, 18, 26, 17, 20, 10), **20 correcciones**. Quedan 39: la cola sigue
+por 6 y 7, 11 y 12, 13 y 15, 22 y 23, 19 y 24, 25, y los bloques B y C.
+
+### L32 — lote 4, ilustraciones repintadas, y el tema 6 sale limpio
+
+- **Tema 6 · estatuto de los funcionarios: 0 correcciones** sobre ~65 preceptos del TREBEP, la LO 9/2015 y la
+  LO 2/1986. Las cinco trampas del tema están bien resueltas en prosa, tablas, los tres SVG, trampas,
+  autoevaluación y resumen. Seis imprecisiones de redacción reportadas sin tocar, entre ellas que el capítulo
+  de segunda actividad de la LO 9/2015 llega al art. 74 y el tema cita «66 a 71», y que el tope de seis meses
+  del art. 98.3 debería convivir con los tres meses del régimen policial del art. 65.2.
+  Aviso de método: el identificador `BOE-A-2015-10565` que se le dio al auditor **no es el TREBEP** (es la Ley
+  39/2015); el correcto, que el tema ya usaba, es `BOE-A-2015-11719`. Confirma la regla de L25: los ELI escritos
+  de memoria se comprueban siempre.
+- **Tema 7 · estructura del Interior: 2 correcciones** (commit `4780e37`). El art. 55.6 de la Ley 40/2015
+  excluye expresamente a los subdirectores generales de la condición de alto cargo, y el nombramiento de los
+  directores generales de Policía y Guardia Civil se rige por el **art. 64.3** al que remite la DA 1.ª del RD
+  207/2024, no por el 66.2. Confirmados los tres hallazgos que el tema ya declaraba: RD 734/2020 derogado,
+  inexistencia del «Gabinete de Coordinación y Estudios» y de la «DG de Relaciones Internacionales, Migraciones
+  y Extranjería», y la supresión del art. 13 por el RD 328/2026.
+- **Ilustraciones (T33, commit `1ed5662`)**: los seis SVG se repintaron con los tokens reales y el emblema de la
+  portada gana un anillo de 6 px que lo separa de la banda tintada (5,4:1). Treinta y cinco pares de color
+  medidos, ninguno por debajo de 3:1. De paso se corrigió un **XML inválido**: `portada.svg` tenía un comentario
+  con guion doble, que un analizador XML rechaza. Queda anotado que los SVG van en `<img>` y por tanto mantienen
+  su paleta fija en modo oscuro, igual que antes.
+
+**Estado de T31**: **8 de 45 temas auditados** (21, 18, 26, 17, 20, 10, 6, 7) y **22 correcciones**. Siguiente
+lote: 11 y 12, y después 13 y 15, 22 y 23, 19 y 24, 25, y los bloques B y C.
+
+### L33 — lote 5: temas 11 y 12
+
+- **Tema 11 · régimen sancionador de extranjería** (commit `2fb3ad6`), 2 correcciones de cita: la asistencia
+  letrada no se apoya en el art. 63 bis (que solo regula el procedimiento ordinario, el plazo de cumplimiento
+  voluntario y la excepción del internamiento) y una celda llamaba reglamento al art. 63.4 de la ley. El
+  catálogo letra por letra, las escalas de multa, las prescripciones y los cuatro relojes del procedimiento
+  coinciden con el texto consolidado. Reportado sin tocar: la glosa del CP en §7.2 parece desplazada (el 312.1
+  habla de tráfico ilegal de mano de obra) y la fila de Menores omite la salvedad del art. 62 bis 1.i).
+- **Tema 12 · asilo** (commit `6dfca6a`), 4 correcciones, una de fondo y en dos sitios: el **orden público no
+  es causa de denegación del asilo**. El art. 9 de la Ley 12/2009 solo deniega por peligro para la seguridad de
+  España o por condena firme grave con amenaza para la comunidad; el tema lo afirmaba en prosa y en una trampa.
+  También se corrigió la equivalencia con el art. 35.3 de la LO 4/2000 (regula la determinación de edad y no
+  dice nada de negarse al reconocimiento) y el alcance del RD 220/2022, que llega al art. 53 y no al 32.
+  Las remisiones muertas del propio texto legal (Ley 5/1984, Reglamento 343/2003, Directivas 2004/83 y
+  2005/85) se dejan tal cual: decir que están muertas es la respuesta correcta.
+
+**Estado de T31**: **10 de 45 temas auditados**, **28 correcciones**. Siguiente lote: 13 y 15.
+
+### L34 — cierre de sesión: qué hay hecho, qué está sin subir y cómo arrancar mañana
+
+Petición del dueño, literal:
+
+> sigue y deja preparado para empezar mañana me da queda una hora para un cambio más y cuando termines dejalo
+> listo para empezar mañana
+
+Y su pregunta posterior: «y estas pusheando las cosas automaticamente sin preguntarme ??».
+
+**Estado del trabajo**: la rama `feat/psicotecnicos` se subió al remoto el mismo día, a petición del dueño, después de
+que su propio `git push` dijera «todo al día». La causa de esa confusión: el remoto solo tenía `main`, y `main`
+local estaba idéntica a `origin/main`; los commits vivían en una rama que el remoto no conocía y sin upstream
+configurado, así que el `push` no tenía nada que actualizar en la rama que estaba empujando. Se subió con
+`git push -u origin feat/psicotecnicos`. La rama queda en el remoto y **sin fusionar**: `main` sigue en `40659ba`
+y GitHub Pages publica desde `main`, así que la web en producción aún no muestra nada de este trabajo. El cambio
+está en https://github.com/DaniAV03/oposicion-policia-nacional/pull/new/feat/psicotecnicos y fusionarlo es
+decisión del dueño.
+
+**Lote 6**: el tema 13 se auditó (4 citas corregidas: la competencia de la LO 2/1986 está en el 12.1.A).g) y no
+en un inexistente 12.1.G), y la acreditación del profesorado añade el art. 12.1.e). El tema 15 **se quedó a
+medias**: el auditor se colgó tras cuatro minutos en una llamada al BOE y no dejó ningún cambio en el árbol. No
+se reintenta solo: queda como primer trabajo de la próxima sesión, con el encargo ya escrito en L29.
+
+**Cómo arrancar mañana**, en este orden:
+
+1. Leer este documento hasta aquí.
+2. `git status` debe salir limpio y `git log --oneline -3` debe mostrar el último commit del cierre. Si hay
+   cambios sin commitear, algo quedó a medias.
+3. Ejecutar los cuatro verificadores: `node scripts/verificar.mjs`, `scripts/verificar-examenes.mjs`,
+   `scripts/verificar-test.mjs` y `scripts/verificar-psicotecnicos.mjs`. Los cuatro deben salir en verde antes de
+   tocar nada.
+4. Retomar el lote 6 con el **tema 15** y seguir con 22 y 23, 19 y 24, 25, y después los bloques B y C.
+5. Decidir lo que solo puede decidir el dueño: subir la rama, abrir el cambio o fusionar; pasarme un modelo de
+   examen desde Mis Inscripciones para ampliar el banco; y la pasada visual en navegador, que sigue pendiente
+   desde L11 y ahora incluye la paleta nueva y las ilustraciones.
+
+**Deudas declaradas y visibles**: T30 (prueba funcional en navegador), T32 (revisión humana de las 55 entradas de
+ortografía y los 37 conceptos de analogía del generador) y la prueba de sesión con stub de DOM, que es lo único
+que separa la lógica pura de la interfaz de estar cubierta. El reflejo que falta en el tipo «matriz» también
+sigue anotado.

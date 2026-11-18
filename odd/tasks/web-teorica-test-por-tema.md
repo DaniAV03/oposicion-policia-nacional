@@ -1,0 +1,129 @@
+# Web solo teórica: fuera psicotécnicos y banco de test nuevo
+
+La web deja de cubrir los psicotécnicos y queda como temario teórico más banco de test
+teórico, con tres recorridos: por tema (preguntas propias), oficiales (cuadernillos
+completos por año y mezcla) y no oficiales (banco propio, difícil y docente).
+
+Stack sin cambios: HTML + CSS + módulos ES nativos, sin build, en GitHub Pages.
+
+## Specs
+
+- **S1.** "los 45 temas no lo borres , la app va a ser los 45 temas ya subidos": los 45
+  temas se quedan tal como están. Esta función no toca el temario; el temario es el
+  producto.
+- **S2.** "borratodo lo que lleve psicotecnicos y vamos a centrarnos en el examen teorico
+  solo en la web": se elimina la sección psicotécnica entera —página, módulos, guía,
+  verificador, entradas de navegación, textos legales y paso de CI— y no queda ninguna
+  referencia viva a ella. Las menciones a «psicotrópicos» y «psicoticismo» del temario son
+  contenido normativo y **no** se tocan.
+- **S3.** "haz test por tema generados por ti para que la gente se aprenda el tema ese
+  vale ?? osea tipo test por tema para que la gente aprenda ese tema de memoria gracias a
+  esos tipo test": cada uno de los 45 temas tiene su propio test de preguntas escritas por
+  el agente, docentes: toda pregunta lleva explicación y referencia a la sección del tema.
+- **S4.** "al darle al apartado test , tiene que haber dos ventanas , botones como en los
+  temas una para oficiales y otra para no oficales que cada una te lleve a su respectiva
+  página": el apartado Test es una portada con dos accesos, uno a la página de oficiales y
+  otro a la de no oficiales, con el mismo patrón visual que la rejilla de temas.
+- **S5.** "en los oficiales podran hacer tipo test por de las preguntas oficiales por año ,
+  y examenes mezclados de todos los años con las preguntas": los oficiales se ofrecen por
+  convocatoria completa (2021/p38 y 2022/p39) y como mezcla de todos los años. Los
+  cuadernillos oficiales **no** se clasifican por tema.
+- **S6.** "los no oficiales , no los hagas por años genera tu las preguntas que las
+  preguntas toquen todo porfavor en los no oficiales para aprender y que sean dificiles con
+  algunas trampa pero para aprender y examinar de forma docente": banco propio sin año,
+  que cubre todo el programa, con dificultad declarada y trampas deliberadas, escrito aparte
+  del banco por tema y con preguntas que cruzan dos temas. Una sola respuesta defendible
+  por pregunta.
+- **S7.** "hacer una automatización que te diga que tema llevas mal segun los test que
+  falles y si falla varias veces la misma pregunta hacer alerta de siempre fallas en esta
+  pregunta estudiar esta parte y esta parte": panel de puntos débiles en `localStorage`, con
+  alerta por pregunta quemada y por tema flojo, mostrando siempre el recuento junto al
+  porcentaje.
+- **S8.** "en el podcast haz la opcion A": lectura del tema en voz alta con
+  `SpeechSynthesis` del navegador. Sin ficheros de audio y sin servicio externo.
+- **S9.** "decorarla con colores más vivos , un azul maás claro pero mate o pastel pero no
+  tan claro ni tan oscuro": paleta azul pastel mate, redefinida en los tokens de
+  `assets/css/style.css`, con contraste verificado.
+- **S10.** Sigue vigente la regla de autoría del proyecto: nada se copia de temarios ni de
+  bancos de academias. Toda pregunta nueva se escribe desde la fuente legal (BOE, EUR-Lex)
+  y desde la sección correspondiente del temario.
+
+## Tasks
+
+- T1 · S2 · inline · Quitar psicotécnicos: cinco ficheros, navegación de cuatro páginas,
+  verificador, CI y textos de atribución. Hecho en `4964c02`.
+- T2 · S9 · inline · Paleta azul pastel mate en los tokens de `style.css`, con contraste
+  verificado.
+- T3 · S3,S5,S6 · inline · Esquema del banco, manifiesto y `scripts/verificar-banco.mjs`.
+- T4 · S3 · inline · Piloto de contenido: 3 temas (uno por bloque) × 12 preguntas, a
+  revisión del dueño antes de seguir.
+- T5 · S4 · inline · Portada de Test con dos accesos y las páginas de oficiales y no
+  oficiales.
+- T6 · S3 · worker · Resto de temas en tandas de 6-8, con revisión por tanda.
+- T7 · S6 · worker · Banco no oficial mezclado, cruzando temas.
+- T8 · S7 · inline · Panel de puntos débiles y alertas.
+- T9 · S8 · inline · Lectura en voz alta del tema.
+
+## Entrega
+
+La rama `feat/psicotecnicos` no está fusionada en `main`, y `main` es lo que publica
+GitHub Pages. Encima de `origin/main` la rama acumula 26 confirmaciones: la sección
+psicotécnica completa (que ahora se retira) más las correcciones de citas de los temas 7,
+10, 11, 12, 13, 17, 20, 21 y 26, el repintado de las ilustraciones y el cambio de paleta.
+
+Consecuencia: tras T1 el diff neto contra `main` es **el temario corregido y repintado,
+sin psicotécnicos**. El alta y la baja psicotécnica se cancelan entre sí. Se recomienda
+fusionar con *squash* cuando cierre la función, para que el historial de `main` no muestre
+la sección que se añadió y se quitó el mismo día. La rama no se publica ni se fusiona sin
+la decisión del dueño.
+
+## Log
+
+### L1 — encargo inicial: solo teórico, y cuatro ideas
+
+> no hagas nada de momento quiero dejar la web esta solo y plenamente solo para test , me
+> voy a centrar en la teoria solo , nada de psico tecnicos asique borratodo lo que lleve
+> psicotecnicos y vamos a centrarnos en el examen teorico solo en la web vale : ideas para
+> seguir : decorarla con colores más vivos , un azul maás claro pero mate o pastel pero no
+> tan claro ni tan oscuro y estas ideas : Quitar psicotecnicos, meter examenes por temas ,
+> hacer una automatización que te diga que tema llevas mal segun los test que falles y si
+> falla varias veces la misma pregunta hacer alerta de siempre fallas en esta pregunta
+> estudiar esta parte y esta parte , y mirar si se pueden hacer podcast de cada tema para
+> que lo puedan poner de escuchar con una voz de ia
+
+Decisión tomada en la respuesta: el temario no se toca; «solo teórico» significa fuera
+psicotécnicos, no fuera temario. El dueño lo confirma en L2.
+
+### L2 — el temario se queda, y los test se parten en tres
+
+> claro los 45 temas no lo borres , la app va a ser los 45 temas ya subidos , y los tipo
+> test de los temas tanto generados por ti , tanto los oficiales que podamos sacar , haz
+> test por tema generados por ti para que la gente se aprenda el tema ese vale ?? osea tipo
+> test por tema para que la gente aprenda ese tema de memoria gracias a esos tipo test ,
+> vale ?? los generales vamosa poner dos opciones (test oficales , y no oficiales ) en los
+> oficiales podran hacer tipo test por de las preguntas oficiales por año , y examenes
+> mezclados de todos los años con las preguntas, y los no oficiales , no los hagas por años
+> genera tu las preguntas que las preguntas toquen todo porfavor en los no oficiales para
+> aprender y que sean dificiles con algunas trampa pero para aprender y examinar de forma
+> docente en el podcast haz la opcion A ahora propon de nuevo sabiendo esto
+
+Decisión tomada: los test por tema son de autoría propia, no oficiales. El podcast va por
+la opción A (voz del navegador), que no produce ficheros de audio.
+
+### L3 — sin oficiales por tema, y el orden se invierte
+
+> vale pues no hagas oficiales por tema , hazlas no oficiales con afan docente pero hazlas
+> tu y el orden esta mal cambia el dos por el uno osea primero quita psicotecnicos que te
+> parece dime que te parece el orden y te digo si emepezar
+
+Decisión tomada: se cae la clasificación de los cuadernillos oficiales por tema. Eso
+elimina la tarea de criterio jurídico más lenta del plan y deja los ficheros oficiales sin
+tocar. Coste aceptado: los exámenes oficiales no alimentan las estadísticas por tema.
+
+### L4 — autorización de arranque y la portada de Test
+
+> vale si empeza por los sicotecnicos y recuerda al darle al apartado test , tiene que
+> haber dos ventanas , botones como en los temas una para oficiales y otra para no oficales
+> que cada una te lleve a su respectiva página , empieza por el 1
+
+Autoriza T1. Añade S4: la portada de Test lleva dos accesos, como la rejilla de temas.

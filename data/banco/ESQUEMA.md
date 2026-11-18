@@ -76,7 +76,7 @@ convención de nombres: si un fichero no está en el manifiesto, no existe para 
 | `correcta` | sí | Índice 0-2 de la opción correcta. |
 | `explicacion` | sí | Mínimo 40 caracteres. Dice por qué la correcta lo es y por qué fallan las otras. Sin esto la pregunta no enseña, solo examina. |
 | `referencia.apartado` | sí | Texto exacto de un `<h2>` o `<h3>` del tema correspondiente en `data/temas/NN.html`. |
-| `referencia.norma` | sí | Norma de la que sale la respuesta (Constitución Española, Código Civil, LO 4/2015…). |
+| `referencia.norma` | sí | Fuente que sostiene la respuesta: la norma en los temas jurídicos (Constitución Española, Código Civil, LO 4/2015…) y la documentación oficial del fabricante o del estándar en los temas técnicos (Microsoft Learn, especificaciones NVM Express, POSIX…). |
 | `referencia.articulo` | sí | Artículo concreto. |
 
 ## Reglas de autoría

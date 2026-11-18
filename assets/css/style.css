@@ -435,20 +435,24 @@ code {
   border-radius: var(--radio);
 }
 
-/* Tintes por bloque en modo claro. */
-.bloque[data-bloque='A'] {
+/* Tintes por bloque en modo claro. La misma regla sirve para la sección de la
+   portada y para la cabecera de un tema: el tema hereda el color de su bloque. */
+.bloque[data-bloque='A'],
+.articulo[data-bloque='A'] {
   --bloque-fondo: var(--bloque-a-fondo);
   --bloque-borde: var(--bloque-a-borde);
   --bloque-acento: var(--acento);
 }
 
-.bloque[data-bloque='B'] {
+.bloque[data-bloque='B'],
+.articulo[data-bloque='B'] {
   --bloque-fondo: var(--bloque-b-fondo);
   --bloque-borde: var(--bloque-b-borde);
   --bloque-acento: var(--ambar-oscuro);
 }
 
-.bloque[data-bloque='C'] {
+.bloque[data-bloque='C'],
+.articulo[data-bloque='C'] {
   --bloque-fondo: var(--bloque-c-fondo);
   --bloque-borde: var(--bloque-c-borde);
   --bloque-acento: var(--verde-oscuro);
@@ -457,15 +461,18 @@ code {
 /* Los mismos tintes, oscurecidos para el modo oscuro: el tinte se mantiene
    reconocible y el acento sube de luminosidad para conservar el contraste. */
 @media (prefers-color-scheme: dark) {
-  .bloque[data-bloque='A'] {
+  .bloque[data-bloque='A'],
+  .articulo[data-bloque='A'] {
     --bloque-acento: var(--acento);
   }
 
-  .bloque[data-bloque='B'] {
+  .bloque[data-bloque='B'],
+  .articulo[data-bloque='B'] {
     --bloque-acento: var(--ambar);
   }
 
-  .bloque[data-bloque='C'] {
+  .bloque[data-bloque='C'],
+  .articulo[data-bloque='C'] {
     --bloque-acento: var(--verde);
   }
 }
@@ -719,12 +726,32 @@ a.tema:hover {
 .articulo__epigrafe {
   margin: 1.25rem 0 2rem;
   padding: 1.1rem 1.25rem;
-  background: var(--superficie-alt);
-  border-left: 3px solid var(--acento);
+  /* Toma el tinte del bloque, con el color de siempre como red de seguridad si la
+     página no declara bloque. */
+  background: var(--bloque-fondo, var(--superficie-alt));
+  border-left: 3px solid var(--bloque-acento, var(--acento));
   border-radius: 0 var(--radio) var(--radio) 0;
   font-size: 0.92rem;
   line-height: 1.6;
   color: var(--texto-suave);
+}
+
+/* La cabecera del tema dice en qué bloque estás sin leer la migaja. */
+.articulo > h1 {
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--bloque-acento, var(--acento));
+}
+
+/* En un texto de veinte mil caracteres el ojo necesita encontrar los cortes: cada
+   apartado abre con un filete del color del bloque y los subapartados van en ese
+   mismo color. */
+.articulo[data-bloque] #contenido h2 {
+  padding-top: 0.9rem;
+  border-top: 2px solid var(--bloque-borde);
+}
+
+.articulo[data-bloque] #contenido h3 {
+  color: var(--bloque-acento);
 }
 
 .articulo__epigrafe strong {
@@ -733,7 +760,7 @@ a.tema:hover {
   font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--acento);
+  color: var(--bloque-acento, var(--acento));
 }
 
 /* Índice lateral del tema */
@@ -1326,16 +1353,16 @@ a.acceso:hover {
 
 /* --- Configuración de la sesión ------------------------------------------ */
 
+/* Los dos campos van siempre uno al lado del otro, también en el móvil: son dos
+   datos cortos y apilarlos obliga a bajar la vista sin necesidad. El desplegable
+   se lleva más ancho porque su texto es largo («Todas las convocatorias (200
+   preguntas)»); el número necesita poco. */
 .controles {
   display: grid;
-  gap: 1rem 1.5rem;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
   margin-bottom: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .controles {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .campo {
@@ -1357,6 +1384,9 @@ a.acceso:hover {
 
 select,
 input[type='number'] {
+  /* Sin esto cada control mide lo que le apetece al navegador y los dos campos
+     quedan desalineados dentro de su celda. */
+  width: 100%;
   min-width: 0;
   padding: 0.5rem 0.65rem;
   font: inherit;

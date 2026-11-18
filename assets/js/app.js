@@ -189,6 +189,11 @@ export async function pintarTema() {
 
   const bloque = programa.bloques.find((b) => b.id === tema.bloque);
 
+  // El tema hereda el color de su bloque: la cabecera y los títulos del texto se
+  // tiñen con `--bloque-*`, igual que la sección de la portada. Así se sabe en qué
+  // bloque estás sin leer la migaja.
+  articulo.dataset.bloque = bloque.id;
+
   document.getElementById('migaja').innerHTML =
     `<a href="index.html">Temario</a> › Bloque ${bloque.id}: ${escapar(bloque.nombre)}`;
 

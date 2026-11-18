@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 44,
+  "titulo": "Tema 44 · La Seguridad en la Conducción de Vehículos Prioritarios. Definición de Seguridad Activa y Pasiva. Sistemas de Seguridad Activa y Pasiva en vehículos tipo turismo y motocicleta. Influencia de los Sistemas de Seguridad en los accidentes de tráfico. Repercusión de los Sistemas de Seguridad en la conducción policial y traslado de detenidos.",
+  "preguntas": [
+    {
+      "id": "t44-g001",
+      "tema": 44,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál es el criterio que separa la seguridad activa de la seguridad pasiva?",
+      "opciones": [
+        "Que el sistema sea electrónico y se active sin intervención del conductor.",
+        "Que el conductor perciba el sistema durante la marcha, porque los sistemas que no se notan son pasivos.",
+        "El momento y el efecto: antes del impacto y para evitarlo es activa; durante el impacto y para paliar la lesión es pasiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El criterio es temporal y finalista: la seguridad activa actúa antes del siniestro para evitarlo y la pasiva actúa durante el impacto para reducir la lesión. Falla la opción de la electrónica porque un pretensor es electrónico y es pasivo, y falla la de la percepción porque el airbag también se nota y no por eso deja de ser pasivo. El tema insiste en que no es un criterio de precio ni de tecnología.",
+      "referencia": {
+        "apartado": "3. Seguridad activa y pasiva: definición y el criterio que las separa",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, partes A y C"
+      }
+    },
+    {
+      "id": "t44-g002",
+      "tema": 44,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "El airbag, que se dispara solo en el momento del choque, se clasifica como sistema de seguridad…",
+      "opciones": [
+        "Pasiva: se dispara durante el impacto para amortiguar el golpe del ocupante.",
+        "Activa: se activa sin intervención del conductor y eso basta para clasificarlo así.",
+        "Pasiva solo si el ocupante lleva el cinturón abrochado; sin cinturón pasa a considerarse activa."
+      ],
+      "correcta": 0,
+      "explicacion": "El airbag es pasivo porque su efecto es amortiguar el contacto del cuerpo con el volante, el salpicadero, la puerta o el cristal, y eso ocurre cuando el choque ya es inevitable. La segunda opción confunde «activarse solo» con «evitar el siniestro»: el disparo automático es el mecanismo, no la finalidad. La tercera introduce una condición que no existe en la clasificación: la clase del sistema no cambia según el uso que haga el ocupante.",
+      "referencia": {
+        "apartado": "10.3. El airbag",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, fila A23 (Reglamento UN n.º 114)"
+      }
+    },
+    {
+      "id": "t44-g003",
+      "tema": 44,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué garantiza el sistema antibloqueo de ruedas en una frenada de emergencia?",
+      "opciones": [
+        "Que la distancia de frenado sea siempre menor que con las ruedas bloqueadas, sea cual sea el estado del firme.",
+        "Que la rueda no se bloquee y el vehículo siga obedeciendo a la dirección mientras se frena a fondo.",
+        "Que el vehículo pueda frenar y girar al mismo tiempo al máximo, porque el sistema amplía la adherencia disponible."
+      ],
+      "correcta": 1,
+      "explicacion": "El ABS detecta el deslizamiento y regula la presión de frenado para que la rueda no se bloquee; de ahí que se pueda seguir dirigiendo el vehículo con el pedal a fondo. No acorta siempre la distancia: esa es la trampa clásica, porque la distancia depende del firme, del neumático y de la velocidad. Y tampoco amplía la adherencia: el círculo de adherencia reparte una fuerza total limitada entre frenar y girar, y el sistema la administra, no la aumenta.",
+      "referencia": {
+        "apartado": "4.1. El ABS: qué hace y qué no hace",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, fila C4 (Reglamento UN n.º 13-H)"
+      }
+    },
+    {
+      "id": "t44-g004",
+      "tema": 44,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "Dentro del marco técnico de seguridad del vehículo, ¿qué escalón decide qué requisito es obligatorio, para qué categoría de vehículo y desde qué fecha?",
+      "opciones": [
+        "El Acuerdo de 1958 de la CEPE-ONU, que aprueba los reglamentos UN de homologación de vehículos y componentes.",
+        "El Reglamento General de Vehículos, que es la norma que traslada la técnica europea a la circulación en España.",
+        "El Reglamento (UE) 2019/2144, cuyo Anexo II asigna a cada requisito su reglamento UN y su nota de plazo."
+      ],
+      "correcta": 2,
+      "explicacion": "El Anexo II del Reglamento (UE) 2019/2144 es la tabla que fija, fila por fila, qué requisito es obligatorio, para qué categoría y desde cuándo. El Acuerdo de 1958 aporta la base técnica —los reglamentos UN— pero no decide la obligatoriedad ni el calendario, y el Reglamento General de Vehículos convierte esa técnica en condición para circular en España, sin fijar las fechas europeas. Es un reparto de competencias entre los cuatro escalones, no una jerarquía de importancia.",
+      "referencia": {
+        "apartado": "2. Quién decide qué es seguro: el marco de homologación",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II"
+      }
+    },
+    {
+      "id": "t44-g005",
+      "tema": 44,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un requisito lleva la nota B en el Anexo II del Reglamento (UE) 2019/2144. ¿Hasta qué fecha puede matricularse un vehículo que no lo cumpla?",
+      "opciones": [
+        "Hasta el 7 de julio de 2024.",
+        "Hasta el 6 de julio de 2022.",
+        "Hasta el 7 de julio de 2026."
+      ],
+      "correcta": 0,
+      "explicacion": "La nota B retrasa la prohibición de matriculación hasta el 7 de julio de 2024, aunque la denegación de la homologación UE llegue ya el 6 de julio de 2022. El 6 de julio de 2022 es la fecha de la nota A, que es plenamente aplicable, y el 7 de julio de 2026 es la de la nota C, la que llega más tarde. La nota D va todavía más lejos: homologación el 7 de enero de 2026 y matriculación el 7 de enero de 2029.",
+      "referencia": {
+        "apartado": "2.1. La tabla que hay que saber leer: notas A, B, C y D",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, notas del cuadro"
+      }
+    },
+    {
+      "id": "t44-g006",
+      "tema": 44,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "La inspección técnica de vehículos, ¿es un sistema de seguridad activa o pasiva?",
+      "opciones": [
+        "Activa, porque comprueba los frenos, la dirección y el alumbrado.",
+        "Pasiva, porque su finalidad es proteger a los ocupantes en el momento del impacto.",
+        "Ni una ni otra: es el control que mantiene en el tiempo los sistemas activos y los pasivos."
+      ],
+      "correcta": 2,
+      "explicacion": "La ITV no es un sistema del vehículo, sino el mecanismo que verifica que los sistemas siguen en condiciones de funcionar: el artículo 10.1 del Reglamento General de Vehículos la refiere a las condiciones de seguridad vial y a las reformas. Por eso no encaja en ninguna de las dos categorías. Las otras dos opciones la clasifican por los elementos que revisa o por el efecto del impacto, que son criterios que el tema aplica a los sistemas, no al control posterior.",
+      "referencia": {
+        "apartado": "2.2. La inspección técnica: el control que llega después",
+        "norma": "Reglamento General de Vehículos (RD 2822/1998)",
+        "articulo": "art. 10.1"
+      }
+    },
+    {
+      "id": "t44-g007",
+      "tema": 44,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿En qué se diferencian el control de estabilidad y el control de tracción?",
+      "opciones": [
+        "En nada: son dos nombres del mismo sistema, y el Anexo II del Reglamento (UE) 2019/2144 los recoge en una sola fila.",
+        "El control de estabilidad corrige la trayectoria frenando ruedas de forma individual; el control de tracción reduce el par del motor para que la rueda motriz no patine.",
+        "El control de estabilidad actúa sobre las ruedas no motrices y el control de tracción sobre las motrices, y por eso el control de tracción tiene reglamento UN propio."
+      ],
+      "correcta": 1,
+      "explicacion": "El control de estabilidad detecta que el vehículo no va donde el conductor quiere y lo corrige frenando una o varias ruedas por separado; el control de tracción hace lo contrario con el motor, reduciendo el par para evitar el patinaje sobre firme mojado, gravilla o hielo. No son el mismo sistema aunque compartan sensores y actuadores, y no tienen reglamento UN independiente: el Anexo II dedica la fila C7 al control de estabilidad y no tiene fila propia para el control de tracción, que se homologa como función del conjunto.",
+      "referencia": {
+        "apartado": "5. Seguridad activa (II): control de estabilidad y control de tracción",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, fila C7"
+      }
+    },
+    {
+      "id": "t44-g008",
+      "tema": 44,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué profundidad mínima de dibujo exige el Reglamento General de Vehículos en las ranuras principales de los neumáticos de un turismo?",
+      "opciones": [
+        "1,6 milímetros.",
+        "1,0 milímetros.",
+        "2 milímetros."
+      ],
+      "correcta": 0,
+      "explicacion": "El Anexo VII fija 1,6 milímetros para las categorías M1, N1, O1 y O2, que son los turismos, sus remolques ligeros y los vehículos comerciales ligeros. El 1,0 milímetro es el límite de los vehículos pesados y de los remolques mayores (M2, M3, N2, N3, O3 y O4), y la confusión entre ambas cifras es el error más frecuente. Los 2 milímetros no aparecen en la norma: no son un umbral legal en ningún caso.",
+      "referencia": {
+        "apartado": "6.3. Los neumáticos: el único contacto con el suelo",
+        "norma": "Reglamento General de Vehículos (RD 2822/1998)",
+        "articulo": "Anexo VII, apartado 2"
+      }
+    },
+    {
+      "id": "t44-g009",
+      "tema": 44,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Un menor de 135 centímetros solo puede ocupar el asiento delantero en los supuestos tasados del Reglamento General de Circulación. ¿Cuál de los siguientes NO es uno de ellos?",
+      "opciones": [
+        "Que el vehículo no disponga de asientos traseros.",
+        "Que todos los asientos traseros estén ya ocupados por menores de esa estatura.",
+        "Que el traslado se realice en servicio urgente y con las señales de emergencia activadas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 117.3 enumera tres supuestos y solo tres: que el vehículo no tenga asientos traseros, que estén todos ocupados por menores de 135 centímetros o que no sea posible instalar en ellos todos los sistemas de retención. La urgencia del servicio no figura en la lista, y el artículo 119 tampoco prevé exención para vehículos policiales, así que un traslado urgente no habilita a llevar al menor delante sin más. Las dos primeras opciones son, literalmente, los ordinales 1.º y 2.º del precepto.",
+      "referencia": {
+        "apartado": "11.4. Sistemas de retención infantil",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 117.3"
+      }
+    },
+    {
+      "id": "t44-g010",
+      "tema": 44,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "El conductor de un turismo policial circula en servicio urgente con la señal luminosa y la acústica conectadas. ¿En qué caso puede ir sin cinturón?",
+      "opciones": [
+        "En autopista y en autovía, porque la prioridad lo permite cuando la vía está despejada.",
+        "Solo en poblado; en autopista, autovía y carretera convencional no puede en ningún caso.",
+        "En carretera convencional, si el servicio es urgente y no hay otros usuarios cerca."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 119.2 del Reglamento General de Circulación define la exención por dónde se circula, no por quién va dentro ni por la prisa: alcanza a los ocupantes de los vehículos en servicios de urgencia cuando circulan en poblado y añade «en ningún caso» para autopistas, autovías y carreteras convencionales. Por eso las dos opciones que extienden la exención a la autopista o a la convencional son falsas, y la respuesta correcta siempre menciona el poblado.",
+      "referencia": {
+        "apartado": "16.2. La exención del cinturón: una palabra decide la respuesta",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 119.2"
+      }
+    },
+    {
+      "id": "t44-g011",
+      "tema": 44,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Durante el traslado de una persona detenida, ¿qué norma impone al agente velar por su vida e integridad física?",
+      "opciones": [
+        "La Ley Orgánica 2/1986, que obliga a velar por la vida e integridad física de las personas detenidas o bajo custodia.",
+        "La Ley de Enjuiciamiento Criminal, que ordena practicar la detención y los traslados de la forma que menos perjudique.",
+        "El Reglamento General de Circulación, que impone el cinturón a todos los ocupantes del vehículo."
+      ],
+      "correcta": 0,
+      "explicacion": "El deber de custodia está en el artículo quinto, apartado 3.b), de la Ley Orgánica 2/1986: velar por la vida e integridad física de quienes se detuvo o se tiene bajo custodia y respetar su honor y dignidad. Las otras dos normas se aplican también al traslado, pero dicen otra cosa: la LECrim impone la forma que menos perjudique en la detención y en los traslados ulteriores, y el Reglamento General de Circulación exige el cinturón como a cualquier ocupante. Cada deber tiene su norma y las tres se cumplen a la vez, sin que ninguna sustituya a las demás.",
+      "referencia": {
+        "apartado": "17.1. Las tres normas que enmarcan el traslado",
+        "norma": "Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 5.3.b)"
+      }
+    },
+    {
+      "id": "t44-g012",
+      "tema": 44,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "El registrador de datos de incidencias figura en el Anexo II del Reglamento (UE) 2019/2144 entre los sistemas obligatorios. ¿Qué aporta a la seguridad vial?",
+      "opciones": [
+        "Evita la colisión por alcance frenando el vehículo cuando el conductor no reacciona.",
+        "No evita el siniestro: documenta los datos del vehículo para poder reconstruir después lo ocurrido.",
+        "Sustituye al airbag en los impactos laterales, porque registra la desaceleración y adapta la retención."
+      ],
+      "correcta": 1,
+      "explicacion": "El registrador de datos de incidencias no es un sistema de seguridad, sino de prueba: aparece en el Anexo II (fila E5) porque comparte tabla con los demás, pero su función es documentar lo ocurrido para reconstruirlo, no impedir el choque. La primera opción describe la frenada de emergencia avanzada y la tercera mezcla dos sistemas que no tienen relación: el airbag es pasivo y se homologa con los ensayos de colisión. Sus datos son datos del vehículo y su tratamiento cae bajo la normativa de protección de datos.",
+      "referencia": {
+        "apartado": "8. Ayudas a la conducción: los ADAS, uno por uno",
+        "norma": "Reglamento (UE) 2019/2144",
+        "articulo": "Anexo II, fila E5"
+      }
+    }
+  ]
+}

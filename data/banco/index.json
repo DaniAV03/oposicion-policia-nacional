@@ -288,6 +288,40 @@
       "tipo": "tema",
       "tema": 41,
       "preguntas": 12
+    },
+    {
+      "id": "tema-42",
+      "archivo": "temas/42.json",
+      "tipo": "tema",
+      "tema": 42,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-43",
+      "archivo": "temas/43.json",
+      "tipo": "tema",
+      "tema": 43,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-44",
+      "archivo": "temas/44.json",
+      "tipo": "tema",
+      "tema": 44,
+      "preguntas": 12
+    },
+    {
+      "id": "tema-45",
+      "archivo": "temas/45.json",
+      "tipo": "tema",
+      "tema": 45,
+      "preguntas": 12
+    },
+    {
+      "id": "mezcladas",
+      "archivo": "mezcladas/mezcla.json",
+      "tipo": "mezcla",
+      "preguntas": 40
     }
   ]
 }

@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 45,
+  "titulo": "Tema 45 · Prevención de Riesgos Laborales en Seguridad Vial. Factores del Tráfico y su influencia en la siniestralidad vial. Factor Humano, Factor Ambiental y Factor Vehículo. Riesgos Laborales en la conducción de vehículos prioritarios. Equipos de Protección Individual del conductor y pasajeros de vehículos policiales. Estrategias y mantenimiento preventivo del vehículo prioritario.",
+  "preguntas": [
+    {
+      "id": "t45-g001",
+      "tema": 45,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿En qué caso deja de tener la consideración de accidente de trabajo la lesión sufrida por un funcionario en un siniestro vial?",
+      "opciones": [
+        "Cuando el siniestro se produce por imprudencia profesional del propio conductor.",
+        "Cuando la culpa del siniestro corresponde a un tercero o a un compañero de servicio.",
+        "Solo cuando media dolo o imprudencia temeraria del trabajador accidentado."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 156.4.b) de la Ley General de la Seguridad Social excluye únicamente el accidente debido a dolo o imprudencia temeraria del trabajador accidentado, y el 156.5 añade que no impide la calificación la imprudencia profesional del ejercicio habitual del trabajo ni la culpabilidad civil o criminal del empresario, de un compañero o de un tercero. Por eso las dos primeras opciones son falsas: confunden la imprudencia profesional, que no excluye, con la temeraria, que sí. El enunciado trampa es el que dice «imprudencia» a secas, una palabra que la ley no usa como causa de exclusión.",
+      "referencia": {
+        "apartado": "2.1. La definición legal",
+        "norma": "Ley General de la Seguridad Social (RDL 8/2015)",
+        "articulo": "art. 156.4.b) y 156.5"
+      }
+    },
+    {
+      "id": "t45-g002",
+      "tema": 45,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "El accidente in itinere, el que se sufre al ir o al volver del lugar de trabajo, está previsto en el artículo 156 de la Ley General de la Seguridad Social…",
+      "opciones": [
+        "En el apartado 2, letra a).",
+        "En el apartado 3, que lo presume salvo prueba en contrario.",
+        "En el apartado 4, letra b), como excepción a la definición general."
+      ],
+      "correcta": 0,
+      "explicacion": "El accidente in itinere está en la letra a) del apartado 2 del artículo 156: son accidentes de trabajo los que sufra el trabajador al ir o al volver del lugar de trabajo. El apartado 3 es otra cosa, la presunción de laboralidad de las lesiones sufridas durante el tiempo y en el lugar del trabajo, y el apartado 4, letra b), es justamente lo contrario, la exclusión por dolo o imprudencia temeraria. Situar el in itinere en el 156.3 es la confusión más repetida porque el 156.3 también habla de accidentes de trabajo.",
+      "referencia": {
+        "apartado": "2.2. Los dos tipos de accidente laboral de tráfico",
+        "norma": "Ley General de la Seguridad Social (RDL 8/2015)",
+        "articulo": "art. 156.2.a)"
+      }
+    },
+    {
+      "id": "t45-g003",
+      "tema": 45,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Según el INSST, en sus datos de 2024, ¿qué proporción de los accidentes de trabajo mortales son accidentes laborales de tráfico?",
+      "opciones": [
+        "El 11,8 %, la misma proporción que representan en el conjunto de accidentes con baja.",
+        "El 26,8 % en hombres y el 50 % en mujeres.",
+        "El 53,2 % en hombres y el 46,8 % en mujeres."
+      ],
+      "correcta": 1,
+      "explicacion": "El INSST mide los accidentes laborales de tráfico sobre 647.200 accidentes con baja: son 76.327, el 11,8 % del total. Pero ese peso crece con la gravedad y llega al 26,8 % en hombres y al 50 % en mujeres en los mortales, que es el dato que hay que recordar. El 11,8 % es la proporción general, no la de los mortales, y el 53,2 % y el 46,8 % son el reparto por sexo de los accidentes in itinere dentro de los de tráfico, no la proporción de mortales. La cifra va siempre con su organismo y con su año.",
+      "referencia": {
+        "apartado": "2.3. Las cifras del INSST (datos 2024)",
+        "norma": "INSST, Informe de accidentes laborales de tráfico (datos 2024)",
+        "articulo": "reparto por gravedad"
+      }
+    },
+    {
+      "id": "t45-g004",
+      "tema": 45,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué tasa máxima de alcohol se aplica al conductor de un vehículo de servicio de urgencia?",
+      "opciones": [
+        "0,5 g/l en sangre, la misma que a cualquier otro conductor.",
+        "0,15 g/l en sangre, que es la cifra que la norma fija para esos conductores.",
+        "0,3 g/l en sangre y 0,15 mg/l en aire espirado."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 20.1 del Reglamento General de Circulación rebaja la tasa para los conductores de vehículos de servicio de urgencia, junto con los de mercancías peligrosas, transporte escolar, viajeros y servicio público: 0,3 g/l en sangre y 0,15 mg/l en aire espirado. La primera opción aplica la regla general, que es el doble de margen, y la segunda toma la cifra del aire espirado y la coloca en sangre, que es el intercambio de unidades que el examen busca. El vehículo policial es vehículo de servicio de urgencia y le corresponde la tasa profesional.",
+      "referencia": {
+        "apartado": "6. Factor humano II: alcohol y drogas",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 20.1"
+      }
+    },
+    {
+      "id": "t45-g005",
+      "tema": 45,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Cada cuánto tiempo hay que revisar la evaluación inicial de riesgos conforme al Real Decreto 2/2006?",
+      "opciones": [
+        "Cada cuatro años, y además cuando haya daños para la salud o se incorporen equipos nuevos.",
+        "Cada dos años, igual que la auditoría del sistema de prevención.",
+        "No hay plazo: solo se revisa si lo pide la representación del personal."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 5.2 del Real Decreto 2/2006 fija la revisión de la evaluación inicial de riesgos cada cuatro años, sin perjuicio de revisarla cuando se produzcan daños para la salud o se incorporen equipos o tecnologías nuevas. La opción de los dos años no aparece en esta norma, y la de la revisión solo a petición de la representación del personal convierte en facultativa una obligación periódica del órgano competente. Cuidado con el número: los cuatro años coinciden con la primera ITV del turismo, pero son plazos de normas distintas que nada tienen que ver.",
+      "referencia": {
+        "apartado": "3.3. El RD 2/2006: la norma propia de la Policía Nacional",
+        "norma": "Real Decreto 2/2006, de prevención de riesgos laborales en la Policía Nacional",
+        "articulo": "art. 5.2"
+      }
+    },
+    {
+      "id": "t45-g006",
+      "tema": 45,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "En los siniestros mortales de 2025, ¿cuál es el orden de los factores concurrentes según el informe anual de la Dirección General de Tráfico?",
+      "opciones": [
+        "Alcohol, distracción y velocidad inadecuada.",
+        "Distracción, alcohol y velocidad inadecuada.",
+        "Velocidad inadecuada, distracción y alcohol."
+      ],
+      "correcta": 1,
+      "explicacion": "El orden es distracción, alcohol y velocidad inadecuada: el 32 %, el 24 % y el 18 % de los siniestros mortales de 2025, y en vías interurbanas la distracción sube al 38 %, el alcohol al 25 % y la velocidad al 20 %. Las otras dos opciones alteran ese orden, que es precisamente lo que mide la pregunta. La velocidad es el factor con mayor desproporción entre frecuencia y gravedad, pero eso no la convierte en el primero: aparece en el 7 % de los siniestros con víctimas y en el 18 % de los mortales.",
+      "referencia": {
+        "apartado": "4. Los tres factores: cómo se reparten la siniestralidad",
+        "norma": "DGT, Las principales cifras de la siniestralidad vial 2025",
+        "articulo": "tabla 50 (factores concurrentes)"
+      }
+    },
+    {
+      "id": "t45-g007",
+      "tema": 45,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "El artículo 2.2.c) del Real Decreto 773/1997 excluye de su ámbito los equipos de protección individual de los policías. ¿Qué consecuencia tiene esa exclusión?",
+      "opciones": [
+        "Que su régimen no es ese real decreto, sino el artículo 6.2 del Real Decreto 2/2006, que obliga a proporcionarles equipos adecuados y a velar por su uso efectivo.",
+        "Que los policías quedan sin cobertura preventiva en materia de equipos, porque ninguna norma les obliga a llevarlos.",
+        "Que el real decreto les sigue obligando, pero solo cuando el equipo lo financie la Administración."
+      ],
+      "correcta": 0,
+      "explicacion": "La exclusión es de ámbito, no de obligación: el Real Decreto 773/1997 no impone directamente a la Policía Nacional la elección y el uso de sus equipos, pero el artículo 6.2 del Real Decreto 2/2006 obliga a la Administración a proporcionarles equipos de protección individual adecuados y a velar por su uso efectivo y correcto. Por eso es falsa la opción que deduce impunidad de una exclusión de ámbito, y también la que la convierte en una condición económica que la norma no contiene. Los criterios técnicos del 773/1997 —evaluar, elegir, comprobar la conformidad, formar y mantener— siguen siendo el método de buena práctica.",
+      "referencia": {
+        "apartado": "15.2. El RD 773/1997: qué regula y a quién deja fuera",
+        "norma": "Real Decreto 773/1997, sobre utilización de equipos de protección individual",
+        "articulo": "art. 2.2.c)"
+      }
+    },
+    {
+      "id": "t45-g008",
+      "tema": 45,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Un agente conduce un turismo policial y baja del vehículo a señalizar un siniestro en la calzada de una autovía. ¿Cuándo debe llevar el chaleco reflectante de alta visibilidad?",
+      "opciones": [
+        "Solo durante la noche y en condiciones de mala visibilidad.",
+        "Siempre que salga del vehículo y ocupe la calzada o el arcén de una vía interurbana, sin distinción de hora.",
+        "Solo si el vehículo no lleva en funcionamiento la señal luminosa de preseñalización."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 118.4 del Reglamento General de Circulación no distingue entre día y noche: exige el chaleco reflectante a quien sale del vehículo y ocupa la calzada o el arcén de una vía interurbana. Por eso falla la opción que lo limita a la noche, que es la trampa más extendida. Y tampoco es una alternativa a la señalización del vehículo: la V-2 y el chaleco son protecciones que se suman, y para quien conduce profesionalmente una motocicleta el chaleco se exige además en todo tipo de vías.",
+      "referencia": {
+        "apartado": "17.1. El chaleco reflectante",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 118.4"
+      }
+    },
+    {
+      "id": "t45-g009",
+      "tema": 45,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿En qué supuesto exime el Reglamento General de Circulación del casco a los ocupantes de una motocicleta?",
+      "opciones": [
+        "Cuando circulan en servicio urgente con la señal luminosa y la acústica conectadas.",
+        "Cuando circulan por vías urbanas a menos de 50 kilómetros por hora.",
+        "Cuando el vehículo cuenta con estructura de autoprotección y cinturones y así consta en la tarjeta de inspección técnica o en el certificado de características."
+      ],
+      "correcta": 2,
+      "explicacion": "La exención es del vehículo, no de la persona ni del servicio: alcanza a los vehículos de dos o tres ruedas con estructuras de autoprotección y cinturones cuando así consta en la documentación, y sus ocupantes quedan exentos de casco, guantes y calzado cerrado pero obligados a usar el cinturón. No existe un equivalente al artículo 119.2 para el casco, así que el servicio urgente y las señales no eximen, y la norma tampoco atiende a la velocidad ni al tipo de vía: el casco se exige en todo tipo de vías.",
+      "referencia": {
+        "apartado": "17.2. El casco",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 118.1, párrafo final"
+      }
+    },
+    {
+      "id": "t45-g010",
+      "tema": 45,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "El conductor de un vehículo prioritario en servicio urgente, ¿qué normas de circulación puede dejar de cumplir?",
+      "opciones": [
+        "Las de los títulos II, III y IV del Reglamento General de Circulación, si se ha cerciorado de que no pone en peligro a ningún usuario y bajo su exclusiva responsabilidad; las órdenes de los agentes son siempre obligatorias.",
+        "Todas las del Reglamento General de Circulación, incluidas las que obligan a obedecer las señales de los agentes.",
+        "Solo las de velocidad y estacionamiento, y únicamente cuando use a la vez la señal luminosa y la acústica."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 68.1 del Reglamento General de Circulación autoriza a dejar de cumplir las normas de los títulos II, III y IV cuando se circula en servicio urgente, a condición de haberse cerciorado de que no se pone en peligro a ningún usuario de la vía y bajo la exclusiva responsabilidad del conductor. La opción que extiende la dispensa a todo el reglamento se equivoca en el límite: las órdenes y señales de los agentes son siempre de obligado cumplimiento. La tercera reduce la dispensa a dos materias que la norma no aísla, porque la prioridad no es un catálogo cerrado de excepciones.",
+      "referencia": {
+        "apartado": "13. Riesgos laborales de la conducción de vehículos prioritarios",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 68.1"
+      }
+    },
+    {
+      "id": "t45-g011",
+      "tema": 45,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un turismo policial se matriculó hace once años. ¿Con qué periodicidad pasa la inspección técnica?",
+      "opciones": [
+        "Cada dos años, porque la periodicidad bienal se mantiene hasta los quince años.",
+        "Está exento, porque los vehículos de las Fuerzas y Cuerpos de Seguridad se inspeccionan por sus propios organismos.",
+        "Cada año, porque la inspección es anual a partir de los diez años."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 6.1 del Real Decreto 920/2017 fija para los turismos (M1) la exención hasta los cuatro años, la periodicidad bienal de cuatro a diez y la anual a partir de los diez, así que un vehículo de once años pasa inspección cada año. La primera opción alarga la bienal más allá del plazo legal y la segunda comete la confusión clásica: que los vehículos policiales puedan inspeccionarse por sus propios organismos no es una exención, es un cambio de quién practica la inspección. Los dos años, además, son la periodicidad de los vehículos N1, no de los turismos.",
+      "referencia": {
+        "apartado": "11. Factor vehículo: mantenimiento, neumáticos, frenos y carga",
+        "norma": "Real Decreto 920/2017, de inspección técnica de vehículos",
+        "articulo": "art. 6.1"
+      }
+    },
+    {
+      "id": "t45-g012",
+      "tema": 45,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué tres tipos de comprobación impone el artículo 4 del Real Decreto 1215/1997 a los equipos de trabajo?",
+      "opciones": [
+        "La de homologación, la de matriculación y la de inspección técnica periódica.",
+        "La inicial, la periódica y la adicional, documentadas y conservadas durante toda la vida útil del equipo.",
+        "La diaria, la mensual y la anual, que realiza siempre el fabricante del equipo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 4 distingue la comprobación inicial, tras la instalación y antes de la primera puesta en marcha; la periódica, en equipos sometidos a influencias que puedan deteriorarlos; y la adicional, tras transformaciones, accidentes, fenómenos naturales o falta prolongada de uso. Las hace personal competente, sus resultados se documentan, se conservan durante toda la vida útil y, si el equipo se usa fuera de la empresa, va con él una prueba material de la última comprobación. La primera opción mezcla trámites administrativos del vehículo con comprobaciones de seguridad, y la tercera inventa una periodicidad y un ejecutor que la norma no impone.",
+      "referencia": {
+        "apartado": "18. Estrategias y mantenimiento preventivo del vehículo prioritario",
+        "norma": "Real Decreto 1215/1997, sobre utilización de equipos de trabajo",
+        "articulo": "art. 4"
+      }
+    }
+  ]
+}

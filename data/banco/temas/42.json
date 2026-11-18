@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 42,
+  "titulo": "Tema 42 · Origen de las armas de fuego. Definición, clasificación, categorías y funcionamiento de las armas de fuego: especial referencia al reglamento de armas. Cartucho: definición y componentes. Armas prohibidas. Documentación que ampara la tenencia y porte de armas. Balística forense.",
+  "preguntas": [
+    {
+      "id": "t42-g001",
+      "tema": 42,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de los cuatro elementos de la definición legal de arma de fuego es el que la separa de un arma de aire o gas comprimido?",
+      "opciones": [
+        "La portabilidad: que pueda ser llevada y usada por una sola persona.",
+        "El cañón: que el objeto tenga un tubo destinado a lanzar el proyectil.",
+        "El combustible propulsor: que el proyectil sea lanzado por la acción de pólvora u otro propelente."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 2.12 del Reglamento define el arma de fuego como la portátil, con cañón, que lance o pueda transformarse para lanzar un proyectil por la acción de un combustible propulsor, y es ese último elemento el que la separa del arma de aire, que impulsa con la expansión de un gas (art. 2.9) y por eso es arma reglamentada pero no arma de fuego. La portabilidad y el cañón son también elementos de la definición, pero los cumple igualmente un arma de aire, de modo que no sirven para distinguir una de otra.",
+      "referencia": {
+        "apartado": "2. La definición legal de arma de fuego",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "art. 2.12"
+      }
+    },
+    {
+      "id": "t42-g002",
+      "tema": 42,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Un arma tiene 35 centímetros de cañón y 58 centímetros de longitud total. A efectos del Reglamento de Armas es…",
+      "opciones": [
+        "Un arma corta, porque la longitud total no excede de 60 centímetros.",
+        "Un arma larga, porque el cañón excede de 30 centímetros.",
+        "Un arma larga, porque para ser corta tienen que respetarse los dos límites a la vez."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.13 define el arma corta por un límite doble y alternativo: cañón que no exceda de 30 centímetros o longitud total que no exceda de 60. Con 58 centímetros de longitud total ya es corta aunque el cañón pase de 30, porque basta cumplir uno de los dos límites. Solo sería larga si superara los dos a la vez: ahí fallan la segunda opción, que mira únicamente el cañón, y la tercera, que convierte la conjunción «o» del precepto en una exigencia acumulativa.",
+      "referencia": {
+        "apartado": "5.1. Primera categoría: armas cortas",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 2.13 y 2.14"
+      }
+    },
+    {
+      "id": "t42-g003",
+      "tema": 42,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cómo define el Reglamento de Armas el arma semiautomática?",
+      "opciones": [
+        "Se recarga automáticamente y permite varios disparos sucesivos mientras se mantiene accionado el disparador.",
+        "Se recarga automáticamente después de cada disparo, pero solo se hace un disparo por cada accionamiento del disparador.",
+        "Se recarga después de cada disparo mediante un mecanismo accionado por el tirador, que introduce el cartucho colocado antes en el depósito."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.21 define la semiautomática como el arma que se recarga automáticamente después de cada disparo pero solo dispara una vez por cada accionamiento del disparador. La primera opción describe el arma automática (art. 2.5), que hace varios disparos mientras se mantiene el gatillo y es de guerra, prohibida al particular. La tercera describe el arma de repetición (art. 2.15), en la que es el tirador quien acciona el mecanismo para introducir el cartucho del depósito.",
+      "referencia": {
+        "apartado": "9. Funcionamiento I: los mecanismos de disparo",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 2.15, 2.21 y 2.5"
+      }
+    },
+    {
+      "id": "t42-g004",
+      "tema": 42,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuáles son los componentes del cartucho según la definición reglamentaria de munición?",
+      "opciones": [
+        "Vaina, cebo, pistón y fulminante.",
+        "Bala, proyectil, vaina y carga.",
+        "Vaina, cebo, carga propulsora y bala o proyectil."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 2.29 define la munición como el cartucho completo o sus componentes, y enumera vainas, cebos, carga propulsora y balas o proyectiles. Son cuatro piezas distintas, y la explicación importa: pistón y fulminante son dos nombres técnicos del mismo cebo, así que la primera opción repite un componente y se deja fuera dos; en la segunda, bala y proyectil son la misma pieza, de modo que tampoco llega a cuatro componentes diferentes.",
+      "referencia": {
+        "apartado": "12. El cartucho: definición y componentes",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "art. 2.29"
+      }
+    },
+    {
+      "id": "t42-g005",
+      "tema": 42,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "Un arma tiene la consideración de antigua cuando su modelo o año de fabricación es anterior a…",
+      "opciones": [
+        "El 1 de enero de 1890.",
+        "El 1 de enero de 1900.",
+        "Los cien años anteriores a la fecha en que se solicita la autorización."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.2 fija una fecha histórica cerrada: es arma antigua la de modelo o año de fabricación anterior al 1 de enero de 1890, y el artículo 3.6.ª2 le da un régimen propio de coleccionista. No es 1900 ni un cálculo de cien años hacia atrás desde la solicitud, que es como se enuncia la trampa: la norma no se mueve con la fecha del examen. La delegación de antigüedad corresponde al Ministerio de Defensa, que aprueba los prototipos y lo comunica a la Guardia Civil.",
+      "referencia": {
+        "apartado": "6.2. Sexta categoría: antigüedad, historia y avancarga",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 2.2 y 3.6.ª2"
+      }
+    },
+    {
+      "id": "t42-g006",
+      "tema": 42,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Quién concede la tarjeta de armas de la 4.ª categoría y a qué se limita su validez?",
+      "opciones": [
+        "El jefe de la Comandancia de la Guardia Civil, con validez en todo el territorio nacional.",
+        "El alcalde del municipio donde reside el solicitante, con validez limitada a los términos municipales respectivos.",
+        "La Dirección General de la Guardia Civil, previo informe de la Intervención de Armas del domicilio."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 105 atribuye la tarjeta de la 4.ª categoría al alcalde del municipio de residencia y limita su validez a los términos municipales respectivos, previa consideración de la conducta y antecedentes del solicitante. No es competencia del jefe de Comandancia, que expide las licencias C, D y E, ni de la Dirección General de la Guardia Civil, que expide la B y la F. La tarjeta A ampara hasta seis armas durante cinco años desde los 14 años cumplidos; la B es ilimitada y de validez permanente.",
+      "referencia": {
+        "apartado": "15.1. Las tarjetas de armas",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "art. 105"
+      }
+    },
+    {
+      "id": "t42-g007",
+      "tema": 42,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué diferencia hay entre el artículo 4 y el artículo 5 del Reglamento de Armas?",
+      "opciones": [
+        "El artículo 4 prohíbe las armas de guerra y el artículo 5 las armas blancas.",
+        "El artículo 4 prohíbe solo la compraventa y el artículo 5 prohíbe además la tenencia y el uso.",
+        "El artículo 4 prohíbe la tenencia y el uso con carácter general, y el artículo 5 lo prohíbe salvo para funcionarios especialmente habilitados."
+      ],
+      "correcta": 2,
+      "explicacion": "El Reglamento usa dos listas superpuestas a la clasificación: el artículo 4 prohíbe sin más (ocho letras) y el artículo 5.1 prohíbe salvo para funcionarios especialmente habilitados (trece letras). La diferencia no es de gravedad, sino de destinatario: lo del 4 no lo tiene nadie y lo del 5 lo pueden tener determinadas unidades y servicios. Las armas de guerra no están en el artículo 4 sino en el 6, y el artículo 4 no se queda en la compraventa: alcanza fabricación, importación, circulación, publicidad, tenencia y uso. La excepción del artículo 4.2 para museos y coleccionistas no es una habilitación de funcionarios.",
+      "referencia": {
+        "apartado": "7. Armas prohibidas: el artículo 4 y el artículo 5",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 4 y 5"
+      }
+    },
+    {
+      "id": "t42-g008",
+      "tema": 42,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "El artículo 5.1 prohíbe las armas semiautomáticas de percusión central cuya capacidad, incluido el cartucho de la recámara, sea superior a…",
+      "opciones": [
+        "21 cartuchos en las armas cortas y 11 en las largas.",
+        "11 cartuchos en las armas cortas y 21 en las largas.",
+        "20 cartuchos en las cortas y 10 en las largas."
+      ],
+      "correcta": 0,
+      "explicacion": "La letra a) del artículo 5.1 prohíbe las armas cortas semiautomáticas de percusión central con capacidad superior a 21 cartuchos, incluido el de la recámara, y la letra b) las largas con más de 11. La segunda opción invierte las cifras y las asigna al arma equivocada. Los 20 y 10 de la tercera son los cargadores de la letra e), que son otra cosa y llevan su propio umbral: más de 20 en cortas y más de 10 en largas.",
+      "referencia": {
+        "apartado": "7.2. Las trece letras del artículo 5",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "art. 5.1, letras a), b) y e)"
+      }
+    },
+    {
+      "id": "t42-g009",
+      "tema": 42,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Una carabina de aire comprimido desarrolla 30 julios de energía cinética en boca. ¿Qué régimen le corresponde?",
+      "opciones": [
+        "Ninguno: al no ser arma de fuego, se posee libremente como las imitaciones y réplicas.",
+        "Es un arma de la 3.ª3, asimilada a arma de fuego, y exige licencia E y guía de pertenencia.",
+        "Es un arma de la 4.ª y se documenta con tarjeta de armas expedida por el alcalde."
+      ],
+      "correcta": 1,
+      "explicacion": "Superar los 24,2 julios de energía cinética en boca convierte el arma de aire en un arma de la 3.ª3, que el artículo 2.3 considera asimilada a arma de fuego, con licencia E y guía de pertenencia. La primera opción confunde «no ser arma de fuego» con «no tener régimen»: el arma de aire es reglamentada aunque no sea de fuego. La tercera se queda en la capa equivocada de las tres del aire: por debajo de 24,2 julios va a la 4.ª y se documenta con tarjeta municipal, y el Flobert, hasta 100 julios, va a la 7.ª4 con libro-registro.",
+      "referencia": {
+        "apartado": "5.3. Tercera categoría: deporte, escopeta y aire potente",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 2.3 y 3.3.ª3"
+      }
+    },
+    {
+      "id": "t42-g010",
+      "tema": 42,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de estas armas tiene la consideración de arma de guerra conforme al artículo 6 del Reglamento de Armas?",
+      "opciones": [
+        "Una escopeta de caza del calibre 12 con cañón de ánima lisa.",
+        "Una carabina de aire comprimido que desarrolla 30 julios.",
+        "Un rifle de calibre 5,56 milímetros de funcionamiento automático."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 6.1 incluye entre las armas de guerra las de calibre igual o superior a 20 milímetros, las de calibre considerado de guerra por el Ministerio de Defensa y las automáticas cualquiera que sea su calibre: basta con que se cumpla una de las tres puertas, y el rifle del 5,56 es de guerra por automático aunque su calibre no llegue a 20 milímetros. La escopeta del 12 es un arma de la 3.ª2 y la carabina de 30 julios de la 3.ª3; ninguna de las dos es de guerra. Concluir lo contrario es mirar solo el calibre, que es la trampa.",
+      "referencia": {
+        "apartado": "8. Armas de guerra: la frontera del artículo 6",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "art. 6.1"
+      }
+    },
+    {
+      "id": "t42-g011",
+      "tema": 42,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué exige el artículo 99 del Reglamento de Armas para conceder la licencia B de armas cortas?",
+      "opciones": [
+        "Acreditar necesidad y un riesgo especial, pues la defensa de personas o bienes por sí sola no justifica la concesión.",
+        "Ser mayor de edad y superar las pruebas de capacitación del Ministerio del Interior sobre conocimiento y manejo del arma.",
+        "Estar federado en tiro deportivo y acreditar la práctica de la modalidad cuyo arma se solicita."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 99 exige necesidad y dota a la licencia B de carácter restrictivo: advierte de que la razón de defensa de personas o bienes, por sí sola, no justifica la concesión, y la limita a supuestos de riesgo especial. La expide la Dirección General de la Guardia Civil, previo informe del jefe de Comandancia y del órgano provincial, dura cinco años y ampara un solo arma. Las pruebas de capacitación corresponden a la caza mayor y a las escopetas (art. 102.1), y la habilitación federativa a la licencia F de concurso.",
+      "referencia": {
+        "apartado": "14.2. La licencia B: necesidad y carácter restrictivo",
+        "norma": "Reglamento de Armas (RD 137/1993)",
+        "articulo": "arts. 99 y 102.1"
+      }
+    },
+    {
+      "id": "t42-g012",
+      "tema": 42,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué exige la Ley de Enjuiciamiento Criminal respecto de las armas y efectos recogidos en el lugar de los hechos?",
+      "opciones": [
+        "Que se destruyan una vez tomadas las huellas, para impedir que vuelvan a circular.",
+        "Que se recojan de forma que se garantice su integridad y que el juez acuerde su retención, conservación o envío al organismo adecuado para su depósito.",
+        "Que se entreguen al perito sin diligencia alguna, porque el informe pericial es la única prueba que se valora."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 338 ordena que los instrumentos, armas y efectos se recojan de tal forma que se garantice su integridad, y que el juez acuerde su retención, conservación o envío al organismo adecuado para su depósito; el artículo 334 añade la diligencia expresiva del lugar, tiempo y ocasión en que se encontraron, y el 479 obliga a conservar parte del objeto a disposición del juez si el análisis lo destruye. Por eso falla la opción que destruye el arma y también la que prescinde de la diligencia: sin trazabilidad del indicio, la defensa tiene un argumento.",
+      "referencia": {
+        "apartado": "17. Balística forense II: el peritaje y la cadena de custodia",
+        "norma": "Ley de Enjuiciamiento Criminal (RD de 14 de septiembre de 1882)",
+        "articulo": "arts. 334, 338 y 479"
+      }
+    }
+  ]
+}

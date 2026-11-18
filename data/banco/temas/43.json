@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 43,
+  "titulo": "Tema 43 · El vehículo prioritario. Definición de vehículo prioritario. Facultades de los conductores de vehículos prioritarios. Comportamiento de los demás conductores respecto de los vehículos prioritarios. La conducción de vehículos en situación de emergencia. Utilización de las señales de emergencia.",
+  "preguntas": [
+    {
+      "id": "t43-g001",
+      "tema": 43,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué tres condiciones exige el artículo 68.2 del Reglamento General de Circulación para que un vehículo tenga carácter prioritario?",
+      "opciones": [
+        "Pertenecer a uno de los servicios enumerados, circular en servicio urgente y advertir su presencia con la señal luminosa y el aparato emisor de señales acústicas especiales a la vez.",
+        "Pertenecer a un servicio público, llevar rotulación oficial y circular con la señal luminosa encendida.",
+        "Circular en servicio urgente, ser propiedad de una administración y llevar la señal V-2 amarilla."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 68.2 acumula tres condiciones: que el vehículo sea de uno de los cinco servicios (policía, extinción de incendios, protección civil y salvamento y asistencia sanitaria, pública o privada), que circule en servicio urgente y que el conductor advierta su presencia con la señal luminosa y el aparato emisor de señales acústicas especiales de forma simultánea. Que el servicio sea público no se exige, porque la asistencia sanitaria puede ser privada. Y la V-2 no es la señal del prioritario: es amarilla y advierte de un vehículo-obstáculo en la vía.",
+      "referencia": {
+        "apartado": "3. La definición legal de vehículo prioritario",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 68.2"
+      }
+    },
+    {
+      "id": "t43-g002",
+      "tema": 43,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Si la omisión de las señales acústicas especiales no entraña peligro alguno para los demás usuarios, el conductor de un vehículo prioritario…",
+      "opciones": [
+        "Puede elegir entre usar solo la señal luminosa o usar las dos señales a la vez.",
+        "Deberá utilizar la señal luminosa aisladamente, porque es un deber y no una facultad.",
+        "Deberá apagar también la señal luminosa y circular como cualquier otro vehículo."
+      ],
+      "correcta": 1,
+      "explicacion": "El segundo párrafo del artículo 68.2 usa el verbo «deberán»: cuando la omisión de las señales acústicas no entrañe peligro alguno para los demás usuarios, el conductor tiene que utilizar la luz aisladamente. No es una facultad de elegir, sino un deber de no atronar cuando el sonido no hace falta, pensado para el poblado y la noche. Apagar además la luz dejaría al vehículo sin advertir su presencia y le quitaría la tercera condición que lo hace prioritario.",
+      "referencia": {
+        "apartado": "3.2. La excepción que casi nadie cita: la luz sola",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 68.2, párrafo segundo"
+      }
+    },
+    {
+      "id": "t43-g003",
+      "tema": 43,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué normas del Reglamento General de Circulación puede dejar de cumplir el conductor de un vehículo prioritario en servicio urgente?",
+      "opciones": [
+        "Todas las del Reglamento, salvo las órdenes y señales de los agentes.",
+        "Las de los títulos I a IV, incluido el régimen de alcohol y drogas del título I.",
+        "Las de los títulos II, III y IV, habiéndose cerciorado de que no pone en peligro a ningún usuario de la vía."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 68.1 permite dejar de cumplir, bajo su exclusiva responsabilidad, las normas de los títulos II, III y IV —circulación de vehículos, otras normas de circulación y señalización— y solo esas, y siempre a condición de haberse cerciorado de que no pone en peligro a ningún usuario de la vía. No alcanza a todo el Reglamento ni a los títulos I a IV: el título I queda fuera justamente porque ahí están las tasas de alcohol (art. 20) y la prohibición de conducir bajo los efectos de las drogas (art. 27).",
+      "referencia": {
+        "apartado": "5. Las facultades del conductor de un vehículo prioritario",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 68.1"
+      }
+    },
+    {
+      "id": "t43-g004",
+      "tema": 43,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "Ante la aproximación de un vehículo prioritario que lleva activadas sus señales especiales, los demás conductores deben…",
+      "opciones": [
+        "Adoptar las medidas adecuadas para facilitarle el paso, apartándose normalmente a su derecha o deteniéndose si fuera preciso.",
+        "Detenerse siempre y en cualquier circunstancia, incluso en un carril por el que circulan otros vehículos detrás.",
+        "Salir de la vía subiendo el vehículo a la acera si con ello dejan libre la calzada."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 69.1 no impone una maniobra única, sino un resultado: facilitar el paso con medidas adecuadas según las circunstancias, apartándose normalmente a su derecha, deteniéndose si fuera preciso o formando el carril de emergencia del artículo 32. La detención no es el deber general y, en un carril con tráfico detrás, puede ser precisamente la medida inadecuada. Tampoco hay deber de salir de la vía ni de subir a la acera: el Reglamento no obliga a eso en ningún caso.",
+      "referencia": {
+        "apartado": "8. El comportamiento de los demás conductores",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 69.1"
+      }
+    },
+    {
+      "id": "t43-g005",
+      "tema": 43,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En una autovía con tres carriles por sentido en la que hay una retención, ¿dónde se forma el carril de emergencia?",
+      "opciones": [
+        "En el arcén derecho, igual que en cualquier otra vía.",
+        "Entre el carril situado más a la izquierda y el carril contiguo a él.",
+        "En el centro de la calzada, entre el carril central y el de la derecha."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 32 forma el carril de emergencia con dos carriles en el centro de la vía y, con tres o más, entre el carril más a la izquierda y el contiguo: los del carril izquierdo se orillan lo más a la izquierda posible y los de los demás carriles lo más a la derecha posible. No va en el arcén, que es otra cosa y se regula en el artículo 36, ni entre el carril central y el derecho, que es donde queda concentrado el tráfico.",
+      "referencia": {
+        "apartado": "9. El carril de emergencia: la novedad de 2026",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 32, introducido por el RD 518/2026"
+      }
+    },
+    {
+      "id": "t43-g006",
+      "tema": 43,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "La instalación de los aparatos emisores de luces y señales acústicas especiales en un vehículo prioritario requiere…",
+      "opciones": [
+        "Ninguna autorización administrativa: basta con que el aparato figure en el anexo XI del Reglamento General de Vehículos.",
+        "Autorización del órgano competente en materia de industria y del Ayuntamiento del municipio de residencia.",
+        "Autorización de la Jefatura Provincial de Tráfico."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 67.3 del Reglamento General de Circulación exige autorización de la Jefatura Provincial de Tráfico para instalar en un vehículo prioritario los aparatos emisores de luces y señales acústicas especiales, y el artículo 11.7 del Reglamento General de Vehículos añade la del órgano competente en materia de industria para el aparato acústico. La primera opción confunde uso con instalación: lo que no requiere autorización es el uso de la V-1 (anexo XI, V-1.2). El Ayuntamiento no interviene en esta autorización.",
+      "referencia": {
+        "apartado": "7.2. Las dos autorizaciones que la gente confunde",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 67.3, en relación con el art. 11.7 del Reglamento General de Vehículos"
+      }
+    },
+    {
+      "id": "t43-g007",
+      "tema": 43,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Un vehículo policial que ya manifiesta su presencia conforme al artículo 68.2 se sitúa detrás de usted y activa una luz roja intermitente hacia delante. ¿Qué debe hacer?",
+      "opciones": [
+        "Detenerse con las debidas precauciones en el lado derecho, delante del vehículo policial, en un lugar sin riesgos ni molestias, y permanecer en el interior.",
+        "Acelerar hasta la salida más próxima para no obstaculizar la calzada y detenerse allí.",
+        "Detenerse en el mismo carril en que circula, encender la luz de emergencia y bajar del vehículo."
+      ],
+      "correcta": 0,
+      "explicacion": "El párrafo segundo del artículo 69 obliga a detener el vehículo con las debidas precauciones en el lado derecho, delante del vehículo policial, en un lugar donde no genere mayores riesgos o molestias para el resto de usuarios, y a permanecer en su interior atendiendo a las instrucciones del agente por megafonía o por cualquier medio perceptible. La luz roja intermitente hacia delante es una orden de detención dirigida al conductor que va delante: no autoriza a acelerar, ni a quedarse en el carril, ni a bajarse del vehículo.",
+      "referencia": {
+        "apartado": "10. La detención ordenada por un vehículo policial",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 69, párrafo segundo, y anexo I, apartado 1.2.e)"
+      }
+    },
+    {
+      "id": "t43-g008",
+      "tema": 43,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué artículo de la Ley sobre tráfico regula hoy la preferencia de paso y la posibilidad de rebasar los límites de los vehículos en servicio de urgencia?",
+      "opciones": [
+        "El artículo 25 del texto articulado, al que se remite el artículo 67.1 del Reglamento.",
+        "El artículo 27 del texto refundido de 2015, porque la remisión al 25 es una referencia muerta.",
+        "El artículo 13, que es el que contiene las normas generales de conducción."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 67.1 del Reglamento cierra su remisión con «artículo 25 del texto articulado», que es una referencia muerta: el texto articulado de 1990 fue sustituido por el refundido de 2015 y el precepto equivalente es hoy el artículo 27, titulado «Vehículos en servicio de urgencia», que reconoce la preferencia de paso y la posibilidad de circular por encima de los límites. El artículo 25 vigente se ocupa de conductores, peatones y animales, y el 13 son las normas generales de conducción, que no atribuyen preferencia.",
+      "referencia": {
+        "apartado": "2.1. Una remisión muerta dentro del texto consolidado",
+        "norma": "Ley sobre tráfico, circulación de vehículos a motor y seguridad vial (RDL 6/2015)",
+        "articulo": "art. 27"
+      }
+    },
+    {
+      "id": "t43-g009",
+      "tema": 43,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Hasta dónde alcanza la exención de usar el cinturón de seguridad para los conductores y pasajeros de los vehículos en servicios de urgencia?",
+      "opciones": [
+        "Alcanza a todo tipo de vías mientras circulen en servicio urgente, porque la exención es total.",
+        "Alcanza en autopistas y autovías, pero no en carreteras convencionales ni en poblado.",
+        "Alcanza en poblado, pero en ningún caso en autopistas, autovías o carreteras convencionales."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 119.2 permite prescindir del cinturón en poblado a los conductores y pasajeros de los vehículos en servicios de urgencia, pero «en ningún caso» cuando circulen por autopistas, autovías o carreteras convencionales; la única excepción añadida son los pasajeros de ambulancias asistenciales acondicionadas para asistencia técnico-sanitaria en ruta cuando ocupan el habitáculo del paciente. La primera opción convierte una exención limitada en total y la segunda invierte los términos: la exención es del poblado, no de la autopista.",
+      "referencia": {
+        "apartado": "7.1. El cinturón: el deber que tiene su propia excepción",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 119.2"
+      }
+    },
+    {
+      "id": "t43-g010",
+      "tema": 43,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Un conductor no prioritario se ve forzado por circunstancias especialmente graves, sin poder recurrir a otro medio, a efectuar un servicio de los reservados a los prioritarios. ¿Qué le permite el artículo 70 del Reglamento General de Circulación?",
+      "opciones": [
+        "Avisar de su situación con el avisador acústico intermitente y la luz de emergencia, sin obtener prioridad de paso ni exención de las normas.",
+        "Circular por encima del límite de velocidad y rebasar los semáforos en rojo con precaución, como un vehículo prioritario.",
+        "Usar la señal luminosa V-1 azul, siempre que después justifique la urgencia ante los agentes."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 70 solo permite procurar que los demás usuarios adviertan la especial situación, con el avisador acústico en forma intermitente y la luz de emergencia, o agitando un pañuelo; el artículo 70.2 le obliga además a respetar las normas de circulación «sobre todo en las intersecciones» y los agentes pueden exigirle la justificación en cualquier momento. No le da prioridad de paso ni le exime de norma alguna, y la V-1 azul está prohibida en vehículos no prioritarios (anexo XI del Reglamento General de Vehículos).",
+      "referencia": {
+        "apartado": "11. Vehículos no prioritarios en servicio de urgencia",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 70"
+      }
+    },
+    {
+      "id": "t43-g011",
+      "tema": 43,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué límite de velocidad fija la normativa a un vehículo prioritario que circula en servicio urgente?",
+      "opciones": [
+        "Puede circular a 20 kilómetros por hora por encima del límite establecido en la vía.",
+        "Ninguna norma fija una cifra: puede rebasar el límite, pero debe poder detenerse dentro de su campo de visión y no poner en peligro a nadie.",
+        "Puede duplicar el límite en autopista y autovía, y superarlo en un 50 por ciento en carretera convencional."
+      ],
+      "correcta": 1,
+      "explicacion": "La habilitación es cualitativa: el artículo 27 de la Ley y el artículo 67.1 del Reglamento permiten circular por encima de los límites, pero ninguna norma fija un margen numérico. Los dos topes escritos son no poner en peligro a ningún usuario de la vía (art. 68.1) y adecuar la velocidad para poder detenerse dentro del campo de visión y ante cualquier obstáculo (art. 45). Cualquier cifra que ofrezca un test —un 20 por ciento, un 50 o el doble del límite— está inventada; los 20 km/h que aparecen en este tema son la reducción exigida al rebasar un vehículo inmovilizado (art. 88.1).",
+      "referencia": {
+        "apartado": "6.2. La velocidad: la norma permite rebasar el límite y no fija ninguna cifra",
+        "norma": "Ley sobre tráfico, circulación de vehículos a motor y seguridad vial (RDL 6/2015) y Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "arts. 27 de la Ley, y 67.1, 68.1 y 45 del Reglamento"
+      }
+    },
+    {
+      "id": "t43-g012",
+      "tema": 43,
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Al rebasar un vehículo de un servicio de urgencia inmovilizado en el carril, el conductor que lo rebasa debe…",
+      "opciones": [
+        "Mantener una separación lateral de al menos un metro y reducir la velocidad en al menos 10 kilómetros por hora.",
+        "Cambiarse de carril sin reducir la velocidad, porque la prioridad la tiene quien circula.",
+        "Mantener una anchura de seguridad de al menos 1,5 metros, aunque tenga que ocupar parte de la calzada del sentido contrario, y reducir la velocidad en al menos 20 kilómetros por hora."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 88.1 exige, al rebasar un vehículo inmovilizado en la vía por avería, accidente, servicio de urgencia, auxilio, mantenimiento o regulación del tráfico, una anchura de seguridad de al menos 1,5 metros, aunque para ello haya que ocupar la parte de la calzada del sentido contrario, y reducir la velocidad en al menos 20 km/h respecto al límite existente. No distingue entre prioritarios y no prioritarios: incluye expresamente el servicio de urgencia. Bajar la cifra a un metro y a 10 km/h, o cambiar de carril sin reducir, incumple las dos obligaciones.",
+      "referencia": {
+        "apartado": "9.1. El deber que protege a quien ya está trabajando en la vía",
+        "norma": "Reglamento General de Circulación (RD 1428/2003)",
+        "articulo": "art. 88.1"
+      }
+    }
+  ]
+}

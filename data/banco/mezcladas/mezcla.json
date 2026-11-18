@@ -1,0 +1,927 @@
+{
+  "version": 1,
+  "tipo": "mezcla",
+  "titulo": "Mezcladas · preguntas que cruzan dos temas",
+  "preguntas": [
+    {
+      "id": "mx-001",
+      "tema": 2,
+      "temas": [
+        2,
+        26
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "El derecho a la protección de datos personales del artículo 18.4 de la Constitución está en la sección 1.ª del capítulo II del título I. ¿Qué nivel de garantía le corresponde?",
+      "opciones": [
+        "El de los principios rectores del capítulo III: informa la legislación positiva, pero no admite recurso de amparo.",
+        "El de la sección 2.ª: solo puede regularse por ley, que debe respetar su contenido esencial, pero sin amparo constitucional.",
+        "El máximo: reserva de ley orgánica, tutela judicial, recurso de amparo y reforma constitucional por el artículo 168."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 18.4 está en la sección 1.ª del capítulo II, y el artículo 53.1 le da la garantía máxima: reserva de ley orgánica, tutela ante los tribunales, amparo y reforma agravada del artículo 168. La primera opción es el régimen de los principios rectores del capítulo III y la segunda es el de la sección 2.ª, que solo tiene ley y contenido esencial, sin amparo. El tema 26 estudia este derecho siempre como fundamental, y por eso su régimen no puede rebajarse a principio rector.",
+      "referencia": {
+        "apartado": "9. Las garantías de los derechos",
+        "norma": "Constitución Española",
+        "articulo": "arts. 18.4, 53.1 y 53.2"
+      }
+    },
+    {
+      "id": "mx-002",
+      "tema": 3,
+      "temas": [
+        3,
+        9
+      ],
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "La Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad, se tramitó como ley orgánica. ¿Qué mayoría exige la Constitución para aprobar una ley de ese rango?",
+      "opciones": [
+        "Mayoría simple de los presentes en cada Cámara, como en cualquier ley ordinaria.",
+        "Mayoría absoluta del Congreso de los Diputados en una votación final sobre el conjunto del proyecto.",
+        "Mayoría de tres quintos de cada Cámara, que es la que exige el artículo 81.2 de la Constitución."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 81.2 exige mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto, es decir, la mitad más uno de los miembros de la Cámara y no de los presentes. La mayoría simple es la de la ley ordinaria y los tres quintos son la mayoría de la reforma constitucional del artículo 167, no la de la ley orgánica. El tema 9 solo describe el contenido de la Ley Orgánica 2/1986; el rango y la mayoría que lo produce se estudian en el tema 3.",
+      "referencia": {
+        "apartado": "5.2. El recorrido de un proyecto de ley",
+        "norma": "Constitución Española",
+        "articulo": "art. 81.2"
+      }
+    },
+    {
+      "id": "mx-003",
+      "tema": 4,
+      "temas": [
+        4,
+        1
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Una ley española posterior a un reglamento de la Unión contradice lo que ese reglamento dispone. ¿Qué debe hacer el juez nacional?",
+      "opciones": [
+        "Inaplicar la ley en el caso concreto, sin esperar a que se derogue ni a una declaración de nulidad.",
+        "Aplicar la ley, porque es posterior y la jerarquía normativa resuelve a favor de la norma más reciente.",
+        "Plantear una cuestión de inconstitucionalidad contra el reglamento europeo ante el Tribunal Constitucional."
+      ],
+      "correcta": 0,
+      "explicacion": "La primacía del Derecho de la Unión obliga al juez a dejar sin aplicación la norma nacional contraria, sin que la ley quede derogada. No es una regla de jerarquía interna, que es lo que estudia el tema 1: la primacía opera entre ordenamientos y no convierte al reglamento europeo en norma «superior» de la pirámide española. El Tribunal Constitucional no controla la validez del Derecho derivado de la Unión, y por eso la tercera opción no es la vía.",
+      "referencia": {
+        "apartado": "4.3. Primacía y efecto directo",
+        "norma": "Tratado de Funcionamiento de la Unión Europea",
+        "articulo": "art. 288 TFUE y jurisprudencia del TJUE (asunto 106/77, Simmenthal)"
+      }
+    },
+    {
+      "id": "mx-004",
+      "tema": 5,
+      "temas": [
+        5,
+        23
+      ],
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Cada ministerio tiene una Unidad de Igualdad. ¿A qué órgano del departamento está adscrita?",
+      "opciones": [
+        "Al Gabinete del Ministro, como órgano de apoyo político.",
+        "A la Secretaría General Técnica, por ser el órgano de asesoramiento jurídico.",
+        "A la Subsecretaría, a través de un órgano directivo."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 77 de la Ley Orgánica 3/2007 y el Real Decreto 259/2019 sitúan la Unidad de Igualdad en la Subsecretaría, a través de un órgano directivo, con una persona responsable del subgrupo A1. El Gabinete es apoyo político, no estructura administrativa, y la Secretaría General Técnica asesora jurídicamente pero no es la sede de la unidad. El tema 5 aporta la clave del órgano directivo y el tema 23 la norma que lo concreta.",
+      "referencia": {
+        "apartado": "6. Los órganos directivos",
+        "norma": "Ley Orgánica 3/2007, de igualdad efectiva de mujeres y hombres",
+        "articulo": "art. 77 (y Real Decreto 259/2019, art. 3)"
+      }
+    },
+    {
+      "id": "mx-005",
+      "tema": 6,
+      "temas": [
+        6,
+        25
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Cómo se aplica la Ley 31/1995 de prevención de riesgos laborales a las funciones de policía?",
+      "opciones": [
+        "Se aplica íntegramente, porque su artículo 3.1 incluye al personal funcionario y estatutario.",
+        "Queda excluida: esas funciones se rigen por su normativa específica y la ley solo inspira esa normativa.",
+        "No se aplica ninguna norma preventiva, porque la Policía Nacional no tiene prevención propia."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 3.1 incluye ciertamente al personal funcionario, pero el artículo 3.2 excluye las funciones de policía, seguridad y resguardo aduanero, que se rigen por su normativa específica y respecto de las cuales la ley solo declara que inspirará esa normativa. Esa normativa propia es el Real Decreto 2/2006, que el tema 25 estudia y el tema 6 enmarca en el régimen policial. Decir que no existe prevención policial es falso: cambia la norma, no el derecho a la protección.",
+      "referencia": {
+        "apartado": "11. La particularidad policial: régimen y doble condición",
+        "norma": "Ley 31/1995, de prevención de riesgos laborales",
+        "articulo": "art. 3.2 (y Real Decreto 2/2006)"
+      }
+    },
+    {
+      "id": "mx-006",
+      "tema": 7,
+      "temas": [
+        7,
+        15
+      ],
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "El Centro Nacional de Protección de Infraestructuras Críticas (CNPIC) no cuelga directamente de la Secretaría de Estado de Seguridad. ¿De qué órgano depende?",
+      "opciones": [
+        "De la Dirección General de Coordinación y Estudios.",
+        "De la Subsecretaría del Interior, junto con los servicios comunes.",
+        "De la Dirección General de la Guardia Civil, por su carácter de instituto armado."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.1.m del Real Decreto 207/2024 atribuye al Secretario de Estado la dirección del Sistema Nacional de Protección de Infraestructuras Críticas, pero el CNPIC se incardina en la Dirección General de Coordinación y Estudios (artículo 6.1.11.º). Es la distinción que el tema 15 usa para explicar quién impulsa materialmente el sistema y qué papel tiene el CNPIC, y la que el tema 7 exige no confundir con la Subsecretaría ni con la Guardia Civil, que no tienen esa función.",
+      "referencia": {
+        "apartado": "11.2. La Dirección General de Coordinación y Estudios (artículo 6)",
+        "norma": "Real Decreto 207/2024, de estructura orgánica básica del Ministerio del Interior",
+        "articulo": "art. 6.1.11.º"
+      }
+    },
+    {
+      "id": "mx-007",
+      "tema": 8,
+      "temas": [
+        8,
+        13
+      ],
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Qué unidad de la Policía Nacional ejerce como Autoridad Nacional de Control de la seguridad privada?",
+      "opciones": [
+        "La Comisaría General de Extranjería y Fronteras, por el control de los vigilantes en frontera.",
+        "La Comisaría General de Policía Científica, que acredita los medios técnicos de las empresas.",
+        "La Unidad Central de Seguridad Privada, integrada en la Comisaría General de Seguridad Ciudadana."
+      ],
+      "correcta": 2,
+      "explicacion": "La Ley 5/2014 atribuye a la Dirección General de la Policía el control de las empresas, el personal, los medios y las actuaciones de seguridad privada, y la Orden INT/859/2023 lo concreta en la Unidad Central de Seguridad Privada, que es la Autoridad Nacional de Control y está en la Comisaría General de Seguridad Ciudadana. La Guardia Civil controla armas y guardas rurales, y ninguna de las otras dos comisarías generales asume esa función. El tema 8 aporta la estructura y el tema 13 la norma sectorial.",
+      "referencia": {
+        "apartado": "6.2. La Dirección Adjunta Operativa y las cinco comisarías generales",
+        "norma": "Ley 5/2014, de seguridad privada (y Orden INT/859/2023)",
+        "articulo": "arts. 6 y 8 de la Ley 5/2014; art. 7.2.e de la Orden INT/859/2023"
+      }
+    },
+    {
+      "id": "mx-008",
+      "tema": 9,
+      "temas": [
+        9,
+        8
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Las unidades de Policía Judicial de la Policía Nacional tienen una doble dependencia. ¿De quién dependen funcionalmente?",
+      "opciones": [
+        "Del Director General de la Policía, que manda en toda la estructura central del cuerpo.",
+        "De los jueces, tribunales y del Ministerio Fiscal.",
+        "Del Ministro del Interior, que responde de ellas ante el Congreso."
+      ],
+      "correcta": 1,
+      "explicacion": "La dependencia orgánica es del Ministerio del Interior, a través de la Dirección General de la Policía y de su Comisaría General de Policía Judicial; la funcional es de jueces, tribunales y Ministerio Fiscal, que son quienes dirigen la investigación concreta. Es la distinción entre mando orgánico y mando funcional, no una jerarquía entre el juez y el Director General. El tema 8 sitúa la comisaría general y el tema 9 fija la regla del artículo 8 de la Ley Orgánica 2/1986 y del artículo 547 de la Ley Orgánica del Poder Judicial.",
+      "referencia": {
+        "apartado": "9.1. La doble dependencia",
+        "norma": "Ley Orgánica 2/1986, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 8 (y Ley Orgánica 6/1985, art. 547)"
+      }
+    },
+    {
+      "id": "mx-009",
+      "tema": 10,
+      "temas": [
+        10,
+        11
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto puede durar como máximo la prohibición de entrada que acompaña a una expulsión?",
+      "opciones": [
+        "Tres años, prorrogables por otros tres.",
+        "Diez años en todo caso, sin excepciones.",
+        "Hasta cinco años y, excepcionalmente, hasta diez por amenaza grave para el orden público, la seguridad pública, la seguridad nacional o la salud pública."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 58.2 de la Ley Orgánica 4/2000 fija la prohibición en un máximo de cinco años, ampliable excepcionalmente a diez por amenaza grave para el orden público, la seguridad pública, la seguridad nacional o la salud pública. Los tres años son el inciso que la Ley Orgánica 4/2000 arrastra para la devolución y que el Tribunal Constitucional anuló en la STC 17/2013, y que el tema 11 explica al tratar de los efectos de cada figura. Decir «diez años en todo caso» convierte la excepción en regla.",
+      "referencia": {
+        "apartado": "4.1. La prohibición de entrada",
+        "norma": "Ley Orgánica 4/2000, sobre derechos y libertades de los extranjeros en España",
+        "articulo": "art. 58.2"
+      }
+    },
+    {
+      "id": "mx-010",
+      "tema": 11,
+      "temas": [
+        11,
+        10
+      ],
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "El artículo 57.5 de la Ley Orgánica 4/2000 protege a determinados extranjeros frente a la expulsión. ¿Cuál de estos está dentro de ese círculo?",
+      "opciones": [
+        "El residente de larga duración.",
+        "El que tiene una autorización de residencia temporal y trabajo por cuenta ajena de un año.",
+        "El que se encuentra en España con una autorización de estancia por estudios."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 57.5 contiene una lista cerrada: nacidos en España con cinco años de residencia legal, residentes de larga duración, españoles de origen que perdieron la nacionalidad y perceptores de determinadas prestaciones, más el cónyuge con más de dos años de residencia y los ascendientes e hijos a cargo. La autorización temporal de trabajo y la estancia por estudios no están en esa lista, así que no protegen por sí solas. El tema 10 explica que la residencia de larga duración exige cinco años, y el tema 11 que la protección cede ante el artículo 54.1.a y ante la reincidencia.",
+      "referencia": {
+        "apartado": "10.2. A quién no se le puede imponer la expulsión",
+        "norma": "Ley Orgánica 4/2000, sobre derechos y libertades de los extranjeros en España",
+        "articulo": "art. 57.5"
+      }
+    },
+    {
+      "id": "mx-011",
+      "tema": 12,
+      "temas": [
+        12,
+        10
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un extranjero formula su solicitud de protección internacional en un puesto fronterizo. ¿En qué plazo debe resolverse sobre su admisión a trámite?",
+      "opciones": [
+        "En dos meses, como en el procedimiento ordinario.",
+        "En cuatro días, ampliables a diez si lo pide el ACNUR.",
+        "En cuarenta y ocho horas, con un reexamen de dos días."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 21 de la Ley 12/2009 acorta los plazos en frontera: cuatro días para resolver, dos para el reexamen y diez como máximo si lo pide el ACNUR. En frontera los plazos nunca se alargan, y por eso los dos meses del procedimiento ordinario son un señuelo. Las cuarenta y ocho horas son el plazo de alegaciones del procedimiento preferente de extranjería, que pertenece al tema 10 y no a este trámite.",
+      "referencia": {
+        "apartado": "9. Tramitación: ordinaria, urgente, en frontera y en el CIE",
+        "norma": "Ley 12/2009, reguladora del derecho de asilo y de la protección subsidiaria",
+        "articulo": "art. 21"
+      }
+    },
+    {
+      "id": "mx-012",
+      "tema": 13,
+      "temas": [
+        13,
+        26
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una empresa de seguridad privada graba con cámaras la instalación que vigila para proteger personas y bienes. ¿Cuánto tiempo puede conservar las imágenes?",
+      "opciones": [
+        "Un mes desde su captación.",
+        "Tres meses desde su captación, que es el plazo del régimen policial.",
+        "Tres años desde que termina la investigación, como los informes de un detective privado."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 22.3 de la Ley Orgánica 3/2018 exige suprimir las imágenes en el plazo máximo de un mes desde su captación, y las conserva a disposición de la autoridad 72 horas cuando sirven para acreditar actos contra personas, bienes o instalaciones. Los tres meses son el plazo de la videovigilancia policial de la Ley Orgánica 7/2021, y los tres años son los del artículo 49.4 de la Ley 5/2014 para los informes de investigación privada. El tema 13 aporta el marco de la seguridad privada y el tema 26 el de la protección de datos.",
+      "referencia": {
+        "apartado": "16.1. Videovigilancia (artículo 42)",
+        "norma": "Ley Orgánica 3/2018, de protección de datos personales y garantía de los derechos digitales",
+        "articulo": "art. 22.3 (y Ley 5/2014, art. 49.4)"
+      }
+    },
+    {
+      "id": "mx-013",
+      "tema": 14,
+      "temas": [
+        14,
+        19
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Un ciudadano insulta a un policía nacional que está identificando a otra persona, sin agredirle ni resistirse. ¿Por qué vía se sanciona esa conducta?",
+      "opciones": [
+        "Por el delito leve de falta de respeto del artículo 556.2 del Código Penal, con multa de uno a tres meses.",
+        "Por el delito de atentado del artículo 550 del Código Penal, porque se comete contra un agente de la autoridad.",
+        "Por la infracción leve del artículo 37.4 de la Ley Orgánica 4/2015, porque el policía no es autoridad a efectos del artículo 556.2."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 556.2 del Código Penal habla de falta de respeto «a la autoridad», y el policía no es autoridad en ese sentido: el artículo 7.2 de la Ley Orgánica 2/1986 solo se lo considera así en el atentado cometido con armas de fuego, explosivos o medios de análoga peligrosidad. El insulto sin agresión ni resistencia grave se resuelve por la vía administrativa del artículo 37.4 de la Ley Orgánica 4/2015, como explica el tema 19 al trazar la frontera, y el tema 14 lo sitúa entre las infracciones leves. La opción del atentado exige agresión, intimidación grave o acometimiento.",
+      "referencia": {
+        "apartado": "10.3. Las infracciones leves",
+        "norma": "Ley Orgánica 4/2015, de protección de la seguridad ciudadana",
+        "articulo": "art. 37.4 (y arts. 7.2 de la Ley Orgánica 2/1986 y 556.2 del Código Penal)"
+      }
+    },
+    {
+      "id": "mx-014",
+      "tema": 16,
+      "temas": [
+        16,
+        17
+      ],
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "El autor de un homicidio doloso del artículo 138.1 se enfrenta a una pena de prisión de diez a quince años. ¿Qué pena accesoria lleva esa condena?",
+      "opciones": [
+        "Ninguna: la inhabilitación absoluta solo se impone cuando la prisión supera los quince años.",
+        "La inhabilitación absoluta, porque la pena de prisión es igual o superior a diez años.",
+        "La inhabilitación especial del artículo 56.1, reservada a las penas de prisión inferiores a diez años."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 55 del Código Penal impone la inhabilitación absoluta a toda pena de prisión igual o superior a diez años, y el homicidio del artículo 138.1 arranca precisamente en diez años, así que la accesoria se aplica siempre. La inhabilitación especial del artículo 56.1 es la accesoria de las penas inferiores a diez años, y la primera opción confunde el umbral con un supuesto que la ley no contempla. El tema 17 aporta la pena del homicidio y el tema 16 la regla general de las accesorias.",
+      "referencia": {
+        "apartado": "7.4. Las penas accesorias",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "art. 55 (y arts. 56.1 y 138.1)"
+      }
+    },
+    {
+      "id": "mx-015",
+      "tema": 17,
+      "temas": [
+        17,
+        21
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un agente retiene a una persona en dependencias policiales más allá de las setenta y dos horas, sin ponerla a disposición judicial ni dejarla en libertad. Además del régimen disciplinario, ¿qué puede apreciarse?",
+      "opciones": [
+        "Un delito de detención ilegal del artículo 163 del Código Penal.",
+        "Un delito de coacciones del artículo 172, porque se fuerza la voluntad de la persona retenida.",
+        "Solo una infracción administrativa, porque el plazo de la detención es una regla de procedimiento."
+      ],
+      "correcta": 0,
+      "explicacion": "El plazo de setenta y dos horas es una regla procesal de la Ley de Enjuiciamiento Criminal que el tema 21 estudia; cuando se supera sin causa legal, la privación de libertad deja de estar amparada y encaja en la detención ilegal del artículo 163. El delito de coacciones protege la libertad de obrar, no la libertad ambulatoria, y el régimen disciplinario se acumula, no sustituye a la responsabilidad penal. El tema 17 sitúa este tipo entre las detenciones ilegales y los secuestros.",
+      "referencia": {
+        "apartado": "11. Detenciones ilegales y secuestros: artículos 163 a 168",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "art. 163 (y Ley de Enjuiciamiento Criminal, art. 520.2)"
+      }
+    },
+    {
+      "id": "mx-016",
+      "tema": 18,
+      "temas": [
+        18,
+        20
+      ],
+      "dificultad": "alta",
+      "trampa": "ninguna",
+      "enunciado": "Manipulando el terminal de un cajero automático, un sujeto consigue una transferencia que el titular nunca consintió. ¿Qué delito comete?",
+      "opciones": [
+        "Un hurto del artículo 234, porque hay cosa mueble ajena y ánimo de lucro.",
+        "Un delito de daños informáticos del artículo 264, por manipular el terminal.",
+        "Una estafa informática del artículo 249.1.a, castigada con prisión de seis meses a tres años."
+      ],
+      "correcta": 2,
+      "explicacion": "La estafa informática del artículo 249.1.a castiga al que, mediante manipulación informática o artificio semejante, consigue una transferencia no consentida de un activo patrimonial, sin exigir el engaño bastante del artículo 248. El hurto exige sustracción material de una cosa mueble, y aquí no hay apoderamiento de cosa sino disposición patrimonial provocada. Los daños del artículo 264 exigen destruir, alterar o inutilizar datos o programas, y la manipulación del terminal es el medio del fraude, no su resultado. El tema 20 estudia esta figura como estafa informática y el tema 18 como defraudación.",
+      "referencia": {
+        "apartado": "10.3. Las estafas del artículo 249: medios informáticos y de pago",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "art. 249.1.a (y art. 264)"
+      }
+    },
+    {
+      "id": "mx-017",
+      "tema": 19,
+      "temas": [
+        19,
+        42
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una persona posee en su domicilio una pistola reglamentada de la categoría 1.ª sin la licencia exigida. ¿Qué pena de prisión le corresponde con carácter general?",
+      "opciones": [
+        "Seis meses a un año, que es la pena prevista para las armas largas.",
+        "Uno a dos años, la pena de las armas cortas reglamentadas sin licencia.",
+        "Dos a tres años, porque se aplica siempre el subtipo agravado del artículo 564.2."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 564.1 distingue las armas cortas, con prisión de uno a dos años, de las largas, con seis meses a un año; el subtipo del 564.2 no se aplica siempre, sino cuando concurren las circunstancias que la ley enumera. La licencia que falta aquí es la de la categoría 1.ª, que el tema 42 identifica con las armas cortas y con la licencia B, de modo que el tipo y su pena se leen juntos. El artículo 565 permite además rebajar potestativamente la pena si no hay intención de uso ilícito.",
+      "referencia": {
+        "apartado": "12.2. El artículo 564: armas reglamentadas sin licencia",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "art. 564.1 (y arts. 564.2 y 565)"
+      }
+    },
+    {
+      "id": "mx-018",
+      "tema": 20,
+      "temas": [
+        20,
+        41
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Un ataque de denegación de servicio distribuido, lanzado desde una botnet, deja inaccesible durante horas la web de una empresa. ¿Qué tipo penal encaja mejor?",
+      "opciones": [
+        "La obstaculización o interrupción de sistemas del artículo 264 bis.",
+        "El acceso ilícito del artículo 197 bis.1, porque hay un sistema ajeno comprometido.",
+        "Una falta de daños, porque la web vuelve a funcionar después del ataque."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 264 bis castiga a quien, sin autorización y de manera grave, obstaculiza o interrumpe el funcionamiento de un sistema informático o de sus datos, que es exactamente el efecto de un DDoS. El artículo 197 bis.1 describe el acceso a un sistema vulnerando sus medidas de seguridad, no la indisponibilidad, y aquí lo relevante es el servicio caído. Que la web se restaure después no convierte el hecho en falta: lo que se castiga es la interrupción grave. El tema 41 explica que el DDoS se apoya en botnets, y el tema 20 aporta el tipo.",
+      "referencia": {
+        "apartado": "8. Daños informáticos",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "art. 264 bis (y art. 197 bis.1)"
+      }
+    },
+    {
+      "id": "mx-019",
+      "tema": 21,
+      "temas": [
+        21,
+        19
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Ante qué órgano se enjuicia un delito de atentado contra agentes de la autoridad castigado con prisión de seis meses a tres años?",
+      "opciones": [
+        "Ante la Audiencia Provincial, por ser el órgano de los delitos contra la Administración de Justicia.",
+        "Ante la Audiencia Nacional, por tratarse de un delito contra las instituciones del Estado.",
+        "Ante la Sección de lo Penal del Tribunal de Instancia, porque la pena no supera los cinco años."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 14.3 de la Ley de Enjuiciamiento Criminal reparte el enjuiciamiento por la pena: hasta cinco años de prisión, la Sección de lo Penal del Tribunal de Instancia; por encima, la Audiencia Provincial. La pena del atentado contra agentes es de seis meses a tres años, según el tema 19, así que el órgano es el Tribunal de Instancia. La Audiencia Nacional no conoce de este delito y su mención responde al señuelo de la gravedad aparente. El tema 21 explica, además, que el juez de instrucción sigue existiendo como sección del Tribunal de Instancia.",
+      "referencia": {
+        "apartado": "6.5. El Tribunal de Instancia y sus secciones penales",
+        "norma": "Ley de Enjuiciamiento Criminal",
+        "articulo": "art. 14.3 (y Código Penal, art. 550.2)"
+      }
+    },
+    {
+      "id": "mx-020",
+      "tema": 23,
+      "temas": [
+        23,
+        21
+      ],
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "En un partido judicial donde solo existe un Juzgado de Primera Instancia e Instrucción, ¿qué órgano asume la instrucción de un delito de violencia de género?",
+      "opciones": [
+        "El Juzgado de Paz del municipio, que asume la instrucción por proximidad.",
+        "Ese mismo Juzgado de Primera Instancia e Instrucción.",
+        "La Audiencia Provincial en única instancia, por la materia."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 87 bis de la Ley Orgánica del Poder Judicial ordena la planta de los Juzgados de Violencia sobre la Mujer y prevé que, donde solo haya un Juzgado de Primera Instancia e Instrucción, sea ese el que asuma la materia. El Juzgado de Paz no instruye delitos y la Audiencia Provincial solo revisa o enjuicia según la pena, como recuerda el tema 21. La regla combina la tutela judicial de la violencia de género del tema 23 con el reparto de órganos y competencias del tema 21.",
+      "referencia": {
+        "apartado": "13.2. Los Juzgados de Violencia sobre la Mujer",
+        "norma": "Ley Orgánica 6/1985, del Poder Judicial (y Ley Orgánica 1/2004)",
+        "articulo": "art. 87 bis"
+      }
+    },
+    {
+      "id": "mx-021",
+      "tema": 24,
+      "temas": [
+        24,
+        45
+      ],
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un policía sufre un siniestro mientras se desplaza de su domicilio al servicio. ¿Qué naturaleza tiene esa lesión?",
+      "opciones": [
+        "Accidente de trabajo, por la asimilación del accidente in itinere del artículo 156.2.a de la Ley General de la Seguridad Social.",
+        "Accidente común, porque no se produjo en el centro de trabajo.",
+        "Accidente de tráfico con efectos laborales solo si el vehículo utilizado es policial."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 156.2.a de la Ley General de la Seguridad Social asimila al accidente de trabajo el que sufre el trabajador al ir o al volver del lugar de trabajo, que es el llamado accidente in itinere. El lugar del siniestro no tiene que ser el centro de trabajo, y el vehículo utilizado es indiferente para la calificación. Solo excluyen el dolo y la imprudencia temeraria, y por eso la primera opción no es una excepción sino la regla. El tema 24 aporta la definición y el tema 45 la aplica al accidente de tráfico laboral del policía.",
+      "referencia": {
+        "apartado": "13. El accidente de trabajo",
+        "norma": "Ley General de la Seguridad Social (Real Decreto Legislativo 8/2015)",
+        "articulo": "art. 156.2.a (y art. 156.4)"
+      }
+    },
+    {
+      "id": "mx-022",
+      "tema": 25,
+      "temas": [
+        25,
+        6
+      ],
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Qué norma regula hoy la prevención de riesgos laborales en la Policía Nacional?",
+      "opciones": [
+        "El Real Decreto 67/2010, que es la adaptación de la Ley 31/1995 en la Administración General del Estado.",
+        "La Ley 31/1995, que se aplica al personal policial sin ninguna adaptación.",
+        "El Real Decreto 2/2006, norma propia del cuerpo en materia preventiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 3.2 de la Ley 31/1995 excluye las funciones de policía, seguridad y resguardo aduanero, y el desarrollo propio de la prevención en la Policía Nacional está en el Real Decreto 2/2006, con su servicio de prevención, sus delegados y sus comités. El Real Decreto 67/2010 adapta la ley en la Administración General del Estado, pero su ámbito es el personal civil y no el régimen policial que estudia el tema 6. Citar la Ley 31/1995 como norma aplicable sin más es el error que el propio artículo 3.2 desmiente.",
+      "referencia": {
+        "apartado": "12. La Policía Nacional: por qué tiene norma propia (RD 2/2006)",
+        "norma": "Real Decreto 2/2006, sobre prevención de riesgos laborales en la Policía Nacional",
+        "articulo": "arts. 1 a 3 (y Ley 31/1995, art. 3.2)"
+      }
+    },
+    {
+      "id": "mx-023",
+      "tema": 26,
+      "temas": [
+        26,
+        22
+      ],
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "La policía recoge los datos personales de la víctima de un delito para investigarlo. ¿Qué norma rige ese tratamiento?",
+      "opciones": [
+        "El Reglamento (UE) 2016/679, porque la víctima es una persona física identificada.",
+        "La Ley Orgánica 7/2021, porque la finalidad del tratamiento es penal.",
+        "La Ley Orgánica 3/2018, porque es la ley española que desarrolla el Reglamento."
+      ],
+      "correcta": 1,
+      "explicacion": "El reparto entre las tres normas se decide por la finalidad del tratamiento, no por la naturaleza del responsable: los fines penales se rigen por la Ley Orgánica 7/2021, y el artículo 2.3.a devuelve al Reglamento general los tratamientos policiales con fines no penales. Que la víctima sea una persona física identificada solo confirma que hay dato personal, no qué ley se aplica. El tema 22 aporta la condición de víctima y sus derechos, y el tema 26 la regla de encaje entre las normas.",
+      "referencia": {
+        "apartado": "3. El mapa normativo: quién manda en cada supuesto",
+        "norma": "Ley Orgánica 7/2021, de protección de datos personales tratados para fines de prevención, detección, investigación y enjuiciamiento de infracciones penales",
+        "articulo": "arts. 1 y 2.3.a"
+      }
+    },
+    {
+      "id": "mx-024",
+      "tema": 27,
+      "temas": [
+        27,
+        2
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué valor jurídico tiene en España la Declaración Universal de Derechos Humanos de 1948?",
+      "opciones": [
+        "No es un tratado: sirve de canon interpretativo de los derechos constitucionales por el artículo 10.2 de la Constitución.",
+        "Es un tratado internacional ratificado, de modo que obliga directamente y prevalece sobre la ley.",
+        "Es una recomendación sin ninguna eficacia jurídica, ni siquiera interpretativa."
+      ],
+      "correcta": 0,
+      "explicacion": "La Declaración Universal es la Resolución 217 A (III) de la Asamblea General y no un tratado, pero el artículo 10.2 de la Constitución obliga a interpretar los derechos fundamentales conforme a la Declaración Universal y a los tratados ratificados sobre esas materias, de modo que funciona como canon interpretativo. No obliga como un tratado ni prevalece sobre la ley, y negarle toda eficacia desconoce el artículo 10.2. Los Pactos de 1966 sí son tratados, y esa es la frontera que el tema 27 exige no borrar; el tema 2 aporta el precepto constitucional.",
+      "referencia": {
+        "apartado": "4. El valor jurídico de la Declaración Universal",
+        "norma": "Constitución Española",
+        "articulo": "art. 10.2"
+      }
+    },
+    {
+      "id": "mx-025",
+      "tema": 27,
+      "temas": [
+        27,
+        21
+      ],
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una persona quiere demandar a España ante el Tribunal de Estrasburgo después de una sentencia firme que no pudo recurrir más. ¿Qué plazo tiene para presentar la demanda?",
+      "opciones": [
+        "En un año desde la resolución interna definitiva.",
+        "En seis meses desde la notificación de la sentencia firme.",
+        "En cuatro meses desde la resolución interna definitiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 35.1 del Convenio Europeo exige el agotamiento de las vías internas y una demanda presentada en los cuatro meses siguientes a la resolución interna definitiva, plazo que se redujo desde los seis meses. El año es el plazo para pedir la revisión de una sentencia firme cuando Estrasburgo ha condenado a España, conforme al artículo 954.3 de la Ley de Enjuiciamiento Criminal, que no es el de la demanda. El tema 21 aporta el orden de los recursos internos y el tema 27 los requisitos de admisión.",
+      "referencia": {
+        "apartado": "7.2. Quién puede demandar y con qué requisitos",
+        "norma": "Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales",
+        "articulo": "art. 35.1"
+      }
+    },
+    {
+      "id": "mx-026",
+      "tema": 29,
+      "temas": [
+        29,
+        23
+      ],
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "Una convocatoria de empleo exige un requisito aparentemente neutro que en la práctica perjudica a un grupo concreto. ¿Qué tipo de discriminación es según la Ley 15/2022?",
+      "opciones": [
+        "Discriminación directa, porque el requisito se aplica a todos por igual.",
+        "Discriminación indirecta, porque una disposición o criterio aparentemente neutro causa una desventaja particular a un grupo.",
+        "Discriminación por asociación, porque alcanza a quien se relaciona con el grupo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 6 de la Ley 15/2022 llama discriminación indirecta a la que produce una desventaja particular a personas de un grupo por una disposición, criterio o práctica aparentemente neutros. La directa es el trato desfavorable por una característica protegida, y la que se produce por asociación alcanza a quien se vincula con la persona discriminada, no al grupo afectado por el criterio neutro. El tema 29 aporta la cadena estereotipo, prejuicio y discriminación, y el tema 23 el marco legal de la igualdad.",
+      "referencia": {
+        "apartado": "8.3. Qué es discriminación según la ley española",
+        "norma": "Ley 15/2022, integral para la igualdad de trato y la no discriminación",
+        "articulo": "art. 6"
+      }
+    },
+    {
+      "id": "mx-027",
+      "tema": 30,
+      "temas": [
+        30,
+        29
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué convierte un delito común en un delito de odio?",
+      "opciones": [
+        "Que se cometa por la motivación de rechazo a un grupo, lo que se traduce en la agravante del artículo 22.4 del Código Penal, sin que exista un tipo autónomo.",
+        "Que lo cometa un grupo organizado, porque entonces se aplica siempre el artículo 515.4 del Código Penal.",
+        "Que la conducta se difunda por internet, que es el criterio que fija el artículo 510 del Código Penal."
+      ],
+      "correcta": 0,
+      "explicacion": "El delito de odio no es un tipo autónomo: es un delito común cometido por una motivación de rechazo a un grupo, que se traduce en la agravante genérica del artículo 22.4 y en la mitad superior de la pena. La asociación para el odio del artículo 515.4 exige constituir un grupo con ese fin, no es un efecto automático de la autoría plural. El artículo 510 castiga el discurso de odio con independencia del medio, también sin internet. El tema 29 aporta el prejuicio como componente afectivo y el tema 30 el catálogo legal.",
+      "referencia": {
+        "apartado": "12. Delitos de odio: qué son y qué no",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "arts. 22.4 y 510 (y art. 515.4)"
+      }
+    },
+    {
+      "id": "mx-028",
+      "tema": 31,
+      "temas": [
+        31,
+        32
+      ],
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué mide el saldo migratorio de un territorio en un año?",
+      "opciones": [
+        "La diferencia entre nacimientos y defunciones.",
+        "El cociente entre nacimientos y población total, expresado por mil.",
+        "La diferencia entre las inmigraciones y las emigraciones."
+      ],
+      "correcta": 2,
+      "explicacion": "El saldo migratorio es la diferencia entre las entradas y las salidas de población, es decir, inmigraciones menos emigraciones. La diferencia entre nacimientos y defunciones es el saldo vegetativo y el cociente entre nacimientos y población es la tasa bruta de natalidad, que son las dos fórmulas que el tema 32 pone al lado. El crecimiento real suma los dos saldos, y esa es la relación que conviene retener: el tema 31 define la migración y el tema 32 la mide.",
+      "referencia": {
+        "apartado": "2. Qué es una migración y qué no lo es",
+        "norma": "Instituto Nacional de Estadística, Estadística de Migraciones",
+        "articulo": "definiciones de la Estadística de Migraciones (saldo migratorio)"
+      }
+    },
+    {
+      "id": "mx-029",
+      "tema": 33,
+      "temas": [
+        33,
+        9
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿En qué título competencial se basa el Estado para regular la seguridad pública como competencia exclusiva?",
+      "opciones": [
+        "En el artículo 104.1 de la Constitución, que atribuye al Gobierno la dirección de la política de seguridad.",
+        "En el artículo 149.1.29.ª de la Constitución, que reserva al Estado la seguridad pública.",
+        "En el artículo 148.1.22.ª, que permite a las comunidades autónomas asumir la coordinación de las policías locales."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 149.1.29.ª reserva al Estado la seguridad pública como competencia exclusiva, y el artículo 1 de la Ley Orgánica 2/1986 lo desarrolla. El artículo 104.1 no reparte competencias: describe la misión de las Fuerzas y Cuerpos de Seguridad de proteger el libre ejercicio de los derechos y garantizar la seguridad ciudadana bajo la dependencia del Gobierno. El artículo 148.1.22.ª se refiere a la coordinación de las policías locales, que no es el título de la competencia estatal. El tema 33 aporta el marco constitucional y el tema 9 la ley que lo desarrolla.",
+      "referencia": {
+        "apartado": "7. Seguridad pública: quién la ejerce y con qué título",
+        "norma": "Constitución Española",
+        "articulo": "art. 149.1.29.ª (y Ley Orgánica 2/1986, art. 1)"
+      }
+    },
+    {
+      "id": "mx-030",
+      "tema": 34,
+      "temas": [
+        34,
+        14
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Consumir drogas en un transporte colectivo constituye...",
+      "opciones": [
+        "Una infracción administrativa grave del artículo 36.16 de la Ley Orgánica 4/2015, con multa de 601 a 30.000 euros.",
+        "Un delito contra la salud pública del artículo 368 del Código Penal, castigado con prisión.",
+        "Una infracción leve, sancionada con apercibimiento."
+      ],
+      "correcta": 0,
+      "explicacion": "El Código Penal castiga en el artículo 368 el tráfico, el cultivo y la posesión con fines de tráfico, no el consumo propio; el consumo o la tenencia ilícitos en lugares, vías, establecimientos públicos o transportes colectivos son infracción administrativa grave del artículo 36.16 de la Ley Orgánica 4/2015, con multa de 601 a 30.000 euros. No es una infracción leve y el apercibimiento no está previsto para este supuesto. El tema 34 delimita consumo y tráfico y el tema 14 aporta el régimen sancionador y su cuantía.",
+      "referencia": {
+        "apartado": "6. El consumo en el Código Penal, en una línea",
+        "norma": "Ley Orgánica 4/2015, de protección de la seguridad ciudadana (y Código Penal)",
+        "articulo": "arts. 36.16 y 39.1 (y Código Penal, art. 368)"
+      }
+    },
+    {
+      "id": "mx-031",
+      "tema": 35,
+      "temas": [
+        35,
+        28
+      ],
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué carácter jurídico tiene la Agenda 2030 aprobada por la Asamblea General de las Naciones Unidas?",
+      "opciones": [
+        "Es un tratado: obliga a los Estados que la ratificaron y su incumplimiento tiene control internacional.",
+        "Es un reglamento de la Unión Europea, de efecto directo en los Estados miembros.",
+        "Es una resolución no vinculante, con 17 objetivos y 169 metas, que no impone obligaciones jurídicas."
+      ],
+      "correcta": 2,
+      "explicacion": "La Agenda 2030 es la Resolución A/RES/70/1, de 25 de septiembre de 2015, con 17 objetivos y 169 metas, y no es un tratado: su cumplimiento se examina políticamente en el foro político de alto nivel. El Acuerdo de París sí es un tratado y esa es la frontera que el tema 35 subraya; confundirlos lleva a atribuir a los objetivos de desarrollo sostenible una fuerza que no tienen. El tema 28 aporta el mapa de la gobernanza global en el que se inserta la resolución y el tema 35 su contenido y eficacia.",
+      "referencia": {
+        "apartado": "6. La Agenda 2030 y los 17 objetivos de desarrollo sostenible",
+        "norma": "Naciones Unidas, Resolución A/RES/70/1",
+        "articulo": "resolución de 25 de septiembre de 2015 (17 objetivos y 169 metas)"
+      }
+    },
+    {
+      "id": "mx-032",
+      "tema": 37,
+      "temas": [
+        37,
+        36
+      ],
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "En «Dé usted las gracias al comisario», ¿por qué lleva tilde el verbo «dé»?",
+      "opciones": [
+        "Porque es una palabra aguda terminada en vocal y la regla general la acentúa.",
+        "Porque es una tilde diacrítica que distingue la forma del verbo dar de la preposición «de».",
+        "Porque todos los monosílabos tónicos se escriben con tilde."
+      ],
+      "correcta": 1,
+      "explicacion": "Los monosílabos no se acentúan nunca por la regla general, salvo la lista cerrada de la tilde diacrítica, y «dé» es uno de sus ocho miembros, junto con tú, él, mí, sí, té, sé y más. La tilde sirve para separarlo de la preposición «de», que es átona. Las otras dos opciones caen en las dos trampas clásicas: aplicar la regla de las agudas a un monosílabo y creer que todo monosílabo tónico se acentúa. El tema 37 fija la regla y el tema 36 recuerda que «dé» es una forma del verbo dar.",
+      "referencia": {
+        "apartado": "10. Tilde diacrítica, caso por caso",
+        "norma": "Ortografía de la lengua española (RAE y ASALE, 2010)",
+        "articulo": "§ 3.4.3.1 (monosílabos con tilde diacrítica)"
+      }
+    },
+    {
+      "id": "mx-033",
+      "tema": 38,
+      "temas": [
+        38,
+        26
+      ],
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "Android cifra los archivos del dispositivo e iOS activa la Protección de datos. A efectos del Reglamento general de protección de datos, el cifrado es...",
+      "opciones": [
+        "Una medida técnica que hace cumplir el principio de integridad y confidencialidad, no un principio autónomo.",
+        "El principio de minimización, porque reduce los datos tratados.",
+        "El principio de limitación de la finalidad, porque impide usos distintos del dato."
+      ],
+      "correcta": 0,
+      "explicacion": "El cifrado es una medida técnica y organizativa del artículo 32 que sirve para cumplir el principio de integridad y confidencialidad del artículo 5.1.f: la seguridad no es un principio autónomo, sino la forma de cumplir ese principio. La minimización reduce la cantidad de datos y la limitación de la finalidad impide usarlos para otro fin, y ninguna de las dos se consigue cifrando. El tema 38 describe el cifrado de iOS y Android y el tema 26 lo lee desde el Reglamento.",
+      "referencia": {
+        "apartado": "14.3. Cifrado y actualizaciones",
+        "norma": "Reglamento (UE) 2016/679, general de protección de datos",
+        "articulo": "arts. 5.1.f y 32"
+      }
+    },
+    {
+      "id": "mx-034",
+      "tema": 39,
+      "temas": [
+        39,
+        40
+      ],
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Cómo se resuelve el nombre de un servicio alojado en la red Tor con dominio «.onion»?",
+      "opciones": [
+        "Con una consulta normal al servidor DNS del proveedor, que devuelve su dirección IP.",
+        "Con un registro AAAA en la zona raíz del DNS, como cualquier dominio de segundo nivel.",
+        "No pasa por el DNS: es un dominio de uso especial, autocertificado y no registrable."
+      ],
+      "correcta": 2,
+      "explicacion": "El dominio «.onion» es un nombre de uso especial, fuera del sistema de nombres de dominio, autocertificado y no registrable, según el RFC 7686; la red Tor resuelve internamente esos nombres. Por eso no hay consulta al DNS del proveedor ni registro en la zona raíz, y ese es el error que comete quien trata «.onion» como un dominio convencional. El tema 39 explica cómo se resuelve un nombre y el tema 40 distingue la dark net del contenido que aloja.",
+      "referencia": {
+        "apartado": "12. Servidores DNS",
+        "norma": "IETF, RFC 7686 (The \".onion\" Special-Use Domain Name)",
+        "articulo": "RFC 7686, secciones 1 y 2"
+      }
+    },
+    {
+      "id": "mx-035",
+      "tema": 40,
+      "temas": [
+        40,
+        20
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "Durante una investigación con fuentes abiertas, el analista encuentra una carpeta protegida por contraseña y la fuerza para ver su contenido. ¿Qué ocurre?",
+      "opciones": [
+        "Nada: el OSINT ampara cualquier obtención de información accesible por internet.",
+        "Se ha cruzado la frontera: superar una medida de seguridad es acceso ilícito del artículo 197 bis y eso ya no es OSINT.",
+        "Solo es una infracción administrativa, porque no se ha causado ningún daño a los datos."
+      ],
+      "correcta": 1,
+      "explicacion": "El OSINT trabaja con fuentes abiertas, con método y trazabilidad, y el tema 40 insiste en que no es hacking: si hay engaño, salto de una medida de seguridad o daño, el hecho es delito. Superar la contraseña de una carpeta es acceso ilícito del artículo 197 bis, que el tema 20 estudia junto con las herramientas del 197 ter. Que la información esté en internet no la convierte en accesible, y no hace falta causar daños para que el acceso sea típico.",
+      "referencia": {
+        "apartado": "9.2. OSINT no es hacking",
+        "norma": "Código Penal (Ley Orgánica 10/1995)",
+        "articulo": "arts. 197, 197 bis y 264"
+      }
+    },
+    {
+      "id": "mx-036",
+      "tema": 41,
+      "temas": [
+        41,
+        39
+      ],
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "En el pharming, ¿qué se manipula para que la víctima llegue a una web falsa sin hacer clic en ningún enlace?",
+      "opciones": [
+        "La resolución de nombres o el archivo local de hosts.",
+        "El certificado del servidor web, que se falsifica en todos los casos.",
+        "El firmware del router del proveedor de acceso, que se reescribe siempre."
+      ],
+      "correcta": 0,
+      "explicacion": "El pharming manipula la resolución de nombres o el archivo local de hosts para que el usuario, escribiendo la dirección correcta, acabe en el servidor del atacante; por eso no necesita que la víctima haga clic en un enlace, que es lo que distingue al phishing. La contramedida es el DNS seguro y controlado, y de ahí el cruce con el tema 39. Falsificar el certificado es otra cosa y reescribir el firmware no es el mecanismo definido: el pharming actúa sobre el nombre, no sobre la clave pública ni sobre el equipo del proveedor.",
+      "referencia": {
+        "apartado": "5.6. Pharming",
+        "norma": "IETF, RFC 1034 y RFC 1035 (sistema de nombres de dominio)",
+        "articulo": "RFC 1034, sección 1 (concepto de resolución de nombres)"
+      }
+    },
+    {
+      "id": "mx-037",
+      "tema": 42,
+      "temas": [
+        42,
+        14
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "¿Quién concede la tarjeta de armas que documenta un arma de la categoría 4.ª?",
+      "opciones": [
+        "La Dirección General de la Guardia Civil, que expide las licencias de armas.",
+        "El Delegado del Gobierno de la comunidad autónoma donde reside el solicitante.",
+        "El alcalde del municipio de residencia, y su validez se limita a los términos municipales."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 105 del Reglamento de Armas reserva la tarjeta de la categoría 4.ª al alcalde del municipio donde reside el solicitante, previa consideración de su conducta y antecedentes, y limita su validez a los términos municipales. Las licencias B, D, E y F se expiden por la Dirección General de la Guardia Civil o por el jefe de Comandancia, según el caso, y esa es la confusión que la pregunta busca. El Delegado del Gobierno no interviene en la tarjeta. El tema 42 aporta el documento y el tema 14 la potestad administrativa sobre armas y explosivos.",
+      "referencia": {
+        "apartado": "15.1. Las tarjetas de armas",
+        "norma": "Reglamento de Armas (Real Decreto 137/1993)",
+        "articulo": "art. 105"
+      }
+    },
+    {
+      "id": "mx-038",
+      "tema": 43,
+      "temas": [
+        43,
+        44
+      ],
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Un vehículo policial en servicio urgente circula con la luz azul pero sin la señal acústica, porque omitirla no entraña peligro alguno. ¿Es conforme a la norma?",
+      "opciones": [
+        "No: las señales luminosa y acústica deben usarse siempre de forma simultánea, sin excepción.",
+        "Sí: la luz debe utilizarse aisladamente cuando la omisión de las acústicas no entrañe peligro alguno, y es un deber, no una facultad.",
+        "Sí, y además puede prescindir de la luz azul si el servicio es urgente."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 68.2 del Reglamento General de Circulación define el vehículo prioritario por el servicio de urgencia y el uso simultáneo de señal luminosa y acústica, y añade el deber de usar la luz aisladamente cuando la omisión de las acústicas no entrañe peligro alguno. No es una facultad del conductor ni una exención total: la luz sigue siendo necesaria. El tema 44 recuerda que el alumbrado y la señalización son seguridad activa, y el tema 43 que sin las tres condiciones no hay prioridad.",
+      "referencia": {
+        "apartado": "3.2. La excepción que casi nadie cita: la luz sola",
+        "norma": "Reglamento General de Circulación (Real Decreto 1428/2003)",
+        "articulo": "art. 68.2"
+      }
+    },
+    {
+      "id": "mx-039",
+      "tema": 44,
+      "temas": [
+        44,
+        45
+      ],
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuándo puede un policía que conduce un vehículo en servicio de urgencia no usar el cinturón de seguridad?",
+      "opciones": [
+        "Solo en poblado; nunca en autopista, autovía ni carretera convencional.",
+        "En cualquier vía, porque el servicio de urgencia exime siempre.",
+        "En trayectos cortos y cuando el vehículo sea prioritario."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 119.2 del Reglamento General de Circulación admite que los ocupantes de vehículos en servicios de urgencia no usen el cinturón, pero esa exención se limita al poblado y no alcanza a autopistas, autovías ni carreteras convencionales, donde el riesgo es mayor. No es una exención general por urgencia ni depende de la duración del trayecto: la referencia a los trayectos cortos no existe en la norma. El tema 44 explica el cinturón como seguridad pasiva y el tema 45 lo trata como riesgo laboral del servicio de urgencia.",
+      "referencia": {
+        "apartado": "16.2. La exención del cinturón: una palabra decide la respuesta",
+        "norma": "Reglamento General de Circulación (Real Decreto 1428/2003)",
+        "articulo": "art. 119.2"
+      }
+    },
+    {
+      "id": "mx-040",
+      "tema": 45,
+      "temas": [
+        45,
+        25
+      ],
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "El Real Decreto 773/1997 regula la utilización de los equipos de protección individual. ¿Qué ocurre con los equipos de los policías?",
+      "opciones": [
+        "Se rigen por ese real decreto como los de cualquier trabajador, porque no hay ninguna excepción.",
+        "Se rigen por el Real Decreto 67/2010, que es la norma de la Administración General del Estado.",
+        "Están excluidos de la definición de equipo de protección individual: la obligación de la Policía Nacional está en el Real Decreto 2/2006."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 2.2.c del Real Decreto 773/1997 excluye de la definición de equipo de protección individual los equipos de los militares, de los policías y del personal de los servicios de mantenimiento del orden. La obligación no desaparece: se traslada al Real Decreto 2/2006, la norma preventiva propia del cuerpo, y esa aparente contradicción es la que el tema 45 resuelve. El Real Decreto 67/2010 se aplica al personal civil de la Administración General del Estado, dentro del marco que describe el tema 25.",
+      "referencia": {
+        "apartado": "15.2. El RD 773/1997: qué regula y a quién deja fuera",
+        "norma": "Real Decreto 773/1997, sobre utilización por los trabajadores de equipos de protección individual",
+        "articulo": "art. 2.2.c (y Real Decreto 2/2006)"
+      }
+    }
+  ]
+}

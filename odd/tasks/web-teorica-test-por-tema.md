@@ -53,7 +53,8 @@ Stack sin cambios: HTML + CSS + módulos ES nativos, sin build, en GitHub Pages.
 - T1 · S2 · inline · Quitar psicotécnicos: cinco ficheros, navegación de cuatro páginas,
   verificador, CI y textos de atribución. Hecho en `4964c02`.
 - T2 · S9 · inline · Paleta azul pastel mate en los tokens de `style.css`, con contraste
-  verificado.
+  verificado. Hecho en `e2c078e`: base fría, ilustraciones remapeadas, cuatro tokens
+  `--sobre-*` y `scripts/verificar-contraste.mjs` como cuarta puerta del build.
 - T3 · S3,S5,S6 · inline · Esquema del banco, manifiesto y `scripts/verificar-banco.mjs`.
 - T4 · S3 · inline · Piloto de contenido: 3 temas (uno por bloque) × 12 preguntas, a
   revisión del dueño antes de seguir.
@@ -66,16 +67,14 @@ Stack sin cambios: HTML + CSS + módulos ES nativos, sin build, en GitHub Pages.
 
 ## Entrega
 
-La rama `feat/psicotecnicos` no está fusionada en `main`, y `main` es lo que publica
-GitHub Pages. Encima de `origin/main` la rama acumula 26 confirmaciones: la sección
-psicotécnica completa (que ahora se retira) más las correcciones de citas de los temas 7,
-10, 11, 12, 13, 17, 20, 21 y 26, el repintado de las ilustraciones y el cambio de paleta.
+La rama `feat/psicotecnicos` se fusionó en `main` con *squash*, a petición del dueño, y después
+se borró en local y en el remoto. El historial de `main` no contiene ninguna confirmación de
+la sección psicotécnica: el alta y la baja se cancelaron en el diff neto, así que lo que
+`main` ganó es el temario con las citas corregidas, el repintado y la mejora del motor de
+test. Solo queda `main`.
 
-Consecuencia: tras T1 el diff neto contra `main` es **el temario corregido y repintado,
-sin psicotécnicos**. El alta y la baja psicotécnica se cancelan entre sí. Se recomienda
-fusionar con *squash* cuando cierre la función, para que el historial de `main` no muestre
-la sección que se añadió y se quitó el mismo día. La rama no se publica ni se fusiona sin
-la decisión del dueño.
+`main` publica en GitHub Pages. El envío de los commits posteriores a la fusión queda a
+decisión del dueño.
 
 ## Log
 

@@ -1,12 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
   <title>Hoja de respuestas con una respuesta correcta</title>
-  <rect x="24" y="16" width="152" height="168" rx="16" fill="#f9f1de" stroke="#17262b" stroke-width="6" />
-  <g fill="none" stroke="#17262b" stroke-width="6" stroke-linecap="round">
+  <!-- Sin placa: la hoja es la forma dominante y se apoya directamente en el fondo
+       de la página, así que su contorno es el trazo de tinta. La burbuja acertada
+       va en el acento principal y el sello en el detalle cálido. -->
+  <rect x="24" y="16" width="152" height="168" rx="16" fill="#ffffff" stroke="#0b0d12" stroke-width="6" />
+  <g fill="none" stroke="#0b0d12" stroke-width="6" stroke-linecap="round">
     <path d="M40 44h72" />
     <path d="M40 84h64" />
     <path d="M40 124h64" />
   </g>
-  <g fill="#f9f1de" stroke="#17262b" stroke-width="6">
+  <g fill="#ffffff" stroke="#0b0d12" stroke-width="6">
     <circle cx="52" cy="64" r="8" />
     <circle cx="80" cy="64" r="8" />
     <circle cx="108" cy="64" r="8" />
@@ -16,7 +19,7 @@
     <circle cx="80" cy="144" r="8" />
     <circle cx="108" cy="144" r="8" />
   </g>
-  <circle cx="80" cy="104" r="8" fill="#2f7d76" stroke="#17262b" stroke-width="6" />
-  <circle cx="142" cy="96" r="26" fill="#e0a63c" stroke="#17262b" stroke-width="6" />
-  <path d="M130 96l8 9 15-18" fill="none" stroke="#f9f1de" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="80" cy="104" r="8" fill="#0b5bc4" stroke="#0b0d12" stroke-width="6" />
+  <circle cx="142" cy="96" r="26" fill="#c2410c" stroke="#0b0d12" stroke-width="6" />
+  <path d="M130 96l8 9 15-18" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

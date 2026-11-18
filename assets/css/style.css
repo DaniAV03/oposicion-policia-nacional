@@ -31,29 +31,34 @@
 :root {
   --fuente: 'Lexend', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --fondo: #fbfaf6;
+  --fondo: #fdfcf7;
   --superficie: #ffffff;
-  --superficie-alt: #f2f0e9;
-  --texto: #1b1b18;
-  --texto-suave: #5c5c55;
-  --borde: #e0ded4;
-  --acento: #16507e;
-  --acento-suave: #e8f0f7;
+  --superficie-alt: #f3f0e6;
+  --texto: #17181c;
+  --texto-suave: #54554e;
+  --borde: #ddd8c9;
+  /* Borde de controles (desplegables, campos, opciones): el único que tiene que
+     llegar a 3:1 contra el fondo, porque delimita un elemento de interfaz. */
+  --borde-control: #847f6d;
+  --acento: #0b5bc4;
+  --acento-suave: #e3edfd;
+  /* Tercer acento, cálido, reservado a la llamada a la acción: el botón que
+     arranca una sesión. Es el único sitio donde aparece un tono cálido saturado. */
+  --acento-vivo: #c2410c;
   --aviso-fondo: #fdf3e3;
-  --aviso-borde: #d99b2b;
-  --clave-fondo: #eaf4ee;
-  --clave-borde: #2f7d4f;
-  --error: #a3341f;
+  --aviso-borde: #8f5c0a;
+  --clave-fondo: #eaf7ee;
+  --clave-borde: #1c7a4d;
+  --error: #b02a12;
   --error-fondo: #fbeeea;
 
   /* Acentos secundarios. El ámbar identifica el bloque de Ciencias Sociales y el
      verde el de Materias Técnico-Científicas; el azul sigue siendo el principal.
      La variante oscura es la que se usa sobre fondos claros; en modo oscuro los
-     bloques toman el tono base, que es el luminoso, igual que --acento. */
-  --ambar: #e0a63c;
-  --ambar-oscuro: #8a5c12;
-  --verde: #2f7d76;
-  --verde-oscuro: #1f5b56;
+     bloques toman el tono base, que es el luminoso, igual que --acento, y por eso
+     --ambar y --verde sólo se declaran dentro del bloque de modo oscuro. */
+  --ambar-oscuro: #8a5c0c;
+  --verde-oscuro: #0f6558;
 
   --radio: 10px;
   --sombra: 0 1px 2px rgb(0 0 0 / 6%), 0 6px 18px rgb(0 0 0 / 5%);
@@ -69,19 +74,21 @@
     --superficie-alt: #23272e;
     --texto: #e8e8e4;
     --texto-suave: #a3a39c;
-    --borde: #33383f;
-    --acento: #7fb2dd;
-    --acento-suave: #1d2a35;
+    --borde: #3a4048;
+    --borde-control: #767d8a;
+    /* En oscuro el azul sube de luminosidad en vez de saturarse: sobre #14161a
+       la saturación alta se apaga, y el botón invierte su texto a #10202c. */
+    --acento: #83b6f7;
+    --acento-suave: #1b2c46;
+    --acento-vivo: #ff9a6b;
     --aviso-fondo: #2c2418;
-    --aviso-borde: #b08334;
+    --aviso-borde: #cfa04a;
     --clave-fondo: #1b2a20;
-    --clave-borde: #63b184;
-    --error: #e08270;
+    --clave-borde: #6ed49b;
+    --error: #ff8a72;
     --error-fondo: #33231f;
-    --ambar: #f0be63;
-    --ambar-oscuro: #d59b3c;
-    --verde: #6fc7bd;
-    --verde-oscuro: #4ea79d;
+    --ambar: #f5b52e;
+    --verde: #4ecfb8;
     --sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
   }
 }
@@ -257,7 +264,13 @@ code {
 
 .heroe {
   padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--acento-suave);
   border-bottom: 1px solid var(--borde);
+}
+
+/* Columna de texto de la portada: en la rejilla puede encogerse sin desbordar. */
+.heroe__texto {
+  min-width: 0;
 }
 
 .heroe__entradilla {
@@ -357,20 +370,20 @@ code {
 
 /* Tintes por bloque en modo claro. */
 .bloque[data-bloque='A'] {
-  --bloque-fondo: #e8f0f7;
-  --bloque-borde: #cfe0ee;
-  --bloque-acento: #16507e;
+  --bloque-fondo: #e2ecfd;
+  --bloque-borde: #c3d8f7;
+  --bloque-acento: var(--acento);
 }
 
 .bloque[data-bloque='B'] {
-  --bloque-fondo: #f9f0db;
-  --bloque-borde: #e8d3a6;
+  --bloque-fondo: #fdf0d5;
+  --bloque-borde: #f0d9a4;
   --bloque-acento: var(--ambar-oscuro);
 }
 
 .bloque[data-bloque='C'] {
-  --bloque-fondo: #e4f1ec;
-  --bloque-borde: #c3ded6;
+  --bloque-fondo: #e0f5ef;
+  --bloque-borde: #bfe6dc;
   --bloque-acento: var(--verde-oscuro);
 }
 
@@ -378,9 +391,9 @@ code {
    reconocible y el acento sube de luminosidad para conservar el contraste. */
 @media (prefers-color-scheme: dark) {
   .bloque[data-bloque='A'] {
-    --bloque-fondo: #1b2a38;
-    --bloque-borde: #2d4a63;
-    --bloque-acento: #7fb2dd;
+    --bloque-fondo: #16243a;
+    --bloque-borde: #2a4468;
+    --bloque-acento: var(--acento);
   }
 
   .bloque[data-bloque='B'] {
@@ -548,8 +561,7 @@ code {
 }
 
 /* Ritmo interno fijo. El título reserva dos líneas y el epígrafe otras dos
-   aunque su texto sea más corto, y la ficha de estado se pinta siempre: una
-   tarjeta publicada y una pendiente miden exactamente lo mismo. */
+   aunque su texto sea más corto, así que todas las tarjetas miden lo mismo. */
 .tema {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -612,45 +624,6 @@ a.tema:hover {
   font-size: 0.85rem;
   line-height: 1.5;
   color: var(--texto-suave);
-}
-
-.tema--pendiente {
-  opacity: 0.82;
-  cursor: default;
-}
-
-/* Ficha de estado: se pinta siempre, publicada o pendiente, y con altura fija. */
-.tema__estado {
-  justify-self: start;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  min-height: 1.55rem;
-  padding: 0 0.65rem;
-  border: 1px solid var(--borde);
-  border-radius: 999px;
-  background: var(--superficie-alt);
-  color: var(--texto-suave);
-  font-size: 0.72rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.tema__estado::before {
-  content: '';
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.tema__estado[data-estado='publicado'] {
-  border-color: var(--clave-borde);
-  background: var(--clave-fondo);
-  color: var(--clave-borde);
 }
 
 /* --- Vista de tema -------------------------------------------------------- */
@@ -885,19 +858,6 @@ details > p {
   color: var(--texto-suave);
 }
 
-/* Estado vacío / tema no publicado */
-.pendiente {
-  margin: 2.5rem 0;
-  padding: 1.5rem;
-  border: 1px dashed var(--borde);
-  border-radius: var(--radio);
-  background: var(--superficie);
-}
-
-.pendiente p:last-child {
-  margin-bottom: 0;
-}
-
 /* Navegación entre temas */
 .paginacion {
   display: flex;
@@ -985,6 +945,11 @@ details > p {
 .test__entradilla {
   max-width: 62ch;
   color: var(--texto-suave);
+}
+
+/* Columna de texto de la entrada: encoge y envuelve sin desbordar la rejilla. */
+.test__entrada-texto {
+  min-width: 0;
 }
 
 /* Estado de carga, aviso y error del banco de preguntas. El tono se marca con
@@ -1086,7 +1051,7 @@ input[type='number'] {
   font-size: 0.95rem;
   color: var(--texto);
   background: var(--fondo);
-  border: 1px solid var(--borde);
+  border: 1px solid var(--borde-control);
   border-radius: 8px;
 }
 
@@ -1117,7 +1082,7 @@ input[type='number']:disabled {
   gap: 0.8rem;
   align-items: start;
   padding: 0.8rem 0.95rem;
-  border: 1px solid var(--borde);
+  border: 1px solid var(--borde-control);
   border-radius: var(--radio);
   cursor: pointer;
   transition: border-color 120ms ease, background-color 120ms ease;
@@ -1167,14 +1132,15 @@ input[type='number']:disabled {
   margin: 1.25rem 0 0;
 }
 
+/* La llamada a la acción es el único elemento con el acento cálido. */
 .boton {
   padding: 0.6rem 1.15rem;
   font: inherit;
   font-size: 0.95rem;
   font-weight: 600;
   color: #fff;
-  background: var(--acento);
-  border: 1px solid var(--acento);
+  background: var(--acento-vivo);
+  border: 1px solid var(--acento-vivo);
   border-radius: 8px;
   cursor: pointer;
   transition: filter 120ms ease;
@@ -1185,7 +1151,7 @@ input[type='number']:disabled {
 }
 
 .boton--secundario {
-  color: var(--acento);
+  color: var(--acento-vivo);
   background: transparent;
 }
 
@@ -1205,7 +1171,7 @@ input[type='number']:disabled {
   }
 
   .boton--secundario {
-    color: var(--acento);
+    color: var(--acento-vivo);
   }
 }
 
@@ -1460,10 +1426,16 @@ input[type='number']:disabled {
   color: inherit;
   text-align: left;
   background: var(--fondo);
-  border: 1px solid var(--borde);
+  border: 1px solid var(--borde-control);
   border-radius: var(--radio);
   cursor: pointer;
   transition: border-color 120ms ease, transform 120ms ease;
+}
+
+/* Respuesta larga: envuelve dentro de su columna en vez de desbordar el botón. */
+.opcion__texto {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .opcion:hover:enabled {
@@ -1736,6 +1708,13 @@ kbd {
 
 .repaso__enunciado {
   font-weight: 500;
+}
+
+/* Respuesta del repaso: misma talla que el enunciado, en tono de apoyo. */
+.repaso__respuesta {
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .repaso__respuesta--correcta {

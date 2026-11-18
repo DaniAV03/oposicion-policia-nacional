@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
   <title>Globo terráqueo con red de nodos</title>
-  <rect x="4" y="4" width="192" height="192" rx="32" fill="#f9efd9" />
-  <g fill="none" stroke="#23303a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Placa con el tinte del bloque B y anillo con su acento ámbar; el globo lleva
+       el acento principal y los nodos el detalle cálido. Los meridianos van en blanco
+       porque la tinta oscura no llega a 3:1 sobre el azul del globo. -->
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="#fdf0d5" stroke="#8a5c0c" stroke-width="6" />
+  <g fill="none" stroke="#0b0d12" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M56 44 100 30l44 14" />
     <path d="M56 44 76 78" />
     <path d="M144 44 124 78" />
   </g>
-  <circle cx="56" cy="44" r="9" fill="#e0a63c" stroke="#23303a" stroke-width="6" />
-  <circle cx="100" cy="30" r="9" fill="#e0a63c" stroke="#23303a" stroke-width="6" />
-  <circle cx="144" cy="44" r="9" fill="#e0a63c" stroke="#23303a" stroke-width="6" />
-  <circle cx="100" cy="126" r="54" fill="#2f7d76" stroke="#23303a" stroke-width="6" />
-  <g fill="none" stroke="#23303a" stroke-width="5">
+  <circle cx="56" cy="44" r="9" fill="#c2410c" stroke="#0b0d12" stroke-width="6" />
+  <circle cx="100" cy="30" r="9" fill="#c2410c" stroke="#0b0d12" stroke-width="6" />
+  <circle cx="144" cy="44" r="9" fill="#c2410c" stroke="#0b0d12" stroke-width="6" />
+  <circle cx="100" cy="126" r="54" fill="#0b5bc4" stroke="#0b0d12" stroke-width="6" />
+  <g fill="none" stroke="#ffffff" stroke-width="5">
     <ellipse cx="100" cy="126" rx="30" ry="54" />
     <path d="M46 126h108" />
     <path d="M58 96h84" />

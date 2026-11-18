@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 7,
+  "titulo": "Tema 7 · El Ministerio del Interior: estructura orgánica básica. La Secretaría de Estado de Seguridad: estructura y funciones.",
+  "preguntas": [
+    {
+      "id": "t07-g001",
+      "tema": 7,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué norma regula hoy la estructura orgánica básica del Ministerio del Interior?",
+      "opciones": [
+        "El Real Decreto 207/2024, de 27 de febrero, que derogó el Real Decreto 734/2020.",
+        "El Real Decreto 734/2020, de 4 de agosto, en su redacción consolidada de 2026.",
+        "El Real Decreto 328/2026, de 22 de abril, que aprobó una estructura nueva y derogó la anterior."
+      ],
+      "correcta": 0,
+      "explicacion": "La estructura vigente es la del Real Decreto 207/2024, en vigor desde el 29 de febrero de 2024, cuya disposición derogatoria única dejó sin efecto el Real Decreto 734/2020. El Real Decreto 328/2026 no aprobó una estructura nueva: modificó el artículo 1.5, añadió los artículos 8 bis y 8 ter y suprimió el artículo 13. Por eso fallan las opciones que dan por vivo el 734/2020 o por derogado el 207/2024.",
+      "referencia": {
+        "apartado": "3. La norma vigente: qué real decreto está en pie y cuál está muerto",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "disposición derogatoria única y disposición final tercera"
+      }
+    },
+    {
+      "id": "t07-g002",
+      "tema": 7,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿De quién depende la Dirección General de Tráfico dentro del Ministerio del Interior?",
+      "opciones": [
+        "De la Secretaría de Estado de Seguridad, como una dirección general más del bloque de seguridad.",
+        "De la Subsecretaría del Interior, y es el órgano a través del cual el ministerio ejerce sus competencias sobre el organismo autónomo Jefatura Central de Tráfico.",
+        "Del organismo autónomo Jefatura Central de Tráfico, del que es su órgano superior."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 9.5.c) sitúa la Dirección General de Tráfico bajo la Subsecretaría, y el artículo 12.1 explica que es el órgano a través del cual el ministerio ejerce sus competencias sobre el organismo autónomo Jefatura Central de Tráfico. No cuelga de la Secretaría de Estado de Seguridad ni es órgano superior de nadie: la dirección general es órgano del ministerio y la Jefatura Central de Tráfico es una entidad con personalidad jurídica propia.",
+      "referencia": {
+        "apartado": "15. La Subsecretaría del Interior y sus cinco órganos",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "arts. 9.5.c) y 12.1"
+      }
+    },
+    {
+      "id": "t07-g003",
+      "tema": 7,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué categoría tiene la Secretaría General de Instituciones Penitenciarias en el organigrama del ministerio?",
+      "opciones": [
+        "Es un órgano superior, al mismo nivel que la Secretaría de Estado de Seguridad.",
+        "Es un órgano directivo con categoría de director general, dependiente de la Subsecretaría.",
+        "Es un órgano directivo con categoría de subsecretario, que depende directamente del Ministro."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 7.1 del Real Decreto 207/2024 remite al artículo 64 de la Ley 40/2015: la Secretaría General de Instituciones Penitenciarias es un órgano directivo con categoría de subsecretario que depende del Ministro, y de ella cuelga la Dirección General de Ejecución Penal y Reinserción Social. Tener categoría de subsecretario no la convierte en órgano superior, y tampoco depende de la Subsecretaría, que es el cuarto bloque de la estructura.",
+      "referencia": {
+        "apartado": "4. Órganos superiores y órganos directivos: quién es qué en este ministerio",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "art. 7.1, en relación con el art. 64.3 de la Ley 40/2015"
+      }
+    },
+    {
+      "id": "t07-g004",
+      "tema": 7,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿De quién depende el Centro de Inteligencia contra el Terrorismo y el Crimen Organizado (CITCO)?",
+      "opciones": [
+        "De la Dirección General de Coordinación y Estudios, con nivel orgánico de dirección general.",
+        "De la persona titular de la Secretaría de Estado de Seguridad, con nivel orgánico de subdirección general.",
+        "De la Subsecretaría del Interior, como servicio común de información del departamento."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.3 adscribe el CITCO a la persona titular de la Secretaría de Estado de Seguridad, con nivel orgánico de subdirección general, y de él dependen la UNECI, la ONIP y la TEPOL. No es una dirección general de la Dirección General de Coordinación y Estudios ni un servicio común de la Subsecretaría: es un centro de inteligencia que cuelga directamente del Secretario de Estado.",
+      "referencia": {
+        "apartado": "8.2. El CITCO (artículo 2.3)",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "art. 2.3"
+      }
+    },
+    {
+      "id": "t07-g005",
+      "tema": 7,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Quién preside el Comité Ejecutivo de Coordinación de la Secretaría de Estado de Seguridad y quién ejerce su secretaría?",
+      "opciones": [
+        "Lo preside el Secretario de Estado de Seguridad y ejerce la secretaría el titular de la Dirección General de Coordinación y Estudios.",
+        "Lo preside el Ministro del Interior y ejerce la secretaría el Secretario de Estado de Seguridad.",
+        "Lo preside el Subsecretario del Interior y ejerce la secretaría el Director General de la Policía."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.4 atribuye la presidencia del Comité Ejecutivo de Coordinación al Secretario de Estado de Seguridad, bajo la dirección y supervisión del Ministro, y la secretaría al titular de la Dirección General de Coordinación y Estudios. Las otras dos opciones suben la presidencia al Ministro o la bajan al Subsecretario y colocan en la secretaría a un órgano que no la ejerce.",
+      "referencia": {
+        "apartado": "8.4. El Comité Ejecutivo de Coordinación (artículo 2.4)",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "art. 2.4"
+      }
+    },
+    {
+      "id": "t07-g006",
+      "tema": 7,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "El armamento de la Guardia Civil, ¿a quién corresponde según el reparto de competencias entre Interior y Defensa?",
+      "opciones": [
+        "Solo al Ministro del Interior, como las retribuciones, los destinos y los acuartelamientos.",
+        "Solo al Ministro de Defensa, como el régimen de ascensos y las situaciones del personal.",
+        "A los Ministros del Interior y de Defensa conjuntamente."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 14.2 de la Ley Orgánica 2/1986 coloca el armamento en la columna compartida: lo deciden conjuntamente los Ministerios del Interior y de Defensa, igual que la selección, la formación, el despliegue territorial y la propuesta del Director General. Las retribuciones, los destinos, los acuartelamientos y el material son solo de Interior, y los ascensos y las situaciones del personal, solo de Defensa.",
+      "referencia": {
+        "apartado": "12. La Guardia Civil: una sola dirección, dos ministerios",
+        "norma": "Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 14.2, en relación con el art. 9.b)"
+      }
+    },
+    {
+      "id": "t07-g007",
+      "tema": 7,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "La sanción de separación del servicio a un miembro de la Guardia Civil la impone…",
+      "opciones": [
+        "El Ministro del Interior, a propuesta del Director General de la Guardia Civil.",
+        "El Ministro de Defensa, a propuesta del Ministro del Interior.",
+        "El Consejo Superior de la Guardia Civil, con la ratificación del Ministro del Interior."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 15.1 de la Ley Orgánica 2/1986 reserva la sanción de separación del servicio al Ministro de Defensa, a propuesta del Ministro del Interior, aunque el expediente se tramite por la normativa propia del cuerpo y aunque se aplique el régimen disciplinario de las Fuerzas Armadas cuando actúe en misiones militares. No la impone el Ministro del Interior ni el Consejo Superior, que es un órgano colegiado de asesoramiento y no sancionador.",
+      "referencia": {
+        "apartado": "12.1. El régimen disciplinario: dónde cambia la regla",
+        "norma": "Ley Orgánica 2/1986, de 13 de marzo, de Fuerzas y Cuerpos de Seguridad",
+        "articulo": "art. 15.1"
+      }
+    },
+    {
+      "id": "t07-g008",
+      "tema": 7,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Desde el 27 de abril de 2026, ¿de quién depende la Dirección General de Protección Civil y Emergencias?",
+      "opciones": [
+        "De la Subsecretaría del Interior, donde se integran sus servicios comunes.",
+        "Directamente del Ministro del Interior, sin órgano intermedio.",
+        "De la Secretaría General de Protección Civil y Emergencias, órgano con categoría de subsecretario."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1.5.c) del Real Decreto 207/2024, en la redacción del Real Decreto 328/2026, sitúa la Dirección General de Protección Civil y Emergencias bajo la Secretaría General de Protección Civil y Emergencias, que tiene categoría de subsecretario y se reserva el ámbito tecnológico. La dependencia de la Subsecretaría es la que existía antes de esa reforma y ya no está en el texto vigente, y el Ministro no la dirige sin intermediarios.",
+      "referencia": {
+        "apartado": "14. La Secretaría General de Protección Civil y Emergencias",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "arts. 1.5.c) y 8 ter.1, en la redacción del Real Decreto 328/2026"
+      }
+    },
+    {
+      "id": "t07-g009",
+      "tema": 7,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "¿Quién dirige el Sistema Nacional de Protección de Infraestructuras Críticas?",
+      "opciones": [
+        "El Secretario de Estado de Seguridad, mientras el Centro Nacional de Protección de Infraestructuras Críticas de la Dirección General de Coordinación y Estudios lo impulsa materialmente.",
+        "El Director General de la Guardia Civil, por ser la Guardia Civil un instituto armado de naturaleza militar.",
+        "El Director General de la Policía, a través de la Dirección Adjunta Operativa."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 2.1.m) atribuye al Secretario de Estado de Seguridad la dirección del Sistema Nacional de Protección de Infraestructuras Críticas, y el artículo 6.1.11.º coloca el CNPIC en la Dirección General de Coordinación y Estudios, que lo impulsa y supervisa. No lo dirige ninguno de los dos directores generales de los cuerpos: la competencia de dirección es del órgano superior, y la ejecución material no cambia la titularidad.",
+      "referencia": {
+        "apartado": "7. La Secretaría de Estado de Seguridad: posición y funciones",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "art. 2.1.m), en relación con el art. 6.1.11.º"
+      }
+    },
+    {
+      "id": "t07-g010",
+      "tema": 7,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "El Consejo Superior de la Guardia Civil, ¿quién lo preside y quién lo integra?",
+      "opciones": [
+        "Lo preside el Director General de la Guardia Civil y lo integran los Tenientes Generales y Generales de División en servicio activo.",
+        "Lo preside el Ministro del Interior y lo integran los titulares de la Secretaría de Estado de Seguridad y de la Subsecretaría.",
+        "Lo preside el Secretario de Estado de Seguridad y actúa como secretario el Director General de la Guardia Civil."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 4.2 adscribe el Consejo Superior de la Guardia Civil a la Dirección General y dispone que lo preside su titular, con los Tenientes Generales y Generales de División en servicio activo como vocales y un Oficial General designado al efecto como secretario. Las otras dos opciones trasladan la presidencia al Ministro o al Secretario de Estado, que no la tienen, y colocan al Director General en un sitio que no le corresponde.",
+      "referencia": {
+        "apartado": "10.1. Los dos consejos adscritos a la Dirección General",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "art. 4.2"
+      }
+    },
+    {
+      "id": "t07-g011",
+      "tema": 7,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué nivel orgánico tienen el Gabinete del Ministro del Interior y la Oficina de Comunicación?",
+      "opciones": [
+        "Los dos tienen nivel orgánico de dirección general.",
+        "El Gabinete tiene nivel de subdirección general, con un máximo de tres asesores, y la Oficina de Comunicación de dirección general.",
+        "El Gabinete del Ministro tiene nivel de dirección general y la Oficina de Comunicación de subdirección general."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 1.3 da al Gabinete del Ministro nivel orgánico de dirección general, con un máximo de cinco asesores de nivel de subdirección general (art. 23.2 del RD 1009/2023), y el artículo 1.4 da a la Oficina de Comunicación nivel de subdirección general. El Gabinete con un máximo de tres asesores es el de la Secretaría de Estado, no el del Ministro, y por eso fallan tanto la opción que los iguala como la que los invierte.",
+      "referencia": {
+        "apartado": "6. Los dos órganos que dependen directamente del Ministro",
+        "norma": "Real Decreto 207/2024, de 27 de febrero",
+        "articulo": "arts. 1.3 y 1.4, en relación con los arts. 23.2 y 23.3 del RD 1009/2023"
+      }
+    },
+    {
+      "id": "t07-g012",
+      "tema": 7,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "En la Policía Nacional, ¿quién ejerce el mando directo del cuerpo?",
+      "opciones": [
+        "El Ministro del Interior, que lo ejerce a través del Secretario de Estado de Seguridad.",
+        "El Director General de la Policía, bajo la dependencia del Secretario de Estado de Seguridad y sin perjuicio del mando superior del Ministro.",
+        "El Secretario de Estado de Seguridad, que reúne el mando directo y el superior del cuerpo."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 2.4 de la Ley Orgánica 9/2015 mantiene el mando superior en el Ministro del Interior, que lo ejerce a través del Secretario de Estado de Seguridad, y atribuye el mando directo del cuerpo al Director General de la Policía, bajo la dependencia de ese Secretario de Estado. Las otras dos opciones confunden los dos niveles: ni el Ministro tiene el mando directo ni el Secretario de Estado reúne ambos mandos.",
+      "referencia": {
+        "apartado": "9. La Dirección General de la Policía dentro de la Secretaría de Estado",
+        "norma": "Ley Orgánica 9/2015, de 28 de julio, de Régimen de Personal de la Policía Nacional",
+        "articulo": "art. 2.4"
+      }
+    }
+  ]
+}

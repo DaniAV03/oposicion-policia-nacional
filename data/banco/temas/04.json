@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 4,
+  "titulo": "Tema 4 · La Unión Europea: referencia histórica. El Derecho derivado. Instituciones más importantes de la Unión Europea. La cooperación policial internacional. Especial referencia al Tribunal Europeo de Derechos Humanos y el Tribunal de Justicia de la Unión Europea.",
+  "preguntas": [
+    {
+      "id": "t04-g001",
+      "tema": 4,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "El Tratado de la Unión Europea se firmó en Maastricht el 7 de febrero de 1992. ¿Cuándo entró en vigor?",
+      "opciones": [
+        "El 7 de febrero de 1992, el mismo día de su firma.",
+        "El 1 de noviembre de 1993, una vez completadas las ratificaciones.",
+        "El 1 de enero de 1993, al abrirse el mercado interior."
+      ],
+      "correcta": 1,
+      "explicacion": "Maastricht se firmó el 7 de febrero de 1992, pero no entró en vigor hasta el 1 de noviembre de 1993, cuando se completaron las ratificaciones; la entrada en vigor es materia del artículo 54 del TUE. Dar el día de la firma como día de vigencia es exactamente la confusión que busca el examen. Y el 1 de enero de 1993 no es la vigencia de Maastricht, sino el plazo que el Acta Única Europea había fijado para el mercado interior.",
+      "referencia": {
+        "apartado": "2.2. Las reformas: qué añadió cada tratado",
+        "norma": "Tratado de la Unión Europea",
+        "articulo": "art. 54"
+      }
+    },
+    {
+      "id": "t04-g002",
+      "tema": 4,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Una directiva de la Unión ha vencido su plazo de transposición y el Estado no la ha incorporado a su derecho interno. ¿Qué puede hacer el particular cuyas disposiciones son incondicionales y suficientemente precisas y le atribuyen un derecho?",
+      "opciones": [
+        "Nada: mientras el Estado no la transponga, la directiva no obliga a nadie.",
+        "Invocarla frente a otro particular, porque desde el vencimiento del plazo es directamente aplicable.",
+        "Invocarla frente a la Administración, porque el efecto directo de la directiva no transpuesta es vertical."
+      ],
+      "correcta": 2,
+      "explicacion": "Cuando la directiva es incondicional, precisa y atribuye un derecho, puede invocarse frente al Estado aunque no se haya transpuesto: es el efecto directo vertical, y si el incumplimiento causa un daño el Estado responde. Frente a otro particular no cabe, porque no hay efecto directo horizontal: es la doctrina Faccini Dori. Y la primera opción es falsa porque la directiva obliga al Estado desde su entrada en vigor; el acto «directamente aplicable» es el reglamento, no la directiva.",
+      "referencia": {
+        "apartado": "4.1. Los cinco actos del artículo 288 del TFUE",
+        "norma": "TFUE, con la jurisprudencia del Tribunal de Justicia (asuntos Van Duyn y Faccini Dori)",
+        "articulo": "art. 288"
+      }
+    },
+    {
+      "id": "t04-g003",
+      "tema": 4,
+      "dificultad": "media",
+      "trampa": "competencia",
+      "enunciado": "El legislador de la Unión habilita a la Comisión para completar aspectos no esenciales de un reglamento. ¿Qué acto adopta la Comisión y con qué límite?",
+      "opciones": [
+        "Un acto delegado, que no puede modificar los elementos esenciales del acto legislativo.",
+        "Un acto de ejecución, porque su finalidad es aplicar el acto legislativo en condiciones uniformes.",
+        "Un reglamento del Consejo, que conserva la competencia para completar el acto legislativo."
+      ],
+      "correcta": 0,
+      "explicacion": "El acto delegado del artículo 290 del TFUE es el que la Comisión adopta por delegación del legislador para completar o modificar elementos no esenciales del acto legislativo, y el Parlamento y el Consejo conservan la facultad de revocarlo o de objetarlo. El acto de ejecución es el del artículo 291: se dicta para dar condiciones uniformes de aplicación, no para completar la regla. Y no hay un reglamento del Consejo que retenga esa competencia, porque la delegación se hace a la Comisión.",
+      "referencia": {
+        "apartado": "4.2. Actos legislativos, delegados y de ejecución",
+        "norma": "TFUE",
+        "articulo": "art. 290"
+      }
+    },
+    {
+      "id": "t04-g004",
+      "tema": 4,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "El Consejo se pronuncia sobre un acto cuya propuesta no procede de la Comisión ni del alto representante. ¿Qué mayoría se exige?",
+      "opciones": [
+        "El 55 % de los miembros del Consejo, que deben representar al menos el 65 % de la población de la Unión.",
+        "El 72 % de los miembros del Consejo, que deben representar al menos el 65 % de la población de la Unión.",
+        "La unanimidad de los miembros del Consejo, porque falta la propuesta de la Comisión."
+      ],
+      "correcta": 1,
+      "explicacion": "Cuando la propuesta no procede de la Comisión ni del alto representante, el Consejo exige la mayoría cualificada reforzada: al menos el 72 % de sus miembros, que representen como mínimo el 65 % de la población de la Unión. El 55 % con el mismo 65 % de población es la regla ordinaria, la que se aplica precisamente cuando la propuesta sí viene de la Comisión. La unanimidad no es la regla supletoria: queda reservada a las materias que los tratados indican, como la fiscalidad o la política exterior.",
+      "referencia": {
+        "apartado": "5.3. El Consejo",
+        "norma": "TUE",
+        "articulo": "art. 16.4"
+      }
+    },
+    {
+      "id": "t04-g005",
+      "tema": 4,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Cuál de estas afirmaciones describe al Consejo Europeo?",
+      "opciones": [
+        "Reúne a los jefes de Estado o de Gobierno, decide por consenso y no ejerce función legislativa.",
+        "Reúne a un ministro por Estado, legisla junto al Parlamento y vota por mayoría cualificada.",
+        "Reúne a los comisarios y fija las prioridades políticas de cada legislatura."
+      ],
+      "correcta": 0,
+      "explicacion": "El Consejo Europeo reúne a los jefes de Estado o de Gobierno de los Estados miembros, a su propio presidente y al presidente de la Comisión, se pronuncia por consenso salvo cuando los tratados prevén otra cosa y no ejerce función legislativa: sus conclusiones no son normas. La segunda opción describe al Consejo, que reúne a un ministro por Estado, legisla con el Parlamento y vota por mayoría cualificada. La tercera confunde el Consejo Europeo con la Comisión, que es la que tiene la iniciativa legislativa.",
+      "referencia": {
+        "apartado": "5.2. El Consejo Europeo",
+        "norma": "TUE",
+        "articulo": "art. 15"
+      }
+    },
+    {
+      "id": "t04-g006",
+      "tema": 4,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "¿Cuánto dura el mandato de los miembros del Comité Ejecutivo del Banco Central Europeo y quién los nombra?",
+      "opciones": [
+        "Seis años renovables, y los nombra el Consejo por mayoría cualificada.",
+        "Cinco años renovables, y los nombra el Parlamento Europeo a propuesta del Consejo.",
+        "Ocho años no renovables, y los nombra el Consejo Europeo por mayoría cualificada."
+      ],
+      "correcta": 2,
+      "explicacion": "El Comité Ejecutivo del Banco Central Europeo tiene seis miembros —presidente, vicepresidente y cuatro consejeros— nombrados por el Consejo Europeo por mayoría cualificada para un mandato de ocho años no renovable. Los seis años renovables son el mandato de los jueces del Tribunal de Justicia, y los cinco años son los del colegio de comisarios y los de los diputados del Parlamento: esas dos cifras son las que el examen ofrece para despistar. El Parlamento no nombra al Comité Ejecutivo.",
+      "referencia": {
+        "apartado": "5.5. El Tribunal de Cuentas y el Banco Central Europeo",
+        "norma": "TFUE",
+        "articulo": "art. 283.2"
+      }
+    },
+    {
+      "id": "t04-g007",
+      "tema": 4,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Una jueza que resuelve en última instancia debe aplicar un reglamento de la Unión y duda de su validez. ¿Qué debe hacer?",
+      "opciones": [
+        "Plantear una cuestión prejudicial ante el Tribunal de Justicia, que es el competente para pronunciarse sobre la validez del acto.",
+        "Remitir el asunto al Tribunal Europeo de Derechos Humanos, que controla los actos de la Unión.",
+        "Inaplicar el acto por su cuenta si lo considera nulo, sin consultar a ninguna instancia."
+      ],
+      "correcta": 0,
+      "explicacion": "La cuestión prejudicial del artículo 267 del TFUE es el cauce: el juez que resuelve en última instancia está obligado a plantearla cuando duda de la validez de un acto de la Unión, y el Tribunal de Luxemburgo es el único competente para declararlo inválido. El Tribunal de Estrasburgo no controla los actos de la Unión, sino el cumplimiento del Convenio Europeo por los Estados, y por eso la segunda opción confunde las dos organizaciones. La tercera se salta justamente esa obligación de consulta.",
+      "referencia": {
+        "apartado": "8.2. Competencias",
+        "norma": "TFUE",
+        "articulo": "art. 267"
+      }
+    },
+    {
+      "id": "t04-g008",
+      "tema": 4,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Agotadas las vías internas, ¿en qué plazo hay que presentar la demanda ante el Tribunal Europeo de Derechos Humanos?",
+      "opciones": [
+        "Seis meses desde la fecha de la decisión interna definitiva.",
+        "Tres meses desde la notificación de la resolución interna definitiva.",
+        "Cuatro meses desde la fecha de la decisión interna definitiva."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 35 del Convenio fija el plazo en cuatro meses desde la fecha de la decisión interna definitiva, y antes hay que haber agotado los remedios disponibles en el Estado. Los seis meses fueron el plazo histórico: el Protocolo 15 lo redujo a cuatro, y por eso la opción sigue circulando como si estuviera vigente. Los tres meses son otra cosa, el plazo para pedir la remisión de una sentencia de Sala a la Gran Sala, y aquí se ofrecen como si fueran los del Convenio.",
+      "referencia": {
+        "apartado": "7.3. Cómo se llega al Tribunal",
+        "norma": "Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales",
+        "articulo": "art. 35.1"
+      }
+    },
+    {
+      "id": "t04-g009",
+      "tema": 4,
+      "dificultad": "baja",
+      "trampa": "organo",
+      "enunciado": "¿Quién elige a los jueces del Tribunal Europeo de Derechos Humanos y cuánto dura su mandato?",
+      "opciones": [
+        "El Comité de Ministros del Consejo de Europa, para un mandato de cinco años renovable.",
+        "La Asamblea Parlamentaria del Consejo de Europa, de una lista de tres candidatos por Estado, para nueve años no renovables.",
+        "El Consejo Europeo por mayoría cualificada, para seis años renovables."
+      ],
+      "correcta": 1,
+      "explicacion": "Los jueces del Tribunal de Estrasburgo los elige la Asamblea Parlamentaria del Consejo de Europa de una lista de tres candidatos propuesta por cada Estado, y su mandato es de nueve años no renovable: hay un juez por cada Parte Contratante. El Comité de Ministros no los elige, sino que supervisa la ejecución de las sentencias. Y el Consejo Europeo no interviene: es una institución de la Unión Europea, organización distinta del Consejo de Europa, de modo que los seis años renovables son el mandato de los jueces del Tribunal de Luxemburgo.",
+      "referencia": {
+        "apartado": "7.2. Composición",
+        "norma": "Convenio Europeo para la Protección de los Derechos Humanos y de las Libertades Fundamentales",
+        "articulo": "arts. 22 y 23"
+      }
+    },
+    {
+      "id": "t04-g010",
+      "tema": 4,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "En una investigación por tráfico de drogas que afecta a cuatro Estados miembros, ¿qué puede hacer Europol?",
+      "opciones": [
+        "Detener a los investigados y practicar registros domiciliarios, si los cuatro Estados lo autorizan.",
+        "Dictar una orden europea de detención contra el responsable de la organización.",
+        "Analizar la información, coordinar el equipo conjunto de investigación y apoyar a las policías nacionales."
+      ],
+      "correcta": 2,
+      "explicacion": "Europol apoya, analiza y coordina, pero no tiene competencias ejecutivas: no detiene, no registra y no practica diligencias, que corresponden siempre a las autoridades del Estado. Tampoco puede dictar una orden europea de detención, porque es una resolución judicial que dicta el juez competente conforme a la Decisión Marco 2002/584/JAI. Lo que sí hace es coordinación operativa, análisis de inteligencia criminal e informes como el SOCTA y el TE-SAT.",
+      "referencia": {
+        "apartado": "6.2. Europol",
+        "norma": "TFUE y Reglamento (UE) 2016/794",
+        "articulo": "art. 88"
+      }
+    },
+    {
+      "id": "t04-g011",
+      "tema": 4,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "Un juez de otro Estado miembro reclama la entrega de una persona para juzgarla. ¿Qué instrumento sustituye entre los Estados miembros al procedimiento clásico de extradición y con qué ley española se ejecuta?",
+      "opciones": [
+        "La orden europea de detención y entrega, ejecutada en España conforme a la Ley 3/2003, de 14 de marzo.",
+        "La orden europea de investigación, ejecutada en España conforme a la Ley 23/2014, de 20 de noviembre.",
+        "El Sistema de Información de Schengen, conforme al Reglamento (UE) 2018/1862."
+      ],
+      "correcta": 0,
+      "explicacion": "La orden europea de detención y entrega se regula por la Decisión Marco 2002/584/JAI y sustituye entre los Estados miembros al procedimiento clásico de extradición; en España se ejecuta conforme a la Ley 3/2003, de 14 de marzo. La orden europea de investigación no sirve para entregar personas, sino para obtener pruebas que ya existen en otro Estado, y su ley española es la Ley 23/2014. El SIS es una base de datos de descripciones de personas y objetos, no un instrumento de entrega.",
+      "referencia": {
+        "apartado": "6.4. Los instrumentos de reconocimiento mutuo",
+        "norma": "Decisión Marco 2002/584/JAI del Consejo, de 13 de junio de 2002",
+        "articulo": "art. 1"
+      }
+    },
+    {
+      "id": "t04-g012",
+      "tema": 4,
+      "dificultad": "baja",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué valor jurídico tiene la Carta de los Derechos Fundamentales dentro del ordenamiento de la Unión?",
+      "opciones": [
+        "Es un acto de derecho derivado: obliga en la medida en que lo desarrollen los reglamentos.",
+        "Tiene el mismo valor jurídico que los tratados desde el Tratado de Lisboa.",
+        "Es un texto sin fuerza vinculante, que solo sirve para interpretar los tratados."
+      ],
+      "correcta": 1,
+      "explicacion": "Desde Lisboa, la Carta de los Derechos Fundamentales tiene el mismo valor jurídico que los tratados, según el artículo 6.1 del TUE, de modo que forma parte del derecho primario y está en la cúspide del ordenamiento de la Unión. Por eso no es derecho derivado ni necesita que la desarrollen los reglamentos para obligar: vincula por sí misma, y solo vale en la medida en que respete a los tratados, no al revés. Y no es un texto interpretativo sin fuerza: es derecho primario.",
+      "referencia": {
+        "apartado": "3. El derecho primario",
+        "norma": "TUE",
+        "articulo": "art. 6.1"
+      }
+    }
+  ]
+}

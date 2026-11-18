@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 6,
+  "titulo": "Tema 6 · Los funcionarios públicos: concepto y clases. Adquisición y pérdida de la condición de funcionario.",
+  "preguntas": [
+    {
+      "id": "t06-g001",
+      "tema": 6,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "Según el artículo 9.1 del TREBEP, ¿qué tres notas definen al funcionario de carrera?",
+      "opciones": [
+        "Contrato de trabajo indefinido, condiciones pactadas en convenio colectivo y permanencia en el puesto.",
+        "Nombramiento legal, relación estatutaria regulada por el Derecho Administrativo y servicios profesionales retribuidos de carácter permanente.",
+        "Designación por confianza política, carácter no permanente y retribución con cargo a créditos presupuestarios específicos."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 9.1 define al funcionario de carrera por el nombramiento legal, la relación estatutaria de Derecho Administrativo y los servicios retribuidos de carácter permanente. La opción del contrato de trabajo describe al personal laboral del artículo 11, que entra por contrato y no por nombramiento, y la de la confianza política describe al personal eventual del artículo 12, cuyo nombramiento no es permanente.",
+      "referencia": {
+        "apartado": "3. Concepto de funcionario público",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 9.1"
+      }
+    },
+    {
+      "id": "t06-g002",
+      "tema": 6,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿En qué modalidades puede ser el personal laboral al servicio de las Administraciones Públicas?",
+      "opciones": [
+        "Fijo, por tiempo indefinido o temporal.",
+        "Únicamente fijo o temporal, porque no cabe el contrato por tiempo indefinido.",
+        "Solo fijo, porque el TREBEP prohíbe que un laboral preste servicios temporales."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 8.2.c) enumera el personal laboral «ya sea fijo, por tiempo indefinido o temporal», y el artículo 11.1 lo confirma al remitirse a cualquiera de las modalidades de contratación de la legislación laboral. Las otras dos opciones recortan esa lista: ni el TREBEP excluye el contrato indefinido ni exige que el laboral sea siempre fijo, y de hecho admite expresamente el temporal.",
+      "referencia": {
+        "apartado": "4. Las clases de empleados públicos",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 8.2.c), en relación con el art. 11.1"
+      }
+    },
+    {
+      "id": "t06-g003",
+      "tema": 6,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Se nombra un funcionario interino por exceso o acumulación de tareas. ¿Qué límite temporal fija el artículo 10.1.d) del TREBEP?",
+      "opciones": [
+        "Nueve meses dentro de un período de dieciocho.",
+        "Tres años, ampliables hasta doce meses más por la ley de función pública de desarrollo.",
+        "El tiempo estrictamente necesario para atender la acumulación, sin tope numérico."
+      ],
+      "correcta": 0,
+      "explicacion": "La letra d) del artículo 10.1 limita el nombramiento por exceso o acumulación de tareas a nueve meses dentro de un período de dieciocho. Los tres años ampliables doce meses más son el tope de la letra c), programas de carácter temporal, y la sustitución de titulares de la letra b) dura lo estrictamente necesario, sin tope numérico: las dos opciones falsas trasladan a este supuesto los plazos de los otros.",
+      "referencia": {
+        "apartado": "6. Los funcionarios interinos",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 10.1.d), en la redacción de la Ley 20/2021"
+      }
+    },
+    {
+      "id": "t06-g004",
+      "tema": 6,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "El tiempo de servicio como personal eventual de una Administración Pública…",
+      "opciones": [
+        "Puntúa como mérito en el baremo de la promoción interna.",
+        "Solo puntúa si el nombramiento es anterior a la entrada en vigor del TREBEP.",
+        "No puede constituir mérito para el acceso a la función pública ni para la promoción interna."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 12.4 dice con claridad que la condición de personal eventual no puede constituir mérito para el acceso a la función pública ni para la promoción interna, de modo que ese tiempo no puntúa en ningún baremo. Las dos opciones que le dan valor niegan ese precepto, y además confunden al eventual con el personal de libre designación, que es un procedimiento de provisión de puestos entre funcionarios de carrera.",
+      "referencia": {
+        "apartado": "7.2. Personal eventual (art. 12)",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 12.4"
+      }
+    },
+    {
+      "id": "t06-g005",
+      "tema": 6,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un aspirante que ya ha superado las pruebas realiza el curso selectivo con nombramiento de funcionario en prácticas. ¿Qué retribución mínima le reconoce el artículo 26 del TREBEP?",
+      "opciones": [
+        "El sueldo del subgrupo o grupo en el que aspire a ingresar.",
+        "Las retribuciones íntegras del puesto que ocupará al terminar las prácticas.",
+        "Ninguna, porque el nombramiento en prácticas no genera derecho retributivo."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 26 fija como mínimo el sueldo del subgrupo o grupo en el que se aspira a ingresar, porque el nombramiento en prácticas es transitorio (art. 24 del RD 364/1995) y no otorga todavía la condición de funcionario de carrera. Las otras dos opciones se equivocan en sentidos opuestos: no se cobran las retribuciones del puesto definitivo, pero tampoco se carece de retribución, porque la ley reconoce ese sueldo.",
+      "referencia": {
+        "apartado": "9. «Funcionario en prácticas»: la quinta categoría que no existe",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 26, en relación con el art. 24 del RD 364/1995"
+      }
+    },
+    {
+      "id": "t06-g006",
+      "tema": 6,
+      "dificultad": "media",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué reserva establece el artículo 59 del TREBEP en las ofertas de empleo público a favor de las personas con discapacidad?",
+      "opciones": [
+        "Un cupo no inferior al cinco por ciento, con al menos un uno por ciento para discapacidad intelectual.",
+        "Un cupo no inferior al diez por ciento, reservado íntegramente a la discapacidad intelectual.",
+        "Un cupo no inferior al siete por ciento, con al menos el dos por ciento para personas que acrediten discapacidad intelectual."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 59.1 reserva un cupo no inferior al siete por ciento de las vacantes, con al menos el dos por ciento para discapacidad intelectual y el resto para cualquier otro tipo de discapacidad, y fija como objetivo llegar al dos por ciento de los efectivos totales de la Administración. Las cifras del cinco y del diez por ciento no aparecen en el precepto, y el cupo no se agota en la discapacidad intelectual.",
+      "referencia": {
+        "apartado": "12.3. La reserva para personas con discapacidad (art. 59)",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 59.1 y 59.2"
+      }
+    },
+    {
+      "id": "t06-g007",
+      "tema": 6,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Un policía nacional condenado a pena de inhabilitación solicita la rehabilitación. ¿Quién se la concede según la Ley Orgánica 9/2015?",
+      "opciones": [
+        "El Director General de la Policía, previo informe del Consejo de Policía.",
+        "El Ministro del Interior, por orden ministerial.",
+        "El Consejo de Ministros, a propuesta del Ministro del Interior."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 6.2 de la LO 9/2015 atribuye la rehabilitación excepcional al Consejo de Ministros, a propuesta del Ministro del Interior, mientras que la regla general del artículo 68.2 del TREBEP la confía a los órganos de gobierno de las Administraciones. No la concede el Director General de la Policía ni basta una orden ministerial, y la medida es además potestativa y con silencio desestimatorio.",
+      "referencia": {
+        "apartado": "11.4. Adquisición y pérdida en el régimen policial",
+        "norma": "Ley Orgánica 9/2015, de 28 de julio, de Régimen de Personal de la Policía Nacional",
+        "articulo": "art. 6.2, en relación con el art. 68.2 del TREBEP"
+      }
+    },
+    {
+      "id": "t06-g008",
+      "tema": 6,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un policía nacional de la Escala Básica cumple 58 años. ¿Qué ocurre?",
+      "opciones": [
+        "Se le declara de oficio la jubilación forzosa al alcanzar esa edad.",
+        "Puede solicitar el pase a la situación de segunda actividad, que no extingue la relación de servicio.",
+        "Pierde la condición de funcionario y pasa a la reserva con el 80 por ciento de sus retribuciones."
+      ],
+      "correcta": 1,
+      "explicacion": "En la Escala Básica los 58 años son la edad a la que se puede solicitar el pase a segunda actividad (art. 69.1 de la LO 9/2015), una situación que conserva la categoría, no ocupa destino y mantiene la condición de funcionario. La jubilación forzosa se declara de oficio a los 65 años (art. 5.2.b), así que la primera opción adelanta la edad, y la tercera confunde una situación administrativa con la pérdida de la condición.",
+      "referencia": {
+        "apartado": "11.5. Jubilación y segunda actividad: dos figuras que se confunden",
+        "norma": "Ley Orgánica 9/2015, de 28 de julio, de Régimen de Personal de la Policía Nacional",
+        "articulo": "arts. 5.2.b), 69.1.d) y 73.1"
+      }
+    },
+    {
+      "id": "t06-g009",
+      "tema": 6,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "¿Quién puede formar parte de un órgano de selección de un proceso selectivo de funcionarios de carrera?",
+      "opciones": [
+        "Un funcionario interino que ocupa una vacante en el mismo cuerpo y escala.",
+        "Un funcionario de carrera de la Administración que convoca el proceso.",
+        "Un miembro del personal eventual del gabinete del titular del departamento."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 60.2 excluye de los órganos de selección al personal de elección o designación política, a los funcionarios interinos y al personal eventual, pero no impide que forme parte un funcionario de carrera, que es el supuesto de la opción correcta. Las otras dos opciones nombran precisamente a quienes la ley veta: un interino y un eventual. La pertenencia es siempre a título individual y se tiende a la paridad entre mujer y hombre.",
+      "referencia": {
+        "apartado": "12.4. Los órganos de selección (art. 60)",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 60.2 y 60.3"
+      }
+    },
+    {
+      "id": "t06-g010",
+      "tema": 6,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cuál es el orden correcto de los requisitos de adquisición de la condición de funcionario de carrera del artículo 62.1 del TREBEP?",
+      "opciones": [
+        "Acatamiento de la Constitución, superación del proceso selectivo, nombramiento publicado y toma de posesión.",
+        "Nombramiento publicado, superación del proceso selectivo, toma de posesión y acatamiento de la Constitución.",
+        "Superación del proceso selectivo, nombramiento publicado en el diario oficial, acatamiento de la Constitución y toma de posesión."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 62.1 ordena cuatro requisitos sucesivos: superación del proceso selectivo, nombramiento por el órgano competente publicado en el diario oficial, acto de acatamiento de la Constitución y del resto del ordenamiento, y toma de posesión dentro del plazo. El acatamiento va entre el nombramiento y la toma de posesión, no antes de la superación, y la toma de posesión cierra la secuencia, no la precede.",
+      "referencia": {
+        "apartado": "13. La adquisición de la condición de funcionario de carrera",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 62.1"
+      }
+    },
+    {
+      "id": "t06-g011",
+      "tema": 6,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "Un funcionario de carrera presenta su renuncia por escrito y la Administración la acepta expresamente. ¿Puede volver a ser funcionario?",
+      "opciones": [
+        "No, porque la renuncia inhabilita para volver a ingresar en cualquier Administración Pública.",
+        "Sí, aunque tendrá que superar de nuevo el correspondiente procedimiento de selección.",
+        "Sí, y conserva el derecho a recuperar la misma plaza que ocupaba."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 64.3 dispone que la renuncia no inhabilita para ingresar de nuevo en la Administración Pública, pero obliga a pasar otra vez por el procedimiento de selección; lo que no se recupera es la plaza. La primera opción confunde la renuncia con la separación del servicio, que sí cierra el acceso por el artículo 56.1.d), y la tercera inventa una reserva de plaza que la ley no reconoce.",
+      "referencia": {
+        "apartado": "15.1. La renuncia (art. 64)",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 64.3, en relación con el art. 64.2"
+      }
+    },
+    {
+      "id": "t06-g012",
+      "tema": 6,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Un funcionario perdió la condición por jubilación por incapacidad permanente y solicita la rehabilitación una vez desaparecida la causa. ¿Cómo se resuelve?",
+      "opciones": [
+        "Se le concede, porque la rehabilitación del artículo 68.1 es reglada cuando desaparece la causa.",
+        "Es potestativa y el silencio administrativo se entiende desestimatorio.",
+        "Debe superar un nuevo proceso selectivo, porque la jubilación extingue definitivamente la relación."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 68.1 concede la rehabilitación por imperativo legal cuando la pérdida se debió a la nacionalidad o a la jubilación por incapacidad permanente y la causa ha desaparecido. El régimen potestativo, con valoración de las circunstancias y silencio desestimatorio, es el del apartado 2 y está reservado a la pena de inhabilitación; y la rehabilitación existe precisamente para no tener que superar un nuevo proceso selectivo.",
+      "referencia": {
+        "apartado": "16.1. La rehabilitación (art. 68)",
+        "norma": "Real Decreto Legislativo 5/2015, de 30 de octubre (TREBEP)",
+        "articulo": "art. 68.1 y 68.2"
+      }
+    }
+  ]
+}

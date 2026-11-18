@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 5,
+  "titulo": "Tema 5 · La organización y funcionamiento de la Administración General del Estado: Principios de organización, funcionamiento y relaciones con los ciudadanos; órganos superiores y órganos directivos en la organización central. El Gobierno: composición, organización y funciones; el Gobierno en funciones.",
+  "preguntas": [
+    {
+      "id": "t05-g001",
+      "tema": 5,
+      "dificultad": "alta",
+      "trampa": "jerarquia",
+      "enunciado": "Un Secretario de Estado dirige y coordina varias direcciones generales de su ministerio. ¿Cómo se clasifica ese órgano?",
+      "opciones": [
+        "Órgano directivo, porque de él dependen órganos directivos.",
+        "Órgano superior, junto con los Ministros, según la lista cerrada del artículo 55.3.",
+        "Órgano directivo con categoría de Subsecretario, como el Secretario General."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 55.3 de la Ley 40/2015 contiene una lista cerrada: son órganos superiores los Ministros y los Secretarios de Estado, y directivos los Subsecretarios y Secretarios generales, los Secretarios generales técnicos y Directores generales y los Subdirectores generales. Dirigir órganos directivos no convierte en directivo a quien los dirige, así que la primera opción es falsa. Y no existe una categoría intermedia asimilada a Subsecretario para el Secretario de Estado: la categoría de Subsecretario es la del Secretario General.",
+      "referencia": {
+        "apartado": "4. La estructura de la Administración General del Estado",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "art. 55.3"
+      }
+    },
+    {
+      "id": "t05-g002",
+      "tema": 5,
+      "dificultad": "baja",
+      "trampa": "absoluto",
+      "enunciado": "¿Cuál de los órganos directivos de la Administración General del Estado no tiene la condición de alto cargo?",
+      "opciones": [
+        "El Subdirector General.",
+        "El Secretario General Técnico.",
+        "El Director General."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 55.6 exceptúa de la condición de alto cargo a los Subdirectores generales y asimilados, y esa es la razón de que su nombramiento no exija real decreto: los nombra y cesa el Ministro, el Secretario de Estado o el Subsecretario del que dependen. El Secretario General Técnico tiene categoría de Director General, pero es alto cargo, y el Director General también lo es, con nombramiento por real decreto del Consejo de Ministros. La excepción es única y está tasada en la ley.",
+      "referencia": {
+        "apartado": "6.3. El Director General y el Subdirector General",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "arts. 55.6 y 67.2"
+      }
+    },
+    {
+      "id": "t05-g003",
+      "tema": 5,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "Para crear una nueva Subdirección General en un ministerio, ¿qué instrumento es necesario?",
+      "opciones": [
+        "Una orden del Ministro del departamento, previa autorización del Subsecretario.",
+        "Un real decreto del Presidente del Gobierno, que crea y suprime los órganos de los ministerios.",
+        "Un real decreto del Consejo de Ministros, a iniciativa del Ministro interesado y a propuesta del ministro competente en hacienda y administraciones públicas."
+      ],
+      "correcta": 2,
+      "explicacion": "Las Subsecretarías, Secretarías Generales, Secretarías Generales Técnicas, Direcciones Generales y Subdirecciones Generales se crean por real decreto del Consejo de Ministros, a iniciativa del Ministro interesado y a propuesta del ministro competente en hacienda y administraciones públicas. El real decreto del Presidente del Gobierno se reserva a los Ministerios y a las Secretarías de Estado, que es la confusión que ofrece la segunda opción. Y la orden ministerial solo crea los órganos de nivel inferior a Subdirección General.",
+      "referencia": {
+        "apartado": "6.4. Creación de órganos y reglas de estructura",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "arts. 57.3 y 59.1"
+      }
+    },
+    {
+      "id": "t05-g004",
+      "tema": 5,
+      "dificultad": "baja",
+      "trampa": "competencia",
+      "enunciado": "¿Quién ejerce la potestad reglamentaria en las materias propias de un ministerio y quién convoca las conferencias sectoriales de su ámbito?",
+      "opciones": [
+        "El Ministro, en ambos casos.",
+        "El Subsecretario, en ambos casos, por delegación del titular del departamento.",
+        "El Secretario de Estado para las conferencias sectoriales y el Ministro para la potestad reglamentaria."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 61 atribuye al Ministro, como titular del departamento, tanto la potestad reglamentaria en las materias propias de su ministerio como la convocatoria de las conferencias sectoriales en su ámbito, junto con el mantenimiento de relaciones con las Comunidades Autónomas. El Subsecretario no ejerce esas funciones: asume la representación ordinaria, la dirección de los servicios comunes y la jefatura superior del personal. Y el Secretario de Estado responde de la ejecución de la acción del Gobierno en un sector, pero no convoca las conferencias sectoriales.",
+      "referencia": {
+        "apartado": "5.1. Los Ministros",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "art. 61"
+      }
+    },
+    {
+      "id": "t05-g005",
+      "tema": 5,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Qué categoría tiene el Secretario General Técnico de un ministerio y de quién depende directamente?",
+      "opciones": [
+        "Categoría de Subsecretario y depende directamente del Ministro.",
+        "Categoría de Director General y depende directamente del Subsecretario.",
+        "Categoría de Director General y depende directamente del Secretario de Estado."
+      ],
+      "correcta": 1,
+      "explicacion": "El Secretario General Técnico tiene a todos los efectos categoría de Director General y depende directamente del Subsecretario. La trampa es doble: su categoría no es la de Subsecretario —esa es la del Secretario General— y su dependencia no es del Ministro ni del Secretario de Estado, sino del Subsecretario. Categoría y cargo no coinciden: tener categoría de Director General no lo convierte en Director General, igual que el Secretario General no es un Subsecretario.",
+      "referencia": {
+        "apartado": "6.2. El Secretario General y el Secretario General Técnico",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "arts. 64 y 65"
+      }
+    },
+    {
+      "id": "t05-g006",
+      "tema": 5,
+      "dificultad": "alta",
+      "trampa": "competencia",
+      "enunciado": "En materia de seguridad ciudadana, ¿a quién corresponde la jefatura de las Fuerzas y Cuerpos de seguridad del Estado en el ámbito de una Comunidad Autónoma y bajo qué dependencia funcional actúa?",
+      "opciones": [
+        "Al Subdelegado del Gobierno, bajo la dependencia funcional del Delegado del Gobierno.",
+        "Al Presidente del Gobierno, bajo la dependencia funcional del Ministerio del Interior.",
+        "Al Delegado del Gobierno, bajo la dependencia funcional del Ministerio del Interior."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 73.3 atribuye al Delegado del Gobierno proteger el libre ejercicio de los derechos y libertades y garantizar la seguridad ciudadana a través de los Subdelegados del Gobierno y de las Fuerzas y Cuerpos de seguridad del Estado, cuya jefatura le corresponde, bajo la dependencia funcional del Ministerio del Interior. El Subdelegado no manda sobre el Delegado: depende de él y tiene nivel de Subdirector General. Y el Presidente del Gobierno solo ejerce la dependencia orgánica: la funcional en seguridad ciudadana es del Interior.",
+      "referencia": {
+        "apartado": "6.5. La organización territorial y exterior",
+        "norma": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público",
+        "articulo": "arts. 72.3 y 73.3"
+      }
+    },
+    {
+      "id": "t05-g007",
+      "tema": 5,
+      "dificultad": "media",
+      "trampa": "plazo",
+      "enunciado": "La norma que regula un procedimiento administrativo no fija plazo máximo para resolver. ¿Qué plazo se aplica?",
+      "opciones": [
+        "Seis meses, que es el límite máximo que la norma del procedimiento puede fijar.",
+        "Tres meses, porque es el plazo supletorio cuando la norma no fija ninguno.",
+        "Un mes, contado desde la entrada de la solicitud en el registro del órgano competente."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 21.3 de la Ley 39/2015 fija el plazo supletorio en tres meses cuando la norma del procedimiento no establece ninguno. Los seis meses no son el plazo general, sino el máximo que esa norma puede fijar, salvo que una ley o el derecho de la Unión dispongan otra cosa: por eso las dos cifras se confunden. Y un mes no es plazo de resolución: el precepto solo maneja los tres meses supletorios y el máximo de seis.",
+      "referencia": {
+        "apartado": "7.2. Plazo para resolver y silencio administrativo",
+        "norma": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+        "articulo": "art. 21.3"
+      }
+    },
+    {
+      "id": "t05-g008",
+      "tema": 5,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "En sus relaciones con la Administración, ¿qué derecho reconoce el artículo 13 de la Ley 39/2015 a quien tiene capacidad de obrar ante ella?",
+      "opciones": [
+        "A que su procedimiento se resuelva en el plazo de un mes, sea cual sea el procedimiento.",
+        "A exigir la tramitación electrónica de cualquier procedimiento, aunque ninguna norma lo prevea.",
+        "A comunicarse con la Administración a través del Punto de Acceso General electrónico y a ser asistido en el uso de medios electrónicos."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 13 reconoce, entre otros derechos, comunicarse con la Administración a través del Punto de Acceso General electrónico, ser asistido en el uso de medios electrónicos, usar las lenguas oficiales de su Comunidad, acceder a la información pública y ser tratado con respeto y deferencia. No reconoce el derecho a resolver en un mes: el plazo es el que fije la norma del procedimiento y, en su defecto, tres meses. Tampoco permite imponer el canal electrónico, porque las personas físicas pueden elegir salvo que una norma les obligue.",
+      "referencia": {
+        "apartado": "7.1. Los derechos del artículo 13",
+        "norma": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+        "articulo": "arts. 13 y 14"
+      }
+    },
+    {
+      "id": "t05-g009",
+      "tema": 5,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "El Presidente del Gobierno quiere convocar un referéndum consultivo. ¿Qué exige el ordenamiento además de la propuesta al Rey?",
+      "opciones": [
+        "El acuerdo del Consejo de Ministros por mayoría absoluta.",
+        "La autorización previa del Congreso de los Diputados.",
+        "La autorización previa del Senado, como Cámara de representación territorial."
+      ],
+      "correcta": 1,
+      "explicacion": "El Presidente puede proponer al Rey la convocatoria de un referéndum consultivo, pero necesita la autorización previa del Congreso de los Diputados, que es lo que exige el artículo 92.2 de la Constitución y recuerda el artículo 2 de la Ley del Gobierno. El acuerdo del Consejo de Ministros forma parte del procedimiento, pero no sustituye esa autorización, y la mayoría que se pide al Gobierno no es la que decide. El Senado no autoriza referéndums: es la Cámara de representación territorial y carece de esa competencia.",
+      "referencia": {
+        "apartado": "9.1. El Presidente del Gobierno",
+        "norma": "Constitución Española y Ley 50/1997, de 27 de noviembre, del Gobierno",
+        "articulo": "art. 92.2 CE y art. 2.1 LG"
+      }
+    },
+    {
+      "id": "t05-g010",
+      "tema": 5,
+      "dificultad": "media",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué órgano declara el estado de excepción y qué órgano declara el estado de sitio?",
+      "opciones": [
+        "El Congreso de los Diputados declara los dos, a propuesta del Gobierno.",
+        "El Consejo de Ministros declara los dos, con comunicación al Congreso de los Diputados.",
+        "El Consejo de Ministros declara el estado de excepción; el Congreso de los Diputados declara el estado de sitio, a propuesta del Gobierno."
+      ],
+      "correcta": 2,
+      "explicacion": "El Consejo de Ministros declara los estados de alarma y de excepción, pero del estado de sitio solo propone la declaración al Congreso de los Diputados, que la acuerda por mayoría absoluta. Por eso falla la opción que atribuye al Gobierno la declaración de ambos estados y también la que se la entrega al Congreso en los dos casos: el reparto de competencias es distinto en cada uno. La mayoría absoluta del Congreso es precisamente la que impide que el Gobierno decida por sí solo el estado de sitio.",
+      "referencia": {
+        "apartado": "9.2. El Consejo de Ministros",
+        "norma": "Ley 50/1997, de 27 de noviembre, del Gobierno y Constitución Española",
+        "articulo": "art. 5.1 LG y art. 116 CE"
+      }
+    },
+    {
+      "id": "t05-g011",
+      "tema": 5,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Tras la celebración de elecciones generales y antes de la toma de posesión del nuevo Gobierno, ¿qué puede hacer el Gobierno en funciones?",
+      "opciones": [
+        "Despachar el despacho ordinario de los asuntos y adoptar medidas urgentes o de interés general debidamente acreditadas.",
+        "Disolver las Cámaras y convocar nuevas elecciones si no prospera la investidura.",
+        "Presentar proyectos de ley al Congreso cuando el asunto sea urgente y lo autorice el Presidente."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 21 limita la gestión del Gobierno cesante al despacho ordinario de los asuntos públicos, pero le permite adoptar medidas urgentes o de interés general cuya acreditación lo justifique: el Gobierno en funciones no está paralizado. Lo que no puede es disolver las Cámaras —prohibición que recae en el Presidente— ni presentar proyectos de ley al Congreso, prohibición que recae en el Gobierno. Ninguna urgencia habilita esas dos facultades, así que las dos opciones que las ofrecen son falsas.",
+      "referencia": {
+        "apartado": "11. El Gobierno en funciones",
+        "norma": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+        "articulo": "art. 21"
+      }
+    },
+    {
+      "id": "t05-g012",
+      "tema": 5,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿De quién se compone el Gobierno según el artículo 98.1 de la Constitución y el artículo 1.2 de la Ley del Gobierno?",
+      "opciones": [
+        "Del Presidente, de los Vicepresidentes en su caso y de los Ministros.",
+        "Del Presidente, de los Ministros y de los Secretarios de Estado.",
+        "Del Presidente, del Consejo de Ministros y de las Comisiones Delegadas."
+      ],
+      "correcta": 0,
+      "explicacion": "La Constitución y la Ley del Gobierno coinciden: el Gobierno se compone del Presidente, de los Vicepresidentes en su caso y de los Ministros, de modo que los Vicepresidentes no son obligatorios. Los Secretarios de Estado no son miembros del Gobierno, sino órganos superiores de la Administración General del Estado, y por eso la segunda opción mezcla dos planos distintos. El Consejo de Ministros y las Comisiones Delegadas tampoco son componentes: son los órganos colegiados en los que los miembros del Gobierno se reúnen.",
+      "referencia": {
+        "apartado": "8. El Gobierno: composición",
+        "norma": "Constitución Española y Ley 50/1997, de 27 de noviembre, del Gobierno",
+        "articulo": "art. 98.1 CE y art. 1.2 LG"
+      }
+    }
+  ]
+}

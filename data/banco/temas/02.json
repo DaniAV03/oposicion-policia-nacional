@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 2,
+  "titulo": "Tema 2 · La Constitución Española (I): estructura y caracteres de la Constitución Española de 1978. Los valores de la Constitución. Los principios del régimen constitucional: Estado democrático, Estado de derecho, Estado social, Monarquía parlamentaria y Estado autonomista. Los derechos y deberes fundamentales establecidos en la Constitución: especial referencia a los derechos fundamentales y libertades públicas, así como, a las garantías de los mismos y a la suspensión de los derechos y libertades. El Defensor del Pueblo.",
+  "preguntas": [
+    {
+      "id": "t02-g001",
+      "tema": 2,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuántos artículos y cuántos títulos numerados tiene el texto de la Constitución de 1978?",
+      "opciones": [
+        "169 artículos y diez títulos numerados, además del título preliminar.",
+        "169 artículos y once títulos numerados, además del título preliminar.",
+        "155 artículos y diez títulos numerados, además del título preliminar."
+      ],
+      "correcta": 0,
+      "explicacion": "El texto tiene 169 artículos y diez títulos numerados, del I al X, más el título preliminar con los artículos 1 a 9. La opción de once títulos cuenta el preliminar como si fuera uno de los numerados, y la de 155 artículos toma el último artículo del título I como si fuera el final del texto: 155 es el artículo que cierra el título I, no la cifra total.",
+      "referencia": {
+        "apartado": "2.2. Estructura del texto",
+        "norma": "Constitución Española",
+        "articulo": "arts. 1 a 169"
+      }
+    },
+    {
+      "id": "t02-g002",
+      "tema": 2,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "Las cuatro reformas que ha tenido la Constitución de 1978 se han tramitado por…",
+      "opciones": [
+        "El procedimiento ordinario del artículo 167, que exige tres quintos de cada Cámara.",
+        "El procedimiento agravado del artículo 168, con disolución de las Cámaras y referéndum obligatorio.",
+        "El artículo 168 en la reforma del artículo 49 y el artículo 167 en las otras tres."
+      ],
+      "correcta": 0,
+      "explicacion": "Las cuatro reformas —1992 del artículo 13.2, 2011 del 135, 2024 del 49 y 2026 del 69.3— se han hecho por la vía ordinaria del artículo 167, que exige tres quintos de cada Cámara. El artículo 168 está reservado a la revisión total o a la parcial que afecte al título preliminar, a la sección 1.ª del capítulo II del título I o al título II, y ninguna de esas reformas tocó esas materias: el artículo 49 está en el capítulo III, entre los principios rectores.",
+      "referencia": {
+        "apartado": "2.4. Las reformas que ha tenido",
+        "norma": "Constitución Española",
+        "articulo": "arts. 167 y 168"
+      }
+    },
+    {
+      "id": "t02-g003",
+      "tema": 2,
+      "dificultad": "media",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál de los siguientes es un valor superior del ordenamiento jurídico según la Constitución?",
+      "opciones": [
+        "La seguridad jurídica.",
+        "La dignidad de la persona.",
+        "El pluralismo político."
+      ],
+      "correcta": 2,
+      "explicacion": "Los valores superiores del artículo 1.1 son libertad, justicia, igualdad y pluralismo político. La seguridad jurídica no es un valor, sino un principio del artículo 9.3, y la dignidad de la persona es el fundamento del orden político y de la paz social del artículo 10.1. Son los dos señuelos clásicos: el examen cambia de sitio estas tres categorías para que se confundan.",
+      "referencia": {
+        "apartado": "3.2. Tres planos que el enunciado mezcla",
+        "norma": "Constitución Española",
+        "articulo": "art. 1.1"
+      }
+    },
+    {
+      "id": "t02-g004",
+      "tema": 2,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "En una monarquía parlamentaria, ¿quién responde de los actos del Rey?",
+      "opciones": [
+        "El propio Rey, que responde ante las Cortes Generales.",
+        "Quienes refrendan sus actos: el Presidente del Gobierno y, en su caso, los Ministros competentes.",
+        "El Tribunal Constitucional, que controla previamente la constitucionalidad de cada acto."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 64.1 refrenda los actos del Rey con el Presidente del Gobierno y, en su caso, los Ministros competentes; solo dos actos van refrendados por el Presidente del Congreso, que son la propuesta y nombramiento del Presidente del Gobierno y la disolución del artículo 99. La primera opción choca con el artículo 56.3, que declara la persona del Rey inviolable y no sujeta a responsabilidad, y la tercera inventa un control previo de cada acto que la Constitución no atribuye al Tribunal Constitucional.",
+      "referencia": {
+        "apartado": "4.4. Monarquía parlamentaria",
+        "norma": "Constitución Española",
+        "articulo": "arts. 64 y 56.3"
+      }
+    },
+    {
+      "id": "t02-g005",
+      "tema": 2,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "El artículo 14 declara que los españoles son iguales ante la ley. ¿Cabe recurso de amparo ante el Tribunal Constitucional por su vulneración?",
+      "opciones": [
+        "No, porque el artículo 14 está fuera de la sección 1.ª del capítulo II y el amparo se limita a esa sección.",
+        "Sí, porque el artículo 53.2 lo menciona expresamente por su número, junto con la sección 1.ª y el artículo 30.2.",
+        "Solo si la discriminación afecta además a un derecho de la sección 1.ª, en cuyo caso el amparo se dirige contra esa vulneración."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 53.2 extiende la tutela preferente y sumaria y el recurso de amparo al artículo 14, a la sección 1.ª del capítulo II y a la objeción de conciencia del artículo 30.2, y cita el 14 por su número precisamente porque está fuera de las dos secciones. La primera opción deduce la garantía de la colocación sistemática y por eso falla; la tercera convierte una garantía autónoma en accesorio de otro derecho, que es justo lo que el precepto evita.",
+      "referencia": {
+        "apartado": "5.3. El detalle del artículo 14",
+        "norma": "Constitución Española",
+        "articulo": "arts. 14 y 53.2"
+      }
+    },
+    {
+      "id": "t02-g006",
+      "tema": 2,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Una persona es detenida por la policía sin orden judicial. ¿Cuánto puede durar la detención preventiva antes de quedar en libertad o a disposición judicial?",
+      "opciones": [
+        "Veinticuatro horas, prorrogables otras veinticuatro por decisión del juez.",
+        "Setenta y dos horas como máximo, además del tiempo estrictamente necesario para las averiguaciones.",
+        "Diez días, que es el plazo que la ley orgánica fija para la detención gubernativa."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 17.2 fija el límite en el tiempo estrictamente necesario para las averiguaciones y, en todo caso, en setenta y dos horas, pasadas las cuales el detenido debe quedar en libertad o a disposición judicial. Las diez días no son el plazo general: la LO 4/1981 los permite solo para la detención acordada por la autoridad gubernativa en estado de excepción. Y la prórroga de veinticuatro horas no existe en nuestro ordenamiento.",
+      "referencia": {
+        "apartado": "6.1. Vida, conciencia y libertad personal",
+        "norma": "Constitución Española",
+        "articulo": "art. 17.2"
+      }
+    },
+    {
+      "id": "t02-g007",
+      "tema": 2,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Qué carácter tiene la enseñanza básica según la Constitución?",
+      "opciones": [
+        "Es obligatoria y gratuita.",
+        "Es gratuita, pero no obligatoria.",
+        "Es obligatoria, pero solo gratuita en los centros públicos."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 27.4 declara que la enseñanza básica es obligatoria y gratuita, sin distinguir entre centros públicos y de otra titularidad. Por eso falla la opción que limita la gratuidad a los centros públicos, que añade a la Constitución una distinción que no hace, y también la que la declara solo gratuita, porque contradice la obligatoriedad que el mismo apartado impone.",
+      "referencia": {
+        "apartado": "6.3. Educación, trabajo y petición",
+        "norma": "Constitución Española",
+        "articulo": "art. 27.4"
+      }
+    },
+    {
+      "id": "t02-g008",
+      "tema": 2,
+      "dificultad": "media",
+      "trampa": "absoluto",
+      "enunciado": "¿Qué garantía tiene el derecho a la propiedad privada reconocido en el artículo 33?",
+      "opciones": [
+        "Es un derecho fundamental y su vulneración tiene recurso de amparo ante el Tribunal Constitucional.",
+        "Es un principio rector de la política social y económica y solo puede alegarse según la ley que lo desarrolle.",
+        "Está en la sección 2.ª del capítulo II: tiene tutela judicial ordinaria, pero no recurso de amparo."
+      ],
+      "correcta": 2,
+      "explicacion": "La propiedad privada está en el artículo 33, dentro de la sección 2.ª del capítulo II, y el artículo 53.2 limita el amparo al artículo 14, a la sección 1.ª y a la objeción de conciencia del artículo 30.2, de modo que queda fuera. La primera opción confunde todo el título I con los derechos fundamentales en sentido estricto, y la segunda la coloca entre los principios rectores del capítulo III, donde están la salud o la vivienda, no la propiedad.",
+      "referencia": {
+        "apartado": "7. Los derechos y deberes de los ciudadanos (artículos 30 a 38)",
+        "norma": "Constitución Española",
+        "articulo": "arts. 33 y 53.2"
+      }
+    },
+    {
+      "id": "t02-g009",
+      "tema": 2,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Puede alegarse ante un tribunal un principio rector del capítulo III del título I, como la protección de la salud o el derecho a la vivienda, sin que exista ley que lo desarrolle?",
+      "opciones": [
+        "No: solo puede alegarse de acuerdo con lo que dispongan las leyes que lo desarrollen.",
+        "Sí: vincula directamente a los poderes públicos y tiene recurso de amparo como los derechos de la sección 1.ª.",
+        "Sí, pero solo ante el Tribunal Constitucional y por la vía del conflicto de competencias."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 53.3 permite alegar los principios rectores ante la jurisdicción ordinaria solo de acuerdo con lo que dispongan las leyes que los desarrollen, y les encomienda informar la legislación, la práctica judicial y la actuación de los poderes públicos. La segunda opción les atribuye la vinculación directa y el amparo de la sección 1.ª, que no tienen, y la tercera inventa una vía procesal que no existe para esta materia.",
+      "referencia": {
+        "apartado": "4.3. Estado social",
+        "norma": "Constitución Española",
+        "articulo": "arts. 9.2 y 53.3"
+      }
+    },
+    {
+      "id": "t02-g010",
+      "tema": 2,
+      "dificultad": "alta",
+      "trampa": "absoluto",
+      "enunciado": "Declarado el estado de excepción, ¿puede suspenderse la libertad sindical del artículo 28.1?",
+      "opciones": [
+        "Sí, porque el estado de excepción permite suspender todos los derechos del capítulo II.",
+        "Sí, pero solo si el decreto de declaración lo justifica expresamente.",
+        "No: el artículo 55.1 solo permite suspender los derechos que enumera, y en esa lista está el 28.2 (huelga), no el 28.1."
+      ],
+      "correcta": 2,
+      "explicacion": "La lista del artículo 55.1 es cerrada: 17, 18.2, 18.3, 19, 20.1 a) y d), 20.5, 21, 28.2 y 37.2. La libertad sindical del 28.1 no figura, así que no puede suspenderse, igual que no pueden suspenderse la intimidad del 18.1, la tutela judicial del 24 ni la educación del 27. La primera opción ignora que la lista es cerrada y la segunda inventa una motivación del decreto que la Constitución no exige.",
+      "referencia": {
+        "apartado": "10.1. Suspensión colectiva (artículo 55.1)",
+        "norma": "Constitución Española",
+        "articulo": "art. 55.1"
+      }
+    },
+    {
+      "id": "t02-g011",
+      "tema": 2,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué norma hace falta para regular el ejercicio del derecho de reunión del artículo 21?",
+      "opciones": [
+        "Basta un real decreto del Gobierno, porque la reunión no necesita autorización previa.",
+        "Basta una ley ordinaria aprobada por mayoría simple de los presentes en el Congreso.",
+        "Una ley orgánica, porque el artículo 81.1 reserva a ese rango el desarrollo de los derechos fundamentales y libertades públicas."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 53.1 exige ley para regular el ejercicio de los derechos del capítulo II y el artículo 81.1 añade que el desarrollo de los derechos fundamentales y libertades públicas se hace por ley orgánica, es decir, con mayoría absoluta del Congreso en una votación final sobre el conjunto del proyecto. La reunión es de la sección 1.ª, así que la primera opción confunde que no haga falta autorización previa para reunirse con que no haga falta ley orgánica para regularlo, y la segunda se queda en el rango equivocado.",
+      "referencia": {
+        "apartado": "9. Las garantías de los derechos",
+        "norma": "Constitución Española",
+        "articulo": "arts. 53.1 y 81.1"
+      }
+    },
+    {
+      "id": "t02-g012",
+      "tema": 2,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "Una persona acude al Defensor del Pueblo por unos hechos de los que tuvo conocimiento hace ocho meses. ¿Está dentro de plazo para presentar la queja?",
+      "opciones": [
+        "No, porque el plazo máximo es de tres meses desde el hecho que la motiva.",
+        "Sí, porque el plazo máximo es de un año desde que tuvo conocimiento de los hechos.",
+        "Sí, porque las quejas no tienen plazo y pueden presentarse en cualquier momento."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 15.1 de la LO 3/1981 da un plazo máximo de un año desde que se tuvo conocimiento de los hechos, y el artículo 15.2 añade que la queja es gratuita y no exige abogado ni procurador, pero eso no elimina el plazo. Los tres meses no son el término legal, y la ausencia de plazo confunde la gratuidad y la ausencia de formalidades con la inexistencia de un término para presentarla.",
+      "referencia": {
+        "apartado": "11. El Defensor del Pueblo",
+        "norma": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo",
+        "articulo": "art. 15"
+      }
+    }
+  ]
+}

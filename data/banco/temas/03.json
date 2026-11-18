@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "tipo": "tema",
+  "tema": 3,
+  "titulo": "Tema 3 · La Constitución Española (II): De la Corona. De las Cortes Generales. Del Gobierno y la Administración. De las relaciones entre el Gobierno y las Cortes Generales. Del Poder Judicial. De la organización territorial del Estado. Del Tribunal Constitucional. De la reforma constitucional.",
+  "preguntas": [
+    {
+      "id": "t03-g001",
+      "tema": 3,
+      "dificultad": "alta",
+      "trampa": "organo",
+      "enunciado": "¿Quién refrenda el nombramiento del Presidente del Gobierno cuando el Rey lo nombra tras la investidura?",
+      "opciones": [
+        "El Presidente del Gobierno en funciones, que refrenda todos los actos del Rey.",
+        "El Presidente del Congreso de los Diputados.",
+        "El Presidente del Senado, por ser la Cámara de representación territorial."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 64.1 reserva al Presidente del Congreso el refrendo de dos actos: la propuesta y nombramiento del Presidente del Gobierno y la disolución prevista en el artículo 99; los demás actos del Rey los refrendan el Presidente del Gobierno y, en su caso, los Ministros competentes. La primera opción olvida esas dos excepciones y la tercera confunde al Presidente del Senado con el del Congreso, que es quien refrenda: el Senado no interviene en la investidura.",
+      "referencia": {
+        "apartado": "3.2. El refrendo: quién responde",
+        "norma": "Constitución Española",
+        "articulo": "art. 64.1"
+      }
+    },
+    {
+      "id": "t03-g002",
+      "tema": 3,
+      "dificultad": "media",
+      "trampa": "jerarquia",
+      "enunciado": "¿Cómo se resuelven las abdicaciones, las renuncias y las dudas de hecho o de derecho que ocurran en el orden de sucesión a la Corona?",
+      "opciones": [
+        "Por real decreto acordado en Consejo de Ministros y refrendado por el Presidente del Gobierno.",
+        "Por acuerdo de la Diputación Permanente del Congreso de los Diputados.",
+        "Por ley orgánica de las Cortes Generales."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 57.5 remite expresamente esas cuestiones a una ley orgánica, no a una norma reglamentaria ni a un acuerdo de una comisión parlamentaria. El real decreto es norma del Gobierno y no puede ordenar la sucesión a la Corona, que exige rango de ley; y la Diputación Permanente solo asume las facultades de la Cámara cuando está disuelta o ha expirado su mandato, no la potestad legislativa plena.",
+      "referencia": {
+        "apartado": "3.3. Sucesión, regencia y tutela",
+        "norma": "Constitución Española",
+        "articulo": "art. 57.5"
+      }
+    },
+    {
+      "id": "t03-g003",
+      "tema": 3,
+      "dificultad": "media",
+      "trampa": "organo",
+      "enunciado": "Un diputado es citado como investigado por un delito cometido durante su mandato que no es flagrante. ¿Qué exige la Constitución?",
+      "opciones": [
+        "Nada: la inviolabilidad parlamentaria impide cualquier actuación judicial contra un diputado.",
+        "Solo que el juez lo comunique después al Presidente del Congreso.",
+        "La previa autorización de la Cámara y que la causa la conozca la Sala de lo Penal del Tribunal Supremo."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 71.2 exige la previa autorización de la Cámara respectiva para inculpar o procesar a un diputado o senador, y el artículo 71.3 atribuye esas causas a la Sala de lo Penal del Tribunal Supremo. La inviolabilidad del artículo 71.1 cubre solo las opiniones manifestadas en el ejercicio de sus funciones, no cualquier delito, y la simple comunicación posterior no sustituye la autorización previa.",
+      "referencia": {
+        "apartado": "4.1. Estatuto del parlamentario",
+        "norma": "Constitución Española",
+        "articulo": "art. 71"
+      }
+    },
+    {
+      "id": "t03-g004",
+      "tema": 3,
+      "dificultad": "baja",
+      "trampa": "ninguna",
+      "enunciado": "¿Cuál es el número mínimo de miembros de la Diputación Permanente de cada una de las Cámaras?",
+      "opciones": [
+        "Veintiuno.",
+        "Quince.",
+        "Veinticinco."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 78.1 fija un mínimo de veintiún miembros en cada Cámara, en proporción a los grupos parlamentarios y presidida por el Presidente de la Cámara. Quince y veinticinco no son las cifras del precepto: se ofrecen para que la respuesta no se pueda deducir por tamaño, sino que haya que recordar el número exacto.",
+      "referencia": {
+        "apartado": "4.2. Funcionamiento",
+        "norma": "Constitución Española",
+        "articulo": "art. 78.1"
+      }
+    },
+    {
+      "id": "t03-g005",
+      "tema": 3,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "Un proyecto de ley llega al Senado. ¿Cuánto tiempo tiene el Senado para oponer veto o introducir enmiendas?",
+      "opciones": [
+        "Un mes, o diez días naturales si el proyecto se declara urgente.",
+        "Dos meses, o veinte días naturales si el proyecto se declara urgente.",
+        "Tres meses, o treinta días hábiles si el proyecto se declara urgente."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 90.2 da al Senado dos meses desde la recepción del texto para vetarlo o enmendarlo, y el artículo 90.3 reduce el plazo a veinte días naturales cuando el proyecto se declara urgente por el Gobierno o por el Congreso. Un mes, tres meses y treinta días hábiles no aparecen en el precepto; además, el veto exige mayoría absoluta del Senado y, si se interpone, el Congreso puede ratificar el texto por mayoría absoluta.",
+      "referencia": {
+        "apartado": "5.2. El recorrido de un proyecto de ley",
+        "norma": "Constitución Española",
+        "articulo": "art. 90"
+      }
+    },
+    {
+      "id": "t03-g006",
+      "tema": 3,
+      "dificultad": "alta",
+      "trampa": "plazo",
+      "enunciado": "¿En qué plazo debe someterse un decreto-ley a debate y votación de totalidad en el Congreso de los Diputados?",
+      "opciones": [
+        "En los quince días siguientes a su publicación, que es el plazo de sanción.",
+        "En los veinte días siguientes a su promulgación, sin posibilidad de tramitarlo como proyecto de ley.",
+        "En los treinta días siguientes a su promulgación, y en ese plazo las Cortes pueden tramitarlo como proyecto de ley por el procedimiento de urgencia."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 86.2 impone el debate y votación de totalidad en el Congreso dentro de los treinta días siguientes a la promulgación del decreto-ley y permite que, en ese mismo plazo, las Cortes lo tramiten como proyecto de ley por el procedimiento de urgencia. Quince días es el plazo de sanción del artículo 91 y veinte días naturales es el plazo del Senado en los proyectos urgentes: son cifras del procedimiento legislativo ordinario que aquí no se aplican.",
+      "referencia": {
+        "apartado": "5.3. Las normas con rango de ley del Gobierno",
+        "norma": "Constitución Española",
+        "articulo": "art. 86.2"
+      }
+    },
+    {
+      "id": "t03-g007",
+      "tema": 3,
+      "dificultad": "media",
+      "trampa": "mayoria",
+      "enunciado": "Si el candidato a la Presidencia del Gobierno no obtiene la mayoría absoluta del Congreso en la primera votación de investidura, ¿qué ocurre?",
+      "opciones": [
+        "La misma propuesta se somete a nueva votación cuarenta y ocho horas después y basta la mayoría simple.",
+        "El candidato queda rechazado y el Rey debe proponer otro de inmediato, sin segunda votación.",
+        "Se abre un plazo de un mes para que negocie y vuelva a votarse con mayoría absoluta."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 99.3 ordena repetir la votación cuarenta y ocho horas después de la primera y, en esa segunda vuelta, la confianza se entiende otorgada con la mayoría de los votos emitidos, es decir, mayoría simple. El candidato no queda rechazado sin más, porque la segunda votación sigue siendo sobre su misma propuesta; y el plazo de dos meses del artículo 99.5 no sirve para negociar, sino que es el tiempo que debe transcurrir sin investidura para que el Rey disuelva las Cámaras.",
+      "referencia": {
+        "apartado": "7.2. La investidura",
+        "norma": "Constitución Española",
+        "articulo": "art. 99"
+      }
+    },
+    {
+      "id": "t03-g008",
+      "tema": 3,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Cuál de estos límites impide al Presidente del Gobierno proponer la disolución de las Cámaras?",
+      "opciones": [
+        "Que esté en trámite una moción de censura.",
+        "Que el Congreso haya rechazado una cuestión de confianza en la misma legislatura.",
+        "Que hayan transcurrido menos de seis meses desde la disolución anterior."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 115.2 prohíbe presentar la propuesta de disolución mientras esté en trámite una moción de censura, y el 115.3 impide una nueva disolución antes de que transcurra un año desde la anterior, salvo la del artículo 99.5. Rechazada una cuestión de confianza el Presidente debe presentar su dimisión, así que ese dato no limita la disolución, y el plazo es de un año, no de seis meses.",
+      "referencia": {
+        "apartado": "8.2. La disolución de las Cámaras",
+        "norma": "Constitución Española",
+        "articulo": "art. 115"
+      }
+    },
+    {
+      "id": "t03-g009",
+      "tema": 3,
+      "dificultad": "media",
+      "trampa": "mayoria",
+      "enunciado": "¿Cómo se reparte la elección de los veinte vocales del Consejo General del Poder Judicial?",
+      "opciones": [
+        "Diez entre jueces y magistrados y diez entre juristas, todos por mayoría absoluta de cada Cámara.",
+        "Doce entre jueces y magistrados, cuatro a propuesta del Congreso y cuatro a propuesta del Senado, estos ocho por mayoría de tres quintos entre juristas de reconocida competencia.",
+        "Doce entre jueces y magistrados y ocho entre juristas designados por el Rey a propuesta del Ministro de Justicia."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 122.3 compone el Consejo con el Presidente del Tribunal Supremo y veinte vocales nombrados por el Rey por cinco años: doce entre jueces y magistrados de todas las categorías y cuatro a propuesta del Congreso más cuatro a propuesta del Senado, elegidos estos ocho por mayoría de tres quintos entre abogados y otros juristas con más de quince años de ejercicio. La primera opción reparte por mitades y la tercera convierte a los juristas en designación del Gobierno, que no elige a ningún vocal.",
+      "referencia": {
+        "apartado": "9.2. El gobierno del Poder Judicial",
+        "norma": "Constitución Española",
+        "articulo": "art. 122.3"
+      }
+    },
+    {
+      "id": "t03-g010",
+      "tema": 3,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "Una Comunidad Autónoma no cumple las obligaciones que la Constitución y las leyes le imponen. ¿Qué necesita el Gobierno para aplicar el artículo 155?",
+      "opciones": [
+        "La previa autorización del Congreso de los Diputados por mayoría absoluta.",
+        "Solo el requerimiento previo al Presidente de la Comunidad, sin intervención de ninguna Cámara.",
+        "El requerimiento previo al Presidente de la Comunidad y, si no es atendido, la aprobación por mayoría absoluta del Senado."
+      ],
+      "correcta": 2,
+      "explicacion": "El artículo 155.1 exige requerir primero al Presidente de la Comunidad y, si no atiende el requerimiento, contar con la aprobación por mayoría absoluta del Senado; con ella el Gobierno adopta las medidas necesarias y da instrucciones a las autoridades de la Comunidad. El Congreso no interviene en este trámite, de modo que la primera opción atribuye la mayoría a la Cámara equivocada, y el requerimiento no basta por sí solo: es presupuesto de la aprobación, no sustituto.",
+      "referencia": {
+        "apartado": "10.6. Leyes del artículo 150 y control",
+        "norma": "Constitución Española",
+        "articulo": "art. 155"
+      }
+    },
+    {
+      "id": "t03-g011",
+      "tema": 3,
+      "dificultad": "baja",
+      "trampa": "plazo",
+      "enunciado": "¿Cuántos miembros tiene el Tribunal Constitucional y cada cuánto tiempo se renueva por terceras partes?",
+      "opciones": [
+        "Doce miembros, con renovación por terceras partes cada tres años.",
+        "Nueve miembros, con renovación por terceras partes cada tres años.",
+        "Doce miembros, con renovación por mitades cada seis años."
+      ],
+      "correcta": 0,
+      "explicacion": "El artículo 159.1 fija doce miembros nombrados por el Rey, y el 159.3 añade un mandato de nueve años con renovación por terceras partes cada tres años. Los nueve son años de mandato, no número de miembros, y la renovación no es por mitades ni cada seis años; el Presidente, además, se nombra por un periodo de tres años.",
+      "referencia": {
+        "apartado": "11. El Tribunal Constitucional",
+        "norma": "Constitución Española",
+        "articulo": "arts. 159 y 160"
+      }
+    },
+    {
+      "id": "t03-g012",
+      "tema": 3,
+      "dificultad": "alta",
+      "trampa": "mayoria",
+      "enunciado": "¿Qué procedimiento exige reformar el capítulo II, sección 1.ª, del título I de la Constitución?",
+      "opciones": [
+        "El artículo 167: tres quintos de cada Cámara y referéndum potestativo si lo pide una décima parte de los miembros de cualquiera de las Cámaras.",
+        "El artículo 168: dos tercios de cada Cámara, disolución inmediata de las Cortes, ratificación por dos tercios de las Cámaras nuevas y referéndum obligatorio.",
+        "El artículo 150.3: una ley de armonización aprobada por mayoría absoluta de cada Cámara."
+      ],
+      "correcta": 1,
+      "explicacion": "El artículo 168.1 se aplica a la revisión total y a la parcial que afecte al título preliminar, al capítulo II sección 1.ª del título I o al título II, y añade disolución inmediata de las Cámaras y referéndum obligatorio. El artículo 167 es la vía general y aquí no sirve, aunque la descripción de sus mayorías sea exacta: es el señuelo. El artículo 150.3 regula las leyes de armonización, que no reforman la Constitución.",
+      "referencia": {
+        "apartado": "12. La reforma constitucional",
+        "norma": "Constitución Española",
+        "articulo": "arts. 167 y 168"
+      }
+    }
+  ]
+}

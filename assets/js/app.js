@@ -2,6 +2,8 @@
 // Sin dependencias ni compilación: módulos ES nativos sobre GitHub Pages.
 
 const RUTA_PROGRAMA = 'data/programa/programa.json';
+const RUTA_BANCO = 'data/banco/index.json';
+const RUTA_EXAMENES = 'data/examenes/index.json';
 
 /** Carga y memoiza el programa oficial. */
 let promesaPrograma = null;
@@ -48,16 +50,40 @@ const ICONOS_BLOQUE = {
       </svg>`,
 };
 
+/**
+ * Cuenta las preguntas disponibles sin descargar un solo banco: los dos manifiestos
+ * ya declaran el recuento de cada fichero. Si uno no se puede leer, su cifra se
+ * omite en la portada en lugar de enseñar un cero que no es verdad.
+ */
+async function contarPreguntas() {
+  const leer = (ruta) =>
+    fetch(ruta)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+
+  const [banco, examenes] = await Promise.all([leer(RUTA_BANCO), leer(RUTA_EXAMENES)]);
+  const suma = (documento, clave) =>
+    (documento?.[clave] ?? []).reduce((total, entrada) => total + (Number(entrada.preguntas) || 0), 0);
+
+  return { propias: suma(banco, 'bancos'), oficiales: suma(examenes, 'examenes') };
+}
+
 export async function pintarPortada(contenedor) {
   const programa = await cargarPrograma();
   const temas = temasDe(programa);
+  const preguntas = await contarPreguntas();
 
   const resumen = document.getElementById('resumen');
   if (resumen) {
-    resumen.innerHTML = `
-      <li><strong>${temas.length}</strong> temas oficiales</li>
-      <li><strong>${programa.bloques.length}</strong> bloques</li>
-      <li>Convocatoria <strong>${programa.convocatoria}</strong></li>`;
+    const cifras = [`<li><strong>${temas.length}</strong> temas</li>`];
+    if (preguntas.propias) {
+      cifras.push(`<li><strong>${preguntas.propias}</strong> preguntas propias</li>`);
+    }
+    if (preguntas.oficiales) {
+      cifras.push(`<li><strong>${preguntas.oficiales}</strong> de examen oficial</li>`);
+    }
+    cifras.push(`<li>Convocatoria <strong>${programa.convocatoria}</strong></li>`);
+    resumen.innerHTML = cifras.join('');
   }
 
   const fuente = document.getElementById('fuente');

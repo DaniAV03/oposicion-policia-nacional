@@ -305,6 +305,31 @@ code {
   min-width: 0;
 }
 
+/* Antetítulo: dice de qué va la web antes del titular, para que la portada se lea
+   como la portada de un producto y no como un párrafo suelto. */
+.heroe__etiqueta {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+/* La portada tiene que decir por dónde se empieza. El botón cálido es la acción
+   principal; al lado va el enlace al test, que es la otra puerta de entrada. */
+.heroe__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.15rem;
+  margin: 1.5rem 0 0;
+}
+
+.heroe__enlace {
+  font-weight: 600;
+}
+
 .heroe__entradilla {
   max-width: var(--medida-texto);
   color: var(--texto-suave);

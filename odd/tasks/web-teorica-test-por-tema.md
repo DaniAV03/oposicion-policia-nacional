@@ -55,9 +55,19 @@ Stack sin cambios: HTML + CSS + módulos ES nativos, sin build, en GitHub Pages.
 - T2 · S9 · inline · Paleta azul pastel mate en los tokens de `style.css`, con contraste
   verificado. Hecho en `e2c078e`: base fría, ilustraciones remapeadas, cuatro tokens
   `--sobre-*` y `scripts/verificar-contraste.mjs` como cuarta puerta del build.
-- T3 · S3,S5,S6 · inline · Esquema del banco, manifiesto y `scripts/verificar-banco.mjs`.
+- T3 · S3,S5,S6 · inline · Esquema del banco, manifiesto y `scripts/verificar-banco.mjs`. Hecho
+  en `869e6ff`: esquema en `data/banco/ESQUEMA.md`, manifiesto vacío y verificador con
+  autoprueba de 18 casos, ya como quinta puerta del build.
+
+Nota de esquema: los temas no tienen anclas por sección (solo dos figuras llevan `id`), así
+que `referencia.apartado` cita el **texto exacto de un `<h2>` o `<h3>`** del tema y el
+verificador comprueba que existe. Añadir anclas a los 45 temas queda para cuando T9
+necesite enlazar a un apartado concreto.
 - T4 · S3 · inline · Piloto de contenido: 3 temas (uno por bloque) × 12 preguntas, a
-  revisión del dueño antes de seguir.
+  revisión del dueño antes de seguir. Hecho en `cdc068d`: temas 1, 27 y 38, 36 preguntas.
+  Reparto 4-4-4 de opción correcta y 4-4-4 de dificultad en cada tema. **La revisión del
+  dueño es la puerta de T6**: no se escriben las 42 tandas restantes hasta que apruebe el
+  patrón.
 - T5 · S4 · inline · Portada de Test con dos accesos y las páginas de oficiales y no
   oficiales.
 - T6 · S3 · worker · Resto de temas en tandas de 6-8, con revisión por tanda.

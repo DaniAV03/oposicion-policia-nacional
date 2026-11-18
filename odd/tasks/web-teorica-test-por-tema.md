@@ -75,10 +75,23 @@ necesite enlazar a un apartado concreto.
   profundos `?convocatoria=2021`, `?tema=1` y `?tema=mezcla`; la `explicacion` se muestra en la
   corrección y en el repaso cuando la pregunta la trae. `tema.html` recibió el `aria-current`
   que le faltaba.
-- T6 · S3 · worker · Resto de temas en tandas de 6-8, con revisión por tanda.
-- T7 · S6 · worker · Banco no oficial mezclado, cruzando temas.
-- T8 · S7 · inline · Panel de puntos débiles y alertas.
-- T9 · S8 · inline · Lectura en voz alta del tema.
+- T6 · S3 · worker · Resto de temas en tandas. Hecho en seis confirmaciones: `cad6ee6` (2-7),
+  `5b9eb49` (8-15), `1855ecb` (16-23), `cb6e7c4` (24-32), `03cbffb` (33-41) y `eff0726`
+  (42-45). Los 45 temas tienen sus 12 preguntas: 540 en total, todas con apartado existente,
+  reparto 4-4-4 y explicación docente. Sin revisión humana por tanda (L5).
+- T7 · S6 · worker · Banco no oficial mezclado, cruzando temas. Hecho en `0c19847`: 120
+  preguntas en `data/banco/mezcladas/mezcla.json`, cada una cruzando dos temas, ninguna de
+  dificultad baja, y reparto de los 45 temas entre los cruces.
+- T8 · S7 · inline · Panel de puntos débiles y alertas. Hecho en `8b56f88`: campo aditivo
+  `porPregunta` en el almacén de siempre, `assets/js/diagnostico.js` sin DOM, umbrales
+  exportados y panel en `no-oficiales.html`. `verificar-test.mjs` pasa de 98 a 128
+  comprobaciones.
+- T9 · S8 · inline · Lectura en voz alta del tema. Hecho en `3128a3f`: `assets/js/tema-lectura.js`
+  con `SpeechSynthesis`, por frases, sin audio ni servicio, con posición recordada por tema.
+
+Corrección encontrada por el contenido: `b35d28e` arregla el verificador del banco, que al
+pasar las opciones a minúsculas marcaba como duplicadas dos opciones de una pregunta de
+ortografía que sólo se diferenciaban en la mayúscula.
 
 ## Entrega
 
@@ -153,3 +166,13 @@ que bloqueaba T6 se levanta y las 42 tandas se escriben seguidas. El riesgo de c
 (ningún test automático detecta una pregunta jurídicamente falsa) queda **asumido y
 diferido**, no eliminado: lo que protege mientras tanto es el verificador —forma, apartado
 existente, enunciado no copiado del oficial— y el repintado de apartados de este documento.
+
+### L6 — cerrada la función: todo el plan implementado
+
+Estado al cerrar: 45 temas con 12 preguntas cada uno, 120 mezcladas cruzando temas, portada de
+Test con dos accesos, paleta nueva con contraste verificado, diagnóstico de puntos débiles y
+lectura en voz alta. Cinco puertas de build en verde: estructura, exámenes oficiales (200),
+motor de test (128 comprobaciones), banco propio (660 preguntas) y contraste.
+
+Pendiente y fuera de esta función: la revisión humana del contenido jurídico, que el dueño ha
+diferido a la prueba final con un tercero (L5), y publicar en `main`, que decide el dueño.

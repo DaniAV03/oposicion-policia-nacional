@@ -19,17 +19,6 @@ export const buscarTema = (programa, numero) =>
 
 const dosDigitos = (n) => String(n).padStart(2, '0');
 
-/** Comprueba si un tema ya tiene contenido publicado (sin pedir el HTML). */
-export async function temaPublicado(tema) {
-  if (!tema) return false;
-  try {
-    const r = await fetch(tema.ruta, { method: 'HEAD' });
-    return r.ok;
-  } catch {
-    return false;
-  }
-}
-
 /* --- Portada --------------------------------------------------------------- */
 
 /* Iconos de los tres bloques del programa. Son SVG dibujados a mano, de 24×24,
@@ -63,15 +52,11 @@ export async function pintarPortada(contenedor) {
   const programa = await cargarPrograma();
   const temas = temasDe(programa);
 
-  const publicados = await Promise.all(temas.map(temaPublicado));
-  const totalPublicados = publicados.filter(Boolean).length;
-
   const resumen = document.getElementById('resumen');
   if (resumen) {
     resumen.innerHTML = `
       <li><strong>${temas.length}</strong> temas oficiales</li>
       <li><strong>${programa.bloques.length}</strong> bloques</li>
-      <li><strong>${totalPublicados}</strong> publicados</li>
       <li>Convocatoria <strong>${programa.convocatoria}</strong></li>`;
   }
 
@@ -89,19 +74,13 @@ export async function pintarPortada(contenedor) {
     // El tinte de la banda del encabezado se resuelve en CSS con este atributo.
     seccion.dataset.bloque = bloque.id;
 
-    const publicadosBloque = bloque.temas.filter(
-      (t) => publicados[temas.indexOf(t)],
-    ).length;
-
     seccion.innerHTML = `
       <div class="bloque__cabecera">
         <span class="bloque__icono-marco" aria-hidden="true">${ICONOS_BLOQUE[bloque.id] ?? ''}</span>
         <div class="bloque__titulo-grupo">
           <span class="bloque__etiqueta">Bloque ${bloque.id}</span>
           <h2>${bloque.nombre}</h2>
-          <span class="bloque__cuenta">
-            ${bloque.temas.length} temas · ${publicadosBloque} publicados
-          </span>
+          <span class="bloque__cuenta">${bloque.temas.length} temas</span>
         </div>
         <img
           class="bloque__ilustracion"
@@ -119,17 +98,13 @@ export async function pintarPortada(contenedor) {
     lista.className = 'temas';
 
     for (const tema of bloque.temas) {
-      const publicado = publicados[temas.indexOf(tema)];
       const item = document.createElement('li');
 
-      const etiqueta = publicado ? 'a' : 'div';
-      const enlace = document.createElement(etiqueta);
-      enlace.className = publicado ? 'tema' : 'tema tema--pendiente';
-      if (publicado) {
-        enlace.href = `tema.html?n=${tema.numero}`;
-      } else {
-        enlace.setAttribute('aria-disabled', 'true');
-      }
+      /* Todos los temas están escritos: la tarjeta es siempre un enlace a la
+         vista del tema, sin insignia de estado ni recuento de publicados. */
+      const enlace = document.createElement('a');
+      enlace.className = 'tema';
+      enlace.href = `tema.html?n=${tema.numero}`;
 
       enlace.innerHTML = `
         <span class="tema__numero" aria-hidden="true">${dosDigitos(tema.numero)}</span>
@@ -138,9 +113,6 @@ export async function pintarPortada(contenedor) {
             <span class="visualmente-oculto">Tema ${tema.numero}: </span>${escapar(tema.titulo)}
           </span>
           <span class="tema__epigrafe">${escapar(tema.epigrafe)}</span>
-          <span class="tema__estado" data-estado="${publicado ? 'publicado' : 'pendiente'}">
-            ${publicado ? 'Publicado' : 'En preparación'}
-          </span>
         </span>`;
 
       item.appendChild(enlace);
@@ -198,24 +170,9 @@ export async function pintarTema() {
   document.getElementById('epigrafe-tema').innerHTML =
     `<strong>Epígrafe oficial</strong>${escapar(tema.epigrafe)}`;
 
-  const publicada = await temaPublicado(tema);
-
-  if (!publicada) {
-    articulo.querySelector('#contenido').innerHTML = `
-      <div class="pendiente">
-        <h2>Este tema aún no está desarrollado</h2>
-        <p>El epígrafe oficial está arriba y es el que hay que cubrir. El texto de estudio se
-        redacta desde la normativa vigente, sin copiar temarios comerciales, así que se publica
-        tema a tema.</p>
-        <p>Mientras tanto puedes consultar la legislación que lo sustenta en el
-        <a href="https://www.boe.es/biblioteca_juridica/" rel="noopener noreferrer">BOE</a>.</p>
-      </div>`;
-    lateral.hidden = true;
-  } else {
-    const html = await fetch(tema.ruta).then((r) => r.text());
-    articulo.querySelector('#contenido').innerHTML = html;
-    construirIndiceLateral(articulo.querySelector('#contenido'), lateral);
-  }
+  const html = await fetch(tema.ruta).then((r) => r.text());
+  articulo.querySelector('#contenido').innerHTML = html;
+  construirIndiceLateral(articulo.querySelector('#contenido'), lateral);
 
   normalizarEnlaces(articulo);
   pintarPaginacion(temas, tema);

@@ -14,7 +14,6 @@
 // se puedan perder por salir, no hay avisos de «no pierdas tu progreso» y el
 // resultado propone parar cuando la sesión ha sido larga.
 
-import { normalizarEnlaces } from './app.js';
 import {
   CLAVE_ALMACENAMIENTO,
   PENALIZACION_POR_DEFECTO,
@@ -267,23 +266,20 @@ function pintarInicio() {
     $('filtro-convocatoria').value = convocatoriaPrevia;
   }
 
-  const fuentes = estado.bancos.map((banco) => {
-    const item = crear('li', {
-      texto: `Convocatoria ${banco.convocatoria} · promoción ${banco.promocion} — ${banco.preguntas.length} preguntas. `,
-    });
-    if (typeof banco.fuente === 'string' && /^https?:/i.test(banco.fuente)) {
-      item.append(
-        crear('a', {
-          texto: 'Cuestionario oficial',
-          atributos: { href: banco.fuente, rel: 'noopener noreferrer' },
-        }),
-      );
-    }
-    return item;
-  });
+  // Attribution stays in text, naming the issuing body; the page never renders a link to the
+  // questionnaire file, so the hosting site of the PDF is not exposed (see L26). Provenance URLs
+  // remain in data/examenes/FUENTES.md and in the `fuente` field of each bank, which the page does
+  // not render.
+  const fuentes = estado.bancos.map((banco) =>
+    crear('li', {
+      texto:
+        `Convocatoria ${banco.convocatoria} · promoción ${banco.promocion} — ` +
+        `${banco.preguntas.length} preguntas. Cuestionario de la Dirección General de la Policía, ` +
+        'Área de Procesos Selectivos.',
+    }),
+  );
   $('lista-fuentes').replaceChildren(...fuentes);
   $('fuentes-banco').hidden = false;
-  normalizarEnlaces($('fuentes-banco'));
 
   alternarConfirmacionBorrado(false, { enfocar: false });
   pintarHistorial();

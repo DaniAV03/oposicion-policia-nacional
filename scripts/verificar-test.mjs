@@ -580,6 +580,25 @@ seccion('Comparación y parada', () => {
   );
 });
 
+/* --- Atribución del banco -------------------------------------------------- */
+
+// Comprobación estática de la página: no hay navegador en este repositorio, así que se
+// inspecciona el código que se sirve al cliente. La atribución es obligatoria (Ley 37/2007),
+// pero el enlace al fichero del cuestionario no debe renderizarse (L26).
+const RUTA_PAGINA_TEST = 'assets/js/test.js';
+const codigoPaginaTest = await readFile(RUTA_PAGINA_TEST, 'utf8');
+
+seccion('Atribución del banco en la página de test', () => {
+  comprobar(
+    'la página no enlaza el fichero del cuestionario',
+    !/href:\s*banco\.fuente/.test(codigoPaginaTest) && !/https?:\/\/infopol/i.test(codigoPaginaTest),
+  );
+  comprobar(
+    'la atribución nombra al organismo que publica el cuestionario',
+    codigoPaginaTest.includes('Dirección General de la Policía'),
+  );
+});
+
 /* --- Informe --------------------------------------------------------------- */
 
 console.log('');

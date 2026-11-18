@@ -143,6 +143,15 @@ const pares = [
   ['--sobre-clave', '--clave-borde', TEXTO, 'número de la opción acertada'],
   ['--aviso-borde', '--aviso-fondo', TEXTO, 'aviso sobre su tinte'],
   ['--aviso-borde', '--fondo', TEXTO, 'aviso sobre el fondo'],
+  ['--texto', '--bloque-a-fondo', TEXTO, 'título del bloque A sobre su lavado'],
+  ['--texto-suave', '--bloque-a-fondo', TEXTO, 'texto secundario del bloque A'],
+  ['--acento', '--bloque-a-fondo', TEXTO, 'etiqueta del bloque A sobre su lavado'],
+  ['--texto', '--bloque-b-fondo', TEXTO, 'título del bloque B sobre su lavado'],
+  ['--texto-suave', '--bloque-b-fondo', TEXTO, 'texto secundario del bloque B'],
+  ['--ambar-oscuro', '--bloque-b-fondo', TEXTO, 'etiqueta del bloque B sobre su lavado'],
+  ['--texto', '--bloque-c-fondo', TEXTO, 'título del bloque C sobre su lavado'],
+  ['--texto-suave', '--bloque-c-fondo', TEXTO, 'texto secundario del bloque C'],
+  ['--verde-oscuro', '--bloque-c-fondo', TEXTO, 'etiqueta del bloque C sobre su lavado'],
   ['--ambar-oscuro', '--fondo', TEXTO, 'acento del bloque de Ciencias Sociales'],
   ['--verde-oscuro', '--fondo', TEXTO, 'acento del bloque Técnico-Científico'],
 ];
@@ -155,6 +164,8 @@ const paresOscuro = [
   ...pares.filter(([fondo]) => !['--ambar-oscuro', '--verde-oscuro'].includes(fondo)),
   ['--ambar', '--fondo', TEXTO, 'acento del bloque de Ciencias Sociales'],
   ['--verde', '--fondo', TEXTO, 'acento del bloque Técnico-Científico'],
+  ['--ambar', '--bloque-b-fondo', TEXTO, 'etiqueta del bloque B sobre su lavado'],
+  ['--verde', '--bloque-c-fondo', TEXTO, 'etiqueta del bloque C sobre su lavado'],
 ];
 
 /* --- Verificación --------------------------------------------------------- */

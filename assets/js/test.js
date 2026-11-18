@@ -70,7 +70,7 @@ const MODOS_CON_MARCA = ['corta', 'media', 'completa', 'examen'];
 const NOMBRE_MODO = {
   corta: 'Sesión corta',
   media: 'Sesión media',
-  completa: 'Banco completo',
+  completa: 'Examen completo',
   examen: 'Examen con tiempo',
   reto: 'Reto del día',
 };
@@ -212,7 +212,7 @@ async function iniciar() {
           ? 'el índice no declara ninguna convocatoria'
           : 'el índice no declara ningún banco';
       mostrarEstado(
-        `No se pudo cargar ningún banco de preguntas: ${detalle}. Comprueba la conexión y recarga la página.`,
+        `No se pudieron cargar las preguntas: ${detalle}. Comprueba la conexión y recarga la página.`,
         'error',
       );
       return;
@@ -223,14 +223,14 @@ async function iniciar() {
 
     const pool = construirPool(bancos);
     if (pool.length === 0) {
-      mostrarEstado('Los bancos cargados no contienen ninguna pregunta válida.', 'error');
+      mostrarEstado('No hay ninguna pregunta válida en lo que se ha cargado.', 'error');
       return;
     }
 
     const resumen = bancosOrdenados()
       .map((banco) => `${etiquetaBanco(banco)}: ${banco.preguntas.length}`)
       .join(' · ');
-    const base = `Banco cargado: ${pool.length} preguntas (${resumen}).`;
+    const base = `${pool.length} preguntas cargadas (${resumen}).`;
     const aviso = errores.length
       ? ` No se pudo cargar ${errores.join(' · ')}; la sesión continúa con los bancos disponibles.`
       : '';
@@ -242,7 +242,7 @@ async function iniciar() {
   } catch (error) {
     console.error(error);
     mostrarEstado(
-      `No se pudo cargar el banco de preguntas: ${error.message} Recarga la página; si sigue igual, abre la consola del navegador para ver el detalle.`,
+      `No se pudieron cargar las preguntas: ${error.message} Recarga la página; si sigue igual, abre la consola del navegador para ver el detalle.`,
       'error',
     );
   }
@@ -426,7 +426,7 @@ function pintarInicio() {
 
   const opciones = [
     crear('option', {
-      texto: `${ES_OFICIALES ? 'Todas las convocatorias' : 'Todo el banco'} (${total} preguntas)`,
+      texto: `${ES_OFICIALES ? 'Todas las convocatorias' : 'Todas las preguntas'} (${total} preguntas)`,
       atributos: { value: '' },
     }),
   ];
@@ -539,7 +539,7 @@ function semillaAleatoria() {
 function empezarSesion() {
   const pool = poolDelFiltro();
   if (pool.length === 0) {
-    mostrarEstado('El filtro elegido no tiene preguntas en el banco. Elige otro o todos.', 'aviso');
+    mostrarEstado('El filtro elegido no tiene preguntas. Elige otro o todas.', 'aviso');
     return;
   }
 
@@ -558,7 +558,7 @@ function empezarSesion() {
 function empezarReto() {
   const pool = construirPool(estado.bancos);
   if (pool.length === 0) {
-    mostrarEstado('El banco no tiene preguntas cargadas para el reto del día.', 'aviso');
+    mostrarEstado('No hay preguntas cargadas para el reto del día.', 'aviso');
     return;
   }
 
@@ -630,7 +630,7 @@ function pintarPregunta(foco = 'enunciado') {
   pintarMarcador();
   pintarRacha();
 
-  $('origen').textContent = pregunta.origen ?? 'Pregunta del banco';
+  $('origen').textContent = pregunta.origen ?? 'Pregunta';
   $('enunciado').textContent = pregunta.enunciado;
 
   $('opciones').replaceChildren(
@@ -1091,7 +1091,7 @@ function filasPorOrigen() {
   const filas = new Map();
 
   for (const entrada of estado.intento) {
-    const origen = entrada.pregunta.origen ?? 'Banco propio';
+    const origen = entrada.pregunta.origen ?? 'Preguntas propias';
     const fila = filas.get(origen) ?? {
       origen,
       total: 0,
@@ -1158,7 +1158,7 @@ function crearRepaso() {
     const item = crear('li', { clase: 'repaso__item' }, [
       crear('p', {
         clase: 'repaso__origen',
-        texto: `${pregunta.origen ?? 'Pregunta del banco'} · ${pregunta.id} · ${enBlanco ? 'En blanco' : 'Incorrecta'}`,
+        texto: `${pregunta.origen ?? 'Pregunta'} · ${pregunta.id} · ${enBlanco ? 'En blanco' : 'Incorrecta'}`,
       }),
       crear('p', { clase: 'repaso__enunciado', texto: pregunta.enunciado }),
     ]);

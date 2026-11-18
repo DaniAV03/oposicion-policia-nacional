@@ -66,8 +66,19 @@
      La variante oscura es la que se usa sobre fondos claros; en modo oscuro los
      bloques toman el tono base, que es el luminoso, igual que --acento, y por eso
      --ambar y --verde sólo se declaran dentro del bloque de modo oscuro. */
-  --ambar-oscuro: #8a5c0c;
-  --verde-oscuro: #0f6558;
+  --ambar-oscuro: #81570a;
+  --verde-oscuro: #0c5f52;
+
+  /* Tintes de los tres bloques del temario. Cada bloque lleva su propia banda de
+     color para que el programa se lea como tres partes y no como una lista gris.
+     Viven aquí, y no dentro del selector, para que el verificador de contraste
+     pueda comprobar el texto que va encima de cada uno. */
+  --bloque-a-fondo: #dfe9f5;
+  --bloque-a-borde: #bed3e8;
+  --bloque-b-fondo: #f6ead3;
+  --bloque-b-borde: #e3cfa6;
+  --bloque-c-fondo: #dcefe7;
+  --bloque-c-borde: #b6dccd;
 
   --radio: 10px;
   --sombra: 0 1px 2px rgb(0 0 0 / 6%), 0 6px 18px rgb(0 0 0 / 5%);
@@ -104,6 +115,12 @@
     --sobre-error: #2e1208;
     --ambar: #f2b73a;
     --verde: #4fd0b8;
+    --bloque-a-fondo: #16243a;
+    --bloque-a-borde: #2a4468;
+    --bloque-b-fondo: #2c2617;
+    --bloque-b-borde: #5b4820;
+    --bloque-c-fondo: #162924;
+    --bloque-c-borde: #2b5a52;
     --sombra: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
   }
 }
@@ -237,17 +254,23 @@ code {
   letter-spacing: -0.01em;
 }
 
-.marca__sigla {
+/* Emblema de la marca: un libro abierto dibujado en SVG, con los colores del
+   tema y sin texto dentro. Se lee mejor que una sigla en caja a tamaño pequeño y
+   no finge ninguna insignia oficial: este sitio no la tiene. */
+.marca__emblema {
   display: grid;
   place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 8px;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9px;
   background: var(--acento);
   color: var(--sobre-acento);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+}
+
+.marca__emblema svg {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
 }
 
 .nav {
@@ -366,33 +389,43 @@ code {
 
 /* --- Bloques ------------------------------------------------------------- */
 
-/* Cada bloque lleva una banda tintada detrás de su encabezado, con un tinte
-   propio. La estructura y el relleno vertical son idénticos en los tres, así
-   que las tres secciones se leen como tres partes iguales del mismo programa. */
+/* Cada bloque es una sección con su propio lavado de color: el azul de las
+   Ciencias Jurídicas, la arena de las Sociales y el verde de las
+   Técnico-Científicas. Encima del lavado va la cabecera en superficie limpia, con
+   el filete del acento a la izquierda, y las tarjetas de tema en blanco. Así los
+   tres tramos se distinguen de un vistazo sin que el texto pierda contraste. */
 .bloque {
-  --bloque-fondo: var(--acento-suave);
-  --bloque-borde: var(--borde);
+  --bloque-fondo: var(--bloque-a-fondo);
+  --bloque-borde: var(--bloque-a-borde);
   --bloque-acento: var(--acento);
-  padding-block: clamp(1.8rem, 3vw, 2.6rem);
-  border-bottom: 1px solid var(--borde);
+  /* Aire propio: la banda se sale de la columna de texto lo justo para que las
+     tarjetas no toquen el borde del color, y sigue alineada con el resto. */
+  --bloque-aire: clamp(0.75rem, 2vw, 1.5rem);
+  margin-block: 1rem;
+  margin-inline: calc(-1 * var(--bloque-aire));
+  padding-block: clamp(1.4rem, 2.5vw, 2.2rem);
+  padding-inline: var(--bloque-aire);
+  background: var(--bloque-fondo);
+  border: 1px solid var(--bloque-borde);
+  border-radius: var(--radio);
 }
 
 /* Tintes por bloque en modo claro. */
 .bloque[data-bloque='A'] {
-  --bloque-fondo: #e2ecfd;
-  --bloque-borde: #c3d8f7;
+  --bloque-fondo: var(--bloque-a-fondo);
+  --bloque-borde: var(--bloque-a-borde);
   --bloque-acento: var(--acento);
 }
 
 .bloque[data-bloque='B'] {
-  --bloque-fondo: #fdf0d5;
-  --bloque-borde: #f0d9a4;
+  --bloque-fondo: var(--bloque-b-fondo);
+  --bloque-borde: var(--bloque-b-borde);
   --bloque-acento: var(--ambar-oscuro);
 }
 
 .bloque[data-bloque='C'] {
-  --bloque-fondo: #e0f5ef;
-  --bloque-borde: #bfe6dc;
+  --bloque-fondo: var(--bloque-c-fondo);
+  --bloque-borde: var(--bloque-c-borde);
   --bloque-acento: var(--verde-oscuro);
 }
 
@@ -400,20 +433,14 @@ code {
    reconocible y el acento sube de luminosidad para conservar el contraste. */
 @media (prefers-color-scheme: dark) {
   .bloque[data-bloque='A'] {
-    --bloque-fondo: #16243a;
-    --bloque-borde: #2a4468;
     --bloque-acento: var(--acento);
   }
 
   .bloque[data-bloque='B'] {
-    --bloque-fondo: #2c2617;
-    --bloque-borde: #5b4820;
     --bloque-acento: var(--ambar);
   }
 
   .bloque[data-bloque='C'] {
-    --bloque-fondo: #162924;
-    --bloque-borde: #2b5a52;
     --bloque-acento: var(--verde);
   }
 }
@@ -423,9 +450,9 @@ code {
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.85rem 1.1rem;
-  margin-bottom: 1.25rem;
-  padding: 0.9rem 1.1rem;
-  background: var(--bloque-fondo);
+  margin-bottom: 1.5rem;
+  padding: 0.95rem 1.15rem;
+  background: var(--superficie);
   border: 1px solid var(--bloque-borde);
   border-left: 4px solid var(--bloque-acento);
   border-radius: var(--radio);
@@ -519,7 +546,7 @@ code {
 .temas {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 0.75rem;
+  gap: 1rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -576,7 +603,7 @@ code {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 0.35rem 0.9rem;
   align-items: start;
-  padding: 0.95rem 1.1rem;
+  padding: 1.05rem 1.2rem;
   background: var(--superficie);
   border: 1px solid var(--borde);
   border-top: 3px solid var(--bloque-acento);
@@ -1150,13 +1177,31 @@ details > p {
    comparten un solo componente: insignia opcional, título, una línea de qué hay
    dentro y el recuento real de preguntas. La forma es la de la tarjeta de tema,
    con el filete de acento arriba, para que las dos portadas se lean igual. */
+/* Una sola rejilla para todas las tarjetas del sitio, con el mismo ritmo que la
+   lista de temas de la portada. Antes era `auto-fit`: cada grupo calculaba sus
+   propias columnas según cuántas tarjetas tuviera, así que los cuadrados de un
+   grupo de una sola tarjeta se estiraban a toda la fila y no coincidían con los
+   de un grupo de tres. Con columnas fijas, cada tarjeta mide lo mismo en todas
+   las secciones y un grupo corto deja hueco en vez de deformarse. */
 .accesos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
   padding: 0;
   margin: 0 0 1.75rem;
   list-style: none;
+}
+
+@media (min-width: 760px) {
+  .accesos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1140px) {
+  .accesos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* El li es la celda de la rejilla: la tarjeta se estira a la altura completa de
@@ -1175,7 +1220,7 @@ details > p {
   display: flex;
   gap: 0.85rem;
   align-items: flex-start;
-  padding: 0.95rem 1.1rem;
+  padding: 1.05rem 1.2rem;
   background: var(--superficie);
   border: 1px solid var(--borde);
   border-top: 3px solid var(--acento);
@@ -2182,6 +2227,16 @@ kbd {
     color: #000;
     font-size: 11pt;
     line-height: 1.45;
+  }
+
+  /* En papel el color de los bloques gasta tinta y no aporta nada: el temario se
+     imprime como texto corrido. */
+  .bloque {
+    margin-inline: 0;
+    padding-inline: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
   }
 
   .articulo {

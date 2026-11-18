@@ -58,6 +58,7 @@ const paginas = ['index.html', 'tema.html', 'test.html', 'oficiales.html', 'no-o
 const modulos = [
   'assets/js/app.js',
   'assets/js/banco.js',
+  'assets/js/tema-lectura.js',
   'assets/js/test.js',
   'assets/js/test-paginas.js',
 ];
@@ -159,6 +160,7 @@ const fuentesInterfaz = [
   'no-oficiales.html',
   'assets/js/app.js',
   'assets/js/banco.js',
+  'assets/js/tema-lectura.js',
   'assets/js/test.js',
   'assets/js/test-paginas.js',
 ];
@@ -350,6 +352,162 @@ if (moduloBanco) {
   }
 }
 
+/* --- 10. Lectura en voz alta del tema -------------------------------------- */
+
+// La lectura usa la voz del navegador (`SpeechSynthesis`): no descarga audio ni
+// habla con ningún servicio, así que las tres cosas que se pueden romper en
+// silencio son el enganche con el contenido ya pintado, el control que aparece
+// sin voz detrás y la normalización del texto. Aquí se comprueban las tres.
+// La voz y el DOM no se pueden probar sin navegador: eso queda declarado como
+// límite, no simulado.
+let moduloLectura = null;
+let resumenLectura = '';
+let nucleoTest = null;
+try {
+  const fuente = await readFile('assets/js/tema-lectura.js', 'utf8');
+  moduloLectura = await import(
+    `data:text/javascript;base64,${Buffer.from(fuente, 'utf8').toString('base64')}`,
+  );
+
+  // Sin audio de ninguna clase y sin red. Un `<audio>`, un `AudioContext` o un
+  // `fetch` aquí serían la puerta por la que entra la función equivocada.
+  const prohibidos = [
+    [/\bnew Audio\b/, 'un reproductor de audio'],
+    [/\bAudioContext\b/, 'un contexto de audio'],
+    [/https?:\/\//, 'una URL absoluta'],
+    [/\bfetch\(/, 'una petición de red'],
+    [/\.(?:mp3|ogg|wav|m4a|flac|aac)\b/i, 'un fichero de audio'],
+    [/\bXMLHttpRequest\b/, 'una petición de red'],
+  ];
+  for (const [patron, que] of prohibidos) {
+    if (patron.test(fuente)) fallo(`tema-lectura.js: la lectura no puede usar ${que}`);
+  }
+
+  const fuenteNucleo = await readFile('assets/js/test-core.js', 'utf8');
+  nucleoTest = await import(
+    `data:text/javascript;base64,${Buffer.from(fuenteNucleo, 'utf8').toString('base64')}`,
+  );
+} catch (error) {
+  fallo(`assets/js/tema-lectura.js no se puede importar sin DOM: ${error.message}`);
+}
+
+if (moduloLectura) {
+  const {
+    CLAVE_POSICION,
+    VERSION_POSICION,
+    VELOCIDADES,
+    FRASE_MAXIMA,
+    normalizarParaVoz,
+    trocearEnFrases,
+    validarPosiciones,
+  } = moduloLectura;
+
+  // La clave es propia (no comparte espacio con el progreso del test) y lleva la
+  // versión del esquema en el nombre, como la del test.
+  if (typeof CLAVE_POSICION !== 'string' || !/-v\d+$/.test(CLAVE_POSICION)) {
+    fallo('tema-lectura.js: la clave de localStorage no declara su versión');
+  }
+  if (nucleoTest && CLAVE_POSICION === nucleoTest.CLAVE_ALMACENAMIENTO) {
+    fallo('tema-lectura.js: la lectura guarda su posición en la clave del test');
+  }
+
+  // Normalización: las abreviaturas del temario se leen como palabras y las
+  // cifras quedan separadas de las letras y de los años.
+  const normalizaciones = [
+    ['el art. 14 de la Constitución', 'artículo 14'],
+    ['los arts. 3 y 4', 'artículos 3'],
+    ['el núm. 2 del formulario', 'número 2'],
+    ['la pág. 12 del temario', 'página 12'],
+    ['§ 3 de la Ley 39/2015', 'sección 3'],
+    ['los plazos (p. ej. el de un año)', 'por ejemplo'],
+    ['art.14', 'artículo 14'],
+    ['el periodo 2011-2015', '2011 a 2015'],
+  ];
+  for (const [entrada, esperado] of normalizaciones) {
+    const salida = normalizarParaVoz(entrada);
+    if (!salida.includes(esperado)) {
+      fallo(`tema-lectura.js: «${entrada}» no se normaliza a «${esperado}» (sale «${salida}»)`);
+    }
+    if (/art\.|núm\.|pág\.|§|p\. ej\./.test(salida)) {
+      fallo(`tema-lectura.js: «${entrada}» conserva la abreviatura al hablar (sale «${salida}»)`);
+    }
+  }
+
+  // Troceado: ninguna locución pasa del tope (Chrome corta o se queda mudo con
+  // textos largos), no salen frases vacías y un párrafo sin puntuación también
+  // se parte.
+  const dosFrases = trocearEnFrases(
+    'El plazo general es de un año. Para la nacionalidad por residencia hay que esperar diez años.',
+  );
+  if (dosFrases.length !== 2) {
+    fallo(`tema-lectura.js: dos frases deberían dar dos locuciones y dan ${dosFrases.length}`);
+  }
+  if (trocearEnFrases('').length !== 0) fallo('tema-lectura.js: un texto vacío debería dar cero frases');
+
+  const parrafoLargo = 'palabra '.repeat(120).trim();
+  const trozosLargos = trocearEnFrases(parrafoLargo);
+  if (trozosLargos.length < 2) fallo('tema-lectura.js: un párrafo largo debería trocearse en varias frases');
+  const demasiadoLarga = trozosLargos.find((t) => t.length > FRASE_MAXIMA);
+  if (demasiadoLarga) {
+    fallo(`tema-lectura.js: una locución de ${demasiadoLarga.length} caracteres pasa del tope ${FRASE_MAXIMA}`);
+  }
+  if (trozosLargos.some((t) => !t.trim())) fallo('tema-lectura.js: el troceado produce frases vacías');
+
+  // Posición guardada: un dato de otra versión, de otro tema o fuera de rango se
+  // descarta en vez de romper la página.
+  const bueno = { version: VERSION_POSICION, temas: { '7': { frase: 4, total: 20 } } };
+  if (!validarPosiciones(bueno)?.['7']) fallo('tema-lectura.js: se descarta una posición válida');
+  if (validarPosiciones({ ...bueno, version: VERSION_POSICION + 1 }) !== null) {
+    fallo('tema-lectura.js: una posición de otra versión debería descartarse');
+  }
+  if (validarPosiciones({ version: VERSION_POSICION, temas: { '7': { frase: 20, total: 20 } } })?.['7']) {
+    fallo('tema-lectura.js: una posición al final del tema debería descartarse');
+  }
+  if (validarPosiciones({ version: VERSION_POSICION, temas: { tema: { frase: 1, total: 20 } } })?.['tema']) {
+    fallo('tema-lectura.js: una clave de tema no numérica debería descartarse');
+  }
+
+  // El control: nace oculto (un navegador sin voz no pinta un botón muerto), se
+  // anuncia como pulsable y ofrece las tres velocidades. Además, la CSP de la
+  // página prohíbe el código y el estilo incrustados: aquí no puede haber ni uno.
+  const htmlTema = await readFile('tema.html', 'utf8');
+  const etiquetaPanel = htmlTema.match(/<section[^>]*\bid="escucha"[^>]*>/)?.[0] ?? '';
+  if (!etiquetaPanel) fallo('tema.html: falta el control de lectura en voz alta');
+  else if (!/\shidden(?:\s|>)/.test(etiquetaPanel)) {
+    fallo('tema.html: el control de lectura debe nacer oculto y descubrirse sólo con voz disponible');
+  }
+  if (!/id="escucha-boton"[^>]*aria-pressed="false"/.test(htmlTema)) {
+    fallo('tema.html: el botón de lectura no declara su estado con aria-pressed');
+  }
+  if (/<script(?![^>]*\bsrc=)/i.test(htmlTema)) {
+    fallo('tema.html: hay un script incrustado y la CSP sólo permite script-src \'self\'');
+  }
+  if (/<style[\s>]/i.test(htmlTema) || /\sstyle="/i.test(htmlTema)) {
+    fallo('tema.html: hay CSS incrustado y la CSP sólo permite style-src \'self\'');
+  }
+
+  const velocidades = [...htmlTema.matchAll(/name="escucha-velocidad"[^>]*value="([\d.]+)"/g)].map(
+    (m) => Number(m[1]),
+  );
+  if (velocidades.join() !== VELOCIDADES.join()) {
+    fallo(
+      `tema.html: las velocidades ofrecidas (${velocidades.join(', ')}) no son las del módulo (${VELOCIDADES.join(', ')})`,
+    );
+  }
+
+  // El enganche: la lectura recoge el tema después de que `pintarTema` lo haya
+  // pintado. Si se llamara antes, no habría texto que leer.
+  const arranque = await readFile('assets/js/tema-inicio.js', 'utf8');
+  if (!/from '\.\/tema-lectura\.js'/.test(arranque)) {
+    fallo('tema-inicio.js: no importa el módulo de lectura en voz alta');
+  }
+  if (!/pintarTema\(\)[\s\S]*iniciarLectura\(/.test(arranque)) {
+    fallo('tema-inicio.js: la lectura tiene que arrancar detrás de pintarTema()');
+  }
+
+  resumenLectura = `lectura en voz alta · ${VELOCIDADES.map((v) => `${String(v).replace('.', ',')}×`).join(' ')} · clave ${CLAVE_POSICION}`;
+}
+
 /* --- Informe -------------------------------------------------------------- */
 
 console.log(`Temas: ${temas.length}`);
@@ -357,6 +515,7 @@ console.log(`Bloques: ${programa.bloques.length}`);
 console.log(`Publicados: ${publicados}`);
 console.log(`Pendientes: ${pendientes.length}${pendientes.length ? ` → ${pendientes.join(', ')}` : ''}`);
 if (resumenTest) console.log(`Test: ${resumenTest}`);
+if (resumenLectura) console.log(`Tema: ${resumenLectura}`);
 
 if (avisos.length) {
   console.log('\nAvisos:');

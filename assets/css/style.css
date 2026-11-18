@@ -731,6 +731,146 @@ a.tema:hover {
   color: var(--acento);
 }
 
+/* --- Lectura en voz alta del tema ---------------------------------------- */
+
+/* Panel de la voz: una tarjeta dentro del artículo, con los controles en una
+   fila y el progreso debajo. Nace oculto en el marcado (`hidden`) y lo descubre
+   el módulo; por eso la regla no fija `display`, que taparía el atributo. */
+.escucha {
+  margin: 0 0 2rem;
+  padding: 1rem 1.15rem 1.15rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+
+.escucha__titulo {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+}
+
+.escucha__ayuda {
+  max-width: 58ch;
+  margin: 0 0 0.9rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--texto-suave);
+}
+
+.escucha__controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.escucha__velocidad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.escucha__velocidad legend {
+  margin-right: 0.15rem;
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+/* Velocidades: pastillas del tamaño de un toque, con el borde de control
+   (el único borde de la paleta que tiene que llegar a 3:1). */
+.escucha__opcion {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--borde-control);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.escucha__opcion:has(input:checked) {
+  border-color: var(--acento);
+  background: var(--acento-suave);
+}
+
+.escucha__opcion input {
+  margin: 0;
+  accent-color: var(--acento);
+}
+
+.escucha__progreso {
+  margin: 0.9rem 0 0.35rem;
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--texto-suave);
+}
+
+/* Avance de la lectura: barra nativa, igual que la de la sesión de test. */
+.escucha__medidor {
+  display: block;
+  width: 100%;
+  height: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--superficie-alt);
+  accent-color: var(--acento);
+}
+
+.escucha__medidor::-webkit-progress-bar {
+  background: var(--superficie-alt);
+  border-radius: 999px;
+}
+
+.escucha__medidor::-webkit-progress-value {
+  background: var(--acento);
+  border-radius: 999px;
+}
+
+.escucha__medidor::-moz-progress-bar {
+  background: var(--acento);
+  border-radius: 999px;
+}
+
+/* Oferta de continuar: mismo tinte de aviso que el resto del sitio. */
+.escucha__continuar {
+  margin: 0.9rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--aviso-borde);
+  border-radius: var(--radio);
+  background: var(--aviso-fondo);
+  color: var(--texto);
+  font-size: 0.86rem;
+}
+
+.escucha__continuar:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.8rem;
+  align-items: center;
+}
+
+/* Estado de la voz (región viva): informa sin competir con el texto leído. */
+.escucha__estado {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}
+
+.escucha__estado:empty {
+  display: none;
+}
+
 /* --- Piezas de contenido del temario ------------------------------------- */
 
 .aviso,
@@ -1928,6 +2068,7 @@ kbd {
   .cabecera,
   .lateral,
   .paginacion,
+  .escucha,
   .heroe__grafico,
   .heroe__fuente,
   .bloque__ilustracion,

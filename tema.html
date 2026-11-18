@@ -33,6 +33,56 @@
         <p class="migaja" id="migaja"></p>
         <h1 id="titulo-tema">Cargando…</h1>
         <div class="articulo__epigrafe" id="epigrafe-tema"></div>
+
+        <!-- Lectura en voz alta con la voz del navegador. Nace oculto a propósito:
+             el módulo lo descubre sólo si hay SpeechSynthesis, texto que leer y una
+             voz en español. Sin eso, no se pinta un botón que no haría nada. -->
+        <section class="escucha" id="escucha" aria-labelledby="escucha-titulo" hidden>
+          <h2 class="escucha__titulo" id="escucha-titulo">Escuchar este tema</h2>
+          <p class="escucha__ayuda">
+            La voz la pone tu navegador: no se descarga ningún audio ni se envía el texto a
+            ningún servicio. Puedes seguir leyendo mientras suena.
+          </p>
+          <div class="escucha__controles">
+            <button class="boton" type="button" id="escucha-boton" aria-pressed="false">
+              Escuchar este tema
+            </button>
+            <button class="boton boton--secundario" type="button" id="escucha-detener" disabled>
+              Detener
+            </button>
+          </div>
+          <fieldset class="escucha__velocidad">
+            <legend>Velocidad de la voz</legend>
+            <label class="escucha__opcion">
+              <input type="radio" name="escucha-velocidad" value="1" checked />
+              <span>1×</span>
+            </label>
+            <label class="escucha__opcion">
+              <input type="radio" name="escucha-velocidad" value="1.25" />
+              <span>1,25×</span>
+            </label>
+            <label class="escucha__opcion">
+              <input type="radio" name="escucha-velocidad" value="1.5" />
+              <span>1,5×</span>
+            </label>
+          </fieldset>
+          <p class="escucha__progreso" id="escucha-progreso">0 de 0 frases</p>
+          <progress
+            class="escucha__medidor"
+            id="escucha-medidor"
+            max="1"
+            value="0"
+            aria-label="Progreso de la lectura"
+          ></progress>
+          <p class="escucha__continuar" id="escucha-continuar" hidden>
+            <span id="escucha-continuar-texto"></span>
+            <button class="boton boton--secundario" type="button" id="escucha-continuar-boton">
+              Continuar
+            </button>
+          </p>
+          <p class="escucha__estado" id="escucha-estado" role="status"></p>
+        </section>
+
         <div id="contenido"></div>
       </article>
 

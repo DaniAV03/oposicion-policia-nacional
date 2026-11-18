@@ -69,7 +69,12 @@ necesite enlazar a un apartado concreto.
   dueño es la puerta de T6**: no se escriben las 42 tandas restantes hasta que apruebe el
   patrón.
 - T5 · S4 · inline · Portada de Test con dos accesos y las páginas de oficiales y no
-  oficiales.
+  oficiales. Hecho en `59a76e0`. Decisiones tomadas: un solo motor parametrizado por
+  `data-coleccion` en el `<body>`; las tarjetas son enlaces que aplican filtro, no arrancan el
+  test; el banco propio se desglosa por tema porque `test-core.js` no se toca; enlaces
+  profundos `?convocatoria=2021`, `?tema=1` y `?tema=mezcla`; la `explicacion` se muestra en la
+  corrección y en el repaso cuando la pregunta la trae. `tema.html` recibió el `aria-current`
+  que le faltaba.
 - T6 · S3 · worker · Resto de temas en tandas de 6-8, con revisión por tanda.
 - T7 · S6 · worker · Banco no oficial mezclado, cruzando temas.
 - T8 · S7 · inline · Panel de puntos débiles y alertas.
@@ -136,3 +141,15 @@ tocar. Coste aceptado: los exámenes oficiales no alimentan las estadísticas po
 > que cada una te lleve a su respectiva página , empieza por el 1
 
 Autoriza T1. Añade S4: la portada de Test lleva dos accesos, como la rejilla de temas.
+
+### L5 — la revisión se difiere al final
+
+> de momento no vamos acomprobar nada porque no soy opositor cuando este lista la web con
+> todos los pasos se la daré a mi amigo para que lo pruebe
+
+Decisión tomada: el dueño no revisa el piloto y no habrá revisión humana por tanda. La
+prueba de la web entera la hará un tercero cuando esté terminada. Consecuencia: la puerta
+que bloqueaba T6 se levanta y las 42 tandas se escriben seguidas. El riesgo de contenido
+(ningún test automático detecta una pregunta jurídicamente falsa) queda **asumido y
+diferido**, no eliminado: lo que protege mientras tanto es el verificador —forma, apartado
+existente, enunciado no copiado del oficial— y el repintado de apartados de este documento.
